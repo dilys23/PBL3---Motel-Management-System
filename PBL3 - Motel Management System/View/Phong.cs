@@ -21,35 +21,25 @@ namespace PBL3___Motel_Management_System
          
         }
 
-       
-
-        
-
-      
-
-        private void iconButton2_Click(object sender, EventArgs e)
+        private void iconButton7_Click(object sender, EventArgs e)
         {
             ThemPhong themPhong = new ThemPhong();
             themPhong.ShowDialog();
         }
 
-        private void btnThemday_Click(object sender, EventArgs e)
-        {
-            ThemDay themDayForm = new ThemDay();
-           
-            themDayForm.ShowDialog();
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSuaphong_Click(object sender, EventArgs e)
+        private void iconButton3_Click(object sender, EventArgs e)
         {
             SuaPhong themSuaph = new SuaPhong();
             themSuaph.ShowDialog();
         }
+
+
+
+
+
+
+
+
 
         //private void btThemDay_Click(object sender, EventArgs e)
         //{

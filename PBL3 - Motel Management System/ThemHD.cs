@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System
 {
-    public partial class HopDong : Form
+    public partial class ThemHD : Form
     {
-        public HopDong()
+        public ThemHD()
         {
             InitializeComponent();
+        }
+
+        private void ThemHD_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

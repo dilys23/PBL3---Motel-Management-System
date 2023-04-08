@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System
 {
-    public partial class Menu : Form
+    public partial class HopDong : Form
     {
-        public Menu()
+        public HopDong()
         {
             InitializeComponent();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -10,21 +10,16 @@ using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System
 {
-    public partial class ThemPhong : Form
+    public partial class ThemKhach : Form
     {
-        public ThemPhong()
+        public ThemKhach()
         {
             InitializeComponent();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void ThemKhach_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
