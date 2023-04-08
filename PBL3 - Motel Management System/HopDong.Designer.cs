@@ -34,10 +34,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.btThemHD = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btSearchDien = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -101,15 +99,6 @@
             this.label4.TabIndex = 25;
             this.label4.Text = "QUẢN LÝ HỢP ĐỒNG";
             // 
-            // btThemHD
-            // 
-            this.btThemHD.Location = new System.Drawing.Point(142, 93);
-            this.btThemHD.Name = "btThemHD";
-            this.btThemHD.Size = new System.Drawing.Size(124, 30);
-            this.btThemHD.TabIndex = 47;
-            this.btThemHD.Text = "Thêm hợp đồng";
-            this.btThemHD.UseVisualStyleBackColor = true;
-            // 
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
@@ -127,15 +116,6 @@
             this.label1.TabIndex = 45;
             this.label1.Text = "Phòng:";
             // 
-            // btSearchDien
-            // 
-            this.btSearchDien.Location = new System.Drawing.Point(23, 87);
-            this.btSearchDien.Name = "btSearchDien";
-            this.btSearchDien.Size = new System.Drawing.Size(89, 36);
-            this.btSearchDien.TabIndex = 44;
-            this.btSearchDien.Text = "Search";
-            this.btSearchDien.UseVisualStyleBackColor = true;
-            // 
             // HopDong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -145,10 +125,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btThemHD);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btSearchDien);
             this.Name = "HopDong";
             this.Text = "Contract";
             this.panel2.ResumeLayout(false);
@@ -168,9 +146,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btThemHD;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btSearchDien;
     }
 }
