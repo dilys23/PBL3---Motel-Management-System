@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System
 {
-    public partial class Menu : Form
+    public partial class ThemKhach : Form
     {
-        public Menu()
+        public ThemKhach()
         {
             InitializeComponent();
+        }
+
+        private void ThemKhach_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -56,6 +56,18 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ThemHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemHD.Designer.cs">
+      <DependentUpon>ThemHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemKhach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemKhach.Designer.cs">
+      <DependentUpon>ThemKhach.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\SuaDichVu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +160,12 @@
     <Compile Include="View\ChisoNuoc.Designer.cs">
       <DependentUpon>ChisoNuoc.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ThemHD.resx">
+      <DependentUpon>ThemHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThemKhach.resx">
+      <DependentUpon>ThemKhach.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\SuaDichVu.resx">
       <DependentUpon>SuaDichVu.cs</DependentUpon>
     </EmbeddedResource>

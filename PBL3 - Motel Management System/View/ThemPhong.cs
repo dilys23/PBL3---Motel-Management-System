@@ -26,5 +26,15 @@ namespace PBL3___Motel_Management_System
         {
             this.Close();
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ThemPhong_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
