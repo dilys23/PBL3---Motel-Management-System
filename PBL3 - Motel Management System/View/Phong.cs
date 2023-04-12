@@ -32,35 +32,28 @@ namespace PBL3___Motel_Management_System
             SuaPhong themSuaph = new SuaPhong();
             themSuaph.ShowDialog();
         }
+        //private Form activeForm = null;
+        TrangChu tc = new TrangChu();
 
+        private void btnThemday_Click_1(object sender, EventArgs e)
+        {
+            tc.openChildForm1(new ThemDay(), panelPhong);
+        }
 
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            tc.openChildForm1(new ThemPhong(), panelPhong);
+        }
 
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            tc.openChildForm1(new SuaPhong(), panelPhong);
+        }
 
+        private void label7_Click(object sender, EventArgs e)
+        {
 
-
-
-
-
-        //private void btThemDay_Click(object sender, EventArgs e)
-        //{
-        //  // openChildForm(new AddRoom());
-
-        //}
-        //private Menu1 activeForm = null;
-        //private void openChildForm(Menu1 childForm)
-        //{
-        //    if (activeForm != null)
-        //        activeForm.Close();
-        //    activeForm = childForm;
-        //    childForm.TopLevel = false;
-        //    childForm.FormBorderStyle = FormBorderStyle.None;
-        //    childForm.Dock = DockStyle.Fill;
-        //  //  panelDesktop.Controls.Add(childForm);
-        // //  panelDesktop.Tag = childForm;
-        //    childForm.BringToFront();
-        //    childForm.Show();
-
-        //}
-
+        }
     }
-}
+    }
+

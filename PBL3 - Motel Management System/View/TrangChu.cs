@@ -166,7 +166,7 @@ namespace PBL3___Motel_Management_System
                 btnMenu.Dock = DockStyle.None;
                 foreach (Button menuButton in paneMenu.Controls.OfType<Button>())
                 {
-                    menuButton.Text = "   " + menuButton.Tag.ToString();
+                    menuButton.Text = null + menuButton.Tag.ToString();
                     menuButton.ImageAlign = ContentAlignment.MiddleLeft;
                     menuButton.Padding = new Padding(10, 0, 0, 0);
                 }
@@ -231,9 +231,24 @@ namespace PBL3___Motel_Management_System
 
         }
 
+        public  void openChildForm1(Form childForm, Panel p)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            p.Controls.Add(childForm);
+            p.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+
+        }
+
         private void iconButton10_Click(object sender, EventArgs e)
         {
-            openChildForm(new Phong());
+            openChildForm1(new Phong(), panelDesktop);
         }
 
         private void btnDichVu_Click(object sender, EventArgs e)
@@ -272,6 +287,10 @@ namespace PBL3___Motel_Management_System
         {
             activeForm.Close();
         }
-       
+
+        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

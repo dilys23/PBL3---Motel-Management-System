@@ -55,7 +55,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.radioButton2);
             this.panel1.Controls.Add(this.dateTimePicker1);
@@ -235,7 +235,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Chocolate;
-            this.label8.Location = new System.Drawing.Point(367, 16);
+            this.label8.Location = new System.Drawing.Point(28, 24);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(153, 27);
             this.label8.TabIndex = 26;
@@ -272,6 +272,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(914, 438);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

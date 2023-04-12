@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System
 {
-    public partial class ThemHD : Form
+    public partial class ThemHopDong : Form
     {
-        public ThemHD()
+        public ThemHopDong()
         {
             InitializeComponent();
         }

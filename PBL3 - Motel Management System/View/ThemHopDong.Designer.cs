@@ -1,6 +1,6 @@
 ﻿namespace PBL3___Motel_Management_System
 {
-    partial class ThemHD
+    partial class ThemHopDong
     {
         /// <summary>
         /// Required designer variable.
@@ -57,7 +57,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
             this.panel1.Controls.Add(this.iconButton1);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.label6);
@@ -232,7 +232,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Chocolate;
-            this.label7.Location = new System.Drawing.Point(367, 16);
+            this.label7.Location = new System.Drawing.Point(16, 16);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(196, 27);
             this.label7.TabIndex = 26;
@@ -265,13 +265,14 @@
             this.iconButton2.TabIndex = 44;
             this.iconButton2.UseVisualStyleBackColor = false;
             // 
-            // ThemHD
+            // ThemHopDong
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(914, 438);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "ThemHD";
+            this.Name = "ThemHopDong";
             this.Text = "ThemHD";
             this.Load += new System.EventHandler(this.ThemHD_Load);
             this.panel1.ResumeLayout(false);

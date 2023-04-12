@@ -56,16 +56,16 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ThemHD.cs">
+    <Compile Include="View\ThemHopDong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThemHD.Designer.cs">
-      <DependentUpon>ThemHD.cs</DependentUpon>
+    <Compile Include="View\ThemHopDong.Designer.cs">
+      <DependentUpon>ThemHopDong.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThemKhach.cs">
+    <Compile Include="View\ThemKhach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThemKhach.Designer.cs">
+    <Compile Include="View\ThemKhach.Designer.cs">
       <DependentUpon>ThemKhach.cs</DependentUpon>
     </Compile>
     <Compile Include="View\SuaDichVu.cs">
@@ -109,12 +109,6 @@
     </Compile>
     <Compile Include="View\Dangnhap.Designer.cs">
       <DependentUpon>Dangnhap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Menu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ThemPhong.cs">
       <SubType>Form</SubType>
@@ -160,10 +154,10 @@
     <Compile Include="View\ChisoNuoc.Designer.cs">
       <DependentUpon>ChisoNuoc.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ThemHD.resx">
-      <DependentUpon>ThemHD.cs</DependentUpon>
+    <EmbeddedResource Include="View\ThemHopDong.resx">
+      <DependentUpon>ThemHopDong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThemKhach.resx">
+    <EmbeddedResource Include="View\ThemKhach.resx">
       <DependentUpon>ThemKhach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SuaDichVu.resx">
@@ -186,9 +180,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Dangnhap.resx">
       <DependentUpon>Dangnhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ThemDV.resx">
       <DependentUpon>ThemDV.cs</DependentUpon>

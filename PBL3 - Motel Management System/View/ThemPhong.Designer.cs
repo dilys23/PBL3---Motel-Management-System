@@ -62,7 +62,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(945, 59);
+            this.panel1.Size = new System.Drawing.Size(914, 59);
             this.panel1.TabIndex = 43;
             // 
             // label6
@@ -70,7 +70,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Chocolate;
-            this.label6.Location = new System.Drawing.Point(367, 16);
+            this.label6.Location = new System.Drawing.Point(14, 14);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(156, 27);
             this.label6.TabIndex = 26;
@@ -79,28 +79,30 @@
             // 
             // iconButton4
             // 
+            this.iconButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.iconButton4.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.FolderOpen;
             this.iconButton4.IconColor = System.Drawing.Color.White;
             this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton4.IconSize = 30;
-            this.iconButton4.Location = new System.Drawing.Point(878, 11);
+            this.iconButton4.Location = new System.Drawing.Point(846, 9);
             this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(55, 37);
+            this.iconButton4.Size = new System.Drawing.Size(45, 45);
             this.iconButton4.TabIndex = 45;
             this.iconButton4.UseVisualStyleBackColor = false;
             // 
             // iconButton1
             // 
+            this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.MailReply;
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 30;
-            this.iconButton1.Location = new System.Drawing.Point(829, 11);
+            this.iconButton1.Location = new System.Drawing.Point(799, 10);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(43, 37);
+            this.iconButton1.Size = new System.Drawing.Size(45, 45);
             this.iconButton1.TabIndex = 44;
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
@@ -190,9 +192,9 @@
             this.panel2.Controls.Add(this.textBox2);
             this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(19, 85);
+            this.panel2.Location = new System.Drawing.Point(19, 80);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(909, 360);
+            this.panel2.Size = new System.Drawing.Size(878, 360);
             this.panel2.TabIndex = 46;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -272,7 +274,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(945, 491);
+            this.ClientSize = new System.Drawing.Size(914, 455);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "ThemPhong";

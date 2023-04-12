@@ -161,5 +161,25 @@ namespace PBL3___Motel_Management_System
             SuaDichVu suaDichVu = new SuaDichVu();
             suaDichVu.ShowDialog();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private Form activeForm = null;
+        TrangChu tc = new TrangChu();
+
+      
+
+        private void btnThemPhong_Click_1(object sender, EventArgs e)
+        {
+           //openChildForm(new ThemDV());
+           tc.openChildForm1(new ThemDV(), panelDV);
+        }
+
+        private void btnSuaDV_Click(object sender, EventArgs e)
+        {
+            tc.openChildForm1(new SuaDichVu(), panelDV);
+        }
     }
 }

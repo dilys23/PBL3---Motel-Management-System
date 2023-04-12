@@ -55,6 +55,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMenu = new FontAwesome.Sharp.IconButton();
+            this.btnLogout = new FontAwesome.Sharp.IconButton();
             this.panelDesktop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichvu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).BeginInit();
@@ -74,8 +75,9 @@
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(200, 58);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(932, 485);
+            this.panelDesktop.Size = new System.Drawing.Size(932, 502);
             this.panelDesktop.TabIndex = 5;
+            this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
             // label3
             // 
@@ -231,6 +233,7 @@
             // paneMenu
             // 
             this.paneMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
+            this.paneMenu.Controls.Add(this.btnLogout);
             this.paneMenu.Controls.Add(this.btnDoanhTHu);
             this.paneMenu.Controls.Add(this.btnHoaDon);
             this.paneMenu.Controls.Add(this.btnHopDong);
@@ -243,7 +246,7 @@
             this.paneMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.paneMenu.Location = new System.Drawing.Point(0, 0);
             this.paneMenu.Name = "paneMenu";
-            this.paneMenu.Size = new System.Drawing.Size(200, 543);
+            this.paneMenu.Size = new System.Drawing.Size(200, 560);
             this.paneMenu.TabIndex = 3;
             // 
             // btnDoanhTHu
@@ -434,10 +437,22 @@
             this.btnMenu.UseVisualStyleBackColor = true;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
+            // btnLogout
+            // 
+            this.btnLogout.IconChar = FontAwesome.Sharp.IconChar.RightToBracket;
+            this.btnLogout.IconColor = System.Drawing.Color.Black;
+            this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLogout.IconSize = 30;
+            this.btnLogout.Location = new System.Drawing.Point(12, 524);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(45, 33);
+            this.btnLogout.TabIndex = 17;
+            this.btnLogout.UseVisualStyleBackColor = true;
+            // 
             // TrangChu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1132, 543);
+            this.ClientSize = new System.Drawing.Size(1132, 560);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.paneMenu);
@@ -488,5 +503,6 @@
         private System.Windows.Forms.DataGridView dgvPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tendaytro;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenPhongTro;
+        private FontAwesome.Sharp.IconButton btnLogout;
     }
 }
