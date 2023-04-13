@@ -346,7 +346,7 @@
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(90, 43);
             this.btnThem.TabIndex = 26;
-            this.btnThem.Text = "Thêm ";
+            this.btnThem.Text = "Chi tiết";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);

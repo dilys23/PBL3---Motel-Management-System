@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBL3___Motel_Management_System.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -300,7 +301,7 @@ namespace PBL3___Motel_Management_System
 
         private void btnDay_Click(object sender, EventArgs e)
         {
-            //openChildForm(new Day());
+            openChildForm(new Daytro());
         }
     }
 }

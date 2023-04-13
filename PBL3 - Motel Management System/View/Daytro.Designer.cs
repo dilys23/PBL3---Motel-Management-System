@@ -1,6 +1,6 @@
 ﻿namespace PBL3___Motel_Management_System.View
 {
-    partial class Day
+    partial class Daytro
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelPhong = new System.Windows.Forms.Panel();
+            this.panelDay = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.btnThemday = new FontAwesome.Sharp.IconButton();
@@ -43,34 +43,35 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.panelPhong.SuspendLayout();
+            this.btnThem = new FontAwesome.Sharp.IconButton();
+            this.panelDay.SuspendLayout();
             this.panPhong1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPhong)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelPhong
+            // panelDay
             // 
-            this.panelPhong.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.panelPhong.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panelDay.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.panelDay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
-            this.panelPhong.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelPhong.Controls.Add(this.label4);
-            this.panelPhong.Controls.Add(this.comboBox4);
-            this.panelPhong.Controls.Add(this.btnThemday);
-            this.panelPhong.Controls.Add(this.btnTim);
-            this.panelPhong.Controls.Add(this.label2);
-            this.panelPhong.Controls.Add(this.label1);
-            this.panelPhong.Controls.Add(this.comboBox2);
-            this.panelPhong.Controls.Add(this.panPhong1);
-            this.panelPhong.Controls.Add(this.comboBox1);
-            this.panelPhong.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.panelPhong.Location = new System.Drawing.Point(12, 69);
-            this.panelPhong.Name = "panelPhong";
-            this.panelPhong.Size = new System.Drawing.Size(890, 354);
-            this.panelPhong.TabIndex = 3;
+            this.panelDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
+            this.panelDay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelDay.Controls.Add(this.label4);
+            this.panelDay.Controls.Add(this.comboBox4);
+            this.panelDay.Controls.Add(this.btnThemday);
+            this.panelDay.Controls.Add(this.btnTim);
+            this.panelDay.Controls.Add(this.label2);
+            this.panelDay.Controls.Add(this.label1);
+            this.panelDay.Controls.Add(this.comboBox2);
+            this.panelDay.Controls.Add(this.panPhong1);
+            this.panelDay.Controls.Add(this.comboBox1);
+            this.panelDay.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.panelDay.Location = new System.Drawing.Point(12, 69);
+            this.panelDay.Name = "panelDay";
+            this.panelDay.Size = new System.Drawing.Size(890, 354);
+            this.panelDay.TabIndex = 3;
             // 
             // label4
             // 
@@ -93,6 +94,7 @@
             // 
             // btnThemday
             // 
+            this.btnThemday.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btnThemday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThemday.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnThemday.IconChar = FontAwesome.Sharp.IconChar.HouseChimneyMedical;
@@ -107,6 +109,7 @@
             this.btnThemday.Text = "Thêm dãy";
             this.btnThemday.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemday.UseVisualStyleBackColor = false;
+            this.btnThemday.Click += new System.EventHandler(this.btnThemday_Click);
             // 
             // btnTim
             // 
@@ -157,6 +160,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panPhong1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
             this.panPhong1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panPhong1.Controls.Add(this.btnThem);
             this.panPhong1.Controls.Add(this.btnSua);
             this.panPhong1.Controls.Add(this.btnXoa);
             this.panPhong1.Controls.Add(this.dtgPhong);
@@ -167,6 +171,7 @@
             // 
             // btnSua
             // 
+            this.btnSua.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSua.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnSua.IconChar = FontAwesome.Sharp.IconChar.ExternalLink;
@@ -174,16 +179,18 @@
             this.btnSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSua.IconSize = 25;
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(727, 12);
+            this.btnSua.Location = new System.Drawing.Point(731, 84);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(90, 39);
             this.btnSua.TabIndex = 28;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
+            this.btnXoa.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnXoa.BackColor = System.Drawing.Color.Red;
             this.btnXoa.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
@@ -191,7 +198,7 @@
             this.btnXoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXoa.IconSize = 25;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(727, 57);
+            this.btnXoa.Location = new System.Drawing.Point(731, 129);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(90, 39);
             this.btnXoa.TabIndex = 25;
@@ -244,17 +251,36 @@
             this.label7.TabIndex = 36;
             this.label7.Text = "DACH SÁCH DÃY";
             // 
-            // Day
+            // btnThem
+            // 
+            this.btnThem.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThem.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnThem.IconChar = FontAwesome.Sharp.IconChar.HomeLg;
+            this.btnThem.IconColor = System.Drawing.Color.White;
+            this.btnThem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThem.IconSize = 25;
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThem.Location = new System.Drawing.Point(731, 35);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(90, 43);
+            this.btnThem.TabIndex = 29;
+            this.btnThem.Text = "Thêm ";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // Daytro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 438);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelPhong);
-            this.Name = "Day";
+            this.Controls.Add(this.panelDay);
+            this.Name = "Daytro";
             this.Text = "Day";
-            this.panelPhong.ResumeLayout(false);
-            this.panelPhong.PerformLayout();
+            this.panelDay.ResumeLayout(false);
+            this.panelDay.PerformLayout();
             this.panPhong1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgPhong)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -265,7 +291,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panelPhong;
+        private System.Windows.Forms.Panel panelDay;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox4;
         private FontAwesome.Sharp.IconButton btnThemday;
@@ -280,5 +306,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
+        private FontAwesome.Sharp.IconButton btnThem;
     }
 }

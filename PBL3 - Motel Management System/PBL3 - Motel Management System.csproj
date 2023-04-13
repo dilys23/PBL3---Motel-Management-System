@@ -56,11 +56,23 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="View\Day.cs">
+    <Compile Include="View\ChitietHopDong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Day.Designer.cs">
-      <DependentUpon>Day.cs</DependentUpon>
+    <Compile Include="View\ChitietHopDong.Designer.cs">
+      <DependentUpon>ChitietHopDong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Daytro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Daytro.Designer.cs">
+      <DependentUpon>Daytro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SuaDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SuaDay.Designer.cs">
+      <DependentUpon>SuaDay.cs</DependentUpon>
     </Compile>
     <Compile Include="View\SuaHoaDon.cs">
       <SubType>Form</SubType>
@@ -184,8 +196,11 @@
     <Compile Include="View\XuatHoaDon.Designer.cs">
       <DependentUpon>XuatHoaDon.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\Day.resx">
-      <DependentUpon>Day.cs</DependentUpon>
+    <EmbeddedResource Include="View\ChitietHopDong.resx">
+      <DependentUpon>ChitietHopDong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Daytro.resx">
+      <DependentUpon>Daytro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SuaHopDong.resx">
       <DependentUpon>SuaHopDong.cs</DependentUpon>
