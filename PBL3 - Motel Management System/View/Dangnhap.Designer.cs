@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dangnhap));
             this.panelLogin = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMatKhau = new System.Windows.Forms.TextBox();
+            this.txtTaiKhoan = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.create = new System.Windows.Forms.Label();
-            this.btnLogin = new System.Windows.Forms.Button();
+            this.btnDangNhap = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -50,12 +50,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelLogin.Controls.Add(this.pictureBox2);
-            this.panelLogin.Controls.Add(this.textBox2);
-            this.panelLogin.Controls.Add(this.textBox1);
+            this.panelLogin.Controls.Add(this.txtMatKhau);
+            this.panelLogin.Controls.Add(this.txtTaiKhoan);
             this.panelLogin.Controls.Add(this.label1);
             this.panelLogin.Controls.Add(this.label2);
             this.panelLogin.Controls.Add(this.create);
-            this.panelLogin.Controls.Add(this.btnLogin);
+            this.panelLogin.Controls.Add(this.btnDangNhap);
             this.panelLogin.Controls.Add(this.pictureBox1);
             this.panelLogin.Location = new System.Drawing.Point(3, 1);
             this.panelLogin.Name = "panelLogin";
@@ -75,21 +75,22 @@
             this.pictureBox2.TabIndex = 20;
             this.pictureBox2.TabStop = false;
             // 
-            // textBox2
+            // txtMatKhau
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
-            this.textBox2.Location = new System.Drawing.Point(777, 245);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(266, 22);
-            this.textBox2.TabIndex = 19;
+            this.txtMatKhau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
+            this.txtMatKhau.Location = new System.Drawing.Point(777, 245);
+            this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.PasswordChar = '*';
+            this.txtMatKhau.Size = new System.Drawing.Size(266, 20);
+            this.txtMatKhau.TabIndex = 19;
             // 
-            // textBox1
+            // txtTaiKhoan
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
-            this.textBox1.Location = new System.Drawing.Point(777, 196);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(266, 22);
-            this.textBox1.TabIndex = 18;
+            this.txtTaiKhoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
+            this.txtTaiKhoan.Location = new System.Drawing.Point(777, 196);
+            this.txtTaiKhoan.Name = "txtTaiKhoan";
+            this.txtTaiKhoan.Size = new System.Drawing.Size(266, 20);
+            this.txtTaiKhoan.TabIndex = 18;
             // 
             // label1
             // 
@@ -103,7 +104,7 @@
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
             this.label1.Location = new System.Drawing.Point(652, 245);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 20);
+            this.label1.Size = new System.Drawing.Size(66, 17);
             this.label1.TabIndex = 17;
             this.label1.Text = "Mật khẩu";
             // 
@@ -115,7 +116,7 @@
             this.label2.ForeColor = System.Drawing.Color.SteelBlue;
             this.label2.Location = new System.Drawing.Point(649, 196);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 20);
+            this.label2.Size = new System.Drawing.Size(95, 17);
             this.label2.TabIndex = 16;
             this.label2.Text = "Tên tài khoản";
             // 
@@ -126,22 +127,22 @@
             this.create.ForeColor = System.Drawing.Color.SteelBlue;
             this.create.Location = new System.Drawing.Point(794, 113);
             this.create.Name = "create";
-            this.create.Size = new System.Drawing.Size(237, 27);
+            this.create.Size = new System.Drawing.Size(192, 22);
             this.create.TabIndex = 15;
             this.create.Text = "Đăng nhập Tài Khoản";
             // 
-            // btnLogin
+            // btnDangNhap
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
-            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnLogin.Location = new System.Drawing.Point(813, 357);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(121, 43);
-            this.btnLogin.TabIndex = 14;
-            this.btnLogin.Text = "Đăng nhập";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnDangNhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
+            this.btnDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangNhap.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnDangNhap.Location = new System.Drawing.Point(813, 357);
+            this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.Size = new System.Drawing.Size(121, 43);
+            this.btnDangNhap.TabIndex = 14;
+            this.btnDangNhap.Text = "Đăng nhập";
+            this.btnDangNhap.UseVisualStyleBackColor = false;
+            this.btnDangNhap.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // pictureBox1
             // 
@@ -160,7 +161,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1150, 607);
             this.Controls.Add(this.panelLogin);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Dangnhap";
             this.Text = "frmLogin";
             this.panelLogin.ResumeLayout(false);
@@ -175,12 +176,12 @@
 
         private System.Windows.Forms.Panel panelLogin;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMatKhau;
+        private System.Windows.Forms.TextBox txtTaiKhoan;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label create;
-        private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnDangNhap;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -65,6 +65,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\QLBLL.cs" />
     <Compile Include="DAL\ChiTietDichVu.cs">
       <DependentUpon>DataPbl.tt</DependentUpon>
     </Compile>
@@ -101,6 +102,7 @@
     <Compile Include="DAL\PhongTro.cs">
       <DependentUpon>DataPbl.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\QLDAL.cs" />
     <Compile Include="DAL\sysdiagrams.cs">
       <DependentUpon>DataPbl.tt</DependentUpon>
     </Compile>

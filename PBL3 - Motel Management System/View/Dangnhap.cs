@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBL3___Motel_Management_System.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +25,18 @@ namespace PBL3___Motel_Management_System
         TrangChu tc = new TrangChu();
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            tc.ShowDialog();
+            QLBLL qLBLL = new QLBLL();
+            if(qLBLL.GetIdTk(txtTaiKhoan.Text,txtMatKhau.Text) != null)
+            {
+                TrangChu tc = new TrangChu();
+                tc.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác", "Thông Báo", MessageBoxButtons.OK);
+            }
+
             
         }
 
