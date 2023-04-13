@@ -19,7 +19,7 @@ namespace PBL3___Motel_Management_System
         public TrangChu()
         {
             InitializeComponent();
-           CollapseMenu();
+            CollapseMenu();
             this.Padding = new Padding(borderSize);//Border size
             this.BackColor = Color.FromArgb(217, 247, 249);
          
