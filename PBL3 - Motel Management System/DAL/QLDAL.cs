@@ -28,5 +28,15 @@ namespace PBL3___Motel_Management_System.DAL
             }
             return list;
         }
+        public List<DayTro>GetAllDayTro()
+        {
+            List<DayTro> list = new List<DayTro>();
+            using(DataPbl data = new DataPbl())
+            {
+                var s = data.DayTro.Select(p => p);
+                list = s.ToList<DayTro>();
+            }
+            return list;
+        }
     }
 }

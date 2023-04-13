@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBL3___Motel_Management_System.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,9 +16,19 @@ namespace PBL3___Motel_Management_System.View
         public Daytro()
         {
             InitializeComponent();
+            SetCbbDayTro();
         }
         TrangChu tc = new TrangChu();   
-
+        public void SetCbbDayTro()
+        {
+            QLBLL qLBLL = new QLBLL();
+            cbbDayTro.Items.AddRange(qLBLL.GetCbbDayTro().ToArray());
+            cbbDayTro.SelectedIndex = 0;
+            cbbTinhTrang.Items.Add("All");
+            cbbTinhTrang.Items.Add("Đã cho thuê");
+            cbbTinhTrang.Items.Add("Trống");
+            cbbTinhTrang.SelectedIndex = 0;
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
             tc.openChildForm1(new ThemPhong(), panelDay);
@@ -31,6 +42,11 @@ namespace PBL3___Motel_Management_System.View
         private void btnSua_Click(object sender, EventArgs e)
         {
             tc.openChildForm1(new SuaPhong(), panelDay);
+        }
+
+        private void Daytro_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

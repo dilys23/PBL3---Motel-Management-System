@@ -1,4 +1,5 @@
 ﻿using PBL3___Motel_Management_System.DAL;
+using PBL3___Motel_Management_System.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,5 +36,34 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return id;
         }
+        public List<CbbDayTro>GetCbbDayTro()
+        {
+            List<CbbDayTro> list = new List<CbbDayTro>();
+            list.Add(new CbbDayTro { IdDayTro = "0", TenDayTro = "All"});
+            QLDAL qLDAL = new QLDAL();
+            foreach(DayTro dt in qLDAL.GetAllDayTro())
+            {
+                list.Add(new CbbDayTro {IdDayTro = dt.MaDayTro,TenDayTro = dt.TenDayTro });
+            }
+            return list;
+        }
+        public string TaoIdDayTro()
+        {
+            string id = null;
+            QLDAL qLDAL =  new QLDAL() ;
+            Boolean status = true;
+            Random random = new Random();
+            while(status)
+            {
+                id = random.Next(1, 1000).ToString();
+                status = false;
+                foreach(DayTro dayTro in qLDAL.GetAllDayTro())
+                {
+                    if(dayTro.MaDayTro == id)status = true;break;
+                }
+            }
+            return id;
+        }
+
     }
 }
