@@ -73,9 +73,10 @@
             this.panelDesktop.Controls.Add(this.label2);
             this.panelDesktop.Controls.Add(this.dgvDichvu);
             this.panelDesktop.Controls.Add(this.dgvPhong);
-            this.panelDesktop.Location = new System.Drawing.Point(200, 75);
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop.Location = new System.Drawing.Point(200, 51);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(999, 537);
+            this.panelDesktop.Size = new System.Drawing.Size(999, 561);
             this.panelDesktop.TabIndex = 5;
             this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 

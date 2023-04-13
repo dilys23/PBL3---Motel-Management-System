@@ -32,5 +32,10 @@ namespace PBL3___Motel_Management_System.View
         {
             tc.openChildForm1(new SuaPhong(), panelDay);
         }
+
+        private void btnSuaday_Click(object sender, EventArgs e)
+        {
+            tc.openChildForm1(new SuaDay(), panelDay);
+        }
     }
 }

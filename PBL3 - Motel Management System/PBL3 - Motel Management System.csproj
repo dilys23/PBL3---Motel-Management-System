@@ -202,6 +202,9 @@
     <EmbeddedResource Include="View\Daytro.resx">
       <DependentUpon>Daytro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\SuaDay.resx">
+      <DependentUpon>SuaDay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\SuaHopDong.resx">
       <DependentUpon>SuaHopDong.cs</DependentUpon>
     </EmbeddedResource>
