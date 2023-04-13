@@ -16,5 +16,10 @@ namespace PBL3___Motel_Management_System
         {
             InitializeComponent();
         }
+
+        private void ChisoNuoc_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

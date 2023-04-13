@@ -41,11 +41,11 @@
             this.TenPhongTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -57,7 +57,7 @@
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(725, 40);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(130, 28);
+            this.comboBox2.Size = new System.Drawing.Size(130, 25);
             this.comboBox2.TabIndex = 33;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
@@ -67,7 +67,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(722, 14);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 20);
+            this.label3.Size = new System.Drawing.Size(77, 17);
             this.label3.TabIndex = 32;
             this.label3.Text = "Trạng thái:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -78,7 +78,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(258, 38);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(158, 28);
+            this.comboBox1.Size = new System.Drawing.Size(158, 25);
             this.comboBox1.TabIndex = 31;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -88,7 +88,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(260, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 20);
+            this.label2.Size = new System.Drawing.Size(37, 17);
             this.label2.TabIndex = 30;
             this.label2.Text = "Dãy:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -99,7 +99,7 @@
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(47, 39);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(111, 27);
+            this.dateTimePicker1.Size = new System.Drawing.Size(111, 23);
             this.dateTimePicker1.TabIndex = 29;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -109,7 +109,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(44, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 20);
+            this.label1.Size = new System.Drawing.Size(71, 17);
             this.label1.TabIndex = 28;
             this.label1.Text = "Thời gian:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -121,7 +121,7 @@
             this.label4.ForeColor = System.Drawing.Color.Chocolate;
             this.label4.Location = new System.Drawing.Point(12, 11);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 24);
+            this.label4.Size = new System.Drawing.Size(98, 19);
             this.label4.TabIndex = 25;
             this.label4.Text = "CHỈ SỐ ĐIỆN";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -177,6 +177,12 @@
             this.dataGridView1.Size = new System.Drawing.Size(857, 215);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Gia
+            // 
+            this.Gia.HeaderText = "Giá Tiền";
+            this.Gia.MinimumWidth = 6;
+            this.Gia.Name = "Gia";
             // 
             // panel2
             // 
@@ -241,12 +247,6 @@
             this.iconButton1.TabIndex = 45;
             this.iconButton1.UseVisualStyleBackColor = false;
             // 
-            // Gia
-            // 
-            this.Gia.HeaderText = "Giá Tiền";
-            this.Gia.MinimumWidth = 6;
-            this.Gia.Name = "Gia";
-            // 
             // ChisoDien
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -256,6 +256,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "ChisoDien";
             this.Text = "ElecNum";
+            this.Load += new System.EventHandler(this.ChisoDien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

@@ -119,6 +119,7 @@
       <DependentUpon>DataPbl.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\CbbDayTro.cs" />
+    <Compile Include="DTO\ViewDay.cs" />
     <Compile Include="View\ChitietHopDong.cs">
       <SubType>Form</SubType>
     </Compile>

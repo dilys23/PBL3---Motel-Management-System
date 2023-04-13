@@ -21,5 +21,10 @@ namespace PBL3___Motel_Management_System
         {
             this.Close();
         }
+
+        private void SuaDichVu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

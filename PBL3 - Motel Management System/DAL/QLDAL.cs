@@ -38,5 +38,42 @@ namespace PBL3___Motel_Management_System.DAL
             }
             return list;
         }
+        public void AddDayTroDal(DayTro dt)
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                data.DayTro.Add(dt);
+                data.SaveChanges();
+            }
+        }
+        public void AddPhongTroDal(PhongTro dt)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                data.PhongTro.Add(dt);
+                data.SaveChanges();
+            }
+        }
+        public List<PhongTro> GetAllPhongTro()
+        {
+            List<PhongTro> list = new List<PhongTro>();
+            using(DataPbl data = new DataPbl())
+            {
+                var s = data.PhongTro.Select(p => p);
+                list = s.ToList<PhongTro>();
+            }
+
+            return list;
+        }
+        public List<PhongTro> GetPhongByIdDay(string idDay)
+        {
+            List<PhongTro> list = new List<PhongTro>();
+            List<PhongTro> listPhongTro = GetAllPhongTro();
+            foreach(PhongTro pt in listPhongTro)
+            {
+                if (pt.MaDayTro ==  idDay) list.Add(pt);
+            }
+            return list;
+        }
     }
 }

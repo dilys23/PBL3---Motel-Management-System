@@ -81,5 +81,10 @@ namespace PBL3___Motel_Management_System
         {
 
         }
+
+        private void ChisoDien_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

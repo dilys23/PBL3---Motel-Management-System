@@ -1,4 +1,7 @@
-﻿using System;
+﻿using PBL3___Motel_Management_System.BLL;
+using PBL3___Motel_Management_System.DAL;
+using PBL3___Motel_Management_System.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,21 +13,22 @@ using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System
 {
+    
     public partial class ThemDay : Form
     {
-       
+        
+        
         public ThemDay()
         {
             InitializeComponent();
-           // this.paneDesktop = paneDesktop;
-         
+            
         }
 
         private void AddRoom_Load(object sender, EventArgs e)
         {
             //paneDesktop.Controls.Add(this);
         }
-
+        TrangChu tc = new TrangChu();
         private void iconButton1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -68,7 +72,19 @@ namespace PBL3___Motel_Management_System
         {
             if(kiemTraThemDay())
             {
+                QLBLL qLBLL = new QLBLL();
+                DayTro dt = new DayTro();
+                dt.MaDayTro = qLBLL.TaoIdDayTro();
+                dt.TenDayTro = txtTenDay.Text;
+                dt.TenDuong = txtTenDuong.Text;
+                dt.TenHuyen = txtTenHuyen.Text;
+                dt.TenThanhPho = txtTenThanhPho.Text;
+                dt.MaChuTro = "1";
+                qLBLL.AddDayTroBll(dt);
+                MessageBox.Show("Bạn đã thêm dãy thành công", "Thông báo");
+                this.Close();
                 
+
             }
         }
     }

@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelDay = new System.Windows.Forms.Panel();
+            this.txtTenPhong = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbbTinhTrang = new System.Windows.Forms.ComboBox();
             this.btnThemday = new FontAwesome.Sharp.IconButton();
@@ -39,15 +41,16 @@
             this.btnThem = new FontAwesome.Sharp.IconButton();
             this.btnSua = new FontAwesome.Sharp.IconButton();
             this.btnXoa = new FontAwesome.Sharp.IconButton();
-            this.dtgPhong = new System.Windows.Forms.DataGridView();
+            this.dtgDayTro = new System.Windows.Forms.DataGridView();
             this.cbbDayTro = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtTenPhong = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelDay.SuspendLayout();
             this.panPhong1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgPhong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDayTro)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelDay
@@ -69,10 +72,17 @@
             this.panelDay.Controls.Add(this.cbbDayTro);
             this.panelDay.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.panelDay.Location = new System.Drawing.Point(9, 56);
-            this.panelDay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelDay.Margin = new System.Windows.Forms.Padding(2);
             this.panelDay.Name = "panelDay";
             this.panelDay.Size = new System.Drawing.Size(668, 288);
             this.panelDay.TabIndex = 3;
+            // 
+            // txtTenPhong
+            // 
+            this.txtTenPhong.Location = new System.Drawing.Point(412, 31);
+            this.txtTenPhong.Name = "txtTenPhong";
+            this.txtTenPhong.Size = new System.Drawing.Size(100, 20);
+            this.txtTenPhong.TabIndex = 36;
             // 
             // label4
             // 
@@ -90,7 +100,7 @@
             this.cbbTinhTrang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbTinhTrang.FormattingEnabled = true;
             this.cbbTinhTrang.Location = new System.Drawing.Point(240, 28);
-            this.cbbTinhTrang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbTinhTrang.Margin = new System.Windows.Forms.Padding(2);
             this.cbbTinhTrang.Name = "cbbTinhTrang";
             this.cbbTinhTrang.Size = new System.Drawing.Size(112, 25);
             this.cbbTinhTrang.TabIndex = 34;
@@ -105,7 +115,7 @@
             this.btnThemday.IconSize = 30;
             this.btnThemday.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThemday.Location = new System.Drawing.Point(558, 25);
-            this.btnThemday.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThemday.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemday.Name = "btnThemday";
             this.btnThemday.Size = new System.Drawing.Size(92, 30);
             this.btnThemday.TabIndex = 33;
@@ -124,7 +134,7 @@
             this.btnTim.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTim.IconSize = 25;
             this.btnTim.Location = new System.Drawing.Point(16, 24);
-            this.btnTim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTim.Margin = new System.Windows.Forms.Padding(2);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(26, 28);
             this.btnTim.TabIndex = 32;
@@ -159,9 +169,9 @@
             this.panPhong1.Controls.Add(this.btnThem);
             this.panPhong1.Controls.Add(this.btnSua);
             this.panPhong1.Controls.Add(this.btnXoa);
-            this.panPhong1.Controls.Add(this.dtgPhong);
+            this.panPhong1.Controls.Add(this.dtgDayTro);
             this.panPhong1.Location = new System.Drawing.Point(16, 84);
-            this.panPhong1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panPhong1.Margin = new System.Windows.Forms.Padding(2);
             this.panPhong1.Name = "panPhong1";
             this.panPhong1.Size = new System.Drawing.Size(634, 173);
             this.panPhong1.TabIndex = 28;
@@ -177,7 +187,7 @@
             this.btnThem.IconSize = 25;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThem.Location = new System.Drawing.Point(548, 28);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(68, 35);
             this.btnThem.TabIndex = 29;
@@ -197,7 +207,7 @@
             this.btnSua.IconSize = 25;
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSua.Location = new System.Drawing.Point(548, 68);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(68, 32);
             this.btnSua.TabIndex = 28;
@@ -217,7 +227,7 @@
             this.btnXoa.IconSize = 25;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoa.Location = new System.Drawing.Point(548, 105);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(68, 32);
             this.btnXoa.TabIndex = 25;
@@ -225,28 +235,30 @@
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.UseVisualStyleBackColor = false;
             // 
-            // dtgPhong
+            // dtgDayTro
             // 
-            this.dtgPhong.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dtgDayTro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtgPhong.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dtgPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgPhong.GridColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dtgPhong.Location = new System.Drawing.Point(20, 10);
-            this.dtgPhong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dtgPhong.Name = "dtgPhong";
-            this.dtgPhong.RowHeadersWidth = 51;
-            this.dtgPhong.RowTemplate.Height = 24;
-            this.dtgPhong.Size = new System.Drawing.Size(512, 152);
-            this.dtgPhong.TabIndex = 24;
+            this.dtgDayTro.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dtgDayTro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgDayTro.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dtgDayTro.GridColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dtgDayTro.Location = new System.Drawing.Point(20, 10);
+            this.dtgDayTro.Margin = new System.Windows.Forms.Padding(2);
+            this.dtgDayTro.Name = "dtgDayTro";
+            this.dtgDayTro.RowHeadersWidth = 51;
+            this.dtgDayTro.RowTemplate.Height = 24;
+            this.dtgDayTro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgDayTro.Size = new System.Drawing.Size(512, 152);
+            this.dtgDayTro.TabIndex = 24;
             // 
             // cbbDayTro
             // 
             this.cbbDayTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbDayTro.FormattingEnabled = true;
             this.cbbDayTro.Location = new System.Drawing.Point(49, 28);
-            this.cbbDayTro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbDayTro.Margin = new System.Windows.Forms.Padding(2);
             this.cbbDayTro.Name = "cbbDayTro";
             this.cbbDayTro.Size = new System.Drawing.Size(112, 25);
             this.cbbDayTro.TabIndex = 27;
@@ -257,7 +269,7 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(686, 40);
             this.panel1.TabIndex = 42;
@@ -274,12 +286,9 @@
             this.label7.TabIndex = 36;
             this.label7.Text = "DACH SÁCH DÃY";
             // 
-            // txtTenPhong
+            // errorProvider1
             // 
-            this.txtTenPhong.Location = new System.Drawing.Point(412, 31);
-            this.txtTenPhong.Name = "txtTenPhong";
-            this.txtTenPhong.Size = new System.Drawing.Size(100, 20);
-            this.txtTenPhong.TabIndex = 36;
+            this.errorProvider1.ContainerControl = this;
             // 
             // Daytro
             // 
@@ -288,16 +297,17 @@
             this.ClientSize = new System.Drawing.Size(686, 356);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelDay);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Daytro";
             this.Text = "Day";
             this.Load += new System.EventHandler(this.Daytro_Load);
             this.panelDay.ResumeLayout(false);
             this.panelDay.PerformLayout();
             this.panPhong1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgPhong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDayTro)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -314,11 +324,12 @@
         private System.Windows.Forms.Panel panPhong1;
         private FontAwesome.Sharp.IconButton btnSua;
         private FontAwesome.Sharp.IconButton btnXoa;
-        private System.Windows.Forms.DataGridView dtgPhong;
+        private System.Windows.Forms.DataGridView dtgDayTro;
         private System.Windows.Forms.ComboBox cbbDayTro;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
         private FontAwesome.Sharp.IconButton btnThem;
         private System.Windows.Forms.TextBox txtTenPhong;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

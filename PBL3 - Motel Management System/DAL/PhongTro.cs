@@ -29,6 +29,8 @@ namespace PBL3___Motel_Management_System.DAL
         public double DienTich { get; set; }
         public bool TinhTrang { get; set; }
         public string MaDayTro { get; set; }
+
+        public int ToiDa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietDichVu> ChiTietDichVu { get; set; }
