@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBL3___Motel_Management_System.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,6 +31,14 @@ namespace PBL3___Motel_Management_System
         private void iconButton2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        TrangChu tc = new TrangChu();
+
+      
+
+        private void btnLuu_Click_1(object sender, EventArgs e)
+        {
+            tc.openChildForm1(new ChitietHopDong(), panelKhach);
         }
     }
 }

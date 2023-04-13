@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panelThem = new System.Windows.Forms.Panel();
-            this.btnThemKhach = new FontAwesome.Sharp.IconButton();
+            this.btnLuuHD = new FontAwesome.Sharp.IconButton();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,13 +48,16 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panelThem.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelThem
             // 
             this.panelThem.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.panelThem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panelThem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
             this.panelThem.Controls.Add(this.textBox4);
@@ -75,27 +78,28 @@
             this.panelThem.Controls.Add(this.dateTimePicker1);
             this.panelThem.Controls.Add(this.textBox1);
             this.panelThem.Controls.Add(this.label1);
-            this.panelThem.Location = new System.Drawing.Point(12, 76);
+            this.panelThem.Location = new System.Drawing.Point(12, 63);
             this.panelThem.Name = "panelThem";
             this.panelThem.Size = new System.Drawing.Size(898, 332);
             this.panelThem.TabIndex = 47;
             // 
-            // btnThemKhach
+            // btnLuuHD
             // 
-            this.btnThemKhach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnThemKhach.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemKhach.IconChar = FontAwesome.Sharp.IconChar.PersonCirclePlus;
-            this.btnThemKhach.IconColor = System.Drawing.Color.White;
-            this.btnThemKhach.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnThemKhach.IconSize = 35;
-            this.btnThemKhach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemKhach.Location = new System.Drawing.Point(374, 421);
-            this.btnThemKhach.Name = "btnThemKhach";
-            this.btnThemKhach.Size = new System.Drawing.Size(80, 40);
-            this.btnThemKhach.TabIndex = 29;
-            this.btnThemKhach.Text = "Lưu";
-            this.btnThemKhach.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThemKhach.UseVisualStyleBackColor = false;
+            this.btnLuuHD.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnLuuHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnLuuHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuuHD.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            this.btnLuuHD.IconColor = System.Drawing.Color.White;
+            this.btnLuuHD.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLuuHD.IconSize = 35;
+            this.btnLuuHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLuuHD.Location = new System.Drawing.Point(373, 403);
+            this.btnLuuHD.Name = "btnLuuHD";
+            this.btnLuuHD.Size = new System.Drawing.Size(80, 40);
+            this.btnLuuHD.TabIndex = 29;
+            this.btnLuuHD.Text = "Lưu";
+            this.btnLuuHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLuuHD.UseVisualStyleBackColor = false;
             // 
             // textBox2
             // 
@@ -247,7 +251,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(471, 200);
+            this.label9.Location = new System.Drawing.Point(463, 186);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(58, 20);
             this.label9.TabIndex = 32;
@@ -261,25 +265,58 @@
             this.textBox5.Size = new System.Drawing.Size(178, 27);
             this.textBox5.TabIndex = 31;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Bahnschrift SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Chocolate;
+            this.label10.Location = new System.Drawing.Point(12, 20);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(216, 28);
+            this.label10.TabIndex = 48;
+            this.label10.Text = "CHI TIẾT HỢP ĐỒNG";
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.iconButton1.BackColor = System.Drawing.Color.Red;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 35;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(464, 403);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(80, 40);
+            this.iconButton1.TabIndex = 49;
+            this.iconButton1.Text = "Hủy";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            // 
             // ChitietHopDong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(922, 473);
-            this.Controls.Add(this.btnThemKhach);
+            this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.btnLuuHD);
             this.Controls.Add(this.panelThem);
             this.Name = "ChitietHopDong";
             this.Text = "ChitietHopDong";
             this.panelThem.ResumeLayout(false);
             this.panelThem.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Panel panelThem;
-        private FontAwesome.Sharp.IconButton btnThemKhach;
+        private FontAwesome.Sharp.IconButton btnLuuHD;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -298,5 +335,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label10;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

@@ -54,6 +54,10 @@
             // 
             // panelThemHD
             // 
+            this.panelThemHD.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.panelThemHD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelThemHD.Controls.Add(this.iconButton2);
             this.panelThemHD.Controls.Add(this.label7);
             this.panelThemHD.Controls.Add(this.iconButton4);
