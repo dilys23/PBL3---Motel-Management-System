@@ -45,6 +45,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -167,7 +168,8 @@
             this.TenPhongTro,
             this.ChisoCu,
             this.ChisoMoi,
-            this.Sudung});
+            this.Sudung,
+            this.Gia});
             this.dataGridView1.Location = new System.Drawing.Point(43, 97);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -239,6 +241,12 @@
             this.iconButton1.TabIndex = 45;
             this.iconButton1.UseVisualStyleBackColor = false;
             // 
+            // Gia
+            // 
+            this.Gia.HeaderText = "Giá Tiền";
+            this.Gia.MinimumWidth = 6;
+            this.Gia.Name = "Gia";
+            // 
             // ChisoDien
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -275,5 +283,6 @@
         private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconButton iconButton4;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
     }
 }

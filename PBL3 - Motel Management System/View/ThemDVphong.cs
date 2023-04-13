@@ -8,29 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PBL3___Motel_Management_System
+namespace PBL3___Motel_Management_System.View
 {
-    public partial class Dangnhap : Form
+    public partial class ThemDVphong : Form
     {
-        public Dangnhap()
+        public ThemDVphong()
         {
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void panelThemHD_Paint(object sender, PaintEventArgs e)
         {
 
         }
         TrangChu tc = new TrangChu();
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            tc.ShowDialog();
-            
-        }
 
-        private void panelLogin_Paint(object sender, PaintEventArgs e)
+        private void iconButton4_Click(object sender, EventArgs e)
         {
-
+            tc.openChildForm1(new ChitietHopDong(), panelThem);
         }
     }
 }

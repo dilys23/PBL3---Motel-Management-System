@@ -32,7 +32,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.panelThem = new System.Windows.Forms.Panel();
-            this.btnThemKhach = new FontAwesome.Sharp.IconButton();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -98,7 +97,6 @@
             this.panelThem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
-            this.panelThem.Controls.Add(this.btnThemKhach);
             this.panelThem.Controls.Add(this.textBox2);
             this.panelThem.Controls.Add(this.label6);
             this.panelThem.Controls.Add(this.label5);
@@ -116,23 +114,6 @@
             this.panelThem.Name = "panelThem";
             this.panelThem.Size = new System.Drawing.Size(890, 367);
             this.panelThem.TabIndex = 50;
-            // 
-            // btnThemKhach
-            // 
-            this.btnThemKhach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnThemKhach.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemKhach.IconChar = FontAwesome.Sharp.IconChar.PersonCirclePlus;
-            this.btnThemKhach.IconColor = System.Drawing.Color.White;
-            this.btnThemKhach.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnThemKhach.IconSize = 35;
-            this.btnThemKhach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemKhach.Location = new System.Drawing.Point(26, 169);
-            this.btnThemKhach.Name = "btnThemKhach";
-            this.btnThemKhach.Size = new System.Drawing.Size(135, 40);
-            this.btnThemKhach.TabIndex = 29;
-            this.btnThemKhach.Text = "Thêm Khách";
-            this.btnThemKhach.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThemKhach.UseVisualStyleBackColor = false;
             // 
             // textBox2
             // 
@@ -279,7 +260,6 @@
         private System.Windows.Forms.Label label7;
         private FontAwesome.Sharp.IconButton iconButton4;
         private System.Windows.Forms.Panel panelThem;
-        private FontAwesome.Sharp.IconButton btnThemKhach;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;

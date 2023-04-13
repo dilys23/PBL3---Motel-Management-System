@@ -179,7 +179,7 @@
             this.btnMinimized.IconColor = System.Drawing.Color.LightCyan;
             this.btnMinimized.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinimized.IconSize = 30;
-            this.btnMinimized.Location = new System.Drawing.Point(893, 14);
+            this.btnMinimized.Location = new System.Drawing.Point(893, 16);
             this.btnMinimized.Name = "btnMinimized";
             this.btnMinimized.Size = new System.Drawing.Size(30, 31);
             this.btnMinimized.TabIndex = 3;
@@ -196,7 +196,7 @@
             this.btnExit.IconColor = System.Drawing.Color.Red;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExit.IconSize = 30;
-            this.btnExit.Location = new System.Drawing.Point(965, 12);
+            this.btnExit.Location = new System.Drawing.Point(965, 14);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(30, 31);
             this.btnExit.TabIndex = 2;
@@ -213,7 +213,7 @@
             this.btnMaximized.IconColor = System.Drawing.Color.LightSeaGreen;
             this.btnMaximized.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMaximized.IconSize = 30;
-            this.btnMaximized.Location = new System.Drawing.Point(929, 13);
+            this.btnMaximized.Location = new System.Drawing.Point(929, 15);
             this.btnMaximized.Name = "btnMaximized";
             this.btnMaximized.Size = new System.Drawing.Size(30, 31);
             this.btnMaximized.TabIndex = 1;

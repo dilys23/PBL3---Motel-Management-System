@@ -38,7 +38,7 @@ namespace PBL3___Motel_Management_System
 
         private void btnLuu_Click_1(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ChitietHopDong(), panelKhach);
+            tc.openChildForm1(new ThemDVphong(), panelKhach);
         }
     }
 }

@@ -33,24 +33,20 @@
             this.label7 = new System.Windows.Forms.Label();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.panelThem = new System.Windows.Forms.Panel();
-            this.btnThemKhach = new FontAwesome.Sharp.IconButton();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelThemHD.SuspendLayout();
             this.panelThem.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelThemHD
@@ -120,14 +116,12 @@
             this.panelThem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
-            this.panelThem.Controls.Add(this.btnThemKhach);
             this.panelThem.Controls.Add(this.textBox2);
             this.panelThem.Controls.Add(this.label6);
             this.panelThem.Controls.Add(this.label5);
             this.panelThem.Controls.Add(this.label4);
             this.panelThem.Controls.Add(this.comboBox2);
             this.panelThem.Controls.Add(this.comboBox1);
-            this.panelThem.Controls.Add(this.dataGridView1);
             this.panelThem.Controls.Add(this.label3);
             this.panelThem.Controls.Add(this.dateTimePicker2);
             this.panelThem.Controls.Add(this.label2);
@@ -136,27 +130,9 @@
             this.panelThem.Controls.Add(this.label1);
             this.panelThem.Location = new System.Drawing.Point(17, 67);
             this.panelThem.Name = "panelThem";
-            this.panelThem.Size = new System.Drawing.Size(890, 367);
+            this.panelThem.Size = new System.Drawing.Size(890, 206);
             this.panelThem.TabIndex = 46;
             this.panelThem.Paint += new System.Windows.Forms.PaintEventHandler(this.panelThem_Paint);
-            // 
-            // btnThemKhach
-            // 
-            this.btnThemKhach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnThemKhach.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemKhach.IconChar = FontAwesome.Sharp.IconChar.PersonCirclePlus;
-            this.btnThemKhach.IconColor = System.Drawing.Color.White;
-            this.btnThemKhach.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnThemKhach.IconSize = 35;
-            this.btnThemKhach.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemKhach.Location = new System.Drawing.Point(26, 169);
-            this.btnThemKhach.Name = "btnThemKhach";
-            this.btnThemKhach.Size = new System.Drawing.Size(135, 40);
-            this.btnThemKhach.TabIndex = 29;
-            this.btnThemKhach.Text = "Thêm Khách";
-            this.btnThemKhach.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThemKhach.UseVisualStyleBackColor = false;
-            this.btnThemKhach.Click += new System.EventHandler(this.btnThemKhach_Click_1);
             // 
             // textBox2
             // 
@@ -220,19 +196,6 @@
             this.comboBox1.TabIndex = 23;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT});
-            this.dataGridView1.Location = new System.Drawing.Point(27, 215);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(835, 137);
-            this.dataGridView1.TabIndex = 22;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -293,13 +256,6 @@
             this.label1.Text = "Mã HD";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // STT
-            // 
-            this.STT.HeaderText = "Column1";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            this.STT.Width = 125;
-            // 
             // ThemHopDong
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -313,7 +269,6 @@
             this.panelThemHD.PerformLayout();
             this.panelThem.ResumeLayout(false);
             this.panelThem.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -325,20 +280,17 @@
         private System.Windows.Forms.Label label7;
         private FontAwesome.Sharp.IconButton iconButton4;
         private System.Windows.Forms.Panel panelThem;
-        private FontAwesome.Sharp.IconButton btnThemKhach;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
     }
 }
