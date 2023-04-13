@@ -30,6 +30,9 @@
         {
             this.panelThemHD = new System.Windows.Forms.Panel();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.iconButton4 = new FontAwesome.Sharp.IconButton();
+            this.panelThem = new System.Windows.Forms.Panel();
             this.btnThemKhach = new FontAwesome.Sharp.IconButton();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -37,19 +40,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panelThem = new System.Windows.Forms.Panel();
             this.panelThemHD.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelThem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelThemHD
@@ -77,6 +77,58 @@
             this.iconButton2.Size = new System.Drawing.Size(43, 37);
             this.iconButton2.TabIndex = 48;
             this.iconButton2.UseVisualStyleBackColor = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Bahnschrift SemiBold", 13.8F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.Chocolate;
+            this.label7.Location = new System.Drawing.Point(13, 29);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(190, 28);
+            this.label7.TabIndex = 47;
+            this.label7.Text = "THÊM HỢP ĐỒNG";
+            // 
+            // iconButton4
+            // 
+            this.iconButton4.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.iconButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.iconButton4.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.FolderOpen;
+            this.iconButton4.IconColor = System.Drawing.Color.White;
+            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton4.IconSize = 30;
+            this.iconButton4.Location = new System.Drawing.Point(833, 21);
+            this.iconButton4.Name = "iconButton4";
+            this.iconButton4.Size = new System.Drawing.Size(52, 37);
+            this.iconButton4.TabIndex = 49;
+            this.iconButton4.UseVisualStyleBackColor = false;
+            // 
+            // panelThem
+            // 
+            this.panelThem.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.panelThem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
+            this.panelThem.Controls.Add(this.btnThemKhach);
+            this.panelThem.Controls.Add(this.textBox2);
+            this.panelThem.Controls.Add(this.label6);
+            this.panelThem.Controls.Add(this.label5);
+            this.panelThem.Controls.Add(this.label4);
+            this.panelThem.Controls.Add(this.comboBox2);
+            this.panelThem.Controls.Add(this.comboBox1);
+            this.panelThem.Controls.Add(this.dataGridView1);
+            this.panelThem.Controls.Add(this.label3);
+            this.panelThem.Controls.Add(this.dateTimePicker2);
+            this.panelThem.Controls.Add(this.label2);
+            this.panelThem.Controls.Add(this.dateTimePicker1);
+            this.panelThem.Controls.Add(this.textBox1);
+            this.panelThem.Controls.Add(this.label1);
+            this.panelThem.Location = new System.Drawing.Point(17, 67);
+            this.panelThem.Name = "panelThem";
+            this.panelThem.Size = new System.Drawing.Size(890, 367);
+            this.panelThem.TabIndex = 46;
             // 
             // btnThemKhach
             // 
@@ -152,17 +204,6 @@
             this.comboBox1.Size = new System.Drawing.Size(207, 28);
             this.comboBox1.TabIndex = 23;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Chocolate;
-            this.label7.Location = new System.Drawing.Point(13, 29);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(171, 24);
-            this.label7.TabIndex = 47;
-            this.label7.Text = "THÊM HỢP ĐỒNG";
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -172,6 +213,16 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(835, 137);
             this.dataGridView1.TabIndex = 22;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(448, 82);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(111, 20);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Ngày kết thúc";
             // 
             // dateTimePicker2
             // 
@@ -217,57 +268,6 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Mã HD";
             // 
-            // iconButton4
-            // 
-            this.iconButton4.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.iconButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.iconButton4.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.FolderOpen;
-            this.iconButton4.IconColor = System.Drawing.Color.White;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.IconSize = 30;
-            this.iconButton4.Location = new System.Drawing.Point(833, 21);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(52, 37);
-            this.iconButton4.TabIndex = 49;
-            this.iconButton4.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(448, 82);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 20);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "Ngày kết thúc";
-            // 
-            // panelThem
-            // 
-            this.panelThem.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.panelThem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
-            this.panelThem.Controls.Add(this.btnThemKhach);
-            this.panelThem.Controls.Add(this.textBox2);
-            this.panelThem.Controls.Add(this.label6);
-            this.panelThem.Controls.Add(this.label5);
-            this.panelThem.Controls.Add(this.label4);
-            this.panelThem.Controls.Add(this.comboBox2);
-            this.panelThem.Controls.Add(this.comboBox1);
-            this.panelThem.Controls.Add(this.dataGridView1);
-            this.panelThem.Controls.Add(this.label3);
-            this.panelThem.Controls.Add(this.dateTimePicker2);
-            this.panelThem.Controls.Add(this.label2);
-            this.panelThem.Controls.Add(this.dateTimePicker1);
-            this.panelThem.Controls.Add(this.textBox1);
-            this.panelThem.Controls.Add(this.label1);
-            this.panelThem.Location = new System.Drawing.Point(17, 67);
-            this.panelThem.Name = "panelThem";
-            this.panelThem.Size = new System.Drawing.Size(890, 367);
-            this.panelThem.TabIndex = 46;
-            // 
             // ThemHopDong
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -279,9 +279,9 @@
             this.Load += new System.EventHandler(this.ThemHD_Load);
             this.panelThemHD.ResumeLayout(false);
             this.panelThemHD.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panelThem.ResumeLayout(false);
             this.panelThem.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

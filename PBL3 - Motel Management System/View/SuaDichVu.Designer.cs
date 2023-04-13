@@ -54,7 +54,7 @@
             this.iconButton4.IconColor = System.Drawing.Color.White;
             this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton4.IconSize = 30;
-            this.iconButton4.Location = new System.Drawing.Point(838, 57);
+            this.iconButton4.Location = new System.Drawing.Point(838, 47);
             this.iconButton4.Name = "iconButton4";
             this.iconButton4.Size = new System.Drawing.Size(45, 45);
             this.iconButton4.TabIndex = 44;
@@ -70,7 +70,7 @@
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 35;
-            this.iconButton1.Location = new System.Drawing.Point(785, 57);
+            this.iconButton1.Location = new System.Drawing.Point(785, 47);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(45, 45);
             this.iconButton1.TabIndex = 43;
@@ -191,11 +191,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Bahnschrift SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Chocolate;
-            this.label7.Location = new System.Drawing.Point(19, 63);
+            this.label7.Location = new System.Drawing.Point(21, 55);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(146, 27);
+            this.label7.Size = new System.Drawing.Size(149, 28);
             this.label7.TabIndex = 58;
             this.label7.Text = "SỬA DỊCH VỤ";
             // 

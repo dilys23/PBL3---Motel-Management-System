@@ -181,6 +181,9 @@
     <EmbeddedResource Include="View\SuaHopDong.resx">
       <DependentUpon>SuaHopDong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ThemHoaDon.resx">
+      <DependentUpon>ThemHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ThemHopDong.resx">
       <DependentUpon>ThemHopDong.cs</DependentUpon>
     </EmbeddedResource>

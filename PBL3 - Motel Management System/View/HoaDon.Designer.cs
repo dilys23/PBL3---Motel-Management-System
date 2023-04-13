@@ -37,17 +37,18 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnXoaHD = new FontAwesome.Sharp.IconButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Phong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenKhach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThanhToan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Conlai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSua = new FontAwesome.Sharp.IconButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnIn = new FontAwesome.Sharp.IconButton();
             this.btnThemHD = new FontAwesome.Sharp.IconButton();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThanhToan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Conlai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Thoigian = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tháng = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -60,17 +61,17 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(973, 45);
+            this.panel1.Size = new System.Drawing.Size(973, 49);
             this.panel1.TabIndex = 41;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Bahnschrift SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Chocolate;
-            this.label4.Location = new System.Drawing.Point(9, 9);
+            this.label4.Location = new System.Drawing.Point(9, 12);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 25);
+            this.label4.Size = new System.Drawing.Size(110, 28);
             this.label4.TabIndex = 25;
             this.label4.Text = "HÓA ĐƠN";
             // 
@@ -162,6 +163,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -170,10 +172,11 @@
             this.STT,
             this.Day,
             this.Phong,
-            this.TenKhach,
             this.Tien,
             this.ThanhToan,
-            this.Conlai});
+            this.Conlai,
+            this.Thoigian,
+            this.Tháng});
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView1.Location = new System.Drawing.Point(18, 186);
             this.dataGridView1.Name = "dataGridView1";
@@ -181,55 +184,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(914, 186);
             this.dataGridView1.TabIndex = 8;
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            this.STT.Width = 125;
-            // 
-            // Day
-            // 
-            this.Day.HeaderText = "Dãy";
-            this.Day.MinimumWidth = 6;
-            this.Day.Name = "Day";
-            this.Day.Width = 125;
-            // 
-            // Phong
-            // 
-            this.Phong.HeaderText = "Phòng";
-            this.Phong.MinimumWidth = 6;
-            this.Phong.Name = "Phong";
-            this.Phong.Width = 125;
-            // 
-            // TenKhach
-            // 
-            this.TenKhach.HeaderText = "Tên Khách";
-            this.TenKhach.MinimumWidth = 6;
-            this.TenKhach.Name = "TenKhach";
-            this.TenKhach.Width = 125;
-            // 
-            // Tien
-            // 
-            this.Tien.HeaderText = "Số Tiền";
-            this.Tien.MinimumWidth = 6;
-            this.Tien.Name = "Tien";
-            this.Tien.Width = 125;
-            // 
-            // ThanhToan
-            // 
-            this.ThanhToan.HeaderText = "Đã Trả";
-            this.ThanhToan.MinimumWidth = 6;
-            this.ThanhToan.Name = "ThanhToan";
-            this.ThanhToan.Width = 125;
-            // 
-            // Conlai
-            // 
-            this.Conlai.HeaderText = "Còn lại";
-            this.Conlai.MinimumWidth = 6;
-            this.Conlai.Name = "Conlai";
-            this.Conlai.Width = 125;
             // 
             // btnSua
             // 
@@ -296,6 +250,62 @@
             this.btnThemHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemHD.UseVisualStyleBackColor = false;
             // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            this.STT.Width = 125;
+            // 
+            // Day
+            // 
+            this.Day.HeaderText = "Dãy";
+            this.Day.MinimumWidth = 6;
+            this.Day.Name = "Day";
+            this.Day.Width = 125;
+            // 
+            // Phong
+            // 
+            this.Phong.HeaderText = "Phòng";
+            this.Phong.MinimumWidth = 6;
+            this.Phong.Name = "Phong";
+            this.Phong.Width = 125;
+            // 
+            // Tien
+            // 
+            this.Tien.HeaderText = "Số Tiền";
+            this.Tien.MinimumWidth = 6;
+            this.Tien.Name = "Tien";
+            this.Tien.Width = 125;
+            // 
+            // ThanhToan
+            // 
+            this.ThanhToan.HeaderText = "Đã Trả";
+            this.ThanhToan.MinimumWidth = 6;
+            this.ThanhToan.Name = "ThanhToan";
+            this.ThanhToan.Width = 125;
+            // 
+            // Conlai
+            // 
+            this.Conlai.HeaderText = "Còn lại";
+            this.Conlai.MinimumWidth = 6;
+            this.Conlai.Name = "Conlai";
+            this.Conlai.Width = 125;
+            // 
+            // Thoigian
+            // 
+            this.Thoigian.HeaderText = "Thời gian";
+            this.Thoigian.MinimumWidth = 6;
+            this.Thoigian.Name = "Thoigian";
+            this.Thoigian.Width = 125;
+            // 
+            // Tháng
+            // 
+            this.Tháng.HeaderText = "Tháng";
+            this.Tháng.MinimumWidth = 6;
+            this.Tháng.Name = "Tháng";
+            this.Tháng.Width = 125;
+            // 
             // HoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -332,9 +342,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn Day;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenKhach;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tien;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThanhToan;
         private System.Windows.Forms.DataGridViewTextBoxColumn Conlai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Thoigian;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tháng;
     }
 }

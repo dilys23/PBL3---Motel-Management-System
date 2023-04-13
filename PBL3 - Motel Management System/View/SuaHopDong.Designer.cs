@@ -69,11 +69,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Bahnschrift SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Chocolate;
             this.label7.Location = new System.Drawing.Point(25, 25);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(157, 24);
+            this.label7.Size = new System.Drawing.Size(177, 28);
             this.label7.TabIndex = 26;
             this.label7.Text = "SỬA HỢP ĐỒNG";
             // 

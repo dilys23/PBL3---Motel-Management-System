@@ -40,7 +40,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(914, 45);
+            this.panel1.Size = new System.Drawing.Size(955, 49);
             this.panel1.TabIndex = 41;
             // 
             // label4
@@ -58,7 +58,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 438);
+            this.ClientSize = new System.Drawing.Size(955, 494);
             this.Controls.Add(this.panel1);
             this.Name = "DoanhThu";
             this.Text = "Revenue";

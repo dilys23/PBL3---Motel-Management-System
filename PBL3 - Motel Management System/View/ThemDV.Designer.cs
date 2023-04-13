@@ -199,6 +199,7 @@
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label6);
+            this.Font = new System.Drawing.Font("Bahnschrift SemiBold", 13.8F, System.Drawing.FontStyle.Bold);
             this.Name = "ThemDV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThemDV";
