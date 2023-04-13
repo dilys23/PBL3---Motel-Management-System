@@ -41,11 +41,12 @@
             this.TenPhongTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -55,7 +56,7 @@
             // 
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(725, 40);
+            this.comboBox2.Location = new System.Drawing.Point(550, 41);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(130, 28);
             this.comboBox2.TabIndex = 33;
@@ -65,11 +66,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(722, 14);
+            this.label3.Location = new System.Drawing.Point(546, 14);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 20);
+            this.label3.Size = new System.Drawing.Size(61, 20);
             this.label3.TabIndex = 32;
-            this.label3.Text = "Trạng thái:";
+            this.label3.Text = "Phòng:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // comboBox1
@@ -178,6 +179,12 @@
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // Gia
+            // 
+            this.Gia.HeaderText = "Giá Tiền";
+            this.Gia.MinimumWidth = 6;
+            this.Gia.Name = "Gia";
+            // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -185,6 +192,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.iconButton3);
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.comboBox2);
@@ -241,11 +249,17 @@
             this.iconButton1.TabIndex = 45;
             this.iconButton1.UseVisualStyleBackColor = false;
             // 
-            // Gia
+            // iconButton3
             // 
-            this.Gia.HeaderText = "Giá Tiền";
-            this.Gia.MinimumWidth = 6;
-            this.Gia.Name = "Gia";
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton3.IconColor = System.Drawing.Color.Black;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.Location = new System.Drawing.Point(818, 34);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Size = new System.Drawing.Size(78, 36);
+            this.iconButton3.TabIndex = 29;
+            this.iconButton3.Text = "Thêm ";
+            this.iconButton3.UseVisualStyleBackColor = true;
             // 
             // ChisoDien
             // 
@@ -284,5 +298,6 @@
         private FontAwesome.Sharp.IconButton iconButton4;
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
+        private FontAwesome.Sharp.IconButton iconButton3;
     }
 }
