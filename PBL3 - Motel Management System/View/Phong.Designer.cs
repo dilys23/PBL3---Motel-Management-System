@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnThemPhong = new FontAwesome.Sharp.IconButton();
@@ -52,10 +52,12 @@
             this.dtgPhong = new System.Windows.Forms.DataGridView();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelPhong.SuspendLayout();
             this.panPhong1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPhong)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
@@ -72,23 +74,23 @@
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle22;
             this.dataGridView1.Location = new System.Drawing.Point(14, 10);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -168,7 +170,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelPhong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.panelPhong.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelPhong.Controls.Add(this.label7);
             this.panelPhong.Controls.Add(this.label4);
             this.panelPhong.Controls.Add(this.comboBox4);
             this.panelPhong.Controls.Add(this.btnThemday);
@@ -179,16 +180,16 @@
             this.panelPhong.Controls.Add(this.panPhong1);
             this.panelPhong.Controls.Add(this.comboBox1);
             this.panelPhong.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.panelPhong.Location = new System.Drawing.Point(12, 12);
+            this.panelPhong.Location = new System.Drawing.Point(12, 66);
             this.panelPhong.Name = "panelPhong";
-            this.panelPhong.Size = new System.Drawing.Size(890, 414);
+            this.panelPhong.Size = new System.Drawing.Size(890, 354);
             this.panelPhong.TabIndex = 2;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(237, 53);
+            this.label4.Location = new System.Drawing.Point(237, 14);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 20);
             this.label4.TabIndex = 35;
@@ -198,7 +199,7 @@
             this.comboBox4.DisplayMember = "Tình trạng";
             this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(241, 76);
+            this.comboBox4.Location = new System.Drawing.Point(241, 37);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(148, 28);
             this.comboBox4.TabIndex = 34;
@@ -212,7 +213,7 @@
             this.btnThemday.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThemday.IconSize = 30;
             this.btnThemday.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemday.Location = new System.Drawing.Point(744, 70);
+            this.btnThemday.Location = new System.Drawing.Point(744, 31);
             this.btnThemday.Name = "btnThemday";
             this.btnThemday.Size = new System.Drawing.Size(122, 37);
             this.btnThemday.TabIndex = 33;
@@ -230,7 +231,7 @@
             this.btnTim.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnTim.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTim.IconSize = 25;
-            this.btnTim.Location = new System.Drawing.Point(21, 69);
+            this.btnTim.Location = new System.Drawing.Point(21, 30);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(35, 35);
             this.btnTim.TabIndex = 32;
@@ -240,7 +241,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(415, 53);
+            this.label2.Location = new System.Drawing.Point(415, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 20);
             this.label2.TabIndex = 31;
@@ -248,7 +249,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(62, 53);
+            this.label1.Location = new System.Drawing.Point(62, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 16);
             this.label1.TabIndex = 30;
@@ -258,7 +259,7 @@
             this.comboBox2.DisplayMember = "Tình trạng";
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(419, 76);
+            this.comboBox2.Location = new System.Drawing.Point(419, 37);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(148, 28);
             this.comboBox2.TabIndex = 29;
@@ -275,9 +276,9 @@
             this.panPhong1.Controls.Add(this.btnXoa);
             this.panPhong1.Controls.Add(this.btnThem);
             this.panPhong1.Controls.Add(this.dtgPhong);
-            this.panPhong1.Location = new System.Drawing.Point(21, 139);
+            this.panPhong1.Location = new System.Drawing.Point(21, 104);
             this.panPhong1.Name = "panPhong1";
-            this.panPhong1.Size = new System.Drawing.Size(845, 236);
+            this.panPhong1.Size = new System.Drawing.Size(845, 213);
             this.panPhong1.TabIndex = 28;
             // 
             // btnSua
@@ -362,14 +363,14 @@
             this.dtgPhong.Name = "dtgPhong";
             this.dtgPhong.RowHeadersWidth = 51;
             this.dtgPhong.RowTemplate.Height = 24;
-            this.dtgPhong.Size = new System.Drawing.Size(683, 210);
+            this.dtgPhong.Size = new System.Drawing.Size(683, 187);
             this.dtgPhong.TabIndex = 24;
             // 
             // comboBox1
             // 
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(65, 74);
+            this.comboBox1.Location = new System.Drawing.Point(65, 35);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(148, 28);
             this.comboBox1.TabIndex = 27;
@@ -379,17 +380,28 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Chocolate;
-            this.label7.Location = new System.Drawing.Point(17, 15);
+            this.label7.Location = new System.Drawing.Point(12, 11);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(217, 27);
             this.label7.TabIndex = 36;
             this.label7.Text = "DACH SÁCH PHÒNG";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(914, 48);
+            this.panel1.TabIndex = 41;
+            // 
             // Phong
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(914, 438);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelPhong);
             this.Name = "Phong";
             this.ShowInTaskbar = false;
@@ -399,6 +411,8 @@
             this.panelPhong.PerformLayout();
             this.panPhong1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgPhong)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -426,5 +440,6 @@
         private System.Windows.Forms.DataGridView dtgPhong;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -40,6 +40,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -187,6 +188,17 @@
             this.textBox2.Size = new System.Drawing.Size(256, 27);
             this.textBox2.TabIndex = 50;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Chocolate;
+            this.label7.Location = new System.Drawing.Point(19, 63);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(146, 27);
+            this.label7.TabIndex = 58;
+            this.label7.Text = "SỬA DỊCH VỤ";
+            // 
             // SuaDichVu
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -194,6 +206,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(914, 438);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.iconButton4);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.panel2);
@@ -202,6 +215,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -218,5 +232,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label7;
     }
 }

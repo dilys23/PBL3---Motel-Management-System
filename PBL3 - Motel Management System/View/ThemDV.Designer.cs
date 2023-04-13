@@ -40,6 +40,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,9 +53,9 @@
             this.iconButton4.IconColor = System.Drawing.Color.White;
             this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton4.IconSize = 30;
-            this.iconButton4.Location = new System.Drawing.Point(820, 36);
+            this.iconButton4.Location = new System.Drawing.Point(848, 38);
             this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(55, 37);
+            this.iconButton4.Size = new System.Drawing.Size(45, 45);
             this.iconButton4.TabIndex = 44;
             this.iconButton4.UseVisualStyleBackColor = false;
             // 
@@ -66,9 +67,9 @@
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 30;
-            this.iconButton1.Location = new System.Drawing.Point(771, 36);
+            this.iconButton1.Location = new System.Drawing.Point(797, 38);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(43, 37);
+            this.iconButton1.Size = new System.Drawing.Size(45, 45);
             this.iconButton1.TabIndex = 43;
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
@@ -178,20 +179,33 @@
             this.textBox4.Size = new System.Drawing.Size(693, 27);
             this.textBox4.TabIndex = 54;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Chocolate;
+            this.label6.Location = new System.Drawing.Point(27, 43);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(176, 26);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "THÊM DỊCH VỤ";
+            // 
             // ThemDV
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(914, 438);
             this.Controls.Add(this.iconButton4);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.label6);
             this.Name = "ThemDV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThemDV";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -208,5 +222,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label6;
     }
 }

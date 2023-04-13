@@ -157,7 +157,7 @@
             // 
             // panelTitle
             // 
-            this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
+            this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(229)))), ((int)(((byte)(236)))));
             this.panelTitle.Controls.Add(this.btnMinimized);
             this.panelTitle.Controls.Add(this.btnExit);
             this.panelTitle.Controls.Add(this.btnMaximized);
@@ -171,7 +171,7 @@
             // btnMinimized
             // 
             this.btnMinimized.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimized.BackColor = System.Drawing.Color.SpringGreen;
+            this.btnMinimized.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(229)))), ((int)(((byte)(236)))));
             this.btnMinimized.FlatAppearance.BorderSize = 0;
             this.btnMinimized.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimized.IconChar = FontAwesome.Sharp.IconChar.Minus;
@@ -188,11 +188,11 @@
             // btnExit
             // 
             this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExit.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(229)))), ((int)(((byte)(236)))));
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-            this.btnExit.IconColor = System.Drawing.Color.LightCyan;
+            this.btnExit.IconColor = System.Drawing.Color.Red;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExit.IconSize = 30;
             this.btnExit.Location = new System.Drawing.Point(898, 12);
@@ -205,14 +205,14 @@
             // btnMaximized
             // 
             this.btnMaximized.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximized.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnMaximized.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(229)))), ((int)(((byte)(236)))));
             this.btnMaximized.FlatAppearance.BorderSize = 0;
             this.btnMaximized.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximized.IconChar = FontAwesome.Sharp.IconChar.ObjectGroup;
-            this.btnMaximized.IconColor = System.Drawing.Color.LightCyan;
+            this.btnMaximized.IconColor = System.Drawing.Color.LightSeaGreen;
             this.btnMaximized.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMaximized.IconSize = 30;
-            this.btnMaximized.Location = new System.Drawing.Point(862, 14);
+            this.btnMaximized.Location = new System.Drawing.Point(862, 13);
             this.btnMaximized.Name = "btnMaximized";
             this.btnMaximized.Size = new System.Drawing.Size(30, 31);
             this.btnMaximized.TabIndex = 1;
@@ -224,7 +224,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(139)))), ((int)(((byte)(90)))));
-            this.label1.Location = new System.Drawing.Point(44, 15);
+            this.label1.Location = new System.Drawing.Point(49, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 40);
             this.label1.TabIndex = 0;
@@ -232,7 +232,7 @@
             // 
             // paneMenu
             // 
-            this.paneMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
+            this.paneMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(229)))), ((int)(((byte)(236)))));
             this.paneMenu.Controls.Add(this.btnLogout);
             this.paneMenu.Controls.Add(this.btnDoanhTHu);
             this.paneMenu.Controls.Add(this.btnHoaDon);
@@ -403,6 +403,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(229)))), ((int)(((byte)(236)))));
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnMenu);
             this.panel1.Controls.Add(this.label1);
@@ -430,7 +431,7 @@
             this.btnMenu.IconColor = System.Drawing.Color.LightSeaGreen;
             this.btnMenu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMenu.IconSize = 40;
-            this.btnMenu.Location = new System.Drawing.Point(123, 3);
+            this.btnMenu.Location = new System.Drawing.Point(124, 3);
             this.btnMenu.Name = "btnMenu";
             this.btnMenu.Size = new System.Drawing.Size(72, 67);
             this.btnMenu.TabIndex = 0;
@@ -439,14 +440,21 @@
             // 
             // btnLogout
             // 
-            this.btnLogout.IconChar = FontAwesome.Sharp.IconChar.RightToBracket;
-            this.btnLogout.IconColor = System.Drawing.Color.Black;
-            this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLogout.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.IconChar = FontAwesome.Sharp.IconChar.ShareFromSquare;
+            this.btnLogout.IconColor = System.Drawing.Color.CadetBlue;
+            this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Regular;
             this.btnLogout.IconSize = 30;
-            this.btnLogout.Location = new System.Drawing.Point(12, 524);
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.Location = new System.Drawing.Point(12, 515);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(45, 33);
+            this.btnLogout.Size = new System.Drawing.Size(45, 45);
             this.btnLogout.TabIndex = 17;
+            this.btnLogout.Tag = "Logout";
+            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogout.UseVisualStyleBackColor = true;
             // 
             // TrangChu

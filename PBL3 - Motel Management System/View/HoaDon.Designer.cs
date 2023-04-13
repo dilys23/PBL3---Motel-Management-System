@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnXoaHD = new FontAwesome.Sharp.IconButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,11 +44,10 @@
             this.Tien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThanhToan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Conlai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.btnTraphong = new FontAwesome.Sharp.IconButton();
-            this.btnXoaPhong = new FontAwesome.Sharp.IconButton();
-            this.btnThemPhong = new FontAwesome.Sharp.IconButton();
+            this.btnSua = new FontAwesome.Sharp.IconButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnIn = new FontAwesome.Sharp.IconButton();
+            this.btnThemHD = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -126,20 +126,39 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.btnXoaPhong);
+            this.panel2.Controls.Add(this.btnXoaHD);
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.btnTim);
-            this.panel2.Controls.Add(this.iconButton5);
+            this.panel2.Controls.Add(this.btnSua);
             this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.btnTraphong);
+            this.panel2.Controls.Add(this.btnIn);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.btnThemPhong);
+            this.panel2.Controls.Add(this.btnThemHD);
             this.panel2.Location = new System.Drawing.Point(12, 65);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(949, 470);
             this.panel2.TabIndex = 43;
+            // 
+            // btnXoaHD
+            // 
+            this.btnXoaHD.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnXoaHD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXoaHD.BackColor = System.Drawing.Color.Red;
+            this.btnXoaHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaHD.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnXoaHD.IconColor = System.Drawing.Color.White;
+            this.btnXoaHD.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnXoaHD.IconSize = 25;
+            this.btnXoaHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoaHD.Location = new System.Drawing.Point(845, 23);
+            this.btnXoaHD.Name = "btnXoaHD";
+            this.btnXoaHD.Size = new System.Drawing.Size(78, 38);
+            this.btnXoaHD.TabIndex = 20;
+            this.btnXoaHD.Text = "Xóa";
+            this.btnXoaHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoaHD.UseVisualStyleBackColor = false;
             // 
             // dataGridView1
             // 
@@ -212,73 +231,23 @@
             this.Conlai.Name = "Conlai";
             this.Conlai.Width = 125;
             // 
-            // iconButton5
+            // btnSua
             // 
-            this.iconButton5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.iconButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.ExternalLink;
-            this.iconButton5.IconColor = System.Drawing.Color.White;
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.IconSize = 25;
-            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.Location = new System.Drawing.Point(747, 24);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(82, 38);
-            this.iconButton5.TabIndex = 23;
-            this.iconButton5.Text = "Sửa";
-            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton5.UseVisualStyleBackColor = false;
-            // 
-            // btnTraphong
-            // 
-            this.btnTraphong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnTraphong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTraphong.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromFile;
-            this.btnTraphong.IconColor = System.Drawing.Color.White;
-            this.btnTraphong.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTraphong.IconSize = 25;
-            this.btnTraphong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTraphong.Location = new System.Drawing.Point(658, 24);
-            this.btnTraphong.Name = "btnTraphong";
-            this.btnTraphong.Size = new System.Drawing.Size(62, 38);
-            this.btnTraphong.TabIndex = 22;
-            this.btnTraphong.Text = "In";
-            this.btnTraphong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTraphong.UseVisualStyleBackColor = false;
-            // 
-            // btnXoaPhong
-            // 
-            this.btnXoaPhong.BackColor = System.Drawing.Color.Red;
-            this.btnXoaPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaPhong.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btnXoaPhong.IconColor = System.Drawing.Color.White;
-            this.btnXoaPhong.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnXoaPhong.IconSize = 25;
-            this.btnXoaPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaPhong.Location = new System.Drawing.Point(854, 23);
-            this.btnXoaPhong.Name = "btnXoaPhong";
-            this.btnXoaPhong.Size = new System.Drawing.Size(78, 38);
-            this.btnXoaPhong.TabIndex = 20;
-            this.btnXoaPhong.Text = "Xóa";
-            this.btnXoaPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXoaPhong.UseVisualStyleBackColor = false;
-            // 
-            // btnThemPhong
-            // 
-            this.btnThemPhong.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnThemPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemPhong.IconChar = FontAwesome.Sharp.IconChar.Calculator;
-            this.btnThemPhong.IconColor = System.Drawing.Color.White;
-            this.btnThemPhong.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnThemPhong.IconSize = 25;
-            this.btnThemPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemPhong.Location = new System.Drawing.Point(536, 21);
-            this.btnThemPhong.Name = "btnThemPhong";
-            this.btnThemPhong.Size = new System.Drawing.Size(92, 42);
-            this.btnThemPhong.TabIndex = 21;
-            this.btnThemPhong.Text = "Thêm ";
-            this.btnThemPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThemPhong.UseVisualStyleBackColor = false;
+            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSua.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.IconChar = FontAwesome.Sharp.IconChar.ExternalLink;
+            this.btnSua.IconColor = System.Drawing.Color.White;
+            this.btnSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSua.IconSize = 25;
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSua.Location = new System.Drawing.Point(747, 24);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(82, 38);
+            this.btnSua.TabIndex = 23;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSua.UseVisualStyleBackColor = false;
             // 
             // comboBox1
             // 
@@ -288,6 +257,44 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(148, 28);
             this.comboBox1.TabIndex = 42;
+            // 
+            // btnIn
+            // 
+            this.btnIn.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIn.IconChar = FontAwesome.Sharp.IconChar.ArrowRightFromFile;
+            this.btnIn.IconColor = System.Drawing.Color.White;
+            this.btnIn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnIn.IconSize = 25;
+            this.btnIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIn.Location = new System.Drawing.Point(658, 24);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(62, 38);
+            this.btnIn.TabIndex = 22;
+            this.btnIn.Text = "In";
+            this.btnIn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnIn.UseVisualStyleBackColor = false;
+            // 
+            // btnThemHD
+            // 
+            this.btnThemHD.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnThemHD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThemHD.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnThemHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemHD.IconChar = FontAwesome.Sharp.IconChar.Calculator;
+            this.btnThemHD.IconColor = System.Drawing.Color.White;
+            this.btnThemHD.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThemHD.IconSize = 25;
+            this.btnThemHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThemHD.Location = new System.Drawing.Point(536, 21);
+            this.btnThemHD.Name = "btnThemHD";
+            this.btnThemHD.Size = new System.Drawing.Size(92, 42);
+            this.btnThemHD.TabIndex = 21;
+            this.btnThemHD.Text = "Thêm ";
+            this.btnThemHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThemHD.UseVisualStyleBackColor = false;
             // 
             // HoaDon
             // 
@@ -316,10 +323,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Panel panel2;
-        private FontAwesome.Sharp.IconButton iconButton5;
-        private FontAwesome.Sharp.IconButton btnTraphong;
-        private FontAwesome.Sharp.IconButton btnXoaPhong;
-        private FontAwesome.Sharp.IconButton btnThemPhong;
+        private FontAwesome.Sharp.IconButton btnSua;
+        private FontAwesome.Sharp.IconButton btnIn;
+        private FontAwesome.Sharp.IconButton btnXoaHD;
+        private FontAwesome.Sharp.IconButton btnThemHD;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;

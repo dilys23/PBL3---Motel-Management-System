@@ -8,28 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PBL3___Motel_Management_System
+namespace PBL3___Motel_Management_System.View
 {
-    public partial class ThemHopDong : Form
+    public partial class SuaHopDong : Form
     {
-        public ThemHopDong()
+        public SuaHopDong()
         {
             InitializeComponent();
         }
-
-        private void ThemHD_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         TrangChu tc = new TrangChu();
-      
-
-        private void btnThemKhach_Click_1(object sender, EventArgs e)
+        private void btnThemKhach_Click(object sender, EventArgs e)
         {
             tc.openChildForm1(new ThemKhach(), panelThemHD);
         }

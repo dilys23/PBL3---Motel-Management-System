@@ -56,6 +56,24 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="View\SuaHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SuaHoaDon.Designer.cs">
+      <DependentUpon>SuaHoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SuaHopDong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SuaHopDong.Designer.cs">
+      <DependentUpon>SuaHopDong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThemHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ThemHoaDon.Designer.cs">
+      <DependentUpon>ThemHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ThemHopDong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +172,15 @@
     <Compile Include="View\ChisoNuoc.Designer.cs">
       <DependentUpon>ChisoNuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\XuatHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\XuatHoaDon.Designer.cs">
+      <DependentUpon>XuatHoaDon.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\SuaHopDong.resx">
+      <DependentUpon>SuaHopDong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ThemHopDong.resx">
       <DependentUpon>ThemHopDong.cs</DependentUpon>
     </EmbeddedResource>

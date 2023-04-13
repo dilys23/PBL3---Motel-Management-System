@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBL3___Motel_Management_System.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,17 @@ namespace PBL3___Motel_Management_System
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+        TrangChu tc = new TrangChu();
+
+        private void btnThemHD_Click(object sender, EventArgs e)
+        {
+            tc.openChildForm1(new ThemHopDong(), panelHopDong);
+        }
+
+        private void btnSuaHD_Click(object sender, EventArgs e)
+        {
+            tc.openChildForm1(new SuaHopDong(), panelHopDong);
         }
     }
 }

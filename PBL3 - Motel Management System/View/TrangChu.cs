@@ -166,7 +166,7 @@ namespace PBL3___Motel_Management_System
                 btnMenu.Dock = DockStyle.None;
                 foreach (Button menuButton in paneMenu.Controls.OfType<Button>())
                 {
-                    menuButton.Text = null + menuButton.Tag.ToString();
+                   menuButton.Text = "  " + menuButton.Tag.ToString();
                     menuButton.ImageAlign = ContentAlignment.MiddleLeft;
                     menuButton.Padding = new Padding(10, 0, 0, 0);
                 }
