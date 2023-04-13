@@ -289,6 +289,7 @@
             this.btnLogout.Tag = "Logout";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnDoanhTHu
             // 

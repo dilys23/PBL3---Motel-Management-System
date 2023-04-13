@@ -24,8 +24,9 @@ namespace PBL3___Motel_Management_System
         TrangChu tc = new TrangChu();
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            tc.ShowDialog();
             
+            tc.ShowDialog();
+            this.Close();
         }
 
         private void panelLogin_Paint(object sender, PaintEventArgs e)
