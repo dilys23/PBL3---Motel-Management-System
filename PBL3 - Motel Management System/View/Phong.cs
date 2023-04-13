@@ -37,7 +37,7 @@ namespace PBL3___Motel_Management_System
 
         private void btnThemday_Click_1(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ThemDay(), panelPhong);
+            tc.openChildForm1(new ThemHopDong(), panelPhong);
         }
 
         private void btnThem_Click(object sender, EventArgs e)

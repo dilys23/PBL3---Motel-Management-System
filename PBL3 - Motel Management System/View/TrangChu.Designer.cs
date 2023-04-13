@@ -44,6 +44,8 @@
             this.btnMaximized = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.paneMenu = new System.Windows.Forms.Panel();
+            this.btnDay = new FontAwesome.Sharp.IconButton();
+            this.btnLogout = new FontAwesome.Sharp.IconButton();
             this.btnDoanhTHu = new FontAwesome.Sharp.IconButton();
             this.btnHoaDon = new FontAwesome.Sharp.IconButton();
             this.btnHopDong = new FontAwesome.Sharp.IconButton();
@@ -55,7 +57,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMenu = new FontAwesome.Sharp.IconButton();
-            this.btnLogout = new FontAwesome.Sharp.IconButton();
             this.panelDesktop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichvu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).BeginInit();
@@ -75,7 +76,7 @@
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(200, 58);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(932, 502);
+            this.panelDesktop.Size = new System.Drawing.Size(999, 554);
             this.panelDesktop.TabIndex = 5;
             this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
@@ -164,7 +165,7 @@
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitle.Location = new System.Drawing.Point(200, 0);
             this.panelTitle.Name = "panelTitle";
-            this.panelTitle.Size = new System.Drawing.Size(932, 58);
+            this.panelTitle.Size = new System.Drawing.Size(999, 58);
             this.panelTitle.TabIndex = 4;
             this.panelTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitle_MouseDown);
             // 
@@ -178,7 +179,7 @@
             this.btnMinimized.IconColor = System.Drawing.Color.LightCyan;
             this.btnMinimized.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinimized.IconSize = 30;
-            this.btnMinimized.Location = new System.Drawing.Point(826, 14);
+            this.btnMinimized.Location = new System.Drawing.Point(893, 14);
             this.btnMinimized.Name = "btnMinimized";
             this.btnMinimized.Size = new System.Drawing.Size(30, 31);
             this.btnMinimized.TabIndex = 3;
@@ -195,7 +196,7 @@
             this.btnExit.IconColor = System.Drawing.Color.Red;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExit.IconSize = 30;
-            this.btnExit.Location = new System.Drawing.Point(898, 12);
+            this.btnExit.Location = new System.Drawing.Point(965, 12);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(30, 31);
             this.btnExit.TabIndex = 2;
@@ -212,7 +213,7 @@
             this.btnMaximized.IconColor = System.Drawing.Color.LightSeaGreen;
             this.btnMaximized.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMaximized.IconSize = 30;
-            this.btnMaximized.Location = new System.Drawing.Point(862, 13);
+            this.btnMaximized.Location = new System.Drawing.Point(929, 13);
             this.btnMaximized.Name = "btnMaximized";
             this.btnMaximized.Size = new System.Drawing.Size(30, 31);
             this.btnMaximized.TabIndex = 1;
@@ -233,6 +234,7 @@
             // paneMenu
             // 
             this.paneMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(229)))), ((int)(((byte)(236)))));
+            this.paneMenu.Controls.Add(this.btnDay);
             this.paneMenu.Controls.Add(this.btnLogout);
             this.paneMenu.Controls.Add(this.btnDoanhTHu);
             this.paneMenu.Controls.Add(this.btnHoaDon);
@@ -246,8 +248,47 @@
             this.paneMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.paneMenu.Location = new System.Drawing.Point(0, 0);
             this.paneMenu.Name = "paneMenu";
-            this.paneMenu.Size = new System.Drawing.Size(200, 560);
+            this.paneMenu.Size = new System.Drawing.Size(200, 612);
             this.paneMenu.TabIndex = 3;
+            this.paneMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.paneMenu_Paint);
+            // 
+            // btnDay
+            // 
+            this.btnDay.FlatAppearance.BorderSize = 0;
+            this.btnDay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDay.IconChar = FontAwesome.Sharp.IconChar.HomeLg;
+            this.btnDay.IconColor = System.Drawing.Color.SteelBlue;
+            this.btnDay.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDay.IconSize = 35;
+            this.btnDay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDay.Location = new System.Drawing.Point(8, 136);
+            this.btnDay.Name = "btnDay";
+            this.btnDay.Size = new System.Drawing.Size(186, 41);
+            this.btnDay.TabIndex = 18;
+            this.btnDay.Tag = "Dãy";
+            this.btnDay.Text = "Dãy";
+            this.btnDay.UseVisualStyleBackColor = true;
+            this.btnDay.Click += new System.EventHandler(this.btnDay_Click);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.IconChar = FontAwesome.Sharp.IconChar.ShareFromSquare;
+            this.btnLogout.IconColor = System.Drawing.Color.CadetBlue;
+            this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Regular;
+            this.btnLogout.IconSize = 30;
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.Location = new System.Drawing.Point(12, 567);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(45, 45);
+            this.btnLogout.TabIndex = 17;
+            this.btnLogout.Tag = "Logout";
+            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLogout.UseVisualStyleBackColor = true;
             // 
             // btnDoanhTHu
             // 
@@ -259,7 +300,7 @@
             this.btnDoanhTHu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDoanhTHu.IconSize = 35;
             this.btnDoanhTHu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDoanhTHu.Location = new System.Drawing.Point(8, 477);
+            this.btnDoanhTHu.Location = new System.Drawing.Point(8, 526);
             this.btnDoanhTHu.Name = "btnDoanhTHu";
             this.btnDoanhTHu.Size = new System.Drawing.Size(186, 41);
             this.btnDoanhTHu.TabIndex = 13;
@@ -278,7 +319,7 @@
             this.btnHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHoaDon.IconSize = 35;
             this.btnHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHoaDon.Location = new System.Drawing.Point(8, 422);
+            this.btnHoaDon.Location = new System.Drawing.Point(8, 471);
             this.btnHoaDon.Name = "btnHoaDon";
             this.btnHoaDon.Size = new System.Drawing.Size(186, 41);
             this.btnHoaDon.TabIndex = 12;
@@ -297,7 +338,7 @@
             this.btnHopDong.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHopDong.IconSize = 35;
             this.btnHopDong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHopDong.Location = new System.Drawing.Point(8, 367);
+            this.btnHopDong.Location = new System.Drawing.Point(8, 414);
             this.btnHopDong.Name = "btnHopDong";
             this.btnHopDong.Size = new System.Drawing.Size(186, 41);
             this.btnHopDong.TabIndex = 11;
@@ -316,7 +357,7 @@
             this.btnNuoc.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnNuoc.IconSize = 35;
             this.btnNuoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuoc.Location = new System.Drawing.Point(8, 312);
+            this.btnNuoc.Location = new System.Drawing.Point(8, 354);
             this.btnNuoc.Name = "btnNuoc";
             this.btnNuoc.Size = new System.Drawing.Size(186, 41);
             this.btnNuoc.TabIndex = 10;
@@ -354,7 +395,7 @@
             this.btnDien.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDien.IconSize = 35;
             this.btnDien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDien.Location = new System.Drawing.Point(8, 257);
+            this.btnDien.Location = new System.Drawing.Point(8, 295);
             this.btnDien.Name = "btnDien";
             this.btnDien.Size = new System.Drawing.Size(182, 41);
             this.btnDien.TabIndex = 9;
@@ -373,7 +414,7 @@
             this.btnDichVu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDichVu.IconSize = 35;
             this.btnDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDichVu.Location = new System.Drawing.Point(8, 202);
+            this.btnDichVu.Location = new System.Drawing.Point(8, 235);
             this.btnDichVu.Name = "btnDichVu";
             this.btnDichVu.Size = new System.Drawing.Size(186, 41);
             this.btnDichVu.TabIndex = 8;
@@ -392,7 +433,7 @@
             this.btnPhong.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPhong.IconSize = 35;
             this.btnPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPhong.Location = new System.Drawing.Point(8, 147);
+            this.btnPhong.Location = new System.Drawing.Point(8, 183);
             this.btnPhong.Name = "btnPhong";
             this.btnPhong.Size = new System.Drawing.Size(186, 41);
             this.btnPhong.TabIndex = 6;
@@ -438,29 +479,10 @@
             this.btnMenu.UseVisualStyleBackColor = true;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
-            // btnLogout
-            // 
-            this.btnLogout.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.IconChar = FontAwesome.Sharp.IconChar.ShareFromSquare;
-            this.btnLogout.IconColor = System.Drawing.Color.CadetBlue;
-            this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            this.btnLogout.IconSize = 30;
-            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(12, 515);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(45, 45);
-            this.btnLogout.TabIndex = 17;
-            this.btnLogout.Tag = "Logout";
-            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLogout.UseVisualStyleBackColor = true;
-            // 
             // TrangChu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1132, 560);
+            this.ClientSize = new System.Drawing.Size(1199, 612);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.paneMenu);
@@ -512,5 +534,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Tendaytro;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenPhongTro;
         private FontAwesome.Sharp.IconButton btnLogout;
+        private FontAwesome.Sharp.IconButton btnDay;
     }
 }

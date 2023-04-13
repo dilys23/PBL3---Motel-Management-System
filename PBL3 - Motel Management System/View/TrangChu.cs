@@ -292,5 +292,15 @@ namespace PBL3___Motel_Management_System
         {
 
         }
+
+        private void paneMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnDay_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Day());
+        }
     }
 }

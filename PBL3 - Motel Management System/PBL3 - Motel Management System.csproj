@@ -56,6 +56,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="View\Day.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Day.Designer.cs">
+      <DependentUpon>Day.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\SuaHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     <Compile Include="View\XuatHoaDon.Designer.cs">
       <DependentUpon>XuatHoaDon.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\Day.resx">
+      <DependentUpon>Day.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\SuaHopDong.resx">
       <DependentUpon>SuaHopDong.cs</DependentUpon>
     </EmbeddedResource>
