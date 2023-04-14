@@ -181,7 +181,7 @@ namespace PBL3___Motel_Management_System
 
         private void iconButton5_Click(object sender, EventArgs e)
         {
-            SuaDichVu suaDichVu = new SuaDichVu();
+            SuaDichVu suaDichVu = new SuaDichVu(null,LoadForm); ;
             suaDichVu.ShowDialog();
         }
 
@@ -196,13 +196,14 @@ namespace PBL3___Motel_Management_System
 
         private void btnThemPhong_Click_1(object sender, EventArgs e)
         {
-           //openChildForm(new ThemDV());
+           
            tc.openChildForm1(new ThemDV(LoadForm), panelDV);
         }
 
         private void btnSuaDV_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new SuaDichVu(), panelDV);
+            string id = dgvDichVu.CurrentRow.Cells[0].Value.ToString();
+            tc.openChildForm1(new SuaDichVu(id,LoadForm), panelDV);
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)

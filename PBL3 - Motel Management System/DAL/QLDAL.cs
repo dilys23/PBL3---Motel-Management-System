@@ -95,5 +95,16 @@ namespace PBL3___Motel_Management_System.DAL
 
             }
         }
+        public void SuaDVDal(DichVu dv)
+        {
+            using( DataPbl data = new DataPbl())
+            {
+                var s = data.DichVu.Single(p => p.MaDichVu == dv.MaDichVu);
+                s.TenDichVu = dv.TenDichVu;
+                s.GiaDichVu = dv.GiaDichVu;
+                data.SaveChanges();
+                
+            }
+        }
     }
 }

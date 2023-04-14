@@ -187,6 +187,24 @@ namespace PBL3___Motel_Management_System.BLL
             QLDAL qLDAL = new QLDAL();
             qLDAL.ThemDVDal(dv);
         }
+        public void SuaDVBll(DichVu dv)
+        {
+            QLDAL qLDAL = new QLDAL();
+            qLDAL.SuaDVDal(dv);
+        }
+        public DichVu GetDVByIdDV(string id)
+        {
+            
+            QLDAL qLDAL = new QLDAL();
+            foreach(DichVu dichVu in qLDAL.GetAllDichVu())
+            {
+                if (dichVu.MaDichVu == id) return dichVu;
+            }
+            return null; 
+
+
+            
+        }
         
     }
 }
