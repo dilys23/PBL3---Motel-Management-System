@@ -1,6 +1,6 @@
 ﻿namespace PBL3___Motel_Management_System
 {
-    partial class DichVu
+    partial class Dichvu
     {
         /// <summary>
         /// Required designer variable.
@@ -31,20 +31,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panelDV = new System.Windows.Forms.Panel();
-            this.btnTim = new FontAwesome.Sharp.IconButton();
+            this.btnTimKiem = new FontAwesome.Sharp.IconButton();
             this.btnXoaPhong = new FontAwesome.Sharp.IconButton();
-            this.btnSuaDV = new FontAwesome.Sharp.IconButton();
-            this.btnThemPhong = new FontAwesome.Sharp.IconButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoaiDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dangdung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSuaDichVu = new FontAwesome.Sharp.IconButton();
+            this.btnThemDichVu = new FontAwesome.Sharp.IconButton();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.dgvDichVu = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panelDV.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -75,30 +70,31 @@
             this.panelDV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelDV.Controls.Add(this.btnTim);
+            this.panelDV.Controls.Add(this.btnTimKiem);
             this.panelDV.Controls.Add(this.btnXoaPhong);
-            this.panelDV.Controls.Add(this.btnSuaDV);
-            this.panelDV.Controls.Add(this.btnThemPhong);
-            this.panelDV.Controls.Add(this.textBox1);
-            this.panelDV.Controls.Add(this.dataGridView1);
+            this.panelDV.Controls.Add(this.btnSuaDichVu);
+            this.panelDV.Controls.Add(this.btnThemDichVu);
+            this.panelDV.Controls.Add(this.txtTimKiem);
+            this.panelDV.Controls.Add(this.dgvDichVu);
             this.panelDV.Location = new System.Drawing.Point(5, 55);
             this.panelDV.Name = "panelDV";
             this.panelDV.Size = new System.Drawing.Size(902, 383);
             this.panelDV.TabIndex = 21;
             // 
-            // btnTim
+            // btnTimKiem
             // 
-            this.btnTim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnTim.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.btnTim.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnTim.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnTim.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTim.IconSize = 25;
-            this.btnTim.Location = new System.Drawing.Point(81, 13);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(42, 42);
-            this.btnTim.TabIndex = 55;
-            this.btnTim.UseVisualStyleBackColor = false;
+            this.btnTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnTimKiem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.btnTimKiem.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.btnTimKiem.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnTimKiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTimKiem.IconSize = 25;
+            this.btnTimKiem.Location = new System.Drawing.Point(81, 13);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(42, 42);
+            this.btnTimKiem.TabIndex = 55;
+            this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnXoaPhong
             // 
@@ -119,107 +115,73 @@
             this.btnXoaPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoaPhong.UseVisualStyleBackColor = false;
             // 
-            // btnSuaDV
+            // btnSuaDichVu
             // 
-            this.btnSuaDV.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnSuaDV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSuaDV.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnSuaDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaDV.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            this.btnSuaDV.IconColor = System.Drawing.Color.White;
-            this.btnSuaDV.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSuaDV.IconSize = 25;
-            this.btnSuaDV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaDV.Location = new System.Drawing.Point(690, 15);
-            this.btnSuaDV.Name = "btnSuaDV";
-            this.btnSuaDV.Size = new System.Drawing.Size(88, 39);
-            this.btnSuaDV.TabIndex = 52;
-            this.btnSuaDV.Text = "Sửa";
-            this.btnSuaDV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSuaDV.UseVisualStyleBackColor = false;
-            this.btnSuaDV.Click += new System.EventHandler(this.btnSuaDV_Click);
+            this.btnSuaDichVu.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnSuaDichVu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSuaDichVu.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSuaDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuaDichVu.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.btnSuaDichVu.IconColor = System.Drawing.Color.White;
+            this.btnSuaDichVu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSuaDichVu.IconSize = 25;
+            this.btnSuaDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSuaDichVu.Location = new System.Drawing.Point(690, 15);
+            this.btnSuaDichVu.Name = "btnSuaDichVu";
+            this.btnSuaDichVu.Size = new System.Drawing.Size(88, 39);
+            this.btnSuaDichVu.TabIndex = 52;
+            this.btnSuaDichVu.Text = "Sửa";
+            this.btnSuaDichVu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSuaDichVu.UseVisualStyleBackColor = false;
+            this.btnSuaDichVu.Click += new System.EventHandler(this.btnSuaDV_Click);
             // 
-            // btnThemPhong
+            // btnThemDichVu
             // 
-            this.btnThemPhong.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnThemPhong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThemPhong.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this.btnThemPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemPhong.IconChar = FontAwesome.Sharp.IconChar.FileArrowUp;
-            this.btnThemPhong.IconColor = System.Drawing.Color.White;
-            this.btnThemPhong.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnThemPhong.IconSize = 25;
-            this.btnThemPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemPhong.Location = new System.Drawing.Point(584, 14);
-            this.btnThemPhong.Name = "btnThemPhong";
-            this.btnThemPhong.Size = new System.Drawing.Size(100, 40);
-            this.btnThemPhong.TabIndex = 53;
-            this.btnThemPhong.Text = "Thêm ";
-            this.btnThemPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThemPhong.UseVisualStyleBackColor = false;
-            this.btnThemPhong.Click += new System.EventHandler(this.btnThemPhong_Click_1);
+            this.btnThemDichVu.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnThemDichVu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThemDichVu.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.btnThemDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemDichVu.IconChar = FontAwesome.Sharp.IconChar.FileArrowUp;
+            this.btnThemDichVu.IconColor = System.Drawing.Color.White;
+            this.btnThemDichVu.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnThemDichVu.IconSize = 25;
+            this.btnThemDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThemDichVu.Location = new System.Drawing.Point(584, 14);
+            this.btnThemDichVu.Name = "btnThemDichVu";
+            this.btnThemDichVu.Size = new System.Drawing.Size(100, 40);
+            this.btnThemDichVu.TabIndex = 53;
+            this.btnThemDichVu.Text = "Thêm ";
+            this.btnThemDichVu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThemDichVu.UseVisualStyleBackColor = false;
+            this.btnThemDichVu.Click += new System.EventHandler(this.btnThemPhong_Click_1);
             // 
-            // textBox1
+            // txtTimKiem
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(143, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(180, 27);
-            this.textBox1.TabIndex = 51;
+            this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimKiem.Location = new System.Drawing.Point(143, 21);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(180, 27);
+            this.txtTimKiem.TabIndex = 51;
             // 
-            // dataGridView1
+            // dgvDichVu
             // 
-            this.dataGridView1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvDichVu.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dgvDichVu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT,
-            this.TenDV,
-            this.LoaiDV,
-            this.Dongia,
-            this.Dangdung});
-            this.dataGridView1.Location = new System.Drawing.Point(16, 73);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(872, 299);
-            this.dataGridView1.TabIndex = 50;
+            this.dgvDichVu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDichVu.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvDichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDichVu.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvDichVu.Location = new System.Drawing.Point(16, 73);
+            this.dgvDichVu.Name = "dgvDichVu";
+            this.dgvDichVu.RowHeadersWidth = 51;
+            this.dgvDichVu.RowTemplate.Height = 24;
+            this.dgvDichVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDichVu.Size = new System.Drawing.Size(872, 299);
+            this.dgvDichVu.TabIndex = 50;
             // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            // 
-            // TenDV
-            // 
-            this.TenDV.HeaderText = "Tên Dịch Vụ ";
-            this.TenDV.MinimumWidth = 6;
-            this.TenDV.Name = "TenDV";
-            // 
-            // LoaiDV
-            // 
-            this.LoaiDV.HeaderText = "Loại Dịch Vụ";
-            this.LoaiDV.MinimumWidth = 6;
-            this.LoaiDV.Name = "LoaiDV";
-            // 
-            // Dongia
-            // 
-            this.Dongia.HeaderText = "Đơn Giá";
-            this.Dongia.MinimumWidth = 6;
-            this.Dongia.Name = "Dongia";
-            // 
-            // Dangdung
-            // 
-            this.Dangdung.HeaderText = "Đang Dùng";
-            this.Dangdung.MinimumWidth = 6;
-            this.Dangdung.Name = "Dangdung";
-            // 
-            // DichVu
+            // Dichvu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -227,7 +189,7 @@
             this.ClientSize = new System.Drawing.Size(914, 438);
             this.Controls.Add(this.panelDV);
             this.Controls.Add(this.panel1);
-            this.Name = "DichVu";
+            this.Name = "Dichvu";
             this.Text = "Service";
             this.Load += new System.EventHandler(this.Service_Load);
             this.Resize += new System.EventHandler(this.Service_Load);
@@ -235,7 +197,7 @@
             this.panel1.PerformLayout();
             this.panelDV.ResumeLayout(false);
             this.panelDV.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -245,16 +207,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panelDV;
-        private FontAwesome.Sharp.IconButton btnTim;
+        private FontAwesome.Sharp.IconButton btnTimKiem;
         private FontAwesome.Sharp.IconButton btnXoaPhong;
-        private FontAwesome.Sharp.IconButton btnSuaDV;
-        private FontAwesome.Sharp.IconButton btnThemPhong;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenDV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiDV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dongia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dangdung;
+        private FontAwesome.Sharp.IconButton btnSuaDichVu;
+        private FontAwesome.Sharp.IconButton btnThemDichVu;
+        private System.Windows.Forms.TextBox txtTimKiem;
+        private System.Windows.Forms.DataGridView dgvDichVu;
     }
 }
