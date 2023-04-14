@@ -75,5 +75,25 @@ namespace PBL3___Motel_Management_System.DAL
             }
             return list;
         }
+        public List<DichVu> GetAllDichVu()
+        {
+            List<DichVu> list = new List<DichVu>();
+            using (DataPbl data = new DataPbl())
+            {
+                var s = data.DichVu.Select(p => p);
+                list = s.ToList<DichVu>();
+            }
+
+            return list;
+        }
+        public void ThemDVDal(DichVu dv)
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                data.DichVu.Add(dv);
+                data.SaveChanges();
+
+            }
+        }
     }
 }

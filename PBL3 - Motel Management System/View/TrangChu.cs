@@ -254,7 +254,7 @@ namespace PBL3___Motel_Management_System
 
         private void btnDichVu_Click(object sender, EventArgs e)
         {
-            openChildForm(new DichVu());
+            openChildForm(new Dichvu());
 
         }
 

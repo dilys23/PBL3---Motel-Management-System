@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PBL3___Motel_Management_System.BLL;
+using PBL3___Motel_Management_System.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,13 +13,34 @@ using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System
 {
-    public partial class DichVu : Form
+    
+    public partial class Dichvu : Form
     {
         private int borderSize = 2;
         private Size formSize;
-        public DichVu()
+        public Dichvu()
         {
             InitializeComponent();
+            LoadForm(null);
+        }
+        private void LoadForm(string txtTim)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn{ColumnName = "Mã dịch vụ",DataType =  typeof(string)},
+                new DataColumn{ColumnName = "STT",DataType =  typeof(int)},
+                new DataColumn{ColumnName = "Tên dịch vụ",DataType =  typeof(string)},
+                new DataColumn{ColumnName = "Giá dịch vụ",DataType =  typeof(double)},
+            });
+            QLBLL qLBLL = new QLBLL();
+            foreach(ViewDichVu viewDichVu in qLBLL.DgvDichVu(txtTim))
+            {
+                dt.Rows.Add(viewDichVu.MaDichVu, viewDichVu.Stt, viewDichVu.TenDichVu, viewDichVu.GiaDichVu);
+            }
+            dgvDichVu.DataSource = dt;
+            dgvDichVu.Columns[0].Visible = false;
+
         }
 
 
@@ -152,7 +175,7 @@ namespace PBL3___Motel_Management_System
 
         private void btnThemPhong_Click(object sender, EventArgs e)
         {
-            ThemDV themDV = new ThemDV();
+            ThemDV themDV = new ThemDV(LoadForm);
             themDV.ShowDialog();
         }
 
@@ -174,12 +197,17 @@ namespace PBL3___Motel_Management_System
         private void btnThemPhong_Click_1(object sender, EventArgs e)
         {
            //openChildForm(new ThemDV());
-           tc.openChildForm1(new ThemDV(), panelDV);
+           tc.openChildForm1(new ThemDV(LoadForm), panelDV);
         }
 
         private void btnSuaDV_Click(object sender, EventArgs e)
         {
             tc.openChildForm1(new SuaDichVu(), panelDV);
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            LoadForm(txtTimKiem.Text);
         }
     }
 }
