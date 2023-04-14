@@ -120,6 +120,7 @@
     </Compile>
     <Compile Include="DTO\CbbDayTro.cs" />
     <Compile Include="DTO\ViewDay.cs" />
+    <Compile Include="DTO\ViewDichVu.cs" />
     <Compile Include="View\ChitietDay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,11 +279,11 @@
     <Compile Include="View\Phong.Designer.cs">
       <DependentUpon>Phong.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\DichVu.cs">
+    <Compile Include="View\Dichvu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\DichVu.Designer.cs">
-      <DependentUpon>DichVu.cs</DependentUpon>
+    <Compile Include="View\Dichvu.Designer.cs">
+      <DependentUpon>Dichvu.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ThemDV.cs">
       <SubType>Form</SubType>
@@ -389,8 +390,8 @@
     <EmbeddedResource Include="View\Phong.resx">
       <DependentUpon>Phong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\DichVu.resx">
-      <DependentUpon>DichVu.cs</DependentUpon>
+    <EmbeddedResource Include="View\Dichvu.resx">
+      <DependentUpon>Dichvu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ChisoNuoc.resx">
       <DependentUpon>ChisoNuoc.cs</DependentUpon>

@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelDay = new System.Windows.Forms.Panel();
-            this.txtTenPhong = new System.Windows.Forms.TextBox();
+            this.txtTenDay = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbbTinhTrang = new System.Windows.Forms.ComboBox();
             this.btnThemday = new FontAwesome.Sharp.IconButton();
-            this.btnTim = new FontAwesome.Sharp.IconButton();
+            this.btnTimKiem = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panPhong1 = new System.Windows.Forms.Panel();
@@ -61,11 +61,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.panelDay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelDay.Controls.Add(this.txtTenPhong);
+            this.panelDay.Controls.Add(this.txtTenDay);
             this.panelDay.Controls.Add(this.label4);
             this.panelDay.Controls.Add(this.cbbTinhTrang);
             this.panelDay.Controls.Add(this.btnThemday);
-            this.panelDay.Controls.Add(this.btnTim);
+            this.panelDay.Controls.Add(this.btnTimKiem);
             this.panelDay.Controls.Add(this.label2);
             this.panelDay.Controls.Add(this.label1);
             this.panelDay.Controls.Add(this.panPhong1);
@@ -77,13 +77,13 @@
             this.panelDay.Size = new System.Drawing.Size(889, 354);
             this.panelDay.TabIndex = 3;
             // 
-            // txtTenPhong
+            // txtTenDay
             // 
-            this.txtTenPhong.Location = new System.Drawing.Point(549, 38);
-            this.txtTenPhong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtTenPhong.Name = "txtTenPhong";
-            this.txtTenPhong.Size = new System.Drawing.Size(132, 22);
-            this.txtTenPhong.TabIndex = 36;
+            this.txtTenDay.Location = new System.Drawing.Point(549, 38);
+            this.txtTenDay.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTenDay.Name = "txtTenDay";
+            this.txtTenDay.Size = new System.Drawing.Size(132, 22);
+            this.txtTenDay.TabIndex = 36;
             // 
             // label4
             // 
@@ -124,21 +124,22 @@
             this.btnThemday.UseVisualStyleBackColor = false;
             this.btnThemday.Click += new System.EventHandler(this.btnThemday_Click);
             // 
-            // btnTim
+            // btnTimKiem
             // 
-            this.btnTim.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnTim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnTim.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.btnTim.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnTim.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnTim.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTim.IconSize = 25;
-            this.btnTim.Location = new System.Drawing.Point(21, 30);
-            this.btnTim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(35, 34);
-            this.btnTim.TabIndex = 32;
-            this.btnTim.UseVisualStyleBackColor = false;
+            this.btnTimKiem.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnTimKiem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.btnTimKiem.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.btnTimKiem.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnTimKiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTimKiem.IconSize = 25;
+            this.btnTimKiem.Location = new System.Drawing.Point(21, 30);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(35, 34);
+            this.btnTimKiem.TabIndex = 32;
+            this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // label2
             // 
@@ -315,7 +316,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cbbTinhTrang;
         private FontAwesome.Sharp.IconButton btnThemday;
-        private FontAwesome.Sharp.IconButton btnTim;
+        private FontAwesome.Sharp.IconButton btnTimKiem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panPhong1;
@@ -326,7 +327,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
         private FontAwesome.Sharp.IconButton btnThem;
-        private System.Windows.Forms.TextBox txtTenPhong;
+        private System.Windows.Forms.TextBox txtTenDay;
         private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -82,7 +83,7 @@ namespace PBL3___Motel_Management_System
                 dt.MaChuTro = "1";
                 qLBLL.AddDayTroBll(dt);
                 MessageBox.Show("Bạn đã thêm dãy thành công", "Thông báo");
-                Loader();
+                Loader(null);
                 this.Close();
                 
 

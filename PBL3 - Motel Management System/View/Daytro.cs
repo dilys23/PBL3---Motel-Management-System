@@ -12,17 +12,17 @@ using System.Windows.Forms;
 namespace PBL3___Motel_Management_System.View
 
 {
-    public delegate void Loader();
+    public delegate void Loader(String s);
     
     public partial class Daytro : Form
     {
         public Daytro()
         {
             InitializeComponent();
-            LoadForm();
+            LoadForm(null);
         }
         TrangChu tc = new TrangChu();   
-        public void LoadForm()
+        public void LoadForm(String txtTim)
         {
             cbbDayTro.Items.Clear();
             SetCbbDayTro();
@@ -39,10 +39,11 @@ namespace PBL3___Motel_Management_System.View
                 new DataColumn{ColumnName = "Số phòng hiện có",DataType = typeof(int)},
             });
             
-            foreach(ViewDay vd in qLBLL.DgvDayTro())
+            foreach(ViewDay vd in qLBLL.DgvDayTro(txtTim))
             {
                 dt.Rows.Add(vd.MaDayTro,vd.Stt,vd.TenDayTro,vd.TenDuong,vd.TenHuyen,vd.TenThanhPho,vd.SoPhong);
             }
+
             dtgDayTro.DataSource = dt;
             dtgDayTro.Columns[0].Visible = false;
         }
@@ -81,6 +82,14 @@ namespace PBL3___Motel_Management_System.View
 
         }
 
-      
+        private void btnSuaday_Click(object sender, EventArgs e)
+        {
+            tc.openChildForm1(new SuaDay(), panelDay);
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            LoadForm(txtTenDay.Text);
+        }
     }
 }
