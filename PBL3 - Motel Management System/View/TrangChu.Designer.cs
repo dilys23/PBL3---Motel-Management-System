@@ -57,6 +57,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMenu = new FontAwesome.Sharp.IconButton();
+            this.btnThietbi = new FontAwesome.Sharp.IconButton();
             this.panelDesktop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichvu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).BeginInit();
@@ -76,7 +77,7 @@
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(200, 51);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(999, 561);
+            this.panelDesktop.Size = new System.Drawing.Size(999, 632);
             this.panelDesktop.TabIndex = 5;
             this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
@@ -234,6 +235,7 @@
             // paneMenu
             // 
             this.paneMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(229)))), ((int)(((byte)(236)))));
+            this.paneMenu.Controls.Add(this.btnThietbi);
             this.paneMenu.Controls.Add(this.btnDay);
             this.paneMenu.Controls.Add(this.btnLogout);
             this.paneMenu.Controls.Add(this.btnDoanhTHu);
@@ -248,7 +250,7 @@
             this.paneMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.paneMenu.Location = new System.Drawing.Point(0, 0);
             this.paneMenu.Name = "paneMenu";
-            this.paneMenu.Size = new System.Drawing.Size(200, 612);
+            this.paneMenu.Size = new System.Drawing.Size(200, 683);
             this.paneMenu.TabIndex = 3;
             this.paneMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.paneMenu_Paint);
             // 
@@ -282,7 +284,7 @@
             this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Regular;
             this.btnLogout.IconSize = 30;
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(12, 567);
+            this.btnLogout.Location = new System.Drawing.Point(12, 638);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(45, 45);
             this.btnLogout.TabIndex = 17;
@@ -301,7 +303,7 @@
             this.btnDoanhTHu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDoanhTHu.IconSize = 35;
             this.btnDoanhTHu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDoanhTHu.Location = new System.Drawing.Point(8, 526);
+            this.btnDoanhTHu.Location = new System.Drawing.Point(8, 585);
             this.btnDoanhTHu.Name = "btnDoanhTHu";
             this.btnDoanhTHu.Size = new System.Drawing.Size(186, 41);
             this.btnDoanhTHu.TabIndex = 13;
@@ -320,7 +322,7 @@
             this.btnHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHoaDon.IconSize = 35;
             this.btnHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHoaDon.Location = new System.Drawing.Point(8, 471);
+            this.btnHoaDon.Location = new System.Drawing.Point(8, 532);
             this.btnHoaDon.Name = "btnHoaDon";
             this.btnHoaDon.Size = new System.Drawing.Size(186, 41);
             this.btnHoaDon.TabIndex = 12;
@@ -339,7 +341,7 @@
             this.btnHopDong.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHopDong.IconSize = 35;
             this.btnHopDong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHopDong.Location = new System.Drawing.Point(8, 414);
+            this.btnHopDong.Location = new System.Drawing.Point(8, 467);
             this.btnHopDong.Name = "btnHopDong";
             this.btnHopDong.Size = new System.Drawing.Size(186, 41);
             this.btnHopDong.TabIndex = 11;
@@ -480,17 +482,36 @@
             this.btnMenu.UseVisualStyleBackColor = true;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
+            // btnThietbi
+            // 
+            this.btnThietbi.FlatAppearance.BorderSize = 0;
+            this.btnThietbi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThietbi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThietbi.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
+            this.btnThietbi.IconColor = System.Drawing.Color.SteelBlue;
+            this.btnThietbi.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThietbi.IconSize = 35;
+            this.btnThietbi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThietbi.Location = new System.Drawing.Point(8, 410);
+            this.btnThietbi.Name = "btnThietbi";
+            this.btnThietbi.Size = new System.Drawing.Size(186, 41);
+            this.btnThietbi.TabIndex = 19;
+            this.btnThietbi.Tag = "Thiết bị ";
+            this.btnThietbi.Text = "Thiết bị ";
+            this.btnThietbi.UseVisualStyleBackColor = true;
+            this.btnThietbi.Click += new System.EventHandler(this.btnThietbi_Click);
+            // 
             // TrangChu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1199, 612);
+            this.ClientSize = new System.Drawing.Size(1199, 683);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.paneMenu);
             this.Name = "TrangChu";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menu1";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.Menu1_Load);
             this.Resize += new System.EventHandler(this.Menu1_Resize);
             this.panelDesktop.ResumeLayout(false);
@@ -536,5 +557,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenPhongTro;
         private FontAwesome.Sharp.IconButton btnLogout;
         private FontAwesome.Sharp.IconButton btnDay;
+        private FontAwesome.Sharp.IconButton btnThietbi;
     }
 }

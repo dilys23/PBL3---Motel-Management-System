@@ -308,5 +308,10 @@ namespace PBL3___Motel_Management_System
         {
             this.Close();
         }
+
+        private void btnThietbi_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ThietBi());   
+        }
     }
 }

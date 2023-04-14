@@ -29,30 +29,30 @@
         private void InitializeComponent()
         {
             this.panelChiTiet = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.TenDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenPhongTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChisoCu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChisoMoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sudung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panPhong1 = new System.Windows.Forms.Panel();
+            this.btnXoa = new FontAwesome.Sharp.IconButton();
+            this.btnSua = new FontAwesome.Sharp.IconButton();
+            this.btnThem = new FontAwesome.Sharp.IconButton();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoaiDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dangdung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnThem = new FontAwesome.Sharp.IconButton();
-            this.panPhong1 = new System.Windows.Forms.Panel();
-            this.btnSua = new FontAwesome.Sharp.IconButton();
-            this.btnXoa = new FontAwesome.Sharp.IconButton();
+            this.TenDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenPhongTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChisoCu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChisoMoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sudung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelChiTiet.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panPhong1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelChiTiet
@@ -69,6 +69,17 @@
             this.panelChiTiet.Name = "panelChiTiet";
             this.panelChiTiet.Size = new System.Drawing.Size(970, 556);
             this.panelChiTiet.TabIndex = 28;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Bahnschrift SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Chocolate;
+            this.label10.Location = new System.Drawing.Point(18, 8);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(179, 28);
+            this.label10.TabIndex = 53;
+            this.label10.Text = "CHI TIẾT PHÒNG";
             // 
             // dataGridView1
             // 
@@ -91,41 +102,76 @@
             this.dataGridView1.Size = new System.Drawing.Size(853, 158);
             this.dataGridView1.TabIndex = 8;
             // 
-            // TenDay
+            // panPhong1
             // 
-            this.TenDay.HeaderText = "Dãy";
-            this.TenDay.MinimumWidth = 6;
-            this.TenDay.Name = "TenDay";
+            this.panPhong1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panPhong1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
+            this.panPhong1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panPhong1.Controls.Add(this.btnXoa);
+            this.panPhong1.Controls.Add(this.btnSua);
+            this.panPhong1.Controls.Add(this.btnThem);
+            this.panPhong1.Controls.Add(this.dataGridView2);
+            this.panPhong1.Controls.Add(this.label1);
+            this.panPhong1.Controls.Add(this.label2);
+            this.panPhong1.Location = new System.Drawing.Point(23, 54);
+            this.panPhong1.Name = "panPhong1";
+            this.panPhong1.Size = new System.Drawing.Size(919, 478);
+            this.panPhong1.TabIndex = 57;
             // 
-            // TenPhongTro
+            // btnXoa
             // 
-            this.TenPhongTro.HeaderText = "Phòng";
-            this.TenPhongTro.MinimumWidth = 6;
-            this.TenPhongTro.Name = "TenPhongTro";
+            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXoa.BackColor = System.Drawing.Color.Red;
+            this.btnXoa.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnXoa.IconColor = System.Drawing.Color.White;
+            this.btnXoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnXoa.IconSize = 25;
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa.Location = new System.Drawing.Point(794, 15);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(90, 41);
+            this.btnXoa.TabIndex = 59;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoa.UseVisualStyleBackColor = false;
             // 
-            // ChisoCu
+            // btnSua
             // 
-            this.ChisoCu.HeaderText = "Chỉ số cũ";
-            this.ChisoCu.MinimumWidth = 6;
-            this.ChisoCu.Name = "ChisoCu";
+            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSua.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSua.IconChar = FontAwesome.Sharp.IconChar.ExternalLink;
+            this.btnSua.IconColor = System.Drawing.Color.White;
+            this.btnSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSua.IconSize = 25;
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSua.Location = new System.Drawing.Point(698, 15);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(90, 41);
+            this.btnSua.TabIndex = 58;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // ChisoMoi
+            // btnThem
             // 
-            this.ChisoMoi.HeaderText = "Chỉ số mới";
-            this.ChisoMoi.MinimumWidth = 6;
-            this.ChisoMoi.Name = "ChisoMoi";
-            // 
-            // Sudung
-            // 
-            this.Sudung.HeaderText = "Sử dụng";
-            this.Sudung.MinimumWidth = 6;
-            this.Sudung.Name = "Sudung";
-            // 
-            // Gia
-            // 
-            this.Gia.HeaderText = "Giá Tiền";
-            this.Gia.MinimumWidth = 6;
-            this.Gia.Name = "Gia";
+            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThem.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnThem.IconChar = FontAwesome.Sharp.IconChar.PeopleRoof;
+            this.btnThem.IconColor = System.Drawing.Color.White;
+            this.btnThem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThem.IconSize = 25;
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThem.Location = new System.Drawing.Point(602, 13);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(90, 43);
+            this.btnThem.TabIndex = 56;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // dataGridView2
             // 
@@ -177,17 +223,6 @@
             this.Dangdung.MinimumWidth = 6;
             this.Dangdung.Name = "Dangdung";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Bahnschrift SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Chocolate;
-            this.label10.Location = new System.Drawing.Point(18, 8);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(179, 28);
-            this.label10.TabIndex = 53;
-            this.label10.Text = "CHI TIẾT PHÒNG";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -210,76 +245,41 @@
             this.label2.TabIndex = 55;
             this.label2.Text = "Dịch vụ ";
             // 
-            // btnThem
+            // TenDay
             // 
-            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThem.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnThem.IconChar = FontAwesome.Sharp.IconChar.PeopleRoof;
-            this.btnThem.IconColor = System.Drawing.Color.White;
-            this.btnThem.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnThem.IconSize = 25;
-            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(602, 13);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(90, 43);
-            this.btnThem.TabIndex = 56;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThem.UseVisualStyleBackColor = false;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            this.TenDay.HeaderText = "Mã";
+            this.TenDay.MinimumWidth = 6;
+            this.TenDay.Name = "TenDay";
             // 
-            // panPhong1
+            // TenPhongTro
             // 
-            this.panPhong1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panPhong1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
-            this.panPhong1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panPhong1.Controls.Add(this.btnXoa);
-            this.panPhong1.Controls.Add(this.btnSua);
-            this.panPhong1.Controls.Add(this.btnThem);
-            this.panPhong1.Controls.Add(this.dataGridView2);
-            this.panPhong1.Controls.Add(this.label1);
-            this.panPhong1.Controls.Add(this.label2);
-            this.panPhong1.Location = new System.Drawing.Point(23, 54);
-            this.panPhong1.Name = "panPhong1";
-            this.panPhong1.Size = new System.Drawing.Size(919, 478);
-            this.panPhong1.TabIndex = 57;
+            this.TenPhongTro.HeaderText = "Tên";
+            this.TenPhongTro.MinimumWidth = 6;
+            this.TenPhongTro.Name = "TenPhongTro";
             // 
-            // btnSua
+            // ChisoCu
             // 
-            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSua.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnSua.IconChar = FontAwesome.Sharp.IconChar.ExternalLink;
-            this.btnSua.IconColor = System.Drawing.Color.White;
-            this.btnSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSua.IconSize = 25;
-            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(698, 15);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(90, 41);
-            this.btnSua.TabIndex = 58;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSua.UseVisualStyleBackColor = false;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            this.ChisoCu.HeaderText = "Ngày sinh ";
+            this.ChisoCu.MinimumWidth = 6;
+            this.ChisoCu.Name = "ChisoCu";
             // 
-            // btnXoa
+            // ChisoMoi
             // 
-            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXoa.BackColor = System.Drawing.Color.Red;
-            this.btnXoa.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btnXoa.IconColor = System.Drawing.Color.White;
-            this.btnXoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnXoa.IconSize = 25;
-            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(794, 15);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(90, 41);
-            this.btnXoa.TabIndex = 59;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXoa.UseVisualStyleBackColor = false;
+            this.ChisoMoi.HeaderText = "CCCD";
+            this.ChisoMoi.MinimumWidth = 6;
+            this.ChisoMoi.Name = "ChisoMoi";
+            // 
+            // Sudung
+            // 
+            this.Sudung.HeaderText = "Số điện thoại";
+            this.Sudung.MinimumWidth = 6;
+            this.Sudung.Name = "Sudung";
+            // 
+            // Gia
+            // 
+            this.Gia.HeaderText = "Địa chỉ";
+            this.Gia.MinimumWidth = 6;
+            this.Gia.Name = "Gia";
             // 
             // ChitietPhong
             // 
@@ -292,9 +292,9 @@
             this.panelChiTiet.ResumeLayout(false);
             this.panelChiTiet.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panPhong1.ResumeLayout(false);
             this.panPhong1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -303,12 +303,6 @@
 
         private System.Windows.Forms.Panel panelChiTiet;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenDay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenPhongTro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ChisoCu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ChisoMoi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sudung;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDV;
@@ -322,5 +316,11 @@
         private System.Windows.Forms.Panel panPhong1;
         private FontAwesome.Sharp.IconButton btnSua;
         private FontAwesome.Sharp.IconButton btnXoa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenDay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenPhongTro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChisoCu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChisoMoi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sudung;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
     }
 }
