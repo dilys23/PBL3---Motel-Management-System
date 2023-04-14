@@ -24,7 +24,7 @@ namespace PBL3___Motel_Management_System
 
         private void iconButton7_Click(object sender, EventArgs e)
         {
-            ThemPhong themPhong = new ThemPhong();
+            ThemPhong themPhong = new ThemPhong("123");
             themPhong.ShowDialog();
         }
 
