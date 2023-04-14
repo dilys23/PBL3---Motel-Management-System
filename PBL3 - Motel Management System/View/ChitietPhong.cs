@@ -10,22 +10,22 @@ using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System.View
 {
-    public partial class ThemDVphong : Form
+    public partial class ChitietPhong : Form
     {
-        public ThemDVphong()
+        public ChitietPhong()
         {
             InitializeComponent();
         }
-
-        private void panelThemHD_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         TrangChu tc = new TrangChu();
-
-        private void iconButton4_Click(object sender, EventArgs e)
+        private void btnThem_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ChitietHopDong(), panelThemHD);
+            tc.openChildForm1(new ThemKhach(), panelChiTiet);
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            tc.openChildForm1(new ThemKhach(), panelChiTiet);
         }
     }
+    
 }

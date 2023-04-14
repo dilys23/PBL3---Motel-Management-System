@@ -303,5 +303,10 @@ namespace PBL3___Motel_Management_System
         {
             openChildForm(new Daytro());
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
