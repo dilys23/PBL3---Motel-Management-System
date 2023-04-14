@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PBL3___Motel_Management_System.DTO
 {
-    internal class CbbDayTro
+    internal class ViewCbb
     {
         public string IdDayTro { get; set; }
         public string TenDayTro { get; set; }

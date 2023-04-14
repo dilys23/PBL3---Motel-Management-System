@@ -22,6 +22,7 @@ namespace PBL3___Motel_Management_System.DAL
             this.HopDong = new HashSet<HopDong>();
             this.ThanhVienTrongPhong = new HashSet<ThanhVienTrongPhong>();
         }
+        
     
         public string MaPhongTro { get; set; }
         public string TenPhongTro { get; set; }
