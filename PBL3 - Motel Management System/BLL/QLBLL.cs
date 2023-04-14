@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Media3D;
 
 namespace PBL3___Motel_Management_System.BLL
 {
@@ -147,6 +148,48 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return list;
         }
+        public List<ViewPhongTro> DgvPhongTro(string txtTim)
+        {
+            List<ViewPhongTro> list = new List<ViewPhongTro>();
+            QLDAL qLDAL = new QLDAL();
+            int i = 0;
+            foreach(PhongTro pt in qLDAL.GetAllPhongTro())
+            {
+                if(txtTim == null)
+                {
+                    i++;
+                    ViewPhongTro vd = new ViewPhongTro();
+                    vd.Stt = i;
+                    vd.MaPhongTro = pt.MaPhongTro;
+                    vd.TenPhongTro = pt.TenPhongTro;
+                    vd.GiaTien = pt.GiaTien;
+                    vd.DienTich = pt.DienTich;
+                    vd.TinhTrang = pt.TinhTrang;
+                    vd.SoNguoiToiDa = (int)pt.ToiDa;
+                    vd.SoNguoiHienCo = GetIdNguoiByIdPhong(pt.MaPhongTro).Count;
+                    list.Add(vd);
+                }
+                else
+                {
+                    if(pt.TenPhongTro.IndexOf(txtTim,0, StringComparison.OrdinalIgnoreCase)!=-1)
+                    {
+                        i++;
+                        ViewPhongTro vd = new ViewPhongTro();
+                        vd.Stt = i;
+                        vd.MaPhongTro = pt.MaPhongTro;
+                        vd.TenPhongTro = pt.TenPhongTro;
+                        vd.GiaTien = pt.GiaTien;
+                        vd.DienTich = pt.DienTich;
+                        vd.TinhTrang = pt.TinhTrang;
+                        vd.SoNguoiToiDa = (int)pt.ToiDa;
+                        vd.SoNguoiHienCo = GetIdNguoiByIdPhong(pt.MaPhongTro).Count;
+                        list.Add(vd);
+                    }
+                }
+            }
+
+            return list;
+        }
         public List<ViewDichVu> DgvDichVu(string txtTim)
         {
             List<ViewDichVu> list = new List<ViewDichVu> ();
@@ -200,10 +243,17 @@ namespace PBL3___Motel_Management_System.BLL
             {
                 if (dichVu.MaDichVu == id) return dichVu;
             }
-            return null; 
-
-
-            
+            return null;     
+        }
+        public List<string>GetIdNguoiByIdPhong(string id)
+        {
+            List<string> list = new List<string>();
+            QLDAL qLDAL = new QLDAL();
+            foreach(ThanhVienTrongPhong tv in qLDAL.GetAllThanhVienTrongPhong())
+            {
+                if (tv.MaPhongTro == id) list.Add(tv.MaNguoi);
+            }
+            return list;
         }
         
     }

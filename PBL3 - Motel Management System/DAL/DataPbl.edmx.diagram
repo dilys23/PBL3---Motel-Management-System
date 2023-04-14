@@ -4,14 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d8b52b58f7d94930abbdd1fa0cdd4cf2" Name="Diagram1">
+      <Diagram DiagramId="567c7a97bcbd40acbd6d68537fc1de11" Name="Diagram1">
         <EntityTypeShape EntityType="DataPblModel.ChiTietDichVu" Width="1.5" PointX="7.5" PointY="7.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DataPblModel.ChiTietThietBi" Width="1.5" PointX="10.5" PointY="7.625" IsExpanded="true" />
         <EntityTypeShape EntityType="DataPblModel.DayTro" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DataPblModel.DichVu" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DataPblModel.HopDong" Width="1.5" PointX="7.5" PointY="3.375" IsExpanded="true" />
         <EntityTypeShape EntityType="DataPblModel.Nguoi" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DataPblModel.PhongTro" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataPblModel.PhongTro" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
         <EntityTypeShape EntityType="DataPblModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DataPblModel.TaiKhoan" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DataPblModel.ThanhVienTrongPhong" Width="1.5" PointX="7.5" PointY="10.625" IsExpanded="true" />

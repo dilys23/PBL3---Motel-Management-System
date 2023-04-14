@@ -122,6 +122,7 @@
     <Compile Include="DTO\CbbDayTro.cs" />
     <Compile Include="DTO\ViewDay.cs" />
     <Compile Include="DTO\ViewDichVu.cs" />
+    <Compile Include="DTO\ViewPhongTro.cs" />
     <Compile Include="View\ChitietDay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -457,12 +458,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="DAL\DataPbl.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DataPbl.Context.cs</LastGenOutput>
       <DependentUpon>DataPbl.edmx</DependentUpon>
+      <LastGenOutput>DataPbl.Context.cs</LastGenOutput>
     </Content>
     <Content Include="DAL\DataPbl.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

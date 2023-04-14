@@ -1,4 +1,7 @@
-﻿using PBL3___Motel_Management_System.View;
+﻿using PBL3___Motel_Management_System.BLL;
+using PBL3___Motel_Management_System.DAL;
+using PBL3___Motel_Management_System.DTO;
+using PBL3___Motel_Management_System.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,7 +22,37 @@ namespace PBL3___Motel_Management_System
         {
             InitializeComponent();
             //this.paneDesktop = paneDesktop;
+            LoadForm(null);
          
+        }
+        public void LoadForm(string txt)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn{ColumnName = "MaPhongTro",DataType = typeof(string)},
+                new DataColumn{ColumnName = "STT",DataType = typeof(int)},
+                new DataColumn{ColumnName = "Tên phòng trọ",DataType = typeof(string)},
+                new DataColumn{ColumnName = "Giá tiền",DataType = typeof(double)},
+                new DataColumn{ColumnName = "Diện tích",DataType = typeof(double)},
+                new DataColumn{ColumnName = "Tình trạng",DataType = typeof(bool)},
+                new DataColumn{ColumnName = "Số người hiện có",DataType = typeof(int)},
+                new DataColumn{ColumnName = "Số người tối đa",DataType = typeof(string)},
+
+            });
+            QLBLL qLBLL = new QLBLL();
+            int i = 0;
+            foreach(ViewPhongTro pt in qLBLL.DgvPhongTro(txt))
+            {
+                dt.Rows.Add(pt.MaPhongTro,pt.Stt,pt.TenPhongTro,pt.GiaTien,pt.DienTich,pt.TinhTrang,pt.SoNguoiHienCo,pt.SoNguoiToiDa);
+            }
+            
+            dgvPhongTro.DataSource = dt;
+            dgvPhongTro.Columns[0].Visible = false;
+        }
+        private void SetCbb()
+        {
+
         }
 
         private void iconButton7_Click(object sender, EventArgs e)
