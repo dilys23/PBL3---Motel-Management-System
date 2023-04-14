@@ -136,6 +136,7 @@
             this.btnSuaDV.Text = "Sửa";
             this.btnSuaDV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSuaDV.UseVisualStyleBackColor = false;
+            this.btnSuaDV.Click += new System.EventHandler(this.btnSuaDV_Click);
             // 
             // btnThemPhong
             // 
@@ -155,6 +156,7 @@
             this.btnThemPhong.Text = "Thêm ";
             this.btnThemPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemPhong.UseVisualStyleBackColor = false;
+            this.btnThemPhong.Click += new System.EventHandler(this.btnThemPhong_Click);
             // 
             // textBox1
             // 

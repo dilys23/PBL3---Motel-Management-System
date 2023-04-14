@@ -62,6 +62,7 @@
             this.Dangdung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnTroVe = new FontAwesome.Sharp.IconButton();
             this.panelChiTiet.SuspendLayout();
             this.panPhong1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -76,6 +77,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelChiTiet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.panelChiTiet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelChiTiet.Controls.Add(this.btnTroVe);
             this.panelChiTiet.Controls.Add(this.label10);
             this.panelChiTiet.Controls.Add(this.panPhong1);
             this.panelChiTiet.Location = new System.Drawing.Point(-6, 0);
@@ -453,6 +455,21 @@
             this.label2.TabIndex = 55;
             this.label2.Text = "Dịch vụ ";
             // 
+            // btnTroVe
+            // 
+            this.btnTroVe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTroVe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnTroVe.IconChar = FontAwesome.Sharp.IconChar.MailReply;
+            this.btnTroVe.IconColor = System.Drawing.Color.White;
+            this.btnTroVe.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTroVe.IconSize = 30;
+            this.btnTroVe.Location = new System.Drawing.Point(906, 11);
+            this.btnTroVe.Name = "btnTroVe";
+            this.btnTroVe.Size = new System.Drawing.Size(43, 37);
+            this.btnTroVe.TabIndex = 54;
+            this.btnTroVe.UseVisualStyleBackColor = false;
+            this.btnTroVe.Click += new System.EventHandler(this.btnTroVe_Click);
+            // 
             // ChitietPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -508,5 +525,6 @@
         private FontAwesome.Sharp.IconButton iconButton5;
         private FontAwesome.Sharp.IconButton iconButton6;
         private System.Windows.Forms.Label label3;
+        private FontAwesome.Sharp.IconButton btnTroVe;
     }
 }

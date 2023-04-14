@@ -72,6 +72,7 @@
             this.iconButton1.Size = new System.Drawing.Size(45, 45);
             this.iconButton1.TabIndex = 57;
             this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // label1
             // 

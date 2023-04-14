@@ -26,5 +26,15 @@ namespace PBL3___Motel_Management_System.View
         {
             tc.openChildForm1(new ThemPhong(IdDay), panelChitietDay);
         }
+
+        private void btnTroVe_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            tc.openChildForm1(new SuaPhong(), panelChitietDay);
+        }
     }
 }

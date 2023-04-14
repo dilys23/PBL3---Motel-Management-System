@@ -30,15 +30,13 @@
         {
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panelHopDong = new System.Windows.Forms.Panel();
-            this.btnSuaHD = new FontAwesome.Sharp.IconButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iconButton6 = new FontAwesome.Sharp.IconButton();
-            this.btnThemHD = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnThem = new FontAwesome.Sharp.IconButton();
             this.panelHopDong.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -61,10 +59,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelHopDong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.panelHopDong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelHopDong.Controls.Add(this.btnSuaHD);
+            this.panelHopDong.Controls.Add(this.btnThem);
             this.panelHopDong.Controls.Add(this.dataGridView1);
-            this.panelHopDong.Controls.Add(this.iconButton6);
-            this.panelHopDong.Controls.Add(this.btnThemHD);
             this.panelHopDong.Controls.Add(this.label1);
             this.panelHopDong.Controls.Add(this.label2);
             this.panelHopDong.Controls.Add(this.comboBox3);
@@ -73,23 +69,6 @@
             this.panelHopDong.Name = "panelHopDong";
             this.panelHopDong.Size = new System.Drawing.Size(914, 385);
             this.panelHopDong.TabIndex = 41;
-            // 
-            // btnSuaHD
-            // 
-            this.btnSuaHD.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnSuaHD.IconChar = FontAwesome.Sharp.IconChar.ExternalLink;
-            this.btnSuaHD.IconColor = System.Drawing.Color.White;
-            this.btnSuaHD.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSuaHD.IconSize = 25;
-            this.btnSuaHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaHD.Location = new System.Drawing.Point(107, 28);
-            this.btnSuaHD.Name = "btnSuaHD";
-            this.btnSuaHD.Size = new System.Drawing.Size(74, 39);
-            this.btnSuaHD.TabIndex = 51;
-            this.btnSuaHD.Text = "Sửa";
-            this.btnSuaHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSuaHD.UseVisualStyleBackColor = false;
-            this.btnSuaHD.Click += new System.EventHandler(this.btnSuaHD_Click);
             // 
             // dataGridView1
             // 
@@ -105,39 +84,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(888, 269);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // iconButton6
-            // 
-            this.iconButton6.BackColor = System.Drawing.Color.Red;
-            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.iconButton6.IconColor = System.Drawing.Color.White;
-            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton6.IconSize = 25;
-            this.iconButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton6.Location = new System.Drawing.Point(203, 28);
-            this.iconButton6.Name = "iconButton6";
-            this.iconButton6.Size = new System.Drawing.Size(70, 39);
-            this.iconButton6.TabIndex = 49;
-            this.iconButton6.Text = "Xóa";
-            this.iconButton6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton6.UseVisualStyleBackColor = false;
-            // 
-            // btnThemHD
-            // 
-            this.btnThemHD.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnThemHD.IconChar = FontAwesome.Sharp.IconChar.FileArrowUp;
-            this.btnThemHD.IconColor = System.Drawing.Color.White;
-            this.btnThemHD.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnThemHD.IconSize = 25;
-            this.btnThemHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemHD.Location = new System.Drawing.Point(11, 28);
-            this.btnThemHD.Name = "btnThemHD";
-            this.btnThemHD.Size = new System.Drawing.Size(79, 39);
-            this.btnThemHD.TabIndex = 50;
-            this.btnThemHD.Text = "Thêm ";
-            this.btnThemHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThemHD.UseVisualStyleBackColor = false;
-            this.btnThemHD.Click += new System.EventHandler(this.btnThemHD_Click);
             // 
             // label1
             // 
@@ -192,6 +138,23 @@
             this.label4.TabIndex = 25;
             this.label4.Text = "QUẢN LÝ HỢP ĐỒNG";
             // 
+            // btnThem
+            // 
+            this.btnThem.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnThem.IconChar = FontAwesome.Sharp.IconChar.PeopleRoof;
+            this.btnThem.IconColor = System.Drawing.Color.White;
+            this.btnThem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThem.IconSize = 25;
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThem.Location = new System.Drawing.Point(11, 25);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(90, 43);
+            this.btnThem.TabIndex = 51;
+            this.btnThem.Text = "Chi tiết";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
             // HopDong
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -219,8 +182,6 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private FontAwesome.Sharp.IconButton btnSuaHD;
-        private FontAwesome.Sharp.IconButton iconButton6;
-        private FontAwesome.Sharp.IconButton btnThemHD;
+        private FontAwesome.Sharp.IconButton btnThem;
     }
 }

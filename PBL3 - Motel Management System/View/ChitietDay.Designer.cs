@@ -43,6 +43,7 @@
             this.btnSua = new FontAwesome.Sharp.IconButton();
             this.btnThem = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnTroVe = new FontAwesome.Sharp.IconButton();
             this.panelChitietDay.SuspendLayout();
             this.panPhong1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -55,6 +56,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelChitietDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
+            this.panelChitietDay.Controls.Add(this.btnTroVe);
             this.panelChitietDay.Controls.Add(this.panPhong1);
             this.panelChitietDay.Location = new System.Drawing.Point(-3, 0);
             this.panelChitietDay.Name = "panelChitietDay";
@@ -186,6 +188,7 @@
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -215,6 +218,21 @@
             this.label1.Size = new System.Drawing.Size(50, 28);
             this.label1.TabIndex = 54;
             this.label1.Text = "Dãy";
+            // 
+            // btnTroVe
+            // 
+            this.btnTroVe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTroVe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnTroVe.IconChar = FontAwesome.Sharp.IconChar.MailReply;
+            this.btnTroVe.IconColor = System.Drawing.Color.White;
+            this.btnTroVe.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTroVe.IconSize = 30;
+            this.btnTroVe.Location = new System.Drawing.Point(906, 6);
+            this.btnTroVe.Name = "btnTroVe";
+            this.btnTroVe.Size = new System.Drawing.Size(43, 37);
+            this.btnTroVe.TabIndex = 60;
+            this.btnTroVe.UseVisualStyleBackColor = false;
+            this.btnTroVe.Click += new System.EventHandler(this.btnTroVe_Click);
             // 
             // ChitietDay
             // 
@@ -248,5 +266,6 @@
         private FontAwesome.Sharp.IconButton btnSua;
         private FontAwesome.Sharp.IconButton btnThem;
         private System.Windows.Forms.Label label1;
+        private FontAwesome.Sharp.IconButton btnTroVe;
     }
 }

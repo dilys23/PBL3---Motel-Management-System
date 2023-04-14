@@ -24,14 +24,13 @@ namespace PBL3___Motel_Management_System
         }
         TrangChu tc = new TrangChu();
 
-        private void btnThemHD_Click(object sender, EventArgs e)
-        {
-            tc.openChildForm1(new ThemHopDong(), panelHopDong);
-        }
+       
 
-        private void btnSuaHD_Click(object sender, EventArgs e)
+      
+
+        private void btnThem_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new SuaHopDong(), panelHopDong);
+            tc.openChildForm1(new ChitietHopDong(), panelHopDong); ;
         }
     }
 }

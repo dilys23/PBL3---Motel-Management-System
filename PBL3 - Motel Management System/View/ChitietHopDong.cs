@@ -17,5 +17,15 @@ namespace PBL3___Motel_Management_System.View
         {
             InitializeComponent();
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnTroVe_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
