@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PBL3___Motel_Management_System.View;
 
 namespace PBL3___Motel_Management_System.View
 {
@@ -82,10 +83,21 @@ namespace PBL3___Motel_Management_System.View
         {
 
         }
+        TrangChu tc = new TrangChu();
 
         private void ChisoDien_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnThemHD_Click(object sender, EventArgs e)
+        {
+            tc.openChildForm1(new ThemCSDien(), panel2);
+        }
+
+        private void btnSuaHD_Click(object sender, EventArgs e)
+        {
+            tc.openChildForm1(new SuaCSDien(), panel2);
         }
     }
 }
