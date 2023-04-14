@@ -26,6 +26,11 @@ namespace PBL3___Motel_Management_System.View
         {
             tc.openChildForm1(new ThemKhach(), panelChiTiet);
         }
+
+        private void panPhong1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
     
 }

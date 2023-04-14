@@ -12,14 +12,19 @@ namespace PBL3___Motel_Management_System.View
 {
     public partial class ChitietDay : Form
     {
-        public ChitietDay()
+        private string IdDay;
+        public ChitietDay(string idDay)
         {
             InitializeComponent();
+            this.IdDay = idDay;
         }
         TrangChu tc = new TrangChu();
-        private void btnThem_Click(object sender, EventArgs e)
+        
+        
+
+        private void btnThem_Click_1(object sender, EventArgs e)
         {
-            //tc.openChildForm1(new ThemPhong(), panelChitietDay);
+            tc.openChildForm1(new ThemPhong(IdDay), panelChitietDay);
         }
     }
 }

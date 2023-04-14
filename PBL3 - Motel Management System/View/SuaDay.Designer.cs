@@ -83,9 +83,9 @@
             this.label6.ForeColor = System.Drawing.Color.Chocolate;
             this.label6.Location = new System.Drawing.Point(25, 69);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(187, 28);
+            this.label6.Size = new System.Drawing.Size(111, 28);
             this.label6.TabIndex = 43;
-            this.label6.Text = "SỬA DÃY PHÒNG";
+            this.label6.Text = "SỬA DÃY ";
             // 
             // label1
             // 
