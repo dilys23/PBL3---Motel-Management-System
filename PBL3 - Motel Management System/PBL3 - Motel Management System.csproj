@@ -182,6 +182,12 @@
     <Compile Include="View\SuaHopDong.Designer.cs">
       <DependentUpon>SuaHopDong.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\SuaThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SuaThietBi.Designer.cs">
+      <DependentUpon>SuaThietBi.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ThemCSDien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -355,6 +361,9 @@
     <EmbeddedResource Include="View\SuaHopDong.resx">
       <DependentUpon>SuaHopDong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\SuaThietBi.resx">
+      <DependentUpon>SuaThietBi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ThemCSDien.resx">
       <DependentUpon>ThemCSDien.cs</DependentUpon>
     </EmbeddedResource>
@@ -457,7 +466,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="DAL\DataPbl.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

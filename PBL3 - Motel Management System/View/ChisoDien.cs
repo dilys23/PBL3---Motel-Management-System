@@ -90,12 +90,14 @@ namespace PBL3___Motel_Management_System.View
 
         }
 
-        private void btnThemHD_Click(object sender, EventArgs e)
+        
+
+        private void iconButton2_Click(object sender, EventArgs e)
         {
             tc.openChildForm1(new ThemCSDien(), panel2);
         }
 
-        private void btnSuaHD_Click(object sender, EventArgs e)
+        private void iconButton1_Click(object sender, EventArgs e)
         {
             tc.openChildForm1(new SuaCSDien(), panel2);
         }
