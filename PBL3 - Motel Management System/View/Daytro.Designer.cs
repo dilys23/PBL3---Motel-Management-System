@@ -45,11 +45,7 @@
             this.cbbDayTro = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-<<<<<<< HEAD
-            this.btnSuaday = new FontAwesome.Sharp.IconButton();
-=======
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
->>>>>>> 60aeeac328b8fb192a61fd15c52a3e2ea7d0add1
             this.panelDay.SuspendLayout();
             this.panPhong1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDayTro)).BeginInit();
@@ -65,11 +61,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.panelDay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-<<<<<<< HEAD
-            this.panelDay.Controls.Add(this.btnSuaday);
-=======
             this.panelDay.Controls.Add(this.txtTenPhong);
->>>>>>> 60aeeac328b8fb192a61fd15c52a3e2ea7d0add1
             this.panelDay.Controls.Add(this.label4);
             this.panelDay.Controls.Add(this.cbbTinhTrang);
             this.panelDay.Controls.Add(this.btnThemday);
@@ -122,16 +114,10 @@
             this.btnThemday.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThemday.IconSize = 30;
             this.btnThemday.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-<<<<<<< HEAD
-            this.btnThemday.Location = new System.Drawing.Point(638, 35);
-            this.btnThemday.Name = "btnThemday";
-            this.btnThemday.Size = new System.Drawing.Size(111, 43);
-=======
             this.btnThemday.Location = new System.Drawing.Point(558, 25);
             this.btnThemday.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemday.Name = "btnThemday";
             this.btnThemday.Size = new System.Drawing.Size(92, 30);
->>>>>>> 60aeeac328b8fb192a61fd15c52a3e2ea7d0add1
             this.btnThemday.TabIndex = 33;
             this.btnThemday.Text = "Thêm dãy";
             this.btnThemday.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -200,16 +186,10 @@
             this.btnThem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThem.IconSize = 25;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-<<<<<<< HEAD
-            this.btnThem.Location = new System.Drawing.Point(731, 35);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(90, 43);
-=======
             this.btnThem.Location = new System.Drawing.Point(548, 28);
             this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(68, 35);
->>>>>>> 60aeeac328b8fb192a61fd15c52a3e2ea7d0add1
             this.btnThem.TabIndex = 29;
             this.btnThem.Text = "Thêm ";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -306,30 +286,9 @@
             this.label7.TabIndex = 36;
             this.label7.Text = "DACH SÁCH DÃY";
             // 
-<<<<<<< HEAD
-            // btnSuaday
-            // 
-            this.btnSuaday.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnSuaday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSuaday.BackColor = System.Drawing.Color.Orange;
-            this.btnSuaday.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
-            this.btnSuaday.IconColor = System.Drawing.Color.White;
-            this.btnSuaday.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSuaday.IconSize = 30;
-            this.btnSuaday.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaday.Location = new System.Drawing.Point(755, 37);
-            this.btnSuaday.Name = "btnSuaday";
-            this.btnSuaday.Size = new System.Drawing.Size(111, 43);
-            this.btnSuaday.TabIndex = 36;
-            this.btnSuaday.Text = "Sửa dãy";
-            this.btnSuaday.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSuaday.UseVisualStyleBackColor = false;
-            this.btnSuaday.Click += new System.EventHandler(this.btnSuaday_Click);
-=======
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
->>>>>>> 60aeeac328b8fb192a61fd15c52a3e2ea7d0add1
             // 
             // Daytro
             // 
@@ -370,11 +329,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
         private FontAwesome.Sharp.IconButton btnThem;
-<<<<<<< HEAD
-        private FontAwesome.Sharp.IconButton btnSuaday;
-=======
         private System.Windows.Forms.TextBox txtTenPhong;
         private System.Windows.Forms.ErrorProvider errorProvider1;
->>>>>>> 60aeeac328b8fb192a61fd15c52a3e2ea7d0add1
     }
 }

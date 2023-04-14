@@ -46,10 +46,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-<<<<<<< HEAD
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
-=======
->>>>>>> 60aeeac328b8fb192a61fd15c52a3e2ea7d0add1
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -71,11 +67,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(546, 14);
             this.label3.Name = "label3";
-<<<<<<< HEAD
-            this.label3.Size = new System.Drawing.Size(61, 20);
-=======
             this.label3.Size = new System.Drawing.Size(77, 17);
->>>>>>> 60aeeac328b8fb192a61fd15c52a3e2ea7d0add1
             this.label3.TabIndex = 32;
             this.label3.Text = "Phòng:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -256,21 +248,6 @@
             this.iconButton1.TabIndex = 45;
             this.iconButton1.UseVisualStyleBackColor = false;
             // 
-<<<<<<< HEAD
-            // iconButton3
-            // 
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton3.IconColor = System.Drawing.Color.Black;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.Location = new System.Drawing.Point(818, 34);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(78, 36);
-            this.iconButton3.TabIndex = 29;
-            this.iconButton3.Text = "Thêm ";
-            this.iconButton3.UseVisualStyleBackColor = true;
-            // 
-=======
->>>>>>> 60aeeac328b8fb192a61fd15c52a3e2ea7d0add1
             // ChisoDien
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
