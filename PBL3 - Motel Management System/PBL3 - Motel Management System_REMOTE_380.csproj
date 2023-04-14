@@ -266,24 +266,6 @@
     <Compile Include="View\ThemPhong.Designer.cs">
       <DependentUpon>ThemPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ThemThietBi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ThemThietBi.Designer.cs">
-      <DependentUpon>ThemThietBi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\ThemThietBiPhong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ThemThietBiPhong.Designer.cs">
-      <DependentUpon>ThemThietBiPhong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\ThietBi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ThietBi.Designer.cs">
-      <DependentUpon>ThietBi.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\TrangChu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -399,15 +381,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ThemPhong.resx">
       <DependentUpon>ThemPhong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ThemThietBi.resx">
-      <DependentUpon>ThemThietBi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ThemThietBiPhong.resx">
-      <DependentUpon>ThemThietBiPhong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ThietBi.resx">
-      <DependentUpon>ThietBi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\TrangChu.resx">
       <DependentUpon>TrangChu.cs</DependentUpon>

@@ -182,6 +182,13 @@
     <Compile Include="View\SuaHopDong.Designer.cs">
       <DependentUpon>SuaHopDong.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+    <Compile Include="View\SuaThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SuaThietBi.Designer.cs">
+      <DependentUpon>SuaThietBi.cs</DependentUpon>
+=======
     <Compile Include="View\ThemCSDien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +200,7 @@
     </Compile>
     <Compile Include="View\ThemCSNuoc.Designer.cs">
       <DependentUpon>ThemCSNuoc.cs</DependentUpon>
+>>>>>>> Duong
     </Compile>
     <Compile Include="View\ThemDVphong.cs">
       <SubType>Form</SubType>
@@ -355,11 +363,16 @@
     <EmbeddedResource Include="View\SuaHopDong.resx">
       <DependentUpon>SuaHopDong.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
+    <EmbeddedResource Include="View\SuaThietBi.resx">
+      <DependentUpon>SuaThietBi.cs</DependentUpon>
+=======
     <EmbeddedResource Include="View\ThemCSDien.resx">
       <DependentUpon>ThemCSDien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ThemCSNuoc.resx">
       <DependentUpon>ThemCSNuoc.cs</DependentUpon>
+>>>>>>> Duong
     </EmbeddedResource>
     <EmbeddedResource Include="View\ThemDVphong.resx">
       <DependentUpon>ThemDVphong.cs</DependentUpon>

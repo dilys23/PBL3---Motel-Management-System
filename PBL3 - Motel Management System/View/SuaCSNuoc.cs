@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System.View
 {
-    public partial class ThemHoaDon : Form
+    public partial class SuaCSNuoc : Form
     {
-        public ThemHoaDon()
+        public SuaCSNuoc()
         {
             InitializeComponent();
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
+        private void btnTroVe_Click(object sender, EventArgs e)
         {
             this.Close();
         }

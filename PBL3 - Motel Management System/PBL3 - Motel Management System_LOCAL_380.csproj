@@ -52,7 +52,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
-    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -152,29 +151,11 @@
     <Compile Include="View\Daytro.Designer.cs">
       <DependentUpon>Daytro.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\SuaCSDien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\SuaCSDien.Designer.cs">
-      <DependentUpon>SuaCSDien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\SuaCSNuoc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\SuaCSNuoc.Designer.cs">
-      <DependentUpon>SuaCSNuoc.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\SuaDay.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\SuaDay.Designer.cs">
       <DependentUpon>SuaDay.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\SuaHoaDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\SuaHoaDon.Designer.cs">
-      <DependentUpon>SuaHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="View\SuaHopDong.cs">
       <SubType>Form</SubType>
@@ -182,17 +163,11 @@
     <Compile Include="View\SuaHopDong.Designer.cs">
       <DependentUpon>SuaHopDong.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ThemCSDien.cs">
+    <Compile Include="View\SuaThietBi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ThemCSDien.Designer.cs">
-      <DependentUpon>ThemCSDien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\ThemCSNuoc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ThemCSNuoc.Designer.cs">
-      <DependentUpon>ThemCSNuoc.cs</DependentUpon>
+    <Compile Include="View\SuaThietBi.Designer.cs">
+      <DependentUpon>SuaThietBi.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ThemDVphong.cs">
       <SubType>Form</SubType>
@@ -340,26 +315,14 @@
     <EmbeddedResource Include="View\Daytro.resx">
       <DependentUpon>Daytro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\SuaCSDien.resx">
-      <DependentUpon>SuaCSDien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\SuaCSNuoc.resx">
-      <DependentUpon>SuaCSNuoc.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\SuaDay.resx">
       <DependentUpon>SuaDay.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\SuaHoaDon.resx">
-      <DependentUpon>SuaHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SuaHopDong.resx">
       <DependentUpon>SuaHopDong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ThemCSDien.resx">
-      <DependentUpon>ThemCSDien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ThemCSNuoc.resx">
-      <DependentUpon>ThemCSNuoc.cs</DependentUpon>
+    <EmbeddedResource Include="View\SuaThietBi.resx">
+      <DependentUpon>SuaThietBi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ThemDVphong.resx">
       <DependentUpon>ThemDVphong.cs</DependentUpon>
@@ -432,9 +395,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ChisoNuoc.resx">
       <DependentUpon>ChisoNuoc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\XuatHoaDon.resx">
-      <DependentUpon>XuatHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="DAL\DataPbl.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
