@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System.View
 {
-    public partial class ThemHoaDon : Form
+    public partial class ChitietDay : Form
     {
-        public ThemHoaDon()
+        public ChitietDay()
         {
             InitializeComponent();
-        }
-
-        private void iconButton2_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

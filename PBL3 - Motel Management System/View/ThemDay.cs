@@ -16,12 +16,12 @@ namespace PBL3___Motel_Management_System
     
     public partial class ThemDay : Form
     {
-        
-        
-        public ThemDay()
+
+        public Loader Loader;
+        public ThemDay(Loader loader)
         {
             InitializeComponent();
-            
+            this.Loader = loader;
         }
 
         private void AddRoom_Load(object sender, EventArgs e)
@@ -82,6 +82,7 @@ namespace PBL3___Motel_Management_System
                 dt.MaChuTro = "1";
                 qLBLL.AddDayTroBll(dt);
                 MessageBox.Show("Bạn đã thêm dãy thành công", "Thông báo");
+                Loader();
                 this.Close();
                 
 
