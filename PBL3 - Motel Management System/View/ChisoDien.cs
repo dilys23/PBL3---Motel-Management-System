@@ -8,8 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PBL3___Motel_Management_System
+namespace PBL3___Motel_Management_System.View
 {
+
     public partial class ChisoDien : Form
     {
         public ChisoDien()
