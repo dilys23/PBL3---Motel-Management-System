@@ -126,5 +126,13 @@ namespace PBL3___Motel_Management_System.DAL
             }
             return list;
         }
+        public DayTro GetDayByIdDay(string Id)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                var s = data.DayTro.Single(p => p.MaDayTro == Id);
+                return s;
+            }
+        }
     }
 }
