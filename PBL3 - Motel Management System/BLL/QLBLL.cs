@@ -414,6 +414,11 @@ namespace PBL3___Motel_Management_System.BLL
             QLDAL qLDAL = new QLDAL();
             qLDAL.SuaDVDal(dv);
         }
+        public void SuaTBBll(ThietBi tb)
+        {
+            QLDAL qLDAL = new QLDAL();
+            qLDAL.SuaTBDal(tb);
+        }
         public DichVu GetDVByIdDV(string id)
         {
             
@@ -423,6 +428,16 @@ namespace PBL3___Motel_Management_System.BLL
                 if (dichVu.MaDichVu == id) return dichVu;
             }
             return null;     
+        }
+        public ThietBi GetTBByIdTB(string id)
+        {
+
+            QLDAL qLDAL = new QLDAL();
+            foreach (ThietBi tb in qLDAL.GetAllThietBi())
+            {
+                if (tb.MaThietBi == id) return tb;
+            }
+            return null;
         }
         public List<string>GetIdNguoiByIdPhong(string id)
         {

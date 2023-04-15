@@ -127,6 +127,17 @@ namespace PBL3___Motel_Management_System.DAL
                 
             }
         }
+        public void SuaTBDal(ThietBi tb)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                var s = data.ThietBi.Single(p => p.MaThietBi == tb.MaThietBi);
+                s.TenThietBi= tb.TenThietBi;
+                s.GiaThietBi = tb.GiaThietBi;
+                data.SaveChanges();
+
+            }
+        }
         public List<Nguoi>  GetAllNguoi()
         {
             List<Nguoi> list = new List<Nguoi>();

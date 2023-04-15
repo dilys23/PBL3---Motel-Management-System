@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PBL3___Motel_Management_System.View;
 using System.Runtime.InteropServices;
+using System.Windows.Controls;
 
 namespace PBL3___Motel_Management_System.View
 {
@@ -159,7 +160,9 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnSuaDV_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new SuaThietBI(), panelTB);
+            string id = dgvThietBi.CurrentRow.Cells[0].Value.ToString();
+            tc.openChildForm1(new SuaThietBI(id, LoadForm), panelTB);
+            
         }
 
         private void ThietBi_Load(object sender, EventArgs e)
