@@ -112,7 +112,7 @@ namespace PBL3___Motel_Management_System
                 pt.DienTich = Convert.ToDouble(txtDienTich.Text);
                 pt.TinhTrang = false;
                 pt.MaDayTro = IdDay;
-                pt.ToiDa = Convert.ToInt32(txtToiDa.Text);
+                //pt.ToiDa = Convert.ToInt32(txtToiDa.Text);
                 qLBLL.AddPhongTroBll(pt);
                 MessageBox.Show("Thêm phòng trọ vào dãy thành công", "Thông báo");
                 this.Close();

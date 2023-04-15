@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Csharp\PBL3_Main\PBL3 - Motel Management System\DAL\DataPbl.edmx'. 
+﻿// T4 code generation is enabled for model 'E:\PBL3_MAIN\PBL3---Motel-Management-System\PBL3 - Motel Management System\DAL\DataPbl.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
