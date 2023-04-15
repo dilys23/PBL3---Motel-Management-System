@@ -1,6 +1,6 @@
 ﻿namespace PBL3___Motel_Management_System
 {
-    partial class HopDong
+    partial class Hopdong
     {
         /// <summary>
         /// Required designer variable.

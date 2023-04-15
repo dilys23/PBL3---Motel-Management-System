@@ -31,14 +31,14 @@
             this.panelThemHD = new System.Windows.Forms.Panel();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.label7 = new System.Windows.Forms.Label();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
+            this.btnLuu = new FontAwesome.Sharp.IconButton();
             this.panelThem = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTienCoc = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpKetThuc = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpBatDau = new System.Windows.Forms.DateTimePicker();
             this.panelThemHD.SuspendLayout();
             this.panelThem.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +51,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelThemHD.Controls.Add(this.iconButton2);
             this.panelThemHD.Controls.Add(this.label7);
-            this.panelThemHD.Controls.Add(this.iconButton4);
+            this.panelThemHD.Controls.Add(this.btnLuu);
             this.panelThemHD.Controls.Add(this.panelThem);
             this.panelThemHD.Location = new System.Drawing.Point(-5, 0);
             this.panelThemHD.Name = "panelThemHD";
@@ -82,27 +82,27 @@
             this.label7.ForeColor = System.Drawing.Color.Chocolate;
             this.label7.Location = new System.Drawing.Point(13, 29);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(190, 28);
+            this.label7.Size = new System.Drawing.Size(156, 23);
             this.label7.TabIndex = 47;
             this.label7.Text = "THÊM HỢP ĐỒNG";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // iconButton4
+            // btnLuu
             // 
-            this.iconButton4.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.iconButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.iconButton4.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.FolderOpen;
-            this.iconButton4.IconColor = System.Drawing.Color.White;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.IconSize = 30;
-            this.iconButton4.Location = new System.Drawing.Point(833, 21);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(52, 37);
-            this.iconButton4.TabIndex = 49;
-            this.iconButton4.UseVisualStyleBackColor = false;
-            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
+            this.btnLuu.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnLuu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLuu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnLuu.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnLuu.IconChar = FontAwesome.Sharp.IconChar.FolderOpen;
+            this.btnLuu.IconColor = System.Drawing.Color.White;
+            this.btnLuu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLuu.IconSize = 30;
+            this.btnLuu.Location = new System.Drawing.Point(833, 21);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(52, 37);
+            this.btnLuu.TabIndex = 49;
+            this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.iconButton4_Click);
             // 
             // panelThem
             // 
@@ -110,26 +110,26 @@
             this.panelThem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
-            this.panelThem.Controls.Add(this.textBox2);
+            this.panelThem.Controls.Add(this.txtTienCoc);
             this.panelThem.Controls.Add(this.label6);
             this.panelThem.Controls.Add(this.label3);
-            this.panelThem.Controls.Add(this.dateTimePicker2);
+            this.panelThem.Controls.Add(this.dtpKetThuc);
             this.panelThem.Controls.Add(this.label2);
-            this.panelThem.Controls.Add(this.dateTimePicker1);
+            this.panelThem.Controls.Add(this.dtpBatDau);
             this.panelThem.Location = new System.Drawing.Point(17, 67);
             this.panelThem.Name = "panelThem";
             this.panelThem.Size = new System.Drawing.Size(890, 206);
             this.panelThem.TabIndex = 46;
             this.panelThem.Paint += new System.Windows.Forms.PaintEventHandler(this.panelThem_Paint);
             // 
-            // textBox2
+            // txtTienCoc
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(412, 130);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(178, 27);
-            this.textBox2.TabIndex = 28;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtTienCoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTienCoc.Location = new System.Drawing.Point(412, 130);
+            this.txtTienCoc.Name = "txtTienCoc";
+            this.txtTienCoc.Size = new System.Drawing.Size(178, 23);
+            this.txtTienCoc.TabIndex = 28;
+            this.txtTienCoc.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label6
             // 
@@ -137,7 +137,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(246, 129);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 20);
+            this.label6.Size = new System.Drawing.Size(62, 17);
             this.label6.TabIndex = 27;
             this.label6.Text = "Tiền cọc";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -148,19 +148,19 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(246, 82);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 20);
+            this.label3.Size = new System.Drawing.Size(95, 17);
             this.label3.TabIndex = 21;
             this.label3.Text = "Ngày kết thúc";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // dateTimePicker2
+            // dtpKetThuc
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(412, 80);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(178, 27);
-            this.dateTimePicker2.TabIndex = 20;
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
+            this.dtpKetThuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpKetThuc.Location = new System.Drawing.Point(412, 80);
+            this.dtpKetThuc.Name = "dtpKetThuc";
+            this.dtpKetThuc.Size = new System.Drawing.Size(178, 23);
+            this.dtpKetThuc.TabIndex = 20;
+            this.dtpKetThuc.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // label2
             // 
@@ -168,19 +168,19 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(246, 35);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 20);
+            this.label2.Size = new System.Drawing.Size(93, 17);
             this.label2.TabIndex = 19;
             this.label2.Text = "Ngày bắt đầu";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // dateTimePicker1
+            // dtpBatDau
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(412, 30);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(178, 27);
-            this.dateTimePicker1.TabIndex = 18;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dtpBatDau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBatDau.Location = new System.Drawing.Point(412, 30);
+            this.dtpBatDau.Name = "dtpBatDau";
+            this.dtpBatDau.Size = new System.Drawing.Size(178, 23);
+            this.dtpBatDau.TabIndex = 18;
+            this.dtpBatDau.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // ThemHopDong
             // 
@@ -204,13 +204,13 @@
         private System.Windows.Forms.Panel panelThemHD;
         private FontAwesome.Sharp.IconButton iconButton2;
         private System.Windows.Forms.Label label7;
-        private FontAwesome.Sharp.IconButton iconButton4;
+        private FontAwesome.Sharp.IconButton btnLuu;
         private System.Windows.Forms.Panel panelThem;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTienCoc;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpKetThuc;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpBatDau;
     }
 }

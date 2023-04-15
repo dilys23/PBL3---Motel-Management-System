@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System
 {
-    public partial class HopDong : Form
+    public partial class Hopdong : Form
     {
-        public HopDong()
+        public Hopdong()
         {
             InitializeComponent();
         }

@@ -53,10 +53,29 @@ namespace PBL3___Motel_Management_System
         {
 
         }
-
+        private bool CheckHopLe()
+        {
+            var dateStart = dtpBatDau.Value;
+            var dateEnd = dtpKetThuc.Value;
+            var distance = dateEnd - dateStart;
+            
+            if(distance.Days < 30)
+            {
+                return false;
+            }
+            return true;
+        }
         private void iconButton4_Click(object sender, EventArgs e)
         {
+            if(CheckHopLe())
+            {
+
             tc.openChildForm1(new ChitietHopDong(),panelThemHD);
+            }
+            else
+            {
+                MessageBox.Show("Thời gian hợp đồng phải tối thiểu 1 tháng","Thông báo");
+            }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
