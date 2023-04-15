@@ -114,12 +114,12 @@
             this.btnThemday.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThemday.IconSize = 30;
             this.btnThemday.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemday.Location = new System.Drawing.Point(744, 31);
+            this.btnThemday.Location = new System.Drawing.Point(828, 30);
             this.btnThemday.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThemday.Name = "btnThemday";
-            this.btnThemday.Size = new System.Drawing.Size(123, 37);
+            this.btnThemday.Size = new System.Drawing.Size(38, 37);
             this.btnThemday.TabIndex = 33;
-            this.btnThemday.Text = "Thêm dãy";
+            this.btnThemday.Tag = "Thêm dãy";
             this.btnThemday.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemday.UseVisualStyleBackColor = false;
             this.btnThemday.Click += new System.EventHandler(this.btnThemday_Click);
@@ -299,6 +299,7 @@
             this.Name = "Daytro";
             this.Text = "Day";
             this.Load += new System.EventHandler(this.Daytro_Load);
+            this.MouseHover += new System.EventHandler(this.btnThemday_Click);
             this.panelDay.ResumeLayout(false);
             this.panelDay.PerformLayout();
             this.panPhong1.ResumeLayout(false);

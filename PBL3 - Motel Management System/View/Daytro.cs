@@ -66,7 +66,7 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnThemday_Click(object sender, EventArgs e)
         {
-            
+           
             tc.openChildForm1(new ThemDay(LoadForm), panelDay);
             
         }
