@@ -117,6 +117,24 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return id;
         }
+
+        public string TaoIdThietBi()
+        {
+            string id = null;
+            QLDAL qLDAL = new QLDAL();
+            Boolean status = true;
+            Random random = new Random();
+            while (status)
+            {
+                id = random.Next(1, 1000).ToString();
+                status = false;
+                foreach (ThietBi dv in qLDAL.GetAllThietBi())
+                {
+                    if (dv.MaThietBi == id) status = true; break;
+                }
+            }
+            return id;
+        }
         public void AddDayTroBll(DayTro dt)
         {
             QLDAL qLDAL = new QLDAL();
@@ -345,10 +363,51 @@ namespace PBL3___Motel_Management_System.BLL
 
             return list;
         }
+
+        public List<ViewThietBi> DgvThietBi(string txtTim)
+        {
+            List<ViewThietBi> list = new List<ViewThietBi>();
+            QLDAL qLDAL = new QLDAL();
+            int i = 0;
+            foreach (ThietBi dv in qLDAL.GetAllThietBi())
+            {
+                if (txtTim == null)
+                {
+                    i++;
+                    ViewThietBi s = new ViewThietBi();
+                    s.Stt = i;
+                    s.TenThietBi = dv.TenThietBi;
+                    s.MaThietBi = dv.MaThietBi;
+                    s.GiaThietBi = dv.GiaThietBi;
+                    list.Add(s);
+                }
+                else
+                {
+                    if (dv.TenThietBi.IndexOf(txtTim, 0, StringComparison.OrdinalIgnoreCase) != -1)
+                    {
+                        i++;
+                        ViewThietBi s = new ViewThietBi();
+                        s.Stt = i;
+                        s.TenThietBi = dv.TenThietBi;
+                        s.MaThietBi = dv.MaThietBi;
+                        s.GiaThietBi = dv.GiaThietBi;
+                        list.Add(s);
+                    }
+                }
+            }
+
+
+            return list;
+        }
         public void ThemDVBll(DichVu dv)
         {
             QLDAL qLDAL = new QLDAL();
             qLDAL.ThemDVDal(dv);
+        }
+        public void ThemTBBll(ThietBi tb)
+        {
+            QLDAL qLDAL = new QLDAL();
+            qLDAL.ThemTBDal(tb);
         }
         public void SuaDVBll(DichVu dv)
         {

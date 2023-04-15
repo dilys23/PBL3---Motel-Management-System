@@ -28,7 +28,7 @@ namespace PBL3___Motel_Management_System.View
             DayTro day = qLBLL.GetDayByIdDay(idDay);
             txtTenDay.Text = day.TenDayTro.ToString();  
             txtQuanHuyen.Text = day.TenHuyen.ToString();
-            txtPhuong.Text = day.TenDuong.ToString();
+            txtdiachi.Text = day.TenDuong.ToString();
             txtThanhpho.Text = day.TenThanhPho.ToString();
             //txtdiachi.Text = day.
         }
@@ -37,7 +37,7 @@ namespace PBL3___Motel_Management_System.View
             int i = 0;
             errorProvider1.SetError(txtTenDay, "");
             errorProvider1.SetError(txtQuanHuyen, "");
-            errorProvider1.SetError(txtPhuong, "");
+            errorProvider1.SetError(txtdiachi, "");
             errorProvider1.SetError(txtThanhpho, "");
             if (txtTenDay.Text == "")
             {
@@ -49,10 +49,10 @@ namespace PBL3___Motel_Management_System.View
                 i++;
                 errorProvider1.SetError(txtQuanHuyen, "Vui lòng điền tên quận huyện");
             }
-            if (txtPhuong.Text == "")
+            if (txtdiachi.Text == "")
             {
                 i++;
-                errorProvider1.SetError(txtPhuong, "Vui lòng điền tên phường");
+                errorProvider1.SetError(txtdiachi, "Vui lòng điền tên phường");
             }
             if (txtThanhpho.Text == "")
             {
@@ -85,7 +85,7 @@ namespace PBL3___Motel_Management_System.View
                 day.MaDayTro = IdDay;
                 day.TenDayTro = txtTenDay.Text;
                 day.TenHuyen = txtQuanHuyen.Text;
-                day.TenDuong  = txtPhuong.Text;
+                day.TenDuong  = txtdiachi.Text;
                 day.TenThanhPho = txtThanhpho.Text; 
                 qLBLL.SuaDayBll(day);
                 MessageBox.Show("Thay đổi thông tin thành công", "Thông báo");

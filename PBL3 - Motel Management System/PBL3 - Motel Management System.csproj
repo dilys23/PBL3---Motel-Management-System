@@ -123,6 +123,7 @@
     <Compile Include="DTO\ViewDay.cs" />
     <Compile Include="DTO\ViewDichVu.cs" />
     <Compile Include="DTO\ViewPhongTro.cs" />
+    <Compile Include="DTO\ViewThietBi.cs" />
     <Compile Include="View\ChitietDay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,11 +280,11 @@
     <Compile Include="View\ThemThietBiPhong.Designer.cs">
       <DependentUpon>ThemThietBiPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ThietBi.cs">
+    <Compile Include="View\Thietbi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ThietBi.Designer.cs">
-      <DependentUpon>ThietBi.cs</DependentUpon>
+    <Compile Include="View\Thietbi.Designer.cs">
+      <DependentUpon>Thietbi.cs</DependentUpon>
     </Compile>
     <Compile Include="View\TrangChu.cs">
       <SubType>Form</SubType>
@@ -410,8 +411,8 @@
     <EmbeddedResource Include="View\ThemThietBiPhong.resx">
       <DependentUpon>ThemThietBiPhong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ThietBi.resx">
-      <DependentUpon>ThietBi.cs</DependentUpon>
+    <EmbeddedResource Include="View\Thietbi.resx">
+      <DependentUpon>Thietbi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\TrangChu.resx">
       <DependentUpon>TrangChu.cs</DependentUpon>

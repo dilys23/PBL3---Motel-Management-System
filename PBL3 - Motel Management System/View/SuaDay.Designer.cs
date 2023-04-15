@@ -36,12 +36,10 @@
             this.txtTenDay = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtdiachi = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtThanhpho = new System.Windows.Forms.TextBox();
-            this.txtPhuong = new System.Windows.Forms.TextBox();
             this.txtQuanHuyen = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -129,16 +127,6 @@
             this.label3.TabIndex = 31;
             this.label3.Text = "Quận/Huyện *";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(426, 91);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 20);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "Phường/Xã *";
-            // 
             // txtdiachi
             // 
             this.txtdiachi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -165,14 +153,12 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.txtThanhpho);
-            this.panel2.Controls.Add(this.txtPhuong);
             this.panel2.Controls.Add(this.txtQuanHuyen);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.txtTenDay);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.txtdiachi);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(30, 120);
@@ -187,14 +173,6 @@
             this.txtThanhpho.Name = "txtThanhpho";
             this.txtThanhpho.Size = new System.Drawing.Size(225, 27);
             this.txtThanhpho.TabIndex = 50;
-            // 
-            // txtPhuong
-            // 
-            this.txtPhuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhuong.Location = new System.Drawing.Point(573, 84);
-            this.txtPhuong.Name = "txtPhuong";
-            this.txtPhuong.Size = new System.Drawing.Size(225, 27);
-            this.txtPhuong.TabIndex = 49;
             // 
             // txtQuanHuyen
             // 
@@ -247,12 +225,10 @@
         private System.Windows.Forms.TextBox txtTenDay;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtdiachi;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtPhuong;
         private System.Windows.Forms.TextBox txtQuanHuyen;
         private System.Windows.Forms.TextBox txtThanhpho;
         

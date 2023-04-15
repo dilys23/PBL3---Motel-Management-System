@@ -311,7 +311,7 @@ namespace PBL3___Motel_Management_System
 
         private void btnThietbi_Click(object sender, EventArgs e)
         {
-            openChildForm(new ThietBi());   
+            openChildForm(new Thietbi());   
         }
     }
 }

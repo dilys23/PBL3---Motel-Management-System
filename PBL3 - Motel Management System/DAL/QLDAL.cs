@@ -87,11 +87,31 @@ namespace PBL3___Motel_Management_System.DAL
 
             return list;
         }
+        public List<ThietBi> GetAllThietBi()
+        {
+            List<ThietBi> list = new List<ThietBi>();
+            using (DataPbl data = new DataPbl())
+            {
+                var s = data.ThietBi.Select(p => p);
+                list = s.ToList<ThietBi>();
+            }
+
+            return list;
+        }
         public void ThemDVDal(DichVu dv)
         {
             using(DataPbl data = new DataPbl())
             {
                 data.DichVu.Add(dv);
+                data.SaveChanges();
+
+            }
+        }
+        public void ThemTBDal(ThietBi tb)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                data.ThietBi.Add(tb);
                 data.SaveChanges();
 
             }
