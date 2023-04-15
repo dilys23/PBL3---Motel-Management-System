@@ -22,6 +22,7 @@ namespace PBL3___Motel_Management_System.DAL
             this.HopDong = new HashSet<HopDong>();
             this.ThanhVienTrongPhong = new HashSet<ThanhVienTrongPhong>();
         }
+        
     
         public string MaPhongTro { get; set; }
         public string TenPhongTro { get; set; }
@@ -29,8 +30,7 @@ namespace PBL3___Motel_Management_System.DAL
         public double DienTich { get; set; }
         public bool TinhTrang { get; set; }
         public string MaDayTro { get; set; }
-
-        public int ToiDa { get; set; }
+        public Nullable<int> ToiDa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietDichVu> ChiTietDichVu { get; set; }
