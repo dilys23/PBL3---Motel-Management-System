@@ -89,12 +89,7 @@ namespace PBL3___Motel_Management_System
             themPhong.ShowDialog();
         }
 
-        private void iconButton3_Click(object sender, EventArgs e)
-        {
-            SuaPhong themSuaph = new SuaPhong();
-            themSuaph.ShowDialog();
-        }
-        //private Form activeForm = null;
+       
         TrangChu tc = new TrangChu();
 
         private void btnThemday_Click_1(object sender, EventArgs e)
@@ -107,11 +102,7 @@ namespace PBL3___Motel_Management_System
             tc.openChildForm1(new ChitietPhong(), panelPhong);
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            tc.openChildForm1(new SuaPhong(), panelPhong);
-        }
-
+     
         private void label7_Click(object sender, EventArgs e)
         {
 

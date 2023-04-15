@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBL3___Motel_Management_System.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,21 @@ namespace PBL3___Motel_Management_System
 {
     public partial class SuaPhong : Form
     {
-        public SuaPhong()
+        private string IdPhong;
+        public SuaPhong(string IdPhong)
         {
-            InitializeComponent();
+            InitializeComponent();        
+            this.IdPhong = IdPhong;
         }
+        public void FormLoad(string IdPhong)
+        {
+            QLDAL qLDAL = new QLDAL();
+            PhongTro phongTro= qLDAL.GetPhongTroByIdPhong(IdPhong);
+            if(IdPhong != null)
+            {
 
+            }
+        }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 

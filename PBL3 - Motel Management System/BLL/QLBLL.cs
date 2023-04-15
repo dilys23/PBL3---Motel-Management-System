@@ -381,6 +381,12 @@ namespace PBL3___Motel_Management_System.BLL
             DayTro dt = qLDAL.GetDayByIdDay(Id);
             return dt;
         }
-        
+        public PhongTro GetPhongTroByIdPhong(string idPhong)
+        {
+            QLDAL qLDAL= new QLDAL();
+            PhongTro phongtro = qLDAL.GetPhongTroByIdPhong(idPhong);
+            return phongtro;
+
+        }
     }
 }

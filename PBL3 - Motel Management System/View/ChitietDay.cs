@@ -64,7 +64,8 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new SuaPhong(), panelChitietDay);
+            string IdPhong = dgvPhong.CurrentRow.Cells[0].Value.ToString();
+            tc.openChildForm1(new SuaPhong(IdPhong), panelChitietDay);
         }
     }
 }

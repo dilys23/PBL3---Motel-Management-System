@@ -134,5 +134,13 @@ namespace PBL3___Motel_Management_System.DAL
                 return s;
             }
         }
+        public PhongTro GetPhongTroByIdPhong(string idPhong)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                var s = data.PhongTro.Single(p => p.MaPhongTro == idPhong);
+                return s;
+            }
+        }
     }
 }
