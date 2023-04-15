@@ -106,5 +106,19 @@ namespace PBL3___Motel_Management_System.DAL
                 
             }
         }
+
+        public void SuaDayDal(DayTro day)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                var s = data.DayTro.Single(p => p.MaDayTro == day.MaDayTro);
+                s.TenDayTro = day.TenDayTro;
+                s.TenHuyen = day.TenHuyen;
+                s.TenDuong = day.TenDuong; 
+                s.TenThanhPho = day.TenThanhPho;
+                data.SaveChanges();
+
+            }
+        }
     }
 }

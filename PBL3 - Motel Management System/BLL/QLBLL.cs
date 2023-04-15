@@ -205,6 +205,21 @@ namespace PBL3___Motel_Management_System.BLL
 
             
         }
-        
+        public DayTro GetDayByIdDay(string id)
+        {
+            QLDAL qLDAL= new QLDAL();
+            foreach (DayTro daytro in qLDAL.GetAllDayTro())
+            {
+                if (daytro.MaDayTro  == id) return daytro;
+            }    
+            return null;
+        }
+
+        public void SuaDayBll(DayTro day)
+        {
+            QLDAL qLDAL = new QLDAL();
+            qLDAL.SuaDayDal(day);
+        }
+
     }
 }
