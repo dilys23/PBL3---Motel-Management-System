@@ -46,6 +46,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnSuaDichVu = new FontAwesome.Sharp.IconButton();
             this.panelDay.SuspendLayout();
             this.panPhong1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDayTro)).BeginInit();
@@ -61,6 +62,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.panelDay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelDay.Controls.Add(this.btnSuaDichVu);
             this.panelDay.Controls.Add(this.txtTenDay);
             this.panelDay.Controls.Add(this.label4);
             this.panelDay.Controls.Add(this.cbbTinhTrang);
@@ -79,7 +81,7 @@
             // 
             // txtTenDay
             // 
-            this.txtTenDay.Location = new System.Drawing.Point(549, 38);
+            this.txtTenDay.Location = new System.Drawing.Point(401, 36);
             this.txtTenDay.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenDay.Name = "txtTenDay";
             this.txtTenDay.Size = new System.Drawing.Size(132, 22);
@@ -99,7 +101,7 @@
             this.cbbTinhTrang.DisplayMember = "Tình trạng";
             this.cbbTinhTrang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbTinhTrang.FormattingEnabled = true;
-            this.cbbTinhTrang.Location = new System.Drawing.Point(320, 34);
+            this.cbbTinhTrang.Location = new System.Drawing.Point(230, 33);
             this.cbbTinhTrang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbTinhTrang.Name = "cbbTinhTrang";
             this.cbbTinhTrang.Size = new System.Drawing.Size(148, 28);
@@ -114,12 +116,13 @@
             this.btnThemday.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThemday.IconSize = 30;
             this.btnThemday.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemday.Location = new System.Drawing.Point(828, 30);
+            this.btnThemday.Location = new System.Drawing.Point(619, 27);
             this.btnThemday.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThemday.Name = "btnThemday";
-            this.btnThemday.Size = new System.Drawing.Size(38, 37);
+            this.btnThemday.Size = new System.Drawing.Size(113, 37);
             this.btnThemday.TabIndex = 33;
             this.btnThemday.Tag = "Thêm dãy";
+            this.btnThemday.Text = "Thêm dãy";
             this.btnThemday.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemday.UseVisualStyleBackColor = false;
             this.btnThemday.Click += new System.EventHandler(this.btnThemday_Click);
@@ -239,6 +242,7 @@
             this.dtgDayTro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtgDayTro.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgDayTro.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgDayTro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgDayTro.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -288,6 +292,25 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // btnSuaDichVu
+            // 
+            this.btnSuaDichVu.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnSuaDichVu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSuaDichVu.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSuaDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuaDichVu.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.btnSuaDichVu.IconColor = System.Drawing.Color.White;
+            this.btnSuaDichVu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSuaDichVu.IconSize = 25;
+            this.btnSuaDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSuaDichVu.Location = new System.Drawing.Point(756, 29);
+            this.btnSuaDichVu.Name = "btnSuaDichVu";
+            this.btnSuaDichVu.Size = new System.Drawing.Size(110, 39);
+            this.btnSuaDichVu.TabIndex = 53;
+            this.btnSuaDichVu.Text = "Sửa dãy ";
+            this.btnSuaDichVu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSuaDichVu.UseVisualStyleBackColor = false;
+            // 
             // Daytro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -330,5 +353,6 @@
         private FontAwesome.Sharp.IconButton btnThem;
         private System.Windows.Forms.TextBox txtTenDay;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private FontAwesome.Sharp.IconButton btnSuaDichVu;
     }
 }

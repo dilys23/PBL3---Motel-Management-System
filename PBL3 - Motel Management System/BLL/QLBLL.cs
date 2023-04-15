@@ -388,5 +388,15 @@ namespace PBL3___Motel_Management_System.BLL
             return phongtro;
 
         }
+        public void UpdatePTBLL(PhongTro PT)
+        {
+            QLDAL qlDAl = new QLDAL();
+            qlDAl.UpdatePTDAL(PT);
+        }
+        public string GetIdDayByIdPhong(string IdPhong)
+        {
+            QLDAL qlDAl = new QLDAL();
+            return qlDAl.GetIdDayByIdPhong(IdPhong);
+        }
     }
 }

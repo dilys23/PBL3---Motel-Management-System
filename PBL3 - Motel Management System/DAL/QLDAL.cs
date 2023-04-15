@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -140,6 +141,35 @@ namespace PBL3___Motel_Management_System.DAL
             {
                 var s = data.PhongTro.Single(p => p.MaPhongTro == idPhong);
                 return s;
+            }
+        }
+        public void UpdatePTDAL(PhongTro PT)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                var s = data.PhongTro.Single(p => p.MaPhongTro == PT.MaPhongTro);
+                s.TenPhongTro = PT.TenPhongTro;
+                s.DienTich = PT.DienTich;
+                s.GiaTien=PT.GiaTien;
+                s.ToiDa=PT.ToiDa;
+                data.SaveChanges();
+
+            }
+        }
+        public string GetIdDayByIdPhong(string IdPhong)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                foreach(PhongTro phongTro in GetAllPhongTro())
+                {
+                    if(phongTro.MaPhongTro==IdPhong)
+                    {
+                        return phongTro.MaDayTro;break;
+                    }
+                    
+                }
+                return null;
+
             }
         }
     }
