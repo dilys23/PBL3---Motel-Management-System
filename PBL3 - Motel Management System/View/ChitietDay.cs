@@ -24,7 +24,7 @@ namespace PBL3___Motel_Management_System.View
             LoadForm(idDay);
         }
         TrangChu tc = new TrangChu();
-        public void LoadForm(string idDay)
+        private void LoadForm(string idDay)
         {      
             DataTable dt = new DataTable();
             QLBLL qLBLL = new QLBLL();
@@ -45,7 +45,7 @@ namespace PBL3___Motel_Management_System.View
                 dt.Rows.Add(vp.MaPhongTro, vp.Stt, vp.TenPhongTro, vp.GiaTien, vp.DienTich, vp.TinhTrang, vp.SoNguoiHienCo,vp.SoNguoiToiDa);
             }
             textBox1.Text= qLBLL.GetDayByIdDay(idDay).TenDayTro.ToString();
-            textBox2.Text= qLBLL.GetDayByIdDay(idDay).TenDuong.ToString()+','+qLBLL.GetDayByIdDay(idDay).TenHuyen.ToString() + qLBLL.GetDayByIdDay(idDay).TenThanhPho.ToString() ;
+            textBox2.Text= qLBLL.GetDayByIdDay(idDay).TenDuong.ToString()+','+qLBLL.GetDayByIdDay(idDay).TenHuyen.ToString() +','+ qLBLL.GetDayByIdDay(idDay).TenThanhPho.ToString() ;
             dgvPhong.DataSource = dt;
             dgvPhong.Columns[0].Visible = false;
         }
@@ -64,8 +64,11 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            QLBLL qlBLL = new QLBLL();
             string IdPhong = dgvPhong.CurrentRow.Cells[0].Value.ToString();
-            tc.openChildForm1(new SuaPhong(IdPhong), panelChitietDay);
+            tc.openChildForm1(new SuaPhong(IdPhong,LoadForm), panelChitietDay);
+            //LoadForm(qlBLL.GetIdDayByIdPhong(IdPhong));
+            LoadForm(IdDay);
         }
     }
 }
