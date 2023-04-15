@@ -58,16 +58,19 @@ namespace PBL3___Motel_Management_System.View
             cbbTinhTrang.Items.Add("Trống");
             cbbTinhTrang.SelectedIndex = 0;
         }
+        
         private void btnThem_Click(object sender, EventArgs e)
         {
             string idDay = dtgDayTro.CurrentRow.Cells[0].Value.ToString();
             tc.openChildForm1(new ChitietDay(idDay), panelDay);
+
         }
 
         private void btnThemday_Click(object sender, EventArgs e)
         {
-            
+           
             tc.openChildForm1(new ThemDay(LoadForm), panelDay);
+
             
         }
 

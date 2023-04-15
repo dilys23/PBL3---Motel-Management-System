@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,6 +39,16 @@ namespace PBL3___Motel_Management_System.DAL
             }
             return list;
         }
+        public List<PhongTro>GetAllPhongTro()
+        {
+            List<PhongTro> list = new List<PhongTro>();
+            using(DataPbl data = new DataPbl())
+            {
+                var s = data.PhongTro.Select(p => p);
+                list = s.ToList<PhongTro>();
+            }
+            return list;
+        }
         public void AddDayTroDal(DayTro dt)
         {
             using(DataPbl data = new DataPbl())
@@ -54,17 +65,7 @@ namespace PBL3___Motel_Management_System.DAL
                 data.SaveChanges();
             }
         }
-        public List<PhongTro> GetAllPhongTro()
-        {
-            List<PhongTro> list = new List<PhongTro>();
-            using(DataPbl data = new DataPbl())
-            {
-                var s = data.PhongTro.Select(p => p);
-                list = s.ToList<PhongTro>();
-            }
-
-            return list;
-        }
+        
         public List<PhongTro> GetPhongByIdDay(string idDay)
         {
             List<PhongTro> list = new List<PhongTro>();
@@ -106,6 +107,55 @@ namespace PBL3___Motel_Management_System.DAL
                 
             }
         }
+        public List<Nguoi>  GetAllNguoi()
+        {
+            List<Nguoi> list = new List<Nguoi>();
+            using(DataPbl data = new DataPbl())
+            {
+                var s = data.Nguoi.Select(p => p);
+                list = s.ToList<Nguoi>();
+            }
+            return list;
+        }
+        public List<ThanhVienTrongPhong> GetAllThanhVienTrongPhong()
+        {
+            List<ThanhVienTrongPhong> list = new List<ThanhVienTrongPhong>();
+            using (DataPbl data = new DataPbl())
+            {
+                var s = data.ThanhVienTrongPhong.Select(p => p);
+                list = s.ToList<ThanhVienTrongPhong>();
+            }
+            return list;
+        }
+        public DayTro GetDayByIdDay(string Id)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                var s = data.DayTro.Single(p => p.MaDayTro == Id);
+                return s;
+            }
+        }
+        public PhongTro GetPhongTroByIdPhong(string idPhong)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                var s = data.PhongTro.Single(p => p.MaPhongTro == idPhong);
+                return s;
+            }
+        }
+        public void UpdatePTDAL(PhongTro PT)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                var s = data.PhongTro.Single(p => p.MaPhongTro == PT.MaPhongTro);
+                s.TenPhongTro = PT.TenPhongTro;
+                s.DienTich = PT.DienTich;
+                s.GiaTien=PT.GiaTien;
+                s.ToiDa=PT.ToiDa;
+                data.SaveChanges();
+
+            }
+        }
 
         public void SuaDayDal(DayTro day)
         {
@@ -117,6 +167,22 @@ namespace PBL3___Motel_Management_System.DAL
                 s.TenDuong = day.TenDuong; 
                 s.TenThanhPho = day.TenThanhPho;
                 data.SaveChanges();
+
+            }
+        }
+        public string GetIdDayByIdPhong(string IdPhong)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                foreach(PhongTro phongTro in GetAllPhongTro())
+                {
+                    if(phongTro.MaPhongTro==IdPhong)
+                    {
+                        return phongTro.MaDayTro;break;
+                    }
+                    
+                }
+                return null;
 
             }
         }

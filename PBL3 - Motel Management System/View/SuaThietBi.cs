@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System.View
 {
-    public partial class SuaThietBi : Form
+    public partial class SuaThietBI : Form
     {
-        public SuaThietBi()
+        public SuaThietBI()
         {
             InitializeComponent();
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

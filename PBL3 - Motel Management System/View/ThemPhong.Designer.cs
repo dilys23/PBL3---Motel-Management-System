@@ -113,7 +113,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(442, 33);
+            this.label2.Location = new System.Drawing.Point(432, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 20);
             this.label2.TabIndex = 30;
@@ -152,9 +152,9 @@
             // 
             // txtGiaTien
             // 
-            this.txtGiaTien.Location = new System.Drawing.Point(536, 30);
+            this.txtGiaTien.Location = new System.Drawing.Point(577, 28);
             this.txtGiaTien.Name = "txtGiaTien";
-            this.txtGiaTien.Size = new System.Drawing.Size(190, 22);
+            this.txtGiaTien.Size = new System.Drawing.Size(225, 22);
             this.txtGiaTien.TabIndex = 48;
             // 
             // label9
@@ -179,7 +179,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(16, 134);
+            this.label8.Location = new System.Drawing.Point(432, 80);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(126, 20);
             this.label8.TabIndex = 40;
@@ -187,7 +187,7 @@
             // 
             // txtToiDa
             // 
-            this.txtToiDa.Location = new System.Drawing.Point(153, 133);
+            this.txtToiDa.Location = new System.Drawing.Point(577, 80);
             this.txtToiDa.Name = "txtToiDa";
             this.txtToiDa.Size = new System.Drawing.Size(225, 22);
             this.txtToiDa.TabIndex = 41;

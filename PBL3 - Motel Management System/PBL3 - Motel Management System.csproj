@@ -122,6 +122,7 @@
     <Compile Include="DTO\CbbDayTro.cs" />
     <Compile Include="DTO\ViewDay.cs" />
     <Compile Include="DTO\ViewDichVu.cs" />
+    <Compile Include="DTO\ViewPhongTro.cs" />
     <Compile Include="View\ChitietDay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,12 +140,6 @@
     </Compile>
     <Compile Include="View\ChitietPhong.Designer.cs">
       <DependentUpon>ChitietPhong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\ChitietThanhVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ChitietThanhVien.Designer.cs">
-      <DependentUpon>ChitietThanhVien.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Daytro.cs">
       <SubType>Form</SubType>
@@ -181,6 +176,12 @@
     </Compile>
     <Compile Include="View\SuaHopDong.Designer.cs">
       <DependentUpon>SuaHopDong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\SuaThietBi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SuaThietBi.Designer.cs">
+      <DependentUpon>SuaThietBi.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ThemCSDien.cs">
       <SubType>Form</SubType>
@@ -355,6 +356,9 @@
     <EmbeddedResource Include="View\SuaHopDong.resx">
       <DependentUpon>SuaHopDong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\SuaThietBi.resx">
+      <DependentUpon>SuaThietBi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ThemCSDien.resx">
       <DependentUpon>ThemCSDien.cs</DependentUpon>
     </EmbeddedResource>
@@ -457,12 +461,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="DAL\DataPbl.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DataPbl.Context.cs</LastGenOutput>
       <DependentUpon>DataPbl.edmx</DependentUpon>
+      <LastGenOutput>DataPbl.Context.cs</LastGenOutput>
     </Content>
     <Content Include="DAL\DataPbl.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using PBL3___Motel_Management_System.View;
 namespace PBL3___Motel_Management_System
 {
     public partial class ThemHopDong : Form
@@ -56,7 +56,7 @@ namespace PBL3___Motel_Management_System
 
         private void iconButton4_Click(object sender, EventArgs e)
         {
-
+            tc.openChildForm1(new ChitietHopDong(),panelThemHD);
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

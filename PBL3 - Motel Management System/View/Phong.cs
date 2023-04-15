@@ -1,8 +1,12 @@
-﻿using PBL3___Motel_Management_System.View;
+﻿using PBL3___Motel_Management_System.BLL;
+using PBL3___Motel_Management_System.DAL;
+using PBL3___Motel_Management_System.DTO;
+using PBL3___Motel_Management_System.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,7 +23,64 @@ namespace PBL3___Motel_Management_System
         {
             InitializeComponent();
             //this.paneDesktop = paneDesktop;
-         
+            LoadForm(null);
+            SetCbb();
+
+        }
+        public void LoadForm(string txt)
+        {
+            
+            DataTable dt = new DataTable();
+            dt.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn{ColumnName = "MaPhongTro",DataType = typeof(string)},
+                new DataColumn{ColumnName = "STT",DataType = typeof(int)},
+                new DataColumn{ColumnName = "Tên phòng trọ",DataType = typeof(string)},
+                new DataColumn{ColumnName = "Giá tiền",DataType = typeof(double)},
+                new DataColumn{ColumnName = "Diện tích",DataType = typeof(double)},
+                new DataColumn{ColumnName = "Tình trạng",DataType = typeof(bool)},
+                new DataColumn{ColumnName = "Số người hiện có",DataType = typeof(int)},
+                new DataColumn{ColumnName = "Số người tối đa",DataType = typeof(string)},
+                
+
+            });
+            QLBLL qLBLL = new QLBLL();
+            int i = 0;
+            if(txt == null)
+            {
+            foreach(ViewPhongTro pt in qLBLL.DgvPhongTro(null))
+            {
+                dt.Rows.Add(pt.MaPhongTro,pt.Stt,pt.TenPhongTro,pt.GiaTien,pt.DienTich,pt.TinhTrang,pt.SoNguoiHienCo,pt.SoNguoiToiDa);
+            }
+            }
+            else
+            {
+                string idDay = ((ViewCbb)(cbbDayTro.SelectedItem)).IdDayTro;
+                string idTinhTrang = ((ViewCbb)(cbbTinhTrang.SelectedItem)).IdDayTro;
+                
+                foreach (ViewPhongTro pt in qLBLL.DgvPhongTroTimKiem(idDay, idTinhTrang, txtTimKiem.Text))
+                {
+                    dt.Rows.Add(pt.MaPhongTro, pt.Stt, pt.TenPhongTro, pt.GiaTien, pt.DienTich, pt.TinhTrang, pt.SoNguoiHienCo, pt.SoNguoiToiDa);
+                }
+            }
+            
+            dgvPhongTro.DataSource = dt;
+            dgvPhongTro.Columns[0].Visible = false;
+        }
+        private void SetCbb()
+        {
+            cbbDayTro.Items.Clear();
+            cbbTinhTrang.Items.Clear();
+            QLBLL qLBLL = new QLBLL();
+            cbbDayTro.Items.AddRange(qLBLL.GetCbbDayTro().ToArray());
+            cbbDayTro.SelectedIndex = 0;
+            cbbTinhTrang.Items.AddRange(new ViewCbb[]
+            {
+                new ViewCbb{IdDayTro = "-1",TenDayTro = "All"},
+                new ViewCbb{IdDayTro = "1",TenDayTro = "Đã cho thuê"},
+                new ViewCbb{IdDayTro = "0",TenDayTro = "Còn trống"},
+            }) ;
+            cbbTinhTrang.SelectedIndex = 0;
         }
 
         private void iconButton7_Click(object sender, EventArgs e)
@@ -28,12 +89,7 @@ namespace PBL3___Motel_Management_System
             themPhong.ShowDialog();
         }
 
-        private void iconButton3_Click(object sender, EventArgs e)
-        {
-            SuaPhong themSuaph = new SuaPhong();
-            themSuaph.ShowDialog();
-        }
-        //private Form activeForm = null;
+       
         TrangChu tc = new TrangChu();
 
         private void btnThemday_Click_1(object sender, EventArgs e)
@@ -46,14 +102,16 @@ namespace PBL3___Motel_Management_System
             tc.openChildForm1(new ChitietPhong(), panelPhong);
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            tc.openChildForm1(new SuaPhong(), panelPhong);
-        }
-
+     
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            LoadForm("");
+            
         }
     }
     }

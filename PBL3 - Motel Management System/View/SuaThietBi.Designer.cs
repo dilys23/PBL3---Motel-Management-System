@@ -1,6 +1,6 @@
 ﻿namespace PBL3___Motel_Management_System.View
 {
-    partial class SuaThietBi
+    partial class SuaThietBI
     {
         /// <summary>
         /// Required designer variable.
@@ -72,6 +72,7 @@
             this.iconButton1.Size = new System.Drawing.Size(45, 45);
             this.iconButton1.TabIndex = 61;
             this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // label1
             // 
@@ -187,7 +188,7 @@
             this.label6.TabIndex = 60;
             this.label6.Text = "SỬA THIẾT BỊ";
             // 
-            // SuaThietBi
+            // SuaThietBI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -197,7 +198,7 @@
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label6);
-            this.Name = "SuaThietBi";
+            this.Name = "SuaThietBI";
             this.Text = "SuaThietBi";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

@@ -43,6 +43,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSuaHD = new FontAwesome.Sharp.IconButton();
             this.btnThemHD = new FontAwesome.Sharp.IconButton();
@@ -191,7 +193,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-//            this.panel2.Controls.Add(this.iconButton3);
+            this.panel2.Controls.Add(this.iconButton1);
+            this.panel2.Controls.Add(this.iconButton2);
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.comboBox2);
@@ -204,6 +207,40 @@
             this.panel2.Size = new System.Drawing.Size(949, 383);
             this.panel2.TabIndex = 27;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ExternalLink;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 25;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(826, 27);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(74, 39);
+            this.iconButton1.TabIndex = 55;
+            this.iconButton1.Text = "Sửa";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.BackColor = System.Drawing.Color.DarkOrange;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.FileArrowUp;
+            this.iconButton2.IconColor = System.Drawing.Color.White;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.IconSize = 25;
+            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton2.Location = new System.Drawing.Point(730, 27);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(79, 39);
+            this.iconButton2.TabIndex = 54;
+            this.iconButton2.Text = "Thêm ";
+            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton2.UseVisualStyleBackColor = false;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
             // panel1
             // 
@@ -232,7 +269,6 @@
             this.btnSuaHD.Text = "Sửa";
             this.btnSuaHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSuaHD.UseVisualStyleBackColor = false;
-            this.btnSuaHD.Click += new System.EventHandler(this.btnSuaHD_Click);
             // 
             // btnThemHD
             // 
@@ -249,7 +285,6 @@
             this.btnThemHD.Text = "Thêm ";
             this.btnThemHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemHD.UseVisualStyleBackColor = false;
-            this.btnThemHD.Click += new System.EventHandler(this.btnThemHD_Click);
             // 
             // ChisoDien
             // 
@@ -290,5 +325,7 @@
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton btnSuaHD;
         private FontAwesome.Sharp.IconButton btnThemHD;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton iconButton2;
     }
 }

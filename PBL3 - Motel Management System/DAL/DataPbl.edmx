@@ -31,7 +31,7 @@
           </Key>
           <Property Name="MaDayTro" Type="varchar" MaxLength="8" Nullable="false" />
           <Property Name="TenDayTro" Type="nvarchar" MaxLength="64" Nullable="false" />
-          <Property Name="TenDuong" Type="varchar" MaxLength="64" Nullable="false" />
+          <Property Name="TenDuong" Type="nvarchar" MaxLength="64" />
           <Property Name="TenHuyen" Type="nvarchar" MaxLength="64" Nullable="false" />
           <Property Name="TenThanhPho" Type="nvarchar" MaxLength="64" Nullable="false" />
           <Property Name="MaChuTro" Type="varchar" MaxLength="8" Nullable="false" />
@@ -77,6 +77,7 @@
           <Property Name="DienTich" Type="float" Nullable="false" />
           <Property Name="TinhTrang" Type="bit" Nullable="false" />
           <Property Name="MaDayTro" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="ToiDa" Type="int" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -361,7 +362,7 @@
           </Key>
           <Property Name="MaDayTro" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TenDayTro" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="TenDuong" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TenDuong" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
           <Property Name="TenHuyen" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="TenThanhPho" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="MaChuTro" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
@@ -416,6 +417,7 @@
           <Property Name="DienTich" Type="Double" Nullable="false" />
           <Property Name="TinhTrang" Type="Boolean" Nullable="false" />
           <Property Name="MaDayTro" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ToiDa" Type="Int32" />
           <NavigationProperty Name="ChiTietDichVu" Relationship="Self.FK_MaPhongTroTietDichVu" FromRole="PhongTro" ToRole="ChiTietDichVu" />
           <NavigationProperty Name="ChiTietThietBi" Relationship="Self.FK_MaPhongTroChiTietThietBi" FromRole="PhongTro" ToRole="ChiTietThietBi" />
           <NavigationProperty Name="DayTro" Relationship="Self.FK_MaDayTroPhongTro" FromRole="PhongTro" ToRole="DayTro" />
@@ -759,6 +761,7 @@
                 <ScalarProperty Name="DienTich" ColumnName="DienTich" />
                 <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
                 <ScalarProperty Name="MaDayTro" ColumnName="MaDayTro" />
+                <ScalarProperty Name="ToiDa" ColumnName="ToiDa" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
