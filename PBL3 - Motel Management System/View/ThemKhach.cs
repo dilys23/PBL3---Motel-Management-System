@@ -1,4 +1,6 @@
-﻿using PBL3___Motel_Management_System.View;
+﻿using PBL3___Motel_Management_System.BLL;
+using PBL3___Motel_Management_System.DAL;
+using PBL3___Motel_Management_System.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,11 +36,66 @@ namespace PBL3___Motel_Management_System
         }
         TrangChu tc = new TrangChu();
 
-      
 
+        private Boolean checkHopLe()
+        {
+            int i = 0;
+            errorProvider1.SetError(txtTen, "");
+            errorProvider1.SetError(txtSdt, "");
+            errorProvider1.SetError(txtDiaChi, "");
+            errorProvider1.SetError(txtCccd, "");
+            errorProvider1.SetError(rdbtnNu, "");
+            if (txtTen.Text == "")
+            {
+                errorProvider1.SetError(txtTen, "Vui lòng nhập họ và tên");
+                i++;
+
+            }
+            if (txtSdt.Text == "")
+            {
+                errorProvider1.SetError(txtSdt, "Vui lòng nhập số điện thoại");
+                i++;
+
+            }
+            if (txtDiaChi.Text == "")
+            {
+                errorProvider1.SetError(txtDiaChi, "Vui lòng nhập địa chỉ");
+                i++;
+
+            }
+            if (txtCccd.Text == "")
+            {
+                errorProvider1.SetError(txtCccd, "Vui lòng nhập căn cước công dân");
+                i++;
+
+            }
+            if(!rdbtnNam.Checked && !rdbtnNu.Checked)
+            {
+                errorProvider1.SetError(rdbtnNu, "Vui lòng chọn giới tính");
+                i++;
+            }
+            if (i==0) return true;
+            else return false;
+
+        }
         private void btnLuu_Click_1(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ThemDVphong(), panelKhach);
+            if(!checkHopLe())
+            {
+                QLBLL qLBLL = new QLBLL();
+                Nguoi nguoi = new Nguoi();
+                nguoi.MaNguoi = qLBLL.TaoIdNguoi();
+                nguoi.Cccd = txtCccd.Text;
+                nguoi.Ten = txtTen.Text;
+                nguoi.Sdt = txtSdt.Text;
+                nguoi.Diachi = txtDiaChi.Text;
+                nguoi.GioiTinh = (rdbtnNam.Checked);
+                nguoi.NgaySinh = dtpNgaySinh.Value.ToString("yyyy-MM-dd");
+
+
+            tc.openChildForm1(new ThemDVphong(nguoi), panelKhach);
+            }
+            
         }
     }
 }
