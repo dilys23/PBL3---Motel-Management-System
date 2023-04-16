@@ -257,7 +257,7 @@ namespace PBL3___Motel_Management_System.BLL
                     vd.TinhTrang = pt.TinhTrang;
                     vd.SoNguoiToiDa = (int)pt.ToiDa;
                     vd.SoNguoiHienCo = GetIdNguoiByIdPhong(pt.MaPhongTro).Count;
-                                        
+                    vd.TenDay = GetDayTroByIdPhong(pt.MaPhongTro).TenDayTro;
                     list.Add(vd);
                 }
                 else
@@ -274,6 +274,7 @@ namespace PBL3___Motel_Management_System.BLL
                         vd.TinhTrang = pt.TinhTrang;
                         vd.SoNguoiToiDa = (int)pt.ToiDa;
                         vd.SoNguoiHienCo = GetIdNguoiByIdPhong(pt.MaPhongTro).Count;
+                        vd.TenDay = GetDayTroByIdPhong(pt.MaPhongTro).TenDayTro;
                         list.Add(vd);
                     }
                 }
@@ -302,9 +303,10 @@ namespace PBL3___Motel_Management_System.BLL
                         DienTich = pt.DienTich,
                         TinhTrang = pt.TinhTrang,
                         SoNguoiToiDa = (int)pt.ToiDa,
-                        SoNguoiHienCo = GetIdNguoiByIdPhong(pt.MaPhongTro).Count
+                        SoNguoiHienCo = GetIdNguoiByIdPhong(pt.MaPhongTro).Count,
+                        TenDay = GetDayTroByIdPhong(pt.MaPhongTro).TenDayTro
 
-                });
+                    });
                 }
             }
             }
@@ -336,9 +338,10 @@ namespace PBL3___Motel_Management_System.BLL
                             DienTich = pt.DienTich,
                             TinhTrang = pt.TinhTrang,
                             SoNguoiToiDa = (int)pt.ToiDa,
-                            SoNguoiHienCo = GetIdNguoiByIdPhong(pt.MaPhongTro).Count
+                            SoNguoiHienCo = GetIdNguoiByIdPhong(pt.MaPhongTro).Count,
+                            TenDay = GetDayTroByIdPhong(pt.MaPhongTro).TenDayTro
 
-                        });
+                    });
                     }
                 }
             }

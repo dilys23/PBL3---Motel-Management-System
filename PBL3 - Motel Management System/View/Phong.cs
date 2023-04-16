@@ -41,7 +41,8 @@ namespace PBL3___Motel_Management_System
                 new DataColumn{ColumnName = "Tình trạng",DataType = typeof(bool)},
                 new DataColumn{ColumnName = "Số người hiện có",DataType = typeof(int)},
                 new DataColumn{ColumnName = "Số người tối đa",DataType = typeof(string)},
-                
+                new DataColumn{ColumnName = "Tên dãy",DataType = typeof(string)},
+
 
             });
             QLBLL qLBLL = new QLBLL();
@@ -50,7 +51,7 @@ namespace PBL3___Motel_Management_System
             {
             foreach(ViewPhongTro pt in qLBLL.DgvPhongTro(null))
             {
-                dt.Rows.Add(pt.MaPhongTro,pt.Stt,pt.TenPhongTro,pt.GiaTien,pt.DienTich,pt.TinhTrang,pt.SoNguoiHienCo,pt.SoNguoiToiDa);
+                dt.Rows.Add(pt.MaPhongTro,pt.Stt,pt.TenPhongTro,pt.GiaTien,pt.DienTich,pt.TinhTrang,pt.SoNguoiHienCo,pt.SoNguoiToiDa,qLBLL.GetDayTroByIdPhong(pt.MaPhongTro).TenDayTro);
             }
             }
             else
@@ -60,7 +61,7 @@ namespace PBL3___Motel_Management_System
                 
                 foreach (ViewPhongTro pt in qLBLL.DgvPhongTroTimKiem(idDay, idTinhTrang, txtTimKiem.Text))
                 {
-                    dt.Rows.Add(pt.MaPhongTro, pt.Stt, pt.TenPhongTro, pt.GiaTien, pt.DienTich, pt.TinhTrang, pt.SoNguoiHienCo, pt.SoNguoiToiDa);
+                    dt.Rows.Add(pt.MaPhongTro, pt.Stt, pt.TenPhongTro, pt.GiaTien, pt.DienTich, pt.TinhTrang, pt.SoNguoiHienCo, pt.SoNguoiToiDa,pt.TenDay);
                 }
             }
             

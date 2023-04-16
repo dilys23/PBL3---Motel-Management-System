@@ -43,7 +43,7 @@
             this.btnXoa = new FontAwesome.Sharp.IconButton();
             this.dgvThanhVien = new System.Windows.Forms.DataGridView();
             this.btnSua = new FontAwesome.Sharp.IconButton();
-            this.btnThem = new FontAwesome.Sharp.IconButton();
+            this.btnThemThanhVien = new FontAwesome.Sharp.IconButton();
             this.dgvDichVu = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -133,7 +133,7 @@
             this.panPhong1.Controls.Add(this.btnXoa);
             this.panPhong1.Controls.Add(this.dgvThanhVien);
             this.panPhong1.Controls.Add(this.btnSua);
-            this.panPhong1.Controls.Add(this.btnThem);
+            this.panPhong1.Controls.Add(this.btnThemThanhVien);
             this.panPhong1.Controls.Add(this.dgvDichVu);
             this.panPhong1.Controls.Add(this.label1);
             this.panPhong1.Controls.Add(this.label2);
@@ -335,22 +335,22 @@
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // btnThem
+            // btnThemThanhVien
             // 
-            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThem.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnThem.IconChar = FontAwesome.Sharp.IconChar.PeopleRoof;
-            this.btnThem.IconColor = System.Drawing.Color.White;
-            this.btnThem.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnThem.IconSize = 25;
-            this.btnThem.Location = new System.Drawing.Point(562, 8);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(32, 35);
-            this.btnThem.TabIndex = 56;
-            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThem.UseVisualStyleBackColor = false;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            this.btnThemThanhVien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThemThanhVien.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnThemThanhVien.IconChar = FontAwesome.Sharp.IconChar.PeopleRoof;
+            this.btnThemThanhVien.IconColor = System.Drawing.Color.White;
+            this.btnThemThanhVien.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThemThanhVien.IconSize = 25;
+            this.btnThemThanhVien.Location = new System.Drawing.Point(562, 8);
+            this.btnThemThanhVien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThemThanhVien.Name = "btnThemThanhVien";
+            this.btnThemThanhVien.Size = new System.Drawing.Size(32, 35);
+            this.btnThemThanhVien.TabIndex = 56;
+            this.btnThemThanhVien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThemThanhVien.UseVisualStyleBackColor = false;
+            this.btnThemThanhVien.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // dgvDichVu
             // 
@@ -512,7 +512,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private FontAwesome.Sharp.IconButton btnThem;
+        private FontAwesome.Sharp.IconButton btnThemThanhVien;
         private System.Windows.Forms.Panel panPhong1;
         private FontAwesome.Sharp.IconButton btnSua;
         private FontAwesome.Sharp.IconButton btnXoa;

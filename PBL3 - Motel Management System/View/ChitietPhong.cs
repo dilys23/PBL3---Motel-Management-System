@@ -1,5 +1,6 @@
 ﻿using PBL3___Motel_Management_System.BLL;
 using PBL3___Motel_Management_System.DAL;
+using PBL3___Motel_Management_System.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -53,7 +54,17 @@ namespace PBL3___Motel_Management_System.View
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
+            QLBLL qLBLL = new QLBLL();
+            if(qLBLL.GetIdNguoiByIdPhong(idPhong).Count() < qLBLL.GetPhongTroByIdPhong(idPhong).ToiDa)
+            {  
+                ThuePhong tp = new ThuePhong();
+
             tc.openChildForm1(new ThemKhach(null), panelChiTiet);
+            }
+            else
+            {
+                MessageBox.Show("Số lượng người đã tối đa");
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
