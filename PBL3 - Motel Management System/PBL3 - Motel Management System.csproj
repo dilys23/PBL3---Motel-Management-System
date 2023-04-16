@@ -120,6 +120,7 @@
       <DependentUpon>DataPbl.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\CbbDayTro.cs" />
+    <Compile Include="DTO\ThuePhong.cs" />
     <Compile Include="DTO\ViewDay.cs" />
     <Compile Include="DTO\ViewDichVu.cs" />
     <Compile Include="DTO\ViewPhongTro.cs" />
@@ -244,11 +245,11 @@
     <Compile Include="View\HoaDon.Designer.cs">
       <DependentUpon>HoaDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\HopDong.cs">
+    <Compile Include="View\Hopdong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\HopDong.Designer.cs">
-      <DependentUpon>HopDong.cs</DependentUpon>
+    <Compile Include="View\Hopdong.Designer.cs">
+      <DependentUpon>Hopdong.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ChisoDien.cs">
       <SubType>Form</SubType>
@@ -390,8 +391,8 @@
     <EmbeddedResource Include="View\HoaDon.resx">
       <DependentUpon>HoaDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\HopDong.resx">
-      <DependentUpon>HopDong.cs</DependentUpon>
+    <EmbeddedResource Include="View\Hopdong.resx">
+      <DependentUpon>Hopdong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ChisoDien.resx">
       <DependentUpon>ChisoDien.cs</DependentUpon>

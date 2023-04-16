@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System
 {
-    public partial class HopDong : Form
+    public partial class Hopdong : Form
     {
-        public HopDong()
+        public Hopdong()
         {
             InitializeComponent();
         }
@@ -30,7 +30,7 @@ namespace PBL3___Motel_Management_System
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ChitietHopDong(), panelHopDong); ;
+            tc.openChildForm1(new ChitietHopDong(null), panelHopDong); ;
         }
     }
 }
