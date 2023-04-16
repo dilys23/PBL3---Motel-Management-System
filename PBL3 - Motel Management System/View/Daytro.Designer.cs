@@ -46,7 +46,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnSuaDichVu = new FontAwesome.Sharp.IconButton();
             this.panelDay.SuspendLayout();
             this.panPhong1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDayTro)).BeginInit();
@@ -62,7 +61,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.panelDay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelDay.Controls.Add(this.btnSuaDichVu);
             this.panelDay.Controls.Add(this.txtTenDay);
             this.panelDay.Controls.Add(this.label4);
             this.panelDay.Controls.Add(this.cbbTinhTrang);
@@ -116,7 +114,7 @@
             this.btnThemday.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThemday.IconSize = 30;
             this.btnThemday.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemday.Location = new System.Drawing.Point(619, 27);
+            this.btnThemday.Location = new System.Drawing.Point(753, 29);
             this.btnThemday.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThemday.Name = "btnThemday";
             this.btnThemday.Size = new System.Drawing.Size(113, 37);
@@ -292,25 +290,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // btnSuaDichVu
-            // 
-            this.btnSuaDichVu.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnSuaDichVu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSuaDichVu.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnSuaDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaDichVu.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            this.btnSuaDichVu.IconColor = System.Drawing.Color.White;
-            this.btnSuaDichVu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSuaDichVu.IconSize = 25;
-            this.btnSuaDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaDichVu.Location = new System.Drawing.Point(756, 29);
-            this.btnSuaDichVu.Name = "btnSuaDichVu";
-            this.btnSuaDichVu.Size = new System.Drawing.Size(110, 39);
-            this.btnSuaDichVu.TabIndex = 53;
-            this.btnSuaDichVu.Text = "Sửa dãy ";
-            this.btnSuaDichVu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSuaDichVu.UseVisualStyleBackColor = false;
-            // 
             // Daytro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -353,6 +332,5 @@
         private FontAwesome.Sharp.IconButton btnThem;
         private System.Windows.Forms.TextBox txtTenDay;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private FontAwesome.Sharp.IconButton btnSuaDichVu;
     }
 }
