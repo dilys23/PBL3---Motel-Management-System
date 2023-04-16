@@ -1,5 +1,6 @@
 ﻿using PBL3___Motel_Management_System.BLL;
 using PBL3___Motel_Management_System.DAL;
+using PBL3___Motel_Management_System.DTO;
 using PBL3___Motel_Management_System.View;
 using System;
 using System.Collections.Generic;
@@ -14,10 +15,11 @@ using System.Windows.Forms;
 namespace PBL3___Motel_Management_System
 {
     public partial class ThemKhach : Form
-    {
-        public ThemKhach()
+    {   private ThuePhong thuePhong;
+        public ThemKhach(ThuePhong tp)
         {
             InitializeComponent();
+            this.thuePhong = tp;
         }
 
         private void ThemKhach_Load(object sender, EventArgs e)
@@ -80,7 +82,7 @@ namespace PBL3___Motel_Management_System
         }
         private void btnLuu_Click_1(object sender, EventArgs e)
         {
-            if(!checkHopLe())
+            if(checkHopLe())
             {
                 QLBLL qLBLL = new QLBLL();
                 Nguoi nguoi = new Nguoi();
@@ -91,9 +93,9 @@ namespace PBL3___Motel_Management_System
                 nguoi.Diachi = txtDiaChi.Text;
                 nguoi.GioiTinh = (rdbtnNam.Checked);
                 nguoi.NgaySinh = dtpNgaySinh.Value.ToString("yyyy-MM-dd");
-
-
-            tc.openChildForm1(new ThemDVphong(nguoi), panelKhach);
+                thuePhong.hopDong.Nguoi = nguoi;
+                
+            tc.openChildForm1(new ThemDVphong(thuePhong), panelKhach);
             }
             
         }

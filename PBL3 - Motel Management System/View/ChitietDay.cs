@@ -70,5 +70,7 @@ namespace PBL3___Motel_Management_System.View
             //LoadForm(qlBLL.GetIdDayByIdPhong(IdPhong));
             LoadForm(IdDay);
         }
+
+        
     }
 }

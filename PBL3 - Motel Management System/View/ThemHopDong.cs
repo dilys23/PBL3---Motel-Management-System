@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PBL3___Motel_Management_System.DAL;
+using PBL3___Motel_Management_System.DTO;
 using PBL3___Motel_Management_System.View;
 namespace PBL3___Motel_Management_System
 {
     public partial class ThemHopDong : Form
     {
-        public ThemHopDong()
+        private ThuePhong tp;
+        public ThemHopDong(ThuePhong tp)
         {
             InitializeComponent();
+            this.tp=tp;
         }
 
         private void ThemHD_Load(object sender, EventArgs e)
@@ -31,7 +35,7 @@ namespace PBL3___Motel_Management_System
 
         private void btnThemKhach_Click_1(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ThemKhach(), panelThemHD);
+            tc.openChildForm1(new ThemKhach(null), panelThemHD);
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
@@ -61,21 +65,32 @@ namespace PBL3___Motel_Management_System
             
             if(distance.Days < 30)
             {
+                MessageBox.Show("Thời gian thuê phòng phải tối thiểu 30 ngày", "Thông báo");
                 return false;
             }
+            else
+            {
+                if(!double.TryParse(txtTienCoc.Text,out double i))
+                {
+                    MessageBox.Show("Vui lòng nhập số tại tiền cọc", "Thông báo");
+                    return false;
+                }
+            }
+
             return true;
         }
         private void iconButton4_Click(object sender, EventArgs e)
         {
             if(CheckHopLe())
             {
-
-            tc.openChildForm1(new ChitietHopDong(),panelThemHD);
+            string dateStart = dtpBatDau.Value.ToString("yyyy-MM-dd");
+            string dateEnd = dtpKetThuc.Value.ToString("yyyy-MM-dd");
+            tp.hopDong.NgayBatDau = dateStart;
+            tp.hopDong.NgayKetThuc = dateEnd;
+            tp.hopDong.TienCoc = Convert.ToDouble(txtTienCoc.Text);
+            tc.openChildForm1(new ChitietHopDong(tp),panelThemHD);
             }
-            else
-            {
-                MessageBox.Show("Thời gian hợp đồng phải tối thiểu 1 tháng","Thông báo");
-            }
+            
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

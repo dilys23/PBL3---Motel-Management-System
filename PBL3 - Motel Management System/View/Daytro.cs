@@ -76,7 +76,8 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new SuaDay(), panelDay);
+            string idDay = dtgDayTro.CurrentRow.Cells[0].Value.ToString();
+            tc.openChildForm1(new SuaDay(idDay,LoadForm), panelDay);
             
         }
 
@@ -85,11 +86,7 @@ namespace PBL3___Motel_Management_System.View
 
         }
 
-        private void btnSuaday_Click(object sender, EventArgs e)
-        {
-            tc.openChildForm1(new SuaDay(), panelDay);
-        }
-
+      
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             LoadForm(txtTenDay.Text);

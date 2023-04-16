@@ -19,7 +19,7 @@ namespace PBL3___Motel_Management_System.View
         TrangChu tc = new TrangChu();
         private void btnThemKhach_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ThemKhach(), panelThemHD);
+            tc.openChildForm1(new ThemKhach(null), panelThemHD);
         }
     }
 }

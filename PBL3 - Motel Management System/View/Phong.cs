@@ -94,12 +94,25 @@ namespace PBL3___Motel_Management_System
 
         private void btnThemday_Click_1(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ThemKhach(), panelPhong);
+            if(dgvPhongTro.CurrentRow.Cells[5].Value.ToString()=="False")
+            {
+
+            ThuePhong tp = new ThuePhong();
+            QLBLL qLBLL = new QLBLL() ;
+            tp.hopDong.MaHopDong = qLBLL.TaoIdHopDong();
+            tp.hopDong.PhongTro.MaPhongTro = dgvPhongTro.CurrentRow.Cells[0].Value.ToString();
+            tc.openChildForm1(new ThemKhach(tp), panelPhong);
+            }
+            else
+            {
+                MessageBox.Show("Phòng hiện tại đã cho thuê","Thông báo");
+            }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ChitietPhong(), panelPhong);
+
+            tc.openChildForm1(new ChitietPhong(dgvPhongTro.CurrentRow.Cells[0].Value.ToString()), panelPhong);
         }
 
      
