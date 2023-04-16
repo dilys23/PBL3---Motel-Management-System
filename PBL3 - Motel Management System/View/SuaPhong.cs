@@ -16,12 +16,12 @@ namespace PBL3___Motel_Management_System
     public partial class SuaPhong : Form
     {
         private string IdPhong;
-        private Loader Loader;
-        public SuaPhong(string IdPhong,Loader Loader)
+       // private Loader Loader;
+        public SuaPhong(string IdPhong)
         {
             InitializeComponent();        
             this.IdPhong = IdPhong;
-            this.Loader = Loader;
+            //this.Loader = Loader;
             FormLoad(IdPhong);
         }
         public void FormLoad(string IdPhong)
@@ -117,7 +117,7 @@ namespace PBL3___Motel_Management_System
                 pt.ToiDa = Convert.ToInt32(txtToiDa.Text);
                 qLBLL.UpdatePTBLL(pt);
                 MessageBox.Show("Thay đổi thông tin thành công", "Thông báo");
-                Loader(null);
+              //  Loader(null);
                 this.Close();
             }
         }

@@ -61,7 +61,7 @@ namespace PBL3___Motel_Management_System.BLL
                 status = false;
                 foreach (Nguoi ng in qLDAL.GetAllNguoi())
                 {
-                    if (ng.MaNguoi == id) status = true; break;
+                    if (ng.MaNguoi == id) status = true;
                 }
             }
             return id;
@@ -78,7 +78,7 @@ namespace PBL3___Motel_Management_System.BLL
                 status = false;
                 foreach (ChiTietDichVu ctdv in qLDAL.GetAllChiTietDichVu())
                 {
-                    if (ctdv.MaChiTietDichVu == id) status = true; break;
+                    if (ctdv.MaChiTietDichVu == id) status = true;
                 }
             }
             return id;
@@ -95,7 +95,7 @@ namespace PBL3___Motel_Management_System.BLL
                 status = false;
                 foreach (ThanhVienTrongPhong tvtp in qLDAL.GetAllThanhVienTrongPhong())
                 {
-                    if (tvtp.MaThanhVienTrongPhong == id) status = true; break;
+                    if (tvtp.MaThanhVienTrongPhong == id) status = true; 
                 }
             }
             return id;
@@ -113,7 +113,7 @@ namespace PBL3___Motel_Management_System.BLL
                 status = false;
                 foreach (PhongTro phongTro in qLDAL.GetAllPhongTro())
                 {
-                    if (phongTro.MaPhongTro == id) status = true; break;
+                    if (phongTro.MaPhongTro == id) status = true;
                 }
             }
             return id;
@@ -131,7 +131,7 @@ namespace PBL3___Motel_Management_System.BLL
                 status = false;
                 foreach(DayTro dayTro in qLDAL.GetAllDayTro())
                 {
-                    if(dayTro.MaDayTro == id)status = true;break;
+                    if(dayTro.MaDayTro == id)status = true;
                 }
             }
             return id;
@@ -165,7 +165,7 @@ namespace PBL3___Motel_Management_System.BLL
                 status = false;
                 foreach (DichVu dv in qLDAL.GetAllDichVu())
                 {
-                    if (dv.MaDichVu == id) status = true; break;
+                    if (dv.MaDichVu == id) status = true;
                 }
             }
             return id;

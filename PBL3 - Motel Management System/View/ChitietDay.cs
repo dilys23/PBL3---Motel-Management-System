@@ -54,7 +54,7 @@ namespace PBL3___Motel_Management_System.View
         private void btnThem_Click_1(object sender, EventArgs e)
         {
             tc.openChildForm1(new ThemPhong(IdDay), panelChitietDay);
-            LoadForm(IdDay);
+         //   LoadForm(IdDay);
         }
 
         private void btnTroVe_Click(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace PBL3___Motel_Management_System.View
         {
             QLBLL qlBLL = new QLBLL();
             string IdPhong = dgvPhong.CurrentRow.Cells[0].Value.ToString();
-            tc.openChildForm1(new SuaPhong(IdPhong,LoadForm), panelChitietDay);
+            tc.openChildForm1(new SuaPhong(IdPhong), panelChitietDay);
             //LoadForm(qlBLL.GetIdDayByIdPhong(IdPhong));
             LoadForm(IdDay);
         }
