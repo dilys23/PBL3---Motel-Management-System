@@ -68,11 +68,11 @@ namespace PBL3___Motel_Management_System.DAL
             }
         }
         
-        public void AddPhongTroDal(PhongTro dt)
+        public void AddPhongTroDal(PhongTro pt)
         {
             using (DataPbl data = new DataPbl())
             {
-                data.PhongTro.Add(dt);
+                data.PhongTro.Add(pt);
                 data.SaveChanges();
             }
         }
@@ -277,7 +277,7 @@ namespace PBL3___Motel_Management_System.DAL
                 {
                     if(phongTro.MaPhongTro==IdPhong)
                     {
-                        return phongTro.MaDayTro;break;
+                        return phongTro.MaDayTro;
                     }
                     
                 }

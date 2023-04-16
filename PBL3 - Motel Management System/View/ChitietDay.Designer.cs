@@ -117,7 +117,7 @@
             this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(141, 35);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(212, 22);
+            this.textBox1.Size = new System.Drawing.Size(351, 22);
             this.textBox1.TabIndex = 61;
             // 
             // dgvPhong
@@ -208,6 +208,7 @@
             this.Controls.Add(this.panelChitietDay);
             this.Name = "ChitietDay";
             this.Text = "ChitietDay";
+            this.Load += new System.EventHandler(this.ChitietDay_Load);
             this.panelChitietDay.ResumeLayout(false);
             this.panPhong1.ResumeLayout(false);
             this.panPhong1.PerformLayout();
