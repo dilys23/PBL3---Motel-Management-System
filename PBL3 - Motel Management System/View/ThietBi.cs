@@ -185,5 +185,10 @@ namespace PBL3___Motel_Management_System.View
         {
             tc.openChildForm1(new ThemThietBi(LoadForm), panelTB);
         }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            LoadForm(txtTim.Text);
+        }
     }
 }
