@@ -36,7 +36,7 @@
             this.btnXoaPhong = new FontAwesome.Sharp.IconButton();
             this.btnSuaDV = new FontAwesome.Sharp.IconButton();
             this.btnThemThietBi = new FontAwesome.Sharp.IconButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTim = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panelTB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThietBi)).BeginInit();
@@ -74,7 +74,7 @@
             this.panelTB.Controls.Add(this.btnXoaPhong);
             this.panelTB.Controls.Add(this.btnSuaDV);
             this.panelTB.Controls.Add(this.btnThemThietBi);
-            this.panelTB.Controls.Add(this.textBox1);
+            this.panelTB.Controls.Add(this.txtTim);
             this.panelTB.Location = new System.Drawing.Point(5, 55);
             this.panelTB.Name = "panelTB";
             this.panelTB.Size = new System.Drawing.Size(902, 383);
@@ -107,6 +107,7 @@
             this.btnTim.Size = new System.Drawing.Size(42, 42);
             this.btnTim.TabIndex = 55;
             this.btnTim.UseVisualStyleBackColor = false;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // btnXoaPhong
             // 
@@ -167,13 +168,13 @@
             this.btnThemThietBi.UseVisualStyleBackColor = false;
             this.btnThemThietBi.Click += new System.EventHandler(this.btnThemThietBi_Click);
             // 
-            // textBox1
+            // txtTim
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(143, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(180, 27);
-            this.textBox1.TabIndex = 51;
+            this.txtTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTim.Location = new System.Drawing.Point(143, 21);
+            this.txtTim.Name = "txtTim";
+            this.txtTim.Size = new System.Drawing.Size(180, 27);
+            this.txtTim.TabIndex = 51;
             // 
             // Thietbi
             // 
@@ -203,7 +204,7 @@
         private FontAwesome.Sharp.IconButton btnXoaPhong;
         private FontAwesome.Sharp.IconButton btnSuaDV;
         private FontAwesome.Sharp.IconButton btnThemThietBi;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTim;
         private System.Windows.Forms.DataGridView dgvThietBi;
     }
 }
