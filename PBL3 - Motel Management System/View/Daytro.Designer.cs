@@ -114,7 +114,7 @@
             this.btnThemday.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThemday.IconSize = 30;
             this.btnThemday.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemday.Location = new System.Drawing.Point(753, 24);
+            this.btnThemday.Location = new System.Drawing.Point(753, 29);
             this.btnThemday.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThemday.Name = "btnThemday";
             this.btnThemday.Size = new System.Drawing.Size(113, 37);

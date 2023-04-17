@@ -50,13 +50,14 @@ namespace PBL3___Motel_Management_System.View
             dtpNgaySinh.Value = ngaysinh;
             dtpNgayBatDau.Value = batdau;
             dtpNgayKetThuc.Value = ketthuc;
-            //int i = 0;
-           // foreach(string idDv in tp.DsDichVu)
-           // {
-              //  DichVu dv = new DichVu();
-              //  dv = qLBLL.GetDichVuByIdDichVu(idDv);
-              //  dgvDichVu.Rows.Add(dv.MaDichVu,++i,dv.TenDichVu,dv.GiaDichVu);
-           // }
+            int i = 0;
+            foreach(string idDv in tp.DsDichVu)
+            {
+              DichVu dv = new DichVu();
+               dv = qLBLL.GetDichVuByIdDichVu(idDv);
+                dgvDichvu.Rows.Add(dv.MaDichVu,++i,dv.TenDichVu,dv.GiaDichVu);
+            }
+            
 
         }
         private void iconButton1_Click(object sender, EventArgs e)
@@ -116,6 +117,11 @@ namespace PBL3___Motel_Management_System.View
 
 
 
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
 
         }
     }

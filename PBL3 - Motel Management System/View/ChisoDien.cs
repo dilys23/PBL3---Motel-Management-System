@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PBL3___Motel_Management_System.BLL;
+using PBL3___Motel_Management_System.DAL;
 using PBL3___Motel_Management_System.View;
 
 namespace PBL3___Motel_Management_System.View
@@ -17,72 +19,9 @@ namespace PBL3___Motel_Management_System.View
         public ChisoDien()
         {
             InitializeComponent();
+            Setcbb();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btSuaDien_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btSearchDien_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         TrangChu tc = new TrangChu();
 
         private void ChisoDien_Load(object sender, EventArgs e)
@@ -90,7 +29,15 @@ namespace PBL3___Motel_Management_System.View
 
         }
 
-        
+        public void Setcbb()
+        {
+            cbbDayTro.Items.Clear();
+            cbbPhongTro.Items.Clear();
+            QLBLL qLBLL = new QLBLL();
+            cbbDayTro.Items.AddRange(qLBLL.GetCbbDayTro().ToArray());
+            cbbDayTro.SelectedIndex = 0;
+           
+        }
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
@@ -100,6 +47,18 @@ namespace PBL3___Motel_Management_System.View
         private void iconButton1_Click(object sender, EventArgs e)
         {
             tc.openChildForm1(new SuaCSDien(), panel2);
+        }
+
+        private void cbbDayTro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            QLBLL qLBLL = new QLBLL();
+            Daytro dt= cbbDayTro.SelectedItem as Daytro;
+            if(dt !=null)
+            {
+                //List<PhongTro> list = qLBLL.GetAllPhongTroByIdDay(dt.MaDayTro);
+            }
+
+
         }
     }
 }

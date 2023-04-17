@@ -49,6 +49,8 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return list;
         }
+       
+
         public string TaoIdNguoi()
         {
             string id = null;
@@ -538,6 +540,7 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return list;
         }
+        
        
         public PhongTro GetPhongTroByIdPhong(string idPhong)
         {
@@ -572,15 +575,7 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return null;
         }
-        public Nguoi GetNguoiByIdNguoi(string IdNguoi)
-        {
-            QLDAL qLDAL = new QLDAL();
-            foreach (Nguoi nguoi in qLDAL.GetAllNguoi())
-            {
-                if (nguoi.MaNguoi  == IdNguoi) return nguoi;
-            }
-            return null;
-        }
+        
         public List<string>GetAllIdDichVuByIdPhong(string idPhong)
         {
             QLDAL qLDAL= new QLDAL();
@@ -600,6 +595,15 @@ namespace PBL3___Motel_Management_System.BLL
                 if (cttb.MaPhongTro == idPhong) idThietBi.Add(cttb.MaThietBi);
             }
             return idThietBi;
+        }
+        public Nguoi GetNguoiByIdNguoi(string IdNguoi)
+        {
+            QLDAL qLDAL = new QLDAL();
+            foreach (Nguoi nguoi in qLDAL.GetAllNguoi())
+            {
+                if (nguoi.MaNguoi == IdNguoi) return nguoi;
+            }
+            return null;
         }
 
         public DayTro GetDayByIdDay(string id)

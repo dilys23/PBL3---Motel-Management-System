@@ -1,5 +1,6 @@
 ﻿using PBL3___Motel_Management_System.BLL;
 using PBL3___Motel_Management_System.DAL;
+using PBL3___Motel_Management_System.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,10 +16,12 @@ namespace PBL3___Motel_Management_System
     public partial class ThemPhong : Form
     {
         private string IdDay;
-        public ThemPhong(string idDay)
+        public Loader Loader;
+        public ThemPhong(string IdDay,Loader Loader)
         {
             InitializeComponent();
-            this.IdDay=idDay;
+            this.IdDay = IdDay;
+            this.Loader = Loader;
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -111,15 +114,12 @@ namespace PBL3___Motel_Management_System
                 pt.GiaTien = Convert.ToDouble(txtGiaTien.Text);
                 pt.DienTich = Convert.ToDouble(txtDienTich.Text);
                 pt.TinhTrang = false;
+                pt.ToiDa = Convert.ToInt32(txtToiDa.Text);          
                 pt.MaDayTro = IdDay;
-                pt.ToiDa = Convert.ToInt32(txtToiDa.Text);
                 qLBLL.AddPhongTroBll(pt);
                 MessageBox.Show("Thêm phòng trọ vào dãy thành công", "Thông báo");
+                Loader(null);
                 this.Close();
-
-                
-
-
             }
 
         }
