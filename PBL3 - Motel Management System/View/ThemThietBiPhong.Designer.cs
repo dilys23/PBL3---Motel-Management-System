@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelThemHD = new System.Windows.Forms.Panel();
             this.btnTrove = new FontAwesome.Sharp.IconButton();
             this.label7 = new System.Windows.Forms.Label();
@@ -39,9 +40,11 @@
             this.LoaiDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dangdung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelThemHD.SuspendLayout();
             this.panelThem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelThemHD
@@ -167,6 +170,10 @@
             this.Dangdung.MinimumWidth = 6;
             this.Dangdung.Name = "Dangdung";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // ThemThietBiPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -179,6 +186,7 @@
             this.panelThemHD.PerformLayout();
             this.panelThem.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -196,5 +204,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn LoaiDV;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dongia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dangdung;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

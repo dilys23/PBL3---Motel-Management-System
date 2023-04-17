@@ -13,15 +13,17 @@ using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System.View
 {
-
+    
     public partial class ChitietHopDong : Form
     {
         private ThuePhong tp;
-        public ChitietHopDong(ThuePhong tp)
+        private Loader loader;
+        public ChitietHopDong(ThuePhong tp, Loader loader)
         {
             InitializeComponent();
             this.tp = tp;
             LoadForm();
+            this.loader=loader;
         }
         public void LoadForm()
         {
@@ -101,8 +103,12 @@ namespace PBL3___Motel_Management_System.View
             hd.NgayKetThuc = tp.hopDong.NgayKetThuc;
             hd.TienCoc = tp.hopDong.TienCoc;
             qLBLL.AddHdBll(hd);
-            MessageBox.Show("Xác nhận thuê phòng thành công", "Thông báo",MessageBoxButtons.OK);
+            MessageBox.Show("Xác nhận thuê phòng thành công", "Thông báo",MessageBoxButtons.OK); 
+            this.loader(null);
             this.Close();
+
+
+
 
 
 

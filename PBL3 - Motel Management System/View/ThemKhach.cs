@@ -16,10 +16,17 @@ namespace PBL3___Motel_Management_System
 {
     public partial class ThemKhach : Form
     {   private ThuePhong thuePhong;
-        public ThemKhach(ThuePhong tp)
+        private Loader loader;
+        public ThemKhach(ThuePhong tp, Loader loader)
         {
             InitializeComponent();
             this.thuePhong = tp;
+            this.loader=loader;
+        }
+        private void Back(string txt)
+        {
+            this.loader(null);
+            this.Close();
         }
 
         private void ThemKhach_Load(object sender, EventArgs e)
@@ -80,6 +87,7 @@ namespace PBL3___Motel_Management_System
             else return false;
 
         }
+        
         private void btnLuu_Click_1(object sender, EventArgs e)
         {
             if(checkHopLe())
@@ -93,9 +101,24 @@ namespace PBL3___Motel_Management_System
                 nguoi.Diachi = txtDiaChi.Text;
                 nguoi.GioiTinh = (rdbtnNam.Checked);
                 nguoi.NgaySinh = dtpNgaySinh.Value.ToString("yyyy-MM-dd");
+                if (thuePhong.hopDong.MaHopDong != null)
+                {
                 thuePhong.hopDong.Nguoi = nguoi;
-                
-            tc.openChildForm1(new ThemDVphong(thuePhong), panelKhach);
+                tc.openChildForm1(new ThemDVphong(thuePhong, Back), panelKhach);
+                }
+                else
+                {
+                    ThanhVienTrongPhong tvtp = new ThanhVienTrongPhong();
+                    tvtp.MaThanhVienTrongPhong = qLBLL.TaoIdThanhVienTrongPhong();
+                    tvtp.MaNguoi = nguoi.MaNguoi;
+                    tvtp.MaPhongTro = thuePhong.hopDong.MaPhongTro;
+                    qLBLL.AddNguoiBll(nguoi);
+                    qLBLL.AddThanhVienTrongPhongBll(tvtp);
+                    MessageBox.Show("Thêm thành viên vào phòng thành công", "Thông báo", MessageBoxButtons.OK);
+                    this.loader(null);
+                    this.Close();
+
+                }
             }
             
         }

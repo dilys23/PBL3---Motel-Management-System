@@ -15,6 +15,7 @@ using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System
 {
+    
     public partial class Phong : Form
     {
         
@@ -22,7 +23,6 @@ namespace PBL3___Motel_Management_System
         public Phong()
         {
             InitializeComponent();
-            //this.paneDesktop = paneDesktop;
             LoadForm(null);
             SetCbb();
 
@@ -46,7 +46,7 @@ namespace PBL3___Motel_Management_System
 
             });
             QLBLL qLBLL = new QLBLL();
-            int i = 0;
+            
             if(txt == null)
             {
             foreach(ViewPhongTro pt in qLBLL.DgvPhongTro(null))
@@ -89,7 +89,7 @@ namespace PBL3___Motel_Management_System
             ThemPhong themPhong = new ThemPhong("123");
             themPhong.ShowDialog();
         }
-
+         
        
         TrangChu tc = new TrangChu();
 
@@ -102,7 +102,7 @@ namespace PBL3___Motel_Management_System
             QLBLL qLBLL = new QLBLL() ;
             tp.hopDong.MaHopDong = qLBLL.TaoIdHopDong();
             tp.hopDong.PhongTro.MaPhongTro = dgvPhongTro.CurrentRow.Cells[0].Value.ToString();
-            tc.openChildForm1(new ThemKhach(tp), panelPhong);
+            tc.openChildForm1(new ThemKhach(tp, LoadForm), panelPhong) ;
             }
             else
             {
@@ -112,8 +112,8 @@ namespace PBL3___Motel_Management_System
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            tc.openChildForm1(new ChitietPhong(dgvPhongTro.CurrentRow.Cells[0].Value.ToString(), LoadForm), panelPhong);
 
-            tc.openChildForm1(new ChitietPhong(dgvPhongTro.CurrentRow.Cells[0].Value.ToString()), panelPhong);
         }
 
      

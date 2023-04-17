@@ -18,30 +18,24 @@ namespace PBL3___Motel_Management_System.View
     public partial class ThemDVphong : Form
     {
         private ThuePhong tp;
-        public ThemDVphong(ThuePhong tp)
+        private Loader loader;
+        public ThemDVphong(ThuePhong tp, Loader loader)
         {
             InitializeComponent();
             this.tp = tp;
             LoadForm();
+            this.loader=loader;
         }
-        private DataTable ViewData()
+        private void Back(string txt)
         {
-            DataTable dt = new DataTable();
-            dt.Columns.AddRange(new DataColumn[]
-            {
-                new DataColumn{ColumnName = "Mã d?ch v?",DataType =  typeof(string)},
-                new DataColumn{ColumnName = "STT",DataType =  typeof(int)},
-                new DataColumn{ColumnName = "Tên d?ch v?",DataType =  typeof(string)},
-                new DataColumn{ColumnName = "Giá d?ch v?",DataType =  typeof(double)},
-            });
-            return dt;
+            this.loader(null);
+            this.Close();
+
         }
+       
 
         public void LoadForm()
         {
-
-
-
             dgvXoaDichVu.Columns[0].Visible = false;
             QLBLL qLBLL = new QLBLL();
             foreach (ViewDichVu viewDichVu in qLBLL.DgvDichVu(null))
@@ -69,7 +63,7 @@ namespace PBL3___Motel_Management_System.View
 
             }
             tp.DsDichVu = dsdv;
-            tc.openChildForm1(new ThemHopDong(tp), panelThemHD);
+            tc.openChildForm1(new ThemHopDong(tp, Back), panelThemHD);
         }
 
         private void iconButton2_Click(object sender, EventArgs e)

@@ -100,7 +100,15 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return id;
         }
-
+        public string GetIdPhongByIdNguoi(string idNguoi)
+        {
+            QLDAL qLDAL = new QLDAL();
+            foreach(ThanhVienTrongPhong tvtp in qLDAL.GetAllThanhVienTrongPhong())
+            {
+                if (tvtp.MaNguoi == idNguoi) return tvtp.MaPhongTro;
+            }
+            return null;
+        }
         public string TaoIdPhongTro()
         {
             string id = null;
@@ -608,6 +616,29 @@ namespace PBL3___Motel_Management_System.BLL
         {
             QLDAL qLDAL = new QLDAL();
             qLDAL.SuaDayDal(day);
+        }
+        public List<DgvHopDong>DgvHopDong()
+        {
+            List<DgvHopDong>list = new List<DgvHopDong> ();
+            QLDAL qLDAL = new QLDAL ();
+            List<HopDong> hopDongs = new List<HopDong>();
+            hopDongs = qLDAL.GetAllHopDong();
+            int i = 1;
+            foreach(HopDong hopDong in hopDongs)
+            {
+                DgvHopDong hd = new DgvHopDong ();
+                hd.MaHopDong = hopDong.MaHopDong;
+                hd.Stt = i++;
+                hd.TenKhachHang = GetNguoiByIdNguoi(hopDong.MaNguoi).Ten;
+                hd.TenPhongTro = GetPhongTroByIdPhong(hopDong.MaPhongTro).TenPhongTro;
+                hd.TenDayTro = GetDayTroByIdPhong(hopDong.MaPhongTro).TenDayTro;
+                hd.NgayBatDau = hopDong.NgayBatDau;
+                hd.NgayKetThuc = hopDong.NgayKetThuc;
+                hd.TienCoc = hopDong.TienCoc;
+                list.Add(hd);
+            }
+
+            return list;
         }
 
     }

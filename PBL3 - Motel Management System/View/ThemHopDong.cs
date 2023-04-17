@@ -15,10 +15,18 @@ namespace PBL3___Motel_Management_System
     public partial class ThemHopDong : Form
     {
         private ThuePhong tp;
-        public ThemHopDong(ThuePhong tp)
+        private Loader loader;
+
+        public ThemHopDong(ThuePhong tp, Loader loader)
         {
             InitializeComponent();
             this.tp=tp;
+            this.loader=loader;
+        }
+        private void Back(string txt)
+        {
+            this.loader(null);
+            this.Close();
         }
 
         private void ThemHD_Load(object sender, EventArgs e)
@@ -35,7 +43,7 @@ namespace PBL3___Motel_Management_System
 
         private void btnThemKhach_Click_1(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ThemKhach(null), panelThemHD);
+            tc.openChildForm1(new ThemKhach(null, null), panelThemHD);
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
@@ -88,7 +96,7 @@ namespace PBL3___Motel_Management_System
             tp.hopDong.NgayBatDau = dateStart;
             tp.hopDong.NgayKetThuc = dateEnd;
             tp.hopDong.TienCoc = Convert.ToDouble(txtTienCoc.Text);
-            tc.openChildForm1(new ChitietHopDong(tp),panelThemHD);
+            tc.openChildForm1(new ChitietHopDong(tp,Back),panelThemHD);
             }
             
         }
