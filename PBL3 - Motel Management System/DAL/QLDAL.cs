@@ -246,8 +246,8 @@ namespace PBL3___Motel_Management_System.DAL
             using (DataPbl data = new DataPbl())
             {
                 var s = data.PhongTro.Single(p => p.MaPhongTro == PT.MaPhongTro);
-                if (PT.ToiDa >= s.)
-                s.TenPhongTro = PT.TenPhongTro;
+              // if (PT.ToiDa >= s.GetIdNguoiByIdPhong(PT.MaPhongTro))//
+                    s.TenPhongTro = PT.TenPhongTro;
                 s.DienTich = PT.DienTich;
                 s.GiaTien=PT.GiaTien;
                 s.ToiDa=PT.ToiDa;
