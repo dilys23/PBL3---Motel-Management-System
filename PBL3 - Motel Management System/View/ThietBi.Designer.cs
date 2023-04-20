@@ -37,6 +37,7 @@
             this.btnSuaDV = new FontAwesome.Sharp.IconButton();
             this.btnThemThietBi = new FontAwesome.Sharp.IconButton();
             this.txtTim = new System.Windows.Forms.TextBox();
+            this.btnBaoHong = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panelTB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThietBi)).BeginInit();
@@ -69,6 +70,7 @@
             this.panelTB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelTB.Controls.Add(this.btnBaoHong);
             this.panelTB.Controls.Add(this.dgvThietBi);
             this.panelTB.Controls.Add(this.btnTim);
             this.panelTB.Controls.Add(this.btnXoaPhong);
@@ -141,7 +143,7 @@
             this.btnSuaDV.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSuaDV.IconSize = 25;
             this.btnSuaDV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaDV.Location = new System.Drawing.Point(690, 15);
+            this.btnSuaDV.Location = new System.Drawing.Point(599, 16);
             this.btnSuaDV.Name = "btnSuaDV";
             this.btnSuaDV.Size = new System.Drawing.Size(88, 39);
             this.btnSuaDV.TabIndex = 52;
@@ -161,7 +163,7 @@
             this.btnThemThietBi.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnThemThietBi.IconSize = 25;
             this.btnThemThietBi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemThietBi.Location = new System.Drawing.Point(584, 14);
+            this.btnThemThietBi.Location = new System.Drawing.Point(493, 15);
             this.btnThemThietBi.Name = "btnThemThietBi";
             this.btnThemThietBi.Size = new System.Drawing.Size(100, 40);
             this.btnThemThietBi.TabIndex = 53;
@@ -177,6 +179,25 @@
             this.txtTim.Name = "txtTim";
             this.txtTim.Size = new System.Drawing.Size(180, 27);
             this.txtTim.TabIndex = 51;
+            // 
+            // btnBaoHong
+            // 
+            this.btnBaoHong.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnBaoHong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBaoHong.BackColor = System.Drawing.Color.Orange;
+            this.btnBaoHong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBaoHong.IconChar = FontAwesome.Sharp.IconChar.FileCircleExclamation;
+            this.btnBaoHong.IconColor = System.Drawing.Color.White;
+            this.btnBaoHong.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnBaoHong.IconSize = 25;
+            this.btnBaoHong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBaoHong.Location = new System.Drawing.Point(693, 15);
+            this.btnBaoHong.Name = "btnBaoHong";
+            this.btnBaoHong.Size = new System.Drawing.Size(100, 40);
+            this.btnBaoHong.TabIndex = 57;
+            this.btnBaoHong.Text = "Hỏng";
+            this.btnBaoHong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBaoHong.UseVisualStyleBackColor = false;
             // 
             // Thietbi
             // 
@@ -208,5 +229,6 @@
         private FontAwesome.Sharp.IconButton btnThemThietBi;
         private System.Windows.Forms.TextBox txtTim;
         private System.Windows.Forms.DataGridView dgvThietBi;
+        private FontAwesome.Sharp.IconButton btnBaoHong;
     }
 }
