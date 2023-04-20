@@ -29,24 +29,19 @@
         private void InitializeComponent()
         {
             this.panelChitietDay = new System.Windows.Forms.Panel();
+            this.btnTroVe = new FontAwesome.Sharp.IconButton();
             this.panPhong1 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tenphong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dientich = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Giaphong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPhong = new System.Windows.Forms.DataGridView();
             this.btnXoa = new FontAwesome.Sharp.IconButton();
             this.btnSua = new FontAwesome.Sharp.IconButton();
             this.btnThem = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnTroVe = new FontAwesome.Sharp.IconButton();
             this.panelChitietDay.SuspendLayout();
             this.panPhong1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).BeginInit();
             this.SuspendLayout();
             // 
             // panelChitietDay
@@ -63,6 +58,21 @@
             this.panelChitietDay.Size = new System.Drawing.Size(983, 513);
             this.panelChitietDay.TabIndex = 59;
             // 
+            // btnTroVe
+            // 
+            this.btnTroVe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTroVe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnTroVe.IconChar = FontAwesome.Sharp.IconChar.MailReply;
+            this.btnTroVe.IconColor = System.Drawing.Color.White;
+            this.btnTroVe.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTroVe.IconSize = 30;
+            this.btnTroVe.Location = new System.Drawing.Point(906, 6);
+            this.btnTroVe.Name = "btnTroVe";
+            this.btnTroVe.Size = new System.Drawing.Size(43, 37);
+            this.btnTroVe.TabIndex = 60;
+            this.btnTroVe.UseVisualStyleBackColor = false;
+            this.btnTroVe.Click += new System.EventHandler(this.btnTroVe_Click);
+            // 
             // panPhong1
             // 
             this.panPhong1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -73,7 +83,7 @@
             this.panPhong1.Controls.Add(this.textBox2);
             this.panPhong1.Controls.Add(this.label2);
             this.panPhong1.Controls.Add(this.textBox1);
-            this.panPhong1.Controls.Add(this.dataGridView1);
+            this.panPhong1.Controls.Add(this.dgvPhong);
             this.panPhong1.Controls.Add(this.btnXoa);
             this.panPhong1.Controls.Add(this.btnSua);
             this.panPhong1.Controls.Add(this.btnThem);
@@ -85,9 +95,10 @@
             // 
             // textBox2
             // 
+            this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(141, 82);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(212, 22);
+            this.textBox2.Size = new System.Drawing.Size(351, 22);
             this.textBox2.TabIndex = 63;
             // 
             // label2
@@ -103,57 +114,27 @@
             // 
             // textBox1
             // 
+            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(141, 35);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(212, 22);
+            this.textBox1.Size = new System.Drawing.Size(351, 22);
             this.textBox1.TabIndex = 61;
             // 
-            // dataGridView1
+            // dgvPhong
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaPhong,
-            this.Tenphong,
-            this.Dientich,
-            this.Soluong,
-            this.Giaphong});
-            this.dataGridView1.Location = new System.Drawing.Point(20, 144);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(873, 221);
-            this.dataGridView1.TabIndex = 60;
-            // 
-            // MaPhong
-            // 
-            this.MaPhong.HeaderText = "Mã Phòng ";
-            this.MaPhong.MinimumWidth = 6;
-            this.MaPhong.Name = "MaPhong";
-            // 
-            // Tenphong
-            // 
-            this.Tenphong.HeaderText = "Tên Phòng";
-            this.Tenphong.MinimumWidth = 6;
-            this.Tenphong.Name = "Tenphong";
-            // 
-            // Dientich
-            // 
-            this.Dientich.HeaderText = "Diện tích ";
-            this.Dientich.MinimumWidth = 6;
-            this.Dientich.Name = "Dientich";
-            // 
-            // Soluong
-            // 
-            this.Soluong.HeaderText = "Số người tối đa";
-            this.Soluong.MinimumWidth = 6;
-            this.Soluong.Name = "Soluong";
-            // 
-            // Giaphong
-            // 
-            this.Giaphong.HeaderText = "Giá phòng ";
-            this.Giaphong.MinimumWidth = 6;
-            this.Giaphong.Name = "Giaphong";
+            this.dgvPhong.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPhong.Location = new System.Drawing.Point(20, 144);
+            this.dgvPhong.Name = "dgvPhong";
+            this.dgvPhong.ReadOnly = true;
+            this.dgvPhong.RowHeadersWidth = 51;
+            this.dgvPhong.RowTemplate.Height = 24;
+            this.dgvPhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPhong.Size = new System.Drawing.Size(873, 221);
+            this.dgvPhong.TabIndex = 60;
             // 
             // btnXoa
             // 
@@ -219,21 +200,6 @@
             this.label1.TabIndex = 54;
             this.label1.Text = "Dãy";
             // 
-            // btnTroVe
-            // 
-            this.btnTroVe.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTroVe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnTroVe.IconChar = FontAwesome.Sharp.IconChar.MailReply;
-            this.btnTroVe.IconColor = System.Drawing.Color.White;
-            this.btnTroVe.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTroVe.IconSize = 30;
-            this.btnTroVe.Location = new System.Drawing.Point(906, 6);
-            this.btnTroVe.Name = "btnTroVe";
-            this.btnTroVe.Size = new System.Drawing.Size(43, 37);
-            this.btnTroVe.TabIndex = 60;
-            this.btnTroVe.UseVisualStyleBackColor = false;
-            this.btnTroVe.Click += new System.EventHandler(this.btnTroVe_Click);
-            // 
             // ChitietDay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -242,10 +208,11 @@
             this.Controls.Add(this.panelChitietDay);
             this.Name = "ChitietDay";
             this.Text = "ChitietDay";
+            this.Load += new System.EventHandler(this.ChitietDay_Load);
             this.panelChitietDay.ResumeLayout(false);
             this.panPhong1.ResumeLayout(false);
             this.panPhong1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -256,12 +223,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tenphong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dientich;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Soluong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Giaphong;
+        private System.Windows.Forms.DataGridView dgvPhong;
         private FontAwesome.Sharp.IconButton btnXoa;
         private FontAwesome.Sharp.IconButton btnSua;
         private FontAwesome.Sharp.IconButton btnThem;

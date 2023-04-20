@@ -120,9 +120,12 @@
       <DependentUpon>DataPbl.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\CbbDayTro.cs" />
+    <Compile Include="DTO\DgvHopDong.cs" />
+    <Compile Include="DTO\ThuePhong.cs" />
     <Compile Include="DTO\ViewDay.cs" />
     <Compile Include="DTO\ViewDichVu.cs" />
     <Compile Include="DTO\ViewPhongTro.cs" />
+    <Compile Include="DTO\ViewThietBi.cs" />
     <Compile Include="View\ChitietDay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,12 +143,6 @@
     </Compile>
     <Compile Include="View\ChitietPhong.Designer.cs">
       <DependentUpon>ChitietPhong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\ChitietThanhVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ChitietThanhVien.Designer.cs">
-      <DependentUpon>ChitietThanhVien.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Daytro.cs">
       <SubType>Form</SubType>
@@ -249,11 +246,11 @@
     <Compile Include="View\HoaDon.Designer.cs">
       <DependentUpon>HoaDon.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\HopDong.cs">
+    <Compile Include="View\Hopdong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\HopDong.Designer.cs">
-      <DependentUpon>HopDong.cs</DependentUpon>
+    <Compile Include="View\Hopdong.Designer.cs">
+      <DependentUpon>Hopdong.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ChisoDien.cs">
       <SubType>Form</SubType>
@@ -285,11 +282,11 @@
     <Compile Include="View\ThemThietBiPhong.Designer.cs">
       <DependentUpon>ThemThietBiPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ThietBi.cs">
+    <Compile Include="View\Thietbi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ThietBi.Designer.cs">
-      <DependentUpon>ThietBi.cs</DependentUpon>
+    <Compile Include="View\Thietbi.Designer.cs">
+      <DependentUpon>Thietbi.cs</DependentUpon>
     </Compile>
     <Compile Include="View\TrangChu.cs">
       <SubType>Form</SubType>
@@ -395,8 +392,8 @@
     <EmbeddedResource Include="View\HoaDon.resx">
       <DependentUpon>HoaDon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\HopDong.resx">
-      <DependentUpon>HopDong.cs</DependentUpon>
+    <EmbeddedResource Include="View\Hopdong.resx">
+      <DependentUpon>Hopdong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ChisoDien.resx">
       <DependentUpon>ChisoDien.cs</DependentUpon>
@@ -416,8 +413,8 @@
     <EmbeddedResource Include="View\ThemThietBiPhong.resx">
       <DependentUpon>ThemThietBiPhong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ThietBi.resx">
-      <DependentUpon>ThietBi.cs</DependentUpon>
+    <EmbeddedResource Include="View\Thietbi.resx">
+      <DependentUpon>Thietbi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\TrangChu.resx">
       <DependentUpon>TrangChu.cs</DependentUpon>

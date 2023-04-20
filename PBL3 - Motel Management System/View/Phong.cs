@@ -15,6 +15,7 @@ using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System
 {
+    
     public partial class Phong : Form
     {
         
@@ -22,7 +23,6 @@ namespace PBL3___Motel_Management_System
         public Phong()
         {
             InitializeComponent();
-            //this.paneDesktop = paneDesktop;
             LoadForm(null);
             SetCbb();
 
@@ -41,16 +41,17 @@ namespace PBL3___Motel_Management_System
                 new DataColumn{ColumnName = "Tình trạng",DataType = typeof(bool)},
                 new DataColumn{ColumnName = "Số người hiện có",DataType = typeof(int)},
                 new DataColumn{ColumnName = "Số người tối đa",DataType = typeof(string)},
-                
+                new DataColumn{ColumnName = "Tên dãy",DataType = typeof(string)},
+
 
             });
             QLBLL qLBLL = new QLBLL();
-            int i = 0;
+            
             if(txt == null)
             {
             foreach(ViewPhongTro pt in qLBLL.DgvPhongTro(null))
             {
-                dt.Rows.Add(pt.MaPhongTro,pt.Stt,pt.TenPhongTro,pt.GiaTien,pt.DienTich,pt.TinhTrang,pt.SoNguoiHienCo,pt.SoNguoiToiDa);
+                dt.Rows.Add(pt.MaPhongTro,pt.Stt,pt.TenPhongTro,pt.GiaTien,pt.DienTich,pt.TinhTrang,pt.SoNguoiHienCo,pt.SoNguoiToiDa,qLBLL.GetDayTroByIdPhong(pt.MaPhongTro).TenDayTro);
             }
             }
             else
@@ -60,7 +61,7 @@ namespace PBL3___Motel_Management_System
                 
                 foreach (ViewPhongTro pt in qLBLL.DgvPhongTroTimKiem(idDay, idTinhTrang, txtTimKiem.Text))
                 {
-                    dt.Rows.Add(pt.MaPhongTro, pt.Stt, pt.TenPhongTro, pt.GiaTien, pt.DienTich, pt.TinhTrang, pt.SoNguoiHienCo, pt.SoNguoiToiDa);
+                    dt.Rows.Add(pt.MaPhongTro, pt.Stt, pt.TenPhongTro, pt.GiaTien, pt.DienTich, pt.TinhTrang, pt.SoNguoiHienCo, pt.SoNguoiToiDa,pt.TenDay);
                 }
             }
             
@@ -85,33 +86,37 @@ namespace PBL3___Motel_Management_System
 
         private void iconButton7_Click(object sender, EventArgs e)
         {
-            ThemPhong themPhong = new ThemPhong("123");
-            themPhong.ShowDialog();
+            //ThemPhong themPhong = new ThemPhong("123");
+            //themPhong.ShowDialog();
         }
-
-        private void iconButton3_Click(object sender, EventArgs e)
-        {
-            SuaPhong themSuaph = new SuaPhong();
-            themSuaph.ShowDialog();
-        }
-        //private Form activeForm = null;
+         
+       
         TrangChu tc = new TrangChu();
 
         private void btnThemday_Click_1(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ThemKhach(), panelPhong);
+            if(dgvPhongTro.CurrentRow.Cells[5].Value.ToString()=="False")
+            {
+
+            ThuePhong tp = new ThuePhong();
+            QLBLL qLBLL = new QLBLL() ;
+            tp.hopDong.MaHopDong = qLBLL.TaoIdHopDong();
+            tp.hopDong.PhongTro.MaPhongTro = dgvPhongTro.CurrentRow.Cells[0].Value.ToString();
+            tc.openChildForm1(new ThemKhach(tp, LoadForm), panelPhong) ;
+            }
+            else
+            {
+                MessageBox.Show("Phòng hiện tại đã cho thuê","Thông báo");
+            }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ChitietPhong(), panelPhong);
+            tc.openChildForm1(new ChitietPhong(dgvPhongTro.CurrentRow.Cells[0].Value.ToString(), LoadForm), panelPhong);
+
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            tc.openChildForm1(new SuaPhong(), panelPhong);
-        }
-
+     
         private void label7_Click(object sender, EventArgs e)
         {
 

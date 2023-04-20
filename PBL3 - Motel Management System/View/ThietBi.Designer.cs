@@ -1,6 +1,6 @@
 ﻿namespace PBL3___Motel_Management_System.View
 {
-    partial class ThietBi
+    partial class Thietbi
     {
         /// <summary>
         /// Required designer variable.
@@ -30,21 +30,16 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.panelDV = new System.Windows.Forms.Panel();
+            this.panelTB = new System.Windows.Forms.Panel();
+            this.dgvThietBi = new System.Windows.Forms.DataGridView();
             this.btnTim = new FontAwesome.Sharp.IconButton();
             this.btnXoaPhong = new FontAwesome.Sharp.IconButton();
             this.btnSuaDV = new FontAwesome.Sharp.IconButton();
-            this.btnThemPhong = new FontAwesome.Sharp.IconButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoaiDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dangdung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnThemThietBi = new FontAwesome.Sharp.IconButton();
+            this.txtTim = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            this.panelDV.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panelTB.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThietBi)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -68,22 +63,38 @@
             this.label4.TabIndex = 26;
             this.label4.Text = "DANH SÁCH THIẾT BỊ";
             // 
-            // panelDV
+            // panelTB
             // 
-            this.panelDV.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.panelDV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panelTB.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.panelTB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelDV.Controls.Add(this.btnTim);
-            this.panelDV.Controls.Add(this.btnXoaPhong);
-            this.panelDV.Controls.Add(this.btnSuaDV);
-            this.panelDV.Controls.Add(this.btnThemPhong);
-            this.panelDV.Controls.Add(this.textBox1);
-            this.panelDV.Controls.Add(this.dataGridView1);
-            this.panelDV.Location = new System.Drawing.Point(5, 55);
-            this.panelDV.Name = "panelDV";
-            this.panelDV.Size = new System.Drawing.Size(902, 383);
-            this.panelDV.TabIndex = 23;
+            this.panelTB.Controls.Add(this.dgvThietBi);
+            this.panelTB.Controls.Add(this.btnTim);
+            this.panelTB.Controls.Add(this.btnXoaPhong);
+            this.panelTB.Controls.Add(this.btnSuaDV);
+            this.panelTB.Controls.Add(this.btnThemThietBi);
+            this.panelTB.Controls.Add(this.txtTim);
+            this.panelTB.Location = new System.Drawing.Point(5, 55);
+            this.panelTB.Name = "panelTB";
+            this.panelTB.Size = new System.Drawing.Size(902, 383);
+            this.panelTB.TabIndex = 23;
+            // 
+            // dgvThietBi
+            // 
+            this.dgvThietBi.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dgvThietBi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvThietBi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvThietBi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvThietBi.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvThietBi.Location = new System.Drawing.Point(33, 100);
+            this.dgvThietBi.Name = "dgvThietBi";
+            this.dgvThietBi.RowHeadersWidth = 51;
+            this.dgvThietBi.RowTemplate.Height = 24;
+            this.dgvThietBi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvThietBi.Size = new System.Drawing.Size(815, 251);
+            this.dgvThietBi.TabIndex = 56;
             // 
             // btnTim
             // 
@@ -98,6 +109,7 @@
             this.btnTim.Size = new System.Drawing.Size(42, 42);
             this.btnTim.TabIndex = 55;
             this.btnTim.UseVisualStyleBackColor = false;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // btnXoaPhong
             // 
@@ -138,100 +150,49 @@
             this.btnSuaDV.UseVisualStyleBackColor = false;
             this.btnSuaDV.Click += new System.EventHandler(this.btnSuaDV_Click);
             // 
-            // btnThemPhong
+            // btnThemThietBi
             // 
-            this.btnThemPhong.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnThemPhong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThemPhong.BackColor = System.Drawing.Color.MediumSpringGreen;
-            this.btnThemPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemPhong.IconChar = FontAwesome.Sharp.IconChar.FileArrowUp;
-            this.btnThemPhong.IconColor = System.Drawing.Color.White;
-            this.btnThemPhong.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnThemPhong.IconSize = 25;
-            this.btnThemPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemPhong.Location = new System.Drawing.Point(584, 14);
-            this.btnThemPhong.Name = "btnThemPhong";
-            this.btnThemPhong.Size = new System.Drawing.Size(100, 40);
-            this.btnThemPhong.TabIndex = 53;
-            this.btnThemPhong.Text = "Thêm ";
-            this.btnThemPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThemPhong.UseVisualStyleBackColor = false;
-            this.btnThemPhong.Click += new System.EventHandler(this.btnThemPhong_Click);
+            this.btnThemThietBi.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnThemThietBi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThemThietBi.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.btnThemThietBi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemThietBi.IconChar = FontAwesome.Sharp.IconChar.FileArrowUp;
+            this.btnThemThietBi.IconColor = System.Drawing.Color.White;
+            this.btnThemThietBi.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnThemThietBi.IconSize = 25;
+            this.btnThemThietBi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThemThietBi.Location = new System.Drawing.Point(584, 14);
+            this.btnThemThietBi.Name = "btnThemThietBi";
+            this.btnThemThietBi.Size = new System.Drawing.Size(100, 40);
+            this.btnThemThietBi.TabIndex = 53;
+            this.btnThemThietBi.Text = "Thêm ";
+            this.btnThemThietBi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThemThietBi.UseVisualStyleBackColor = false;
+            this.btnThemThietBi.Click += new System.EventHandler(this.btnThemThietBi_Click);
             // 
-            // textBox1
+            // txtTim
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(143, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(180, 27);
-            this.textBox1.TabIndex = 51;
+            this.txtTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTim.Location = new System.Drawing.Point(143, 21);
+            this.txtTim.Name = "txtTim";
+            this.txtTim.Size = new System.Drawing.Size(180, 27);
+            this.txtTim.TabIndex = 51;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT,
-            this.TenDV,
-            this.LoaiDV,
-            this.Dongia,
-            this.Dangdung});
-            this.dataGridView1.Location = new System.Drawing.Point(16, 73);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(872, 299);
-            this.dataGridView1.TabIndex = 50;
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            // 
-            // TenDV
-            // 
-            this.TenDV.HeaderText = "Tên Dịch Vụ ";
-            this.TenDV.MinimumWidth = 6;
-            this.TenDV.Name = "TenDV";
-            // 
-            // LoaiDV
-            // 
-            this.LoaiDV.HeaderText = "Loại Dịch Vụ";
-            this.LoaiDV.MinimumWidth = 6;
-            this.LoaiDV.Name = "LoaiDV";
-            // 
-            // Dongia
-            // 
-            this.Dongia.HeaderText = "Đơn Giá";
-            this.Dongia.MinimumWidth = 6;
-            this.Dongia.Name = "Dongia";
-            // 
-            // Dangdung
-            // 
-            this.Dangdung.HeaderText = "Đang Dùng";
-            this.Dangdung.MinimumWidth = 6;
-            this.Dangdung.Name = "Dangdung";
-            // 
-            // ThietBi
+            // Thietbi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 438);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelDV);
-            this.Name = "ThietBi";
+            this.Controls.Add(this.panelTB);
+            this.Name = "Thietbi";
             this.Text = "ThietBi";
+            this.Load += new System.EventHandler(this.ThietBi_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panelDV.ResumeLayout(false);
-            this.panelDV.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panelTB.ResumeLayout(false);
+            this.panelTB.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThietBi)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -240,17 +201,12 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panelDV;
+        private System.Windows.Forms.Panel panelTB;
         private FontAwesome.Sharp.IconButton btnTim;
         private FontAwesome.Sharp.IconButton btnXoaPhong;
         private FontAwesome.Sharp.IconButton btnSuaDV;
-        private FontAwesome.Sharp.IconButton btnThemPhong;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenDV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiDV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dongia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dangdung;
+        private FontAwesome.Sharp.IconButton btnThemThietBi;
+        private System.Windows.Forms.TextBox txtTim;
+        private System.Windows.Forms.DataGridView dgvThietBi;
     }
 }

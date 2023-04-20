@@ -79,7 +79,7 @@
             // 
             // txtTenDay
             // 
-            this.txtTenDay.Location = new System.Drawing.Point(549, 38);
+            this.txtTenDay.Location = new System.Drawing.Point(401, 36);
             this.txtTenDay.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenDay.Name = "txtTenDay";
             this.txtTenDay.Size = new System.Drawing.Size(132, 22);
@@ -99,7 +99,7 @@
             this.cbbTinhTrang.DisplayMember = "Tình trạng";
             this.cbbTinhTrang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbTinhTrang.FormattingEnabled = true;
-            this.cbbTinhTrang.Location = new System.Drawing.Point(320, 34);
+            this.cbbTinhTrang.Location = new System.Drawing.Point(230, 33);
             this.cbbTinhTrang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbTinhTrang.Name = "cbbTinhTrang";
             this.cbbTinhTrang.Size = new System.Drawing.Size(148, 28);
@@ -114,11 +114,12 @@
             this.btnThemday.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThemday.IconSize = 30;
             this.btnThemday.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemday.Location = new System.Drawing.Point(744, 31);
+            this.btnThemday.Location = new System.Drawing.Point(753, 29);
             this.btnThemday.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThemday.Name = "btnThemday";
-            this.btnThemday.Size = new System.Drawing.Size(123, 37);
+            this.btnThemday.Size = new System.Drawing.Size(113, 37);
             this.btnThemday.TabIndex = 33;
+            this.btnThemday.Tag = "Thêm dãy";
             this.btnThemday.Text = "Thêm dãy";
             this.btnThemday.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemday.UseVisualStyleBackColor = false;
@@ -239,6 +240,7 @@
             this.dtgDayTro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtgDayTro.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgDayTro.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dtgDayTro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgDayTro.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -299,6 +301,7 @@
             this.Name = "Daytro";
             this.Text = "Day";
             this.Load += new System.EventHandler(this.Daytro_Load);
+            this.MouseHover += new System.EventHandler(this.btnThemday_Click);
             this.panelDay.ResumeLayout(false);
             this.panelDay.PerformLayout();
             this.panPhong1.ResumeLayout(false);

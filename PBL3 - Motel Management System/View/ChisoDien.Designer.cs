@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbbDayTro = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,41 +46,22 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSuaHD = new FontAwesome.Sharp.IconButton();
             this.btnThemHD = new FontAwesome.Sharp.IconButton();
+            this.cbbPhongTro = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // comboBox2
+            // cbbDayTro
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(361, 38);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(130, 28);
-            this.comboBox2.TabIndex = 33;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(357, 11);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 20);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "Phòng:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(177, 38);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(158, 28);
-            this.comboBox1.TabIndex = 31;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbbDayTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbDayTro.FormattingEnabled = true;
+            this.cbbDayTro.Location = new System.Drawing.Point(177, 38);
+            this.cbbDayTro.Name = "cbbDayTro";
+            this.cbbDayTro.Size = new System.Drawing.Size(158, 28);
+            this.cbbDayTro.TabIndex = 31;
+            this.cbbDayTro.SelectedIndexChanged += new System.EventHandler(this.cbbDayTro_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -93,7 +72,6 @@
             this.label2.Size = new System.Drawing.Size(44, 20);
             this.label2.TabIndex = 30;
             this.label2.Text = "Dãy:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // dateTimePicker1
             // 
@@ -103,7 +81,6 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(111, 27);
             this.dateTimePicker1.TabIndex = 29;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label1
             // 
@@ -114,7 +91,6 @@
             this.label1.Size = new System.Drawing.Size(82, 20);
             this.label1.TabIndex = 28;
             this.label1.Text = "Thời gian:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label4
             // 
@@ -126,7 +102,6 @@
             this.label4.Size = new System.Drawing.Size(123, 24);
             this.label4.TabIndex = 25;
             this.label4.Text = "CHỈ SỐ ĐIỆN";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // Sudung
             // 
@@ -178,7 +153,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(857, 215);
             this.dataGridView1.TabIndex = 8;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Gia
             // 
@@ -193,20 +167,19 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.cbbPhongTro);
+            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.iconButton1);
             this.panel2.Controls.Add(this.iconButton2);
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.comboBox2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.cbbDayTro);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(12, 88);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(949, 383);
             this.panel2.TabIndex = 27;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // iconButton1
             // 
@@ -252,7 +225,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(973, 49);
             this.panel1.TabIndex = 26;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnSuaHD
             // 
@@ -286,6 +258,31 @@
             this.btnThemHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemHD.UseVisualStyleBackColor = false;
             // 
+            // cbbPhongTro
+            // 
+            this.cbbPhongTro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbbPhongTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbPhongTro.FormattingEnabled = true;
+            this.cbbPhongTro.Location = new System.Drawing.Point(373, 39);
+            this.cbbPhongTro.Name = "cbbPhongTro";
+            this.cbbPhongTro.Size = new System.Drawing.Size(128, 28);
+            this.cbbPhongTro.TabIndex = 57;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(370, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 20);
+            this.label3.TabIndex = 56;
+            this.label3.Text = "Phòng:";
+            // 
             // ChisoDien
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -306,9 +303,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbbDayTro;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label1;
@@ -327,5 +322,7 @@
         private FontAwesome.Sharp.IconButton btnThemHD;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton iconButton2;
+        private System.Windows.Forms.ComboBox cbbPhongTro;
+        private System.Windows.Forms.Label label3;
     }
 }
