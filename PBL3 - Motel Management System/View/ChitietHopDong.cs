@@ -13,15 +13,17 @@ using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System.View
 {
-
+    
     public partial class ChitietHopDong : Form
     {
         private ThuePhong tp;
-        public ChitietHopDong(ThuePhong tp)
+        private Loader loader;
+        public ChitietHopDong(ThuePhong tp, Loader loader)
         {
             InitializeComponent();
             this.tp = tp;
             LoadForm();
+            this.loader=loader;
         }
         public void LoadForm()
         {
@@ -48,13 +50,20 @@ namespace PBL3___Motel_Management_System.View
             dtpNgaySinh.Value = ngaysinh;
             dtpNgayBatDau.Value = batdau;
             dtpNgayKetThuc.Value = ketthuc;
-            //int i = 0;
-           // foreach(string idDv in tp.DsDichVu)
-           // {
-              //  DichVu dv = new DichVu();
-              //  dv = qLBLL.GetDichVuByIdDichVu(idDv);
-              //  dgvDichVu.Rows.Add(dv.MaDichVu,++i,dv.TenDichVu,dv.GiaDichVu);
-           // }
+            int i = 0;
+            foreach(string idDv in tp.DsDichVu)
+            {
+              DichVu dv = new DichVu();
+               dv = qLBLL.GetDichVuByIdDichVu(idDv);
+                dgvDichvu.Rows.Add(dv.MaDichVu,++i,dv.TenDichVu,dv.GiaDichVu);
+            }
+            foreach (string idTb in tp.DsThietBi)
+            {
+                ThietBi tb = new ThietBi();
+                tb = qLBLL.GetThietBiByIdThietBi(idTb);
+                dgvThietbi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi);
+            }
+
 
         }
         private void iconButton1_Click(object sender, EventArgs e)
@@ -93,6 +102,17 @@ namespace PBL3___Motel_Management_System.View
                 ctdv.ThoiGian = tp.hopDong.NgayBatDau;
                 qLBLL.AddChiTietDichVuBll(ctdv);
             }
+            foreach (string idtb in tp.DsThietBi)
+            {
+                ChiTietThietBi cttb = new ChiTietThietBi();
+                cttb.MaChiTietThietBi = qLBLL.TaoIdChiTietThietBi();
+                cttb.MaThietBi = idtb;
+                cttb.MaPhongTro = tp.hopDong.PhongTro.MaPhongTro;
+                cttb.SoLuong = 0;
+                //ctdv.ChiSoMoi = 0;
+                //ctdv.ThoiGian = tp.hopDong.NgayBatDau;
+                qLBLL.AddChiTietThietBiBll(cttb);
+            }
             HopDong hd = new HopDong();
             hd.MaHopDong = tp.hopDong.MaHopDong;
             hd.MaNguoi = tp.hopDong.Nguoi.MaNguoi;
@@ -101,7 +121,8 @@ namespace PBL3___Motel_Management_System.View
             hd.NgayKetThuc = tp.hopDong.NgayKetThuc;
             hd.TienCoc = tp.hopDong.TienCoc;
             qLBLL.AddHdBll(hd);
-            MessageBox.Show("Xác nhận thuê phòng thành công", "Thông báo",MessageBoxButtons.OK);
+            MessageBox.Show("Xác nhận thuê phòng thành công", "Thông báo",MessageBoxButtons.OK); 
+            this.loader(null);
             this.Close();
 
 
@@ -110,6 +131,19 @@ namespace PBL3___Motel_Management_System.View
 
 
 
+
+
+
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelThem_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

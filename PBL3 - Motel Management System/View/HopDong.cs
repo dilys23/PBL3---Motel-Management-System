@@ -1,4 +1,6 @@
-﻿using PBL3___Motel_Management_System.View;
+﻿using PBL3___Motel_Management_System.BLL;
+using PBL3___Motel_Management_System.DTO;
+using PBL3___Motel_Management_System.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +18,7 @@ namespace PBL3___Motel_Management_System
         public Hopdong()
         {
             InitializeComponent();
+            LoadForm(null);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -23,6 +26,14 @@ namespace PBL3___Motel_Management_System
 
         }
         TrangChu tc = new TrangChu();
+        private void LoadForm(string txt)
+        {
+            QLBLL qLBLL = new QLBLL();
+            foreach(DgvHopDong hd in qLBLL.DgvHopDong())
+            {
+                dgvHopDong.Rows.Add(hd.MaHopDong,hd.Stt,hd.TenKhachHang,hd.TenPhongTro,hd.TenDayTro,hd.NgayBatDau,hd.NgayKetThuc,hd.TienCoc);
+            }
+        }
 
        
 
@@ -30,7 +41,8 @@ namespace PBL3___Motel_Management_System
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ChitietHopDong(null), panelHopDong); ;
+            
+            
         }
     }
 }

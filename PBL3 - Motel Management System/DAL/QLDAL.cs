@@ -68,11 +68,11 @@ namespace PBL3___Motel_Management_System.DAL
             }
         }
         
-        public void AddPhongTroDal(PhongTro dt)
+        public void AddPhongTroDal(PhongTro pt)
         {
             using (DataPbl data = new DataPbl())
             {
-                data.PhongTro.Add(dt);
+                data.PhongTro.Add(pt);
                 data.SaveChanges();
             }
         }
@@ -97,6 +97,14 @@ namespace PBL3___Motel_Management_System.DAL
             using (DataPbl data = new DataPbl())
             {
                 data.ChiTietDichVu.Add(dt);
+                data.SaveChanges();
+            }
+        }
+        public void AddChiTietThietBiDal(ChiTietThietBi tb)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                data.ChiTietThietBi.Add(tb);
                 data.SaveChanges();
             }
         }
@@ -246,8 +254,8 @@ namespace PBL3___Motel_Management_System.DAL
             using (DataPbl data = new DataPbl())
             {
                 var s = data.PhongTro.Single(p => p.MaPhongTro == PT.MaPhongTro);
-              // if (PT.ToiDa >= s.GetIdNguoiByIdPhong(PT.MaPhongTro))//
-                    s.TenPhongTro = PT.TenPhongTro;
+                if (PT.ToiDa >= s.ToiDa)
+                s.TenPhongTro = PT.TenPhongTro;
                 s.DienTich = PT.DienTich;
                 s.GiaTien=PT.GiaTien;
                 s.ToiDa=PT.ToiDa;
@@ -278,7 +286,7 @@ namespace PBL3___Motel_Management_System.DAL
                 {
                     if(phongTro.MaPhongTro==IdPhong)
                     {
-                        return phongTro.MaDayTro;break;
+                        return phongTro.MaDayTro;
                     }
                     
                 }
@@ -286,5 +294,21 @@ namespace PBL3___Motel_Management_System.DAL
 
             }
         }
+        //public string GetIdThietBiByIdPhong(string IdPhong)
+        //{
+        //    using (DataPbl data = new DataPbl())
+        //    {
+        //        foreach (PhongTro phongTro in GetAllPhongTro())
+        //        {
+        //            if (phongTro.MaPhongTro == IdPhong)
+        //            {
+        //                return DichVu.Ma;
+        //            }
+
+        //        }
+        //        return null;
+
+        //    }
+        //}
     }
 }

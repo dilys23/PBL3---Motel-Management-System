@@ -15,19 +15,21 @@ namespace PBL3___Motel_Management_System.View
 {
     public partial class ChitietDay : Form
     {
-       
+        
         private string IdDay;
-        public ChitietDay(string idDay)
+      
+        public ChitietDay(string IdDay)
         {
             InitializeComponent();
-            this.IdDay = idDay;
-            LoadForm(idDay);
+            this.IdDay = IdDay;
+            QLBLL qLBLL = new QLBLL();
+            LoadForm(IdDay);
         }
         TrangChu tc = new TrangChu();
-        private void LoadForm(string idDay)
-        {      
+        private void LoadForm(string IdDay)
+        {
+            IdDay = this.IdDay;
             DataTable dt = new DataTable();
-            QLBLL qLBLL = new QLBLL();
             dt.Columns.AddRange(new DataColumn[]
             {
                 new DataColumn{ColumnName = "Mã phòng",DataType = typeof(string)},
@@ -39,22 +41,27 @@ namespace PBL3___Motel_Management_System.View
                 new DataColumn{ColumnName = "Số người hiện có",DataType = typeof(int)},
                 new DataColumn{ColumnName = "Số người tối đa",DataType = typeof(int)}       
             });
-
-            foreach (ViewPhongTro vp in qLBLL.GetAllPhongTroByIdDay(idDay))
-            {
-                dt.Rows.Add(vp.MaPhongTro, vp.Stt, vp.TenPhongTro, vp.GiaTien, vp.DienTich, vp.TinhTrang, vp.SoNguoiHienCo,vp.SoNguoiToiDa);
-            }
-            textBox1.Text= qLBLL.GetDayByIdDay(idDay).TenDayTro.ToString();
-            textBox2.Text= qLBLL.GetDayByIdDay(idDay).TenDuong.ToString()+','+qLBLL.GetDayByIdDay(idDay).TenHuyen.ToString() +','+ qLBLL.GetDayByIdDay(idDay).TenThanhPho.ToString() ;
+            QLBLL qLBLL = new QLBLL();
+           
+            
+                foreach (ViewPhongTro vp in qLBLL.GetAllPhongTroByIdDay(IdDay))
+                {
+                    dt.Rows.Add(vp.MaPhongTro, vp.Stt, vp.TenPhongTro, vp.GiaTien, vp.DienTich, vp.TinhTrang, vp.SoNguoiHienCo, vp.SoNguoiToiDa);
+                }
+         
+            textBox1.Text = qLBLL.GetDayByIdDay(IdDay).TenDayTro.ToString();
+            textBox2.Text = qLBLL.GetDayByIdDay(IdDay).TenDuong.ToString() + ',' + qLBLL.GetDayByIdDay(IdDay).TenHuyen.ToString() + ',' + qLBLL.GetDayByIdDay(IdDay).TenThanhPho.ToString();
             dgvPhong.DataSource = dt;
-            dgvPhong.Columns[0].Visible = false;
+                dgvPhong.Columns[0].Visible = false;
+            
+          
         }
         
 
         private void btnThem_Click_1(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ThemPhong(IdDay), panelChitietDay);
-         //   LoadForm(IdDay);
+            tc.openChildForm1(new ThemPhong(IdDay,LoadForm), panelChitietDay);
+         
         }
 
         private void btnTroVe_Click(object sender, EventArgs e)
@@ -66,11 +73,13 @@ namespace PBL3___Motel_Management_System.View
         {
             QLBLL qlBLL = new QLBLL();
             string IdPhong = dgvPhong.CurrentRow.Cells[0].Value.ToString();
-            tc.openChildForm1(new SuaPhong(IdPhong), panelChitietDay);
-            //LoadForm(qlBLL.GetIdDayByIdPhong(IdPhong));
+            tc.openChildForm1(new SuaPhong(IdPhong,LoadForm), panelChitietDay);
             LoadForm(IdDay);
         }
 
-        
+        private void ChitietDay_Load(object sender, EventArgs e)
+        {
+            LoadForm(IdDay);
+        }
     }
 }

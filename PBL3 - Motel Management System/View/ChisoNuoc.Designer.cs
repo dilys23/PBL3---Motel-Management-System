@@ -38,13 +38,13 @@
             this.ChisoMoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sudung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.cbbPhongTro = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -57,13 +57,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.cbbPhongTro);
+            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.btnSuaHD);
             this.panel2.Controls.Add(this.btnThemHD);
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.comboBox2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(12, 75);
@@ -164,18 +164,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(158, 27);
             this.dateTimePicker1.TabIndex = 29;
             // 
-            // comboBox2
-            // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(399, 50);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(128, 28);
-            this.comboBox2.TabIndex = 33;
-            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -188,19 +176,6 @@
             this.label1.Size = new System.Drawing.Size(82, 20);
             this.label1.TabIndex = 28;
             this.label1.Text = "Thời gian:";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(396, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 20);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "Trạng thái:";
             // 
             // comboBox1
             // 
@@ -242,6 +217,31 @@
             this.label4.TabIndex = 25;
             this.label4.Text = "CHỈ SỐ NƯỚC";
             // 
+            // cbbPhongTro
+            // 
+            this.cbbPhongTro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbbPhongTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbPhongTro.FormattingEnabled = true;
+            this.cbbPhongTro.Location = new System.Drawing.Point(411, 53);
+            this.cbbPhongTro.Name = "cbbPhongTro";
+            this.cbbPhongTro.Size = new System.Drawing.Size(128, 28);
+            this.cbbPhongTro.TabIndex = 59;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(408, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 20);
+            this.label3.TabIndex = 58;
+            this.label3.Text = "Phòng:";
+            // 
             // ChisoNuoc
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -269,14 +269,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ChisoMoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sudung;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private FontAwesome.Sharp.IconButton btnSuaHD;
         private FontAwesome.Sharp.IconButton btnThemHD;
+        private System.Windows.Forms.ComboBox cbbPhongTro;
+        private System.Windows.Forms.Label label3;
     }
 }

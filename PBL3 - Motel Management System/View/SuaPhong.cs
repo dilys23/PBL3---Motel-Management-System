@@ -16,13 +16,31 @@ namespace PBL3___Motel_Management_System
     public partial class SuaPhong : Form
     {
         private string IdPhong;
-       // private Loader Loader;
-        public SuaPhong(string IdPhong)
+        public Loader Loader;
+        public SuaPhong(string IdPhong,Loader Loader)
         {
             InitializeComponent();        
             this.IdPhong = IdPhong;
-            //this.Loader = Loader;
+            this.Loader = Loader;
             FormLoad(IdPhong);
+        }
+        public Boolean CheckSoNguoi(int toida)
+        {
+            QLBLL qLBLL = new QLBLL();
+            int nHienco = 0;
+            List<string> list = qLBLL.GetIdNguoiByIdPhong(IdPhong);
+            foreach(string ng in list)
+            {
+                nHienco++;
+            }
+            if(toida < nHienco )
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
         public void FormLoad(string IdPhong)
         {
@@ -72,7 +90,7 @@ namespace PBL3___Motel_Management_System
                 i++;
                 errorProvider1.SetError(txtDienTich, "Vui lòng điền số lượng tối đa");
             }
-
+            
 
 
             if (txtGiaTien.Text != "")
@@ -108,17 +126,27 @@ namespace PBL3___Motel_Management_System
         {
             if (CheckHL())
             {
-                QLBLL qLBLL = new QLBLL();
-                PhongTro pt = new PhongTro();
-                pt.MaPhongTro = IdPhong;
-                pt.TenPhongTro = txtTenPhong.Text;
-                pt.DienTich = Convert.ToDouble(txtDienTich.Text);
-                pt.GiaTien = Convert.ToDouble(txtGiaTien.Text);
-                pt.ToiDa = Convert.ToInt32(txtToiDa.Text);
-                qLBLL.UpdatePTBLL(pt);
-                MessageBox.Show("Thay đổi thông tin thành công", "Thông báo");
-              //  Loader(null);
-                this.Close();
+                if (CheckSoNguoi(Convert.ToInt32(txtToiDa.Text)))
+                {
+                    QLBLL qLBLL = new QLBLL();
+                    PhongTro pt = new PhongTro();
+                    PhongTro pt1 = new PhongTro();
+                    pt1 = qLBLL.GetPhongTroByIdPhong(IdPhong);
+                    pt.MaPhongTro = IdPhong;
+                    pt.TenPhongTro = txtTenPhong.Text;
+                    pt.TinhTrang = pt1.TinhTrang;
+                    pt.DienTich = Convert.ToDouble(txtDienTich.Text);
+                    pt.GiaTien = Convert.ToDouble(txtGiaTien.Text);
+                    pt.ToiDa = Convert.ToInt32(txtToiDa.Text);
+                    qLBLL.UpdatePTBLL(pt);
+                    MessageBox.Show("Thay đổi thông tin thành công", "Thông báo");
+                    Loader(null);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Số người tối đa phải lớn hơn hoặc bằng số người hiện có trong phòng", "Thông báo");
+                }
             }
         }
     }
