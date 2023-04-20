@@ -43,7 +43,7 @@ namespace PBL3___Motel_Management_System
 
         private void btnThemKhach_Click_1(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ThemKhach(null, null), panelThemHD);
+            tc.openChildForm1(new ThemKhach(null,null, null), panelThemHD);
         }
 
         private void iconButton2_Click(object sender, EventArgs e)

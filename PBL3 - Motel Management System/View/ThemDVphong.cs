@@ -17,12 +17,14 @@ namespace PBL3___Motel_Management_System.View
 {
     public partial class ThemDVphong : Form
     {
+        private string idPhong;
         private ThuePhong tp;
         private Loader loader;
         public ThemDVphong(ThuePhong tp, Loader loader)
         {
             InitializeComponent();
             this.tp = tp;
+            this.idPhong = idPhong;
             LoadForm();
             this.loader=loader;
         }

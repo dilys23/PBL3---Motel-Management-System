@@ -29,7 +29,7 @@ namespace PBL3___Motel_Management_System
         private void LoadForm(string txt)
         {
             QLBLL qLBLL = new QLBLL();
-            foreach(DgvHopDong hd in qLBLL.DgvHopDong())
+            foreach(DgvHopDong hd in qLBLL.DgvHopDong(txt))
             {
                 dgvHopDong.Rows.Add(hd.MaHopDong,hd.Stt,hd.TenKhachHang,hd.TenPhongTro,hd.TenDayTro,hd.NgayBatDau,hd.NgayKetThuc,hd.TienCoc);
             }
@@ -43,6 +43,11 @@ namespace PBL3___Motel_Management_System
         {
             
             
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            LoadForm(txtTimKiem.Text);
         }
     }
 }

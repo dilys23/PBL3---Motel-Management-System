@@ -18,11 +18,14 @@ namespace PBL3___Motel_Management_System
     public partial class ThemKhach : Form
     {   private ThuePhong thuePhong;
         private Loader loader;
-        public ThemKhach(ThuePhong tp, Loader loader)
+        private string idKhach;
+        public ThemKhach(string idKhach,ThuePhong tp, Loader loader)
         {
             InitializeComponent();
+            this.idKhach = idKhach;
             this.thuePhong = tp;
             this.loader=loader;
+            SetGUI();
         }
         private void Back(string txt)
         {
@@ -88,40 +91,77 @@ namespace PBL3___Motel_Management_System
             else return false;
 
         }
-        
+
         private void btnLuu_Click_1(object sender, EventArgs e)
         {
-            if(checkHopLe())
+            if (checkHopLe())
             {
-                QLBLL qLBLL = new QLBLL();
-                Nguoi nguoi = new Nguoi();
-                nguoi.MaNguoi = qLBLL.TaoIdNguoi();
-                nguoi.Cccd = txtCccd.Text;
-                nguoi.Ten = txtTen.Text;
-                nguoi.Sdt = txtSdt.Text;
-                nguoi.Diachi = txtDiaChi.Text;
-                nguoi.GioiTinh = (rdbtnNam.Checked);
-                nguoi.NgaySinh = dtpNgaySinh.Value.ToString("yyyy-MM-dd");
-                if (thuePhong.hopDong.MaHopDong != null)
+               
+                if (idKhach == null)
                 {
-                thuePhong.hopDong.Nguoi = nguoi;
-                tc.openChildForm1(new ThemDVphong(thuePhong, Back), panelKhach);
+                    QLBLL qLBLL = new QLBLL();
+                    Nguoi nguoi = new Nguoi();
+                    nguoi.MaNguoi = qLBLL.TaoIdNguoi();
+                    nguoi.Cccd = txtCccd.Text;
+                    nguoi.Ten = txtTen.Text;
+                    nguoi.Sdt = txtSdt.Text;
+                    nguoi.Diachi = txtDiaChi.Text;
+                    nguoi.GioiTinh = (rdbtnNam.Checked);
+                    nguoi.NgaySinh = dtpNgaySinh.Value.ToString("yyyy-MM-dd");
+                    if (thuePhong.hopDong.MaHopDong != null)
+                    {
+                        thuePhong.hopDong.Nguoi = nguoi;
+                        tc.openChildForm1(new ThemDVphong(thuePhong, Back), panelKhach);
+                    }
+                    else
+                    {
+                        ThanhVienTrongPhong tvtp = new ThanhVienTrongPhong();
+                        tvtp.MaThanhVienTrongPhong = qLBLL.TaoIdThanhVienTrongPhong();
+                        tvtp.MaNguoi = nguoi.MaNguoi;
+                        tvtp.MaPhongTro = thuePhong.hopDong.MaPhongTro;
+                        qLBLL.AddNguoiBll(nguoi);
+                        qLBLL.AddThanhVienTrongPhongBll(tvtp);
+                        MessageBox.Show("Thêm thành viên vào phòng thành công", "Thông báo", MessageBoxButtons.OK);
+                        this.loader(null);
+                        this.Close();
+
+                    }
                 }
                 else
                 {
-                    ThanhVienTrongPhong tvtp = new ThanhVienTrongPhong();
-                    tvtp.MaThanhVienTrongPhong = qLBLL.TaoIdThanhVienTrongPhong();
-                    tvtp.MaNguoi = nguoi.MaNguoi;
-                    tvtp.MaPhongTro = thuePhong.hopDong.MaPhongTro;
-                    qLBLL.AddNguoiBll(nguoi);
-                    qLBLL.AddThanhVienTrongPhongBll(tvtp);
-                    MessageBox.Show("Thêm thành viên vào phòng thành công", "Thông báo", MessageBoxButtons.OK);
+                    QLBLL qLBLL = new QLBLL();
+                    Nguoi nguoi = new Nguoi();
+                    Nguoi nguoi1 = qLBLL.GetNguoiByIdNguoi(idKhach);
+                    nguoi.MaNguoi = nguoi1.MaNguoi;
+                    nguoi.Cccd = txtCccd.Text;
+                    nguoi.Ten = txtTen.Text;
+                    nguoi.Sdt = txtSdt.Text;
+                    nguoi.Diachi = txtDiaChi.Text;
+                    nguoi.GioiTinh = (rdbtnNam.Checked);
+                    nguoi.NgaySinh = dtpNgaySinh.Value.ToString("yyyy-MM-dd");
+                    qLBLL.UpdateNguoiBLL(nguoi);
+                    MessageBox.Show("Thay đổi thông tin khách thuê thành công", "Thông báo", MessageBoxButtons.OK);
                     this.loader(null);
                     this.Close();
 
                 }
             }
-            
         }
+            public void SetGUI()
+            {
+                if(idKhach !=null)
+                {
+                    QLBLL qlBLL = new QLBLL();
+                    Nguoi nguoi = qlBLL.GetNguoiByIdNguoi(idKhach);
+                    txtCccd.Text = nguoi.Cccd;
+                    txtTen.Text = nguoi.Ten;
+                    txtSdt.Text = nguoi.Sdt;
+                    txtDiaChi.Text = nguoi.Diachi;
+                    rdbtnNam.Checked = nguoi.GioiTinh;
+                    dtpNgaySinh.Value = Convert.ToDateTime(nguoi.NgaySinh);
+                }
+            }
+            
+        
     }
 }

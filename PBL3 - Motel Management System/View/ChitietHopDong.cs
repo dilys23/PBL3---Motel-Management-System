@@ -124,5 +124,10 @@ namespace PBL3___Motel_Management_System.View
         {
 
         }
+
+        private void panelThem_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

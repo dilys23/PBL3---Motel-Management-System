@@ -24,8 +24,8 @@ namespace PBL3___Motel_Management_System.View
         TrangChu tc = new TrangChu();   
         public void LoadForm(String txtTim)
         {
-            cbbDayTro.Items.Clear();
-            SetCbbDayTro();
+            //cbbDayTro.Items.Clear();
+            //SetCbbDayTro();
             DataTable dt = new DataTable();
             QLBLL qLBLL = new QLBLL();  
             dt.Columns.AddRange(new DataColumn[]
@@ -47,7 +47,7 @@ namespace PBL3___Motel_Management_System.View
             dtgDayTro.DataSource = dt;
             dtgDayTro.Columns[0].Visible = false;
         }
-
+        /*
         public void SetCbbDayTro()
         {
             QLBLL qLBLL = new QLBLL();
@@ -58,7 +58,7 @@ namespace PBL3___Motel_Management_System.View
             cbbTinhTrang.Items.Add("Trống");
             cbbTinhTrang.SelectedIndex = 0;
         }
-        
+        */
         private void btnThem_Click(object sender, EventArgs e)
         {
             string idDay = dtgDayTro.CurrentRow.Cells[0].Value.ToString();

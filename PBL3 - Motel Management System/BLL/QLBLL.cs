@@ -480,6 +480,11 @@ namespace PBL3___Motel_Management_System.BLL
             QLDAL qLDAL = new QLDAL();
             qLDAL.AddNguoiDal(n);
         }
+        public void UpdateNguoiBLL(Nguoi n)
+        {
+            QLDAL qlDAL = new QLDAL();
+            qlDAL.UpdateNguoiDAL(n);
+        }
         public DichVu GetDichVuByIdDichVu(string id)
         {
             QLDAL qLDAL = new QLDAL();
@@ -621,7 +626,7 @@ namespace PBL3___Motel_Management_System.BLL
             QLDAL qLDAL = new QLDAL();
             qLDAL.SuaDayDal(day);
         }
-        public List<DgvHopDong>DgvHopDong()
+        public List<DgvHopDong>DgvHopDong(string txt)
         {
             List<DgvHopDong>list = new List<DgvHopDong> ();
             QLDAL qLDAL = new QLDAL ();
@@ -630,17 +635,40 @@ namespace PBL3___Motel_Management_System.BLL
             int i = 1;
             foreach(HopDong hopDong in hopDongs)
             {
-                DgvHopDong hd = new DgvHopDong ();
-                hd.MaHopDong = hopDong.MaHopDong;
-                hd.Stt = i++;
-                hd.TenKhachHang = GetNguoiByIdNguoi(hopDong.MaNguoi).Ten;
-                hd.TenPhongTro = GetPhongTroByIdPhong(hopDong.MaPhongTro).TenPhongTro;
-                hd.TenDayTro = GetDayTroByIdPhong(hopDong.MaPhongTro).TenDayTro;
-                hd.NgayBatDau = hopDong.NgayBatDau;
-                hd.NgayKetThuc = hopDong.NgayKetThuc;
-                hd.TienCoc = hopDong.TienCoc;
-                list.Add(hd);
+
+                DgvHopDong hd = new DgvHopDong();
+                if (txt == null)
+                {
+                    i++;                
+                    hd.MaHopDong = hopDong.MaHopDong;
+                    hd.Stt = i++;
+                    hd.TenKhachHang = GetNguoiByIdNguoi(hopDong.MaNguoi).Ten;
+                    hd.TenPhongTro = GetPhongTroByIdPhong(hopDong.MaPhongTro).TenPhongTro;
+                    hd.TenDayTro = GetDayTroByIdPhong(hopDong.MaPhongTro).TenDayTro;
+                    hd.NgayBatDau = hopDong.NgayBatDau;
+                    hd.NgayKetThuc = hopDong.NgayKetThuc;
+                    hd.TienCoc = hopDong.TienCoc;
+                    list.Add(hd);
+                }
+                else
+                {
+                    if (hd.TenKhachHang.IndexOf(txt, 0, StringComparison.OrdinalIgnoreCase) != -1)
+                    {
+                        i++;
+                        
+                        hd.MaHopDong = hopDong.MaHopDong;
+                        hd.Stt = i++;
+                        hd.TenKhachHang = GetNguoiByIdNguoi(hopDong.MaNguoi).Ten;
+                        hd.TenPhongTro = GetPhongTroByIdPhong(hopDong.MaPhongTro).TenPhongTro;
+                        hd.TenDayTro = GetDayTroByIdPhong(hopDong.MaPhongTro).TenDayTro;
+                        hd.NgayBatDau = hopDong.NgayBatDau;
+                        hd.NgayKetThuc = hopDong.NgayKetThuc;
+                        hd.TienCoc = hopDong.TienCoc;
+                        list.Add(hd);
+                    }
+                }
             }
+            
 
             return list;
         }

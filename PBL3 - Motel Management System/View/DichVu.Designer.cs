@@ -31,6 +31,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panelDV = new System.Windows.Forms.Panel();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.iconButton4 = new FontAwesome.Sharp.IconButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnTimKiem = new FontAwesome.Sharp.IconButton();
             this.btnXoaPhong = new FontAwesome.Sharp.IconButton();
             this.btnSuaDichVu = new FontAwesome.Sharp.IconButton();
@@ -39,6 +45,7 @@
             this.dgvDichVu = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panelDV.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,6 +77,12 @@
             this.panelDV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelDV.Controls.Add(this.iconButton1);
+            this.panelDV.Controls.Add(this.iconButton2);
+            this.panelDV.Controls.Add(this.iconButton3);
+            this.panelDV.Controls.Add(this.iconButton4);
+            this.panelDV.Controls.Add(this.textBox1);
+            this.panelDV.Controls.Add(this.dataGridView1);
             this.panelDV.Controls.Add(this.btnTimKiem);
             this.panelDV.Controls.Add(this.btnXoaPhong);
             this.panelDV.Controls.Add(this.btnSuaDichVu);
@@ -78,8 +91,104 @@
             this.panelDV.Controls.Add(this.dgvDichVu);
             this.panelDV.Location = new System.Drawing.Point(5, 55);
             this.panelDV.Name = "panelDV";
-            this.panelDV.Size = new System.Drawing.Size(902, 383);
+            this.panelDV.Size = new System.Drawing.Size(902, 512);
             this.panelDV.TabIndex = 21;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.iconButton1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.iconButton1.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 25;
+            this.iconButton1.Location = new System.Drawing.Point(37, 248);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(42, 42);
+            this.iconButton1.TabIndex = 61;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.iconButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButton2.BackColor = System.Drawing.Color.Red;
+            this.iconButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.iconButton2.IconColor = System.Drawing.Color.White;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Regular;
+            this.iconButton2.IconSize = 25;
+            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton2.Location = new System.Drawing.Point(754, 249);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(94, 38);
+            this.iconButton2.TabIndex = 60;
+            this.iconButton2.Text = "Xóa";
+            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton2.UseVisualStyleBackColor = false;
+            // 
+            // iconButton3
+            // 
+            this.iconButton3.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.iconButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButton3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.iconButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.iconButton3.IconColor = System.Drawing.Color.White;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.IconSize = 25;
+            this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton3.Location = new System.Drawing.Point(646, 250);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Size = new System.Drawing.Size(88, 39);
+            this.iconButton3.TabIndex = 58;
+            this.iconButton3.Text = "Sửa";
+            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton3.UseVisualStyleBackColor = false;
+            // 
+            // iconButton4
+            // 
+            this.iconButton4.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.iconButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButton4.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.iconButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.FileArrowUp;
+            this.iconButton4.IconColor = System.Drawing.Color.White;
+            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.iconButton4.IconSize = 25;
+            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton4.Location = new System.Drawing.Point(540, 249);
+            this.iconButton4.Name = "iconButton4";
+            this.iconButton4.Size = new System.Drawing.Size(100, 40);
+            this.iconButton4.TabIndex = 59;
+            this.iconButton4.Text = "Thêm ";
+            this.iconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton4.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(99, 256);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(180, 27);
+            this.textBox1.TabIndex = 57;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView1.Location = new System.Drawing.Point(20, 319);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(872, 173);
+            this.dataGridView1.TabIndex = 56;
             // 
             // btnTimKiem
             // 
@@ -89,7 +198,7 @@
             this.btnTimKiem.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnTimKiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTimKiem.IconSize = 25;
-            this.btnTimKiem.Location = new System.Drawing.Point(81, 13);
+            this.btnTimKiem.Location = new System.Drawing.Point(37, 13);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(42, 42);
             this.btnTimKiem.TabIndex = 55;
@@ -107,7 +216,7 @@
             this.btnXoaPhong.IconFont = FontAwesome.Sharp.IconFont.Regular;
             this.btnXoaPhong.IconSize = 25;
             this.btnXoaPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaPhong.Location = new System.Drawing.Point(798, 14);
+            this.btnXoaPhong.Location = new System.Drawing.Point(754, 17);
             this.btnXoaPhong.Name = "btnXoaPhong";
             this.btnXoaPhong.Size = new System.Drawing.Size(94, 38);
             this.btnXoaPhong.TabIndex = 54;
@@ -126,7 +235,7 @@
             this.btnSuaDichVu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSuaDichVu.IconSize = 25;
             this.btnSuaDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaDichVu.Location = new System.Drawing.Point(690, 15);
+            this.btnSuaDichVu.Location = new System.Drawing.Point(646, 17);
             this.btnSuaDichVu.Name = "btnSuaDichVu";
             this.btnSuaDichVu.Size = new System.Drawing.Size(88, 39);
             this.btnSuaDichVu.TabIndex = 52;
@@ -146,7 +255,7 @@
             this.btnThemDichVu.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnThemDichVu.IconSize = 25;
             this.btnThemDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemDichVu.Location = new System.Drawing.Point(584, 14);
+            this.btnThemDichVu.Location = new System.Drawing.Point(540, 17);
             this.btnThemDichVu.Name = "btnThemDichVu";
             this.btnThemDichVu.Size = new System.Drawing.Size(100, 40);
             this.btnThemDichVu.TabIndex = 53;
@@ -158,7 +267,7 @@
             // txtTimKiem
             // 
             this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem.Location = new System.Drawing.Point(143, 21);
+            this.txtTimKiem.Location = new System.Drawing.Point(90, 24);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(180, 27);
             this.txtTimKiem.TabIndex = 51;
@@ -166,8 +275,7 @@
             // dgvDichVu
             // 
             this.dgvDichVu.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.dgvDichVu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvDichVu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDichVu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDichVu.BackgroundColor = System.Drawing.SystemColors.Control;
@@ -178,7 +286,7 @@
             this.dgvDichVu.RowHeadersWidth = 51;
             this.dgvDichVu.RowTemplate.Height = 24;
             this.dgvDichVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDichVu.Size = new System.Drawing.Size(872, 299);
+            this.dgvDichVu.Size = new System.Drawing.Size(872, 169);
             this.dgvDichVu.TabIndex = 50;
             // 
             // Dichvu
@@ -197,6 +305,7 @@
             this.panel1.PerformLayout();
             this.panelDV.ResumeLayout(false);
             this.panelDV.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).EndInit();
             this.ResumeLayout(false);
 
@@ -213,5 +322,11 @@
         private FontAwesome.Sharp.IconButton btnThemDichVu;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.DataGridView dgvDichVu;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton iconButton4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

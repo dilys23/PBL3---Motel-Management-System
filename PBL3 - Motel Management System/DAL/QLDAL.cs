@@ -214,6 +214,21 @@ namespace PBL3___Motel_Management_System.DAL
 
             }
         }
+        public void UpdateNguoiDAL(Nguoi n)
+        {
+            using (DataPbl data= new DataPbl())
+            {
+                var s= data.Nguoi.Single(p=>p.MaNguoi == n.MaNguoi);
+                s.Cccd = n.Cccd;
+                s.Ten = n.Ten;
+                s.Sdt = n.Sdt;
+                s.Diachi = n.Diachi;
+                s.NgaySinh = n.NgaySinh;
+                s.GioiTinh = n.GioiTinh;
+                data.SaveChanges();
+
+            }
+        }
         public List<Nguoi>  GetAllNguoi()
         {
             List<Nguoi> list = new List<Nguoi>();

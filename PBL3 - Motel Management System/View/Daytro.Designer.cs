@@ -32,7 +32,6 @@
             this.panelDay = new System.Windows.Forms.Panel();
             this.txtTenDay = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.cbbTinhTrang = new System.Windows.Forms.ComboBox();
             this.btnThemday = new FontAwesome.Sharp.IconButton();
             this.btnTimKiem = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,7 +41,6 @@
             this.btnSua = new FontAwesome.Sharp.IconButton();
             this.btnXoa = new FontAwesome.Sharp.IconButton();
             this.dtgDayTro = new System.Windows.Forms.DataGridView();
-            this.cbbDayTro = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -63,13 +61,11 @@
             this.panelDay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelDay.Controls.Add(this.txtTenDay);
             this.panelDay.Controls.Add(this.label4);
-            this.panelDay.Controls.Add(this.cbbTinhTrang);
             this.panelDay.Controls.Add(this.btnThemday);
             this.panelDay.Controls.Add(this.btnTimKiem);
             this.panelDay.Controls.Add(this.label2);
             this.panelDay.Controls.Add(this.label1);
             this.panelDay.Controls.Add(this.panPhong1);
-            this.panelDay.Controls.Add(this.cbbDayTro);
             this.panelDay.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.panelDay.Location = new System.Drawing.Point(12, 69);
             this.panelDay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -79,7 +75,7 @@
             // 
             // txtTenDay
             // 
-            this.txtTenDay.Location = new System.Drawing.Point(401, 36);
+            this.txtTenDay.Location = new System.Drawing.Point(79, 36);
             this.txtTenDay.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenDay.Name = "txtTenDay";
             this.txtTenDay.Size = new System.Drawing.Size(132, 22);
@@ -93,17 +89,6 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 20);
             this.label4.TabIndex = 35;
-            // 
-            // cbbTinhTrang
-            // 
-            this.cbbTinhTrang.DisplayMember = "Tình trạng";
-            this.cbbTinhTrang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbTinhTrang.FormattingEnabled = true;
-            this.cbbTinhTrang.Location = new System.Drawing.Point(230, 33);
-            this.cbbTinhTrang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbbTinhTrang.Name = "cbbTinhTrang";
-            this.cbbTinhTrang.Size = new System.Drawing.Size(148, 28);
-            this.cbbTinhTrang.TabIndex = 34;
             // 
             // btnThemday
             // 
@@ -254,16 +239,6 @@
             this.dtgDayTro.Size = new System.Drawing.Size(683, 187);
             this.dtgDayTro.TabIndex = 24;
             // 
-            // cbbDayTro
-            // 
-            this.cbbDayTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbDayTro.FormattingEnabled = true;
-            this.cbbDayTro.Location = new System.Drawing.Point(65, 34);
-            this.cbbDayTro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbbDayTro.Name = "cbbDayTro";
-            this.cbbDayTro.Size = new System.Drawing.Size(148, 28);
-            this.cbbDayTro.TabIndex = 27;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
@@ -317,7 +292,6 @@
 
         private System.Windows.Forms.Panel panelDay;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cbbTinhTrang;
         private FontAwesome.Sharp.IconButton btnThemday;
         private FontAwesome.Sharp.IconButton btnTimKiem;
         private System.Windows.Forms.Label label2;
@@ -326,7 +300,6 @@
         private FontAwesome.Sharp.IconButton btnSua;
         private FontAwesome.Sharp.IconButton btnXoa;
         private System.Windows.Forms.DataGridView dtgDayTro;
-        private System.Windows.Forms.ComboBox cbbDayTro;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
         private FontAwesome.Sharp.IconButton btnThem;

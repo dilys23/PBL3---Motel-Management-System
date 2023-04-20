@@ -41,10 +41,10 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GiaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.btnXoaDV = new FontAwesome.Sharp.IconButton();
+            this.btnSuaDV = new FontAwesome.Sharp.IconButton();
             this.btnThemDichVu = new FontAwesome.Sharp.IconButton();
-            this.btnXoa = new FontAwesome.Sharp.IconButton();
+            this.btnXoaTV = new FontAwesome.Sharp.IconButton();
             this.dgvThanhVien = new System.Windows.Forms.DataGridView();
             this.MaNguoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.STT1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,7 +54,7 @@
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSua = new FontAwesome.Sharp.IconButton();
+            this.btnSuaTV = new FontAwesome.Sharp.IconButton();
             this.btnThemThanhVien = new FontAwesome.Sharp.IconButton();
             this.dgvDichVu = new System.Windows.Forms.DataGridView();
             this.MaDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -126,12 +126,12 @@
             this.panPhong1.Controls.Add(this.iconButton6);
             this.panPhong1.Controls.Add(this.label3);
             this.panPhong1.Controls.Add(this.dgvThietBi);
-            this.panPhong1.Controls.Add(this.iconButton1);
-            this.panPhong1.Controls.Add(this.iconButton2);
+            this.panPhong1.Controls.Add(this.btnXoaDV);
+            this.panPhong1.Controls.Add(this.btnSuaDV);
             this.panPhong1.Controls.Add(this.btnThemDichVu);
-            this.panPhong1.Controls.Add(this.btnXoa);
+            this.panPhong1.Controls.Add(this.btnXoaTV);
             this.panPhong1.Controls.Add(this.dgvThanhVien);
-            this.panPhong1.Controls.Add(this.btnSua);
+            this.panPhong1.Controls.Add(this.btnSuaTV);
             this.panPhong1.Controls.Add(this.btnThemThanhVien);
             this.panPhong1.Controls.Add(this.dgvDichVu);
             this.panPhong1.Controls.Add(this.label1);
@@ -251,37 +251,38 @@
             this.GiaThietBi.MinimumWidth = 6;
             this.GiaThietBi.Name = "GiaThietBi";
             // 
-            // iconButton1
+            // btnXoaDV
             // 
-            this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton1.BackColor = System.Drawing.Color.Red;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 25;
-            this.iconButton1.Location = new System.Drawing.Point(845, 177);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(44, 41);
-            this.iconButton1.TabIndex = 62;
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton1.UseVisualStyleBackColor = false;
+            this.btnXoaDV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXoaDV.BackColor = System.Drawing.Color.Red;
+            this.btnXoaDV.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnXoaDV.IconColor = System.Drawing.Color.White;
+            this.btnXoaDV.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnXoaDV.IconSize = 25;
+            this.btnXoaDV.Location = new System.Drawing.Point(845, 177);
+            this.btnXoaDV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXoaDV.Name = "btnXoaDV";
+            this.btnXoaDV.Size = new System.Drawing.Size(44, 41);
+            this.btnXoaDV.TabIndex = 62;
+            this.btnXoaDV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoaDV.UseVisualStyleBackColor = false;
             // 
-            // iconButton2
+            // btnSuaDV
             // 
-            this.iconButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.ExternalLink;
-            this.iconButton2.IconColor = System.Drawing.Color.White;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 25;
-            this.iconButton2.Location = new System.Drawing.Point(795, 177);
-            this.iconButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(44, 41);
-            this.iconButton2.TabIndex = 61;
-            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton2.UseVisualStyleBackColor = false;
+            this.btnSuaDV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSuaDV.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSuaDV.IconChar = FontAwesome.Sharp.IconChar.ExternalLink;
+            this.btnSuaDV.IconColor = System.Drawing.Color.White;
+            this.btnSuaDV.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSuaDV.IconSize = 25;
+            this.btnSuaDV.Location = new System.Drawing.Point(795, 177);
+            this.btnSuaDV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSuaDV.Name = "btnSuaDV";
+            this.btnSuaDV.Size = new System.Drawing.Size(44, 41);
+            this.btnSuaDV.TabIndex = 61;
+            this.btnSuaDV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSuaDV.UseVisualStyleBackColor = false;
+            this.btnSuaDV.Click += new System.EventHandler(this.btnSuaDV_Click);
             // 
             // btnThemDichVu
             // 
@@ -300,21 +301,21 @@
             this.btnThemDichVu.UseVisualStyleBackColor = false;
             this.btnThemDichVu.Click += new System.EventHandler(this.btnThemDichVu_Click);
             // 
-            // btnXoa
+            // btnXoaTV
             // 
-            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXoa.BackColor = System.Drawing.Color.Red;
-            this.btnXoa.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btnXoa.IconColor = System.Drawing.Color.White;
-            this.btnXoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnXoa.IconSize = 25;
-            this.btnXoa.Location = new System.Drawing.Point(843, 12);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(43, 41);
-            this.btnXoa.TabIndex = 59;
-            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoaTV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXoaTV.BackColor = System.Drawing.Color.Red;
+            this.btnXoaTV.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnXoaTV.IconColor = System.Drawing.Color.White;
+            this.btnXoaTV.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnXoaTV.IconSize = 25;
+            this.btnXoaTV.Location = new System.Drawing.Point(843, 12);
+            this.btnXoaTV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXoaTV.Name = "btnXoaTV";
+            this.btnXoaTV.Size = new System.Drawing.Size(43, 41);
+            this.btnXoaTV.TabIndex = 59;
+            this.btnXoaTV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoaTV.UseVisualStyleBackColor = false;
             // 
             // dgvThanhVien
             // 
@@ -393,22 +394,22 @@
             this.GioiTinh.MinimumWidth = 6;
             this.GioiTinh.Name = "GioiTinh";
             // 
-            // btnSua
+            // btnSuaTV
             // 
-            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSua.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnSua.IconChar = FontAwesome.Sharp.IconChar.ExternalLink;
-            this.btnSua.IconColor = System.Drawing.Color.White;
-            this.btnSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSua.IconSize = 25;
-            this.btnSua.Location = new System.Drawing.Point(796, 12);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(43, 41);
-            this.btnSua.TabIndex = 58;
-            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSua.UseVisualStyleBackColor = false;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            this.btnSuaTV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSuaTV.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSuaTV.IconChar = FontAwesome.Sharp.IconChar.ExternalLink;
+            this.btnSuaTV.IconColor = System.Drawing.Color.White;
+            this.btnSuaTV.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSuaTV.IconSize = 25;
+            this.btnSuaTV.Location = new System.Drawing.Point(796, 12);
+            this.btnSuaTV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSuaTV.Name = "btnSuaTV";
+            this.btnSuaTV.Size = new System.Drawing.Size(43, 41);
+            this.btnSuaTV.TabIndex = 58;
+            this.btnSuaTV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSuaTV.UseVisualStyleBackColor = false;
+            this.btnSuaTV.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThemThanhVien
             // 
@@ -527,10 +528,10 @@
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnThemThanhVien;
         private System.Windows.Forms.Panel panPhong1;
-        private FontAwesome.Sharp.IconButton btnSua;
-        private FontAwesome.Sharp.IconButton btnXoa;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton btnSuaTV;
+        private FontAwesome.Sharp.IconButton btnXoaTV;
+        private FontAwesome.Sharp.IconButton btnXoaDV;
+        private FontAwesome.Sharp.IconButton btnSuaDV;
         private FontAwesome.Sharp.IconButton btnThemDichVu;
         private System.Windows.Forms.DataGridView dgvThietBi;
         private FontAwesome.Sharp.IconButton iconButton4;

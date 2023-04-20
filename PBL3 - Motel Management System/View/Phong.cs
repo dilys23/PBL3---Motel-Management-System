@@ -102,7 +102,7 @@ namespace PBL3___Motel_Management_System
             QLBLL qLBLL = new QLBLL() ;
             tp.hopDong.MaHopDong = qLBLL.TaoIdHopDong();
             tp.hopDong.PhongTro.MaPhongTro = dgvPhongTro.CurrentRow.Cells[0].Value.ToString();
-            tc.openChildForm1(new ThemKhach(tp, LoadForm), panelPhong) ;
+            tc.openChildForm1(new ThemKhach(null,tp, LoadForm), panelPhong) ;
             }
             else
             {

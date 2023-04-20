@@ -31,7 +31,7 @@ namespace PBL3___Motel_Management_System.View
             dgvThanhVien.RowCount = 1;
             dgvDichVu.RowCount = 1;
             dgvThietBi.RowCount = 1;
-
+            
             QLBLL qLBLL = new QLBLL();
             int i = 1;
             dgvThanhVien.Columns[6].ValueType = typeof(Boolean);
@@ -70,7 +70,7 @@ namespace PBL3___Motel_Management_System.View
                 string IdPhong = qLBLL.GetIdPhongByIdNguoi(IdThanhVien);
                 ThuePhong tp = new ThuePhong();
                 tp.hopDong.MaPhongTro = idPhong;
-                tc.openChildForm1(new ThemKhach(tp, LoadForm), panelChiTiet);
+                tc.openChildForm1(new ThemKhach(null,tp, LoadForm), panelChiTiet);
             }
             else
             {
@@ -85,7 +85,8 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ThemKhach(null,null), panelChiTiet);
+            string idKhach = dgvThanhVien.CurrentRow.Cells[0].Value.ToString(); 
+            tc.openChildForm1(new ThemKhach(idKhach,null,LoadForm), panelChiTiet);
         }
 
         private void panPhong1_Paint(object sender, PaintEventArgs e)
@@ -101,7 +102,13 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnThemDichVu_Click(object sender, EventArgs e)
         {
+            tc.openChildForm1(new ThemDVphong(null,LoadForm),panelChiTiet);
+        }
 
+        private void btnSuaDV_Click(object sender, EventArgs e)
+        {
+            string idDV = dgvDichVu.CurrentRow.Cells[0].Value.ToString();   
+            tc.openChildForm1(new SuaDichVu(idDV,LoadForm), panelChiTiet);
         }
     }
     
