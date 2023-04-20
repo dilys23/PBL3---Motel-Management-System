@@ -144,6 +144,12 @@
     <Compile Include="View\ChitietPhong.Designer.cs">
       <DependentUpon>ChitietPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\CocPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CocPhong.Designer.cs">
+      <DependentUpon>CocPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Daytro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -340,6 +346,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ChitietPhong.resx">
       <DependentUpon>ChitietPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CocPhong.resx">
+      <DependentUpon>CocPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Daytro.resx">
       <DependentUpon>Daytro.cs</DependentUpon>
