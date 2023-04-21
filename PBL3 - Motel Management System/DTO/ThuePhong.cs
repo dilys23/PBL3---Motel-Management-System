@@ -10,9 +10,11 @@ namespace PBL3___Motel_Management_System.DTO
     public class ThuePhong
     {
         public List<string> DsDichVu { get; set; }
+        public List<string> DsThietBi { get; set; }
         public HopDong hopDong { get; set; }
         public ThuePhong() { 
             DsDichVu = new List<string>();
+            DsThietBi = new List<string>(); 
             hopDong = new HopDong();
             hopDong.Nguoi = new Nguoi();
             hopDong.PhongTro = new PhongTro

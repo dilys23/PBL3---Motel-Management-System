@@ -32,6 +32,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.panelThem = new System.Windows.Forms.Panel();
+            this.cbbPhong = new System.Windows.Forms.ComboBox();
+            this.cbbDay = new System.Windows.Forms.ComboBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -43,15 +48,10 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.panelThem.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,6 +104,8 @@
             this.panelThem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
+            this.panelThem.Controls.Add(this.cbbPhong);
+            this.panelThem.Controls.Add(this.cbbDay);
             this.panelThem.Controls.Add(this.textBox9);
             this.panelThem.Controls.Add(this.label11);
             this.panelThem.Controls.Add(this.textBox3);
@@ -118,10 +120,8 @@
             this.panelThem.Controls.Add(this.textBox6);
             this.panelThem.Controls.Add(this.textBox5);
             this.panelThem.Controls.Add(this.label4);
-            this.panelThem.Controls.Add(this.textBox4);
             this.panelThem.Controls.Add(this.label8);
             this.panelThem.Controls.Add(this.label2);
-            this.panelThem.Controls.Add(this.textBox1);
             this.panelThem.Controls.Add(this.label3);
             this.panelThem.Controls.Add(this.label6);
             this.panelThem.Location = new System.Drawing.Point(14, 59);
@@ -129,13 +129,68 @@
             this.panelThem.Size = new System.Drawing.Size(890, 367);
             this.panelThem.TabIndex = 50;
             // 
+            // cbbPhong
+            // 
+            this.cbbPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbPhong.FormattingEnabled = true;
+            this.cbbPhong.Location = new System.Drawing.Point(177, 100);
+            this.cbbPhong.Name = "cbbPhong";
+            this.cbbPhong.Size = new System.Drawing.Size(225, 28);
+            this.cbbPhong.TabIndex = 78;
+            // 
+            // cbbDay
+            // 
+            this.cbbDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbDay.FormattingEnabled = true;
+            this.cbbDay.Location = new System.Drawing.Point(177, 47);
+            this.cbbDay.Name = "cbbDay";
+            this.cbbDay.Size = new System.Drawing.Size(225, 28);
+            this.cbbDay.TabIndex = 77;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox9.Location = new System.Drawing.Point(177, 287);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(225, 27);
+            this.textBox9.TabIndex = 76;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(27, 294);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(66, 20);
+            this.label11.TabIndex = 75;
+            this.label11.Text = "Còn lại:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(177, 223);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(225, 27);
+            this.textBox3.TabIndex = 74;
+            // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker2.CustomFormat = "MM/yyyy";
+            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(177, 161);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(225, 22);
+            this.dateTimePicker2.ShowUpDown = true;
+            this.dateTimePicker2.Size = new System.Drawing.Size(225, 27);
             this.dateTimePicker2.TabIndex = 73;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // label10
             // 
@@ -247,16 +302,6 @@
             this.label4.TabIndex = 62;
             this.label4.Text = "Tiền điện:";
             // 
-            // textBox4
-            // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(177, 98);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(225, 27);
-            this.textBox4.TabIndex = 61;
-            // 
             // label8
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -281,16 +326,6 @@
             this.label2.TabIndex = 56;
             this.label2.Text = "Dãy:";
             // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(177, 47);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(225, 27);
-            this.textBox1.TabIndex = 57;
-            // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -314,38 +349,6 @@
             this.label6.Size = new System.Drawing.Size(61, 20);
             this.label6.TabIndex = 59;
             this.label6.Text = "Phòng:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(177, 223);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(225, 27);
-            this.textBox3.TabIndex = 74;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(27, 294);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(66, 20);
-            this.label11.TabIndex = 75;
-            this.label11.Text = "Còn lại:";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(177, 287);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(225, 27);
-            this.textBox9.TabIndex = 76;
             // 
             // ThemHoaDon
             // 
@@ -383,14 +386,14 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.ComboBox cbbPhong;
+        private System.Windows.Forms.ComboBox cbbDay;
     }
 }

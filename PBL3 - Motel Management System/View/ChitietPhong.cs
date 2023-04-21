@@ -50,12 +50,13 @@ namespace PBL3___Motel_Management_System.View
                 dgvDichVu.Rows.Add(dv.MaDichVu,i++,dv.TenDichVu,dv.GiaDichVu);
             }
             i=1;
-            foreach(string idThietBi in qLBLL.GetAllIdThietBiByIdPhong(idPhong))
+            foreach(string idThietBi in qLBLL.GetAllIdThietBiByIdPhong(this.idPhong))
             {
                 ThietBi tb = new ThietBi();
                 tb = qLBLL.GetTBByIdTB(idThietBi);
                 dgvThietBi.Rows.Add(tb.MaThietBi,i++,tb.TenThietBi,tb.GiaThietBi);
             }
+            i = 1;
 
         }
         private void btnThem_Click(object sender, EventArgs e)
@@ -82,6 +83,15 @@ namespace PBL3___Motel_Management_System.View
                 MessageBox.Show("Phòng chưa được cho thuê, không được thêm khách hàng", "Thông báo", MessageBoxButtons.OK); ;
             }
         }
+        private void btnThemTB_Click(object sender, EventArgs e)
+        {
+            QLBLL qLBLL = new QLBLL();
+            string IdTB = dgvThietBi.Rows[0].Cells[0].Value.ToString();
+            string IdPhong = qLBLL.GetIdPhongByIdTB(IdTB);
+            ThuePhong tp = new ThuePhong();
+            tp.hopDong.MaPhongTro = idPhong;
+            tc.openChildForm1(new ThemThietBiPhong(tp, LoadForm), panelChiTiet);
+        }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
@@ -102,15 +112,34 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnThemDichVu_Click(object sender, EventArgs e)
         {
-           
-            tc.openChildForm1(new ThemDVphong(idPhong,null,LoadForm),panelChiTiet);
+            QLBLL qLBLL = new QLBLL();
+            //if (qLBLL.GetPhongTroByIdPhong(idPhong).TinhTrang == true)
+            //{
+            //    List<DichVu> list = qLBLL.get;
+
+            //    if (qLBLL.GetAllIdDichVuByIdPhong(idPhong). != qLBLL.GetPhongTroByIdPhong(idPhong).)
+            //    {
+            //        string IdThanhVien = dgvThanhVien.Rows[0].Cells[0].Value.ToString();
+            //        string IdPhong = qLBLL.GetIdPhongByIdNguoi(IdThanhVien);
+            //        ThuePhong tp = new ThuePhong();
+            //        tp.hopDong.MaPhongTro = idPhong;
+            //        tc.openChildForm1(new ThemKhach(tp, LoadForm), panelChiTiet);
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Số lượng người đã tối đa");
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Phòng chưa được cho thuê, không được thêm khách hàng", "Thông báo", MessageBoxButtons.OK); ;
+            //}
+            //string maPhong = idPhong;
+            //List<string> idDVphong = qLBLL.GetAllIdDichVuByIdPhong(maPhong);
+            //List<DichVu> dichVuList = qLBLL.Get
         }
 
-        private void btnSuaDV_Click(object sender, EventArgs e)
-        {
-            string idDV = dgvDichVu.CurrentRow.Cells[0].Value.ToString();   
-            tc.openChildForm1(new SuaDichVu(idDV,LoadForm), panelChiTiet);
-        }
+        
     }
     
 }

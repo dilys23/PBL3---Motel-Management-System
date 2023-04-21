@@ -44,6 +44,7 @@
             this.btnMaximized = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.paneMenu = new System.Windows.Forms.Panel();
+            this.btnThietbi = new FontAwesome.Sharp.IconButton();
             this.btnDay = new FontAwesome.Sharp.IconButton();
             this.btnLogout = new FontAwesome.Sharp.IconButton();
             this.btnDoanhTHu = new FontAwesome.Sharp.IconButton();
@@ -57,7 +58,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMenu = new FontAwesome.Sharp.IconButton();
-            this.btnThietbi = new FontAwesome.Sharp.IconButton();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panelDesktop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichvu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).BeginInit();
@@ -75,9 +76,9 @@
             this.panelDesktop.Controls.Add(this.dgvDichvu);
             this.panelDesktop.Controls.Add(this.dgvPhong);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(200, 51);
+            this.panelDesktop.Location = new System.Drawing.Point(200, 83);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(999, 632);
+            this.panelDesktop.Size = new System.Drawing.Size(1003, 634);
             this.panelDesktop.TabIndex = 5;
             this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
@@ -160,13 +161,14 @@
             // panelTitle
             // 
             this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(229)))), ((int)(((byte)(236)))));
+            this.panelTitle.Controls.Add(this.flowLayoutPanel1);
             this.panelTitle.Controls.Add(this.btnMinimized);
             this.panelTitle.Controls.Add(this.btnExit);
             this.panelTitle.Controls.Add(this.btnMaximized);
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitle.Location = new System.Drawing.Point(200, 0);
             this.panelTitle.Name = "panelTitle";
-            this.panelTitle.Size = new System.Drawing.Size(999, 51);
+            this.panelTitle.Size = new System.Drawing.Size(1003, 83);
             this.panelTitle.TabIndex = 4;
             this.panelTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitle_MouseDown);
             // 
@@ -180,7 +182,7 @@
             this.btnMinimized.IconColor = System.Drawing.Color.LightCyan;
             this.btnMinimized.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinimized.IconSize = 30;
-            this.btnMinimized.Location = new System.Drawing.Point(893, 7);
+            this.btnMinimized.Location = new System.Drawing.Point(897, 7);
             this.btnMinimized.Name = "btnMinimized";
             this.btnMinimized.Size = new System.Drawing.Size(30, 31);
             this.btnMinimized.TabIndex = 3;
@@ -197,7 +199,7 @@
             this.btnExit.IconColor = System.Drawing.Color.Red;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExit.IconSize = 30;
-            this.btnExit.Location = new System.Drawing.Point(965, 7);
+            this.btnExit.Location = new System.Drawing.Point(969, 7);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(30, 31);
             this.btnExit.TabIndex = 2;
@@ -214,7 +216,7 @@
             this.btnMaximized.IconColor = System.Drawing.Color.LightSeaGreen;
             this.btnMaximized.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMaximized.IconSize = 30;
-            this.btnMaximized.Location = new System.Drawing.Point(929, 7);
+            this.btnMaximized.Location = new System.Drawing.Point(933, 7);
             this.btnMaximized.Name = "btnMaximized";
             this.btnMaximized.Size = new System.Drawing.Size(30, 31);
             this.btnMaximized.TabIndex = 1;
@@ -250,9 +252,28 @@
             this.paneMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.paneMenu.Location = new System.Drawing.Point(0, 0);
             this.paneMenu.Name = "paneMenu";
-            this.paneMenu.Size = new System.Drawing.Size(200, 683);
+            this.paneMenu.Size = new System.Drawing.Size(200, 717);
             this.paneMenu.TabIndex = 3;
             this.paneMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.paneMenu_Paint);
+            // 
+            // btnThietbi
+            // 
+            this.btnThietbi.FlatAppearance.BorderSize = 0;
+            this.btnThietbi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThietbi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThietbi.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
+            this.btnThietbi.IconColor = System.Drawing.Color.SteelBlue;
+            this.btnThietbi.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThietbi.IconSize = 35;
+            this.btnThietbi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThietbi.Location = new System.Drawing.Point(8, 408);
+            this.btnThietbi.Name = "btnThietbi";
+            this.btnThietbi.Size = new System.Drawing.Size(186, 41);
+            this.btnThietbi.TabIndex = 19;
+            this.btnThietbi.Tag = "Thiết bị ";
+            this.btnThietbi.Text = "Thiết bị ";
+            this.btnThietbi.UseVisualStyleBackColor = true;
+            this.btnThietbi.Click += new System.EventHandler(this.btnThietbi_Click);
             // 
             // btnDay
             // 
@@ -264,7 +285,7 @@
             this.btnDay.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDay.IconSize = 35;
             this.btnDay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDay.Location = new System.Drawing.Point(8, 136);
+            this.btnDay.Location = new System.Drawing.Point(8, 134);
             this.btnDay.Name = "btnDay";
             this.btnDay.Size = new System.Drawing.Size(186, 41);
             this.btnDay.TabIndex = 18;
@@ -284,7 +305,7 @@
             this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Regular;
             this.btnLogout.IconSize = 30;
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(12, 638);
+            this.btnLogout.Location = new System.Drawing.Point(12, 630);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(45, 45);
             this.btnLogout.TabIndex = 17;
@@ -303,7 +324,7 @@
             this.btnDoanhTHu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDoanhTHu.IconSize = 35;
             this.btnDoanhTHu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDoanhTHu.Location = new System.Drawing.Point(8, 585);
+            this.btnDoanhTHu.Location = new System.Drawing.Point(8, 583);
             this.btnDoanhTHu.Name = "btnDoanhTHu";
             this.btnDoanhTHu.Size = new System.Drawing.Size(186, 41);
             this.btnDoanhTHu.TabIndex = 13;
@@ -322,7 +343,7 @@
             this.btnHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHoaDon.IconSize = 35;
             this.btnHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHoaDon.Location = new System.Drawing.Point(8, 532);
+            this.btnHoaDon.Location = new System.Drawing.Point(8, 530);
             this.btnHoaDon.Name = "btnHoaDon";
             this.btnHoaDon.Size = new System.Drawing.Size(186, 41);
             this.btnHoaDon.TabIndex = 12;
@@ -341,7 +362,7 @@
             this.btnHopDong.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHopDong.IconSize = 35;
             this.btnHopDong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHopDong.Location = new System.Drawing.Point(8, 467);
+            this.btnHopDong.Location = new System.Drawing.Point(8, 465);
             this.btnHopDong.Name = "btnHopDong";
             this.btnHopDong.Size = new System.Drawing.Size(186, 41);
             this.btnHopDong.TabIndex = 11;
@@ -360,7 +381,7 @@
             this.btnNuoc.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnNuoc.IconSize = 35;
             this.btnNuoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuoc.Location = new System.Drawing.Point(8, 354);
+            this.btnNuoc.Location = new System.Drawing.Point(8, 352);
             this.btnNuoc.Name = "btnNuoc";
             this.btnNuoc.Size = new System.Drawing.Size(186, 41);
             this.btnNuoc.TabIndex = 10;
@@ -379,7 +400,7 @@
             this.btnTrangchu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTrangchu.IconSize = 35;
             this.btnTrangchu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTrangchu.Location = new System.Drawing.Point(8, 92);
+            this.btnTrangchu.Location = new System.Drawing.Point(8, 90);
             this.btnTrangchu.Name = "btnTrangchu";
             this.btnTrangchu.Size = new System.Drawing.Size(186, 41);
             this.btnTrangchu.TabIndex = 7;
@@ -398,7 +419,7 @@
             this.btnDien.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDien.IconSize = 35;
             this.btnDien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDien.Location = new System.Drawing.Point(8, 295);
+            this.btnDien.Location = new System.Drawing.Point(8, 293);
             this.btnDien.Name = "btnDien";
             this.btnDien.Size = new System.Drawing.Size(182, 41);
             this.btnDien.TabIndex = 9;
@@ -417,7 +438,7 @@
             this.btnDichVu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDichVu.IconSize = 35;
             this.btnDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDichVu.Location = new System.Drawing.Point(8, 235);
+            this.btnDichVu.Location = new System.Drawing.Point(8, 233);
             this.btnDichVu.Name = "btnDichVu";
             this.btnDichVu.Size = new System.Drawing.Size(186, 41);
             this.btnDichVu.TabIndex = 8;
@@ -436,7 +457,7 @@
             this.btnPhong.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPhong.IconSize = 35;
             this.btnPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPhong.Location = new System.Drawing.Point(8, 183);
+            this.btnPhong.Location = new System.Drawing.Point(8, 181);
             this.btnPhong.Name = "btnPhong";
             this.btnPhong.Size = new System.Drawing.Size(186, 41);
             this.btnPhong.TabIndex = 6;
@@ -482,29 +503,17 @@
             this.btnMenu.UseVisualStyleBackColor = true;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
-            // btnThietbi
+            // flowLayoutPanel1
             // 
-            this.btnThietbi.FlatAppearance.BorderSize = 0;
-            this.btnThietbi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThietbi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThietbi.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
-            this.btnThietbi.IconColor = System.Drawing.Color.SteelBlue;
-            this.btnThietbi.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnThietbi.IconSize = 35;
-            this.btnThietbi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThietbi.Location = new System.Drawing.Point(8, 410);
-            this.btnThietbi.Name = "btnThietbi";
-            this.btnThietbi.Size = new System.Drawing.Size(186, 41);
-            this.btnThietbi.TabIndex = 19;
-            this.btnThietbi.Tag = "Thiết bị ";
-            this.btnThietbi.Text = "Thiết bị ";
-            this.btnThietbi.UseVisualStyleBackColor = true;
-            this.btnThietbi.Click += new System.EventHandler(this.btnThietbi_Click);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 44);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1003, 38);
+            this.flowLayoutPanel1.TabIndex = 4;
             // 
             // TrangChu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1199, 683);
+            this.ClientSize = new System.Drawing.Size(1203, 717);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.paneMenu);
@@ -558,5 +567,6 @@
         private FontAwesome.Sharp.IconButton btnLogout;
         private FontAwesome.Sharp.IconButton btnDay;
         private FontAwesome.Sharp.IconButton btnThietbi;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

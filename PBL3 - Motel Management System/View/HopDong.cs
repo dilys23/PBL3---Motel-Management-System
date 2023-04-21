@@ -47,7 +47,7 @@ namespace PBL3___Motel_Management_System
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            LoadForm(txtTimKiem.Text);
+          //  LoadForm(txtTimKiem.Text);
         }
     }
 }

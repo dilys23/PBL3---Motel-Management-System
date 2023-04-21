@@ -61,11 +61,11 @@ namespace PBL3___Motel_Management_System.View
             List<string> dsdv = new List<string>();
             foreach (DataGridViewRow dr in dgvXoaDichVu.Rows)
             {
-                if (dr.Cells[0].Value!=null) dsdv.Add(dr.Cells[0].Value.ToString());
+                if (dr.Cells[0].Value != null) dsdv.Add(dr.Cells[0].Value.ToString());
 
             }
             tp.DsDichVu = dsdv;
-            tc.openChildForm1(new ThemHopDong(tp, Back), panelThemHD);
+            tc.openChildForm1(new ThemThietBiPhong(tp, Back), panelThemDV);
         }
 
         private void iconButton2_Click(object sender, EventArgs e)

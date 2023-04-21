@@ -31,6 +31,7 @@
             this.cbbDay = new System.Windows.Forms.ComboBox();
             this.panelHopDong = new System.Windows.Forms.Panel();
             this.cbbPhong = new System.Windows.Forms.ComboBox();
+           // this.btnChiTiet = new FontAwesome.Sharp.IconButton();
             this.dgvHopDong = new System.Windows.Forms.DataGridView();
             this.MaHopDong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,8 +45,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnTimKiem = new FontAwesome.Sharp.IconButton();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.panelHopDong.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHopDong)).BeginInit();
             this.panel1.SuspendLayout();
@@ -69,7 +70,7 @@
             this.panelHopDong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.panelHopDong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelHopDong.Controls.Add(this.btnTimKiem);
-            this.panelHopDong.Controls.Add(this.txtTimKiem);
+            this.panelHopDong.Controls.Add(this.iconButton1);
             this.panelHopDong.Controls.Add(this.cbbPhong);
             this.panelHopDong.Controls.Add(this.dgvHopDong);
             this.panelHopDong.Controls.Add(this.label1);
@@ -81,6 +82,14 @@
             this.panelHopDong.TabIndex = 41;
             // 
             // cbbPhong
+            // 
+            this.cbbPhong.FormattingEnabled = true;
+            this.cbbPhong.Location = new System.Drawing.Point(717, 35);
+            this.cbbPhong.Name = "cbbPhong";
+            this.cbbPhong.Size = new System.Drawing.Size(146, 24);
+            this.cbbPhong.TabIndex = 52;
+            // 
+            // btnChiTiet
             // 
             this.cbbPhong.FormattingEnabled = true;
             this.cbbPhong.Location = new System.Drawing.Point(805, 28);
@@ -167,7 +176,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(733, 32);
+            this.label1.Location = new System.Drawing.Point(643, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 20);
             this.label1.TabIndex = 45;
@@ -177,7 +186,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(558, 32);
+            this.label2.Location = new System.Drawing.Point(437, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 20);
             this.label2.TabIndex = 48;
@@ -207,28 +216,36 @@
             this.label4.TabIndex = 25;
             this.label4.Text = "QUẢN LÝ HỢP ĐỒNG";
             // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.NotesMedical;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 25;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(120, 25);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(90, 43);
+            this.iconButton1.TabIndex = 53;
+            this.iconButton1.Text = "Gia hạn ";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            // 
             // btnTimKiem
             // 
+            this.btnTimKiem.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btnTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnTimKiem.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.btnTimKiem.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
             this.btnTimKiem.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnTimKiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTimKiem.IconSize = 25;
-            this.btnTimKiem.Location = new System.Drawing.Point(11, 17);
+            this.btnTimKiem.Location = new System.Drawing.Point(396, 29);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(42, 42);
-            this.btnTimKiem.TabIndex = 57;
+            this.btnTimKiem.Size = new System.Drawing.Size(35, 35);
+            this.btnTimKiem.TabIndex = 54;
             this.btnTimKiem.UseVisualStyleBackColor = false;
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
-            // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem.Location = new System.Drawing.Point(76, 27);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(180, 27);
-            this.txtTimKiem.TabIndex = 56;
             // 
             // Hopdong
             // 
@@ -237,7 +254,7 @@
             this.Controls.Add(this.panelHopDong);
             this.Controls.Add(this.panel1);
             this.Name = "Hopdong";
-            this.Text = "Contract";
+            this.Text = "  ";
             this.panelHopDong.ResumeLayout(false);
             this.panelHopDong.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHopDong)).EndInit();
@@ -265,7 +282,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayKetThuc;
         private System.Windows.Forms.DataGridViewTextBoxColumn TienCoc;
         private System.Windows.Forms.ComboBox cbbPhong;
+        private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton btnTimKiem;
-        private System.Windows.Forms.TextBox txtTimKiem;
     }
 }

@@ -100,6 +100,14 @@ namespace PBL3___Motel_Management_System.DAL
                 data.SaveChanges();
             }
         }
+        public void AddChiTietThietBiDal(ChiTietThietBi tb)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                data.ChiTietThietBi.Add(tb);
+                data.SaveChanges();
+            }
+        }
         public void AddHopDongDal(HopDong dt)
         {
             using (DataPbl data = new DataPbl())
@@ -300,5 +308,21 @@ namespace PBL3___Motel_Management_System.DAL
 
             }
         }
+        //public string GetIdThietBiByIdPhong(string IdPhong)
+        //{
+        //    using (DataPbl data = new DataPbl())
+        //    {
+        //        foreach (PhongTro phongTro in GetAllPhongTro())
+        //        {
+        //            if (phongTro.MaPhongTro == IdPhong)
+        //            {
+        //                return DichVu.Ma;
+        //            }
+
+        //        }
+        //        return null;
+
+        //    }
+        //}
     }
 }

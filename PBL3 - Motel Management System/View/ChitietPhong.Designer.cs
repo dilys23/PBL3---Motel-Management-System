@@ -33,8 +33,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.panPhong1 = new System.Windows.Forms.Panel();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.iconButton6 = new FontAwesome.Sharp.IconButton();
+            this.btnSuaTB = new FontAwesome.Sharp.IconButton();
+            this.btnThemTB = new FontAwesome.Sharp.IconButton();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvThietBi = new System.Windows.Forms.DataGridView();
             this.MaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +63,8 @@
             this.GiaDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.panelChiTiet.SuspendLayout();
             this.panPhong1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThietBi)).BeginInit();
@@ -121,9 +123,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panPhong1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
             this.panPhong1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panPhong1.Controls.Add(this.iconButton2);
+            this.panPhong1.Controls.Add(this.iconButton1);
             this.panPhong1.Controls.Add(this.iconButton4);
-            this.panPhong1.Controls.Add(this.iconButton5);
-            this.panPhong1.Controls.Add(this.iconButton6);
+            this.panPhong1.Controls.Add(this.btnSuaTB);
+            this.panPhong1.Controls.Add(this.btnThemTB);
             this.panPhong1.Controls.Add(this.label3);
             this.panPhong1.Controls.Add(this.dgvThietBi);
             this.panPhong1.Controls.Add(this.btnXoaDV);
@@ -159,37 +163,38 @@
             this.iconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButton4.UseVisualStyleBackColor = false;
             // 
-            // iconButton5
+            // btnSuaTB
             // 
-            this.iconButton5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.ExternalLink;
-            this.iconButton5.IconColor = System.Drawing.Color.White;
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.IconSize = 25;
-            this.iconButton5.Location = new System.Drawing.Point(801, 362);
-            this.iconButton5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(43, 41);
-            this.iconButton5.TabIndex = 66;
-            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton5.UseVisualStyleBackColor = false;
+            this.btnSuaTB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSuaTB.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSuaTB.IconChar = FontAwesome.Sharp.IconChar.ExternalLink;
+            this.btnSuaTB.IconColor = System.Drawing.Color.White;
+            this.btnSuaTB.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSuaTB.IconSize = 25;
+            this.btnSuaTB.Location = new System.Drawing.Point(801, 362);
+            this.btnSuaTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSuaTB.Name = "btnSuaTB";
+            this.btnSuaTB.Size = new System.Drawing.Size(43, 41);
+            this.btnSuaTB.TabIndex = 66;
+            this.btnSuaTB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSuaTB.UseVisualStyleBackColor = false;
             // 
-            // iconButton6
+            // btnThemTB
             // 
-            this.iconButton6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton6.BackColor = System.Drawing.Color.DarkOrange;
-            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.PeopleRoof;
-            this.iconButton6.IconColor = System.Drawing.Color.White;
-            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton6.IconSize = 25;
-            this.iconButton6.Location = new System.Drawing.Point(752, 362);
-            this.iconButton6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconButton6.Name = "iconButton6";
-            this.iconButton6.Size = new System.Drawing.Size(43, 41);
-            this.iconButton6.TabIndex = 65;
-            this.iconButton6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton6.UseVisualStyleBackColor = false;
+            this.btnThemTB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThemTB.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnThemTB.IconChar = FontAwesome.Sharp.IconChar.Lightbulb;
+            this.btnThemTB.IconColor = System.Drawing.Color.White;
+            this.btnThemTB.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThemTB.IconSize = 25;
+            this.btnThemTB.Location = new System.Drawing.Point(752, 362);
+            this.btnThemTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThemTB.Name = "btnThemTB";
+            this.btnThemTB.Size = new System.Drawing.Size(43, 41);
+            this.btnThemTB.TabIndex = 65;
+            this.btnThemTB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThemTB.UseVisualStyleBackColor = false;
+            this.btnThemTB.Click += new System.EventHandler(this.btnThemTB_Click);
             // 
             // label3
             // 
@@ -259,7 +264,7 @@
             this.btnXoaDV.IconColor = System.Drawing.Color.White;
             this.btnXoaDV.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXoaDV.IconSize = 25;
-            this.btnXoaDV.Location = new System.Drawing.Point(845, 177);
+            this.btnXoaDV.Location = new System.Drawing.Point(845, 180);
             this.btnXoaDV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoaDV.Name = "btnXoaDV";
             this.btnXoaDV.Size = new System.Drawing.Size(44, 41);
@@ -269,26 +274,19 @@
             // 
             // btnSuaDV
             // 
-            this.btnSuaDV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSuaDV.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnSuaDV.IconChar = FontAwesome.Sharp.IconChar.ExternalLink;
-            this.btnSuaDV.IconColor = System.Drawing.Color.White;
+            this.btnSuaDV.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnSuaDV.IconColor = System.Drawing.Color.Black;
             this.btnSuaDV.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSuaDV.IconSize = 25;
-            this.btnSuaDV.Location = new System.Drawing.Point(795, 177);
-            this.btnSuaDV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSuaDV.Location = new System.Drawing.Point(0, 0);
             this.btnSuaDV.Name = "btnSuaDV";
-            this.btnSuaDV.Size = new System.Drawing.Size(44, 41);
-            this.btnSuaDV.TabIndex = 61;
-            this.btnSuaDV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSuaDV.UseVisualStyleBackColor = false;
-            this.btnSuaDV.Click += new System.EventHandler(this.btnSuaDV_Click);
+            this.btnSuaDV.Size = new System.Drawing.Size(75, 23);
+            this.btnSuaDV.TabIndex = 68;
             // 
             // btnThemDichVu
             // 
             this.btnThemDichVu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThemDichVu.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnThemDichVu.IconChar = FontAwesome.Sharp.IconChar.PeopleRoof;
+            this.btnThemDichVu.IconChar = FontAwesome.Sharp.IconChar.NotesMedical;
             this.btnThemDichVu.IconColor = System.Drawing.Color.White;
             this.btnThemDichVu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThemDichVu.IconSize = 25;
@@ -396,20 +394,13 @@
             // 
             // btnSuaTV
             // 
-            this.btnSuaTV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSuaTV.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnSuaTV.IconChar = FontAwesome.Sharp.IconChar.ExternalLink;
-            this.btnSuaTV.IconColor = System.Drawing.Color.White;
+            this.btnSuaTV.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnSuaTV.IconColor = System.Drawing.Color.Black;
             this.btnSuaTV.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSuaTV.IconSize = 25;
-            this.btnSuaTV.Location = new System.Drawing.Point(796, 12);
-            this.btnSuaTV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSuaTV.Location = new System.Drawing.Point(0, 0);
             this.btnSuaTV.Name = "btnSuaTV";
-            this.btnSuaTV.Size = new System.Drawing.Size(43, 41);
-            this.btnSuaTV.TabIndex = 58;
-            this.btnSuaTV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSuaTV.UseVisualStyleBackColor = false;
-            this.btnSuaTV.Click += new System.EventHandler(this.btnSua_Click);
+            this.btnSuaTV.Size = new System.Drawing.Size(75, 23);
+            this.btnSuaTV.TabIndex = 69;
             // 
             // btnThemThanhVien
             // 
@@ -498,6 +489,38 @@
             this.label2.TabIndex = 55;
             this.label2.Text = "Dịch vụ ";
             // 
+            // iconButton1
+            // 
+            this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButton1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ExternalLink;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 25;
+            this.iconButton1.Location = new System.Drawing.Point(798, 11);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(43, 41);
+            this.iconButton1.TabIndex = 70;
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButton2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.ExternalLink;
+            this.iconButton2.IconColor = System.Drawing.Color.White;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.IconSize = 25;
+            this.iconButton2.Location = new System.Drawing.Point(794, 177);
+            this.iconButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(43, 41);
+            this.iconButton2.TabIndex = 71;
+            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton2.UseVisualStyleBackColor = false;
+            // 
             // ChitietPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -535,8 +558,8 @@
         private FontAwesome.Sharp.IconButton btnThemDichVu;
         private System.Windows.Forms.DataGridView dgvThietBi;
         private FontAwesome.Sharp.IconButton iconButton4;
-        private FontAwesome.Sharp.IconButton iconButton5;
-        private FontAwesome.Sharp.IconButton iconButton6;
+        private FontAwesome.Sharp.IconButton btnSuaTB;
+        private FontAwesome.Sharp.IconButton btnThemTB;
         private System.Windows.Forms.Label label3;
         private FontAwesome.Sharp.IconButton btnTroVe;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaThietBi;
@@ -555,5 +578,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
+        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }
