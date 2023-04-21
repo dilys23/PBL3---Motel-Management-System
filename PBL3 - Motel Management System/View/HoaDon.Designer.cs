@@ -338,7 +338,6 @@
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btnSua;
         private FontAwesome.Sharp.IconButton btnIn;
-        private FontAwesome.Sharp.IconButton btnXoaHD;
         private FontAwesome.Sharp.IconButton btnThemHD;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -350,5 +349,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Conlai;
         private System.Windows.Forms.DataGridViewTextBoxColumn Thoigian;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tháng;
+        public FontAwesome.Sharp.IconButton btnXoaHD;
     }
 }

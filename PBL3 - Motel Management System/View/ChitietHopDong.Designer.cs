@@ -551,7 +551,7 @@
         private System.Windows.Forms.TextBox txtTenPhong;
         private System.Windows.Forms.TextBox txtTenDay;
         private FontAwesome.Sharp.IconButton btnTroVe;
-        private FontAwesome.Sharp.IconButton btnXacNhan;
+        public FontAwesome.Sharp.IconButton btnXacNhan;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private System.Windows.Forms.TextBox txtDienTich;
         private System.Windows.Forms.Label label1;

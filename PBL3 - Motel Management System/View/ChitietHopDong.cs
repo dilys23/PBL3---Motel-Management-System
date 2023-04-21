@@ -76,7 +76,7 @@ namespace PBL3___Motel_Management_System.View
             this.Close();
         }
 
-        private void btnXacNhan_Click(object sender, EventArgs e)
+        public void btnXacNhan_Click(object sender, EventArgs e)
         {
             QLBLL qLBLL = new QLBLL();  
             Nguoi nguoi = new Nguoi();
