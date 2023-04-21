@@ -102,7 +102,8 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnThemDichVu_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ThemDVphong(null,LoadForm),panelChiTiet);
+           
+            tc.openChildForm1(new ThemDVphong(idPhong,null,LoadForm),panelChiTiet);
         }
 
         private void btnSuaDV_Click(object sender, EventArgs e)

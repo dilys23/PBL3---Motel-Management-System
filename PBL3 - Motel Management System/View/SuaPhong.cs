@@ -26,14 +26,8 @@ namespace PBL3___Motel_Management_System
         }
         public Boolean CheckSoNguoi(int toida)
         {
-            QLBLL qLBLL = new QLBLL();
-            int nHienco = 0;
-            List<string> list = qLBLL.GetIdNguoiByIdPhong(IdPhong);
-            foreach(string ng in list)
-            {
-                nHienco++;
-            }
-            if(toida < nHienco )
+            QLBLL qLBLL = new QLBLL();           
+            if(toida < qLBLL.GetIdNguoiByIdPhong(IdPhong).Count())
             {
                 return false;
             }

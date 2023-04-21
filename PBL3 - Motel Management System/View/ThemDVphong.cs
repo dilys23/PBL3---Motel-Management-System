@@ -20,7 +20,7 @@ namespace PBL3___Motel_Management_System.View
         private string idPhong;
         private ThuePhong tp;
         private Loader loader;
-        public ThemDVphong(ThuePhong tp, Loader loader)
+        public ThemDVphong(string idPhong,ThuePhong tp, Loader loader)
         {
             InitializeComponent();
             this.tp = tp;
@@ -40,11 +40,24 @@ namespace PBL3___Motel_Management_System.View
         {
             dgvXoaDichVu.Columns[0].Visible = false;
             QLBLL qLBLL = new QLBLL();
-            foreach (ViewDichVu viewDichVu in qLBLL.DgvDichVu(null))
-            {
-                dgvThemDichVu.Rows.Add(viewDichVu.MaDichVu, viewDichVu.Stt, viewDichVu.TenDichVu, viewDichVu.GiaDichVu);
+            List<ViewDichVu> list = new List<ViewDichVu>();
+            foreach (ViewDichVu viewDichVu in qLBLL.DgvDichVu(idPhong,null))
+            {             
+                list.Add(viewDichVu);
+                dgvXoaDichVu.Rows.Add(viewDichVu.MaDichVu, viewDichVu.Stt, viewDichVu.TenDichVu, viewDichVu.GiaDichVu);
             }
-
+            foreach(ViewDichVu viewDichVu in qLBLL.DgvDichVu(null,null))
+            { 
+                foreach(ViewDichVu madv in list)
+                {
+                    if (madv.MaDichVu != viewDichVu.MaDichVu)
+                        dgvThemDichVu.Rows.Add(viewDichVu.MaDichVu, viewDichVu.Stt, viewDichVu.TenDichVu, viewDichVu.GiaDichVu);
+                    else
+                        break;
+                }
+            }
+            
+          
             dgvThemDichVu.Columns[0].Visible = false;
 
         }

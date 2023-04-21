@@ -21,5 +21,16 @@ namespace PBL3___Motel_Management_System.View
         {
             this.Close();
         }
+
+        private void ThemCSDien_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dtpThang_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime dt = DateTime.Now;
+            dtpThang.Text = dt.ToString("MMMM/yyyy");
+        }
     }
 }

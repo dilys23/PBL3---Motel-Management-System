@@ -152,13 +152,24 @@ namespace PBL3___Motel_Management_System.DAL
             }
             return list;
         }
-        public List<DichVu> GetAllDichVu()
+        public List<DichVu> GetAllDichVu(string idPhong)
         {
             List<DichVu> list = new List<DichVu>();
-            using (DataPbl data = new DataPbl())
+            if (idPhong == null)
             {
-                var s = data.DichVu.Select(p => p);
-                list = s.ToList<DichVu>();
+                using (DataPbl data = new DataPbl())
+                {
+                    var s = data.DichVu.Select(p => p);
+                    list = s.ToList<DichVu>();
+                }
+            }
+            else
+            {
+                using (DataPbl data = new DataPbl())
+                {
+                    var s = data.ChiTietDichVu.Select(p => p).Where(p => p.MaPhongTro == idPhong).Select(p=>p.DichVu);
+                    list = s.ToList<DichVu>();
+                }
             }
 
             return list;
@@ -225,7 +236,7 @@ namespace PBL3___Motel_Management_System.DAL
                 s.Diachi = n.Diachi;
                 s.NgaySinh = n.NgaySinh;
                 s.GioiTinh = n.GioiTinh;
-                data.SaveChanges();
+                data.SaveChanges() ;
 
             }
         }

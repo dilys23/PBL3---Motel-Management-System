@@ -111,7 +111,7 @@ namespace PBL3___Motel_Management_System
                     if (thuePhong.hopDong.MaHopDong != null)
                     {
                         thuePhong.hopDong.Nguoi = nguoi;
-                        tc.openChildForm1(new ThemDVphong(thuePhong, Back), panelKhach);
+                        tc.openChildForm1(new ThemDVphong(null,thuePhong, Back), panelKhach);
                     }
                     else
                     {
