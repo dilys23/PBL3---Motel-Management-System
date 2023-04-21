@@ -34,7 +34,7 @@ namespace PBL3___Motel_Management_System
                 new DataColumn{ColumnName = "Giá dịch vụ",DataType =  typeof(double)},
             });
             QLBLL qLBLL = new QLBLL();
-            foreach(ViewDichVu viewDichVu in qLBLL.DgvDichVu(null,txtTim))
+            foreach(ViewDichVu viewDichVu in qLBLL.DgvDichVu(txtTim))
             {
                 dt.Rows.Add(viewDichVu.MaDichVu, viewDichVu.Stt, viewDichVu.TenDichVu, viewDichVu.GiaDichVu);
             }

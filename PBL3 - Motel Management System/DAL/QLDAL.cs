@@ -152,26 +152,14 @@ namespace PBL3___Motel_Management_System.DAL
             }
             return list;
         }
-        public List<DichVu> GetAllDichVu(string idPhong)
+        public List<DichVu> GetAllDichVu()
         {
             List<DichVu> list = new List<DichVu>();
-            if (idPhong == null)
-            {
                 using (DataPbl data = new DataPbl())
                 {
                     var s = data.DichVu.Select(p => p);
                     list = s.ToList<DichVu>();
                 }
-            }
-            else
-            {
-                using (DataPbl data = new DataPbl())
-                {
-                    var s = data.ChiTietDichVu.Select(p => p).Where(p => p.MaPhongTro == idPhong).Select(p=>p.DichVu);
-                    list = s.ToList<DichVu>();
-                }
-            }
-
             return list;
         }
         public List<ThietBi> GetAllThietBi()

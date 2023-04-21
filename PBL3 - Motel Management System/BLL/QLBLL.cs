@@ -173,7 +173,7 @@ namespace PBL3___Motel_Management_System.BLL
             {
                 id = random.Next(1, 1000).ToString();
                 status = false;
-                foreach (DichVu dv in qLDAL.GetAllDichVu(null))
+                foreach (DichVu dv in qLDAL.GetAllDichVu())
                 {
                     if (dv.MaDichVu == id) status = true;
                 }
@@ -395,12 +395,12 @@ namespace PBL3___Motel_Management_System.BLL
             return list;
         }
 
-        public List<ViewDichVu> DgvDichVu(string idPhong,string txtTim)
+        public List<ViewDichVu> DgvDichVu(string txtTim)
         {
             List<ViewDichVu> list = new List<ViewDichVu> ();
             QLDAL qLDAL = new QLDAL();
             int i= 0;
-            foreach(DichVu dv in qLDAL.GetAllDichVu(idPhong))
+            foreach(DichVu dv in qLDAL.GetAllDichVu())
             {
                 if(txtTim == null)
                 {
@@ -489,7 +489,7 @@ namespace PBL3___Motel_Management_System.BLL
         public DichVu GetDichVuByIdDichVu(string id)
         {
             QLDAL qLDAL = new QLDAL();
-            foreach(DichVu dv in qLDAL.GetAllDichVu(null))
+            foreach(DichVu dv in qLDAL.GetAllDichVu())
             {
                 if (dv.MaDichVu == id) return dv;
             }
@@ -519,7 +519,7 @@ namespace PBL3___Motel_Management_System.BLL
         {
             
             QLDAL qLDAL = new QLDAL();
-            foreach(DichVu dichVu in qLDAL.GetAllDichVu(null))
+            foreach(DichVu dichVu in qLDAL.GetAllDichVu())
             {
                 if (dichVu.MaDichVu == id) return dichVu;
             }
