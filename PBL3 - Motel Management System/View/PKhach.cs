@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System.View
 {
-    public partial class CocPhong : Form
+    public partial class PKhach : Form
     {
-        public CocPhong()
+        public PKhach()
         {
             InitializeComponent();
-        }
-
-        private void btnTrove_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

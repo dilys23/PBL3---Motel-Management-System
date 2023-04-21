@@ -156,6 +156,12 @@
     <Compile Include="View\Daytro.Designer.cs">
       <DependentUpon>Daytro.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\PKhach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PKhach.Designer.cs">
+      <DependentUpon>PKhach.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\SuaCSDien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -332,6 +338,12 @@
     <Compile Include="View\ChisoNuoc.Designer.cs">
       <DependentUpon>ChisoNuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\TrangChuKhach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TrangChuKhach.Designer.cs">
+      <DependentUpon>TrangChuKhach.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\XuatHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -352,6 +364,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Daytro.resx">
       <DependentUpon>Daytro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PKhach.resx">
+      <DependentUpon>PKhach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SuaCSDien.resx">
       <DependentUpon>SuaCSDien.cs</DependentUpon>
@@ -448,6 +463,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ChisoNuoc.resx">
       <DependentUpon>ChisoNuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TrangChuKhach.resx">
+      <DependentUpon>TrangChuKhach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\XuatHoaDon.resx">
       <DependentUpon>XuatHoaDon.cs</DependentUpon>

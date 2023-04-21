@@ -127,6 +127,16 @@ namespace PBL3___Motel_Management_System
             LoadForm("");
             
         }
+
+        private void panelPhong_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnCoc_Click(object sender, EventArgs e)
+        {
+            tc.openChildForm1(new CocPhong(), panelPhong);
+        }
     }
     }
 

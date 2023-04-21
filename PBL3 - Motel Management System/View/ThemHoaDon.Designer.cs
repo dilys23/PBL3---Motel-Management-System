@@ -32,6 +32,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.panelThem = new System.Windows.Forms.Panel();
+            this.cbbPhong = new System.Windows.Forms.ComboBox();
+            this.cbbDay = new System.Windows.Forms.ComboBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -50,8 +52,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.cbbDay = new System.Windows.Forms.ComboBox();
-            this.cbbPhong = new System.Windows.Forms.ComboBox();
             this.panelThem.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,6 +129,24 @@
             this.panelThem.Size = new System.Drawing.Size(890, 367);
             this.panelThem.TabIndex = 50;
             // 
+            // cbbPhong
+            // 
+            this.cbbPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbPhong.FormattingEnabled = true;
+            this.cbbPhong.Location = new System.Drawing.Point(177, 100);
+            this.cbbPhong.Name = "cbbPhong";
+            this.cbbPhong.Size = new System.Drawing.Size(225, 28);
+            this.cbbPhong.TabIndex = 78;
+            // 
+            // cbbDay
+            // 
+            this.cbbDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbDay.FormattingEnabled = true;
+            this.cbbDay.Location = new System.Drawing.Point(177, 47);
+            this.cbbDay.Name = "cbbDay";
+            this.cbbDay.Size = new System.Drawing.Size(225, 28);
+            this.cbbDay.TabIndex = 77;
+            // 
             // textBox9
             // 
             this.textBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -164,11 +182,15 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.CustomFormat = "MM/yyyy";
+            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(177, 161);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(225, 22);
+            this.dateTimePicker2.ShowUpDown = true;
+            this.dateTimePicker2.Size = new System.Drawing.Size(225, 27);
             this.dateTimePicker2.TabIndex = 73;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // label10
             // 
@@ -327,24 +349,6 @@
             this.label6.Size = new System.Drawing.Size(61, 20);
             this.label6.TabIndex = 59;
             this.label6.Text = "Phòng:";
-            // 
-            // cbbDay
-            // 
-            this.cbbDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbDay.FormattingEnabled = true;
-            this.cbbDay.Location = new System.Drawing.Point(177, 47);
-            this.cbbDay.Name = "cbbDay";
-            this.cbbDay.Size = new System.Drawing.Size(225, 28);
-            this.cbbDay.TabIndex = 77;
-            // 
-            // cbbPhong
-            // 
-            this.cbbPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbPhong.FormattingEnabled = true;
-            this.cbbPhong.Location = new System.Drawing.Point(177, 100);
-            this.cbbPhong.Name = "cbbPhong";
-            this.cbbPhong.Size = new System.Drawing.Size(225, 28);
-            this.cbbPhong.TabIndex = 78;
             // 
             // ThemHoaDon
             // 
