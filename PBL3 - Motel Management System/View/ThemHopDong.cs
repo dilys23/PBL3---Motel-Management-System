@@ -22,13 +22,14 @@ namespace PBL3___Motel_Management_System
             InitializeComponent();
             this.tp=tp;
             this.loader=loader;
+            txtTienCoc.Text = tp.hopDong.TienCoc.ToString();
         }
         private void Back(string txt)
         {
             this.loader(null);
             this.Close();
         }
-
+        
         private void ThemHD_Load(object sender, EventArgs e)
         {
 

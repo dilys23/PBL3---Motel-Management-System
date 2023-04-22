@@ -70,6 +70,9 @@
     <Compile Include="DAL\ChiTietDichVu.cs">
       <DependentUpon>DataPbl.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\ChiTietSuDungDichVu.cs">
+      <DependentUpon>DataPbl.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\ChiTietThietBi.cs">
       <DependentUpon>DataPbl.tt</DependentUpon>
     </Compile>
@@ -92,6 +95,9 @@
       <DependentUpon>DataPbl.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\DichVu.cs">
+      <DependentUpon>DataPbl.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\HoaDon.cs">
       <DependentUpon>DataPbl.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\HopDong.cs">
@@ -122,6 +128,7 @@
     <Compile Include="DTO\CbbDayTro.cs" />
     <Compile Include="DTO\DgvHopDong.cs" />
     <Compile Include="DTO\ThuePhong.cs" />
+    <Compile Include="DTO\ViewChiSoDien.cs" />
     <Compile Include="DTO\ViewDay.cs" />
     <Compile Include="DTO\ViewDichVu.cs" />
     <Compile Include="DTO\ViewPhongTro.cs" />
@@ -501,6 +508,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="DAL\DataPbl.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DataPbl.edmx</DependentUpon>
@@ -511,9 +521,6 @@
       <DependentUpon>DataPbl.edmx</DependentUpon>
       <LastGenOutput>DataPbl.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -227,7 +227,7 @@ namespace PBL3___Motel_Management_System.View
         private void btnHopDong_Click(object sender, EventArgs e)
         {
             HoaDon hd = new HoaDon();
-            hd.btnXoaHD.Visible = false;
+            hd.btnXoa.Visible = false;
             tc.openChildForm1(hd, panelMain);
         }
     }

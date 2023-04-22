@@ -116,6 +116,25 @@ namespace PBL3___Motel_Management_System.DAL
                 data.SaveChanges();
             }
         }
+        public List<ChiTietSuDungDichVu> GetAllChiTietSuDungDichVu()
+        {
+            List<ChiTietSuDungDichVu> list = new List<ChiTietSuDungDichVu>();
+            using (DataPbl data = new DataPbl())
+            {
+                var s = data.ChiTietSuDungDichVu.Select(p => p);
+                list = s.ToList<ChiTietSuDungDichVu>();
+            }
+
+            return list;
+        }
+        public void AddChiTietSuDungDichVuDal(ChiTietSuDungDichVu dv)
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                data.ChiTietSuDungDichVu.Add(dv);
+                data.SaveChanges();
+            }
+        }
         public List<ChiTietDichVu> GetAllChiTietDichVu()
         {
             List<ChiTietDichVu> list = new List<ChiTietDichVu>();
@@ -211,6 +230,7 @@ namespace PBL3___Motel_Management_System.DAL
                 
             }
         }
+
         public void SuaTBDal(ThietBi tb)
         {
             using (DataPbl data = new DataPbl())
@@ -264,6 +284,32 @@ namespace PBL3___Motel_Management_System.DAL
 
             }
         }
+        public void UpdateHopDongDAL(HopDong hd)
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                var s = data.HopDong.Single(p => p.MaHopDong == hd.MaHopDong);
+                s.NgayBatDau = hd.NgayBatDau;
+                s.NgayKetThuc = hd.NgayKetThuc;
+                s.TienCoc = hd.TienCoc;
+                s.TinhTrang = true;
+                data.SaveChanges();
+            }
+        }
+        public void UpdateNguoiDAL(Nguoi nguoi)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                var s = data.Nguoi.Single(p => p.MaNguoi == nguoi.MaNguoi);
+                s.Cccd = nguoi.Cccd;
+                s.Ten = nguoi.Ten;
+                s.Sdt = nguoi.Sdt;
+                s.Diachi = nguoi.Diachi;
+                s.NgaySinh = nguoi.NgaySinh;
+                s.GioiTinh = nguoi.GioiTinh;
+                data.SaveChanges();
+            }
+        }
 
         public void SuaDayDal(DayTro day)
         {
@@ -293,6 +339,27 @@ namespace PBL3___Motel_Management_System.DAL
                 return null;
 
             }
+        }
+        public void DelCHiTietThietBiById(string Id)
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                var s = data.ChiTietThietBi.Find(Id);
+                data.ChiTietThietBi.Remove(s);
+                data.SaveChanges() ;
+
+
+            }
+        }
+        public List<ChiTietThietBi>GetAllChiTietThietBiDAL()
+        {
+            List<ChiTietThietBi> list = new List<ChiTietThietBi> ();
+            using (DataPbl data = new DataPbl())
+            {
+                var s = data.ChiTietThietBi.Select(p => p);
+                list = s.ToList<ChiTietThietBi>();
+            }
+            return list;
         }
         //public string GetIdThietBiByIdPhong(string IdPhong)
         //{

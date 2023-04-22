@@ -2,9 +2,11 @@
 using PBL3___Motel_Management_System.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Metadata.Edm;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Windows.Media.Media3D;
 
 namespace PBL3___Motel_Management_System.BLL
@@ -37,7 +39,11 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return id;
         }
-        
+        public List<PhongTro>GetAllPhongTro()
+        {
+            QLDAL qLDAL = new QLDAL();
+            return qLDAL.GetAllPhongTro();
+        }
         public List<ViewCbb> GetCbbDayTro()
         {
             List<ViewCbb> list = new List<ViewCbb>();
@@ -49,7 +55,7 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return list;
         }
-       
+        
 
         public string TaoIdNguoi()
         {
@@ -68,6 +74,30 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return id;
         }
+        public string TaoIdChiTietSuDungDichVu()
+        {
+            string id = null;
+            QLDAL qLDAL = new QLDAL();
+            Boolean status = true;
+            Random random = new Random();
+            while (status)
+            {
+                id = random.Next(1, 1000).ToString();
+                status = false;
+                foreach (ChiTietSuDungDichVu dv in qLDAL.GetAllChiTietSuDungDichVu())
+                {
+                    if (dv.MaChiTietSuDungDichVu == id) status = true;
+                }
+            }
+            return id;
+        }
+        public List<ChiTietSuDungDichVu>GetAllChiTietSuDungDichVuBll()
+        {
+            QLDAL qLDAL = new QLDAL();
+            return qLDAL.GetAllChiTietSuDungDichVu();
+
+        }
+
         public string TaoIdChiTietDichVu()
         {
             string id = null;
@@ -154,7 +184,15 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return id;
         }
-        
+        public string GetIdCHiTietDichVuDienByIdPhong(string idPhong)
+        {
+            QLDAL qLDAL = new QLDAL() ;
+            foreach(ChiTietDichVu dv in qLDAL.GetAllChiTietDichVu())
+            {
+                if (dv.MaPhongTro == idPhong && dv.MaDichVu == "001") return dv.MaChiTietDichVu;
+            }
+            return null;
+        }
         public string TaoIdDayTro()
         {
             string id = null;
@@ -318,6 +356,11 @@ namespace PBL3___Motel_Management_System.BLL
 
             return list;
         }
+        public void AddChiTietSuDungDichVuBLL(ChiTietSuDungDichVu dv)
+        {
+            QLDAL qLDAL = new QLDAL();
+            qLDAL.AddChiTietSuDungDichVuDal(dv);
+        }
         public List<ViewPhongTro> GetAllPhongTroByIdDay(string idDay)
         {
             List<ViewPhongTro> list = new List<ViewPhongTro>();
@@ -356,28 +399,77 @@ namespace PBL3___Motel_Management_System.BLL
         {
             List<ViewPhongTro> list = new List<ViewPhongTro>();
             QLDAL qLDAL = new QLDAL();
-            bool status = (idTinhTrang == "1");
             if (idTinhTrang != "-1")
             {
                 int i = 0;
                 foreach (PhongTro pt in qLDAL.GetAllPhongTro())
-                {    
-                    if(pt.TinhTrang == status)
+                {
+                    if (idTinhTrang == "0")
                     {
-                        i++;
-                        list.Add(new ViewPhongTro
+                        if(GetHopDongByIdPhong(pt.MaPhongTro) == null)
                         {
-                            Stt = i,
-                            MaPhongTro = pt.MaPhongTro,
-                            TenPhongTro = pt.TenPhongTro,
-                            GiaTien = pt.GiaTien,
-                            DienTich = pt.DienTich,
-                            TinhTrang = pt.TinhTrang,
-                            SoNguoiToiDa = (int)pt.ToiDa,
-                            SoNguoiHienCo = GetIdNguoiByIdPhong(pt.MaPhongTro).Count,
-                            TenDay = GetDayTroByIdPhong(pt.MaPhongTro).TenDayTro
+                            i++;
+                            list.Add(new ViewPhongTro
+                            {
+                                Stt = i,
+                                MaPhongTro = pt.MaPhongTro,
+                                TenPhongTro = pt.TenPhongTro,
+                                GiaTien = pt.GiaTien,
+                                DienTich = pt.DienTich,
+                                TinhTrang = pt.TinhTrang,
+                                SoNguoiToiDa = (int)pt.ToiDa,
+                                SoNguoiHienCo = GetIdNguoiByIdPhong(pt.MaPhongTro).Count,
+                                TenDay = GetDayTroByIdPhong(pt.MaPhongTro).TenDayTro
 
-                    });
+                            });
+                        }
+
+                    }
+                    else if (idTinhTrang == "1")
+                    {
+                        if(GetHopDongByIdPhong(pt.MaPhongTro)!=null)
+                        {
+                            if(GetHopDongByIdPhong(pt.MaPhongTro).TinhTrang == true)
+                            {
+                                i++;
+                                list.Add(new ViewPhongTro
+                                {
+                                    Stt = i,
+                                    MaPhongTro = pt.MaPhongTro,
+                                    TenPhongTro = pt.TenPhongTro,
+                                    GiaTien = pt.GiaTien,
+                                    DienTich = pt.DienTich,
+                                    TinhTrang = pt.TinhTrang,
+                                    SoNguoiToiDa = (int)pt.ToiDa,
+                                    SoNguoiHienCo = GetIdNguoiByIdPhong(pt.MaPhongTro).Count,
+                                    TenDay = GetDayTroByIdPhong(pt.MaPhongTro).TenDayTro
+
+                                });
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (GetHopDongByIdPhong(pt.MaPhongTro)!=null)
+                        {
+                            if (GetHopDongByIdPhong(pt.MaPhongTro).TinhTrang == false)
+                            {
+                                i++;
+                                list.Add(new ViewPhongTro
+                                {
+                                    Stt = i,
+                                    MaPhongTro = pt.MaPhongTro,
+                                    TenPhongTro = pt.TenPhongTro,
+                                    GiaTien = pt.GiaTien,
+                                    DienTich = pt.DienTich,
+                                    TinhTrang = pt.TinhTrang,
+                                    SoNguoiToiDa = (int)pt.ToiDa,
+                                    SoNguoiHienCo = GetIdNguoiByIdPhong(pt.MaPhongTro).Count,
+                                    TenDay = GetDayTroByIdPhong(pt.MaPhongTro).TenDayTro
+
+                                });
+                            }
+                        }
                     }
                 }
             }
@@ -386,6 +478,16 @@ namespace PBL3___Motel_Management_System.BLL
                 list = DgvPhongTro(null);
             }
             return list;
+        }
+        public void UpdateHopDongBLL(HopDong hd)
+        {
+            QLDAL qLDAL = new QLDAL();
+            qLDAL.UpdateHopDongDAL(hd);
+        }
+        public void UpdateNguoiBLL(Nguoi nguoi)
+        {
+            QLDAL qLDAL = new QLDAL();
+            qLDAL.UpdateNguoiDAL(nguoi);
         }
         public List<ViewPhongTro> DgvPhongTroTimKiem(string idDay,string idTinhTrang,string txtTim)
         {
@@ -688,6 +790,156 @@ namespace PBL3___Motel_Management_System.BLL
             }
 
             return list;
+        }
+        public ChiTietDichVu GetChiTietDichVuById(string id)
+        {
+            QLDAL qLDAL = new QLDAL();
+            foreach(ChiTietDichVu dv in qLDAL.GetAllChiTietDichVu())
+            {
+                if (dv.MaChiTietDichVu == id) return dv;
+            }
+            return null;
+
+        }
+
+        public HopDong GetHopDongByIdPhong(string IdPhong)
+        {
+            QLDAL qLDAL = new QLDAL();
+            foreach(HopDong hopDong in qLDAL.GetAllHopDong())
+            {
+                if(hopDong.MaPhongTro == IdPhong)return hopDong;
+            }
+            return null;
+        }
+        public List<ChiTietThietBi>GetChiTietThietBiByIdPhong(string IdPhong)
+        {
+            List<ChiTietThietBi> list = new List<ChiTietThietBi>();
+            QLDAL qLDAL = new QLDAL() ;
+            foreach(ChiTietThietBi cttb in qLDAL.GetAllChiTietThietBi())
+            {
+                if(cttb.MaPhongTro == IdPhong)list.Add(cttb);
+            }
+            return list;
+        }
+        public List<string>GetAllIdCHiTietThietBiByIdPhong(string idPhong)
+        {
+            List<string> list = new List<string>();
+            QLDAL qLDAL = new QLDAL() ;
+            foreach(ChiTietThietBi cttb in qLDAL.GetAllChiTietThietBi())
+            {
+                if (cttb.MaPhongTro == idPhong) list.Add(cttb.MaChiTietThietBi);
+            }
+
+
+            return list;
+        }
+        public ChiTietThietBi GetChiTietThietBiById(string IdChiTiet)
+        {
+            QLDAL qLDAL = new QLDAL();
+            foreach(ChiTietThietBi cttb in qLDAL.GetAllChiTietThietBi())
+            {
+                if (cttb.MaChiTietThietBi == IdChiTiet) return cttb;
+            }
+            return null;
+        }
+        public void DelCHiTietThietBiByIdPhongBLL(string IdPhong)
+        {
+            QLDAL qLDAL = new QLDAL();
+
+            foreach(string id in GetAllIdCHiTietThietBiByIdPhong(IdPhong))
+            {
+                qLDAL.DelCHiTietThietBiById(id);
+            }
+        }
+        public List<string>GetChiTietSuDungDichVuByThangSuDung(string ThangSd)
+        {
+            QLDAL qLDAL = new QLDAL();
+            List<string> list = new List<string>();
+            foreach(ChiTietSuDungDichVu dv in qLDAL.GetAllChiTietSuDungDichVu())
+            {
+                if(dv.ThoiGian == ThangSd)list.Add(dv.MaChiTietSuDungDichVu);
+            }
+            return list;
+        }
+        public List<string> GetChiTietSuDungDichVuByIdDay(string IdDay)
+        {
+            QLDAL qLDAL = new QLDAL();
+            List<string> list = new List<string>();
+            foreach (ChiTietSuDungDichVu dv in qLDAL.GetAllChiTietSuDungDichVu())
+            {
+                if(IdDay != "0")
+                {
+
+                ChiTietDichVu ctdv = GetChiTietDichVuById(dv.MaCHiTietDichVu);
+                PhongTro pt = GetPhongTroByIdPhong(ctdv.MaPhongTro);
+                if (pt.MaDayTro == IdDay) list.Add(dv.MaChiTietSuDungDichVu);
+                }
+                else
+                {
+                    list.Add(dv.MaChiTietSuDungDichVu);
+                }
+            }
+            return list;
+        }
+        public List<string> GetChiTietSuDungDichVuByIdPhong(string IdPhong)
+        {
+            QLDAL qLDAL = new QLDAL();
+            List<string> list = new List<string>();
+
+            foreach (ChiTietSuDungDichVu dv in qLDAL.GetAllChiTietSuDungDichVu())
+            {
+                if(IdPhong != "0")
+                {
+
+                ChiTietDichVu ctdv = GetChiTietDichVuById(dv.MaCHiTietDichVu);
+                PhongTro pt = GetPhongTroByIdPhong(ctdv.MaPhongTro);
+                if (pt.MaPhongTro == IdPhong) list.Add(dv.MaChiTietSuDungDichVu);
+                }
+                else
+                {
+                    list.Add(dv.MaChiTietSuDungDichVu);
+                }
+            }
+            return list;
+        }
+        public List<string> GetChiTietSuDungDichVuByTinhTrang(string IdTinhTrang)
+        {
+            QLDAL qLDAL = new QLDAL();
+            List<string> list = new List<string>();
+
+            foreach (ChiTietSuDungDichVu dv in qLDAL.GetAllChiTietSuDungDichVu())
+            {
+                if (IdTinhTrang != "0")
+                {
+                    bool tt = (IdTinhTrang == "1");
+                    if (dv.TinhTrang == tt) list.Add(dv.MaChiTietSuDungDichVu);
+                }
+                else
+                {
+                    list.Add(dv.MaChiTietSuDungDichVu);
+                }
+            }
+            return list;
+        }
+        public List<ChiTietSuDungDichVu> GetChiTietSuDungDichVuTimKiem(string ThangSd,string IdDay,string IdPhong,string idTinhTrang)
+        {
+            List<string> ThangSuDung = GetChiTietSuDungDichVuByThangSuDung(ThangSd);
+            List<string> Day = GetChiTietSuDungDichVuByIdDay(IdDay);
+            List<string> Phong = GetChiTietSuDungDichVuByIdPhong(IdPhong);
+            List<string> TinhTrang = GetChiTietSuDungDichVuByTinhTrang(idTinhTrang);
+            List<string> Id = new List<string>();
+            List<ChiTietSuDungDichVu> kq = new List<ChiTietSuDungDichVu>();
+            Id = ThangSuDung.Intersect(Day).Intersect(Phong).Intersect(TinhTrang).ToList();
+            foreach(ChiTietSuDungDichVu dv in GetAllChiTietSuDungDichVuBll())
+            {
+                foreach(string id in Id)
+                {
+                    if(id == dv.MaChiTietSuDungDichVu)kq.Add(dv);
+                }
+            }
+            return kq;
+
+
         }
 
     }
