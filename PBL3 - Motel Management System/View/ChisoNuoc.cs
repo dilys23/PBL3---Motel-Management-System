@@ -77,7 +77,7 @@ namespace PBL3___Motel_Management_System
                             TinhTrang = dv.TinhTrang
 
                         };
-                        string tinhTrang = (view.TinhTrang) ? "Đã xác thưc" : "Chưa xác thực";
+                        string tinhTrang = (view.TinhTrang) ? "Đã xác thực" : "Chưa xác thực";
 
                         dgvChiSoNuoc.Rows.Add(view.MaChiTietSuDungDichVu, view.Stt, view.DayTro, view.PhongTro, view.ChiSoCu, view.ChiSoMoi, view.DaDung
                             , view.NgayLap, view.ThangSuDung, tinhTrang);
@@ -110,7 +110,7 @@ namespace PBL3___Motel_Management_System
                             TinhTrang = dv.TinhTrang
 
                         };
-                        string tinhTrang = (view.TinhTrang) ? "Đã xác thưc" : "Chưa xác thực";
+                        string tinhTrang = (view.TinhTrang) ? "Đã xác thực" : "Chưa xác thực";
 
                         dgvChiSoNuoc.Rows.Add(view.MaChiTietSuDungDichVu, view.Stt, view.DayTro, view.PhongTro, view.ChiSoCu, view.ChiSoMoi, view.DaDung
                             , view.NgayLap, view.ThangSuDung, tinhTrang);
@@ -163,6 +163,64 @@ namespace PBL3___Motel_Management_System
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             LoadForm("");
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXacThuc_Click(object sender, EventArgs e)
+        {
+            if (dgvChiSoNuoc.CurrentRow.Cells[9].Value.ToString() != "Đã xác thực")
+            {
+                QLBLL qLBLL = new QLBLL();
+                string id = dgvChiSoNuoc.CurrentRow.Cells[0].Value.ToString();
+                ChiTietSuDungDichVu dv = qLBLL.GetChiTietSuDungDichVuByIdBLL(id);
+                ChiTietDichVu ctdv = qLBLL.GetChiTietDichVuById(dv.MaCHiTietDichVu);
+                List<ChiTietSuDungDichVu> list = qLBLL.GetChiTietSuDungDichVuTimKiem(dv.ThoiGian, "0", ctdv.MaPhongTro, "1");
+                List<ChiTietSuDungDichVu> myList = new List<ChiTietSuDungDichVu>();
+                foreach (ChiTietSuDungDichVu ct in list)
+                {
+                    if (qLBLL.GetChiTietDichVuById(ct.MaCHiTietDichVu).MaDichVu == "000") myList.Add(ct);
+                }
+                if (myList.Count == 0 )
+                {
+                    dv.TinhTrang = true;
+                    qLBLL.UpdateChiTietSuDungDichVu(dv);
+                    MessageBox.Show("Xác thực thành công", "Thông báo");
+                    LoadForm(null);
+                }
+
+                else
+                {
+                    MessageBox.Show("Phòng hiện tại của bạn đã có một chi tiết được xác nhận!!!", "Thông báo");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Dịch vụ hiện tại đã được xác thực", "Thông báo");
+            }
+        }
+
+        private void btnHuyXacThuc_Click(object sender, EventArgs e)
+        {
+            if (dgvChiSoNuoc.CurrentRow.Cells[9].Value.ToString() != "Đã xác thực")
+            {
+                MessageBox.Show("Dịch vụ hiện tại hiện đang chưa xác thực");
+            }
+            else
+            {
+                QLBLL qLBLL = new QLBLL();
+                string id = dgvChiSoNuoc.CurrentRow.Cells[0].Value.ToString();
+                ChiTietSuDungDichVu dv = qLBLL.GetChiTietSuDungDichVuByIdBLL(id);
+                dv.TinhTrang = false;
+                qLBLL.UpdateChiTietSuDungDichVu(dv);
+                MessageBox.Show("Hủy bỏ xác thực thành công", "Thông báo");
+                LoadForm(null);
+
+            }
         }
     }
 }

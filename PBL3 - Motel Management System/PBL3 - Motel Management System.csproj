@@ -97,6 +97,9 @@
     <Compile Include="DAL\DichVu.cs">
       <DependentUpon>DataPbl.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\DichVuCoDinh.cs">
+      <DependentUpon>DataPbl.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\HoaDon.cs">
       <DependentUpon>DataPbl.tt</DependentUpon>
     </Compile>

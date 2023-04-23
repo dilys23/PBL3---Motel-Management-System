@@ -284,6 +284,28 @@ namespace PBL3___Motel_Management_System.DAL
 
             }
         }
+        public void UpdateChiTietSuDungDichVuDAL(ChiTietSuDungDichVu dv)
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                var s = data.ChiTietSuDungDichVu.Single(p => p.MaChiTietSuDungDichVu == dv.MaChiTietSuDungDichVu);
+                s.ChiSoCu = dv.ChiSoCu;
+                s.ChiSoMoi = dv.ChiSoMoi;
+                s.ThoiGian = dv.ThoiGian;
+                s.NgayLap = dv.NgayLap;
+                s.TinhTrang = dv.TinhTrang;
+                data.SaveChanges();
+            }
+        }
+        public ChiTietSuDungDichVu GetChiTietSuDungDichVuByIdDAL(string id)
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                var s = data.ChiTietSuDungDichVu.Single(p => p.MaChiTietSuDungDichVu == id);
+                return (ChiTietSuDungDichVu)s;
+            }
+            return null;
+        }
         public void UpdateHopDongDAL(HopDong hd)
         {
             using(DataPbl data = new DataPbl())

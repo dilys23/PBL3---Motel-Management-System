@@ -498,6 +498,16 @@ namespace PBL3___Motel_Management_System.BLL
             QLDAL qLDAL = new QLDAL();
             qLDAL.UpdateNguoiDAL(nguoi);
         }
+        public void UpdateChiTietSuDungDichVu(ChiTietSuDungDichVu dv)
+        {
+            QLDAL qLDAL = new QLDAL();
+            qLDAL.UpdateChiTietSuDungDichVuDAL(dv);
+        }
+        public ChiTietSuDungDichVu GetChiTietSuDungDichVuByIdBLL(string id)
+        {
+            QLDAL qLDAL = new QLDAL();
+            return qLDAL.GetChiTietSuDungDichVuByIdDAL(id);
+        }
         public List<ViewPhongTro> DgvPhongTroTimKiem(string idDay,string idTinhTrang,string txtTim)
         {
             

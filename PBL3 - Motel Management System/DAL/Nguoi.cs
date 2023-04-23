@@ -18,7 +18,6 @@ namespace PBL3___Motel_Management_System.DAL
         public Nguoi()
         {
             this.DayTro = new HashSet<DayTro>();
-            this.HoaDon = new HashSet<HoaDon>();
             this.HopDong = new HashSet<HopDong>();
             this.ThanhVienTrongPhong = new HashSet<ThanhVienTrongPhong>();
             this.VaiTro = new HashSet<VaiTro>();
@@ -34,8 +33,6 @@ namespace PBL3___Motel_Management_System.DAL
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DayTro> DayTro { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HoaDon> HoaDon { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HopDong> HopDong { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
