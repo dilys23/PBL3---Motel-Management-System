@@ -34,14 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvChiSoDien = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.cbbPhongTro = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSuaHD = new FontAwesome.Sharp.IconButton();
-            this.btnThemHD = new FontAwesome.Sharp.IconButton();
             this.MaChiTietSuDungDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DayTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,9 +44,18 @@
             this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Thang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnTimKiem = new FontAwesome.Sharp.IconButton();
-            this.cbbTinhTrang = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.cbbTinhTrang = new System.Windows.Forms.ComboBox();
+            this.btnTimKiem = new FontAwesome.Sharp.IconButton();
+            this.cbbPhongTro = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnXacThuc = new FontAwesome.Sharp.IconButton();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSuaHD = new FontAwesome.Sharp.IconButton();
+            this.btnThemHD = new FontAwesome.Sharp.IconButton();
+            this.btnXoa = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiSoDien)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -64,9 +65,9 @@
             // 
             this.cbbDayTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbDayTro.FormattingEnabled = true;
-            this.cbbDayTro.Location = new System.Drawing.Point(177, 38);
+            this.cbbDayTro.Location = new System.Drawing.Point(207, 40);
             this.cbbDayTro.Name = "cbbDayTro";
-            this.cbbDayTro.Size = new System.Drawing.Size(158, 25);
+            this.cbbDayTro.Size = new System.Drawing.Size(158, 28);
             this.cbbDayTro.TabIndex = 31;
             this.cbbDayTro.SelectedIndexChanged += new System.EventHandler(this.cbbDayTro_SelectedIndexChanged);
             // 
@@ -74,9 +75,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(179, 14);
+            this.label2.Location = new System.Drawing.Point(201, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 17);
+            this.label2.Size = new System.Drawing.Size(44, 20);
             this.label2.TabIndex = 30;
             this.label2.Text = "Dãy:";
             // 
@@ -85,10 +86,10 @@
             this.dtpThangSuDung.CustomFormat = "MM/yyyy";
             this.dtpThangSuDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpThangSuDung.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpThangSuDung.Location = new System.Drawing.Point(47, 39);
+            this.dtpThangSuDung.Location = new System.Drawing.Point(53, 41);
             this.dtpThangSuDung.Name = "dtpThangSuDung";
             this.dtpThangSuDung.ShowUpDown = true;
-            this.dtpThangSuDung.Size = new System.Drawing.Size(111, 23);
+            this.dtpThangSuDung.Size = new System.Drawing.Size(125, 27);
             this.dtpThangSuDung.TabIndex = 29;
             this.dtpThangSuDung.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -96,9 +97,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(44, 14);
+            this.label1.Location = new System.Drawing.Point(49, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 17);
+            this.label1.Size = new System.Drawing.Size(82, 20);
             this.label1.TabIndex = 28;
             this.label1.Text = "Thời gian:";
             // 
@@ -109,7 +110,7 @@
             this.label4.ForeColor = System.Drawing.Color.Chocolate;
             this.label4.Location = new System.Drawing.Point(12, 11);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 19);
+            this.label4.Size = new System.Drawing.Size(123, 24);
             this.label4.TabIndex = 25;
             this.label4.Text = "CHỈ SỐ ĐIỆN";
             // 
@@ -135,8 +136,69 @@
             this.dgvChiSoDien.Name = "dgvChiSoDien";
             this.dgvChiSoDien.RowHeadersWidth = 51;
             this.dgvChiSoDien.RowTemplate.Height = 24;
-            this.dgvChiSoDien.Size = new System.Drawing.Size(857, 215);
+            this.dgvChiSoDien.Size = new System.Drawing.Size(950, 288);
             this.dgvChiSoDien.TabIndex = 8;
+            // 
+            // MaChiTietSuDungDichVu
+            // 
+            this.MaChiTietSuDungDichVu.HeaderText = "MaChiTietSuDungDichVu";
+            this.MaChiTietSuDungDichVu.MinimumWidth = 6;
+            this.MaChiTietSuDungDichVu.Name = "MaChiTietSuDungDichVu";
+            this.MaChiTietSuDungDichVu.Visible = false;
+            // 
+            // Stt
+            // 
+            this.Stt.HeaderText = "STT";
+            this.Stt.MinimumWidth = 6;
+            this.Stt.Name = "Stt";
+            // 
+            // DayTro
+            // 
+            this.DayTro.HeaderText = "Dãy trọ";
+            this.DayTro.MinimumWidth = 6;
+            this.DayTro.Name = "DayTro";
+            // 
+            // PhongTro
+            // 
+            this.PhongTro.HeaderText = "Phòng trọ";
+            this.PhongTro.MinimumWidth = 6;
+            this.PhongTro.Name = "PhongTro";
+            // 
+            // ChiSoCu
+            // 
+            this.ChiSoCu.HeaderText = "Chỉ số cũ";
+            this.ChiSoCu.MinimumWidth = 6;
+            this.ChiSoCu.Name = "ChiSoCu";
+            // 
+            // ChiSoMoi
+            // 
+            this.ChiSoMoi.HeaderText = "Chỉ số mới";
+            this.ChiSoMoi.MinimumWidth = 6;
+            this.ChiSoMoi.Name = "ChiSoMoi";
+            // 
+            // DaDung
+            // 
+            this.DaDung.HeaderText = "Đã dùng";
+            this.DaDung.MinimumWidth = 6;
+            this.DaDung.Name = "DaDung";
+            // 
+            // NgayLap
+            // 
+            this.NgayLap.HeaderText = "Ngày lập";
+            this.NgayLap.MinimumWidth = 6;
+            this.NgayLap.Name = "NgayLap";
+            // 
+            // Thang
+            // 
+            this.Thang.HeaderText = "Tháng sử dung";
+            this.Thang.MinimumWidth = 6;
+            this.Thang.Name = "Thang";
+            // 
+            // TinhTrang
+            // 
+            this.TinhTrang.HeaderText = "Tình trạng";
+            this.TinhTrang.MinimumWidth = 6;
+            this.TinhTrang.Name = "TinhTrang";
             // 
             // panel2
             // 
@@ -145,22 +207,65 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnXoa);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.cbbTinhTrang);
             this.panel2.Controls.Add(this.btnTimKiem);
             this.panel2.Controls.Add(this.cbbPhongTro);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.iconButton1);
+            this.panel2.Controls.Add(this.btnXacThuc);
             this.panel2.Controls.Add(this.iconButton2);
             this.panel2.Controls.Add(this.dgvChiSoDien);
             this.panel2.Controls.Add(this.dtpThangSuDung);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.cbbDayTro);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(12, 88);
+            this.panel2.Location = new System.Drawing.Point(12, 75);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(949, 383);
+            this.panel2.Size = new System.Drawing.Size(1023, 456);
             this.panel2.TabIndex = 27;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(568, 13);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(84, 20);
+            this.label5.TabIndex = 60;
+            this.label5.Text = "Tình trạng";
+            // 
+            // cbbTinhTrang
+            // 
+            this.cbbTinhTrang.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbbTinhTrang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbTinhTrang.FormattingEnabled = true;
+            this.cbbTinhTrang.Location = new System.Drawing.Point(547, 40);
+            this.cbbTinhTrang.Name = "cbbTinhTrang";
+            this.cbbTinhTrang.Size = new System.Drawing.Size(129, 28);
+            this.cbbTinhTrang.TabIndex = 59;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnTimKiem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.btnTimKiem.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.btnTimKiem.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnTimKiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTimKiem.IconSize = 25;
+            this.btnTimKiem.Location = new System.Drawing.Point(3, 33);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(35, 35);
+            this.btnTimKiem.TabIndex = 58;
+            this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // cbbPhongTro
             // 
@@ -169,9 +274,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbbPhongTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbPhongTro.FormattingEnabled = true;
-            this.cbbPhongTro.Location = new System.Drawing.Point(373, 39);
+            this.cbbPhongTro.Location = new System.Drawing.Point(394, 40);
             this.cbbPhongTro.Name = "cbbPhongTro";
-            this.cbbPhongTro.Size = new System.Drawing.Size(128, 25);
+            this.cbbPhongTro.Size = new System.Drawing.Size(124, 28);
             this.cbbPhongTro.TabIndex = 57;
             this.cbbPhongTro.SelectedIndexChanged += new System.EventHandler(this.cbbPhongTro_SelectedIndexChanged);
             // 
@@ -182,28 +287,28 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(370, 8);
+            this.label3.Location = new System.Drawing.Point(391, 14);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 17);
+            this.label3.Size = new System.Drawing.Size(61, 20);
             this.label3.TabIndex = 56;
             this.label3.Text = "Phòng:";
             // 
-            // iconButton1
+            // btnXacThuc
             // 
-            this.iconButton1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ExternalLink;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 25;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(826, 27);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(74, 39);
-            this.iconButton1.TabIndex = 55;
-            this.iconButton1.Text = "Sửa";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton1.UseVisualStyleBackColor = false;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            this.btnXacThuc.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnXacThuc.IconChar = FontAwesome.Sharp.IconChar.FileCircleCheck;
+            this.btnXacThuc.IconColor = System.Drawing.Color.White;
+            this.btnXacThuc.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnXacThuc.IconSize = 25;
+            this.btnXacThuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXacThuc.Location = new System.Drawing.Point(823, 29);
+            this.btnXacThuc.Name = "btnXacThuc";
+            this.btnXacThuc.Size = new System.Drawing.Size(98, 39);
+            this.btnXacThuc.TabIndex = 55;
+            this.btnXacThuc.Text = "Xác Thực";
+            this.btnXacThuc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXacThuc.UseVisualStyleBackColor = false;
+            this.btnXacThuc.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // iconButton2
             // 
@@ -213,7 +318,7 @@
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.IconSize = 25;
             this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(730, 27);
+            this.iconButton2.Location = new System.Drawing.Point(738, 29);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Size = new System.Drawing.Size(79, 39);
             this.iconButton2.TabIndex = 54;
@@ -230,7 +335,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(973, 49);
+            this.panel1.Size = new System.Drawing.Size(1047, 49);
             this.panel1.TabIndex = 26;
             // 
             // btnSuaHD
@@ -265,103 +370,28 @@
             this.btnThemHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemHD.UseVisualStyleBackColor = false;
             // 
-            // MaChiTietSuDungDichVu
+            // btnXoa
             // 
-            this.MaChiTietSuDungDichVu.HeaderText = "MaChiTietSuDungDichVu";
-            this.MaChiTietSuDungDichVu.Name = "MaChiTietSuDungDichVu";
-            this.MaChiTietSuDungDichVu.Visible = false;
-            // 
-            // Stt
-            // 
-            this.Stt.HeaderText = "STT";
-            this.Stt.Name = "Stt";
-            // 
-            // DayTro
-            // 
-            this.DayTro.HeaderText = "Dãy trọ";
-            this.DayTro.Name = "DayTro";
-            // 
-            // PhongTro
-            // 
-            this.PhongTro.HeaderText = "Phòng trọ";
-            this.PhongTro.Name = "PhongTro";
-            // 
-            // ChiSoCu
-            // 
-            this.ChiSoCu.HeaderText = "Chỉ số cũ";
-            this.ChiSoCu.Name = "ChiSoCu";
-            // 
-            // ChiSoMoi
-            // 
-            this.ChiSoMoi.HeaderText = "Chỉ số mới";
-            this.ChiSoMoi.Name = "ChiSoMoi";
-            // 
-            // DaDung
-            // 
-            this.DaDung.HeaderText = "Đã dùng";
-            this.DaDung.Name = "DaDung";
-            // 
-            // NgayLap
-            // 
-            this.NgayLap.HeaderText = "Ngày lập";
-            this.NgayLap.Name = "NgayLap";
-            // 
-            // Thang
-            // 
-            this.Thang.HeaderText = "Tháng sử dung";
-            this.Thang.Name = "Thang";
-            // 
-            // TinhTrang
-            // 
-            this.TinhTrang.HeaderText = "Tình trạng";
-            this.TinhTrang.Name = "TinhTrang";
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnTimKiem.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.btnTimKiem.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnTimKiem.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnTimKiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTimKiem.IconSize = 25;
-            this.btnTimKiem.Location = new System.Drawing.Point(6, 33);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(35, 35);
-            this.btnTimKiem.TabIndex = 58;
-            this.btnTimKiem.UseVisualStyleBackColor = false;
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
-            // 
-            // cbbTinhTrang
-            // 
-            this.cbbTinhTrang.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbbTinhTrang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbTinhTrang.FormattingEnabled = true;
-            this.cbbTinhTrang.Location = new System.Drawing.Point(549, 39);
-            this.cbbTinhTrang.Name = "cbbTinhTrang";
-            this.cbbTinhTrang.Size = new System.Drawing.Size(128, 25);
-            this.cbbTinhTrang.TabIndex = 59;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(546, 14);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 17);
-            this.label5.TabIndex = 60;
-            this.label5.Text = "Tình trạng";
+            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXoa.BackColor = System.Drawing.Color.Red;
+            this.btnXoa.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnXoa.IconColor = System.Drawing.Color.White;
+            this.btnXoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnXoa.IconSize = 25;
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa.Location = new System.Drawing.Point(927, 31);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(66, 36);
+            this.btnXoa.TabIndex = 61;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoa.UseVisualStyleBackColor = false;
             // 
             // ChisoDien
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(973, 559);
+            this.ClientSize = new System.Drawing.Size(1047, 619);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "ChisoDien";
@@ -388,7 +418,7 @@
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton btnSuaHD;
         private FontAwesome.Sharp.IconButton btnThemHD;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnXacThuc;
         private FontAwesome.Sharp.IconButton iconButton2;
         private System.Windows.Forms.ComboBox cbbPhongTro;
         private System.Windows.Forms.Label label3;
@@ -405,5 +435,6 @@
         private FontAwesome.Sharp.IconButton btnTimKiem;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbbTinhTrang;
+        private FontAwesome.Sharp.IconButton btnXoa;
     }
 }

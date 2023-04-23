@@ -129,6 +129,7 @@
     <Compile Include="DTO\DgvHopDong.cs" />
     <Compile Include="DTO\ThuePhong.cs" />
     <Compile Include="DTO\ViewChiSoDien.cs" />
+    <Compile Include="DTO\ViewChiSoNuoc.cs" />
     <Compile Include="DTO\ViewDay.cs" />
     <Compile Include="DTO\ViewDichVu.cs" />
     <Compile Include="DTO\ViewPhongTro.cs" />
