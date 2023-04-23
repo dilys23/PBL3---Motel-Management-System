@@ -752,7 +752,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="PblQuanlyPhongTroEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="PblQuanlyPhongTroEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ChiTietDichVu" EntityType="Self.ChiTietDichVu" />
           <EntitySet Name="ChiTietSuDungDichVu" EntityType="Self.ChiTietSuDungDichVu" />
           <EntitySet Name="ChiTietThietBi" EntityType="Self.ChiTietThietBi" />
@@ -833,7 +833,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DataPblModelStoreContainer" CdmEntityContainer="PblQuanlyPhongTroEntities">
+        <EntityContainerMapping StorageEntityContainer="DataPblModelStoreContainer" CdmEntityContainer="PblQuanlyPhongTroEntities1">
           <EntitySetMapping Name="ChiTietDichVu">
             <EntityTypeMapping TypeName="DataPblModel.ChiTietDichVu">
               <MappingFragment StoreEntitySet="ChiTietDichVu">
