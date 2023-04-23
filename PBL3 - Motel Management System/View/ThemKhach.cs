@@ -33,10 +33,9 @@ namespace PBL3___Motel_Management_System
         private void LoadForm()
         {
             QLBLL qLBLL = new QLBLL();
-            if(this.thuePhong.hopDong.MaNguoi != "")
-            {
-
             Nguoi nguoi = new Nguoi();
+            if (this.thuePhong.hopDong.MaNguoi != null)
+            {
             nguoi = qLBLL.GetNguoiByIdNguoi(thuePhong.hopDong.MaNguoi);
             txtTen.Text = nguoi.Ten;
             txtCccd.Text = nguoi.Cccd;
@@ -45,6 +44,7 @@ namespace PBL3___Motel_Management_System
             if(nguoi.GioiTinh == true)rdbtnNam.Checked = true;
             else rdbtnNu.Checked = true;
             }
+            
         }
         private void ThemKhach_Load(object sender, EventArgs e)
         {
