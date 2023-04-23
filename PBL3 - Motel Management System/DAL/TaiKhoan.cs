@@ -17,7 +17,7 @@ namespace PBL3___Motel_Management_System.DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TaiKhoan()
         {
-            this.VaiTro = new HashSet<VaiTro>();
+            this.VaiTroes = new HashSet<VaiTro>();
         }
     
         public string TenTaiKhoan { get; set; }
@@ -25,6 +25,6 @@ namespace PBL3___Motel_Management_System.DAL
         public string MaTaiKhoan { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<VaiTro> VaiTro { get; set; }
+        public virtual ICollection<VaiTro> VaiTroes { get; set; }
     }
 }

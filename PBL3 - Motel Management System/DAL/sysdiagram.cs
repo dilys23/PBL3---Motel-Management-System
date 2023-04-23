@@ -12,17 +12,12 @@ namespace PBL3___Motel_Management_System.DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class HopDong
+    public partial class sysdiagram
     {
-        public string MaHopDong { get; set; }
-        public string MaNguoi { get; set; }
-        public string MaPhongTro { get; set; }
-        public string NgayBatDau { get; set; }
-        public string NgayKetThuc { get; set; }
-        public double TienCoc { get; set; }
-        public Nullable<bool> TinhTrang { get; set; }
-    
-        public virtual Nguoi Nguoi { get; set; }
-        public virtual PhongTro PhongTro { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

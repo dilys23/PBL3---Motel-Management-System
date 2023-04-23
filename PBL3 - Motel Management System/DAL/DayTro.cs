@@ -17,7 +17,7 @@ namespace PBL3___Motel_Management_System.DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DayTro()
         {
-            this.PhongTro = new HashSet<PhongTro>();
+            this.PhongTroes = new HashSet<PhongTro>();
         }
     
         public string MaDayTro { get; set; }
@@ -29,6 +29,6 @@ namespace PBL3___Motel_Management_System.DAL
     
         public virtual Nguoi Nguoi { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PhongTro> PhongTro { get; set; }
+        public virtual ICollection<PhongTro> PhongTroes { get; set; }
     }
 }

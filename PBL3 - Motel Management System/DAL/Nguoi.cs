@@ -17,10 +17,11 @@ namespace PBL3___Motel_Management_System.DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Nguoi()
         {
-            this.DayTro = new HashSet<DayTro>();
-            this.HopDong = new HashSet<HopDong>();
-            this.ThanhVienTrongPhong = new HashSet<ThanhVienTrongPhong>();
-            this.VaiTro = new HashSet<VaiTro>();
+            this.DayTroes = new HashSet<DayTro>();
+            this.HoaDons = new HashSet<HoaDon>();
+            this.HopDongs = new HashSet<HopDong>();
+            this.ThanhVienTrongPhongs = new HashSet<ThanhVienTrongPhong>();
+            this.VaiTroes = new HashSet<VaiTro>();
         }
     
         public string MaNguoi { get; set; }
@@ -32,12 +33,14 @@ namespace PBL3___Motel_Management_System.DAL
         public bool GioiTinh { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DayTro> DayTro { get; set; }
+        public virtual ICollection<DayTro> DayTroes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HopDong> HopDong { get; set; }
+        public virtual ICollection<HoaDon> HoaDons { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ThanhVienTrongPhong> ThanhVienTrongPhong { get; set; }
+        public virtual ICollection<HopDong> HopDongs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<VaiTro> VaiTro { get; set; }
+        public virtual ICollection<ThanhVienTrongPhong> ThanhVienTrongPhongs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<VaiTro> VaiTroes { get; set; }
     }
 }

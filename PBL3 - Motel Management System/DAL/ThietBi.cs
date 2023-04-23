@@ -17,7 +17,7 @@ namespace PBL3___Motel_Management_System.DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ThietBi()
         {
-            this.ChiTietThietBi = new HashSet<ChiTietThietBi>();
+            this.ChiTietThietBis = new HashSet<ChiTietThietBi>();
         }
     
         public string MaThietBi { get; set; }
@@ -25,6 +25,6 @@ namespace PBL3___Motel_Management_System.DAL
         public double GiaThietBi { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietThietBi> ChiTietThietBi { get; set; }
+        public virtual ICollection<ChiTietThietBi> ChiTietThietBis { get; set; }
     }
 }
