@@ -21,5 +21,18 @@ namespace PBL3___Motel_Management_System.View
         {
             this.Close();
         }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            // Lấy tháng và năm được chọn
+            int month = dateTimePicker2.Value.Month;
+            int year = dateTimePicker2.Value.Year;
+
+            // Tạo ngày đầu tiên của tháng và năm được chọn
+            DateTime date = new DateTime(year, month, 1);
+
+            // Gán ngày đó cho DateTimePicker
+            dateTimePicker2.Value = date;
+        }
     }
 }

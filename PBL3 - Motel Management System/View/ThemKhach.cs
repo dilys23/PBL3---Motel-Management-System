@@ -23,13 +23,29 @@ namespace PBL3___Motel_Management_System
             InitializeComponent();
             this.thuePhong = tp;
             this.loader=loader;
+            LoadForm();
         }
         private void Back(string txt)
         {
             this.loader(null);
             this.Close();
         }
+        private void LoadForm()
+        {
+            QLBLL qLBLL = new QLBLL();
+            if(this.thuePhong.hopDong.MaNguoi != "")
+            {
 
+            Nguoi nguoi = new Nguoi();
+            nguoi = qLBLL.GetNguoiByIdNguoi(thuePhong.hopDong.MaNguoi);
+            txtTen.Text = nguoi.Ten;
+            txtCccd.Text = nguoi.Cccd;
+            txtSdt.Text = nguoi.Sdt;
+            txtDiaChi.Text = nguoi.Diachi;
+            if(nguoi.GioiTinh == true)rdbtnNam.Checked = true;
+            else rdbtnNu.Checked = true;
+            }
+        }
         private void ThemKhach_Load(object sender, EventArgs e)
         {
 
@@ -95,7 +111,17 @@ namespace PBL3___Motel_Management_System
             {
                 QLBLL qLBLL = new QLBLL();
                 Nguoi nguoi = new Nguoi();
-                nguoi.MaNguoi = qLBLL.TaoIdNguoi();
+                if(thuePhong.hopDong.MaNguoi == null)
+                {
+                    nguoi.MaNguoi = qLBLL.TaoIdNguoi();
+                    
+                }
+                else
+                {
+
+                nguoi.MaNguoi = thuePhong.hopDong.MaNguoi;
+                }
+
                 nguoi.Cccd = txtCccd.Text;
                 nguoi.Ten = txtTen.Text;
                 nguoi.Sdt = txtSdt.Text;

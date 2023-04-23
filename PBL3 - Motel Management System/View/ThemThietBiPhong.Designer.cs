@@ -34,16 +34,24 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnLuu = new FontAwesome.Sharp.IconButton();
             this.panelThem = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoaiDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dangdung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnXoaTB = new FontAwesome.Sharp.IconButton();
+            this.btnThemTB = new FontAwesome.Sharp.IconButton();
+            this.dgvTBThem = new System.Windows.Forms.DataGridView();
+            this.dgvThietBi = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.MaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaThietBi1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenThietBi1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelThemHD.SuspendLayout();
             this.panelThem.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTBThem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThietBi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,9 +66,10 @@
             this.panelThemHD.Controls.Add(this.label7);
             this.panelThemHD.Controls.Add(this.btnLuu);
             this.panelThemHD.Controls.Add(this.panelThem);
-            this.panelThemHD.Location = new System.Drawing.Point(-3, 5);
+            this.panelThemHD.Location = new System.Drawing.Point(-2, 4);
+            this.panelThemHD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelThemHD.Name = "panelThemHD";
-            this.panelThemHD.Size = new System.Drawing.Size(920, 444);
+            this.panelThemHD.Size = new System.Drawing.Size(690, 361);
             this.panelThemHD.TabIndex = 2;
             // 
             // btnTrove
@@ -72,9 +81,10 @@
             this.btnTrove.IconColor = System.Drawing.Color.White;
             this.btnTrove.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTrove.IconSize = 30;
-            this.btnTrove.Location = new System.Drawing.Point(784, 22);
+            this.btnTrove.Location = new System.Drawing.Point(588, 18);
+            this.btnTrove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTrove.Name = "btnTrove";
-            this.btnTrove.Size = new System.Drawing.Size(43, 37);
+            this.btnTrove.Size = new System.Drawing.Size(32, 30);
             this.btnTrove.TabIndex = 48;
             this.btnTrove.UseVisualStyleBackColor = false;
             this.btnTrove.Click += new System.EventHandler(this.btnTrove_Click);
@@ -84,9 +94,10 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Bahnschrift SemiBold", 13.8F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.Chocolate;
-            this.label7.Location = new System.Drawing.Point(13, 29);
+            this.label7.Location = new System.Drawing.Point(10, 24);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(171, 28);
+            this.label7.Size = new System.Drawing.Size(140, 23);
             this.label7.TabIndex = 47;
             this.label7.Text = "CHỌN THIẾT BỊ ";
             // 
@@ -100,11 +111,13 @@
             this.btnLuu.IconColor = System.Drawing.Color.White;
             this.btnLuu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLuu.IconSize = 30;
-            this.btnLuu.Location = new System.Drawing.Point(833, 21);
+            this.btnLuu.Location = new System.Drawing.Point(625, 17);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(52, 37);
+            this.btnLuu.Size = new System.Drawing.Size(39, 30);
             this.btnLuu.TabIndex = 49;
             this.btnLuu.UseVisualStyleBackColor = false;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // panelThem
             // 
@@ -112,80 +125,170 @@
             this.panelThem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
-            this.panelThem.Controls.Add(this.dataGridView1);
-            this.panelThem.Location = new System.Drawing.Point(17, 67);
+            this.panelThem.Controls.Add(this.btnXoaTB);
+            this.panelThem.Controls.Add(this.btnThemTB);
+            this.panelThem.Controls.Add(this.dgvTBThem);
+            this.panelThem.Controls.Add(this.dgvThietBi);
+            this.panelThem.Location = new System.Drawing.Point(13, 54);
+            this.panelThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelThem.Name = "panelThem";
-            this.panelThem.Size = new System.Drawing.Size(890, 257);
+            this.panelThem.Size = new System.Drawing.Size(668, 288);
             this.panelThem.TabIndex = 46;
             // 
-            // dataGridView1
+            // btnXoaTB
             // 
-            this.dataGridView1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnXoaTB.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnXoaTB.BackColor = System.Drawing.Color.Red;
+            this.btnXoaTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaTB.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnXoaTB.IconColor = System.Drawing.Color.White;
+            this.btnXoaTB.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnXoaTB.IconSize = 25;
+            this.btnXoaTB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoaTB.Location = new System.Drawing.Point(16, 154);
+            this.btnXoaTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoaTB.Name = "btnXoaTB";
+            this.btnXoaTB.Size = new System.Drawing.Size(58, 31);
+            this.btnXoaTB.TabIndex = 56;
+            this.btnXoaTB.Text = "Xóa";
+            this.btnXoaTB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoaTB.UseVisualStyleBackColor = false;
+            this.btnXoaTB.Click += new System.EventHandler(this.btnXoaTB_Click);
+            // 
+            // btnThemTB
+            // 
+            this.btnThemTB.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnThemTB.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnThemTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemTB.IconChar = FontAwesome.Sharp.IconChar.Calculator;
+            this.btnThemTB.IconColor = System.Drawing.Color.White;
+            this.btnThemTB.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThemTB.IconSize = 25;
+            this.btnThemTB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThemTB.Location = new System.Drawing.Point(16, 21);
+            this.btnThemTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThemTB.Name = "btnThemTB";
+            this.btnThemTB.Size = new System.Drawing.Size(62, 34);
+            this.btnThemTB.TabIndex = 55;
+            this.btnThemTB.Text = "Thêm ";
+            this.btnThemTB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThemTB.UseVisualStyleBackColor = false;
+            this.btnThemTB.Click += new System.EventHandler(this.btnThemTB_Click);
+            // 
+            // dgvTBThem
+            // 
+            this.dgvTBThem.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dgvTBThem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT,
-            this.TenDV,
-            this.LoaiDV,
-            this.Dongia,
-            this.Dangdung});
-            this.dataGridView1.Location = new System.Drawing.Point(10, 26);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(872, 152);
-            this.dataGridView1.TabIndex = 51;
+            this.dgvTBThem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTBThem.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvTBThem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTBThem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaThietBi,
+            this.dataGridViewTextBoxColumn1,
+            this.TenThietBi,
+            this.GiaThietBi,
+            this.SoLuong});
+            this.dgvTBThem.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvTBThem.Location = new System.Drawing.Point(98, 154);
+            this.dgvTBThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvTBThem.Name = "dgvTBThem";
+            this.dgvTBThem.RowHeadersWidth = 51;
+            this.dgvTBThem.RowTemplate.Height = 24;
+            this.dgvTBThem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTBThem.Size = new System.Drawing.Size(564, 107);
+            this.dgvTBThem.TabIndex = 52;
             // 
-            // STT
+            // dgvThietBi
             // 
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            // 
-            // TenDV
-            // 
-            this.TenDV.HeaderText = "Tên Dịch Vụ ";
-            this.TenDV.MinimumWidth = 6;
-            this.TenDV.Name = "TenDV";
-            // 
-            // LoaiDV
-            // 
-            this.LoaiDV.HeaderText = "Loại Dịch Vụ";
-            this.LoaiDV.MinimumWidth = 6;
-            this.LoaiDV.Name = "LoaiDV";
-            // 
-            // Dongia
-            // 
-            this.Dongia.HeaderText = "Đơn Giá";
-            this.Dongia.MinimumWidth = 6;
-            this.Dongia.Name = "Dongia";
-            // 
-            // Dangdung
-            // 
-            this.Dangdung.HeaderText = "Đang Dùng";
-            this.Dangdung.MinimumWidth = 6;
-            this.Dangdung.Name = "Dangdung";
+            this.dgvThietBi.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dgvThietBi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvThietBi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvThietBi.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvThietBi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvThietBi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaThietBi1,
+            this.Stt,
+            this.TenThietBi1,
+            this.gia});
+            this.dgvThietBi.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvThietBi.Location = new System.Drawing.Point(98, 21);
+            this.dgvThietBi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvThietBi.Name = "dgvThietBi";
+            this.dgvThietBi.RowHeadersWidth = 51;
+            this.dgvThietBi.RowTemplate.Height = 24;
+            this.dgvThietBi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvThietBi.Size = new System.Drawing.Size(564, 115);
+            this.dgvThietBi.TabIndex = 51;
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // MaThietBi
+            // 
+            this.MaThietBi.HeaderText = "MaThietBi";
+            this.MaThietBi.Name = "MaThietBi";
+            this.MaThietBi.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "STT";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // TenThietBi
+            // 
+            this.TenThietBi.HeaderText = "Tên thiết bị";
+            this.TenThietBi.Name = "TenThietBi";
+            // 
+            // GiaThietBi
+            // 
+            this.GiaThietBi.HeaderText = "Giá thiết bị";
+            this.GiaThietBi.Name = "GiaThietBi";
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.HeaderText = "Số lượng";
+            this.SoLuong.Name = "SoLuong";
+            // 
+            // MaThietBi1
+            // 
+            this.MaThietBi1.HeaderText = "MaThietBi1";
+            this.MaThietBi1.Name = "MaThietBi1";
+            this.MaThietBi1.Visible = false;
+            // 
+            // Stt
+            // 
+            this.Stt.HeaderText = "STT";
+            this.Stt.Name = "Stt";
+            // 
+            // TenThietBi1
+            // 
+            this.TenThietBi1.HeaderText = "Tên thiết bị";
+            this.TenThietBi1.Name = "TenThietBi1";
+            // 
+            // gia
+            // 
+            this.gia.HeaderText = "Giá thiết bị";
+            this.gia.Name = "gia";
+            // 
             // ThemThietBiPhong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 455);
+            this.ClientSize = new System.Drawing.Size(686, 370);
             this.Controls.Add(this.panelThemHD);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ThemThietBiPhong";
             this.Text = "ThemThietBiPhong";
             this.panelThemHD.ResumeLayout(false);
             this.panelThemHD.PerformLayout();
             this.panelThem.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTBThem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThietBi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
@@ -198,12 +301,19 @@
         private System.Windows.Forms.Label label7;
         private FontAwesome.Sharp.IconButton btnLuu;
         private System.Windows.Forms.Panel panelThem;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenDV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiDV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dongia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dangdung;
+        private System.Windows.Forms.DataGridView dgvThietBi;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.DataGridView dgvTBThem;
+        private FontAwesome.Sharp.IconButton btnThemTB;
+        private FontAwesome.Sharp.IconButton btnXoaTB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaThietBi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenThietBi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiaThietBi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaThietBi1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Stt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenThietBi1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gia;
     }
 }
