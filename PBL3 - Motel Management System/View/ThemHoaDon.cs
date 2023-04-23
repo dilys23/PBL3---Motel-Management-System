@@ -46,6 +46,8 @@ namespace PBL3___Motel_Management_System.View
             dtpThangThanhToan.MaxDate = dtEnd;
 
 
+
+
         }
         private void iconButton2_Click(object sender, EventArgs e)
         {
