@@ -193,6 +193,15 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return null;
         }
+        public string GetIdCHiTietDichVuNuocByIdPhong(string idPhong)
+        {
+            QLDAL qLDAL = new QLDAL();
+            foreach (ChiTietDichVu dv in qLDAL.GetAllChiTietDichVu())
+            {
+                if (dv.MaPhongTro == idPhong && dv.MaDichVu == "000") return dv.MaChiTietDichVu;
+            }
+            return null;
+        }
         public string TaoIdDayTro()
         {
             string id = null;

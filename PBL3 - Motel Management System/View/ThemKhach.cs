@@ -33,9 +33,10 @@ namespace PBL3___Motel_Management_System
         private void LoadForm()
         {
             QLBLL qLBLL = new QLBLL();
-            Nguoi nguoi = new Nguoi();
-            if (this.thuePhong.hopDong.MaNguoi != null)
+
+            if(this.thuePhong.hopDong.MaNguoi != null)
             {
+                Nguoi nguoi = new Nguoi();
             nguoi = qLBLL.GetNguoiByIdNguoi(thuePhong.hopDong.MaNguoi);
             txtTen.Text = nguoi.Ten;
             txtCccd.Text = nguoi.Cccd;
