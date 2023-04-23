@@ -33,11 +33,18 @@ namespace PBL3___Motel_Management_System
         private void LoadForm()
         {
             QLBLL qLBLL = new QLBLL();
+            if(this.thuePhong.hopDong.MaNguoi != "")
+            {
+
             Nguoi nguoi = new Nguoi();
             nguoi = qLBLL.GetNguoiByIdNguoi(thuePhong.hopDong.MaNguoi);
             txtTen.Text = nguoi.Ten;
             txtCccd.Text = nguoi.Cccd;
             txtSdt.Text = nguoi.Sdt;
+            txtDiaChi.Text = nguoi.Diachi;
+            if(nguoi.GioiTinh == true)rdbtnNam.Checked = true;
+            else rdbtnNu.Checked = true;
+            }
         }
         private void ThemKhach_Load(object sender, EventArgs e)
         {

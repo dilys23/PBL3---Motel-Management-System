@@ -93,7 +93,9 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ThemKhach(null,null), panelChiTiet);
+            ThuePhong tp = new ThuePhong();
+            tp.hopDong.MaNguoi = dgvThanhVien.CurrentRow.Cells[0].Value.ToString();
+            tc.openChildForm1(new ThemKhach(tp, LoadForm), panelChiTiet);
         }
 
         private void panPhong1_Paint(object sender, PaintEventArgs e)
