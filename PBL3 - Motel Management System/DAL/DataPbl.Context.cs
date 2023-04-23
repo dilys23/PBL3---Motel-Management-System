@@ -25,19 +25,19 @@ namespace PBL3___Motel_Management_System.DAL
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ChiTietDichVu> ChiTietDichVus { get; set; }
-        public virtual DbSet<ChiTietSuDungDichVu> ChiTietSuDungDichVus { get; set; }
-        public virtual DbSet<ChiTietThietBi> ChiTietThietBis { get; set; }
-        public virtual DbSet<DayTro> DayTroes { get; set; }
-        public virtual DbSet<DichVu> DichVus { get; set; }
-        public virtual DbSet<HoaDon> HoaDons { get; set; }
-        public virtual DbSet<HopDong> HopDongs { get; set; }
-        public virtual DbSet<Nguoi> Nguois { get; set; }
-        public virtual DbSet<PhongTro> PhongTroes { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<TaiKhoan> TaiKhoans { get; set; }
-        public virtual DbSet<ThanhVienTrongPhong> ThanhVienTrongPhongs { get; set; }
-        public virtual DbSet<ThietBi> ThietBis { get; set; }
-        public virtual DbSet<VaiTro> VaiTroes { get; set; }
+        public virtual DbSet<ChiTietDichVu> ChiTietDichVu { get; set; }
+        public virtual DbSet<ChiTietSuDungDichVu> ChiTietSuDungDichVu { get; set; }
+        public virtual DbSet<ChiTietThietBi> ChiTietThietBi { get; set; }
+        public virtual DbSet<DayTro> DayTro { get; set; }
+        public virtual DbSet<DichVu> DichVu { get; set; }
+        public virtual DbSet<HoaDon> HoaDon { get; set; }
+        public virtual DbSet<HopDong> HopDong { get; set; }
+        public virtual DbSet<Nguoi> Nguoi { get; set; }
+        public virtual DbSet<PhongTro> PhongTro { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<TaiKhoan> TaiKhoan { get; set; }
+        public virtual DbSet<ThanhVienTrongPhong> ThanhVienTrongPhong { get; set; }
+        public virtual DbSet<ThietBi> ThietBi { get; set; }
+        public virtual DbSet<VaiTro> VaiTro { get; set; }
     }
 }

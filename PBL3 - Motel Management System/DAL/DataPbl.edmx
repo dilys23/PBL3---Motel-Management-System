@@ -411,7 +411,7 @@
           <Property Name="MaChiTietDichVu" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MaDichVu" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MaPhongTro" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="ChiTietSuDungDichVus" Relationship="Self.FK__ChiTietSu__MaCHi__5070F446" FromRole="ChiTietDichVu" ToRole="ChiTietSuDungDichVu" />
+          <NavigationProperty Name="ChiTietSuDungDichVu" Relationship="Self.FK__ChiTietSu__MaCHi__5070F446" FromRole="ChiTietDichVu" ToRole="ChiTietSuDungDichVu" />
           <NavigationProperty Name="DichVu" Relationship="Self.FK_MaDichVuChiTietDichVu" FromRole="ChiTietDichVu" ToRole="DichVu" />
           <NavigationProperty Name="PhongTro" Relationship="Self.FK_MaPhongTroTietDichVu" FromRole="ChiTietDichVu" ToRole="PhongTro" />
         </EntityType>
@@ -450,7 +450,7 @@
           <Property Name="TenThanhPho" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="MaChuTro" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Nguoi" Relationship="Self.FK__DayTro__MaChuTro__534D60F1" FromRole="DayTro" ToRole="Nguoi" />
-          <NavigationProperty Name="PhongTroes" Relationship="Self.FK_MaDayTroPhongTro" FromRole="DayTro" ToRole="PhongTro" />
+          <NavigationProperty Name="PhongTro" Relationship="Self.FK_MaDayTroPhongTro" FromRole="DayTro" ToRole="PhongTro" />
         </EntityType>
         <EntityType Name="DichVu">
           <Key>
@@ -459,7 +459,7 @@
           <Property Name="MaDichVu" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TenDichVu" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="GiaDichVu" Type="Double" Nullable="false" />
-          <NavigationProperty Name="ChiTietDichVus" Relationship="Self.FK_MaDichVuChiTietDichVu" FromRole="DichVu" ToRole="ChiTietDichVu" />
+          <NavigationProperty Name="ChiTietDichVu" Relationship="Self.FK_MaDichVuChiTietDichVu" FromRole="DichVu" ToRole="ChiTietDichVu" />
         </EntityType>
         <EntityType Name="HoaDon">
           <Key>
@@ -500,11 +500,11 @@
           <Property Name="Diachi" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
           <Property Name="NgaySinh" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="GioiTinh" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="DayTroes" Relationship="Self.FK__DayTro__MaChuTro__534D60F1" FromRole="Nguoi" ToRole="DayTro" />
-          <NavigationProperty Name="HoaDons" Relationship="Self.FK__HoaDon__NguoiTao__5535A963" FromRole="Nguoi" ToRole="HoaDon" />
-          <NavigationProperty Name="HopDongs" Relationship="Self.FK_MaNguoiHopDong" FromRole="Nguoi" ToRole="HopDong" />
-          <NavigationProperty Name="ThanhVienTrongPhongs" Relationship="Self.FK_MaNguoiThanhVienTrongPhong" FromRole="Nguoi" ToRole="ThanhVienTrongPhong" />
-          <NavigationProperty Name="VaiTroes" Relationship="Self.FK_MaNguoiVaiTro" FromRole="Nguoi" ToRole="VaiTro" />
+          <NavigationProperty Name="DayTro" Relationship="Self.FK__DayTro__MaChuTro__534D60F1" FromRole="Nguoi" ToRole="DayTro" />
+          <NavigationProperty Name="HoaDon" Relationship="Self.FK__HoaDon__NguoiTao__5535A963" FromRole="Nguoi" ToRole="HoaDon" />
+          <NavigationProperty Name="HopDong" Relationship="Self.FK_MaNguoiHopDong" FromRole="Nguoi" ToRole="HopDong" />
+          <NavigationProperty Name="ThanhVienTrongPhong" Relationship="Self.FK_MaNguoiThanhVienTrongPhong" FromRole="Nguoi" ToRole="ThanhVienTrongPhong" />
+          <NavigationProperty Name="VaiTro" Relationship="Self.FK_MaNguoiVaiTro" FromRole="Nguoi" ToRole="VaiTro" />
         </EntityType>
         <EntityType Name="PhongTro">
           <Key>
@@ -517,14 +517,14 @@
           <Property Name="TinhTrang" Type="Boolean" Nullable="false" />
           <Property Name="MaDayTro" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ToiDa" Type="Int32" />
-          <NavigationProperty Name="ChiTietDichVus" Relationship="Self.FK_MaPhongTroTietDichVu" FromRole="PhongTro" ToRole="ChiTietDichVu" />
-          <NavigationProperty Name="ChiTietThietBis" Relationship="Self.FK_MaPhongTroChiTietThietBi" FromRole="PhongTro" ToRole="ChiTietThietBi" />
+          <NavigationProperty Name="ChiTietDichVu" Relationship="Self.FK_MaPhongTroTietDichVu" FromRole="PhongTro" ToRole="ChiTietDichVu" />
+          <NavigationProperty Name="ChiTietThietBi" Relationship="Self.FK_MaPhongTroChiTietThietBi" FromRole="PhongTro" ToRole="ChiTietThietBi" />
           <NavigationProperty Name="DayTro" Relationship="Self.FK_MaDayTroPhongTro" FromRole="PhongTro" ToRole="DayTro" />
-          <NavigationProperty Name="HoaDons" Relationship="Self.FK__HoaDon__MaPhongT__5441852A" FromRole="PhongTro" ToRole="HoaDon" />
-          <NavigationProperty Name="HopDongs" Relationship="Self.FK_MaPhongTroHopDong" FromRole="PhongTro" ToRole="HopDong" />
-          <NavigationProperty Name="ThanhVienTrongPhongs" Relationship="Self.FK_MaPhongTroThanhVienTrongPhong" FromRole="PhongTro" ToRole="ThanhVienTrongPhong" />
+          <NavigationProperty Name="HoaDon" Relationship="Self.FK__HoaDon__MaPhongT__5441852A" FromRole="PhongTro" ToRole="HoaDon" />
+          <NavigationProperty Name="HopDong" Relationship="Self.FK_MaPhongTroHopDong" FromRole="PhongTro" ToRole="HopDong" />
+          <NavigationProperty Name="ThanhVienTrongPhong" Relationship="Self.FK_MaPhongTroThanhVienTrongPhong" FromRole="PhongTro" ToRole="ThanhVienTrongPhong" />
         </EntityType>
-        <EntityType Name="sysdiagram">
+        <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
@@ -541,7 +541,7 @@
           <Property Name="TenTaiKhoan" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MatKhau" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MaTaiKhoan" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="VaiTroes" Relationship="Self.FK_MaTaiKhoanVaiTro" FromRole="TaiKhoan" ToRole="VaiTro" />
+          <NavigationProperty Name="VaiTro" Relationship="Self.FK_MaTaiKhoanVaiTro" FromRole="TaiKhoan" ToRole="VaiTro" />
         </EntityType>
         <EntityType Name="ThanhVienTrongPhong">
           <Key>
@@ -560,7 +560,7 @@
           <Property Name="MaThietBi" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TenThietBi" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="GiaThietBi" Type="Double" Nullable="false" />
-          <NavigationProperty Name="ChiTietThietBis" Relationship="Self.FK_MaThietBiChiTietThietBi" FromRole="ThietBi" ToRole="ChiTietThietBi" />
+          <NavigationProperty Name="ChiTietThietBi" Relationship="Self.FK_MaThietBiChiTietThietBi" FromRole="ThietBi" ToRole="ChiTietThietBi" />
         </EntityType>
         <EntityType Name="VaiTro">
           <Key>
@@ -753,79 +753,79 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="DataPbl" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ChiTietDichVus" EntityType="Self.ChiTietDichVu" />
-          <EntitySet Name="ChiTietSuDungDichVus" EntityType="Self.ChiTietSuDungDichVu" />
-          <EntitySet Name="ChiTietThietBis" EntityType="Self.ChiTietThietBi" />
-          <EntitySet Name="DayTroes" EntityType="Self.DayTro" />
-          <EntitySet Name="DichVus" EntityType="Self.DichVu" />
-          <EntitySet Name="HoaDons" EntityType="Self.HoaDon" />
-          <EntitySet Name="HopDongs" EntityType="Self.HopDong" />
-          <EntitySet Name="Nguois" EntityType="Self.Nguoi" />
-          <EntitySet Name="PhongTroes" EntityType="Self.PhongTro" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-          <EntitySet Name="TaiKhoans" EntityType="Self.TaiKhoan" />
-          <EntitySet Name="ThanhVienTrongPhongs" EntityType="Self.ThanhVienTrongPhong" />
-          <EntitySet Name="ThietBis" EntityType="Self.ThietBi" />
-          <EntitySet Name="VaiTroes" EntityType="Self.VaiTro" />
+          <EntitySet Name="ChiTietDichVu" EntityType="Self.ChiTietDichVu" />
+          <EntitySet Name="ChiTietSuDungDichVu" EntityType="Self.ChiTietSuDungDichVu" />
+          <EntitySet Name="ChiTietThietBi" EntityType="Self.ChiTietThietBi" />
+          <EntitySet Name="DayTro" EntityType="Self.DayTro" />
+          <EntitySet Name="DichVu" EntityType="Self.DichVu" />
+          <EntitySet Name="HoaDon" EntityType="Self.HoaDon" />
+          <EntitySet Name="HopDong" EntityType="Self.HopDong" />
+          <EntitySet Name="Nguoi" EntityType="Self.Nguoi" />
+          <EntitySet Name="PhongTro" EntityType="Self.PhongTro" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" />
+          <EntitySet Name="ThanhVienTrongPhong" EntityType="Self.ThanhVienTrongPhong" />
+          <EntitySet Name="ThietBi" EntityType="Self.ThietBi" />
+          <EntitySet Name="VaiTro" EntityType="Self.VaiTro" />
           <AssociationSet Name="FK__ChiTietSu__MaCHi__5070F446" Association="Self.FK__ChiTietSu__MaCHi__5070F446">
-            <End Role="ChiTietDichVu" EntitySet="ChiTietDichVus" />
-            <End Role="ChiTietSuDungDichVu" EntitySet="ChiTietSuDungDichVus" />
+            <End Role="ChiTietDichVu" EntitySet="ChiTietDichVu" />
+            <End Role="ChiTietSuDungDichVu" EntitySet="ChiTietSuDungDichVu" />
           </AssociationSet>
           <AssociationSet Name="FK_MaDichVuChiTietDichVu" Association="Self.FK_MaDichVuChiTietDichVu">
-            <End Role="DichVu" EntitySet="DichVus" />
-            <End Role="ChiTietDichVu" EntitySet="ChiTietDichVus" />
+            <End Role="DichVu" EntitySet="DichVu" />
+            <End Role="ChiTietDichVu" EntitySet="ChiTietDichVu" />
           </AssociationSet>
           <AssociationSet Name="FK_MaPhongTroTietDichVu" Association="Self.FK_MaPhongTroTietDichVu">
-            <End Role="PhongTro" EntitySet="PhongTroes" />
-            <End Role="ChiTietDichVu" EntitySet="ChiTietDichVus" />
+            <End Role="PhongTro" EntitySet="PhongTro" />
+            <End Role="ChiTietDichVu" EntitySet="ChiTietDichVu" />
           </AssociationSet>
           <AssociationSet Name="FK_MaPhongTroChiTietThietBi" Association="Self.FK_MaPhongTroChiTietThietBi">
-            <End Role="PhongTro" EntitySet="PhongTroes" />
-            <End Role="ChiTietThietBi" EntitySet="ChiTietThietBis" />
+            <End Role="PhongTro" EntitySet="PhongTro" />
+            <End Role="ChiTietThietBi" EntitySet="ChiTietThietBi" />
           </AssociationSet>
           <AssociationSet Name="FK_MaThietBiChiTietThietBi" Association="Self.FK_MaThietBiChiTietThietBi">
-            <End Role="ThietBi" EntitySet="ThietBis" />
-            <End Role="ChiTietThietBi" EntitySet="ChiTietThietBis" />
+            <End Role="ThietBi" EntitySet="ThietBi" />
+            <End Role="ChiTietThietBi" EntitySet="ChiTietThietBi" />
           </AssociationSet>
           <AssociationSet Name="FK__DayTro__MaChuTro__534D60F1" Association="Self.FK__DayTro__MaChuTro__534D60F1">
-            <End Role="Nguoi" EntitySet="Nguois" />
-            <End Role="DayTro" EntitySet="DayTroes" />
+            <End Role="Nguoi" EntitySet="Nguoi" />
+            <End Role="DayTro" EntitySet="DayTro" />
           </AssociationSet>
           <AssociationSet Name="FK_MaDayTroPhongTro" Association="Self.FK_MaDayTroPhongTro">
-            <End Role="DayTro" EntitySet="DayTroes" />
-            <End Role="PhongTro" EntitySet="PhongTroes" />
+            <End Role="DayTro" EntitySet="DayTro" />
+            <End Role="PhongTro" EntitySet="PhongTro" />
           </AssociationSet>
           <AssociationSet Name="FK__HoaDon__MaPhongT__5441852A" Association="Self.FK__HoaDon__MaPhongT__5441852A">
-            <End Role="PhongTro" EntitySet="PhongTroes" />
-            <End Role="HoaDon" EntitySet="HoaDons" />
+            <End Role="PhongTro" EntitySet="PhongTro" />
+            <End Role="HoaDon" EntitySet="HoaDon" />
           </AssociationSet>
           <AssociationSet Name="FK__HoaDon__NguoiTao__5535A963" Association="Self.FK__HoaDon__NguoiTao__5535A963">
-            <End Role="Nguoi" EntitySet="Nguois" />
-            <End Role="HoaDon" EntitySet="HoaDons" />
+            <End Role="Nguoi" EntitySet="Nguoi" />
+            <End Role="HoaDon" EntitySet="HoaDon" />
           </AssociationSet>
           <AssociationSet Name="FK_MaNguoiHopDong" Association="Self.FK_MaNguoiHopDong">
-            <End Role="Nguoi" EntitySet="Nguois" />
-            <End Role="HopDong" EntitySet="HopDongs" />
+            <End Role="Nguoi" EntitySet="Nguoi" />
+            <End Role="HopDong" EntitySet="HopDong" />
           </AssociationSet>
           <AssociationSet Name="FK_MaPhongTroHopDong" Association="Self.FK_MaPhongTroHopDong">
-            <End Role="PhongTro" EntitySet="PhongTroes" />
-            <End Role="HopDong" EntitySet="HopDongs" />
+            <End Role="PhongTro" EntitySet="PhongTro" />
+            <End Role="HopDong" EntitySet="HopDong" />
           </AssociationSet>
           <AssociationSet Name="FK_MaNguoiThanhVienTrongPhong" Association="Self.FK_MaNguoiThanhVienTrongPhong">
-            <End Role="Nguoi" EntitySet="Nguois" />
-            <End Role="ThanhVienTrongPhong" EntitySet="ThanhVienTrongPhongs" />
+            <End Role="Nguoi" EntitySet="Nguoi" />
+            <End Role="ThanhVienTrongPhong" EntitySet="ThanhVienTrongPhong" />
           </AssociationSet>
           <AssociationSet Name="FK_MaNguoiVaiTro" Association="Self.FK_MaNguoiVaiTro">
-            <End Role="Nguoi" EntitySet="Nguois" />
-            <End Role="VaiTro" EntitySet="VaiTroes" />
+            <End Role="Nguoi" EntitySet="Nguoi" />
+            <End Role="VaiTro" EntitySet="VaiTro" />
           </AssociationSet>
           <AssociationSet Name="FK_MaPhongTroThanhVienTrongPhong" Association="Self.FK_MaPhongTroThanhVienTrongPhong">
-            <End Role="PhongTro" EntitySet="PhongTroes" />
-            <End Role="ThanhVienTrongPhong" EntitySet="ThanhVienTrongPhongs" />
+            <End Role="PhongTro" EntitySet="PhongTro" />
+            <End Role="ThanhVienTrongPhong" EntitySet="ThanhVienTrongPhong" />
           </AssociationSet>
           <AssociationSet Name="FK_MaTaiKhoanVaiTro" Association="Self.FK_MaTaiKhoanVaiTro">
-            <End Role="TaiKhoan" EntitySet="TaiKhoans" />
-            <End Role="VaiTro" EntitySet="VaiTroes" />
+            <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+            <End Role="VaiTro" EntitySet="VaiTro" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -834,7 +834,7 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="DataPblModelStoreContainer" CdmEntityContainer="DataPbl">
-          <EntitySetMapping Name="ChiTietDichVus">
+          <EntitySetMapping Name="ChiTietDichVu">
             <EntityTypeMapping TypeName="DataPblModel.ChiTietDichVu">
               <MappingFragment StoreEntitySet="ChiTietDichVu">
                 <ScalarProperty Name="MaChiTietDichVu" ColumnName="MaChiTietDichVu" />
@@ -843,7 +843,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ChiTietSuDungDichVus">
+          <EntitySetMapping Name="ChiTietSuDungDichVu">
             <EntityTypeMapping TypeName="DataPblModel.ChiTietSuDungDichVu">
               <MappingFragment StoreEntitySet="ChiTietSuDungDichVu">
                 <ScalarProperty Name="MaChiTietSuDungDichVu" ColumnName="MaChiTietSuDungDichVu" />
@@ -856,7 +856,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ChiTietThietBis">
+          <EntitySetMapping Name="ChiTietThietBi">
             <EntityTypeMapping TypeName="DataPblModel.ChiTietThietBi">
               <MappingFragment StoreEntitySet="ChiTietThietBi">
                 <ScalarProperty Name="MaChiTietThietBi" ColumnName="MaChiTietThietBi" />
@@ -866,7 +866,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="DayTroes">
+          <EntitySetMapping Name="DayTro">
             <EntityTypeMapping TypeName="DataPblModel.DayTro">
               <MappingFragment StoreEntitySet="DayTro">
                 <ScalarProperty Name="MaDayTro" ColumnName="MaDayTro" />
@@ -878,7 +878,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="DichVus">
+          <EntitySetMapping Name="DichVu">
             <EntityTypeMapping TypeName="DataPblModel.DichVu">
               <MappingFragment StoreEntitySet="DichVu">
                 <ScalarProperty Name="MaDichVu" ColumnName="MaDichVu" />
@@ -887,7 +887,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="HoaDons">
+          <EntitySetMapping Name="HoaDon">
             <EntityTypeMapping TypeName="DataPblModel.HoaDon">
               <MappingFragment StoreEntitySet="HoaDon">
                 <ScalarProperty Name="MaHoaDon" ColumnName="MaHoaDon" />
@@ -900,7 +900,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="HopDongs">
+          <EntitySetMapping Name="HopDong">
             <EntityTypeMapping TypeName="DataPblModel.HopDong">
               <MappingFragment StoreEntitySet="HopDong">
                 <ScalarProperty Name="MaHopDong" ColumnName="MaHopDong" />
@@ -913,7 +913,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Nguois">
+          <EntitySetMapping Name="Nguoi">
             <EntityTypeMapping TypeName="DataPblModel.Nguoi">
               <MappingFragment StoreEntitySet="Nguoi">
                 <ScalarProperty Name="MaNguoi" ColumnName="MaNguoi" />
@@ -926,7 +926,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PhongTroes">
+          <EntitySetMapping Name="PhongTro">
             <EntityTypeMapping TypeName="DataPblModel.PhongTro">
               <MappingFragment StoreEntitySet="PhongTro">
                 <ScalarProperty Name="MaPhongTro" ColumnName="MaPhongTro" />
@@ -940,7 +940,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="DataPblModel.sysdiagram">
+            <EntityTypeMapping TypeName="DataPblModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -950,7 +950,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TaiKhoans">
+          <EntitySetMapping Name="TaiKhoan">
             <EntityTypeMapping TypeName="DataPblModel.TaiKhoan">
               <MappingFragment StoreEntitySet="TaiKhoan">
                 <ScalarProperty Name="TenTaiKhoan" ColumnName="TenTaiKhoan" />
@@ -959,7 +959,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ThanhVienTrongPhongs">
+          <EntitySetMapping Name="ThanhVienTrongPhong">
             <EntityTypeMapping TypeName="DataPblModel.ThanhVienTrongPhong">
               <MappingFragment StoreEntitySet="ThanhVienTrongPhong">
                 <ScalarProperty Name="MaThanhVienTrongPhong" ColumnName="MaThanhVienTrongPhong" />
@@ -968,7 +968,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ThietBis">
+          <EntitySetMapping Name="ThietBi">
             <EntityTypeMapping TypeName="DataPblModel.ThietBi">
               <MappingFragment StoreEntitySet="ThietBi">
                 <ScalarProperty Name="MaThietBi" ColumnName="MaThietBi" />
@@ -977,7 +977,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="VaiTroes">
+          <EntitySetMapping Name="VaiTro">
             <EntityTypeMapping TypeName="DataPblModel.VaiTro">
               <MappingFragment StoreEntitySet="VaiTro">
                 <ScalarProperty Name="MaVaiTro" ColumnName="MaVaiTro" />
@@ -1000,7 +1000,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
