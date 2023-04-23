@@ -33,7 +33,7 @@ namespace PBL3___Motel_Management_System
         private void LoadForm()
         {
             QLBLL qLBLL = new QLBLL();
-            if(this.thuePhong.hopDong.MaNguoi != "")
+            if(this.thuePhong.hopDong.MaNguoi != null)
             {
 
             Nguoi nguoi = new Nguoi();
