@@ -62,8 +62,9 @@ namespace PBL3___Motel_Management_System.View
         private void btnThem_Click(object sender, EventArgs e)
         {
             string idDay = dtgDayTro.CurrentRow.Cells[0].Value.ToString();
-            tc.openChildForm1(new ChitietDay(idDay), panelDay);
-
+            tc.openChildForm1(new ChitietDay(idDay,LoadForm), panelDay);
+           
+           
         }
 
         private void btnThemday_Click(object sender, EventArgs e)
@@ -83,7 +84,7 @@ namespace PBL3___Motel_Management_System.View
 
         private void Daytro_Load(object sender, EventArgs e)
         {
-
+            
         }
 
       

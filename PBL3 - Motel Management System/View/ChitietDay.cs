@@ -17,13 +17,14 @@ namespace PBL3___Motel_Management_System.View
     {
         
         private string IdDay;
-      
-        public ChitietDay(string IdDay)
+        public Loader Loader;
+        public ChitietDay(string IdDay,Loader Loader)
         {
             InitializeComponent();
             this.IdDay = IdDay;
             QLBLL qLBLL = new QLBLL();
             LoadForm(IdDay);
+            this.Loader = Loader;
         }
         TrangChu tc = new TrangChu();
         private void LoadForm(string IdDay)
@@ -66,6 +67,7 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnTroVe_Click(object sender, EventArgs e)
         {
+            Loader(null);
             this.Close();
         }
 
