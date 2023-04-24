@@ -31,9 +31,9 @@ namespace PBL3___Motel_Management_System.View
             Nguoi nguoi = new Nguoi();
             nguoi = tp.hopDong.Nguoi;
             DayTro dt = new DayTro();
-            dt= qLBLL.GetDayTroByIdPhong(tp.hopDong.PhongTro.MaPhongTro);
+            dt= qLBLL.GetDayTroByIdPhong(tp.hopDong.MaPhongTro);
             PhongTro pt = new PhongTro();
-            pt= qLBLL.GetPhongTroByIdPhong(tp.hopDong.PhongTro.MaPhongTro);
+            pt= qLBLL.GetPhongTroByIdPhong(tp.hopDong.MaPhongTro);
             txtHoVaTen.Text = nguoi.Ten;
             txtTenDay.Text = dt.TenDayTro;
             txtTenPhong.Text = pt.TenPhongTro;
@@ -76,14 +76,21 @@ namespace PBL3___Motel_Management_System.View
             this.Close();
         }
 
-        private void btnXacNhan_Click(object sender, EventArgs e)
+        public void btnXacNhan_Click(object sender, EventArgs e)
         {
             QLBLL qLBLL = new QLBLL();  
             Nguoi nguoi = new Nguoi();
             nguoi = tp.hopDong.Nguoi;
-            qLBLL.AddNguoiBll(nguoi);
+            try
+            {
+                qLBLL.AddNguoiBll(nguoi);
+            }
+            catch (Exception ex)
+            {
+                qLBLL.UpdateNguoiBLL(nguoi);
+            }
             PhongTro pt = new PhongTro();
-            pt = qLBLL.GetPhongTroByIdPhong(tp.hopDong.PhongTro.MaPhongTro);
+            pt = qLBLL.GetPhongTroByIdPhong(tp.hopDong.MaPhongTro);
             pt.TinhTrang = true;
             qLBLL.UpdatePTBLL(pt);
             ThanhVienTrongPhong tvtp = new ThanhVienTrongPhong();
@@ -96,45 +103,28 @@ namespace PBL3___Motel_Management_System.View
                 ChiTietDichVu ctdv = new ChiTietDichVu();
                 ctdv.MaChiTietDichVu = qLBLL.TaoIdChiTietDichVu();
                 ctdv.MaDichVu = iddv;
-                ctdv.MaPhongTro = tp.hopDong.PhongTro.MaPhongTro;
-                ctdv.ChiSoCu = 0;
-                ctdv.ChiSoMoi = 0;
-                ctdv.ThoiGian = tp.hopDong.NgayBatDau;
+                ctdv.MaPhongTro = tp.hopDong.MaPhongTro;
                 qLBLL.AddChiTietDichVuBll(ctdv);
-            }
-            foreach (string idtb in tp.DsThietBi)
-            {
-                ChiTietThietBi cttb = new ChiTietThietBi();
-                cttb.MaChiTietThietBi = qLBLL.TaoIdChiTietThietBi();
-                cttb.MaThietBi = idtb;
-                cttb.MaPhongTro = tp.hopDong.PhongTro.MaPhongTro;
-                cttb.SoLuong = 0;
-                //ctdv.ChiSoMoi = 0;
-                //ctdv.ThoiGian = tp.hopDong.NgayBatDau;
-                qLBLL.AddChiTietThietBiBll(cttb);
             }
             HopDong hd = new HopDong();
             hd.MaHopDong = tp.hopDong.MaHopDong;
             hd.MaNguoi = tp.hopDong.Nguoi.MaNguoi;
-            hd.MaPhongTro = tp.hopDong.PhongTro.MaPhongTro;
+            hd.MaPhongTro = tp.hopDong.MaPhongTro;
             hd.NgayBatDau = tp.hopDong.NgayBatDau;
             hd.NgayKetThuc = tp.hopDong.NgayKetThuc;
             hd.TienCoc = tp.hopDong.TienCoc;
-            qLBLL.AddHdBll(hd);
+            hd.TinhTrang = true;
+            try
+            {
+                qLBLL.AddHdBll(hd);
+            }
+            catch(Exception ex)
+            {
+                qLBLL.UpdateHopDongBLL(hd);
+            }
             MessageBox.Show("Xác nhận thuê phòng thành công", "Thông báo",MessageBoxButtons.OK); 
             this.loader(null);
             this.Close();
-
-
-
-
-
-
-
-
-
-
-
         }
 
         private void label2_Click(object sender, EventArgs e)

@@ -18,6 +18,7 @@ namespace PBL3___Motel_Management_System.DAL
         public DichVu()
         {
             this.ChiTietDichVu = new HashSet<ChiTietDichVu>();
+            this.DichVuCoDinh = new HashSet<DichVuCoDinh>();
         }
     
         public string MaDichVu { get; set; }
@@ -26,5 +27,7 @@ namespace PBL3___Motel_Management_System.DAL
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietDichVu> ChiTietDichVu { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DichVuCoDinh> DichVuCoDinh { get; set; }
     }
 }

@@ -24,6 +24,10 @@ namespace PBL3___Motel_Management_System
             this.Loader = loader;
             QLBLL qLBLL = new QLBLL();
             DichVu dv = qLBLL.GetDVByIdDV(idDv);
+            if(idDv == "001" || idDv == "000")
+            {
+                txtTenDichVu.ReadOnly = true;
+            }
             txtGiaDichVu.Text = dv.GiaDichVu.ToString();
             txtTenDichVu.Text = dv.TenDichVu;
 

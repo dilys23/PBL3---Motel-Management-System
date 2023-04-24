@@ -50,13 +50,13 @@ namespace PBL3___Motel_Management_System.View
                 dgvDichVu.Rows.Add(dv.MaDichVu,i++,dv.TenDichVu,dv.GiaDichVu);
             }
             i=1;
-            foreach(string idThietBi in qLBLL.GetAllIdThietBiByIdPhong(this.idPhong))
-            {
+            foreach(ChiTietThietBi cttb in qLBLL.GetChiTietThietBiByIdPhong(idPhong))
+            {   
                 ThietBi tb = new ThietBi();
-                tb = qLBLL.GetTBByIdTB(idThietBi);
-                dgvThietBi.Rows.Add(tb.MaThietBi,i++,tb.TenThietBi,tb.GiaThietBi);
+                tb = qLBLL.GetThietBiByIdThietBi(cttb.MaThietBi);
+                dgvThietBi.Rows.Add(tb.MaThietBi,i++,tb.TenThietBi,tb.GiaThietBi,cttb.SoLuong);
             }
-            i = 1;
+            
 
         }
         private void btnThem_Click(object sender, EventArgs e)
@@ -71,7 +71,7 @@ namespace PBL3___Motel_Management_System.View
                 string IdPhong = qLBLL.GetIdPhongByIdNguoi(IdThanhVien);
                 ThuePhong tp = new ThuePhong();
                 tp.hopDong.MaPhongTro = idPhong;
-                tc.openChildForm1(new ThemKhach(null,tp, LoadForm), panelChiTiet);
+                tc.openChildForm1(new ThemKhach(tp, LoadForm), panelChiTiet);
             }
             else
             {
@@ -86,8 +86,6 @@ namespace PBL3___Motel_Management_System.View
         private void btnThemTB_Click(object sender, EventArgs e)
         {
             QLBLL qLBLL = new QLBLL();
-            string IdTB = dgvThietBi.Rows[0].Cells[0].Value.ToString();
-            string IdPhong = qLBLL.GetIdPhongByIdTB(IdTB);
             ThuePhong tp = new ThuePhong();
             tp.hopDong.MaPhongTro = idPhong;
             tc.openChildForm1(new ThemThietBiPhong(tp, LoadForm), panelChiTiet);
@@ -95,8 +93,9 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            string idKhach = dgvThanhVien.CurrentRow.Cells[0].Value.ToString(); 
-            tc.openChildForm1(new ThemKhach(idKhach,null,LoadForm), panelChiTiet);
+            ThuePhong tp = new ThuePhong();
+            tp.hopDong.MaNguoi = dgvThanhVien.CurrentRow.Cells[0].Value.ToString();
+            tc.openChildForm1(new ThemKhach(tp, LoadForm), panelChiTiet);
         }
 
         private void panPhong1_Paint(object sender, PaintEventArgs e)

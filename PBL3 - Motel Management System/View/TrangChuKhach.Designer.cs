@@ -41,7 +41,7 @@
             this.btnMenu = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelDesktop.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panelMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelTitle.SuspendLayout();
             this.paneMenu.SuspendLayout();
@@ -128,6 +128,7 @@
             this.btnHopDong.Tag = "Hợp đồng";
             this.btnHopDong.Text = "   Hợp đồng";
             this.btnHopDong.UseVisualStyleBackColor = true;
+            this.btnHopDong.Click += new System.EventHandler(this.btnHopDong_Click);
             // 
             // btnNuoc
             // 
@@ -242,7 +243,7 @@
             // panelDesktop
             // 
             this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
-            this.panelDesktop.Controls.Add(this.panel2);
+            this.panelDesktop.Controls.Add(this.panelMain);
             this.panelDesktop.Controls.Add(this.label3);
             this.panelDesktop.Controls.Add(this.label4);
             this.panelDesktop.Controls.Add(this.textBox2);
@@ -253,15 +254,15 @@
             this.panelDesktop.Size = new System.Drawing.Size(1003, 634);
             this.panelDesktop.TabIndex = 8;
             // 
-            // panel2
+            // panelMain
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Location = new System.Drawing.Point(24, 74);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(950, 481);
-            this.panel2.TabIndex = 5;
+            this.panelMain.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panelMain.Controls.Add(this.label5);
+            this.panelMain.Controls.Add(this.dataGridView1);
+            this.panelMain.Location = new System.Drawing.Point(24, 74);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(950, 481);
+            this.panelMain.TabIndex = 5;
             // 
             // label5
             // 
@@ -439,8 +440,8 @@
             this.panel1.PerformLayout();
             this.panelDesktop.ResumeLayout(false);
             this.panelDesktop.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panelMain.ResumeLayout(false);
+            this.panelMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
@@ -473,7 +474,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridView1;
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBL3___Motel_Management_System.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,8 @@ namespace PBL3___Motel_Management_System.View
 {
     public partial class TrangChuKhach : Form
     {
+        private ThuePhong tp;
+        private Loader loader;
         private int borderSize = 2;
         private Size formSize;
         public TrangChuKhach()
@@ -219,6 +222,13 @@ namespace PBL3___Motel_Management_System.View
 
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        TrangChu tc = new TrangChu();
+        private void btnHopDong_Click(object sender, EventArgs e)
+        {
+            HoaDon hd = new HoaDon();
+            hd.btnXoa.Visible = false;
+            tc.openChildForm1(hd, panelMain);
         }
     }
 }

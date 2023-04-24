@@ -22,13 +22,14 @@ namespace PBL3___Motel_Management_System
             InitializeComponent();
             this.tp=tp;
             this.loader=loader;
+            txtTienCoc.Text = tp.hopDong.TienCoc.ToString();
         }
         private void Back(string txt)
         {
             this.loader(null);
             this.Close();
         }
-
+        
         private void ThemHD_Load(object sender, EventArgs e)
         {
 
@@ -43,7 +44,7 @@ namespace PBL3___Motel_Management_System
 
         private void btnThemKhach_Click_1(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ThemKhach(null,null, null), panelThemHD);
+            tc.openChildForm1(new ThemKhach(null, null), panelThemHD);
         }
 
         private void iconButton2_Click(object sender, EventArgs e)

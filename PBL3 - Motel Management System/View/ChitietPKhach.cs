@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System.View
 {
-    public partial class SuaHopDong : Form
+    public partial class ChitietPKhach : Form
     {
-        public SuaHopDong()
+        public ChitietPKhach()
         {
             InitializeComponent();
-        }
-        TrangChu tc = new TrangChu();
-        private void btnThemKhach_Click(object sender, EventArgs e)
-        {
-            tc.openChildForm1(new ThemKhach(null, null), panelThemHD);
         }
     }
 }

@@ -38,7 +38,7 @@ namespace PBL3___Motel_Management_System
                 new DataColumn{ColumnName = "Tên phòng trọ",DataType = typeof(string)},
                 new DataColumn{ColumnName = "Giá tiền",DataType = typeof(double)},
                 new DataColumn{ColumnName = "Diện tích",DataType = typeof(double)},
-                new DataColumn{ColumnName = "Tình trạng",DataType = typeof(bool)},
+                new DataColumn{ColumnName = "Tình trạng",DataType = typeof(string)},
                 new DataColumn{ColumnName = "Số người hiện có",DataType = typeof(int)},
                 new DataColumn{ColumnName = "Số người tối đa",DataType = typeof(string)},
                 new DataColumn{ColumnName = "Tên dãy",DataType = typeof(string)},
@@ -51,7 +51,14 @@ namespace PBL3___Motel_Management_System
             {
             foreach(ViewPhongTro pt in qLBLL.DgvPhongTro(null))
             {
-                dt.Rows.Add(pt.MaPhongTro,pt.Stt,pt.TenPhongTro,pt.GiaTien,pt.DienTich,pt.TinhTrang,pt.SoNguoiHienCo,pt.SoNguoiToiDa,qLBLL.GetDayTroByIdPhong(pt.MaPhongTro).TenDayTro);
+                    string TinhTrang;
+                    HopDong hd = qLBLL.GetHopDongByIdPhong(pt.MaPhongTro);
+                    if (hd == null) TinhTrang = "Còn trống";
+                    else if (hd.TinhTrang == true) TinhTrang  = "Đã cho thuê";
+                    else TinhTrang = "Đã cọc";
+
+
+                dt.Rows.Add(pt.MaPhongTro,pt.Stt,pt.TenPhongTro,pt.GiaTien,pt.DienTich, TinhTrang, pt.SoNguoiHienCo,pt.SoNguoiToiDa,qLBLL.GetDayTroByIdPhong(pt.MaPhongTro).TenDayTro);
             }
             }
             else
@@ -61,7 +68,12 @@ namespace PBL3___Motel_Management_System
                 
                 foreach (ViewPhongTro pt in qLBLL.DgvPhongTroTimKiem(idDay, idTinhTrang, txtTimKiem.Text))
                 {
-                    dt.Rows.Add(pt.MaPhongTro, pt.Stt, pt.TenPhongTro, pt.GiaTien, pt.DienTich, pt.TinhTrang, pt.SoNguoiHienCo, pt.SoNguoiToiDa,pt.TenDay);
+                    string TinhTrang;
+                    HopDong hd = qLBLL.GetHopDongByIdPhong(pt.MaPhongTro);
+                    if (hd == null) TinhTrang = "Còn trống";
+                    else if (hd.TinhTrang == true) TinhTrang  = "Đã cho thuê";
+                    else TinhTrang = "Đã cọc";
+                    dt.Rows.Add(pt.MaPhongTro, pt.Stt, pt.TenPhongTro, pt.GiaTien, pt.DienTich, TinhTrang, pt.SoNguoiHienCo, pt.SoNguoiToiDa,pt.TenDay);
                 }
             }
             
@@ -80,6 +92,7 @@ namespace PBL3___Motel_Management_System
                 new ViewCbb{IdDayTro = "-1",TenDayTro = "All"},
                 new ViewCbb{IdDayTro = "1",TenDayTro = "Đã cho thuê"},
                 new ViewCbb{IdDayTro = "0",TenDayTro = "Còn trống"},
+                new ViewCbb{IdDayTro = "2",TenDayTro = "Đã cọc"},
             }) ;
             cbbTinhTrang.SelectedIndex = 0;
         }
@@ -95,14 +108,21 @@ namespace PBL3___Motel_Management_System
 
         private void btnThemday_Click_1(object sender, EventArgs e)
         {
-            if(dgvPhongTro.CurrentRow.Cells[5].Value.ToString()=="False")
+            if(dgvPhongTro.CurrentRow.Cells[5].Value.ToString()=="Còn trống")
             {
-
             ThuePhong tp = new ThuePhong();
             QLBLL qLBLL = new QLBLL() ;
             tp.hopDong.MaHopDong = qLBLL.TaoIdHopDong();
-            tp.hopDong.PhongTro.MaPhongTro = dgvPhongTro.CurrentRow.Cells[0].Value.ToString();
-            tc.openChildForm1(new ThemKhach(null,tp, LoadForm), panelPhong) ;
+            tp.hopDong.MaPhongTro = dgvPhongTro.CurrentRow.Cells[0].Value.ToString();
+            
+            tc.openChildForm1(new ThemKhach(tp, LoadForm), panelPhong) ;
+            }
+            else if(dgvPhongTro.CurrentRow.Cells[5].Value.ToString()=="Đã cọc")
+            {
+                ThuePhong tp = new ThuePhong();
+                QLBLL qLBLL= new QLBLL() ;
+                tp.hopDong = qLBLL.GetHopDongByIdPhong(dgvPhongTro.CurrentRow.Cells[0].Value.ToString());
+                tc.openChildForm1(new ThemKhach(tp, LoadForm), panelPhong);
             }
             else
             {
@@ -135,7 +155,16 @@ namespace PBL3___Motel_Management_System
 
         private void btnCoc_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new CocPhong(), panelPhong);
+            if (dgvPhongTro.CurrentRow.Cells[5].Value.ToString()=="Còn trống")
+            {
+                ThuePhong tp = new ThuePhong();
+                tp.hopDong.MaPhongTro = dgvPhongTro.CurrentRow.Cells[0].Value.ToString();
+                tc.openChildForm1(new CocPhong(tp,LoadForm), panelPhong);
+            }
+            else
+            {
+                MessageBox.Show("Phòng hiện tại không thể cọc", "Thông báo");
+            }
         }
     }
     }

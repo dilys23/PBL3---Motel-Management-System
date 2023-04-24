@@ -17,14 +17,14 @@ namespace PBL3___Motel_Management_System.View
 {
     public partial class ThemDVphong : Form
     {
-        private string idPhong;
+      //  private string idPhong;
         private ThuePhong tp;
         private Loader loader;
-        public ThemDVphong(string idPhong,ThuePhong tp, Loader loader)
+        public ThemDVphong(ThuePhong tp, Loader loader)
         {
             InitializeComponent();
             this.tp = tp;
-            this.idPhong = idPhong;
+          //  this.idPhong = idPhong;
             LoadForm();
             this.loader=loader;
         }
@@ -40,9 +40,17 @@ namespace PBL3___Motel_Management_System.View
         {
             dgvXoaDichVu.Columns[0].Visible = false;
             QLBLL qLBLL = new QLBLL();
+            int i = 0;
             foreach (ViewDichVu viewDichVu in qLBLL.DgvDichVu(null))
-            {
-                dgvThemDichVu.Rows.Add(viewDichVu.MaDichVu, viewDichVu.Stt, viewDichVu.TenDichVu, viewDichVu.GiaDichVu);
+            {  if(viewDichVu.MaDichVu != "000" && viewDichVu.MaDichVu != "001")
+                {
+
+                dgvThemDichVu.Rows.Add(viewDichVu.MaDichVu, ++i, viewDichVu.TenDichVu, viewDichVu.GiaDichVu);
+                }
+                else
+                {
+                    dgvDVcodinh.Rows.Add(viewDichVu.MaDichVu, viewDichVu.Stt, viewDichVu.TenDichVu, viewDichVu.GiaDichVu);
+                }
             }
 
             dgvThemDichVu.Columns[0].Visible = false;
@@ -60,6 +68,11 @@ namespace PBL3___Motel_Management_System.View
 
             List<string> dsdv = new List<string>();
             foreach (DataGridViewRow dr in dgvXoaDichVu.Rows)
+            {
+                if (dr.Cells[0].Value != null) dsdv.Add(dr.Cells[0].Value.ToString());
+
+            }
+            foreach (DataGridViewRow dr in dgvDVcodinh.Rows)
             {
                 if (dr.Cells[0].Value != null) dsdv.Add(dr.Cells[0].Value.ToString());
 
