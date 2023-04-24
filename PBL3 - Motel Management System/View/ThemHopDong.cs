@@ -85,7 +85,6 @@ namespace PBL3___Motel_Management_System
                     return false;
                 }
             }
-
             return true;
         }
         private void iconButton4_Click(object sender, EventArgs e)
@@ -99,7 +98,6 @@ namespace PBL3___Motel_Management_System
             tp.hopDong.TienCoc = Convert.ToDouble(txtTienCoc.Text);
             tc.openChildForm1(new ChitietHopDong(tp,Back),panelThemHD);
             }
-            
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

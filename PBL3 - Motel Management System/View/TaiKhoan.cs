@@ -18,10 +18,7 @@ namespace PBL3___Motel_Management_System.View
         }
         TrangChu tc= new TrangChu();
 
-        private void btnChiTiet_Click(object sender, EventArgs e)
-        {
-            tc.openChildForm1(new ThemTK(),panelTK);
-        }
+      
 
         private void btnSua_Click(object sender, EventArgs e)
         {
@@ -36,6 +33,11 @@ namespace PBL3___Motel_Management_System.View
         private void TaiKhoan_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            tc.openChildForm1(new ThemTK(),panelTK);    
         }
     }
 }

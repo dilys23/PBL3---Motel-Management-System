@@ -166,6 +166,11 @@ namespace PBL3___Motel_Management_System
                 MessageBox.Show("Phòng hiện tại không thể cọc", "Thông báo");
             }
         }
+
+        private void btnThemTK_Click(object sender, EventArgs e)
+        {
+            tc.openChildForm1(new ThemTK(), panelPhong);
+        }
     }
     }
 

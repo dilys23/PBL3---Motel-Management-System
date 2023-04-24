@@ -31,16 +31,16 @@
             this.btnLuu = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTenDichVu = new System.Windows.Forms.TextBox();
             this.txtGiaDichVu = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,6 +94,44 @@
             this.panel2.Size = new System.Drawing.Size(861, 234);
             this.panel2.TabIndex = 59;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(50, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 20);
+            this.label1.TabIndex = 56;
+            this.label1.Text = "Dãy:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(179, 29);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(160, 27);
+            this.textBox1.TabIndex = 57;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Enabled = false;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(179, 95);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(160, 27);
+            this.textBox2.TabIndex = 59;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(50, 95);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 20);
+            this.label4.TabIndex = 58;
+            this.label4.Text = "Phòng:";
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -109,16 +147,16 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(457, 36);
+            this.label2.Location = new System.Drawing.Point(438, 36);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 20);
+            this.label2.Size = new System.Drawing.Size(120, 20);
             this.label2.TabIndex = 49;
-            this.label2.Text = "Username*";
+            this.label2.Text = "Tên tài khoản:*";
             // 
             // txtTenDichVu
             // 
             this.txtTenDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenDichVu.Location = new System.Drawing.Point(586, 29);
+            this.txtTenDichVu.Location = new System.Drawing.Point(630, 29);
             this.txtTenDichVu.Name = "txtTenDichVu";
             this.txtTenDichVu.Size = new System.Drawing.Size(160, 27);
             this.txtTenDichVu.TabIndex = 50;
@@ -126,7 +164,7 @@
             // txtGiaDichVu
             // 
             this.txtGiaDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGiaDichVu.Location = new System.Drawing.Point(586, 95);
+            this.txtGiaDichVu.Location = new System.Drawing.Point(630, 95);
             this.txtGiaDichVu.Name = "txtGiaDichVu";
             this.txtGiaDichVu.Size = new System.Drawing.Size(160, 27);
             this.txtGiaDichVu.TabIndex = 52;
@@ -135,11 +173,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(466, 95);
+            this.label3.Location = new System.Drawing.Point(447, 95);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 20);
+            this.label3.Size = new System.Drawing.Size(93, 20);
             this.label3.TabIndex = 51;
-            this.label3.Text = "Password *";
+            this.label3.Text = "Mật khẩu: *";
             // 
             // label6
             // 
@@ -151,44 +189,6 @@
             this.label6.Size = new System.Drawing.Size(136, 26);
             this.label6.TabIndex = 56;
             this.label6.Text = "TÀI KHOẢN";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(72, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 20);
-            this.label1.TabIndex = 56;
-            this.label1.Text = "Dãy:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(201, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(160, 27);
-            this.textBox1.TabIndex = 57;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(201, 95);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(160, 27);
-            this.textBox2.TabIndex = 59;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(72, 95);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 20);
-            this.label4.TabIndex = 58;
-            this.label4.Text = "Phòng:";
             // 
             // ThemTK
             // 

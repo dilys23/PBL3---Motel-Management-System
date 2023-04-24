@@ -31,17 +31,17 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panelTK = new System.Windows.Forms.Panel();
+            this.btnSua = new FontAwesome.Sharp.IconButton();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnThem = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panPhong1 = new System.Windows.Forms.Panel();
-            this.btnChiTiet = new FontAwesome.Sharp.IconButton();
             this.dgvTaiKhoan = new System.Windows.Forms.DataGridView();
-            this.btnSua = new FontAwesome.Sharp.IconButton();
-            this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenPhongTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenPhongTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panelTK.SuspendLayout();
             this.panPhong1.SuspendLayout();
@@ -79,7 +79,7 @@
             this.panelTK.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelTK.Controls.Add(this.btnSua);
             this.panelTK.Controls.Add(this.label4);
-            this.panelTK.Controls.Add(this.btnChiTiet);
+            this.panelTK.Controls.Add(this.btnThem);
             this.panelTK.Controls.Add(this.label2);
             this.panelTK.Controls.Add(this.label1);
             this.panelTK.Controls.Add(this.panPhong1);
@@ -90,6 +90,24 @@
             this.panelTK.TabIndex = 42;
             this.panelTK.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTK_Paint);
             // 
+            // btnSua
+            // 
+            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSua.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSua.IconChar = FontAwesome.Sharp.IconChar.ExternalLink;
+            this.btnSua.IconColor = System.Drawing.Color.White;
+            this.btnSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSua.IconSize = 25;
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSua.Location = new System.Drawing.Point(776, 12);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(90, 41);
+            this.btnSua.TabIndex = 59;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -98,6 +116,24 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 20);
             this.label4.TabIndex = 35;
+            // 
+            // btnThem
+            // 
+            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThem.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnThem.IconChar = FontAwesome.Sharp.IconChar.PeopleRoof;
+            this.btnThem.IconColor = System.Drawing.Color.White;
+            this.btnThem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThem.IconSize = 25;
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThem.Location = new System.Drawing.Point(663, 14);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(90, 43);
+            this.btnThem.TabIndex = 26;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // label2
             // 
@@ -129,24 +165,6 @@
             this.panPhong1.Size = new System.Drawing.Size(845, 213);
             this.panPhong1.TabIndex = 28;
             // 
-            // btnChiTiet
-            // 
-            this.btnChiTiet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnChiTiet.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnChiTiet.IconChar = FontAwesome.Sharp.IconChar.PeopleRoof;
-            this.btnChiTiet.IconColor = System.Drawing.Color.White;
-            this.btnChiTiet.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnChiTiet.IconSize = 25;
-            this.btnChiTiet.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChiTiet.Location = new System.Drawing.Point(663, 14);
-            this.btnChiTiet.Name = "btnChiTiet";
-            this.btnChiTiet.Size = new System.Drawing.Size(90, 43);
-            this.btnChiTiet.TabIndex = 26;
-            this.btnChiTiet.Text = "Thêm";
-            this.btnChiTiet.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnChiTiet.UseVisualStyleBackColor = false;
-            this.btnChiTiet.Click += new System.EventHandler(this.btnChiTiet_Click);
-            // 
             // dgvTaiKhoan
             // 
             this.dgvTaiKhoan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -171,35 +189,11 @@
             this.dgvTaiKhoan.Size = new System.Drawing.Size(796, 187);
             this.dgvTaiKhoan.TabIndex = 24;
             // 
-            // btnSua
+            // TenDay
             // 
-            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSua.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnSua.IconChar = FontAwesome.Sharp.IconChar.ExternalLink;
-            this.btnSua.IconColor = System.Drawing.Color.White;
-            this.btnSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSua.IconSize = 25;
-            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(776, 12);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(90, 41);
-            this.btnSua.TabIndex = 59;
-            this.btnSua.Text = "Reset";
-            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSua.UseVisualStyleBackColor = false;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // MatKhau
-            // 
-            this.MatKhau.HeaderText = "Mật khẩu";
-            this.MatKhau.MinimumWidth = 6;
-            this.MatKhau.Name = "MatKhau";
-            // 
-            // TenTaiKhoan
-            // 
-            this.TenTaiKhoan.HeaderText = "Tên tài khoản";
-            this.TenTaiKhoan.MinimumWidth = 6;
-            this.TenTaiKhoan.Name = "TenTaiKhoan";
+            this.TenDay.HeaderText = "Dãy";
+            this.TenDay.MinimumWidth = 6;
+            this.TenDay.Name = "TenDay";
             // 
             // TenPhongTro
             // 
@@ -207,11 +201,17 @@
             this.TenPhongTro.MinimumWidth = 6;
             this.TenPhongTro.Name = "TenPhongTro";
             // 
-            // TenDay
+            // TenTaiKhoan
             // 
-            this.TenDay.HeaderText = "Dãy";
-            this.TenDay.MinimumWidth = 6;
-            this.TenDay.Name = "TenDay";
+            this.TenTaiKhoan.HeaderText = "Tên tài khoản";
+            this.TenTaiKhoan.MinimumWidth = 6;
+            this.TenTaiKhoan.Name = "TenTaiKhoan";
+            // 
+            // MatKhau
+            // 
+            this.MatKhau.HeaderText = "Mật khẩu";
+            this.MatKhau.MinimumWidth = 6;
+            this.MatKhau.Name = "MatKhau";
             // 
             // TaiKhoan
             // 
@@ -239,7 +239,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panelTK;
         private System.Windows.Forms.Label label4;
-        private FontAwesome.Sharp.IconButton btnChiTiet;
+        private FontAwesome.Sharp.IconButton btnThem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panPhong1;

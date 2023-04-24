@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnThemPhong = new FontAwesome.Sharp.IconButton();
@@ -37,6 +37,7 @@
             this.btnTraphong = new FontAwesome.Sharp.IconButton();
             this.btnSuaphong = new FontAwesome.Sharp.IconButton();
             this.panelPhong = new System.Windows.Forms.Panel();
+            this.btnCoc = new FontAwesome.Sharp.IconButton();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbbTinhTrang = new System.Windows.Forms.ComboBox();
@@ -51,7 +52,7 @@
             this.cbbDayTro = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCoc = new FontAwesome.Sharp.IconButton();
+            this.btnThemTK = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelPhong.SuspendLayout();
             this.panPhong1.SuspendLayout();
@@ -73,23 +74,23 @@
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.Location = new System.Drawing.Point(14, 10);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -186,6 +187,24 @@
             this.panelPhong.TabIndex = 2;
             this.panelPhong.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPhong_Paint);
             // 
+            // btnCoc
+            // 
+            this.btnCoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCoc.BackColor = System.Drawing.Color.Tomato;
+            this.btnCoc.IconChar = FontAwesome.Sharp.IconChar.HouseChimneyMedical;
+            this.btnCoc.IconColor = System.Drawing.Color.White;
+            this.btnCoc.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCoc.IconSize = 30;
+            this.btnCoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCoc.Location = new System.Drawing.Point(683, 31);
+            this.btnCoc.Name = "btnCoc";
+            this.btnCoc.Size = new System.Drawing.Size(75, 37);
+            this.btnCoc.TabIndex = 37;
+            this.btnCoc.Text = "Cọc";
+            this.btnCoc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCoc.UseVisualStyleBackColor = false;
+            this.btnCoc.Click += new System.EventHandler(this.btnCoc_Click);
+            // 
             // txtTimKiem
             // 
             this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -271,6 +290,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panPhong1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
             this.panPhong1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panPhong1.Controls.Add(this.btnThemTK);
             this.panPhong1.Controls.Add(this.btnTra);
             this.panPhong1.Controls.Add(this.btnChiTiet);
             this.panPhong1.Controls.Add(this.dgvPhongTro);
@@ -363,23 +383,23 @@
             this.panel1.Size = new System.Drawing.Size(914, 49);
             this.panel1.TabIndex = 41;
             // 
-            // btnCoc
+            // btnThemTK
             // 
-            this.btnCoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCoc.BackColor = System.Drawing.Color.Tomato;
-            this.btnCoc.IconChar = FontAwesome.Sharp.IconChar.HouseChimneyMedical;
-            this.btnCoc.IconColor = System.Drawing.Color.White;
-            this.btnCoc.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCoc.IconSize = 30;
-            this.btnCoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCoc.Location = new System.Drawing.Point(683, 31);
-            this.btnCoc.Name = "btnCoc";
-            this.btnCoc.Size = new System.Drawing.Size(75, 37);
-            this.btnCoc.TabIndex = 37;
-            this.btnCoc.Text = "Cọc";
-            this.btnCoc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCoc.UseVisualStyleBackColor = false;
-            this.btnCoc.Click += new System.EventHandler(this.btnCoc_Click);
+            this.btnThemTK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThemTK.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnThemTK.IconChar = FontAwesome.Sharp.IconChar.HouseChimneyMedical;
+            this.btnThemTK.IconColor = System.Drawing.Color.White;
+            this.btnThemTK.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThemTK.IconSize = 25;
+            this.btnThemTK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThemTK.Location = new System.Drawing.Point(727, 123);
+            this.btnThemTK.Name = "btnThemTK";
+            this.btnThemTK.Size = new System.Drawing.Size(90, 43);
+            this.btnThemTK.TabIndex = 57;
+            this.btnThemTK.Text = "Thêm tài khoản";
+            this.btnThemTK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThemTK.UseVisualStyleBackColor = false;
+            this.btnThemTK.Click += new System.EventHandler(this.btnThemTK_Click);
             // 
             // Phong
             // 
@@ -424,5 +444,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtTimKiem;
         private FontAwesome.Sharp.IconButton btnCoc;
+        private FontAwesome.Sharp.IconButton btnThemTK;
     }
 }
