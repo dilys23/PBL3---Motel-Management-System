@@ -48,14 +48,22 @@ namespace PBL3___Motel_Management_System.View
 
                 foreach (PhongTro pt in qLBLL.GetAllPhongTro())
                 {
+                    if(qLBLL.TinhTrangPhongById(pt.MaPhongTro))
+                    {
+
                     cbbPhongTro.Items.Add(new ViewCbb { IdDayTro = pt.MaPhongTro, TenDayTro = pt.TenPhongTro });
+                    }
                 }
             }
             else
             {
                 foreach (ViewPhongTro pt in qLBLL.GetAllPhongTroByIdDay(id))
                 {
+                    if(qLBLL.TinhTrangPhongById(pt.MaPhongTro))
+                    {
+
                     cbbPhongTro.Items.Add(new ViewCbb { IdDayTro = pt.MaPhongTro, TenDayTro = pt.TenPhongTro });
+                    }
                 }
             }
             if (cbbPhongTro.Items.Count != 0)
@@ -127,14 +135,39 @@ namespace PBL3___Motel_Management_System.View
                 }
                 else
                 {
+                    try
+                    {
 
-                    qLBLL.AddChiTietSuDungDichVuBLL(dv);
+                        qLBLL.AddChiTietSuDungDichVuBLL(dv);
+                        MessageBox.Show("Thêm chỉ số thành công");
+                        this.Close();
+                        this.loader(null);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Không hợp lệ");
+                    }
+                    
 
-                    MessageBox.Show("Thêm chỉ số thành công");
-                    this.Close();
-                    this.loader(null);
+                    
                 }
 
+            }
+        }
+
+        private void cbbPhongTro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbPhongTro.SelectedIndex != 0)
+            {
+                string idPhong = ((ViewCbb)cbbPhongTro.SelectedItem).IdDayTro;
+                QLBLL qLBLL = new QLBLL();
+                HopDong hd = qLBLL.GetHopDongByIdPhong(idPhong);
+                DateTime dt1 = DateTime.ParseExact(hd.NgayBatDau, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
+                DateTime dt2 = DateTime.ParseExact(hd.NgayKetThuc, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
+                DateTime dtStart = new DateTime(dt1.Year, dt1.Month, 1);
+                DateTime dtEnd = new DateTime(dt2.Year, dt2.Month, 1);
+                dtpThang.MinDate = dtStart;
+                dtpThang.MaxDate = dtEnd;
             }
         }
     }

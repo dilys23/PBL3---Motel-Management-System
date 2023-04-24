@@ -33,6 +33,10 @@
             this.btnTroVe = new FontAwesome.Sharp.IconButton();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dtpThang = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbbPhongTro = new System.Windows.Forms.ComboBox();
+            this.cbbDayTro = new System.Windows.Forms.ComboBox();
             this.txtChiSoMoi = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtChiSoCu = new System.Windows.Forms.TextBox();
@@ -41,10 +45,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.cbbPhongTro = new System.Windows.Forms.ComboBox();
-            this.cbbDayTro = new System.Windows.Forms.ComboBox();
-            this.dtpThang = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -115,6 +115,50 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(860, 261);
             this.panel2.TabIndex = 54;
+            // 
+            // dtpThang
+            // 
+            this.dtpThang.CustomFormat = "MM/yyyy";
+            this.dtpThang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpThang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpThang.Location = new System.Drawing.Point(618, 152);
+            this.dtpThang.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpThang.Name = "dtpThang";
+            this.dtpThang.ShowUpDown = true;
+            this.dtpThang.Size = new System.Drawing.Size(225, 27);
+            this.dtpThang.TabIndex = 58;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(465, 157);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 20);
+            this.label7.TabIndex = 57;
+            this.label7.Text = "Tháng:";
+            // 
+            // cbbPhongTro
+            // 
+            this.cbbPhongTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbPhongTro.FormattingEnabled = true;
+            this.cbbPhongTro.Location = new System.Drawing.Point(178, 91);
+            this.cbbPhongTro.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbPhongTro.Name = "cbbPhongTro";
+            this.cbbPhongTro.Size = new System.Drawing.Size(225, 28);
+            this.cbbPhongTro.TabIndex = 56;
+            this.cbbPhongTro.SelectedIndexChanged += new System.EventHandler(this.cbbPhongTro_SelectedIndexChanged);
+            // 
+            // cbbDayTro
+            // 
+            this.cbbDayTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbDayTro.FormattingEnabled = true;
+            this.cbbDayTro.Location = new System.Drawing.Point(178, 30);
+            this.cbbDayTro.Margin = new System.Windows.Forms.Padding(4);
+            this.cbbDayTro.Name = "cbbDayTro";
+            this.cbbDayTro.Size = new System.Drawing.Size(225, 28);
+            this.cbbDayTro.TabIndex = 55;
+            this.cbbDayTro.SelectedIndexChanged += new System.EventHandler(this.cbbDayTro_SelectedIndexChanged);
             // 
             // txtChiSoMoi
             // 
@@ -191,49 +235,6 @@
             this.label5.Size = new System.Drawing.Size(60, 20);
             this.label5.TabIndex = 36;
             this.label5.Text = "Tháng:";
-            // 
-            // cbbPhongTro
-            // 
-            this.cbbPhongTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbPhongTro.FormattingEnabled = true;
-            this.cbbPhongTro.Location = new System.Drawing.Point(178, 91);
-            this.cbbPhongTro.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbPhongTro.Name = "cbbPhongTro";
-            this.cbbPhongTro.Size = new System.Drawing.Size(225, 28);
-            this.cbbPhongTro.TabIndex = 56;
-            // 
-            // cbbDayTro
-            // 
-            this.cbbDayTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbDayTro.FormattingEnabled = true;
-            this.cbbDayTro.Location = new System.Drawing.Point(178, 30);
-            this.cbbDayTro.Margin = new System.Windows.Forms.Padding(4);
-            this.cbbDayTro.Name = "cbbDayTro";
-            this.cbbDayTro.Size = new System.Drawing.Size(225, 28);
-            this.cbbDayTro.TabIndex = 55;
-            this.cbbDayTro.SelectedIndexChanged += new System.EventHandler(this.cbbDayTro_SelectedIndexChanged);
-            // 
-            // dtpThang
-            // 
-            this.dtpThang.CustomFormat = "MM/yyyy";
-            this.dtpThang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpThang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpThang.Location = new System.Drawing.Point(618, 152);
-            this.dtpThang.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpThang.Name = "dtpThang";
-            this.dtpThang.ShowUpDown = true;
-            this.dtpThang.Size = new System.Drawing.Size(225, 27);
-            this.dtpThang.TabIndex = 58;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(465, 157);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 20);
-            this.label7.TabIndex = 57;
-            this.label7.Text = "Tháng:";
             // 
             // errorProvider1
             // 

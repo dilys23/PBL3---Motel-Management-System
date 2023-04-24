@@ -960,6 +960,13 @@ namespace PBL3___Motel_Management_System.BLL
 
 
         }
+        public bool TinhTrangPhongById(string IdPhong)
+        {
+            if (GetHopDongByIdPhong(IdPhong) == null) return false;
+            else if (GetHopDongByIdPhong(IdPhong).TinhTrang == false) return false;
+            return true;
+            
+        }
 
     }
 }

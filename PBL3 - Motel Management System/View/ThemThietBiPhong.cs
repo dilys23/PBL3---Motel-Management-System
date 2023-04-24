@@ -39,7 +39,7 @@ namespace PBL3___Motel_Management_System.View
             dgvThietBi.Columns[0].Visible = false;
             List<ChiTietThietBi> list = new List<ChiTietThietBi>();
             list = qLBLL.GetChiTietThietBiByIdPhong(tp.hopDong.MaPhongTro);
-            if(tp.hopDong.MaNguoi == null)
+            if(tp.hopDong.MaHopDong == null)
             {
             foreach(ChiTietThietBi cttb in list)
             {
@@ -181,7 +181,7 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnLuu_Click(object sender, EventArgs e)
         { 
-            if(tp.hopDong.MaNguoi != null)
+            if(tp.hopDong.MaHopDong != null)
             {
                 List<string> dstb = new List<string>();
                 foreach (DataGridViewRow dr in dgvTBThem.Rows)

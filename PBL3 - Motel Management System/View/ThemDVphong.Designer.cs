@@ -33,6 +33,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnLuu = new FontAwesome.Sharp.IconButton();
             this.panelThem = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgvDVcodinh = new System.Windows.Forms.DataGridView();
             this.btnXoaDichVu = new FontAwesome.Sharp.IconButton();
             this.btnThemDichVu = new FontAwesome.Sharp.IconButton();
             this.dgvXoaDichVu = new System.Windows.Forms.DataGridView();
@@ -45,17 +47,15 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvDVcodinh = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelThemDV.SuspendLayout();
             this.panelThem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDVcodinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvXoaDichVu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThemDichVu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDVcodinh)).BeginInit();
             this.SuspendLayout();
             // 
             // panelThemDV
@@ -139,6 +139,41 @@
             this.panelThem.Name = "panelThem";
             this.panelThem.Size = new System.Drawing.Size(1023, 560);
             this.panelThem.TabIndex = 46;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.ForestGreen;
+            this.label1.Location = new System.Drawing.Point(100, 347);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(148, 22);
+            this.label1.TabIndex = 56;
+            this.label1.Text = "Dịch vụ cố định";
+            // 
+            // dgvDVcodinh
+            // 
+            this.dgvDVcodinh.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dgvDVcodinh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDVcodinh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDVcodinh.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvDVcodinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDVcodinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8});
+            this.dgvDVcodinh.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvDVcodinh.Location = new System.Drawing.Point(104, 378);
+            this.dgvDVcodinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvDVcodinh.Name = "dgvDVcodinh";
+            this.dgvDVcodinh.RowHeadersWidth = 51;
+            this.dgvDVcodinh.RowTemplate.Height = 24;
+            this.dgvDVcodinh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDVcodinh.Size = new System.Drawing.Size(881, 143);
+            this.dgvDVcodinh.TabIndex = 55;
             // 
             // btnXoaDichVu
             // 
@@ -276,35 +311,12 @@
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // dgvDVcodinh
-            // 
-            this.dgvDVcodinh.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.dgvDVcodinh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvDVcodinh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDVcodinh.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvDVcodinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDVcodinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
-            this.dgvDVcodinh.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvDVcodinh.Location = new System.Drawing.Point(104, 378);
-            this.dgvDVcodinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvDVcodinh.Name = "dgvDVcodinh";
-            this.dgvDVcodinh.RowHeadersWidth = 51;
-            this.dgvDVcodinh.RowTemplate.Height = 24;
-            this.dgvDVcodinh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDVcodinh.Size = new System.Drawing.Size(881, 143);
-            this.dgvDVcodinh.TabIndex = 55;
-            // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.HeaderText = "Mã dịch vụ";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Visible = false;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -324,17 +336,6 @@
             this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label1.Location = new System.Drawing.Point(100, 347);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 22);
-            this.label1.TabIndex = 56;
-            this.label1.Text = "Dịch vụ cố định";
-            // 
             // ThemDVphong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -348,9 +349,9 @@
             this.panelThemDV.PerformLayout();
             this.panelThem.ResumeLayout(false);
             this.panelThem.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDVcodinh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvXoaDichVu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThemDichVu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDVcodinh)).EndInit();
             this.ResumeLayout(false);
 
         }

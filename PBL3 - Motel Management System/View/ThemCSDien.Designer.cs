@@ -125,7 +125,7 @@
             this.dtpThang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpThang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpThang.Location = new System.Drawing.Point(619, 150);
-            this.dtpThang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpThang.Margin = new System.Windows.Forms.Padding(4);
             this.dtpThang.Name = "dtpThang";
             this.dtpThang.ShowUpDown = true;
             this.dtpThang.Size = new System.Drawing.Size(225, 27);
@@ -145,16 +145,17 @@
             // 
             this.cbbPhongTro.FormattingEnabled = true;
             this.cbbPhongTro.Location = new System.Drawing.Point(179, 91);
-            this.cbbPhongTro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbPhongTro.Margin = new System.Windows.Forms.Padding(4);
             this.cbbPhongTro.Name = "cbbPhongTro";
             this.cbbPhongTro.Size = new System.Drawing.Size(225, 24);
             this.cbbPhongTro.TabIndex = 54;
+            this.cbbPhongTro.SelectedIndexChanged += new System.EventHandler(this.cbbPhongTro_SelectedIndexChanged);
             // 
             // cbbDayTro
             // 
             this.cbbDayTro.FormattingEnabled = true;
             this.cbbDayTro.Location = new System.Drawing.Point(179, 30);
-            this.cbbDayTro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbDayTro.Margin = new System.Windows.Forms.Padding(4);
             this.cbbDayTro.Name = "cbbDayTro";
             this.cbbDayTro.Size = new System.Drawing.Size(225, 24);
             this.cbbDayTro.TabIndex = 53;
