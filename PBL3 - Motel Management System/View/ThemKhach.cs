@@ -150,5 +150,21 @@ namespace PBL3___Motel_Management_System
             }
             
         }
+        string imgLocation = "";
+        private void btnThemAnh_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = " ipg files(*.jpg)|*.jpg|jpg files(*.jpg)|*.jpg|All files(*.*)|*.*";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                imgLocation = dialog.FileName.ToString();
+                pctKhach.ImageLocation = imgLocation;    
+            }    
+        }
+
+        private void pctKhach_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -149,6 +149,12 @@
     <Compile Include="View\ChitietHopDong.Designer.cs">
       <DependentUpon>ChitietHopDong.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ChitietNguoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ChitietNguoi.Designer.cs">
+      <DependentUpon>ChitietNguoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ChitietPhong.cs">
       <SubType>Form</SubType>
     </Compile>
