@@ -41,8 +41,7 @@ namespace PBL3___Motel_Management_System
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            
-            
+
         }
     }
 }
