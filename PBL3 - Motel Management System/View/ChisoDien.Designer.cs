@@ -45,6 +45,8 @@
             this.Thang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnSua = new FontAwesome.Sharp.IconButton();
+            this.btnHuyXacThuc = new FontAwesome.Sharp.IconButton();
             this.btnXoa = new FontAwesome.Sharp.IconButton();
             this.label5 = new System.Windows.Forms.Label();
             this.cbbTinhTrang = new System.Windows.Forms.ComboBox();
@@ -56,8 +58,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSuaHD = new FontAwesome.Sharp.IconButton();
             this.btnThemHD = new FontAwesome.Sharp.IconButton();
-            this.btnSua = new FontAwesome.Sharp.IconButton();
-            this.btnHuyXacThuc = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiSoDien)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -69,7 +69,7 @@
             this.cbbDayTro.FormattingEnabled = true;
             this.cbbDayTro.Location = new System.Drawing.Point(207, 40);
             this.cbbDayTro.Name = "cbbDayTro";
-            this.cbbDayTro.Size = new System.Drawing.Size(123, 25);
+            this.cbbDayTro.Size = new System.Drawing.Size(123, 28);
             this.cbbDayTro.TabIndex = 31;
             this.cbbDayTro.SelectedIndexChanged += new System.EventHandler(this.cbbDayTro_SelectedIndexChanged);
             // 
@@ -79,7 +79,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(201, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 17);
+            this.label2.Size = new System.Drawing.Size(44, 20);
             this.label2.TabIndex = 30;
             this.label2.Text = "Dãy:";
             // 
@@ -91,7 +91,7 @@
             this.dtpThangSuDung.Location = new System.Drawing.Point(53, 41);
             this.dtpThangSuDung.Name = "dtpThangSuDung";
             this.dtpThangSuDung.ShowUpDown = true;
-            this.dtpThangSuDung.Size = new System.Drawing.Size(125, 23);
+            this.dtpThangSuDung.Size = new System.Drawing.Size(125, 27);
             this.dtpThangSuDung.TabIndex = 29;
             this.dtpThangSuDung.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -101,7 +101,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(49, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 17);
+            this.label1.Size = new System.Drawing.Size(82, 20);
             this.label1.TabIndex = 28;
             this.label1.Text = "Thời gian:";
             // 
@@ -112,7 +112,7 @@
             this.label4.ForeColor = System.Drawing.Color.Chocolate;
             this.label4.Location = new System.Drawing.Point(12, 11);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 19);
+            this.label4.Size = new System.Drawing.Size(123, 24);
             this.label4.TabIndex = 25;
             this.label4.Text = "CHỈ SỐ ĐIỆN";
             // 
@@ -232,8 +232,49 @@
             this.panel2.TabIndex = 27;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // btnSua
+            // 
+            this.btnSua.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSua.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.IconChar = FontAwesome.Sharp.IconChar.ExternalLink;
+            this.btnSua.IconColor = System.Drawing.Color.White;
+            this.btnSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSua.IconSize = 25;
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSua.Location = new System.Drawing.Point(883, 33);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(56, 31);
+            this.btnSua.TabIndex = 67;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnHuyXacThuc
+            // 
+            this.btnHuyXacThuc.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnHuyXacThuc.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnHuyXacThuc.IconChar = FontAwesome.Sharp.IconChar.FileCircleXmark;
+            this.btnHuyXacThuc.IconColor = System.Drawing.Color.White;
+            this.btnHuyXacThuc.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnHuyXacThuc.IconSize = 25;
+            this.btnHuyXacThuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHuyXacThuc.Location = new System.Drawing.Point(820, 30);
+            this.btnHuyXacThuc.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHuyXacThuc.Name = "btnHuyXacThuc";
+            this.btnHuyXacThuc.Size = new System.Drawing.Size(58, 37);
+            this.btnHuyXacThuc.TabIndex = 68;
+            this.btnHuyXacThuc.Text = "Hủy";
+            this.btnHuyXacThuc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHuyXacThuc.UseVisualStyleBackColor = false;
+            this.btnHuyXacThuc.Click += new System.EventHandler(this.btnHuyXacThuc_Click);
+            // 
             // btnXoa
             // 
+            this.btnXoa.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnXoa.BackColor = System.Drawing.Color.Red;
             this.btnXoa.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
@@ -241,7 +282,7 @@
             this.btnXoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXoa.IconSize = 25;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(936, 31);
+            this.btnXoa.Location = new System.Drawing.Point(944, 30);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(66, 36);
             this.btnXoa.TabIndex = 61;
@@ -258,20 +299,17 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(487, 14);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 17);
+            this.label5.Size = new System.Drawing.Size(84, 20);
             this.label5.TabIndex = 60;
             this.label5.Text = "Tình trạng";
             // 
             // cbbTinhTrang
             // 
-            this.cbbTinhTrang.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbbTinhTrang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbTinhTrang.FormattingEnabled = true;
             this.cbbTinhTrang.Location = new System.Drawing.Point(490, 40);
             this.cbbTinhTrang.Name = "cbbTinhTrang";
-            this.cbbTinhTrang.Size = new System.Drawing.Size(129, 25);
+            this.cbbTinhTrang.Size = new System.Drawing.Size(129, 28);
             this.cbbTinhTrang.TabIndex = 59;
             // 
             // btnTimKiem
@@ -292,14 +330,11 @@
             // 
             // cbbPhongTro
             // 
-            this.cbbPhongTro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.cbbPhongTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbPhongTro.FormattingEnabled = true;
             this.cbbPhongTro.Location = new System.Drawing.Point(353, 41);
             this.cbbPhongTro.Name = "cbbPhongTro";
-            this.cbbPhongTro.Size = new System.Drawing.Size(118, 25);
+            this.cbbPhongTro.Size = new System.Drawing.Size(118, 28);
             this.cbbPhongTro.TabIndex = 57;
             this.cbbPhongTro.SelectedIndexChanged += new System.EventHandler(this.cbbPhongTro_SelectedIndexChanged);
             // 
@@ -312,19 +347,20 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(350, 14);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 17);
+            this.label3.Size = new System.Drawing.Size(61, 20);
             this.label3.TabIndex = 56;
             this.label3.Text = "Phòng:";
             // 
             // btnXacThuc
             // 
+            this.btnXacThuc.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btnXacThuc.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnXacThuc.IconChar = FontAwesome.Sharp.IconChar.FileCircleCheck;
             this.btnXacThuc.IconColor = System.Drawing.Color.White;
             this.btnXacThuc.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXacThuc.IconSize = 25;
             this.btnXacThuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXacThuc.Location = new System.Drawing.Point(710, 31);
+            this.btnXacThuc.Location = new System.Drawing.Point(717, 30);
             this.btnXacThuc.Name = "btnXacThuc";
             this.btnXacThuc.Size = new System.Drawing.Size(98, 39);
             this.btnXacThuc.TabIndex = 55;
@@ -335,13 +371,14 @@
             // 
             // iconButton2
             // 
+            this.iconButton2.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.iconButton2.BackColor = System.Drawing.Color.DarkOrange;
             this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.FileArrowUp;
             this.iconButton2.IconColor = System.Drawing.Color.White;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.IconSize = 25;
             this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(625, 31);
+            this.iconButton2.Location = new System.Drawing.Point(633, 30);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Size = new System.Drawing.Size(79, 39);
             this.iconButton2.TabIndex = 54;
@@ -392,44 +429,6 @@
             this.btnThemHD.Text = "Thêm ";
             this.btnThemHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemHD.UseVisualStyleBackColor = false;
-            // 
-            // btnSua
-            // 
-            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSua.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.IconChar = FontAwesome.Sharp.IconChar.ExternalLink;
-            this.btnSua.IconColor = System.Drawing.Color.White;
-            this.btnSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSua.IconSize = 25;
-            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(875, 34);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(56, 31);
-            this.btnSua.TabIndex = 67;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSua.UseVisualStyleBackColor = false;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnHuyXacThuc
-            // 
-            this.btnHuyXacThuc.BackColor = System.Drawing.Color.OrangeRed;
-            this.btnHuyXacThuc.IconChar = FontAwesome.Sharp.IconChar.FileCircleXmark;
-            this.btnHuyXacThuc.IconColor = System.Drawing.Color.White;
-            this.btnHuyXacThuc.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnHuyXacThuc.IconSize = 25;
-            this.btnHuyXacThuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHuyXacThuc.Location = new System.Drawing.Point(813, 31);
-            this.btnHuyXacThuc.Margin = new System.Windows.Forms.Padding(2);
-            this.btnHuyXacThuc.Name = "btnHuyXacThuc";
-            this.btnHuyXacThuc.Size = new System.Drawing.Size(58, 37);
-            this.btnHuyXacThuc.TabIndex = 68;
-            this.btnHuyXacThuc.Text = "Hủy";
-            this.btnHuyXacThuc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnHuyXacThuc.UseVisualStyleBackColor = false;
-            this.btnHuyXacThuc.Click += new System.EventHandler(this.btnHuyXacThuc_Click);
             // 
             // ChisoDien
             // 

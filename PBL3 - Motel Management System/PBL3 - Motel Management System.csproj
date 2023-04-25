@@ -149,6 +149,12 @@
     <Compile Include="View\ChitietHopDong.Designer.cs">
       <DependentUpon>ChitietHopDong.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ChitietNguoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ChitietNguoi.Designer.cs">
+      <DependentUpon>ChitietNguoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ChitietPhong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,12 @@
     </Compile>
     <Compile Include="View\Daytro.Designer.cs">
       <DependentUpon>Daytro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DoiMK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DoiMK.Designer.cs">
+      <DependentUpon>DoiMK.cs</DependentUpon>
     </Compile>
     <Compile Include="View\PKhach.cs">
       <SubType>Form</SubType>
@@ -361,6 +373,12 @@
     <Compile Include="View\TrangChuKhach.Designer.cs">
       <DependentUpon>TrangChuKhach.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\XuatHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -384,6 +402,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Daytro.resx">
       <DependentUpon>Daytro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DoiMK.resx">
+      <DependentUpon>DoiMK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\PKhach.resx">
       <DependentUpon>PKhach.cs</DependentUpon>
@@ -486,6 +507,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\TrangChuKhach.resx">
       <DependentUpon>TrangChuKhach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\XuatHoaDon.resx">
       <DependentUpon>XuatHoaDon.cs</DependentUpon>

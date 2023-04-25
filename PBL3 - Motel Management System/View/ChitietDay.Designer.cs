@@ -55,7 +55,7 @@
             this.panelChitietDay.Controls.Add(this.panPhong1);
             this.panelChitietDay.Location = new System.Drawing.Point(-3, 0);
             this.panelChitietDay.Name = "panelChitietDay";
-            this.panelChitietDay.Size = new System.Drawing.Size(983, 513);
+            this.panelChitietDay.Size = new System.Drawing.Size(1144, 515);
             this.panelChitietDay.TabIndex = 59;
             // 
             // btnTroVe
@@ -66,7 +66,7 @@
             this.btnTroVe.IconColor = System.Drawing.Color.White;
             this.btnTroVe.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTroVe.IconSize = 30;
-            this.btnTroVe.Location = new System.Drawing.Point(906, 6);
+            this.btnTroVe.Location = new System.Drawing.Point(1067, 6);
             this.btnTroVe.Name = "btnTroVe";
             this.btnTroVe.Size = new System.Drawing.Size(43, 37);
             this.btnTroVe.TabIndex = 60;
@@ -75,8 +75,7 @@
             // 
             // panPhong1
             // 
-            this.panPhong1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.panPhong1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panPhong1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
             this.panPhong1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -90,7 +89,7 @@
             this.panPhong1.Controls.Add(this.label1);
             this.panPhong1.Location = new System.Drawing.Point(33, 49);
             this.panPhong1.Name = "panPhong1";
-            this.panPhong1.Size = new System.Drawing.Size(916, 415);
+            this.panPhong1.Size = new System.Drawing.Size(1077, 442);
             this.panPhong1.TabIndex = 59;
             // 
             // textBox2
@@ -127,13 +126,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPhong.Location = new System.Drawing.Point(20, 144);
+            this.dgvPhong.Location = new System.Drawing.Point(18, 167);
             this.dgvPhong.Name = "dgvPhong";
             this.dgvPhong.ReadOnly = true;
             this.dgvPhong.RowHeadersWidth = 51;
             this.dgvPhong.RowTemplate.Height = 24;
             this.dgvPhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPhong.Size = new System.Drawing.Size(873, 221);
+            this.dgvPhong.Size = new System.Drawing.Size(1034, 232);
             this.dgvPhong.TabIndex = 60;
             // 
             // btnXoa
@@ -145,7 +144,7 @@
             this.btnXoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXoa.IconSize = 25;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(791, 15);
+            this.btnXoa.Location = new System.Drawing.Point(952, 15);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(90, 41);
             this.btnXoa.TabIndex = 59;
@@ -162,7 +161,7 @@
             this.btnSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSua.IconSize = 25;
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(695, 15);
+            this.btnSua.Location = new System.Drawing.Point(856, 15);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(90, 41);
             this.btnSua.TabIndex = 58;
@@ -180,7 +179,7 @@
             this.btnThem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThem.IconSize = 25;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(599, 13);
+            this.btnThem.Location = new System.Drawing.Point(760, 13);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(90, 43);
             this.btnThem.TabIndex = 56;
@@ -204,7 +203,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(982, 509);
+            this.ClientSize = new System.Drawing.Size(1143, 527);
             this.Controls.Add(this.panelChitietDay);
             this.Name = "ChitietDay";
             this.Text = "ChitietDay";

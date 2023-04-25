@@ -74,7 +74,7 @@
             this.panelDay.Location = new System.Drawing.Point(12, 69);
             this.panelDay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelDay.Name = "panelDay";
-            this.panelDay.Size = new System.Drawing.Size(889, 354);
+            this.panelDay.Size = new System.Drawing.Size(1208, 485);
             this.panelDay.TabIndex = 3;
             // 
             // txtTenDay
@@ -114,7 +114,7 @@
             this.btnThemday.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThemday.IconSize = 30;
             this.btnThemday.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemday.Location = new System.Drawing.Point(753, 29);
+            this.btnThemday.Location = new System.Drawing.Point(1061, 30);
             this.btnThemday.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThemday.Name = "btnThemday";
             this.btnThemday.Size = new System.Drawing.Size(113, 37);
@@ -173,7 +173,7 @@
             this.panPhong1.Location = new System.Drawing.Point(21, 103);
             this.panPhong1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panPhong1.Name = "panPhong1";
-            this.panPhong1.Size = new System.Drawing.Size(845, 212);
+            this.panPhong1.Size = new System.Drawing.Size(1164, 343);
             this.panPhong1.TabIndex = 28;
             // 
             // btnThem
@@ -186,7 +186,7 @@
             this.btnThem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThem.IconSize = 25;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(731, 34);
+            this.btnThem.Location = new System.Drawing.Point(1050, 34);
             this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(91, 43);
@@ -206,7 +206,7 @@
             this.btnSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSua.IconSize = 25;
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(731, 84);
+            this.btnSua.Location = new System.Drawing.Point(1050, 84);
             this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(91, 39);
@@ -226,7 +226,7 @@
             this.btnXoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXoa.IconSize = 25;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(731, 129);
+            this.btnXoa.Location = new System.Drawing.Point(1050, 129);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(91, 39);
@@ -251,7 +251,7 @@
             this.dtgDayTro.RowHeadersWidth = 51;
             this.dtgDayTro.RowTemplate.Height = 24;
             this.dtgDayTro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDayTro.Size = new System.Drawing.Size(683, 187);
+            this.dtgDayTro.Size = new System.Drawing.Size(1002, 318);
             this.dtgDayTro.TabIndex = 24;
             // 
             // cbbDayTro
@@ -272,7 +272,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(915, 49);
+            this.panel1.Size = new System.Drawing.Size(1232, 49);
             this.panel1.TabIndex = 42;
             // 
             // label7
@@ -294,7 +294,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 438);
+            this.ClientSize = new System.Drawing.Size(1232, 438);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelDay);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
