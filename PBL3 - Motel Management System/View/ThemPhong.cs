@@ -1,5 +1,6 @@
 ﻿using PBL3___Motel_Management_System.BLL;
 using PBL3___Motel_Management_System.DAL;
+using PBL3___Motel_Management_System.DTO;
 using PBL3___Motel_Management_System.View;
 using System;
 using System.Collections.Generic;
@@ -116,6 +117,11 @@ namespace PBL3___Motel_Management_System
                 pt.TinhTrang = false;
                 pt.ToiDa = Convert.ToInt32(txtToiDa.Text);          
                 pt.MaDayTro = IdDay;
+                if(pictutePhong.Image != null)
+                {
+
+                pt.HinhAnh = ChuyenDoiAnh.ImageToBase64(pictutePhong.Image, pictutePhong.Image.RawFormat);
+                }    
                 qLBLL.AddPhongTroBll(pt);
                 MessageBox.Show("Thêm phòng trọ vào dãy thành công", "Thông báo");
                 Loader(null);
@@ -131,7 +137,7 @@ namespace PBL3___Motel_Management_System
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 imgLocation = dialog.FileName.ToString();
-                pctKhach.ImageLocation = imgLocation;
+                pictutePhong.ImageLocation = imgLocation;
             }
 
         }

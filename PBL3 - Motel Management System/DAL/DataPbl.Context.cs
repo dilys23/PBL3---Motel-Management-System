@@ -30,7 +30,6 @@ namespace PBL3___Motel_Management_System.DAL
         public virtual DbSet<ChiTietThietBi> ChiTietThietBi { get; set; }
         public virtual DbSet<DayTro> DayTro { get; set; }
         public virtual DbSet<DichVu> DichVu { get; set; }
-        public virtual DbSet<DichVuCoDinh> DichVuCoDinh { get; set; }
         public virtual DbSet<HoaDon> HoaDon { get; set; }
         public virtual DbSet<HopDong> HopDong { get; set; }
         public virtual DbSet<Nguoi> Nguoi { get; set; }

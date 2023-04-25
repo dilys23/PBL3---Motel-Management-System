@@ -42,7 +42,7 @@ namespace PBL3___Motel_Management_System
                 new DataColumn{ColumnName = "Số người hiện có",DataType = typeof(int)},
                 new DataColumn{ColumnName = "Số người tối đa",DataType = typeof(string)},
                 new DataColumn{ColumnName = "Tên dãy",DataType = typeof(string)},
-
+                new DataColumn{ColumnName = "Hình ảnh",DataType = typeof(Image)},
 
             });
             QLBLL qLBLL = new QLBLL();
@@ -56,9 +56,12 @@ namespace PBL3___Motel_Management_System
                     if (hd == null) TinhTrang = "Còn trống";
                     else if (hd.TinhTrang == true) TinhTrang  = "Đã cho thuê";
                     else TinhTrang = "Đã cọc";
-
-
-                dt.Rows.Add(pt.MaPhongTro,pt.Stt,pt.TenPhongTro,pt.GiaTien,pt.DienTich, TinhTrang, pt.SoNguoiHienCo,pt.SoNguoiToiDa,qLBLL.GetDayTroByIdPhong(pt.MaPhongTro).TenDayTro);
+                    Image image = null;
+                    if (pt.HinhAnh != null)
+                    {
+                         image = ChuyenDoiAnh.Base64ToImage(pt.HinhAnh);
+                    }
+                dt.Rows.Add(pt.MaPhongTro,pt.Stt,pt.TenPhongTro,pt.GiaTien,pt.DienTich, TinhTrang, pt.SoNguoiHienCo,pt.SoNguoiToiDa,qLBLL.GetDayTroByIdPhong(pt.MaPhongTro).TenDayTro, image);
             }
             }
             else
@@ -164,6 +167,27 @@ namespace PBL3___Motel_Management_System
             else
             {
                 MessageBox.Show("Phòng hiện tại không thể cọc", "Thông báo");
+            }
+        }
+
+        private void dgvPhongTro_DoubleClick(object sender, EventArgs e)
+        {
+            if (dgvPhongTro.CurrentRow.Cells[0].Value != null)
+            {
+
+                string id = dgvPhongTro.CurrentRow.Cells[0].Value.ToString();
+                QLBLL qLBLL = new QLBLL();
+                PhongTro pt = qLBLL.GetPhongTroByIdPhong(id);
+                if (pt.HinhAnh!=null)
+                {
+                    Image image = ChuyenDoiAnh.Base64ToImage(pt.HinhAnh);
+                    Anh anh = new Anh(image);
+                    anh.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Không có dữ liệu ảnh");
+                }
             }
         }
     }

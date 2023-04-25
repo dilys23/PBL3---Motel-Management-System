@@ -37,6 +37,7 @@
             this.btnTraphong = new FontAwesome.Sharp.IconButton();
             this.btnSuaphong = new FontAwesome.Sharp.IconButton();
             this.panelPhong = new System.Windows.Forms.Panel();
+            this.btnCoc = new FontAwesome.Sharp.IconButton();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbbTinhTrang = new System.Windows.Forms.ComboBox();
@@ -51,7 +52,6 @@
             this.cbbDayTro = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCoc = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelPhong.SuspendLayout();
             this.panPhong1.SuspendLayout();
@@ -186,12 +186,30 @@
             this.panelPhong.TabIndex = 2;
             this.panelPhong.Paint += new System.Windows.Forms.PaintEventHandler(this.panelPhong_Paint);
             // 
+            // btnCoc
+            // 
+            this.btnCoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCoc.BackColor = System.Drawing.Color.Tomato;
+            this.btnCoc.IconChar = FontAwesome.Sharp.IconChar.HouseChimneyMedical;
+            this.btnCoc.IconColor = System.Drawing.Color.White;
+            this.btnCoc.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCoc.IconSize = 30;
+            this.btnCoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCoc.Location = new System.Drawing.Point(683, 31);
+            this.btnCoc.Name = "btnCoc";
+            this.btnCoc.Size = new System.Drawing.Size(75, 37);
+            this.btnCoc.TabIndex = 37;
+            this.btnCoc.Text = "Cọc";
+            this.btnCoc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCoc.UseVisualStyleBackColor = false;
+            this.btnCoc.Click += new System.EventHandler(this.btnCoc_Click);
+            // 
             // txtTimKiem
             // 
             this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTimKiem.Location = new System.Drawing.Point(389, 33);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(155, 27);
+            this.txtTimKiem.Size = new System.Drawing.Size(155, 23);
             this.txtTimKiem.TabIndex = 36;
             // 
             // label4
@@ -200,7 +218,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(237, 14);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 20);
+            this.label4.Size = new System.Drawing.Size(0, 17);
             this.label4.TabIndex = 35;
             // 
             // cbbTinhTrang
@@ -210,7 +228,7 @@
             this.cbbTinhTrang.FormattingEnabled = true;
             this.cbbTinhTrang.Location = new System.Drawing.Point(225, 34);
             this.cbbTinhTrang.Name = "cbbTinhTrang";
-            this.cbbTinhTrang.Size = new System.Drawing.Size(148, 28);
+            this.cbbTinhTrang.Size = new System.Drawing.Size(148, 25);
             this.cbbTinhTrang.TabIndex = 34;
             // 
             // btnChoThue
@@ -253,7 +271,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(415, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 20);
+            this.label2.Size = new System.Drawing.Size(0, 17);
             this.label2.TabIndex = 31;
             // 
             // label1
@@ -261,7 +279,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(62, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 16);
+            this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 30;
             // 
             // panPhong1
@@ -331,6 +349,7 @@
             this.dgvPhongTro.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPhongTro.Size = new System.Drawing.Size(683, 187);
             this.dgvPhongTro.TabIndex = 24;
+            this.dgvPhongTro.DoubleClick += new System.EventHandler(this.dgvPhongTro_DoubleClick);
             // 
             // cbbDayTro
             // 
@@ -338,7 +357,7 @@
             this.cbbDayTro.FormattingEnabled = true;
             this.cbbDayTro.Location = new System.Drawing.Point(65, 35);
             this.cbbDayTro.Name = "cbbDayTro";
-            this.cbbDayTro.Size = new System.Drawing.Size(148, 28);
+            this.cbbDayTro.Size = new System.Drawing.Size(148, 25);
             this.cbbDayTro.TabIndex = 27;
             // 
             // label7
@@ -348,7 +367,7 @@
             this.label7.ForeColor = System.Drawing.Color.Chocolate;
             this.label7.Location = new System.Drawing.Point(12, 11);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(217, 28);
+            this.label7.Size = new System.Drawing.Size(178, 23);
             this.label7.TabIndex = 36;
             this.label7.Text = "DACH SÁCH PHÒNG";
             this.label7.Click += new System.EventHandler(this.label7_Click);
@@ -362,24 +381,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(914, 49);
             this.panel1.TabIndex = 41;
-            // 
-            // btnCoc
-            // 
-            this.btnCoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCoc.BackColor = System.Drawing.Color.Tomato;
-            this.btnCoc.IconChar = FontAwesome.Sharp.IconChar.HouseChimneyMedical;
-            this.btnCoc.IconColor = System.Drawing.Color.White;
-            this.btnCoc.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCoc.IconSize = 30;
-            this.btnCoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCoc.Location = new System.Drawing.Point(683, 31);
-            this.btnCoc.Name = "btnCoc";
-            this.btnCoc.Size = new System.Drawing.Size(75, 37);
-            this.btnCoc.TabIndex = 37;
-            this.btnCoc.Text = "Cọc";
-            this.btnCoc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCoc.UseVisualStyleBackColor = false;
-            this.btnCoc.Click += new System.EventHandler(this.btnCoc_Click);
             // 
             // Phong
             // 

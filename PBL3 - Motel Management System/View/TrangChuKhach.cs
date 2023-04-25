@@ -226,7 +226,7 @@ namespace PBL3___Motel_Management_System.View
         TrangChu tc = new TrangChu();
         private void btnHopDong_Click(object sender, EventArgs e)
         {
-            HoaDon hd = new HoaDon();
+            Hoadon hd = new Hoadon();
             hd.btnXoa.Visible = false;
             tc.openChildForm1(hd, panelMain);
         }

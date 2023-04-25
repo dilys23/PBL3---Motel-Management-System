@@ -39,14 +39,20 @@ namespace PBL3___Motel_Management_System.View
                 new DataColumn{ColumnName = "Diện tích",DataType = typeof(double)},
                 new DataColumn{ColumnName = "Tình trạng",DataType = typeof(bool)},
                 new DataColumn{ColumnName = "Số người hiện có",DataType = typeof(int)},
-                new DataColumn{ColumnName = "Số người tối đa",DataType = typeof(int)}       
+                new DataColumn{ColumnName = "Số người tối đa",DataType = typeof(int)} ,
+                new DataColumn{ColumnName = "Hình ảnh",DataType = typeof(Image)} 
             });
             QLBLL qLBLL = new QLBLL();
            
             
                 foreach (ViewPhongTro vp in qLBLL.GetAllPhongTroByIdDay(IdDay))
                 {
-                    dt.Rows.Add(vp.MaPhongTro, vp.Stt, vp.TenPhongTro, vp.GiaTien, vp.DienTich, vp.TinhTrang, vp.SoNguoiHienCo, vp.SoNguoiToiDa);
+                Image image = null;
+                if(vp.HinhAnh != null)
+                {
+                    image = ChuyenDoiAnh.Base64ToImage(vp.HinhAnh);
+                }
+                    dt.Rows.Add(vp.MaPhongTro, vp.Stt, vp.TenPhongTro, vp.GiaTien, vp.DienTich, vp.TinhTrang, vp.SoNguoiHienCo, vp.SoNguoiToiDa, image);
                 }
          
             textBox1.Text = qLBLL.GetDayByIdDay(IdDay).TenDayTro.ToString();
@@ -71,15 +77,43 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            QLBLL qlBLL = new QLBLL();
-            string IdPhong = dgvPhong.CurrentRow.Cells[0].Value.ToString();
+
+
+
+            if (dgvPhong.CurrentRow == null)
+            {
+                MessageBox.Show("Vui lòng chọn 1 dòng");
+            }
+            else
+            {
+              
+                string IdPhong = dgvPhong.CurrentRow.Cells[0].Value.ToString();
             tc.openChildForm1(new SuaPhong(IdPhong,LoadForm), panelChitietDay);
             LoadForm(IdDay);
+            }
+            
         }
 
         private void ChitietDay_Load(object sender, EventArgs e)
         {
             LoadForm(IdDay);
+        }
+
+        private void dgvPhong_DoubleClick(object sender, EventArgs e)
+        {
+            string id = dgvPhong.CurrentRow.Cells[0].Value.ToString();
+            QLBLL qLBLL = new QLBLL();
+            PhongTro pt = qLBLL.GetPhongTroByIdPhong(id);
+            if (pt.HinhAnh!=null)
+            {
+                Image image = ChuyenDoiAnh.Base64ToImage(pt.HinhAnh);
+                Anh anh = new Anh(image);
+                anh.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu ảnh");
+            }
         }
     }
 }

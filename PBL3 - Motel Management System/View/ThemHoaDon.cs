@@ -11,17 +11,42 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PBL3___Motel_Management_System.View
 {
     public partial class ThemHoaDon : Form
     {
-        public ThemHoaDon()
+        private Loader loader;
+        private string IdHd;
+
+        public ThemHoaDon(Loader loader,string idHd)
         {
             InitializeComponent();
             SetCBB();
-            LoadForm();
+            this.loader=loader;
+            this.IdHd=idHd;
+            if(this.IdHd != null )
+            {
+                lbl.Text = "Sửa hóa đơn";
+                cbbDayTro.Enabled = false;
+                cbbPhongTro.Enabled = false;
+                QLBLL qLBLL = new QLBLL();
+                HoaDon hd = qLBLL.GetHoaDonById(idHd);
+                int index = -1;
+                for(int i=0;i<cbbPhongTro.Items.Count;i++)
+                {
+                    if (((ViewCbb)cbbPhongTro.Items[i]).IdDayTro == hd.MaPhongTro) index = i;
+                }
+                cbbPhongTro.SelectedIndex = index;
+                DateTime dt = DateTime.ParseExact(hd.ThangChiTra, "MM-yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                DateTime dt1 = DateTime.ParseExact(hd.NgayTao, "dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture);
+
+                dtpThangThanhToan.Value = dt;
+                dtpNgayLap.Value = dt1;
+            }
         }
+
         private void SetCBB()
         {
             cbbDayTro.Items.Clear();
@@ -30,13 +55,11 @@ namespace PBL3___Motel_Management_System.View
             cbbDayTro.Items.AddRange(qLBLL.GetCbbDayTro().ToArray());
             cbbDayTro.SelectedIndex = 0;
         }
-        private void LoadForm()
-        {
-
-        }
+        
         private void LoadDgv(string idPhong, string thang)
         {
             dgvDichVu.Rows.Clear();
+            
             txtGiamGia.Text = "0";
             QLBLL qLBLL = new QLBLL();
             HopDong hd = qLBLL.GetHopDongByIdPhong(idPhong);
@@ -181,6 +204,73 @@ namespace PBL3___Motel_Management_System.View
         private void txtGiamGia_TextChanged(object sender, EventArgs e)
         {
             
+        }
+        private bool CheckHopLe()
+        {
+            errorProvider1.SetError(txtGiamGia, "");
+            if(!double.TryParse(txtGiamGia.Text, out double tien) )
+            {
+                errorProvider1.SetError(txtGiamGia, "Vui lòng điền một số!");
+                return false;
+            }
+            return true;
+        }
+        private void iconButton4_Click(object sender, EventArgs e)
+        {
+            if(CheckHopLe())
+            {
+                
+
+                double tienPhong = Convert.ToDouble(txtTienPhong.Text);
+                double tienDv = Convert.ToDouble(txtTienDichVu.Text);
+                double giamGia = Convert.ToDouble(txtGiamGia.Text);
+                double tienGiamGia = tienPhong*giamGia/100;
+                double conLai = tienPhong - tienGiamGia;
+                double tongCong = conLai + tienDv;
+                string tt = "Tiền phòng: " + tienPhong + "\nGiảm giá: " + tienGiamGia + "\nCòn lại: " + conLai + "\nTiền dịch vu: " + tienDv + "\nTổng cộng: " + tongCong;
+                DialogResult xacNhan  = MessageBox.Show(tt,"Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                if(xacNhan  == System.Windows.Forms.DialogResult.No)
+                {
+                    
+                }
+                else
+                {
+                    QLBLL qLBLL = new QLBLL();
+                    if (this.IdHd == null)
+                    {
+
+                    
+                    HoaDon hd = new HoaDon
+                    { MaHoaDon = qLBLL.TaoIdHoaDon(),
+                        MaPhongTro = ((ViewCbb)cbbPhongTro.SelectedItem).IdDayTro,
+                        NgayTao = dtpNgayLap.Value.ToString("dd-MM-yyyy"),
+                        ThangChiTra = dtpThangThanhToan.Value.ToString("MM-yyyy"),
+                        TinhTrang = false,
+                        TongTien = tongCong,
+                        DaThanhToan = 0
+                    };
+                    qLBLL.AddHoaDonBll(hd);
+                    MessageBox.Show("Thêm hóa đơn thành công", "Thông báo");
+                    this.Close();
+                    this.loader(null);
+                    }
+                    else
+                    {
+                        HoaDon hd = qLBLL.GetHoaDonById(this.IdHd);
+                        hd.NgayTao = dtpNgayLap.Value.ToString("dd-MM-yyyy");
+                        hd.ThangChiTra = dtpThangThanhToan.Value.ToString("MM-yyyy");
+                        hd.TinhTrang = false;
+                        hd.TongTien = tongCong;
+                        hd.DaThanhToan = 0;
+                        qLBLL.UpdateHoaDonBLL(hd);
+                        MessageBox.Show("Thay đổi hóa đơn thành công", "Thông báo");
+                        this.Close();
+                        this.loader(null);
+                    }
+                }
+                
+                
+            }
         }
     }
 }
