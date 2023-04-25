@@ -820,7 +820,16 @@ namespace PBL3___Motel_Management_System.BLL
             return null;
 
         }
-
+        public List<ChiTietDichVu>GetChiTietDichVuByIdPhong(string idPhong)
+        {
+            QLDAL qLDAL = new QLDAL();
+            List<ChiTietDichVu> list = new List<ChiTietDichVu> ();
+            foreach(ChiTietDichVu ctdv in qLDAL.GetAllChiTietDichVu())
+            {
+                if(ctdv.MaPhongTro == idPhong)list.Add(ctdv);
+            }
+            return list;
+        }
         public HopDong GetHopDongByIdPhong(string IdPhong)
         {
             QLDAL qLDAL = new QLDAL();

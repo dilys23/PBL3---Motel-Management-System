@@ -304,7 +304,7 @@ namespace PBL3___Motel_Management_System.DAL
                 var s = data.ChiTietSuDungDichVu.Single(p => p.MaChiTietSuDungDichVu == id);
                 return (ChiTietSuDungDichVu)s;
             }
-            return null;
+            
         }
         public void UpdateHopDongDAL(HopDong hd)
         {
@@ -383,21 +383,6 @@ namespace PBL3___Motel_Management_System.DAL
             }
             return list;
         }
-        //public string GetIdThietBiByIdPhong(string IdPhong)
-        //{
-        //    using (DataPbl data = new DataPbl())
-        //    {
-        //        foreach (PhongTro phongTro in GetAllPhongTro())
-        //        {
-        //            if (phongTro.MaPhongTro == IdPhong)
-        //            {
-        //                return DichVu.Ma;
-        //            }
-
-        //        }
-        //        return null;
-
-        //    }
-        //}
+       
     }
 }
