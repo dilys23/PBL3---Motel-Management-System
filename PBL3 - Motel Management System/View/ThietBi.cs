@@ -190,5 +190,15 @@ namespace PBL3___Motel_Management_System.View
         {
             LoadForm(txtTim.Text);
         }
+
+        private void btnXoaPhong_Click(object sender, EventArgs e)
+        {
+            string idThietBi = dgvThietBi.CurrentRow.Cells[0].Value.ToString();
+            QLBLL qLBLL = new QLBLL();
+            qLBLL.DelChiTietThietBiByIdThietBi(idThietBi);
+            qLBLL.DelThietBiBll(idThietBi);
+            MessageBox.Show("Xóa thiết bị thành công", "Thông báo");
+            LoadForm(null);
+        }
     }
 }

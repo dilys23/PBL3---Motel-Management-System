@@ -542,6 +542,12 @@ namespace PBL3___Motel_Management_System.BLL
             QLDAL qLDAL = new QLDAL();
             qLDAL.UpdateNguoiDAL(nguoi);
         }
+        public void DelThietBiBll(string id)
+        {
+            QLDAL qLDAL = new QLDAL();
+            qLDAL.DelThietBiDal(id);
+        }
+        
         public void UpdateChiTietSuDungDichVu(ChiTietSuDungDichVu dv)
         {
             QLDAL qLDAL = new QLDAL();
@@ -921,6 +927,52 @@ namespace PBL3___Motel_Management_System.BLL
             foreach(string id in GetAllIdCHiTietThietBiByIdPhong(IdPhong))
             {
                 qLDAL.DelCHiTietThietBiById(id);
+            }
+        }
+        public List<string> GetAllChiTietThietBiByIdThietBi(string idThietBi)
+        {
+            QLDAL qLDAL = new QLDAL();
+            List<string> list = new List<string>();
+            foreach(ChiTietThietBi ct in qLDAL.GetAllChiTietThietBi())
+            {
+                if (ct.MaThietBi == idThietBi) list.Add(ct.MaChiTietThietBi);
+            }
+            return list;
+        }
+        public void DelChiTietThietBiByIdThietBi(string idThietBi)
+        {
+            QLDAL qLDAL =new QLDAL();
+            foreach(string id in GetAllChiTietThietBiByIdThietBi(idThietBi))
+                {
+                qLDAL.DelCHiTietThietBiById(id);
+            }
+        }
+        public void DelChiTietDichVu(string id)
+        {
+            QLDAL qLDAL=new QLDAL();
+            qLDAL.DelChiTietDichVuDal(id);
+        }
+        public void DelDichVu(string id)
+        {
+            QLDAL qLDAL = new QLDAL();
+            qLDAL.DelDichVuDal(id);
+        }
+        public List<string>GetAllChiTietDichVuByIdDichVu(string id)
+        {
+            List<string> list = new List<string>();
+            QLDAL qLDAL = new QLDAL();
+            foreach(ChiTietDichVu ct in qLDAL.GetAllChiTietDichVu())
+            {
+                if (ct.MaDichVu == id) list.Add(ct.MaChiTietDichVu);
+            }
+            return list;
+        }
+        public void DelChiTietDichVuByIdDichVu(string id)
+        {
+            
+            foreach(string Id in GetAllChiTietDichVuByIdDichVu(id))
+            {
+                DelChiTietDichVu(Id);
             }
         }
         public void DelHoaDonBll(string id)

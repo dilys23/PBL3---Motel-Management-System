@@ -31,13 +31,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panelTB = new System.Windows.Forms.Panel();
+            this.btnBaoHong = new FontAwesome.Sharp.IconButton();
             this.dgvThietBi = new System.Windows.Forms.DataGridView();
             this.btnTim = new FontAwesome.Sharp.IconButton();
             this.btnXoaPhong = new FontAwesome.Sharp.IconButton();
             this.btnSuaDV = new FontAwesome.Sharp.IconButton();
             this.btnThemThietBi = new FontAwesome.Sharp.IconButton();
             this.txtTim = new System.Windows.Forms.TextBox();
-            this.btnBaoHong = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panelTB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThietBi)).BeginInit();
@@ -49,8 +49,9 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(914, 49);
+            this.panel1.Size = new System.Drawing.Size(686, 40);
             this.panel1.TabIndex = 22;
             // 
             // label4
@@ -58,9 +59,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bahnschrift SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Chocolate;
-            this.label4.Location = new System.Drawing.Point(12, 11);
+            this.label4.Location = new System.Drawing.Point(9, 9);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(230, 28);
+            this.label4.Size = new System.Drawing.Size(188, 23);
             this.label4.TabIndex = 26;
             this.label4.Text = "DANH SÁCH THIẾT BỊ";
             // 
@@ -77,10 +79,31 @@
             this.panelTB.Controls.Add(this.btnSuaDV);
             this.panelTB.Controls.Add(this.btnThemThietBi);
             this.panelTB.Controls.Add(this.txtTim);
-            this.panelTB.Location = new System.Drawing.Point(5, 55);
+            this.panelTB.Location = new System.Drawing.Point(4, 45);
+            this.panelTB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelTB.Name = "panelTB";
-            this.panelTB.Size = new System.Drawing.Size(902, 383);
+            this.panelTB.Size = new System.Drawing.Size(676, 311);
             this.panelTB.TabIndex = 23;
+            // 
+            // btnBaoHong
+            // 
+            this.btnBaoHong.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnBaoHong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBaoHong.BackColor = System.Drawing.Color.Orange;
+            this.btnBaoHong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBaoHong.IconChar = FontAwesome.Sharp.IconChar.FileCircleExclamation;
+            this.btnBaoHong.IconColor = System.Drawing.Color.White;
+            this.btnBaoHong.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnBaoHong.IconSize = 25;
+            this.btnBaoHong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBaoHong.Location = new System.Drawing.Point(520, 12);
+            this.btnBaoHong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBaoHong.Name = "btnBaoHong";
+            this.btnBaoHong.Size = new System.Drawing.Size(75, 32);
+            this.btnBaoHong.TabIndex = 57;
+            this.btnBaoHong.Text = "Hỏng";
+            this.btnBaoHong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBaoHong.UseVisualStyleBackColor = false;
             // 
             // dgvThietBi
             // 
@@ -90,12 +113,13 @@
             this.dgvThietBi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvThietBi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvThietBi.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvThietBi.Location = new System.Drawing.Point(33, 100);
+            this.dgvThietBi.Location = new System.Drawing.Point(25, 81);
+            this.dgvThietBi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvThietBi.Name = "dgvThietBi";
             this.dgvThietBi.RowHeadersWidth = 51;
             this.dgvThietBi.RowTemplate.Height = 24;
             this.dgvThietBi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvThietBi.Size = new System.Drawing.Size(815, 251);
+            this.dgvThietBi.Size = new System.Drawing.Size(611, 204);
             this.dgvThietBi.TabIndex = 56;
             // 
             // btnTim
@@ -106,9 +130,10 @@
             this.btnTim.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnTim.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTim.IconSize = 25;
-            this.btnTim.Location = new System.Drawing.Point(81, 13);
+            this.btnTim.Location = new System.Drawing.Point(61, 11);
+            this.btnTim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(42, 42);
+            this.btnTim.Size = new System.Drawing.Size(32, 34);
             this.btnTim.TabIndex = 55;
             this.btnTim.UseVisualStyleBackColor = false;
             this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
@@ -124,13 +149,15 @@
             this.btnXoaPhong.IconFont = FontAwesome.Sharp.IconFont.Regular;
             this.btnXoaPhong.IconSize = 25;
             this.btnXoaPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaPhong.Location = new System.Drawing.Point(798, 14);
+            this.btnXoaPhong.Location = new System.Drawing.Point(598, 11);
+            this.btnXoaPhong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnXoaPhong.Name = "btnXoaPhong";
-            this.btnXoaPhong.Size = new System.Drawing.Size(94, 38);
+            this.btnXoaPhong.Size = new System.Drawing.Size(70, 31);
             this.btnXoaPhong.TabIndex = 54;
             this.btnXoaPhong.Text = "Xóa";
             this.btnXoaPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoaPhong.UseVisualStyleBackColor = false;
+            this.btnXoaPhong.Click += new System.EventHandler(this.btnXoaPhong_Click);
             // 
             // btnSuaDV
             // 
@@ -143,9 +170,10 @@
             this.btnSuaDV.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSuaDV.IconSize = 25;
             this.btnSuaDV.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaDV.Location = new System.Drawing.Point(599, 16);
+            this.btnSuaDV.Location = new System.Drawing.Point(449, 13);
+            this.btnSuaDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSuaDV.Name = "btnSuaDV";
-            this.btnSuaDV.Size = new System.Drawing.Size(88, 39);
+            this.btnSuaDV.Size = new System.Drawing.Size(66, 32);
             this.btnSuaDV.TabIndex = 52;
             this.btnSuaDV.Text = "Sửa";
             this.btnSuaDV.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -163,9 +191,10 @@
             this.btnThemThietBi.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnThemThietBi.IconSize = 25;
             this.btnThemThietBi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemThietBi.Location = new System.Drawing.Point(493, 15);
+            this.btnThemThietBi.Location = new System.Drawing.Point(370, 12);
+            this.btnThemThietBi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnThemThietBi.Name = "btnThemThietBi";
-            this.btnThemThietBi.Size = new System.Drawing.Size(100, 40);
+            this.btnThemThietBi.Size = new System.Drawing.Size(75, 32);
             this.btnThemThietBi.TabIndex = 53;
             this.btnThemThietBi.Text = "Thêm ";
             this.btnThemThietBi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -175,37 +204,20 @@
             // txtTim
             // 
             this.txtTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTim.Location = new System.Drawing.Point(143, 21);
+            this.txtTim.Location = new System.Drawing.Point(107, 17);
+            this.txtTim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTim.Name = "txtTim";
-            this.txtTim.Size = new System.Drawing.Size(180, 27);
+            this.txtTim.Size = new System.Drawing.Size(136, 23);
             this.txtTim.TabIndex = 51;
-            // 
-            // btnBaoHong
-            // 
-            this.btnBaoHong.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnBaoHong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBaoHong.BackColor = System.Drawing.Color.Orange;
-            this.btnBaoHong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBaoHong.IconChar = FontAwesome.Sharp.IconChar.FileCircleExclamation;
-            this.btnBaoHong.IconColor = System.Drawing.Color.White;
-            this.btnBaoHong.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnBaoHong.IconSize = 25;
-            this.btnBaoHong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBaoHong.Location = new System.Drawing.Point(693, 15);
-            this.btnBaoHong.Name = "btnBaoHong";
-            this.btnBaoHong.Size = new System.Drawing.Size(100, 40);
-            this.btnBaoHong.TabIndex = 57;
-            this.btnBaoHong.Text = "Hỏng";
-            this.btnBaoHong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBaoHong.UseVisualStyleBackColor = false;
             // 
             // Thietbi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 438);
+            this.ClientSize = new System.Drawing.Size(686, 356);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelTB);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Thietbi";
             this.Text = "ThietBi";
             this.Load += new System.EventHandler(this.ThietBi_Load);
