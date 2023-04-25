@@ -276,7 +276,7 @@ namespace PBL3___Motel_Management_System
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
-            openChildForm(new HoaDon());
+            openChildForm(new Hoadon());
         }
 
         private void btnDoanhTHu_Click(object sender, EventArgs e)

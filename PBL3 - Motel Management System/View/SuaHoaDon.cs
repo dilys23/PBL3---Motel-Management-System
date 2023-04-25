@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PBL3___Motel_Management_System.BLL;
+using PBL3___Motel_Management_System.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +14,22 @@ namespace PBL3___Motel_Management_System.View
 {
     public partial class SuaHoaDon : Form
     {
-        public SuaHoaDon()
+        private Loader loader;
+        private string Idhd;
+        public SuaHoaDon(Loader loader, string Idhd)
         {
+            
             InitializeComponent();
+            this.loader=loader;
+            this.Idhd=Idhd;
+            LoadForm();
         }
-
+        private void LoadForm()
+        {
+            QLBLL qLBLL = new QLBLL();
+            HoaDon hd = qLBLL.GetHoaDonById(Idhd);
+            
+        }
         private void iconButton2_Click(object sender, EventArgs e)
         {
             this.Close();

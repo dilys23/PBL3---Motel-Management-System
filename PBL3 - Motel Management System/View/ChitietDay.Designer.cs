@@ -53,9 +53,10 @@
             this.panelChitietDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.panelChitietDay.Controls.Add(this.btnTroVe);
             this.panelChitietDay.Controls.Add(this.panPhong1);
-            this.panelChitietDay.Location = new System.Drawing.Point(-3, 0);
+            this.panelChitietDay.Location = new System.Drawing.Point(-2, 0);
+            this.panelChitietDay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelChitietDay.Name = "panelChitietDay";
-            this.panelChitietDay.Size = new System.Drawing.Size(1144, 515);
+            this.panelChitietDay.Size = new System.Drawing.Size(858, 418);
             this.panelChitietDay.TabIndex = 59;
             // 
             // btnTroVe
@@ -66,9 +67,10 @@
             this.btnTroVe.IconColor = System.Drawing.Color.White;
             this.btnTroVe.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTroVe.IconSize = 30;
-            this.btnTroVe.Location = new System.Drawing.Point(1067, 6);
+            this.btnTroVe.Location = new System.Drawing.Point(800, 5);
+            this.btnTroVe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTroVe.Name = "btnTroVe";
-            this.btnTroVe.Size = new System.Drawing.Size(43, 37);
+            this.btnTroVe.Size = new System.Drawing.Size(32, 30);
             this.btnTroVe.TabIndex = 60;
             this.btnTroVe.UseVisualStyleBackColor = false;
             this.btnTroVe.Click += new System.EventHandler(this.btnTroVe_Click);
@@ -87,17 +89,19 @@
             this.panPhong1.Controls.Add(this.btnSua);
             this.panPhong1.Controls.Add(this.btnThem);
             this.panPhong1.Controls.Add(this.label1);
-            this.panPhong1.Location = new System.Drawing.Point(33, 49);
+            this.panPhong1.Location = new System.Drawing.Point(25, 40);
+            this.panPhong1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panPhong1.Name = "panPhong1";
-            this.panPhong1.Size = new System.Drawing.Size(1077, 442);
+            this.panPhong1.Size = new System.Drawing.Size(808, 360);
             this.panPhong1.TabIndex = 59;
             // 
             // textBox2
             // 
             this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(141, 82);
+            this.textBox2.Location = new System.Drawing.Point(106, 67);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(351, 22);
+            this.textBox2.Size = new System.Drawing.Size(264, 20);
             this.textBox2.TabIndex = 63;
             // 
             // label2
@@ -105,18 +109,20 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bahnschrift SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Peru;
-            this.label2.Location = new System.Drawing.Point(25, 75);
+            this.label2.Location = new System.Drawing.Point(19, 61);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 28);
+            this.label2.Size = new System.Drawing.Size(68, 23);
             this.label2.TabIndex = 62;
             this.label2.Text = "Địa chỉ";
             // 
             // textBox1
             // 
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(141, 35);
+            this.textBox1.Location = new System.Drawing.Point(106, 28);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(351, 22);
+            this.textBox1.Size = new System.Drawing.Size(264, 20);
             this.textBox1.TabIndex = 61;
             // 
             // dgvPhong
@@ -126,14 +132,16 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPhong.Location = new System.Drawing.Point(18, 167);
+            this.dgvPhong.Location = new System.Drawing.Point(14, 136);
+            this.dgvPhong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvPhong.Name = "dgvPhong";
             this.dgvPhong.ReadOnly = true;
             this.dgvPhong.RowHeadersWidth = 51;
             this.dgvPhong.RowTemplate.Height = 24;
             this.dgvPhong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPhong.Size = new System.Drawing.Size(1034, 232);
+            this.dgvPhong.Size = new System.Drawing.Size(776, 188);
             this.dgvPhong.TabIndex = 60;
+            this.dgvPhong.DoubleClick += new System.EventHandler(this.dgvPhong_DoubleClick);
             // 
             // btnXoa
             // 
@@ -144,9 +152,10 @@
             this.btnXoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXoa.IconSize = 25;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(952, 15);
+            this.btnXoa.Location = new System.Drawing.Point(714, 12);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(90, 41);
+            this.btnXoa.Size = new System.Drawing.Size(68, 33);
             this.btnXoa.TabIndex = 59;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -161,9 +170,10 @@
             this.btnSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSua.IconSize = 25;
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(856, 15);
+            this.btnSua.Location = new System.Drawing.Point(642, 12);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(90, 41);
+            this.btnSua.Size = new System.Drawing.Size(68, 33);
             this.btnSua.TabIndex = 58;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -179,9 +189,10 @@
             this.btnThem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThem.IconSize = 25;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(760, 13);
+            this.btnThem.Location = new System.Drawing.Point(570, 11);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(90, 43);
+            this.btnThem.Size = new System.Drawing.Size(68, 35);
             this.btnThem.TabIndex = 56;
             this.btnThem.Text = "Thêm";
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -193,18 +204,20 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Peru;
-            this.label1.Location = new System.Drawing.Point(25, 28);
+            this.label1.Location = new System.Drawing.Point(19, 23);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 28);
+            this.label1.Size = new System.Drawing.Size(41, 23);
             this.label1.TabIndex = 54;
             this.label1.Text = "Dãy";
             // 
             // ChitietDay
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1143, 527);
+            this.ClientSize = new System.Drawing.Size(857, 428);
             this.Controls.Add(this.panelChitietDay);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ChitietDay";
             this.Text = "ChitietDay";
             this.Load += new System.EventHandler(this.ChitietDay_Load);

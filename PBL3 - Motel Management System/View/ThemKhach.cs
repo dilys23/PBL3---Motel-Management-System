@@ -43,6 +43,10 @@ namespace PBL3___Motel_Management_System
             txtSdt.Text = nguoi.Sdt;
             txtDiaChi.Text = nguoi.Diachi;
             if(nguoi.GioiTinh == true)rdbtnNam.Checked = true;
+            if(nguoi.HinhAnh != null )
+                {
+                    pctKhach.Image = ChuyenDoiAnh.Base64ToImage(nguoi.HinhAnh);
+                }
             else rdbtnNu.Checked = true;
             }
             
@@ -129,23 +133,35 @@ namespace PBL3___Motel_Management_System
                 nguoi.Diachi = txtDiaChi.Text;
                 nguoi.GioiTinh = (rdbtnNam.Checked);
                 nguoi.NgaySinh = dtpNgaySinh.Value.ToString("yyyy-MM-dd");
+                if(pctKhach.Image != null)
+                {
+                    nguoi.HinhAnh = ChuyenDoiAnh.ImageToBase64(pctKhach.Image, pctKhach.Image.RawFormat);
+                }
                 if (thuePhong.hopDong.MaHopDong != null)
                 {
                 thuePhong.hopDong.Nguoi = nguoi;
                 tc.openChildForm1(new ThemDVphong(thuePhong, Back), panelKhach);
                 }
-                else
+                else if (this.thuePhong.hopDong.MaNguoi == null)
                 {
                     ThanhVienTrongPhong tvtp = new ThanhVienTrongPhong();
                     tvtp.MaThanhVienTrongPhong = qLBLL.TaoIdThanhVienTrongPhong();
                     tvtp.MaNguoi = nguoi.MaNguoi;
                     tvtp.MaPhongTro = thuePhong.hopDong.MaPhongTro;
+
                     qLBLL.AddNguoiBll(nguoi);
                     qLBLL.AddThanhVienTrongPhongBll(tvtp);
                     MessageBox.Show("Thêm thành viên vào phòng thành công", "Thông báo", MessageBoxButtons.OK);
                     this.loader(null);
                     this.Close();
 
+                }
+                else
+                {
+                    qLBLL.UpdateNguoiBLL(nguoi);
+                    MessageBox.Show("Thay đổi thông tin thành công", "Thông báo", MessageBoxButtons.OK);
+                    this.loader(null);
+                    this.Close();
                 }
             }
             

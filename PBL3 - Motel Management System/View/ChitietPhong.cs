@@ -28,19 +28,24 @@ namespace PBL3___Motel_Management_System.View
         TrangChu tc = new TrangChu();
         private void LoadForm(string txt)
         {
+            dgvThanhVien.Columns[8].ValueType = typeof(Image);
             dgvThanhVien.RowCount = 1;
             dgvDichVu.RowCount = 1;
             dgvThietBi.RowCount = 1;
-
+            
             QLBLL qLBLL = new QLBLL();
             int i = 1;
-            dgvThanhVien.Columns[6].ValueType = typeof(Boolean);
+            //dgvThanhVien.Columns[6].ValueType = typeof(Boolean);
             foreach(string idNguoi in qLBLL.GetIdNguoiByIdPhong(this.idPhong))
             {
                 Nguoi nguoi = new Nguoi();
                 nguoi = qLBLL.GetNguoiByIdNguoi(idNguoi);
-
-                dgvThanhVien.Rows.Add(nguoi.MaNguoi, i++, nguoi.Ten, nguoi.Cccd, nguoi.Sdt, nguoi.Diachi, nguoi.NgaySinh, (nguoi.GioiTinh)?"Nam":"Nữ");
+                Image image = null;
+                if(nguoi.HinhAnh != null)
+                {
+                    image = ChuyenDoiAnh.Base64ToImage(nguoi.HinhAnh);
+                }
+                dgvThanhVien.Rows.Add(nguoi.MaNguoi, i++, nguoi.Ten, nguoi.Cccd, nguoi.Sdt, nguoi.Diachi, nguoi.NgaySinh, (nguoi.GioiTinh)?"Nam":"Nữ", image);
             }
             i=1;
             foreach(string idDv in qLBLL.GetAllIdDichVuByIdPhong(this.idPhong))
@@ -93,9 +98,17 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            if(dgvThanhVien.CurrentRow != null)
+            {
+
             ThuePhong tp = new ThuePhong();
             tp.hopDong.MaNguoi = dgvThanhVien.CurrentRow.Cells[0].Value.ToString();
             tc.openChildForm1(new ThemKhach(tp, LoadForm), panelChiTiet);
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một dòng");
+            }
         }
 
         private void panPhong1_Paint(object sender, PaintEventArgs e)
@@ -138,7 +151,34 @@ namespace PBL3___Motel_Management_System.View
             //List<DichVu> dichVuList = qLBLL.Get
         }
 
-        
+        private void dgvThanhVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvThanhVien_DoubleClick(object sender, EventArgs e)
+        {
+            if(dgvThanhVien.CurrentRow.Cells[0].Value != null)
+            {
+
+            string id = dgvThanhVien.CurrentRow.Cells[0].Value.ToString();
+            QLBLL qLBLL = new QLBLL();
+            Nguoi nguoi = qLBLL.GetNguoiByIdNguoi(id);
+            if(nguoi.HinhAnh!=null)
+            {
+                Image image = ChuyenDoiAnh.Base64ToImage(nguoi.HinhAnh);
+                Anh anh = new Anh(image);
+                anh.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu ảnh");
+            }
+            } 
+            
+            
+            
+        }
     }
     
 }

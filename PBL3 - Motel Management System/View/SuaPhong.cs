@@ -1,5 +1,6 @@
 ﻿using PBL3___Motel_Management_System.BLL;
 using PBL3___Motel_Management_System.DAL;
+using PBL3___Motel_Management_System.DTO;
 using PBL3___Motel_Management_System.View;
 using System;
 using System.Collections.Generic;
@@ -52,6 +53,11 @@ namespace PBL3___Motel_Management_System
                 txtDienTich.Text = phongTro.DienTich.ToString();
                 txtGiaTien.Text = phongTro.GiaTien.ToString();
                 txtToiDa.Text= phongTro.ToiDa.ToString();
+                if(phongTro.HinhAnh != null)
+                {
+                    picturePhongTro.Image = ChuyenDoiAnh.Base64ToImage(phongTro.HinhAnh);
+                }
+                 
             }
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -138,6 +144,7 @@ namespace PBL3___Motel_Management_System
                     pt.DienTich = Convert.ToDouble(txtDienTich.Text);
                     pt.GiaTien = Convert.ToDouble(txtGiaTien.Text);
                     pt.ToiDa = Convert.ToInt32(txtToiDa.Text);
+                    pt.HinhAnh = ChuyenDoiAnh.ImageToBase64(picturePhongTro.Image,picturePhongTro.Image.RawFormat);
                     qLBLL.UpdatePTBLL(pt);
                     MessageBox.Show("Thay đổi thông tin thành công", "Thông báo");
                     Loader(null);
@@ -163,7 +170,7 @@ namespace PBL3___Motel_Management_System
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 imgLocation = dialog.FileName.ToString();
-                pctKhach.ImageLocation = imgLocation;
+                picturePhongTro.ImageLocation = imgLocation;
             }
         }
 

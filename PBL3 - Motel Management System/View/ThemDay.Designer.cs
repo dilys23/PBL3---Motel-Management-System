@@ -39,15 +39,15 @@
             this.txtTenDay = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnThemAnh = new FontAwesome.Sharp.IconButton();
+            this.pictureDayTro = new System.Windows.Forms.PictureBox();
             this.txtTenHuyen = new System.Windows.Forms.TextBox();
             this.txtTenThanhPho = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnThemAnh = new FontAwesome.Sharp.IconButton();
-            this.pctKhach = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDayTro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctKhach)).BeginInit();
             this.SuspendLayout();
             // 
             // btnThemDay
@@ -73,7 +73,7 @@
             this.label6.ForeColor = System.Drawing.Color.Chocolate;
             this.label6.Location = new System.Drawing.Point(19, 40);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(200, 28);
+            this.label6.Size = new System.Drawing.Size(163, 23);
             this.label6.TabIndex = 26;
             this.label6.Text = "THÊM DÃY PHÒNG";
             // 
@@ -98,7 +98,7 @@
             this.txtTenDuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenDuong.Location = new System.Drawing.Point(405, 154);
             this.txtTenDuong.Name = "txtTenDuong";
-            this.txtTenDuong.Size = new System.Drawing.Size(633, 27);
+            this.txtTenDuong.Size = new System.Drawing.Size(633, 23);
             this.txtTenDuong.TabIndex = 37;
             // 
             // label5
@@ -107,7 +107,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(280, 155);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 20);
+            this.label5.Size = new System.Drawing.Size(60, 17);
             this.label5.TabIndex = 36;
             this.label5.Text = "Địa chỉ *";
             // 
@@ -117,7 +117,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(280, 94);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 20);
+            this.label3.Size = new System.Drawing.Size(97, 17);
             this.label3.TabIndex = 31;
             this.label3.Text = "Quận/Huyện *";
             // 
@@ -127,7 +127,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(663, 36);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 20);
+            this.label2.Size = new System.Drawing.Size(118, 17);
             this.label2.TabIndex = 30;
             this.label2.Text = "Tỉnh/Thành phố *";
             // 
@@ -136,7 +136,7 @@
             this.txtTenDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenDay.Location = new System.Drawing.Point(405, 32);
             this.txtTenDay.Name = "txtTenDay";
-            this.txtTenDay.Size = new System.Drawing.Size(225, 27);
+            this.txtTenDay.Size = new System.Drawing.Size(225, 23);
             this.txtTenDay.TabIndex = 29;
             // 
             // label1
@@ -145,7 +145,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(280, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 20);
+            this.label1.Size = new System.Drawing.Size(69, 17);
             this.label1.TabIndex = 28;
             this.label1.Text = "Tên dãy *";
             // 
@@ -157,7 +157,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.btnThemAnh);
-            this.panel2.Controls.Add(this.pctKhach);
+            this.panel2.Controls.Add(this.pictureDayTro);
             this.panel2.Controls.Add(this.txtTenHuyen);
             this.panel2.Controls.Add(this.txtTenThanhPho);
             this.panel2.Controls.Add(this.label9);
@@ -171,38 +171,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1091, 281);
             this.panel2.TabIndex = 42;
-            // 
-            // txtTenHuyen
-            // 
-            this.txtTenHuyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenHuyen.Location = new System.Drawing.Point(405, 94);
-            this.txtTenHuyen.Name = "txtTenHuyen";
-            this.txtTenHuyen.Size = new System.Drawing.Size(225, 27);
-            this.txtTenHuyen.TabIndex = 48;
-            // 
-            // txtTenThanhPho
-            // 
-            this.txtTenThanhPho.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.txtTenThanhPho.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenThanhPho.Location = new System.Drawing.Point(829, 32);
-            this.txtTenThanhPho.Name = "txtTenThanhPho";
-            this.txtTenThanhPho.Size = new System.Drawing.Size(209, 27);
-            this.txtTenThanhPho.TabIndex = 47;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(280, 210);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(170, 20);
-            this.label9.TabIndex = 46;
-            this.label9.Text = "(*) Thông tin bắt buộc";
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
             // 
             // btnThemAnh
             // 
@@ -218,16 +186,48 @@
             this.btnThemAnh.UseVisualStyleBackColor = false;
             this.btnThemAnh.Click += new System.EventHandler(this.btnThemAnh_Click);
             // 
-            // pctKhach
+            // pictureDayTro
             // 
-            this.pctKhach.BackColor = System.Drawing.Color.White;
-            this.pctKhach.Location = new System.Drawing.Point(53, 18);
-            this.pctKhach.Name = "pctKhach";
-            this.pctKhach.Size = new System.Drawing.Size(176, 185);
-            this.pctKhach.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctKhach.TabIndex = 49;
-            this.pctKhach.TabStop = false;
-            this.pctKhach.Click += new System.EventHandler(this.pctKhach_Click);
+            this.pictureDayTro.BackColor = System.Drawing.Color.White;
+            this.pictureDayTro.Location = new System.Drawing.Point(53, 18);
+            this.pictureDayTro.Name = "pictureDayTro";
+            this.pictureDayTro.Size = new System.Drawing.Size(176, 185);
+            this.pictureDayTro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureDayTro.TabIndex = 49;
+            this.pictureDayTro.TabStop = false;
+            this.pictureDayTro.Click += new System.EventHandler(this.pctKhach_Click);
+            // 
+            // txtTenHuyen
+            // 
+            this.txtTenHuyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenHuyen.Location = new System.Drawing.Point(405, 94);
+            this.txtTenHuyen.Name = "txtTenHuyen";
+            this.txtTenHuyen.Size = new System.Drawing.Size(225, 23);
+            this.txtTenHuyen.TabIndex = 48;
+            // 
+            // txtTenThanhPho
+            // 
+            this.txtTenThanhPho.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.txtTenThanhPho.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenThanhPho.Location = new System.Drawing.Point(829, 32);
+            this.txtTenThanhPho.Name = "txtTenThanhPho";
+            this.txtTenThanhPho.Size = new System.Drawing.Size(209, 23);
+            this.txtTenThanhPho.TabIndex = 47;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(280, 210);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(146, 17);
+            this.label9.TabIndex = 46;
+            this.label9.Text = "(*) Thông tin bắt buộc";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // ThemDay
             // 
@@ -244,8 +244,8 @@
             this.Load += new System.EventHandler(this.AddRoom_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDayTro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctKhach)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,6 +267,6 @@
         private System.Windows.Forms.TextBox txtTenThanhPho;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private FontAwesome.Sharp.IconButton btnThemAnh;
-        private System.Windows.Forms.PictureBox pctKhach;
+        private System.Windows.Forms.PictureBox pictureDayTro;
     }
 }
