@@ -28,5 +28,10 @@ namespace PBL3___Motel_Management_System.View
          Dangnhap dn = new Dangnhap();
         dn.Show();
         }
+        //TrangChu tc = new TrangChu();   
+        private void btnDoiMK_Click(object sender, EventArgs e)
+        {
+            //tc.openChildForm(new DoiMK());
+        }
     }
 }

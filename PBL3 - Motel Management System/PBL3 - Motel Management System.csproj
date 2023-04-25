@@ -179,6 +179,12 @@
     <Compile Include="View\Daytro.Designer.cs">
       <DependentUpon>Daytro.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\DoiMK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DoiMK.Designer.cs">
+      <DependentUpon>DoiMK.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\PKhach.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -396,6 +402,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Daytro.resx">
       <DependentUpon>Daytro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DoiMK.resx">
+      <DependentUpon>DoiMK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\PKhach.resx">
       <DependentUpon>PKhach.cs</DependentUpon>
