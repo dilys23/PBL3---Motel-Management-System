@@ -367,6 +367,12 @@
     <Compile Include="View\TrangChuKhach.Designer.cs">
       <DependentUpon>TrangChuKhach.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\XuatHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -492,6 +498,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\TrangChuKhach.resx">
       <DependentUpon>TrangChuKhach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\XuatHoaDon.resx">
       <DependentUpon>XuatHoaDon.cs</DependentUpon>

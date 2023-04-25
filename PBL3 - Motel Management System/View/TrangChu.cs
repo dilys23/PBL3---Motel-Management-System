@@ -313,5 +313,18 @@ namespace PBL3___Motel_Management_System
         {
             openChildForm(new Thietbi());   
         }
+
+        private void btnTK_Click(object sender, EventArgs e)
+        {
+            if (taiKhoan1.Visible)
+            {
+                taiKhoan1.Hide();
+            }
+            else
+            {
+                taiKhoan1.Show();
+            }
+            taiKhoan1.BringToFront();
+        }
     }
 }
