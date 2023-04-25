@@ -44,10 +44,6 @@ namespace PBL3___Motel_Management_System.View
             DateTime dtEnd = new DateTime(dt2.Year, dt2.Month, 1);
             dtpThangThanhToan.MinDate = dtStart;
             dtpThangThanhToan.MaxDate = dtEnd;
-
-
-
-
         }
         private void iconButton2_Click(object sender, EventArgs e)
         {
