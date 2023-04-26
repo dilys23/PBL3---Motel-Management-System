@@ -751,7 +751,28 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return list;
         }
-        
+        public List<Nguoi>GetNguoiByIdPhong(string idPhong)
+        {
+            QLDAL qLDAL = new QLDAL();
+            List<Nguoi> nguois = new List<Nguoi>();
+            foreach(ThanhVienTrongPhong tv in qLDAL.GetAllThanhVienTrongPhong())
+            {
+                if(tv.MaPhongTro == idPhong)
+                {
+                    nguois.Add(GetNguoiByIdNguoi(tv.MaNguoi));
+                }
+            }
+            return nguois;
+        }
+        public List<PhongTro>GetPhongTroByIdDay(string idDay)
+        {
+            List<PhongTro>list = new List<PhongTro>();
+            foreach(PhongTro pt in GetAllPhongTro())
+            {
+                if (pt.MaDayTro == idDay) list.Add(pt);
+            }
+            return list;
+        }
        
         public PhongTro GetPhongTroByIdPhong(string idPhong)
         {
@@ -966,6 +987,11 @@ namespace PBL3___Motel_Management_System.BLL
                 if (ct.MaDichVu == id) list.Add(ct.MaChiTietDichVu);
             }
             return list;
+        }
+        public List<DayTro> GetAllDayTroBll()
+        {
+            QLDAL qLDAL = new QLDAL();
+            return qLDAL.GetAllDayTro();
         }
         public void DelChiTietDichVuByIdDichVu(string id)
         {
