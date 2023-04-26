@@ -193,11 +193,10 @@ namespace PBL3___Motel_Management_System
         TrangChu tc = new TrangChu();
 
       
-
         private void btnThemPhong_Click_1(object sender, EventArgs e)
         {
-           
-           tc.openChildForm1(new ThemDV(LoadForm), panelDV);
+            
+            tc.openChildForm1(new ThemDV(LoadForm), panelDV);
         }
 
         private void btnSuaDV_Click(object sender, EventArgs e)
