@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.BtnHuy = new FontAwesome.Sharp.IconButton();
+            this.btnXacThuc = new FontAwesome.Sharp.IconButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.TenTK = new System.Windows.Forms.Label();
             this.txtTenDichVu = new System.Windows.Forms.TextBox();
             this.txtGiaDichVu = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.BtnHuy = new FontAwesome.Sharp.IconButton();
-            this.btnXacThuc = new FontAwesome.Sharp.IconButton();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,6 +66,92 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(877, 407);
             this.panel2.TabIndex = 56;
+            // 
+            // BtnHuy
+            // 
+            this.BtnHuy.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.BtnHuy.BackColor = System.Drawing.Color.OrangeRed;
+            this.BtnHuy.IconChar = FontAwesome.Sharp.IconChar.FileCircleXmark;
+            this.BtnHuy.IconColor = System.Drawing.Color.White;
+            this.BtnHuy.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnHuy.IconSize = 25;
+            this.BtnHuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnHuy.Location = new System.Drawing.Point(449, 340);
+            this.BtnHuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnHuy.Name = "BtnHuy";
+            this.BtnHuy.Size = new System.Drawing.Size(77, 39);
+            this.BtnHuy.TabIndex = 67;
+            this.BtnHuy.Text = "Hủy";
+            this.BtnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnHuy.UseVisualStyleBackColor = false;
+            // 
+            // btnXacThuc
+            // 
+            this.btnXacThuc.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnXacThuc.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnXacThuc.IconChar = FontAwesome.Sharp.IconChar.FileCircleCheck;
+            this.btnXacThuc.IconColor = System.Drawing.Color.White;
+            this.btnXacThuc.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnXacThuc.IconSize = 25;
+            this.btnXacThuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXacThuc.Location = new System.Drawing.Point(322, 340);
+            this.btnXacThuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXacThuc.Name = "btnXacThuc";
+            this.btnXacThuc.Size = new System.Drawing.Size(99, 39);
+            this.btnXacThuc.TabIndex = 66;
+            this.btnXacThuc.Text = "Xác Thực";
+            this.btnXacThuc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXacThuc.UseVisualStyleBackColor = false;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Bahnschrift SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Chocolate;
+            this.label4.Location = new System.Drawing.Point(331, 34);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(166, 28);
+            this.label4.TabIndex = 60;
+            this.label4.Text = "ĐỔI MẬT KHẨU";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(395, 255);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(241, 27);
+            this.textBox2.TabIndex = 59;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(194, 255);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(159, 20);
+            this.label2.TabIndex = 58;
+            this.label2.Text = "Xác thực mật khẩu *";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(395, 207);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(241, 27);
+            this.textBox1.TabIndex = 57;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(194, 201);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 20);
+            this.label1.TabIndex = 56;
+            this.label1.Text = "Mật khẩu mới *";
             // 
             // label9
             // 
@@ -113,92 +199,6 @@
             this.label3.Size = new System.Drawing.Size(147, 20);
             this.label3.TabIndex = 51;
             this.label3.Text = "Mật khẩu ban đầu*";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(395, 207);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 27);
-            this.textBox1.TabIndex = 57;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(194, 201);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 20);
-            this.label1.TabIndex = 56;
-            this.label1.Text = "Mật khẩu mới *";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(395, 255);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(241, 27);
-            this.textBox2.TabIndex = 59;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(194, 255);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 20);
-            this.label2.TabIndex = 58;
-            this.label2.Text = "Xác thực mật khẩu *";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Bahnschrift SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Chocolate;
-            this.label4.Location = new System.Drawing.Point(331, 34);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(166, 28);
-            this.label4.TabIndex = 60;
-            this.label4.Text = "ĐỔI MẬT KHẨU";
-            // 
-            // BtnHuy
-            // 
-            this.BtnHuy.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.BtnHuy.BackColor = System.Drawing.Color.OrangeRed;
-            this.BtnHuy.IconChar = FontAwesome.Sharp.IconChar.FileCircleXmark;
-            this.BtnHuy.IconColor = System.Drawing.Color.White;
-            this.BtnHuy.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnHuy.IconSize = 25;
-            this.BtnHuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnHuy.Location = new System.Drawing.Point(434, 344);
-            this.BtnHuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.BtnHuy.Name = "BtnHuy";
-            this.BtnHuy.Size = new System.Drawing.Size(77, 39);
-            this.BtnHuy.TabIndex = 67;
-            this.BtnHuy.Text = "Hủy";
-            this.BtnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnHuy.UseVisualStyleBackColor = false;
-            // 
-            // btnXacThuc
-            // 
-            this.btnXacThuc.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnXacThuc.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnXacThuc.IconChar = FontAwesome.Sharp.IconChar.FileCircleCheck;
-            this.btnXacThuc.IconColor = System.Drawing.Color.White;
-            this.btnXacThuc.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnXacThuc.IconSize = 25;
-            this.btnXacThuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXacThuc.Location = new System.Drawing.Point(307, 344);
-            this.btnXacThuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnXacThuc.Name = "btnXacThuc";
-            this.btnXacThuc.Size = new System.Drawing.Size(99, 39);
-            this.btnXacThuc.TabIndex = 66;
-            this.btnXacThuc.Text = "Xác Thực";
-            this.btnXacThuc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXacThuc.UseVisualStyleBackColor = false;
             // 
             // DoiMK
             // 
