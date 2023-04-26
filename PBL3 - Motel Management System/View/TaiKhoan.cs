@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System.View
 {
-    public partial class TaiKhoan : Form
+    public partial class Taikhoan : Form
     {
-        public TaiKhoan()
+        public Taikhoan()
         {
             InitializeComponent();
         }

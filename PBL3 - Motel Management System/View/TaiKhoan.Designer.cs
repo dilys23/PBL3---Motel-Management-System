@@ -1,6 +1,6 @@
 ﻿namespace PBL3___Motel_Management_System.View
 {
-    partial class TaiKhoan
+    partial class Taikhoan
     {
         /// <summary>
         /// Required designer variable.

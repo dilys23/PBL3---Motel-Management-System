@@ -316,7 +316,7 @@ namespace PBL3___Motel_Management_System
 
         private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
-            openChildForm(new TaiKhoan());
+            openChildForm(new Taikhoan());
         }
     }
 }
