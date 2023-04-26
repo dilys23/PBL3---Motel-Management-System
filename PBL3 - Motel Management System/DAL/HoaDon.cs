@@ -23,5 +23,6 @@ namespace PBL3___Motel_Management_System.DAL
         public double DaThanhToan { get; set; }
     
         public virtual PhongTro PhongTro { get; set; }
+        public virtual PhongTro PhongTro1 { get; set; }
     }
 }

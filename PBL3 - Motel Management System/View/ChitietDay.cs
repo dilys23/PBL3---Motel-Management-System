@@ -59,8 +59,11 @@ namespace PBL3___Motel_Management_System.View
             textBox2.Text = qLBLL.GetDayByIdDay(IdDay).TenDuong.ToString() + ',' + qLBLL.GetDayByIdDay(IdDay).TenHuyen.ToString() + ',' + qLBLL.GetDayByIdDay(IdDay).TenThanhPho.ToString();
             dgvPhong.DataSource = dt;
                 dgvPhong.Columns[0].Visible = false;
-            
-          
+            if (qLBLL.GetDayByIdDay(IdDay).HinhAnh != null)
+            {
+               pctDay.Image = ChuyenDoiAnh.Base64ToImage(qLBLL.GetDayByIdDay(IdDay).HinhAnh);
+            }
+
         }
         
 

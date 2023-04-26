@@ -35,20 +35,21 @@
             // picture
             // 
             this.picture.BackColor = System.Drawing.Color.White;
-            this.picture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picture.Location = new System.Drawing.Point(0, 0);
+            this.picture.Location = new System.Drawing.Point(51, 28);
+            this.picture.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(492, 445);
+            this.picture.Size = new System.Drawing.Size(637, 507);
             this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picture.TabIndex = 58;
             this.picture.TabStop = false;
             // 
             // Anh
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 445);
+            this.ClientSize = new System.Drawing.Size(750, 548);
             this.Controls.Add(this.picture);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Anh";
             this.Text = "Anh";
             ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
