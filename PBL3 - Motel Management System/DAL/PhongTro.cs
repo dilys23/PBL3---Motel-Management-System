@@ -31,6 +31,7 @@ namespace PBL3___Motel_Management_System.DAL
         public bool TinhTrang { get; set; }
         public string MaDayTro { get; set; }
         public Nullable<int> ToiDa { get; set; }
+        public byte[] HinhAnh { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietDichVu> ChiTietDichVu { get; set; }

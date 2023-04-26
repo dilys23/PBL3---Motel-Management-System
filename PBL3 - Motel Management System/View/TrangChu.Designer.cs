@@ -45,7 +45,6 @@
             this.btnMaximized = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.paneMenu = new System.Windows.Forms.Panel();
-            this.btnTaiKhoan = new FontAwesome.Sharp.IconButton();
             this.btnThietbi = new FontAwesome.Sharp.IconButton();
             this.btnDay = new FontAwesome.Sharp.IconButton();
             this.btnLogout = new FontAwesome.Sharp.IconButton();
@@ -245,7 +244,6 @@
             // paneMenu
             // 
             this.paneMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(229)))), ((int)(((byte)(236)))));
-            this.paneMenu.Controls.Add(this.btnTaiKhoan);
             this.paneMenu.Controls.Add(this.btnThietbi);
             this.paneMenu.Controls.Add(this.btnDay);
             this.paneMenu.Controls.Add(this.btnLogout);
@@ -264,25 +262,6 @@
             this.paneMenu.Size = new System.Drawing.Size(200, 749);
             this.paneMenu.TabIndex = 3;
             this.paneMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.paneMenu_Paint);
-            // 
-            // btnTaiKhoan
-            // 
-            this.btnTaiKhoan.FlatAppearance.BorderSize = 0;
-            this.btnTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaiKhoan.IconChar = FontAwesome.Sharp.IconChar.Coins;
-            this.btnTaiKhoan.IconColor = System.Drawing.Color.SteelBlue;
-            this.btnTaiKhoan.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTaiKhoan.IconSize = 35;
-            this.btnTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTaiKhoan.Location = new System.Drawing.Point(8, 630);
-            this.btnTaiKhoan.Name = "btnTaiKhoan";
-            this.btnTaiKhoan.Size = new System.Drawing.Size(186, 41);
-            this.btnTaiKhoan.TabIndex = 20;
-            this.btnTaiKhoan.Tag = "Tài Khoản";
-            this.btnTaiKhoan.Text = "  Tài Khoản";
-            this.btnTaiKhoan.UseVisualStyleBackColor = true;
-            this.btnTaiKhoan.Click += new System.EventHandler(this.btnTaiKhoan_Click);
             // 
             // btnThietbi
             // 
@@ -589,6 +568,5 @@
         private FontAwesome.Sharp.IconButton btnDay;
         private FontAwesome.Sharp.IconButton btnThietbi;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private FontAwesome.Sharp.IconButton btnTaiKhoan;
     }
 }
