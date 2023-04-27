@@ -116,7 +116,7 @@ namespace PBL3___Motel_Management_System.View
             {
                 QLBLL qLBLL = new QLBLL();
                 string idPhong = ((ViewCbb)cbbPhongTro.SelectedItem).IdDayTro;
-                ChiTietSuDungDichVu dv = new ChiTietSuDungDichVu
+                ChiTietSuDungDichVu ctdv = new ChiTietSuDungDichVu
                 {
                     MaChiTietSuDungDichVu = qLBLL.TaoIdChiTietSuDungDichVu(),
                     MaCHiTietDichVu = qLBLL.GetIdCHiTietDichVuDienByIdPhong(idPhong),
@@ -126,7 +126,7 @@ namespace PBL3___Motel_Management_System.View
                     TinhTrang = false,
                     NgayLap = dtpNgayLap.Value.ToString("dd-MM-yyyy")
                 };
-                if(dv.ChiSoCu > dv.ChiSoMoi)
+                if(ctdv.ChiSoCu > ctdv.ChiSoMoi)
                 {
                     MessageBox.Show("Chỉ số cũ phải bé hơn hoặc bằng chỉ số mới","Thông báo");
                     
@@ -135,8 +135,7 @@ namespace PBL3___Motel_Management_System.View
                 {
                     try
                     {
-
-                     qLBLL.AddChiTietSuDungDichVuBLL(dv);
+                     qLBLL.AddChiTietSuDungDichVuBLL(ctdv);
                         MessageBox.Show("Thêm chỉ số thành công");
                         this.Close();
                         this.loader(null);

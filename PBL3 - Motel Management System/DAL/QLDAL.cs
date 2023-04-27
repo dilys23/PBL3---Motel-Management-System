@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBL3___Motel_Management_System.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
@@ -29,6 +30,7 @@ namespace PBL3___Motel_Management_System.DAL
             }
             return list;
         }
+
         public List<HopDong> GetAllHopDong()
         {
             List<HopDong> list = new List<HopDong>();
@@ -36,6 +38,16 @@ namespace PBL3___Motel_Management_System.DAL
             {
                 var s = data.HopDong.Select(p => p);
                 list = s.ToList<HopDong>();
+            }
+            return list;
+        }
+        public List<HoaDon> GetAllHoaDon()
+        {
+            List<HoaDon> list = new List<HoaDon>();
+            using (DataPbl data = new DataPbl())
+            {
+                var s = data.HoaDon.Select(p => p);
+                list = s.ToList<HoaDon>();
             }
             return list;
         }
@@ -67,7 +79,14 @@ namespace PBL3___Motel_Management_System.DAL
                 data.SaveChanges();
             }
         }
-        
+        public void AddHoaDonDal(HoaDon hd)
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                data.HoaDon.Add(hd);
+                data.SaveChanges();
+            }
+        }
         public void AddPhongTroDal(PhongTro pt)
         {
             using (DataPbl data = new DataPbl())
@@ -280,9 +299,24 @@ namespace PBL3___Motel_Management_System.DAL
                 s.GiaTien=PT.GiaTien;
                 s.ToiDa=PT.ToiDa;
                 s.TinhTrang = PT.TinhTrang;
+                s.HinhAnh = PT.HinhAnh;
                 data.SaveChanges();
 
             }
+        }
+        public void UpdateHoaDonDal(HoaDon hd)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                var s = data.HoaDon.Single(p => p.MaHoaDon == hd.MaHoaDon);
+                s.MaPhongTro = hd.MaPhongTro;
+                s.NgayTao = hd.NgayTao;
+                s.ThangChiTra = hd.ThangChiTra;
+                s.TinhTrang = hd.TinhTrang;
+                s.TongTien = hd.TongTien;
+                s.DaThanhToan = hd.DaThanhToan;
+                data.SaveChanges();
+           }
         }
         public void UpdateChiTietSuDungDichVuDAL(ChiTietSuDungDichVu dv)
         {
@@ -304,7 +338,7 @@ namespace PBL3___Motel_Management_System.DAL
                 var s = data.ChiTietSuDungDichVu.Single(p => p.MaChiTietSuDungDichVu == id);
                 return (ChiTietSuDungDichVu)s;
             }
-            return null;
+            
         }
         public void UpdateHopDongDAL(HopDong hd)
         {
@@ -329,6 +363,7 @@ namespace PBL3___Motel_Management_System.DAL
                 s.Diachi = nguoi.Diachi;
                 s.NgaySinh = nguoi.NgaySinh;
                 s.GioiTinh = nguoi.GioiTinh;
+                s.HinhAnh = nguoi.HinhAnh;
                 data.SaveChanges();
             }
         }
@@ -342,6 +377,7 @@ namespace PBL3___Motel_Management_System.DAL
                 s.TenHuyen = day.TenHuyen;
                 s.TenDuong = day.TenDuong; 
                 s.TenThanhPho = day.TenThanhPho;
+                s.HinhAnh = day.HinhAnh;
                 data.SaveChanges();
 
             }
@@ -373,6 +409,44 @@ namespace PBL3___Motel_Management_System.DAL
 
             }
         }
+        public void DelChiTietDichVuDal(string id)
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                var s = data.ChiTietDichVu.Find(id);
+                data.ChiTietDichVu.Remove(s);
+                data.SaveChanges() ;
+            }
+        }
+        public void DelDichVuDal(string id)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                var s = data.DichVu.Find(id);
+                data.DichVu.Remove(s);
+                data.SaveChanges();
+            }
+        }
+        public void DelThietBiDal(string Id)
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                var s = data.ThietBi.Find(Id);
+                data.ThietBi.Remove(s);
+                data.SaveChanges() ;
+                
+            }
+        }
+        
+        public void DelHoaDonDal(string id)
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                var s = data.HoaDon.Find(id);
+                data.HoaDon.Remove(s);
+                data.SaveChanges() ;
+            }
+        }
         public List<ChiTietThietBi>GetAllChiTietThietBiDAL()
         {
             List<ChiTietThietBi> list = new List<ChiTietThietBi> ();
@@ -383,21 +457,43 @@ namespace PBL3___Motel_Management_System.DAL
             }
             return list;
         }
-        //public string GetIdThietBiByIdPhong(string IdPhong)
-        //{
-        //    using (DataPbl data = new DataPbl())
-        //    {
-        //        foreach (PhongTro phongTro in GetAllPhongTro())
-        //        {
-        //            if (phongTro.MaPhongTro == IdPhong)
-        //            {
-        //                return DichVu.Ma;
-        //            }
-
-        //        }
-        //        return null;
-
-        //    }
-        //}
+        
+       public HopDong GetHopDongByIdHopDong(string MaHD)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                var s = data.HopDong.FirstOrDefault(p => p.MaHopDong == MaHD);
+                if (s != null)
+                    return s;
+                else return null;
+            }
+        }
+        
+        public Nguoi GetNguoiByMaHD(string MaHD)
+        {
+            using (DataPbl data= new DataPbl())
+            {
+                var s= data.HopDong.FirstOrDefault(p => p.MaHopDong==MaHD);
+                if (s != null)
+                    return s.Nguoi;
+                else return null;
+            }
+        }
+        public PhongTro GetPhongTroByMaHD(string MaHD)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                var s = data.HopDong.FirstOrDefault(p => p.MaHopDong == MaHD);
+                if (s != null)
+                    return s.PhongTro;
+                else return null;
+            }
+        }
+        public List<DichVu> GetALlDichVuByMaHD(string MaHD)
+        {        
+           List<DichVu> list= new List<DichVu> ();
+        
+            return list;
+        }
     }
 }

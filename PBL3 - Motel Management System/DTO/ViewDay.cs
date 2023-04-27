@@ -16,5 +16,6 @@ namespace PBL3___Motel_Management_System.DTO
         public string TenHuyen { get; set; }
         public string TenThanhPho { get; set; }
         public int SoPhong { get; set; }
+        public byte[] HinhAnh { get; set; }
     }
 }

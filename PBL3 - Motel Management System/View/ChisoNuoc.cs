@@ -35,7 +35,7 @@ namespace PBL3___Motel_Management_System
 
         private void btnSuaHD_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new SuaCSNuoc(), panel2);
+           // tc.openChildForm1(new SuaCSNuoc(,LoadForm), panel2);
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -167,7 +167,11 @@ namespace PBL3___Motel_Management_System
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-
+            if (dgvChiSoNuoc.CurrentRow.Cells[9].Value.ToString()!= "Đã xác thực")
+            {
+                string MaCT = dgvChiSoNuoc.CurrentRow.Cells[0].Value.ToString();
+                tc.openChildForm1(new SuaCSNuoc(MaCT,LoadForm),panel2);
+            }
         }
 
         private void btnXacThuc_Click(object sender, EventArgs e)

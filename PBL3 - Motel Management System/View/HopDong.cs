@@ -15,6 +15,8 @@ namespace PBL3___Motel_Management_System
 {
     public partial class Hopdong : Form
     {
+
+        
         public Hopdong()
         {
             InitializeComponent();
@@ -35,10 +37,10 @@ namespace PBL3___Motel_Management_System
             }
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
+        private void btnChiTiet_Click(object sender, EventArgs e)
         {
-            
-          
+            string MaHD = dgvHopDong.CurrentRow.Cells[0].Value.ToString();
+            tc.openChildForm1(new ChitietHopDong(MaHD, null, LoadForm), panelHopDong);
         }
     }
 }

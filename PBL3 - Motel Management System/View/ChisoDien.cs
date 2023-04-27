@@ -214,7 +214,15 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new SuaCSDien(), panel2);
+            if (dgvChiSoDien.CurrentRow.Cells[9].Value.ToString() != "Đã xác thực")
+            {
+                string MaCT = dgvChiSoDien.CurrentRow.Cells[0].Value.ToString();
+                tc.openChildForm1(new SuaCSDien(MaCT, LoadForm), panel2);          
+            }
+            else
+            {
+                MessageBox.Show("Dịch vụ hiện đã được xác thực!");
+            }
         }
 
         private void btnHuyXacThuc_Click(object sender, EventArgs e)

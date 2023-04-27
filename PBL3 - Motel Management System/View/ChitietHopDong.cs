@@ -17,13 +17,47 @@ namespace PBL3___Motel_Management_System.View
     public partial class ChitietHopDong : Form
     {
         private ThuePhong tp;
+        private string MaHD;
         private Loader loader;
-        public ChitietHopDong(ThuePhong tp, Loader loader)
+        public ChitietHopDong(string MaHD,ThuePhong tp, Loader loader)
         {
-            InitializeComponent();
-            this.tp = tp;
-            LoadForm();
-            this.loader=loader;
+            InitializeComponent();        
+            this.loader = loader;
+            if (MaHD != null)
+            {
+                this.MaHD = MaHD;
+                SetGUI();
+            }
+            else
+            {
+                this.tp = tp;
+                LoadForm();   
+            }
+        }
+        public void SetGUI()
+        {
+            QLBLL qLBLL = new QLBLL();
+            Nguoi nguoi = qLBLL.GetNguoiByMaHD(MaHD);
+            txtHoVaTen.Text = nguoi.Ten;
+            txtSdt.Text=nguoi.Sdt;
+            txtCccd.Text =nguoi.Cccd;
+            dtpNgaySinh.Value = Convert.ToDateTime(nguoi.NgaySinh);
+            PhongTro phongtro= qLBLL.GetPhongTroByMaHD(MaHD);
+            txtTenDay.Text =qLBLL.GetDayTroByIdPhong(phongtro.MaPhongTro).TenDayTro;
+            txtTenPhong.Text = phongtro.TenPhongTro;
+            txtDienTich.Text=Convert.ToDouble(phongtro.DienTich).ToString();
+            txtGiaPhong.Text= Convert.ToDouble(phongtro.GiaTien).ToString();
+            DayTro dt = new DayTro();
+            dt = qLBLL.GetDayTroByIdPhong(phongtro.MaPhongTro);
+            txtDiaChi.Text = dt.TenDuong + " " + dt.TenHuyen + " " + dt.TenThanhPho;
+            HopDong hopdong = qLBLL.GetHopDongByIdHopDong(MaHD);
+            txtTienCoc.Text= Convert.ToDouble(hopdong.TienCoc).ToString();
+            dtpNgayBatDau.Value= Convert.ToDateTime(hopdong.NgayBatDau);
+            dtpNgayKetThuc.Value = Convert.ToDateTime(hopdong.NgayKetThuc);
+            List<DichVu> list = qLBLL.GetALlDichVuByMaHD(MaHD);
+
+            
+
         }
         public void LoadForm()
         {

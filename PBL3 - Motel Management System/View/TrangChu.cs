@@ -217,7 +217,7 @@ namespace PBL3___Motel_Management_System
         }
 
         private Form activeForm = null;
-        private void openChildForm(Form childForm)
+        public void openChildForm(Form childForm)
         {
             if(activeForm != null)
                 activeForm.Close();
@@ -276,7 +276,7 @@ namespace PBL3___Motel_Management_System
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
-            openChildForm(new HoaDon());
+            openChildForm(new Hoadon());
         }
 
         private void btnDoanhTHu_Click(object sender, EventArgs e)
@@ -314,9 +314,17 @@ namespace PBL3___Motel_Management_System
             openChildForm(new Thietbi());   
         }
 
-        private void btnTaiKhoan_Click(object sender, EventArgs e)
+        private void btnTK_Click(object sender, EventArgs e)
         {
-            openChildForm(new Taikhoan());
+            if (taiKhoan1.Visible)
+            {
+                taiKhoan1.Hide();
+            }
+            else
+            {
+                taiKhoan1.Show();
+            }
+            taiKhoan1.BringToFront();
         }
     }
 }

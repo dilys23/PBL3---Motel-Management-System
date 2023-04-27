@@ -1,5 +1,6 @@
 ﻿using PBL3___Motel_Management_System.BLL;
 using PBL3___Motel_Management_System.DAL;
+using PBL3___Motel_Management_System.DTO;
 using PBL3___Motel_Management_System.View;
 using System;
 using System.Collections.Generic;
@@ -52,6 +53,11 @@ namespace PBL3___Motel_Management_System
                 txtDienTich.Text = phongTro.DienTich.ToString();
                 txtGiaTien.Text = phongTro.GiaTien.ToString();
                 txtToiDa.Text= phongTro.ToiDa.ToString();
+                if(phongTro.HinhAnh != null)
+                {
+                    picturePhongTro.Image = ChuyenDoiAnh.Base64ToImage(phongTro.HinhAnh);
+                }
+                 
             }
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -138,6 +144,7 @@ namespace PBL3___Motel_Management_System
                     pt.DienTich = Convert.ToDouble(txtDienTich.Text);
                     pt.GiaTien = Convert.ToDouble(txtGiaTien.Text);
                     pt.ToiDa = Convert.ToInt32(txtToiDa.Text);
+                    pt.HinhAnh = ChuyenDoiAnh.ImageToBase64(picturePhongTro.Image,picturePhongTro.Image.RawFormat);
                     qLBLL.UpdatePTBLL(pt);
                     MessageBox.Show("Thay đổi thông tin thành công", "Thông báo");
                     Loader(null);
@@ -148,6 +155,28 @@ namespace PBL3___Motel_Management_System
                     MessageBox.Show("Số người tối đa phải lớn hơn hoặc bằng số người hiện có trong phòng", "Thông báo");
                 }
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+        string imgLocation = "";
+        private void btnThemAnh_Click(object sender, EventArgs e)
+        {
+
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = " ipg files(*.jpg)|*.jpg|jpg files(*.png)|*.png|All files(*.*)|*.*";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                imgLocation = dialog.FileName.ToString();
+                picturePhongTro.ImageLocation = imgLocation;
+            }
+        }
+
+        private void pctKhach_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

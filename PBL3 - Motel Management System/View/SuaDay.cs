@@ -1,5 +1,6 @@
 ﻿using PBL3___Motel_Management_System.BLL;
 using PBL3___Motel_Management_System.DAL;
+using PBL3___Motel_Management_System.DTO;
 using PBL3___Motel_Management_System.View;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,10 @@ namespace PBL3___Motel_Management_System.View
             txtQuanHuyen.Text = day.TenHuyen.ToString();
             txtdiachi.Text = day.TenDuong.ToString();
             txtThanhpho.Text = day.TenThanhPho.ToString();
+            if(day.HinhAnh !=null)
+            {
+                pctKhach.Image = ChuyenDoiAnh.Base64ToImage(day.HinhAnh);
+            }
             //txtdiachi.Text = day.
         }
         private Boolean checkHopLe()
@@ -86,12 +91,24 @@ namespace PBL3___Motel_Management_System.View
                 day.TenDayTro = txtTenDay.Text;
                 day.TenHuyen = txtQuanHuyen.Text;
                 day.TenDuong  = txtdiachi.Text;
-                day.TenThanhPho = txtThanhpho.Text; 
+                day.TenThanhPho = txtThanhpho.Text;
+                day.HinhAnh = ChuyenDoiAnh.ImageToBase64(pctKhach.Image, pctKhach.Image.RawFormat);
                 qLBLL.SuaDayBll(day);
                 MessageBox.Show("Thay đổi thông tin thành công", "Thông báo");
                 Loader(null);
                 this.Close();
             }    
+        }
+        string imgLocation = "";
+        private void btnThemAnh_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = " ipg files(*.jpg)|*.jpg|jpg files(*.png)|*.png|All files(*.*)|*.*";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                imgLocation = dialog.FileName.ToString();
+                pctKhach.ImageLocation = imgLocation;
+            }
         }
     }    
 }

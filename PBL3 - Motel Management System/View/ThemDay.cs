@@ -1,5 +1,6 @@
 ﻿using PBL3___Motel_Management_System.BLL;
 using PBL3___Motel_Management_System.DAL;
+using PBL3___Motel_Management_System.DTO;
 using PBL3___Motel_Management_System.View;
 using System;
 using System.Collections.Generic;
@@ -81,6 +82,11 @@ namespace PBL3___Motel_Management_System
                 dt.TenHuyen = txtTenHuyen.Text;
                 dt.TenThanhPho = txtTenThanhPho.Text;
                 dt.MaChuTro = "1";
+                if(pictureDayTro.Image != null)
+                {
+
+                dt.HinhAnh = ChuyenDoiAnh.ImageToBase64(pictureDayTro.Image, pictureDayTro.Image.RawFormat);
+                }    
                 qLBLL.AddDayTroBll(dt);
                 MessageBox.Show("Bạn đã thêm dãy thành công", "Thông báo");
                 Loader(null);
@@ -88,6 +94,23 @@ namespace PBL3___Motel_Management_System
                 
 
             }
+        }
+        string imgLocation = "";
+        private void btnThemAnh_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = " ipg files(*.jpg)|*.jpg|jpg files(*.png)|*.png|All files(*.*)|*.*";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                imgLocation = dialog.FileName.ToString();
+                pictureDayTro.ImageLocation = imgLocation;
+            }
+
+        }
+
+        private void pctKhach_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

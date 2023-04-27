@@ -10,21 +10,12 @@ using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System.View
 {
-    public partial class ThemTK : Form
+    public partial class Anh : Form
     {
-        public ThemTK()
+        public Anh(Image picture)
         {
             InitializeComponent();
-        }
-
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-
+            this.picture.Image = picture;
         }
     }
 }

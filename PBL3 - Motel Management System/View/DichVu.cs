@@ -210,5 +210,22 @@ namespace PBL3___Motel_Management_System
         {
             LoadForm(txtTimKiem.Text);
         }
+
+        private void btnXoaPhong_Click(object sender, EventArgs e)
+        {
+            string id = dgvDichVu.CurrentRow.Cells[0].Value.ToString();
+            if(id != "000" && id != "001")
+            {
+                QLBLL qLBLL = new QLBLL();
+                qLBLL.DelChiTietDichVuByIdDichVu(id);
+                qLBLL.DelDichVu(id);
+                MessageBox.Show("Xóa dịch vụ thành công", "Thông báo");
+                LoadForm(null);
+            }
+            else
+            {
+                MessageBox.Show("Đây là dịch vụ cố định!! Không thể xóa");
+            }
+        }
     }
 }

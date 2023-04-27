@@ -96,7 +96,7 @@ namespace PBL3___Motel_Management_System
             tp.hopDong.NgayBatDau = dateStart;
             tp.hopDong.NgayKetThuc = dateEnd;
             tp.hopDong.TienCoc = Convert.ToDouble(txtTienCoc.Text);
-            tc.openChildForm1(new ChitietHopDong(tp,Back),panelThemHD);
+            tc.openChildForm1(new ChitietHopDong(null,tp,Back),panelThemHD);
             }
         }
 
