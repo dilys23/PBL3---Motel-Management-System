@@ -31,7 +31,6 @@ namespace PBL3___Motel_Management_System.View
             panelPhong.AutoScroll = true;
             QLBLL qLBLL = new QLBLL();
             Button defaultBtn = null;
-
             foreach(DayTro dt in qLBLL.GetAllDayTroBll())
             {
 
@@ -49,8 +48,6 @@ namespace PBL3___Motel_Management_System.View
             {
                  SuKien(defaultBtn, EventArgs.Empty);
             }
-            
-
 
 
         }
@@ -85,7 +82,6 @@ namespace PBL3___Motel_Management_System.View
                     Label lbl = new Label();
                     lbl.Name = nguoi.MaNguoi;
                     lbl.Text = nguoi.Ten;
-                    
                     lbl.Visible = true;
                     p.SetPanelKhach(lbl);
                 }
