@@ -55,7 +55,14 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return list;
         }
-        
+        public DayTro GetDayTroById(string id)
+        {
+            foreach(DayTro dt in GetAllDayTroBll())
+            {
+                if (dt.MaDayTro == id) return dt;
+            }
+            return null;
+        }
 
         public string TaoIdNguoi()
         {
@@ -1102,6 +1109,12 @@ namespace PBL3___Motel_Management_System.BLL
             else if (GetHopDongByIdPhong(IdPhong).TinhTrang == false) return false;
             return true;
             
+        }
+        public bool PhongDaCocByIdPhong(string IdPhong)
+        {
+            if (GetHopDongByIdPhong(IdPhong)==null) return false;
+            else if (GetHopDongByIdPhong(IdPhong).TinhTrang == true) return false;
+            return true;
         }
         public List<string> GetHoaDonByThangChiTra(string ThangCt)
         {

@@ -258,7 +258,7 @@ namespace PBL3___Motel_Management_System
 
         private void iconButton10_Click(object sender, EventArgs e)
         {
-            openChildForm1(new Phong(), panelDesktop);
+            openChildForm1(new DemoPhong(), panelDesktop);
         }
 
         private void btnDichVu_Click(object sender, EventArgs e)
