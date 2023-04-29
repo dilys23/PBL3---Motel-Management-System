@@ -422,9 +422,11 @@
             // panelDesktop
             // 
             this.panelDesktop.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.panelDesktop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDesktop.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panelDesktop.Controls.Add(this.taiKhoan1);
-            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelDesktop.Location = new System.Drawing.Point(200, 83);
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(1138, 666);
@@ -434,13 +436,11 @@
             // taiKhoan1
             // 
             this.taiKhoan1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.taiKhoan1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.taiKhoan1.DesktopPanel = null;
             this.taiKhoan1.Location = new System.Drawing.Point(914, 7);
             this.taiKhoan1.Name = "taiKhoan1";
             this.taiKhoan1.Size = new System.Drawing.Size(212, 344);
-            this.taiKhoan1.TabIndex = 17;
-            this.taiKhoan1.Visible = false;
+            this.taiKhoan1.TabIndex = 0;
             // 
             // TrangChu
             // 

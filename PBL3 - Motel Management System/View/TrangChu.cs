@@ -331,16 +331,21 @@ namespace PBL3___Motel_Management_System
            // taiKhoan1.Toggle();
             if (taiKhoan1.Visible)
             {
-                taiKhoan1.Hide();
+                taiKhoan1.Visible=false;
             }
             else
             {
-                taiKhoan1.Show();
+                taiKhoan1.Visible=true;
             }
             taiKhoan1.BringToFront();
         }
 
         private void taiKhoan1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void taiKhoan1_Load_1(object sender, EventArgs e)
         {
 
         }

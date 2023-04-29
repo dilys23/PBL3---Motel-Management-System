@@ -65,6 +65,17 @@ namespace PBL3___Motel_Management_System.View
         }
         public void SetPanelTenPhongTro(Label lbl)
         {
+            lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
+            Image image1 = Image.FromFile("C:\\Users\\HP VICTUS\\Downloads\\icons8-home-30.png" + "    ");
+            lbl.Image = image1;
+            lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            // Set the size of the label to accommodate the bitmap size.
+            lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            lbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            lbl.TabIndex = 0;
+            // lbl.Size = new Size(50,50 );
+            lbl.Size = new System.Drawing.Size(110, 50);
             panelTenPhongTro.Controls.Add(lbl);
         }
 
@@ -73,20 +84,74 @@ namespace PBL3___Motel_Management_System.View
 
         }
 
+        private Form activeForm = null;
+        public void openChildForm1(Form childForm, System.Windows.Forms.Panel p)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            p.Controls.Add(childForm);
+            p.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+
+        }
+        //TrangChu tc = new TrangChu();
         private void btnCoc_Click(object sender, EventArgs e)
         {
+           
+            DemoPhong demo = new DemoPhong();
+
             QLBLL qLBLL = new QLBLL();
             if (qLBLL.GetHopDongByIdPhong(IdPhong) == null)
             {
                 ThuePhong tp = new ThuePhong();
                 tp.hopDong.MaPhongTro = IdPhong;
                 CocPhong cp = new CocPhong(tp, LoadForm);
-                cp.Show();
+                
+               // openChildForm1(cp, demo.panel2);
+                cp.Show();//Close();
             }
             else
             {
                 MessageBox.Show("Phòng hiện tại không thể cọc", "Thông báo");
             }
+        }
+
+        private void btnChiTiet_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCoc_Click_1(object sender, EventArgs e)
+        {
+            DemoPhong demo = new DemoPhong();
+
+            QLBLL qLBLL = new QLBLL();
+            if (qLBLL.GetHopDongByIdPhong(IdPhong) == null)
+            {
+                ThuePhong tp = new ThuePhong();
+                tp.hopDong.MaPhongTro = IdPhong;
+                CocPhong cp = new CocPhong(tp, LoadForm);
+
+                // openChildForm1(cp, demo.panel2);
+                cp.Show();//Close();
+            }
+            else
+            {
+                MessageBox.Show("Phòng hiện tại không thể cọc", "Thông báo");
+            }
+        }
+       // TrangChu tc = new TrangChu();  
+       // DemoPhong dm = new DemoPhong();
+
+        private void btnChiTiet_Click_1(object sender, EventArgs e)
+        {
+
+           // tc.openChildForm1(new ChisoDien(), dm.panelChinh);
         }
     }
 }

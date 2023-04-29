@@ -1,5 +1,6 @@
 ﻿using PBL3___Motel_Management_System.BLL;
 using PBL3___Motel_Management_System.DAL;
+using PBL3___Motel_Management_System.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,6 +37,14 @@ namespace PBL3___Motel_Management_System.View
             {
 
                 Button btn = new Button();
+                btn.BackColor = System.Drawing.Color.DarkOrange;
+                this.btn.IconChar = FontAwesome.Sharp.IconChar.FileArrowUp;
+                this.btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+                this.btn.IconSize = 25;
+                btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+                // "    " + btn.IconSize = 25;
+                btn.Size = new System.Drawing.Size(80, 50);
+                btn.TabIndex = 21;
                 btn.Text = dt.TenDayTro;
                 btn.Name = dt.MaDayTro;
                 btn.Click += new EventHandler(SuKien);
@@ -44,6 +53,19 @@ namespace PBL3___Motel_Management_System.View
                 {
                     defaultBtn = btn;
                 }
+                //this.btnThemPhong.BackColor = System.Drawing.Color.DarkOrange;
+                //this.btnThemPhong.IconChar = FontAwesome.Sharp.IconChar.FileArrowUp;
+                //this.btnThemPhong.IconColor = System.Drawing.Color.White;
+                //this.btnThemPhong.IconFont = FontAwesome.Sharp.IconFont.Auto;
+                //this.btnThemPhong.IconSize = 25;
+                //this.btnThemPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+                //this.btnThemPhong.Location = new System.Drawing.Point(721, 27);
+                //this.btnThemPhong.Name = "btnThemPhong";
+                //this.btnThemPhong.Size = new System.Drawing.Size(90, 43);
+                //this.btnThemPhong.TabIndex = 21;
+                //this.btnThemPhong.Text = "Thêm ";
+                //this.btnThemPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+                //this.btnThemPhong.UseVisualStyleBackColor = false;
             }
             if(defaultBtn != null)
             {
@@ -54,14 +76,15 @@ namespace PBL3___Motel_Management_System.View
 
 
         }
-        
+        public System.Drawing.Image Image { get; set; }
+
         private void SuKien(object sender, EventArgs e)
         {
             Button btn = sender as Button;
             panelPhong.Controls.Clear();
             QLBLL qLBLL = new QLBLL();
             DayTro dt = qLBLL.GetDayTroById(btn.Name);
-            string DiaChi = dt.TenDuong + " " + dt.TenHuyen + " " + dt.TenThanhPho;
+            string DiaChi = "    " + dt.TenDuong + " " + dt.TenHuyen + " " + dt.TenThanhPho;
             lblDiaChi.Text = DiaChi;
             foreach(PhongTro pt in qLBLL.GetPhongTroByIdDay(btn.Name))
             {
@@ -70,22 +93,39 @@ namespace PBL3___Motel_Management_System.View
                 p.Visible = true;
                 p.Name = pt.MaPhongTro;
                 Label lbl1 = new Label();
+
+                //Label label1 = new Label();
+               
+
                 lbl1.Text  = pt.TenPhongTro;
                 p.SetPanelTenPhongTro(lbl1);
-                if (qLBLL.TinhTrangPhongById(pt.MaPhongTro))
+                if (qLBLL.TinhTrangPhongById(pt.MaPhongTro)) //54, 179, 205
                 {
-                    p.SetColorPanel2(Color.CadetBlue);
+                    p.SetColorPanel2(Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(179)))), ((int)(((byte)(205))))));
                 }
                 if(qLBLL.PhongDaCocByIdPhong(pt.MaPhongTro))
                 {
-                    p.SetColorPanel2(Color.DeepSkyBlue);
+                    p.SetColorPanel2(Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234))))));
                 }
                 foreach (Nguoi nguoi in qLBLL.GetNguoiByIdPhong(pt.MaPhongTro))
                 {
                     Label lbl = new Label();
+                    lbl.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+                   lbl.AutoSize = true;
                     lbl.Name = nguoi.MaNguoi;
-                    lbl.Text = nguoi.Ten;
-                    
+                    lbl.Text = "   " + nguoi.Ten;
+                    lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    Image image1 = Image.FromFile("C:\\Users\\HP VICTUS\\Downloads\\icons8-customer-20.png" + "    ");
+                    lbl.Image = image1;
+                    lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+                    // Set the size of the label to accommodate the bitmap size.
+                    lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+                    lbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+                    lbl.TabIndex = 0;
+                    // lbl.Size = new Size(50,50 );
+                    lbl.Size = new System.Drawing.Size(50, 80);
+                    // Initialize the label control's Image property.
+
                     lbl.Visible = true;
                     p.SetPanelKhach(lbl);
                 }
@@ -105,6 +145,15 @@ namespace PBL3___Motel_Management_System.View
             
         }
 
-        
+        private void lblDiaChi_Click(object sender, EventArgs e)
+        {
+
+        }
+        TrangChu tc = new TrangChu();
+
+        private void btnThemday_Click(object sender, EventArgs e)
+        {
+            tc.openChildForm1(new ChisoDien(), panelChinh);
+        }
     }
 }
