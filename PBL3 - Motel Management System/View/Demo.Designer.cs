@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnXoaPhong = new FontAwesome.Sharp.IconButton();
+            this.btnSuaPhong = new FontAwesome.Sharp.IconButton();
             this.btnTra = new FontAwesome.Sharp.IconButton();
             this.btnChiTiet = new FontAwesome.Sharp.IconButton();
             this.btnChoThue = new FontAwesome.Sharp.IconButton();
@@ -57,6 +59,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Window;
+            this.panel2.Controls.Add(this.btnXoaPhong);
+            this.panel2.Controls.Add(this.btnSuaPhong);
             this.panel2.Controls.Add(this.btnTra);
             this.panel2.Controls.Add(this.btnChiTiet);
             this.panel2.Controls.Add(this.btnChoThue);
@@ -69,6 +73,42 @@
             this.panel2.Size = new System.Drawing.Size(285, 313);
             this.panel2.TabIndex = 0;
             // 
+            // btnXoaPhong
+            // 
+            this.btnXoaPhong.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnXoaPhong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXoaPhong.BackColor = System.Drawing.Color.Red;
+            this.btnXoaPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaPhong.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnXoaPhong.IconColor = System.Drawing.Color.White;
+            this.btnXoaPhong.IconFont = FontAwesome.Sharp.IconFont.Regular;
+            this.btnXoaPhong.IconSize = 25;
+            this.btnXoaPhong.Location = new System.Drawing.Point(164, 267);
+            this.btnXoaPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXoaPhong.Name = "btnXoaPhong";
+            this.btnXoaPhong.Size = new System.Drawing.Size(50, 38);
+            this.btnXoaPhong.TabIndex = 61;
+            this.toolTip1.SetToolTip(this.btnXoaPhong, "Xóa");
+            this.btnXoaPhong.UseVisualStyleBackColor = false;
+            // 
+            // btnSuaPhong
+            // 
+            this.btnSuaPhong.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnSuaPhong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSuaPhong.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnSuaPhong.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
+            this.btnSuaPhong.IconColor = System.Drawing.Color.White;
+            this.btnSuaPhong.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSuaPhong.IconSize = 25;
+            this.btnSuaPhong.Location = new System.Drawing.Point(66, 265);
+            this.btnSuaPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSuaPhong.Name = "btnSuaPhong";
+            this.btnSuaPhong.Size = new System.Drawing.Size(51, 40);
+            this.btnSuaPhong.TabIndex = 62;
+            this.toolTip1.SetToolTip(this.btnSuaPhong, "Sửa phòng");
+            this.btnSuaPhong.UseVisualStyleBackColor = false;
+            this.btnSuaPhong.Click += new System.EventHandler(this.btnSuaPhong_Click);
+            // 
             // btnTra
             // 
             this.btnTra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -77,7 +117,7 @@
             this.btnTra.IconColor = System.Drawing.Color.White;
             this.btnTra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTra.IconSize = 25;
-            this.btnTra.Location = new System.Drawing.Point(216, 214);
+            this.btnTra.Location = new System.Drawing.Point(218, 198);
             this.btnTra.Margin = new System.Windows.Forms.Padding(4);
             this.btnTra.Name = "btnTra";
             this.btnTra.Size = new System.Drawing.Size(47, 48);
@@ -90,11 +130,11 @@
             // 
             this.btnChiTiet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnChiTiet.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnChiTiet.IconChar = FontAwesome.Sharp.IconChar.PeopleRoof;
+            this.btnChiTiet.IconChar = FontAwesome.Sharp.IconChar.Eye;
             this.btnChiTiet.IconColor = System.Drawing.Color.White;
             this.btnChiTiet.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnChiTiet.IconSize = 25;
-            this.btnChiTiet.Location = new System.Drawing.Point(145, 213);
+            this.btnChiTiet.Location = new System.Drawing.Point(147, 197);
             this.btnChiTiet.Margin = new System.Windows.Forms.Padding(4);
             this.btnChiTiet.Name = "btnChiTiet";
             this.btnChiTiet.Size = new System.Drawing.Size(50, 47);
@@ -112,7 +152,7 @@
             this.btnChoThue.IconColor = System.Drawing.Color.White;
             this.btnChoThue.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnChoThue.IconSize = 30;
-            this.btnChoThue.Location = new System.Drawing.Point(78, 214);
+            this.btnChoThue.Location = new System.Drawing.Point(80, 198);
             this.btnChoThue.Margin = new System.Windows.Forms.Padding(4);
             this.btnChoThue.Name = "btnChoThue";
             this.btnChoThue.Size = new System.Drawing.Size(49, 46);
@@ -129,7 +169,7 @@
             this.btnCoc.IconColor = System.Drawing.Color.White;
             this.btnCoc.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCoc.IconSize = 30;
-            this.btnCoc.Location = new System.Drawing.Point(8, 212);
+            this.btnCoc.Location = new System.Drawing.Point(10, 196);
             this.btnCoc.Margin = new System.Windows.Forms.Padding(4);
             this.btnCoc.Name = "btnCoc";
             this.btnCoc.Size = new System.Drawing.Size(53, 47);
@@ -141,6 +181,7 @@
             // 
             // panelTenKhach
             // 
+            this.panelTenKhach.BackColor = System.Drawing.Color.White;
             this.panelTenKhach.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTenKhach.Location = new System.Drawing.Point(0, 41);
             this.panelTenKhach.Margin = new System.Windows.Forms.Padding(4);
@@ -185,5 +226,7 @@
         private FontAwesome.Sharp.IconButton btnChiTiet;
         private FontAwesome.Sharp.IconButton btnTra;
         private System.Windows.Forms.ToolTip toolTip1;
+        private FontAwesome.Sharp.IconButton btnXoaPhong;
+        private FontAwesome.Sharp.IconButton btnSuaPhong;
     }
 }

@@ -101,8 +101,13 @@ namespace PBL3___Motel_Management_System.View
            // }
            chitiet.Show();
            
-         
-            
+        }
+
+        private void btnSuaPhong_Click(object sender, EventArgs e)
+        {
+            //Button btn = (Button)sender;              
+            SuaPhong sp = new SuaPhong(null,null);
+            sp.Show();
         }
     }
 }

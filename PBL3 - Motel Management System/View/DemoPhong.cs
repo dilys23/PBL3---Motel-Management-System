@@ -18,12 +18,12 @@ namespace PBL3___Motel_Management_System.View
     {
        
         private Button defaultBtn = null;
-        
+        private string _buttonName;
         public DemoPhong()
         {
             InitializeComponent();
             LoadForm(null);
-         //   RegisterButtonClickHandler(this.Controls);
+      
         }
         private void LoadForm(string a)
         {
@@ -43,7 +43,7 @@ namespace PBL3___Motel_Management_System.View
                 btn.Text = dt.TenDayTro;
                 btn.Name = dt.MaDayTro;
                 tp.SetToolTip(btn, btn.Text);
-                
+                btn.BackColor = Color.Orange;
                 btn.Click += new EventHandler(SuKien);
                 panelBtnDay.Controls.Add(btn);
                 if(defaultBtn == null)
@@ -82,7 +82,7 @@ namespace PBL3___Motel_Management_System.View
                 }
                 if(qLBLL.PhongDaCocByIdPhong(pt.MaPhongTro))
                 {
-                    p.SetColorPanel2(Color.DeepSkyBlue);
+                    p.SetColorPanel2(Color.MediumAquamarine);
                 }
                 foreach (Nguoi nguoi in qLBLL.GetNguoiByIdPhong(pt.MaPhongTro))
                 {
@@ -111,7 +111,7 @@ namespace PBL3___Motel_Management_System.View
 
         private void DemoPhong_Load(object sender, EventArgs e)
         {
-           
+          
         }
         TrangChu tc= new TrangChu();
 
@@ -121,28 +121,11 @@ namespace PBL3___Motel_Management_System.View
             tc.openChildForm1(new ThemDay(LoadForm), panelDemoPhong);
             panelBtnDay.Controls.Clear();
         }
-        /*
-        private void RegisterButtonClickHandler(Control.ControlCollection controls)
-        {
-            foreach (Control control in controls)
-            {
-                if (control is Button)
-                {
-                    // Đăng ký sự kiện cho nút
-                    Button button = (Button)control;
-                    button.Click += Button_Click;
-                }
-                else if (control.HasChildren)
-                {
-                    // Đệ quy xử lý các nút con trong control
-                    RegisterButtonClickHandler(control.Controls);
-                }
-            }
-        }
-        */
+        
+
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            // Button btn = new Button();
+            
             Button btn = (Button)sender;
             if (btn != null)
             {          
@@ -156,5 +139,6 @@ namespace PBL3___Motel_Management_System.View
 
            
         }
+     
     }
 }

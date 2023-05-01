@@ -23,49 +23,16 @@ namespace PBL3___Motel_Management_System.View
         TrangChu tc= new TrangChu();
 
       
-        /*
-        public void ThemTab(Form form)
-        {
-         
-            int index = check(tabform, form);
-            if (index >= 0)
-            {
-                tabform.TabIndex = index;
-            }
-            else
-            {
-                TabPage tabpage = new TabPage();
-                tabpage.BorderStyle = BorderStyle.Fixed3D;
-                tabform.TabPages.Add(tabpage);
-                form.TopLevel = false;
-                form.Parent = tabpage;
-                form.Show();
-                form.Dock = DockStyle.Fill;
-            }
-        }
-
-      */
-        public int check(TabControl tabform, Form form)
-        {
-            for (int i = 0; i < tabform.TabPages.Count; i++)
-            {
-                if (tabform.TabPages[i].Text.Trim() == form.Text.Trim())
-                    return i;
-            }
-            return -1;
-        }
 
         private void btnDichVu_Click(object sender, EventArgs e)
         {
-            //ChitietDichVu dv= new ChitietDichVu();
-            //ThemTab(dv);
+          
             tc.openChildForm1(new ChitietDichVu(), panelPhong); 
         }
 
         private void btnThanhVien_Click(object sender, EventArgs e)
         {
-            //ChitietThanhvien ct = new ChitietThanhvien();
-            //ThemTab(ct);
+          
             tc.openChildForm1(new ChitietThanhvien(),panelPhong);
         }
 

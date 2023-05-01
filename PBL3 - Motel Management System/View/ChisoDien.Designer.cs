@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.cbbDayTro = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpThangSuDung = new System.Windows.Forms.DateTimePicker();
@@ -58,6 +59,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSuaHD = new FontAwesome.Sharp.IconButton();
             this.btnThemHD = new FontAwesome.Sharp.IconButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiSoDien)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -250,6 +252,7 @@
             this.btnSua.TabIndex = 67;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnSua, "Sửa");
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
@@ -269,6 +272,7 @@
             this.btnHuyXacThuc.TabIndex = 68;
             this.btnHuyXacThuc.Text = "Hủy";
             this.btnHuyXacThuc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnHuyXacThuc, "Hủy");
             this.btnHuyXacThuc.UseVisualStyleBackColor = false;
             this.btnHuyXacThuc.Click += new System.EventHandler(this.btnHuyXacThuc_Click);
             // 
@@ -288,6 +292,7 @@
             this.btnXoa.TabIndex = 61;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnXoa, "Xóa");
             this.btnXoa.UseVisualStyleBackColor = false;
             // 
             // label5
@@ -366,6 +371,7 @@
             this.btnXacThuc.TabIndex = 55;
             this.btnXacThuc.Text = "Xác Thực";
             this.btnXacThuc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnXacThuc, "Xác thực");
             this.btnXacThuc.UseVisualStyleBackColor = false;
             this.btnXacThuc.Click += new System.EventHandler(this.iconButton1_Click);
             // 
@@ -384,6 +390,7 @@
             this.iconButton2.TabIndex = 54;
             this.iconButton2.Text = "Thêm ";
             this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.iconButton2, "Thêm Chỉ số điện");
             this.iconButton2.UseVisualStyleBackColor = false;
             this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
@@ -481,5 +488,6 @@
         private FontAwesome.Sharp.IconButton btnXoa;
         private FontAwesome.Sharp.IconButton btnSua;
         private FontAwesome.Sharp.IconButton btnHuyXacThuc;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
