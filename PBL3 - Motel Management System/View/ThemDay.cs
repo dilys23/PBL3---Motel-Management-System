@@ -33,6 +33,7 @@ namespace PBL3___Motel_Management_System
         TrangChu tc = new TrangChu();
         private void iconButton1_Click(object sender, EventArgs e)
         {
+            Loader(null);
             this.Close();
         }
         private Boolean kiemTraThemDay()

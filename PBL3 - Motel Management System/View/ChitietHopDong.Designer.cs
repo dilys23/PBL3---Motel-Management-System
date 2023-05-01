@@ -66,9 +66,11 @@
             this.dtpNgayBatDau = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.btnTroVe = new FontAwesome.Sharp.IconButton();
+            this.panelct = new System.Windows.Forms.Panel();
             this.panelThem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThietbi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichvu)).BeginInit();
+            this.panelct.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelThem
@@ -105,9 +107,9 @@
             this.panelThem.Controls.Add(this.label2);
             this.panelThem.Controls.Add(this.dtpNgaySinh);
             this.panelThem.Controls.Add(this.dtpNgayBatDau);
-            this.panelThem.Location = new System.Drawing.Point(12, 55);
+            this.panelThem.Location = new System.Drawing.Point(12, 40);
             this.panelThem.Name = "panelThem";
-            this.panelThem.Size = new System.Drawing.Size(898, 550);
+            this.panelThem.Size = new System.Drawing.Size(898, 565);
             this.panelThem.TabIndex = 47;
             this.panelThem.Paint += new System.Windows.Forms.PaintEventHandler(this.panelThem_Paint);
             // 
@@ -136,13 +138,13 @@
             this.TenThietBi,
             this.GiaThietBi});
             this.dgvThietbi.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvThietbi.Location = new System.Drawing.Point(50, 401);
+            this.dgvThietbi.Location = new System.Drawing.Point(50, 363);
             this.dgvThietbi.Name = "dgvThietbi";
             this.dgvThietbi.ReadOnly = true;
             this.dgvThietbi.RowHeadersWidth = 51;
             this.dgvThietbi.RowTemplate.Height = 24;
             this.dgvThietbi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvThietbi.Size = new System.Drawing.Size(780, 81);
+            this.dgvThietbi.Size = new System.Drawing.Size(780, 96);
             this.dgvThietbi.TabIndex = 46;
             // 
             // MaThietBi
@@ -195,7 +197,7 @@
             this.dgvDichvu.RowHeadersWidth = 51;
             this.dgvDichvu.RowTemplate.Height = 24;
             this.dgvDichvu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDichvu.Size = new System.Drawing.Size(780, 121);
+            this.dgvDichvu.Size = new System.Drawing.Size(780, 83);
             this.dgvDichvu.TabIndex = 45;
             // 
             // MaDichVu
@@ -299,7 +301,7 @@
             this.btnXacNhan.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnXacNhan.IconColor = System.Drawing.Color.Black;
             this.btnXacNhan.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnXacNhan.Location = new System.Drawing.Point(389, 488);
+            this.btnXacNhan.Location = new System.Drawing.Point(388, 474);
             this.btnXacNhan.Name = "btnXacNhan";
             this.btnXacNhan.Size = new System.Drawing.Size(79, 32);
             this.btnXacNhan.TabIndex = 37;
@@ -489,7 +491,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Bahnschrift SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Chocolate;
-            this.label10.Location = new System.Drawing.Point(12, 20);
+            this.label10.Location = new System.Drawing.Point(12, 9);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(216, 28);
             this.label10.TabIndex = 48;
@@ -510,24 +512,35 @@
             this.btnTroVe.UseVisualStyleBackColor = false;
             this.btnTroVe.Click += new System.EventHandler(this.btnTroVe_Click);
             // 
+            // panelct
+            // 
+            this.panelct.Controls.Add(this.label10);
+            this.panelct.Controls.Add(this.btnTroVe);
+            this.panelct.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelct.Location = new System.Drawing.Point(0, 0);
+            this.panelct.Name = "panelct";
+            this.panelct.Size = new System.Drawing.Size(922, 49);
+            this.panelct.TabIndex = 62;
+            // 
             // ChitietHopDong
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(922, 558);
-            this.Controls.Add(this.btnTroVe);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.panelct);
             this.Controls.Add(this.panelThem);
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ChitietHopDong";
             this.Text = "ChitietHopDong";
             this.panelThem.ResumeLayout(false);
             this.panelThem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThietbi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichvu)).EndInit();
+            this.panelct.ResumeLayout(false);
+            this.panelct.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -572,5 +585,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDichVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaDichVu;
         private System.Windows.Forms.Label label12;
+        public System.Windows.Forms.Panel panelct;
     }
 }

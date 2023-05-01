@@ -289,7 +289,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panPhong1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
             this.panPhong1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panPhong1.Controls.Add(this.btnThemTK);
+//            this.panPhong1.Controls.Add(this.btnThemTK);
             this.panPhong1.Controls.Add(this.btnTra);
             this.panPhong1.Controls.Add(this.btnChiTiet);
             this.panPhong1.Controls.Add(this.dgvPhongTro);

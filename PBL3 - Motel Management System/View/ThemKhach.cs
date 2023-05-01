@@ -148,7 +148,6 @@ namespace PBL3___Motel_Management_System
                     tvtp.MaThanhVienTrongPhong = qLBLL.TaoIdThanhVienTrongPhong();
                     tvtp.MaNguoi = nguoi.MaNguoi;
                     tvtp.MaPhongTro = thuePhong.hopDong.MaPhongTro;
-
                     qLBLL.AddNguoiBll(nguoi);
                     qLBLL.AddThanhVienTrongPhongBll(tvtp);
                     MessageBox.Show("Thêm thành viên vào phòng thành công", "Thông báo", MessageBoxButtons.OK);

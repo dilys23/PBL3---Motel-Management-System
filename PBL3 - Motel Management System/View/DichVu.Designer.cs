@@ -1,4 +1,6 @@
-﻿namespace PBL3___Motel_Management_System
+﻿using System.Windows.Forms;
+
+namespace PBL3___Motel_Management_System
 {
     partial class Dichvu
     {
@@ -48,9 +50,9 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(686, 40);
+            this.panel1.Size = new System.Drawing.Size(915, 49);
             this.panel1.TabIndex = 20;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -59,10 +61,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bahnschrift SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Chocolate;
-            this.label4.Location = new System.Drawing.Point(9, 9);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(12, 11);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(188, 23);
+            this.label4.Size = new System.Drawing.Size(229, 28);
             this.label4.TabIndex = 26;
             this.label4.Text = "DANH SÁCH DỊCH VỤ";
             // 
@@ -78,10 +79,10 @@
             this.panelDV.Controls.Add(this.btnThemDichVu);
             this.panelDV.Controls.Add(this.txtTimKiem);
             this.panelDV.Controls.Add(this.dgvDichVu);
-            this.panelDV.Location = new System.Drawing.Point(4, 45);
-            this.panelDV.Margin = new System.Windows.Forms.Padding(2);
+            this.panelDV.Location = new System.Drawing.Point(5, 55);
+            this.panelDV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelDV.Name = "panelDV";
-            this.panelDV.Size = new System.Drawing.Size(676, 311);
+            this.panelDV.Size = new System.Drawing.Size(901, 383);
             this.panelDV.TabIndex = 21;
             // 
             // btnTimKiem
@@ -92,10 +93,10 @@
             this.btnTimKiem.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnTimKiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTimKiem.IconSize = 25;
-            this.btnTimKiem.Location = new System.Drawing.Point(61, 11);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTimKiem.Location = new System.Drawing.Point(81, 14);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(32, 34);
+            this.btnTimKiem.Size = new System.Drawing.Size(43, 42);
             this.btnTimKiem.TabIndex = 55;
             this.btnTimKiem.UseVisualStyleBackColor = false;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
@@ -111,10 +112,10 @@
             this.btnXoaPhong.IconFont = FontAwesome.Sharp.IconFont.Regular;
             this.btnXoaPhong.IconSize = 25;
             this.btnXoaPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaPhong.Location = new System.Drawing.Point(598, 11);
-            this.btnXoaPhong.Margin = new System.Windows.Forms.Padding(2);
+            this.btnXoaPhong.Location = new System.Drawing.Point(797, 14);
+            this.btnXoaPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoaPhong.Name = "btnXoaPhong";
-            this.btnXoaPhong.Size = new System.Drawing.Size(70, 31);
+            this.btnXoaPhong.Size = new System.Drawing.Size(93, 38);
             this.btnXoaPhong.TabIndex = 54;
             this.btnXoaPhong.Text = "Xóa";
             this.btnXoaPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -132,10 +133,10 @@
             this.btnSuaDichVu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSuaDichVu.IconSize = 25;
             this.btnSuaDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaDichVu.Location = new System.Drawing.Point(518, 12);
-            this.btnSuaDichVu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSuaDichVu.Location = new System.Drawing.Point(691, 15);
+            this.btnSuaDichVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSuaDichVu.Name = "btnSuaDichVu";
-            this.btnSuaDichVu.Size = new System.Drawing.Size(66, 32);
+            this.btnSuaDichVu.Size = new System.Drawing.Size(88, 39);
             this.btnSuaDichVu.TabIndex = 52;
             this.btnSuaDichVu.Text = "Sửa";
             this.btnSuaDichVu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -152,11 +153,11 @@
             this.btnThemDichVu.IconColor = System.Drawing.Color.White;
             this.btnThemDichVu.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnThemDichVu.IconSize = 25;
-            this.btnThemDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemDichVu.Location = new System.Drawing.Point(438, 11);
-            this.btnThemDichVu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnThemDichVu.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnThemDichVu.Location = new System.Drawing.Point(584, 14);
+            this.btnThemDichVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThemDichVu.Name = "btnThemDichVu";
-            this.btnThemDichVu.Size = new System.Drawing.Size(75, 32);
+            this.btnThemDichVu.Size = new System.Drawing.Size(100, 39);
             this.btnThemDichVu.TabIndex = 53;
             this.btnThemDichVu.Text = "Thêm ";
             this.btnThemDichVu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -166,10 +167,10 @@
             // txtTimKiem
             // 
             this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem.Location = new System.Drawing.Point(107, 17);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTimKiem.Location = new System.Drawing.Point(143, 21);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(136, 23);
+            this.txtTimKiem.Size = new System.Drawing.Size(180, 27);
             this.txtTimKiem.TabIndex = 51;
             // 
             // dgvDichVu
@@ -182,24 +183,24 @@
             this.dgvDichVu.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvDichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDichVu.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvDichVu.Location = new System.Drawing.Point(12, 59);
-            this.dgvDichVu.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvDichVu.Location = new System.Drawing.Point(16, 73);
+            this.dgvDichVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvDichVu.Name = "dgvDichVu";
             this.dgvDichVu.RowHeadersWidth = 51;
             this.dgvDichVu.RowTemplate.Height = 24;
             this.dgvDichVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDichVu.Size = new System.Drawing.Size(654, 241);
+            this.dgvDichVu.Size = new System.Drawing.Size(872, 297);
             this.dgvDichVu.TabIndex = 50;
             // 
             // Dichvu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(686, 356);
+            this.ClientSize = new System.Drawing.Size(915, 438);
             this.Controls.Add(this.panelDV);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Dichvu";
             this.Text = "Service";
             this.Load += new System.EventHandler(this.Service_Load);

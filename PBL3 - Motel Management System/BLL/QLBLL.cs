@@ -55,7 +55,14 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return list;
         }
-        
+        public DayTro GetDayTroById(string id)
+        {
+            foreach(DayTro dt in GetAllDayTroBll())
+            {
+                if (dt.MaDayTro == id) return dt;
+            }
+            return null;
+        }
 
         public string TaoIdNguoi()
         {
@@ -751,7 +758,28 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return list;
         }
-        
+        public List<Nguoi>GetNguoiByIdPhong(string idPhong)
+        {
+            QLDAL qLDAL = new QLDAL();
+            List<Nguoi> nguois = new List<Nguoi>();
+            foreach(ThanhVienTrongPhong tv in qLDAL.GetAllThanhVienTrongPhong())
+            {
+                if(tv.MaPhongTro == idPhong)
+                {
+                    nguois.Add(GetNguoiByIdNguoi(tv.MaNguoi));
+                }
+            }
+            return nguois;
+        }
+        public List<PhongTro>GetPhongTroByIdDay(string idDay)
+        {
+            List<PhongTro>list = new List<PhongTro>();
+            foreach(PhongTro pt in GetAllPhongTro())
+            {
+                if (pt.MaDayTro == idDay) list.Add(pt);
+            }
+            return list;
+        }
        
         public PhongTro GetPhongTroByIdPhong(string idPhong)
         {
@@ -967,6 +995,11 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return list;
         }
+        public List<DayTro> GetAllDayTroBll()
+        {
+            QLDAL qLDAL = new QLDAL();
+            return qLDAL.GetAllDayTro();
+        }
         public void DelChiTietDichVuByIdDichVu(string id)
         {
             
@@ -1076,6 +1109,12 @@ namespace PBL3___Motel_Management_System.BLL
             else if (GetHopDongByIdPhong(IdPhong).TinhTrang == false) return false;
             return true;
             
+        }
+        public bool PhongDaCocByIdPhong(string IdPhong)
+        {
+            if (GetHopDongByIdPhong(IdPhong)==null) return false;
+            else if (GetHopDongByIdPhong(IdPhong).TinhTrang == true) return false;
+            return true;
         }
         public List<string> GetHoaDonByThangChiTra(string ThangCt)
         {

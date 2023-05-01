@@ -19,20 +19,11 @@ namespace PBL3___Motel_Management_System.View
         private ThuePhong tp;
         private string MaHD;
         private Loader loader;
-        public ChitietHopDong(string MaHD,ThuePhong tp, Loader loader)
+        public ChitietHopDong(ThuePhong tp, Loader loader)
         {
             InitializeComponent();        
             this.loader = loader;
-            if (MaHD != null)
-            {
-                this.MaHD = MaHD;
-                SetGUI();
-            }
-            else
-            {
-                this.tp = tp;
-                LoadForm();   
-            }
+            //LoadForm();
         }
         public void SetGUI()
         {

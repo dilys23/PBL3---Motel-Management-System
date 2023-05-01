@@ -8,6 +8,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System
@@ -15,20 +16,30 @@ namespace PBL3___Motel_Management_System
     
     public partial class TrangChu : Form
     {
+       
         private int borderSize = 2;
         private Size formSize; //Keep form size when it is minimized and restored.Since the form is resized because it takes into account the size of the title bar and borders.
         public TrangChu()
         {
             InitializeComponent();
-           CollapseMenu();
+            // Tạo UserControl và truyền Panel của trang chủ vào
+            TaiKhoan myUserControl = new TaiKhoan();
+            myUserControl.DesktopPanel = panelDesktop;
+
+            // Hiển thị UserControl
+            //panelDesktop.Controls.Add(myUserControl);
+            //myUserControl.Dock = DockStyle.None;
+            CollapseMenu();
             this.Padding = new Padding(borderSize);//Border size
             this.BackColor = Color.FromArgb(217, 247, 249);
-         
+          
+
         }
 
         private void Menu1_Load(object sender, EventArgs e)
         {
             formSize = this.ClientSize;
+            
         }
 
         //Drag Form
@@ -153,7 +164,7 @@ namespace PBL3___Motel_Management_System
                 paneMenu.Width = 100;
                 pictureBox1.Visible = false;
                 btnMenu.Dock = DockStyle.Top;
-                foreach (Button menuButton in paneMenu.Controls.OfType<Button>())
+                foreach (System.Windows.Forms.Button menuButton in paneMenu.Controls.OfType<System.Windows.Forms.Button>())
                 {
                     menuButton.Text = "";
                     menuButton.ImageAlign = ContentAlignment.MiddleLeft;
@@ -165,7 +176,7 @@ namespace PBL3___Motel_Management_System
                 paneMenu.Width = 230;
                 pictureBox1.Visible = true;
                 btnMenu.Dock = DockStyle.None;
-                foreach (Button menuButton in paneMenu.Controls.OfType<Button>())
+                foreach (System.Windows.Forms.Button menuButton in paneMenu.Controls.OfType<System.Windows.Forms.Button>())
                 {
                    menuButton.Text = "  " + menuButton.Tag.ToString();
                     menuButton.ImageAlign = ContentAlignment.MiddleLeft;
@@ -232,24 +243,26 @@ namespace PBL3___Motel_Management_System
 
         }
 
-        public  void openChildForm1(Form childForm, Panel p)
+        public  void openChildForm1(Form childForm, System.Windows.Forms.Panel p)
         {
             if (activeForm != null)
                 activeForm.Close();
-            activeForm = childForm;
+            //activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
             p.Controls.Add(childForm);
             p.Tag = childForm;
-            childForm.BringToFront();
+            childForm.BringToFront();// đăt form mới lên trên cùng
             childForm.Show();
+            activeForm = childForm;
 
         }
 
         private void iconButton10_Click(object sender, EventArgs e)
         {
-            openChildForm1(new Phong(), panelDesktop);
+            openChildForm1(new DemoPhong(), panelDesktop);
+
         }
 
         private void btnDichVu_Click(object sender, EventArgs e)
@@ -313,9 +326,13 @@ namespace PBL3___Motel_Management_System
         {
             openChildForm(new Thietbi());   
         }
+       // taiKhoan1.BringToFront();
 
         private void btnTK_Click(object sender, EventArgs e)
         {
+            
+           // taiKhoan1.BringToFront();
+           // taiKhoan1.Toggle();
             if (taiKhoan1.Visible)
             {
                 taiKhoan1.Hide();
@@ -325,6 +342,11 @@ namespace PBL3___Motel_Management_System
                 taiKhoan1.Show();
             }
             taiKhoan1.BringToFront();
+        }
+
+        private void taiKhoan1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

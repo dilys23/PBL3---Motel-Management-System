@@ -158,6 +158,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__ChiTietSu__MaCHi__5CD6CB2B">
+          <End Role="ChiTietDichVu" Type="Self.ChiTietDichVu" Multiplicity="1" />
+          <End Role="ChiTietSuDungDichVu" Type="Self.ChiTietSuDungDichVu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChiTietDichVu">
+              <PropertyRef Name="MaChiTietDichVu" />
+            </Principal>
+            <Dependent Role="ChiTietSuDungDichVu">
+              <PropertyRef Name="MaCHiTietDichVu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__DayTro__MaChuTro__534D60F1">
           <End Role="Nguoi" Type="Self.Nguoi" Multiplicity="1" />
           <End Role="DayTro" Type="Self.DayTro" Multiplicity="*" />
@@ -170,7 +182,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__DayTro__MaChuTro__5DCAEF64">
+          <End Role="Nguoi" Type="Self.Nguoi" Multiplicity="1" />
+          <End Role="DayTro" Type="Self.DayTro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nguoi">
+              <PropertyRef Name="MaNguoi" />
+            </Principal>
+            <Dependent Role="DayTro">
+              <PropertyRef Name="MaChuTro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__HoaDon__MaPhongT__5441852A">
+          <End Role="PhongTro" Type="Self.PhongTro" Multiplicity="1" />
+          <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhongTro">
+              <PropertyRef Name="MaPhongTro" />
+            </Principal>
+            <Dependent Role="HoaDon">
+              <PropertyRef Name="MaPhongTro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HoaDon__MaPhongT__5EBF139D">
           <End Role="PhongTro" Type="Self.PhongTro" Multiplicity="1" />
           <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
           <ReferentialConstraint>
@@ -333,11 +369,23 @@
             <End Role="ChiTietDichVu" EntitySet="ChiTietDichVu" />
             <End Role="ChiTietSuDungDichVu" EntitySet="ChiTietSuDungDichVu" />
           </AssociationSet>
+          <AssociationSet Name="FK__ChiTietSu__MaCHi__5CD6CB2B" Association="Self.FK__ChiTietSu__MaCHi__5CD6CB2B">
+            <End Role="ChiTietDichVu" EntitySet="ChiTietDichVu" />
+            <End Role="ChiTietSuDungDichVu" EntitySet="ChiTietSuDungDichVu" />
+          </AssociationSet>
           <AssociationSet Name="FK__DayTro__MaChuTro__534D60F1" Association="Self.FK__DayTro__MaChuTro__534D60F1">
             <End Role="Nguoi" EntitySet="Nguoi" />
             <End Role="DayTro" EntitySet="DayTro" />
           </AssociationSet>
+          <AssociationSet Name="FK__DayTro__MaChuTro__5DCAEF64" Association="Self.FK__DayTro__MaChuTro__5DCAEF64">
+            <End Role="Nguoi" EntitySet="Nguoi" />
+            <End Role="DayTro" EntitySet="DayTro" />
+          </AssociationSet>
           <AssociationSet Name="FK__HoaDon__MaPhongT__5441852A" Association="Self.FK__HoaDon__MaPhongT__5441852A">
+            <End Role="PhongTro" EntitySet="PhongTro" />
+            <End Role="HoaDon" EntitySet="HoaDon" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HoaDon__MaPhongT__5EBF139D" Association="Self.FK__HoaDon__MaPhongT__5EBF139D">
             <End Role="PhongTro" EntitySet="PhongTro" />
             <End Role="HoaDon" EntitySet="HoaDon" />
           </AssociationSet>
@@ -399,6 +447,7 @@
           <Property Name="MaDichVu" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MaPhongTro" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="ChiTietSuDungDichVu" Relationship="Self.FK__ChiTietSu__MaCHi__5070F446" FromRole="ChiTietDichVu" ToRole="ChiTietSuDungDichVu" />
+          <NavigationProperty Name="ChiTietSuDungDichVu1" Relationship="Self.FK__ChiTietSu__MaCHi__5CD6CB2B" FromRole="ChiTietDichVu" ToRole="ChiTietSuDungDichVu" />
           <NavigationProperty Name="DichVu" Relationship="Self.FK_MaDichVuChiTietDichVu" FromRole="ChiTietDichVu" ToRole="DichVu" />
           <NavigationProperty Name="PhongTro" Relationship="Self.FK_MaPhongTroTietDichVu" FromRole="ChiTietDichVu" ToRole="PhongTro" />
         </EntityType>
@@ -414,6 +463,7 @@
           <Property Name="NgayLap" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TinhTrang" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ChiTietDichVu" Relationship="Self.FK__ChiTietSu__MaCHi__5070F446" FromRole="ChiTietSuDungDichVu" ToRole="ChiTietDichVu" />
+          <NavigationProperty Name="ChiTietDichVu1" Relationship="Self.FK__ChiTietSu__MaCHi__5CD6CB2B" FromRole="ChiTietSuDungDichVu" ToRole="ChiTietDichVu" />
         </EntityType>
         <EntityType Name="ChiTietThietBi">
           <Key>
@@ -438,6 +488,7 @@
           <Property Name="MaChuTro" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="HinhAnh" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Nguoi" Relationship="Self.FK__DayTro__MaChuTro__534D60F1" FromRole="DayTro" ToRole="Nguoi" />
+          <NavigationProperty Name="Nguoi1" Relationship="Self.FK__DayTro__MaChuTro__5DCAEF64" FromRole="DayTro" ToRole="Nguoi" />
           <NavigationProperty Name="PhongTro" Relationship="Self.FK_MaDayTroPhongTro" FromRole="DayTro" ToRole="PhongTro" />
         </EntityType>
         <EntityType Name="DichVu">
@@ -461,6 +512,7 @@
           <Property Name="TongTien" Type="Double" Nullable="false" />
           <Property Name="DaThanhToan" Type="Double" Nullable="false" />
           <NavigationProperty Name="PhongTro" Relationship="Self.FK__HoaDon__MaPhongT__5441852A" FromRole="HoaDon" ToRole="PhongTro" />
+          <NavigationProperty Name="PhongTro1" Relationship="Self.FK__HoaDon__MaPhongT__5EBF139D" FromRole="HoaDon" ToRole="PhongTro" />
         </EntityType>
         <EntityType Name="HopDong">
           <Key>
@@ -489,6 +541,7 @@
           <Property Name="GioiTinh" Type="Boolean" Nullable="false" />
           <Property Name="HinhAnh" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="DayTro" Relationship="Self.FK__DayTro__MaChuTro__534D60F1" FromRole="Nguoi" ToRole="DayTro" />
+          <NavigationProperty Name="DayTro1" Relationship="Self.FK__DayTro__MaChuTro__5DCAEF64" FromRole="Nguoi" ToRole="DayTro" />
           <NavigationProperty Name="HopDong" Relationship="Self.FK_MaNguoiHopDong" FromRole="Nguoi" ToRole="HopDong" />
           <NavigationProperty Name="ThanhVienTrongPhong" Relationship="Self.FK_MaNguoiThanhVienTrongPhong" FromRole="Nguoi" ToRole="ThanhVienTrongPhong" />
           <NavigationProperty Name="VaiTro" Relationship="Self.FK_MaNguoiVaiTro" FromRole="Nguoi" ToRole="VaiTro" />
@@ -509,6 +562,7 @@
           <NavigationProperty Name="ChiTietThietBi" Relationship="Self.FK_MaPhongTroChiTietThietBi" FromRole="PhongTro" ToRole="ChiTietThietBi" />
           <NavigationProperty Name="DayTro" Relationship="Self.FK_MaDayTroPhongTro" FromRole="PhongTro" ToRole="DayTro" />
           <NavigationProperty Name="HoaDon" Relationship="Self.FK__HoaDon__MaPhongT__5441852A" FromRole="PhongTro" ToRole="HoaDon" />
+          <NavigationProperty Name="HoaDon1" Relationship="Self.FK__HoaDon__MaPhongT__5EBF139D" FromRole="PhongTro" ToRole="HoaDon" />
           <NavigationProperty Name="HopDong" Relationship="Self.FK_MaPhongTroHopDong" FromRole="PhongTro" ToRole="HopDong" />
           <NavigationProperty Name="ThanhVienTrongPhong" Relationship="Self.FK_MaPhongTroThanhVienTrongPhong" FromRole="PhongTro" ToRole="ThanhVienTrongPhong" />
         </EntityType>
@@ -561,6 +615,18 @@
           <NavigationProperty Name="TaiKhoan" Relationship="Self.FK_MaTaiKhoanVaiTro" FromRole="VaiTro" ToRole="TaiKhoan" />
         </EntityType>
         <Association Name="FK__ChiTietSu__MaCHi__5070F446">
+          <End Role="ChiTietDichVu" Type="Self.ChiTietDichVu" Multiplicity="1" />
+          <End Role="ChiTietSuDungDichVu" Type="Self.ChiTietSuDungDichVu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChiTietDichVu">
+              <PropertyRef Name="MaChiTietDichVu" />
+            </Principal>
+            <Dependent Role="ChiTietSuDungDichVu">
+              <PropertyRef Name="MaCHiTietDichVu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ChiTietSu__MaCHi__5CD6CB2B">
           <End Role="ChiTietDichVu" Type="Self.ChiTietDichVu" Multiplicity="1" />
           <End Role="ChiTietSuDungDichVu" Type="Self.ChiTietSuDungDichVu" Multiplicity="*" />
           <ReferentialConstraint>
@@ -632,6 +698,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__DayTro__MaChuTro__5DCAEF64">
+          <End Role="Nguoi" Type="Self.Nguoi" Multiplicity="1" />
+          <End Role="DayTro" Type="Self.DayTro" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nguoi">
+              <PropertyRef Name="MaNguoi" />
+            </Principal>
+            <Dependent Role="DayTro">
+              <PropertyRef Name="MaChuTro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_MaDayTroPhongTro">
           <End Role="DayTro" Type="Self.DayTro" Multiplicity="1" />
           <End Role="PhongTro" Type="Self.PhongTro" Multiplicity="*" />
@@ -645,6 +723,18 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__HoaDon__MaPhongT__5441852A">
+          <End Role="PhongTro" Type="Self.PhongTro" Multiplicity="1" />
+          <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhongTro">
+              <PropertyRef Name="MaPhongTro" />
+            </Principal>
+            <Dependent Role="HoaDon">
+              <PropertyRef Name="MaPhongTro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HoaDon__MaPhongT__5EBF139D">
           <End Role="PhongTro" Type="Self.PhongTro" Multiplicity="1" />
           <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
           <ReferentialConstraint>
@@ -747,6 +837,10 @@
             <End Role="ChiTietDichVu" EntitySet="ChiTietDichVu" />
             <End Role="ChiTietSuDungDichVu" EntitySet="ChiTietSuDungDichVu" />
           </AssociationSet>
+          <AssociationSet Name="FK__ChiTietSu__MaCHi__5CD6CB2B" Association="Self.FK__ChiTietSu__MaCHi__5CD6CB2B">
+            <End Role="ChiTietDichVu" EntitySet="ChiTietDichVu" />
+            <End Role="ChiTietSuDungDichVu" EntitySet="ChiTietSuDungDichVu" />
+          </AssociationSet>
           <AssociationSet Name="FK_MaDichVuChiTietDichVu" Association="Self.FK_MaDichVuChiTietDichVu">
             <End Role="DichVu" EntitySet="DichVu" />
             <End Role="ChiTietDichVu" EntitySet="ChiTietDichVu" />
@@ -767,11 +861,19 @@
             <End Role="Nguoi" EntitySet="Nguoi" />
             <End Role="DayTro" EntitySet="DayTro" />
           </AssociationSet>
+          <AssociationSet Name="FK__DayTro__MaChuTro__5DCAEF64" Association="Self.FK__DayTro__MaChuTro__5DCAEF64">
+            <End Role="Nguoi" EntitySet="Nguoi" />
+            <End Role="DayTro" EntitySet="DayTro" />
+          </AssociationSet>
           <AssociationSet Name="FK_MaDayTroPhongTro" Association="Self.FK_MaDayTroPhongTro">
             <End Role="DayTro" EntitySet="DayTro" />
             <End Role="PhongTro" EntitySet="PhongTro" />
           </AssociationSet>
           <AssociationSet Name="FK__HoaDon__MaPhongT__5441852A" Association="Self.FK__HoaDon__MaPhongT__5441852A">
+            <End Role="PhongTro" EntitySet="PhongTro" />
+            <End Role="HoaDon" EntitySet="HoaDon" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HoaDon__MaPhongT__5EBF139D" Association="Self.FK__HoaDon__MaPhongT__5EBF139D">
             <End Role="PhongTro" EntitySet="PhongTro" />
             <End Role="HoaDon" EntitySet="HoaDon" />
           </AssociationSet>

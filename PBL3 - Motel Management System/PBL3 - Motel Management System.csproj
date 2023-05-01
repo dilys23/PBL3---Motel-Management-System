@@ -141,6 +141,18 @@
     <Compile Include="View\Anh.Designer.cs">
       <DependentUpon>Anh.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ChitietDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ChitietDichVu.Designer.cs">
+      <DependentUpon>ChitietDichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChitietPT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ChitietPT.Designer.cs">
+      <DependentUpon>ChitietPT.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ChitietDay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +183,18 @@
     <Compile Include="View\ChitietPKhach.Designer.cs">
       <DependentUpon>ChitietPKhach.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ChitietThanhvien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ChitietThanhvien.Designer.cs">
+      <DependentUpon>ChitietThanhvien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChuTro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ChuTro.Designer.cs">
+      <DependentUpon>ChuTro.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\CocPhong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +206,18 @@
     </Compile>
     <Compile Include="View\Daytro.Designer.cs">
       <DependentUpon>Daytro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Demo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Demo.Designer.cs">
+      <DependentUpon>Demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DemoPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DemoPhong.Designer.cs">
+      <DependentUpon>DemoPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="View\DoiMK.cs">
       <SubType>Form</SubType>
@@ -392,6 +428,15 @@
     <EmbeddedResource Include="View\Anh.resx">
       <DependentUpon>Anh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ChitietDichVu.resx">
+      <DependentUpon>ChitietDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ChitietNguoi.resx">
+      <DependentUpon>ChitietNguoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ChitietPT.resx">
+      <DependentUpon>ChitietPT.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ChitietDay.resx">
       <DependentUpon>ChitietDay.cs</DependentUpon>
     </EmbeddedResource>
@@ -404,11 +449,23 @@
     <EmbeddedResource Include="View\ChitietPKhach.resx">
       <DependentUpon>ChitietPKhach.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ChitietThanhvien.resx">
+      <DependentUpon>ChitietThanhvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ChuTro.resx">
+      <DependentUpon>ChuTro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\CocPhong.resx">
       <DependentUpon>CocPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Daytro.resx">
       <DependentUpon>Daytro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Demo.resx">
+      <DependentUpon>Demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DemoPhong.resx">
+      <DependentUpon>DemoPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\DoiMK.resx">
       <DependentUpon>DoiMK.cs</DependentUpon>

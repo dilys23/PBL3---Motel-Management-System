@@ -23,5 +23,6 @@ namespace PBL3___Motel_Management_System.DAL
         public bool TinhTrang { get; set; }
     
         public virtual ChiTietDichVu ChiTietDichVu { get; set; }
+        public virtual ChiTietDichVu ChiTietDichVu1 { get; set; }
     }
 }

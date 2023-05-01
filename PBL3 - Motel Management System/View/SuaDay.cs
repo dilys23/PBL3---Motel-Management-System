@@ -25,17 +25,29 @@ namespace PBL3___Motel_Management_System.View
             InitializeComponent();
             this.IdDay = idDay;
             this.Loader = loader;
-            QLBLL qLBLL = new QLBLL();
-            DayTro day = qLBLL.GetDayByIdDay(idDay);
-            txtTenDay.Text = day.TenDayTro.ToString();  
-            txtQuanHuyen.Text = day.TenHuyen.ToString();
-            txtdiachi.Text = day.TenDuong.ToString();
-            txtThanhpho.Text = day.TenThanhPho.ToString();
-            if(day.HinhAnh !=null)
-            {
-                pctKhach.Image = ChuyenDoiAnh.Base64ToImage(day.HinhAnh);
-            }
+            SetGUI();
             //txtdiachi.Text = day.
+        }
+        public void SetGUI()
+        {
+            QLBLL qLBLL = new QLBLL();
+            
+            DayTro day = qLBLL.GetDayByIdDay(this.IdDay);
+            if (day != null)
+            {
+                txtTenDay.Text = day.TenDayTro.ToString();
+                txtQuanHuyen.Text = day.TenHuyen.ToString();
+                txtdiachi.Text = day.TenDuong.ToString();
+                txtThanhpho.Text = day.TenThanhPho.ToString();
+                if (day.HinhAnh != null)
+                {
+                    pctKhach.Image = ChuyenDoiAnh.Base64ToImage(day.HinhAnh);
+                }
+            }
+            else
+            {
+                MessageBox.Show(this.IdDay, "Thong bao");
+            }
         }
         private Boolean checkHopLe()
         {
@@ -73,6 +85,7 @@ namespace PBL3___Motel_Management_System.View
         }
         private void btnTroVe_Click(object sender, EventArgs e)
         {
+            Loader(null);
             this.Close();
         }
 
