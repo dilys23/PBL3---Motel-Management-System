@@ -22,7 +22,8 @@ namespace PBL3___Motel_Management_System.View
         public DemoPhong()
         {
             InitializeComponent();
-            LoadForm(null);   
+            LoadForm(null);
+         //   RegisterButtonClickHandler(this.Controls);
         }
         private void LoadForm(string a)
         {
@@ -120,7 +121,25 @@ namespace PBL3___Motel_Management_System.View
             tc.openChildForm1(new ThemDay(LoadForm), panelDemoPhong);
             panelBtnDay.Controls.Clear();
         }
-
+        /*
+        private void RegisterButtonClickHandler(Control.ControlCollection controls)
+        {
+            foreach (Control control in controls)
+            {
+                if (control is Button)
+                {
+                    // Đăng ký sự kiện cho nút
+                    Button button = (Button)control;
+                    button.Click += Button_Click;
+                }
+                else if (control.HasChildren)
+                {
+                    // Đệ quy xử lý các nút con trong control
+                    RegisterButtonClickHandler(control.Controls);
+                }
+            }
+        }
+        */
         private void iconButton1_Click(object sender, EventArgs e)
         {
             // Button btn = new Button();
