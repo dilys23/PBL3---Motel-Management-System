@@ -44,7 +44,7 @@ namespace PBL3___Motel_Management_System.View
                 btn.Name = dt.MaDayTro;
                 tp.SetToolTip(btn, btn.Text);
                 btn.BackColor = Color.Orange;
-                btn.Click += new EventHandler(SuKien);
+                 btn.Click += new EventHandler(SuKien);
                 panelBtnDay.Controls.Add(btn);
                 if(defaultBtn == null)
                 {
@@ -121,14 +121,15 @@ namespace PBL3___Motel_Management_System.View
             tc.openChildForm1(new ThemDay(LoadForm), panelDemoPhong);
             panelBtnDay.Controls.Clear();
         }
-        
+       
+
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            
+
             Button btn = (Button)sender;
             if (btn != null)
-            {          
+            {
                 tc.openChildForm1(new SuaDay(btn.Name, LoadForm), panelDemoPhong);
                 panelBtnDay.Controls.Clear();
             }
@@ -137,7 +138,8 @@ namespace PBL3___Motel_Management_System.View
                 MessageBox.Show("Day null", "Thong bao");
             }
 
-           
+
+
         }
      
     }

@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnXoaPhong = new FontAwesome.Sharp.IconButton();
-            this.btnSuaPhong = new FontAwesome.Sharp.IconButton();
             this.btnTra = new FontAwesome.Sharp.IconButton();
             this.btnChiTiet = new FontAwesome.Sharp.IconButton();
             this.btnChoThue = new FontAwesome.Sharp.IconButton();
@@ -59,8 +57,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Window;
-            this.panel2.Controls.Add(this.btnXoaPhong);
-            this.panel2.Controls.Add(this.btnSuaPhong);
             this.panel2.Controls.Add(this.btnTra);
             this.panel2.Controls.Add(this.btnChiTiet);
             this.panel2.Controls.Add(this.btnChoThue);
@@ -72,42 +68,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(285, 313);
             this.panel2.TabIndex = 0;
-            // 
-            // btnXoaPhong
-            // 
-            this.btnXoaPhong.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnXoaPhong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXoaPhong.BackColor = System.Drawing.Color.Red;
-            this.btnXoaPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaPhong.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btnXoaPhong.IconColor = System.Drawing.Color.White;
-            this.btnXoaPhong.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            this.btnXoaPhong.IconSize = 25;
-            this.btnXoaPhong.Location = new System.Drawing.Point(164, 267);
-            this.btnXoaPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnXoaPhong.Name = "btnXoaPhong";
-            this.btnXoaPhong.Size = new System.Drawing.Size(50, 38);
-            this.btnXoaPhong.TabIndex = 61;
-            this.toolTip1.SetToolTip(this.btnXoaPhong, "Xóa");
-            this.btnXoaPhong.UseVisualStyleBackColor = false;
-            // 
-            // btnSuaPhong
-            // 
-            this.btnSuaPhong.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnSuaPhong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSuaPhong.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btnSuaPhong.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
-            this.btnSuaPhong.IconColor = System.Drawing.Color.White;
-            this.btnSuaPhong.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSuaPhong.IconSize = 25;
-            this.btnSuaPhong.Location = new System.Drawing.Point(66, 265);
-            this.btnSuaPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSuaPhong.Name = "btnSuaPhong";
-            this.btnSuaPhong.Size = new System.Drawing.Size(51, 40);
-            this.btnSuaPhong.TabIndex = 62;
-            this.toolTip1.SetToolTip(this.btnSuaPhong, "Sửa phòng");
-            this.btnSuaPhong.UseVisualStyleBackColor = false;
-            this.btnSuaPhong.Click += new System.EventHandler(this.btnSuaPhong_Click);
             // 
             // btnTra
             // 
@@ -226,7 +186,5 @@
         private FontAwesome.Sharp.IconButton btnChiTiet;
         private FontAwesome.Sharp.IconButton btnTra;
         private System.Windows.Forms.ToolTip toolTip1;
-        private FontAwesome.Sharp.IconButton btnXoaPhong;
-        private FontAwesome.Sharp.IconButton btnSuaPhong;
     }
 }

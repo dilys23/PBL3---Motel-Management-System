@@ -39,16 +39,12 @@
             this.lblDiaChi = new System.Windows.Forms.Label();
             this.panelBtnDay = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.btnThemday = new FontAwesome.Sharp.IconButton();
             this.panelDemoPhong = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panelDemoPhong.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -141,11 +137,11 @@
             // lblDiaChi
             // 
             this.lblDiaChi.AutoSize = true;
-            this.lblDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiaChi.Location = new System.Drawing.Point(60, 17);
             this.lblDiaChi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDiaChi.Name = "lblDiaChi";
-            this.lblDiaChi.Size = new System.Drawing.Size(59, 20);
+            this.lblDiaChi.Size = new System.Drawing.Size(44, 16);
             this.lblDiaChi.TabIndex = 0;
             this.lblDiaChi.Text = "label1";
             // 
@@ -160,77 +156,12 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.iconButton2);
-            this.panel3.Controls.Add(this.iconButton1);
-            this.panel3.Controls.Add(this.btnThemday);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1120, 89);
             this.panel3.TabIndex = 0;
-            // 
-            // iconButton2
-            // 
-            this.iconButton2.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.iconButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton2.BackColor = System.Drawing.Color.Red;
-            this.iconButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.iconButton2.IconColor = System.Drawing.Color.White;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            this.iconButton2.IconSize = 25;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(1015, 21);
-            this.iconButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(93, 38);
-            this.iconButton2.TabIndex = 60;
-            this.iconButton2.Text = "Xóa";
-            this.toolTip1.SetToolTip(this.iconButton2, "Xóa dãy");
-            this.iconButton2.UseVisualStyleBackColor = false;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton1.BackColor = System.Drawing.Color.SlateBlue;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.ExternalLink;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 25;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(906, 22);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(91, 39);
-            this.iconButton1.TabIndex = 60;
-            this.iconButton1.Text = "Sửa dãy";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolTip1.SetToolTip(this.iconButton1, "Sửa dãy");
-            this.iconButton1.UseVisualStyleBackColor = false;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
-            // 
-            // btnThemday
-            // 
-            this.btnThemday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThemday.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnThemday.IconChar = FontAwesome.Sharp.IconChar.HouseChimneyMedical;
-            this.btnThemday.IconColor = System.Drawing.Color.White;
-            this.btnThemday.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnThemday.IconSize = 30;
-            this.btnThemday.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemday.Location = new System.Drawing.Point(777, 22);
-            this.btnThemday.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnThemday.Name = "btnThemday";
-            this.btnThemday.Size = new System.Drawing.Size(100, 37);
-            this.btnThemday.TabIndex = 34;
-            this.btnThemday.Tag = "Thêm dãy";
-            this.btnThemday.Text = "Thêm dãy";
-            this.btnThemday.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolTip1.SetToolTip(this.btnThemday, "Thêm dãy");
-            this.btnThemday.UseVisualStyleBackColor = false;
-            this.btnThemday.Click += new System.EventHandler(this.btnThemday_Click);
             // 
             // panelDemoPhong
             // 
@@ -258,7 +189,6 @@
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel3.ResumeLayout(false);
             this.panelDemoPhong.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -276,9 +206,6 @@
         private System.Windows.Forms.FlowLayoutPanel panelBtnDay;
         private System.Windows.Forms.Panel panel3;
         public System.Windows.Forms.Panel panelDemoPhong;
-        private FontAwesome.Sharp.IconButton btnThemday;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.ToolTip toolTip1;
         public System.Windows.Forms.FlowLayoutPanel panelPhong;
     }
