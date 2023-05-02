@@ -41,6 +41,8 @@ namespace PBL3___Motel_Management_System.View
             ChitietHopDong ct = new ChitietHopDong(null,null);
             ct.panelct.Visible = false;
             tc.openChildForm1(ct, panelPhong);
+            ct.dgvDichvu.Visible = false;
+            ct.dgvThietbi.Visible = false;
             ct.btnXacNhan.Visible = false;
         }
 
@@ -64,6 +66,8 @@ namespace PBL3___Motel_Management_System.View
             ChitietHopDong ct = new ChitietHopDong(null, null);
             ct.panelct.Visible = false;
             tc.openChildForm1(ct, panelPhong);
+            ct.dgvDichvu.Visible= false;
+            ct.dgvThietbi.Visible=false;
             ct.btnXacNhan.Visible = false;
         }
     }

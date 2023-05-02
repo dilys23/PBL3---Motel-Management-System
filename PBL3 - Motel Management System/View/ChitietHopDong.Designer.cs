@@ -574,8 +574,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtGiaPhong;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DataGridView dgvThietbi;
-        private System.Windows.Forms.DataGridView dgvDichvu;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaThietBi;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenThietBi;
@@ -586,5 +584,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaDichVu;
         private System.Windows.Forms.Label label12;
         public System.Windows.Forms.Panel panelct;
+        public System.Windows.Forms.DataGridView dgvDichvu;
+        public System.Windows.Forms.DataGridView dgvThietbi;
     }
 }

@@ -102,9 +102,9 @@
             this.btnDichVu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDichVu.IconSize = 35;
             this.btnDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDichVu.Location = new System.Drawing.Point(387, 3);
+            this.btnDichVu.Location = new System.Drawing.Point(745, 1);
             this.btnDichVu.Name = "btnDichVu";
-            this.btnDichVu.Size = new System.Drawing.Size(186, 41);
+            this.btnDichVu.Size = new System.Drawing.Size(372, 41);
             this.btnDichVu.TabIndex = 47;
             this.btnDichVu.Tag = "Dịch Vụ ";
             this.btnDichVu.Text = "Dịch Vụ ";
@@ -122,9 +122,9 @@
             this.btnThanhVien.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThanhVien.IconSize = 35;
             this.btnThanhVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThanhVien.Location = new System.Drawing.Point(195, 3);
+            this.btnThanhVien.Location = new System.Drawing.Point(366, 1);
             this.btnThanhVien.Name = "btnThanhVien";
-            this.btnThanhVien.Size = new System.Drawing.Size(186, 41);
+            this.btnThanhVien.Size = new System.Drawing.Size(373, 41);
             this.btnThanhVien.TabIndex = 48;
             this.btnThanhVien.Tag = "Thành viên";
             this.btnThanhVien.Text = "Thành viên";
@@ -144,7 +144,7 @@
             this.btnHopDong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHopDong.Location = new System.Drawing.Point(3, 3);
             this.btnHopDong.Name = "btnHopDong";
-            this.btnHopDong.Size = new System.Drawing.Size(186, 41);
+            this.btnHopDong.Size = new System.Drawing.Size(357, 41);
             this.btnHopDong.TabIndex = 12;
             this.btnHopDong.Tag = "Hợp đồng";
             this.btnHopDong.Text = "   Hợp đồng";
