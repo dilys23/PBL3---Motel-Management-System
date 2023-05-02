@@ -96,7 +96,7 @@
             // 
             // panelPhong
             // 
-            this.panelPhong.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panelPhong.BackColor = System.Drawing.SystemColors.Control;
             this.panelPhong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPhong.Location = new System.Drawing.Point(0, 60);
             this.panelPhong.Margin = new System.Windows.Forms.Padding(4);
