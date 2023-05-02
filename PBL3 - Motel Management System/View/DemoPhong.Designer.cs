@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DemoPhong));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtTenDay = new System.Windows.Forms.TextBox();
+            this.cbbTinhTrang = new System.Windows.Forms.ComboBox();
+            this.btnThemday = new FontAwesome.Sharp.IconButton();
+            this.btnTimKiem = new FontAwesome.Sharp.IconButton();
+            this.cbbDayTro = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panelBtnDay = new System.Windows.Forms.FlowLayoutPanel();
@@ -38,14 +43,9 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnSuaDay = new FontAwesome.Sharp.IconButton();
             this.btnXoaDay = new FontAwesome.Sharp.IconButton();
-            this.btn = new FontAwesome.Sharp.IconButton();
+            this.btnThemPhong = new FontAwesome.Sharp.IconButton();
             this.lblDiaChi = new System.Windows.Forms.Label();
             this.panelChinh = new System.Windows.Forms.Panel();
-            this.txtTenDay = new System.Windows.Forms.TextBox();
-            this.cbbTinhTrang = new System.Windows.Forms.ComboBox();
-            this.btnThemday = new FontAwesome.Sharp.IconButton();
-            this.btnTimKiem = new FontAwesome.Sharp.IconButton();
-            this.cbbDayTro = new System.Windows.Forms.ComboBox();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -57,6 +57,7 @@
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.btnSuaDay);
             this.panel3.Controls.Add(this.txtTenDay);
             this.panel3.Controls.Add(this.cbbTinhTrang);
             this.panel3.Controls.Add(this.btnThemday);
@@ -68,6 +69,72 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1409, 163);
             this.panel3.TabIndex = 0;
+            // 
+            // txtTenDay
+            // 
+            this.txtTenDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenDay.Location = new System.Drawing.Point(399, 105);
+            this.txtTenDay.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTenDay.Name = "txtTenDay";
+            this.txtTenDay.Size = new System.Drawing.Size(145, 30);
+            this.txtTenDay.TabIndex = 47;
+            // 
+            // cbbTinhTrang
+            // 
+            this.cbbTinhTrang.DisplayMember = "Tình trạng";
+            this.cbbTinhTrang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbTinhTrang.FormattingEnabled = true;
+            this.cbbTinhTrang.Location = new System.Drawing.Point(212, 105);
+            this.cbbTinhTrang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbbTinhTrang.Name = "cbbTinhTrang";
+            this.cbbTinhTrang.Size = new System.Drawing.Size(148, 33);
+            this.cbbTinhTrang.TabIndex = 46;
+            // 
+            // btnThemday
+            // 
+            this.btnThemday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThemday.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnThemday.IconChar = FontAwesome.Sharp.IconChar.HouseChimneyMedical;
+            this.btnThemday.IconColor = System.Drawing.Color.White;
+            this.btnThemday.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThemday.IconSize = 30;
+            this.btnThemday.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThemday.Location = new System.Drawing.Point(1153, 98);
+            this.btnThemday.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThemday.Name = "btnThemday";
+            this.btnThemday.Size = new System.Drawing.Size(105, 41);
+            this.btnThemday.TabIndex = 45;
+            this.btnThemday.Tag = "Thêm dãy";
+            this.btnThemday.Text = "Thêm dãy";
+            this.btnThemday.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThemday.UseVisualStyleBackColor = false;
+            this.btnThemday.Click += new System.EventHandler(this.btnThemday_Click);
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnTimKiem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.btnTimKiem.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.btnTimKiem.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnTimKiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTimKiem.IconSize = 25;
+            this.btnTimKiem.Location = new System.Drawing.Point(583, 105);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(35, 34);
+            this.btnTimKiem.TabIndex = 44;
+            this.btnTimKiem.UseVisualStyleBackColor = false;
+            // 
+            // cbbDayTro
+            // 
+            this.cbbDayTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbDayTro.FormattingEnabled = true;
+            this.cbbDayTro.Location = new System.Drawing.Point(25, 105);
+            this.cbbDayTro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbbDayTro.Name = "cbbDayTro";
+            this.cbbDayTro.Size = new System.Drawing.Size(148, 33);
+            this.cbbDayTro.TabIndex = 43;
             // 
             // panel1
             // 
@@ -137,9 +204,8 @@
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.Controls.Add(this.btnSuaDay);
             this.panel5.Controls.Add(this.btnXoaDay);
-            this.panel5.Controls.Add(this.btn);
+            this.panel5.Controls.Add(this.btnThemPhong);
             this.panel5.Controls.Add(this.lblDiaChi);
             this.panel5.Location = new System.Drawing.Point(12, 7);
             this.panel5.Margin = new System.Windows.Forms.Padding(4);
@@ -157,7 +223,7 @@
             this.btnSuaDay.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSuaDay.IconSize = 25;
             this.btnSuaDay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaDay.Location = new System.Drawing.Point(1223, 2);
+            this.btnSuaDay.Location = new System.Drawing.Point(1276, 98);
             this.btnSuaDay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSuaDay.Name = "btnSuaDay";
             this.btnSuaDay.Size = new System.Drawing.Size(69, 39);
@@ -165,6 +231,7 @@
             this.btnSuaDay.Text = "Sửa";
             this.btnSuaDay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSuaDay.UseVisualStyleBackColor = false;
+            this.btnSuaDay.Click += new System.EventHandler(this.btnSuaDay_Click);
             // 
             // btnXoaDay
             // 
@@ -186,24 +253,24 @@
             this.btnXoaDay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoaDay.UseVisualStyleBackColor = false;
             // 
-            // btn
+            // btnThemPhong
             // 
-            this.btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn.BackColor = System.Drawing.Color.DarkOrange;
-            this.btn.IconChar = FontAwesome.Sharp.IconChar.HouseChimneyMedical;
-            this.btn.IconColor = System.Drawing.Color.White;
-            this.btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn.IconSize = 25;
-            this.btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn.Location = new System.Drawing.Point(1140, 2);
-            this.btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(77, 39);
-            this.btn.TabIndex = 57;
-            this.btn.Text = "Thêm";
-            this.btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn.UseVisualStyleBackColor = false;
-            this.btn.Click += new System.EventHandler(this.btnThemPhong_Click_1);
+            this.btnThemPhong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThemPhong.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnThemPhong.IconChar = FontAwesome.Sharp.IconChar.HouseChimneyMedical;
+            this.btnThemPhong.IconColor = System.Drawing.Color.White;
+            this.btnThemPhong.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThemPhong.IconSize = 25;
+            this.btnThemPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThemPhong.Location = new System.Drawing.Point(1215, 3);
+            this.btnThemPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThemPhong.Name = "btnThemPhong";
+            this.btnThemPhong.Size = new System.Drawing.Size(77, 39);
+            this.btnThemPhong.TabIndex = 57;
+            this.btnThemPhong.Text = "Thêm";
+            this.btnThemPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThemPhong.UseVisualStyleBackColor = false;
+            this.btnThemPhong.Click += new System.EventHandler(this.btnThemPhong_Click_1);
             // 
             // lblDiaChi
             // 
@@ -236,72 +303,6 @@
             this.panelChinh.Name = "panelChinh";
             this.panelChinh.Size = new System.Drawing.Size(1427, 736);
             this.panelChinh.TabIndex = 43;
-            // 
-            // txtTenDay
-            // 
-            this.txtTenDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenDay.Location = new System.Drawing.Point(399, 105);
-            this.txtTenDay.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTenDay.Name = "txtTenDay";
-            this.txtTenDay.Size = new System.Drawing.Size(145, 30);
-            this.txtTenDay.TabIndex = 47;
-            // 
-            // cbbTinhTrang
-            // 
-            this.cbbTinhTrang.DisplayMember = "Tình trạng";
-            this.cbbTinhTrang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbTinhTrang.FormattingEnabled = true;
-            this.cbbTinhTrang.Location = new System.Drawing.Point(212, 105);
-            this.cbbTinhTrang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbbTinhTrang.Name = "cbbTinhTrang";
-            this.cbbTinhTrang.Size = new System.Drawing.Size(148, 33);
-            this.cbbTinhTrang.TabIndex = 46;
-            // 
-            // btnThemday
-            // 
-            this.btnThemday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThemday.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnThemday.IconChar = FontAwesome.Sharp.IconChar.HouseChimneyMedical;
-            this.btnThemday.IconColor = System.Drawing.Color.White;
-            this.btnThemday.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnThemday.IconSize = 30;
-            this.btnThemday.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemday.Location = new System.Drawing.Point(1278, 98);
-            this.btnThemday.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnThemday.Name = "btnThemday";
-            this.btnThemday.Size = new System.Drawing.Size(105, 41);
-            this.btnThemday.TabIndex = 45;
-            this.btnThemday.Tag = "Thêm dãy";
-            this.btnThemday.Text = "Thêm dãy";
-            this.btnThemday.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThemday.UseVisualStyleBackColor = false;
-            this.btnThemday.Click += new System.EventHandler(this.btnThemday_Click);
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnTimKiem.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.btnTimKiem.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnTimKiem.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnTimKiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTimKiem.IconSize = 25;
-            this.btnTimKiem.Location = new System.Drawing.Point(583, 105);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(35, 34);
-            this.btnTimKiem.TabIndex = 44;
-            this.btnTimKiem.UseVisualStyleBackColor = false;
-            // 
-            // cbbDayTro
-            // 
-            this.cbbDayTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbDayTro.FormattingEnabled = true;
-            this.cbbDayTro.Location = new System.Drawing.Point(25, 105);
-            this.cbbDayTro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbbDayTro.Name = "cbbDayTro";
-            this.cbbDayTro.Size = new System.Drawing.Size(148, 33);
-            this.cbbDayTro.TabIndex = 43;
             // 
             // DemoPhong
             // 
@@ -336,7 +337,7 @@
         private System.Windows.Forms.Panel panel5;
         private FontAwesome.Sharp.IconButton btnSuaDay;
         private FontAwesome.Sharp.IconButton btnXoaDay;
-        private FontAwesome.Sharp.IconButton btn;
+        private FontAwesome.Sharp.IconButton btnThemPhong;
         private System.Windows.Forms.Label lblDiaChi;
         public System.Windows.Forms.Panel panelChinh;
         private System.Windows.Forms.TextBox txtTenDay;

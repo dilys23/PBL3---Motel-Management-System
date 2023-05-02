@@ -163,6 +163,7 @@
             this.btnChoThue.TabIndex = 39;
             this.btnChoThue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnChoThue.UseVisualStyleBackColor = false;
+            this.btnChoThue.Click += new System.EventHandler(this.btnChoThue_Click);
             // 
             // panelTenKhach
             // 

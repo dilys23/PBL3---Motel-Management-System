@@ -13,18 +13,21 @@ using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System.View
 {
+     public delegate void Loader1(String s);
     public delegate void _SuKien(object sender, EventArgs e);
+
     public partial class DemoPhong : Form
     {
         private Button defaultBtn = null;
-        
+        private string MaDayTro;
         public DemoPhong()
         {
             InitializeComponent();
-            LoadForm();
+            this.MaDayTro = MaDayTro;
+            LoadForm(null);
             
         }
-        private void LoadForm()
+        public void LoadForm(string MaDayTro)
         {
             panelPhong.AutoScroll = false;
             panelPhong.HorizontalScroll.Visible = false;
@@ -38,9 +41,9 @@ namespace PBL3___Motel_Management_System.View
 
                 Button btn = new Button();
                 btn.BackColor = System.Drawing.Color.DarkOrange;
-                this.btn.IconChar = FontAwesome.Sharp.IconChar.FileArrowUp;
-                this.btn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-                this.btn.IconSize = 25;
+                this.btnThemPhong.IconChar = FontAwesome.Sharp.IconChar.FileArrowUp;
+                this.btnThemPhong.IconFont = FontAwesome.Sharp.IconFont.Auto;
+                this.btnThemPhong.IconSize = 25;
                 btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
                 // "    " + btn.IconSize = 25;
                 btn.Size = new System.Drawing.Size(80, 50);
@@ -53,19 +56,7 @@ namespace PBL3___Motel_Management_System.View
                 {
                     defaultBtn = btn;
                 }
-                //this.btnThemPhong.BackColor = System.Drawing.Color.DarkOrange;
-                //this.btnThemPhong.IconChar = FontAwesome.Sharp.IconChar.FileArrowUp;
-                //this.btnThemPhong.IconColor = System.Drawing.Color.White;
-                //this.btnThemPhong.IconFont = FontAwesome.Sharp.IconFont.Auto;
-                //this.btnThemPhong.IconSize = 25;
-                //this.btnThemPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                //this.btnThemPhong.Location = new System.Drawing.Point(721, 27);
-                //this.btnThemPhong.Name = "btnThemPhong";
-                //this.btnThemPhong.Size = new System.Drawing.Size(90, 43);
-                //this.btnThemPhong.TabIndex = 21;
-                //this.btnThemPhong.Text = "Thêm ";
-                //this.btnThemPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-                //this.btnThemPhong.UseVisualStyleBackColor = false;
+                
             }
             if(defaultBtn != null)
             {
@@ -115,7 +106,7 @@ namespace PBL3___Motel_Management_System.View
                     lbl.Name = nguoi.MaNguoi;
                     lbl.Text = "   " + nguoi.Ten;
                     lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    Image image1 = Image.FromFile("C:\\Users\\HP VICTUS\\Downloads\\icons8-customer-20.png" + "    ");
+                    Image image1 = Image.FromFile("E:\\PBL3_MAIN\\Icons\\icons8-customer-20.png" + "    ");
                     lbl.Image = image1;
                     lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
                     // Set the size of the label to accommodate the bitmap size.
@@ -134,14 +125,12 @@ namespace PBL3___Motel_Management_System.View
             }
             panelPhong.Invalidate();
         }
-
-        private void btnThemPhong_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("hello");
-        }
+        TrangChu tc = new TrangChu();
+        
 
         private void btnThemPhong_Click_1(object sender, EventArgs e)
         {
+           // tc.openChildForm1(new ThemPhong(), panelChinh);
             
         }
 
@@ -149,11 +138,19 @@ namespace PBL3___Motel_Management_System.View
         {
 
         }
-        TrangChu tc = new TrangChu();
+       
 
         private void btnThemday_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ChisoDien(), panelChinh);
+            tc.openChildForm1(new ThemDay(LoadForm), panelChinh);
+            panelBtnDay.Controls.Clear();
+        }
+
+        private void btnSuaDay_Click(object sender, EventArgs e)
+        {
+            //string idDay = btn.Name;
+            //tc.openChildForm1(new SuaDay(LoadForm), panelChinh);
+            //panelBtnDay.Controls.Clear();
         }
     }
 }

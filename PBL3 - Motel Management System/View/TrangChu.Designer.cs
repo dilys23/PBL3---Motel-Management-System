@@ -427,20 +427,21 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDesktop.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panelDesktop.Controls.Add(this.taiKhoan1);
-            this.panelDesktop.Location = new System.Drawing.Point(200, 83);
+            this.panelDesktop.Location = new System.Drawing.Point(200, 80);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1138, 666);
+            this.panelDesktop.Size = new System.Drawing.Size(1138, 669);
             this.panelDesktop.TabIndex = 5;
             this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
             // 
             // taiKhoan1
             // 
             this.taiKhoan1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.taiKhoan1.DesktopPanel = null;
-            this.taiKhoan1.Location = new System.Drawing.Point(914, 7);
+            this.taiKhoan1.DesktopPanel = this.panelDesktop;
+            this.taiKhoan1.Location = new System.Drawing.Point(881, 10);
             this.taiKhoan1.Name = "taiKhoan1";
-            this.taiKhoan1.Size = new System.Drawing.Size(212, 344);
+            this.taiKhoan1.Size = new System.Drawing.Size(217, 344);
             this.taiKhoan1.TabIndex = 0;
+            this.taiKhoan1.Visible = false;
             // 
             // TrangChu
             // 

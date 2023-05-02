@@ -19,12 +19,13 @@ namespace PBL3___Motel_Management_System
     public partial class ThemDay : Form
     {
 
-        public Loader Loader;
-        public ThemDay(Loader loader)
+        public Loader1 Loader;
+        public ThemDay(Loader1 loader)
         {
             InitializeComponent();
             this.Loader = loader;
         }
+
 
         private void AddRoom_Load(object sender, EventArgs e)
         {

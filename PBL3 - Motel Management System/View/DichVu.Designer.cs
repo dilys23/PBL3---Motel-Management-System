@@ -33,7 +33,6 @@ namespace PBL3___Motel_Management_System
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panelDV = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnTimKiem = new FontAwesome.Sharp.IconButton();
             this.btnXoaPhong = new FontAwesome.Sharp.IconButton();
             this.btnSuaDichVu = new FontAwesome.Sharp.IconButton();
@@ -74,7 +73,6 @@ namespace PBL3___Motel_Management_System
             this.panelDV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelDV.Controls.Add(this.button1);
             this.panelDV.Controls.Add(this.btnTimKiem);
             this.panelDV.Controls.Add(this.btnXoaPhong);
             this.panelDV.Controls.Add(this.btnSuaDichVu);
@@ -86,15 +84,6 @@ namespace PBL3___Motel_Management_System
             this.panelDV.Name = "panelDV";
             this.panelDV.Size = new System.Drawing.Size(901, 383);
             this.panelDV.TabIndex = 21;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(382, 39);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 56;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // btnTimKiem
             // 
@@ -172,7 +161,6 @@ namespace PBL3___Motel_Management_System
             this.btnThemDichVu.TabIndex = 53;
             this.btnThemDichVu.Text = "Thêm ";
             this.btnThemDichVu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-           // this.btnThemDichVu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnThemDichVu.UseVisualStyleBackColor = false;
             this.btnThemDichVu.Click += new System.EventHandler(this.btnThemPhong_Click_1);
             // 
@@ -195,6 +183,7 @@ namespace PBL3___Motel_Management_System
             this.dgvDichVu.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvDichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDichVu.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvDichVu.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dgvDichVu.Location = new System.Drawing.Point(16, 73);
             this.dgvDichVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvDichVu.Name = "dgvDichVu";
@@ -237,6 +226,5 @@ namespace PBL3___Motel_Management_System
         private FontAwesome.Sharp.IconButton btnThemDichVu;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.DataGridView dgvDichVu;
-        private System.Windows.Forms.Button button1;
     }
 }

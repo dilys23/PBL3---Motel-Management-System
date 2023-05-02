@@ -67,7 +67,7 @@ namespace PBL3___Motel_Management_System.View
         {
             lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
-            Image image1 = Image.FromFile("C:\\Users\\HP VICTUS\\Downloads\\icons8-home-30.png" + "    ");
+            Image image1 = Image.FromFile("E:\\PBL3_MAIN\\Icons\\icons8-home-30.png" + "    ");
             lbl.Image = image1;
             lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             // Set the size of the label to accommodate the bitmap size.
@@ -100,27 +100,7 @@ namespace PBL3___Motel_Management_System.View
 
         }
         //TrangChu tc = new TrangChu();
-        private void btnCoc_Click(object sender, EventArgs e)
-        {
-           
-            DemoPhong demo = new DemoPhong();
-
-            QLBLL qLBLL = new QLBLL();
-            if (qLBLL.GetHopDongByIdPhong(IdPhong) == null)
-            {
-                ThuePhong tp = new ThuePhong();
-                tp.hopDong.MaPhongTro = IdPhong;
-                CocPhong cp = new CocPhong(tp, LoadForm);
-                
-               // openChildForm1(cp, demo.panel2);
-                cp.Show();//Close();
-            }
-            else
-            {
-                MessageBox.Show("Phòng hiện tại không thể cọc", "Thông báo");
-            }
-        }
-
+      
         private void btnChiTiet_Click(object sender, EventArgs e)
         {
 
@@ -152,6 +132,11 @@ namespace PBL3___Motel_Management_System.View
         {
 
            // tc.openChildForm1(new ChisoDien(), dm.panelChinh);
+        }
+
+        private void btnChoThue_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
