@@ -23,10 +23,42 @@ namespace PBL3___Motel_Management_System.View
         {
             InitializeComponent();
             LoadForm(null);
+            SetFontAndColors();
         }
+        private void SetFontAndColors()
+        {
+            this.dgvThietBi.DefaultCellStyle.Font = new Font("Tahoma", 10);
+            this.dgvThietBi.DefaultCellStyle.ForeColor = Color.Blue;
+            this.dgvThietBi.DefaultCellStyle.BackColor = Color.Beige;
+            this.dgvThietBi.DefaultCellStyle.SelectionForeColor = Color.AliceBlue;
+            this.dgvThietBi.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
 
+            DataGridViewRow row = this.dgvThietBi.RowTemplate;
+            row.Height = 35;
+            row.MinimumHeight = 20;
+        }
         private void LoadForm(string txtTim)
         {
+            DataGridViewButtonColumn btnCol = new DataGridViewButtonColumn();
+            {
+                btnCol.HeaderText = "Button Column Header";
+                btnCol.Name = "btnCol";
+                btnCol.Text = "Click Me";
+                btnCol.UseColumnTextForButtonValue = true;
+                this.dgvThietBi.Columns.Add(btnCol);
+            }
+            DataGridViewButtonColumn button = new DataGridViewButtonColumn();
+            {
+                button.Name = "button";
+                button.HeaderText = "Chức năng";
+                button.Text = "Sửa";
+                // button.Icon
+                //button.Image = Properties.Resources.SomeIcon; 
+                //button.ImageLayout = DataGridViewImageCellLayout.Zoom;
+                button.FlatStyle = FlatStyle.Popup;
+                button.UseColumnTextForButtonValue = true; //dont forget this line
+                this.dgvThietBi.Columns.Add(button);
+            }
             DataTable dt = new DataTable();
             dt.Columns.AddRange(new DataColumn[]
             {

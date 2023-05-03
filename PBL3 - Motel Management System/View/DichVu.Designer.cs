@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System
 {
@@ -190,7 +191,7 @@ namespace PBL3___Motel_Management_System
             this.dgvDichVu.Location = new System.Drawing.Point(16, 73);
             this.dgvDichVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvDichVu.Name = "dgvDichVu";
-            this.dgvDichVu.RowHeadersWidth = 51;
+            this.dgvDichVu.RowHeadersWidth = 70;
             this.dgvDichVu.RowTemplate.Height = 24;
             this.dgvDichVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDichVu.Size = new System.Drawing.Size(872, 297);
@@ -218,6 +219,7 @@ namespace PBL3___Motel_Management_System
             this.ResumeLayout(false);
 
         }
+        
 
         #endregion
 

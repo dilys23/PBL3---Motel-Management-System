@@ -20,7 +20,19 @@ namespace PBL3___Motel_Management_System
             InitializeComponent();
             LoadForm(null);
             Setcbb();
+            SetFontAndColors();
+        }
+        private void SetFontAndColors()
+        {
+            this.dgvChiSoNuoc.DefaultCellStyle.Font = new Font("Tahoma", 10);
+            this.dgvChiSoNuoc.DefaultCellStyle.ForeColor = Color.Blue;
+            this.dgvChiSoNuoc.DefaultCellStyle.BackColor = Color.Beige;
+            this.dgvChiSoNuoc.DefaultCellStyle.SelectionForeColor = Color.AliceBlue;
+            this.dgvChiSoNuoc.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
 
+            DataGridViewRow row = this.dgvChiSoNuoc.RowTemplate;
+            row.Height = 35;
+            row.MinimumHeight = 20;
         }
         TrangChu tc = new TrangChu();
         private void ChisoNuoc_Load(object sender, EventArgs e)

@@ -23,11 +23,22 @@ namespace PBL3___Motel_Management_System.View
             InitializeComponent();
             LoadForm(null);
             Setcbb();
-            
+            SetFontAndColors();
         }
 
         TrangChu tc = new TrangChu();
+        private void SetFontAndColors()
+        {
+            this.dgvChiSoDien.DefaultCellStyle.Font = new Font("Tahoma", 10);
+            this.dgvChiSoDien.DefaultCellStyle.ForeColor = Color.Blue;
+            this.dgvChiSoDien.DefaultCellStyle.BackColor = Color.Beige;
+            this.dgvChiSoDien.DefaultCellStyle.SelectionForeColor = Color.AliceBlue;
+            this.dgvChiSoDien.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
 
+            DataGridViewRow row = this.dgvChiSoDien.RowTemplate;
+            row.Height = 35;
+            row.MinimumHeight = 20;
+        }
         private void ChisoDien_Load(object sender, EventArgs e)
         {
 

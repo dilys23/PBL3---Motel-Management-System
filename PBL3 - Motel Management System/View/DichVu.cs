@@ -1,12 +1,15 @@
 ﻿using PBL3___Motel_Management_System.BLL;
 using PBL3___Motel_Management_System.DAL;
 using PBL3___Motel_Management_System.DTO;
+using PBL3___Motel_Management_System.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
 using System.Linq;
+using System.Resources;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,48 +26,98 @@ namespace PBL3___Motel_Management_System
         {
             InitializeComponent();
             LoadForm(null);
+            SetFontAndColors();
+         
         }
+        private void SetFontAndColors()
+        {
+            this.dgvDichVu.DefaultCellStyle.Font = new Font("Tahoma", 10);
+            this.dgvDichVu.DefaultCellStyle.ForeColor = Color.Blue;
+            this.dgvDichVu.DefaultCellStyle.BackColor = Color.LightCoral;
+            this.dgvDichVu.DefaultCellStyle.SelectionForeColor = Color.LemonChiffon;
+            this.dgvDichVu.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
+
+            DataGridViewRow row = this.dgvDichVu.RowTemplate;
+            row.Height = 35;
+            row.MinimumHeight = 20;
+        }
+      
         private void LoadForm(string txtTim)
         {
 
             DataGridViewButtonColumn btnCol = new DataGridViewButtonColumn();
-            btnCol.HeaderText = "Button Column Header";
-            btnCol.Name = "btnCol";
-            btnCol.Text = "Click Me";
-            btnCol.UseColumnTextForButtonValue = true;
-            dgvDichVu.Columns.Add(btnCol);
+            {
+                btnCol.HeaderText = "Button Column Header";
+                btnCol.Name = "btnCol";
+                btnCol.Text = "Click Me";
+                btnCol.UseColumnTextForButtonValue = true;
+                this.dgvDichVu.Columns.Add(btnCol);
+            }
+
+            DataGridViewButtonColumn button = new DataGridViewButtonColumn();
+            {
+                button.Name = "button";
+                button.HeaderText = "Chức năng";
+                button.Text = "Sửa";
+                // button.Icon
+                //button.Image = Properties.Resources.SomeIcon; 
+                //button.ImageLayout = DataGridViewImageCellLayout.Zoom;
+                button.FlatStyle = FlatStyle.Popup;
+                button.UseColumnTextForButtonValue = true; //dont forget this line
+                this.dgvDichVu.Columns.Add(button);
+            }
+
             DataTable dt = new DataTable();
             dt.Columns.AddRange(new DataColumn[]
             {
-                new DataColumn{ColumnName = "Mã dịch vụ",DataType =  typeof(string)},
+               // new DataColumn{ColumnName = "Mã dịch vụ",DataType =  typeof(string)},
                 new DataColumn{ColumnName = "STT",DataType =  typeof(int)},
                 new DataColumn{ColumnName = "Tên dịch vụ",DataType =  typeof(string)},
                 new DataColumn{ColumnName = "Giá dịch vụ",DataType =  typeof(double)},
-            });
+                
+
+        });
 
             QLBLL qLBLL = new QLBLL();
+            
             foreach (ViewDichVu viewDichVu in qLBLL.DgvDichVu(txtTim))
             {
                 DataRow row = dt.NewRow();
-                row["Mã dịch vụ"] = viewDichVu.MaDichVu;
+                //  row["Mã dịch vụ"] = viewDichVu.MaDichVu;
                 row["STT"] = viewDichVu.Stt;
                 row["Tên dịch vụ"] = viewDichVu.TenDichVu;
                 row["Giá dịch vụ"] = viewDichVu.GiaDichVu;
+               
                 dt.Rows.Add(row);
+ 
             }
-            foreach (DataGridViewRow row in dgvDichVu.Rows)
-            {
-                DataGridViewButtonCell btnCell = new DataGridViewButtonCell();
-                btnCell.Value = "Click Me";
-                row.Cells["btnCol"] = btnCell;
-            }
-
+        
 
             dgvDichVu.DataSource = dt;
             dgvDichVu.Columns[0].Visible = false;
 
         }
+        //private void grid_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        //{
+        //    if (e.RowIndex < 0)
+        //        return;
+        //    ResourceManager rm = Resources.ResourceManager;
+        //    Bitmap someImage = (Bitmap)rm.GetObject("E:\\PBL3_MAIN\\Icons\\icons8-customer-20.png");
+        //    //Image someImage = Properties.Resources.SomeImage;
+        //    //I supposed your button column is at index 0
+        //    if (e.ColumnIndex == 0)
+        //    {
+        //        e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                
+        //        var w = Properties.Resources.SomeImage.Width;
+        //        var h = Properties.Resources.SomeImage.Height;
+        //        var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+        //        var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
 
+        //        e.Graphics.DrawImage(someImage, new Rectangle(x, y, w, h));
+        //        e.Handled = true;
+        //    }
+        //}
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
