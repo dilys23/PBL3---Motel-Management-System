@@ -128,7 +128,8 @@ namespace PBL3___Motel_Management_System.View
         {
             //ChitietPhongtro ct = new ChitietPhongtro();
             //ct.Show();
-            tc.openChildForm1(new ChitietPhongtro(), panel);
+            //tc.openChildForm1(new ChitietPhongtro(), panel);
+            openChildForm1(new ChiTietPT(IdPhong), panel);
         }
 
         private void btnChoThue_Click(object sender, EventArgs e)
