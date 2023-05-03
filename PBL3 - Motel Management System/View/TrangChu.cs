@@ -251,6 +251,8 @@ namespace PBL3___Motel_Management_System
             childForm.Dock = DockStyle.Fill;
             p.Controls.Add(childForm);
             p.Tag = childForm;
+            //panelDesktop.Controls.Add(childForm);
+            //panelDesktop.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
 

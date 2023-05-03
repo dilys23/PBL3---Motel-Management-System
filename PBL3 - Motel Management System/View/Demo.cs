@@ -29,13 +29,15 @@ namespace PBL3___Motel_Management_System.View
         );
 
         private string IdPhong;
-        public Demo(_SuKien sk,string idPhong)
+        private Panel panel;
+        public Demo(_SuKien sk,string idPhong,Panel panel)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
             this.IdPhong=idPhong;
             this.sk = sk;
+            this.panel = panel;
 
         }
         public void LoadForm(string txt)
@@ -67,7 +69,7 @@ namespace PBL3___Motel_Management_System.View
         {
             lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
-            Image image1 = Image.FromFile("E:\\PBL3_MAIN\\Icons\\icons8-home-30.png" + "    ");
+            Image image1 = Image.FromFile("D:\\PblProject\\PBL3_MAIN\\PBL3 - Motel Management System\\Icons\\icons8-home-30.png" + "    ");
             lbl.Image = image1;
             lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             // Set the size of the label to accommodate the bitmap size.
@@ -125,14 +127,13 @@ namespace PBL3___Motel_Management_System.View
                 MessageBox.Show("Phòng hiện tại không thể cọc", "Thông báo");
             }
         }
-       // TrangChu tc = new TrangChu();  
-       // DemoPhong dm = new DemoPhong();
+        TrangChu tc = new TrangChu();
 
         private void btnChiTiet_Click_1(object sender, EventArgs e)
         {
-            ChitietPhongtro ct = new ChitietPhongtro();
-            ct.Show();
-           // tc.openChildForm1(new ChisoDien(), dm.panelChinh);
+            //ChitietPhongtro ct = new ChitietPhongtro();
+            //ct.Show();
+            tc.openChildForm1(new ChitietPhongtro(), panel);
         }
 
         private void btnChoThue_Click(object sender, EventArgs e)

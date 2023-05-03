@@ -19,11 +19,10 @@ namespace PBL3___Motel_Management_System.View
     public partial class DemoPhong : Form
     {
         private Button defaultBtn = null;
-        private string MaDayTro;
+        private Button ClickBtn = null;
         public DemoPhong()
         {
             InitializeComponent();
-            this.MaDayTro = MaDayTro;
             LoadForm(null);
             
         }
@@ -56,6 +55,7 @@ namespace PBL3___Motel_Management_System.View
                 if(defaultBtn == null)
                 {
                     defaultBtn = btn;
+                    ClickBtn = btn;
                 }
                 
             }
@@ -63,7 +63,7 @@ namespace PBL3___Motel_Management_System.View
             {
                  SuKien(defaultBtn, EventArgs.Empty);
             }
-            MaDayTro = defaultBtn.Name;
+            
 
 
 
@@ -74,6 +74,7 @@ namespace PBL3___Motel_Management_System.View
         private void SuKien(object sender, EventArgs e)
         {
             Button btn = sender as Button;
+            ClickBtn = btn;
             panelPhong.Controls.Clear();
             QLBLL qLBLL = new QLBLL();
             DayTro dt = qLBLL.GetDayTroById(btn.Name);
@@ -81,15 +82,11 @@ namespace PBL3___Motel_Management_System.View
             lblDiaChi.Text = DiaChi;
             foreach(PhongTro pt in qLBLL.GetPhongTroByIdDay(btn.Name))
             {
-                Demo p = new Demo(SuKien,pt.MaPhongTro); 
+                Demo p = new Demo(SuKien,pt.MaPhongTro,panelChinh); 
                 p.TopLevel = false;
                 p.Visible = true;
                 p.Name = pt.MaPhongTro;
                 Label lbl1 = new Label();
-
-                //Label label1 = new Label();
-               
-
                 lbl1.Text  = pt.TenPhongTro;
                 p.SetPanelTenPhongTro(lbl1);
                 if (qLBLL.TinhTrangPhongById(pt.MaPhongTro)) //54, 179, 205
@@ -108,7 +105,7 @@ namespace PBL3___Motel_Management_System.View
                     lbl.Name = nguoi.MaNguoi;
                     lbl.Text = "   " + nguoi.Ten;
                     lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    Image image1 = Image.FromFile("E:\\PBL3_MAIN\\Icons\\icons8-customer-20.png" + "    ");
+                    Image image1 = Image.FromFile("D:\\PblProject\\PBL3_MAIN\\PBL3 - Motel Management System\\Icons\\icons8-customer-20.png" + "    ");
                     lbl.Image = image1;
                     lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
                     // Set the size of the label to accommodate the bitmap size.
@@ -132,7 +129,13 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnThemPhong_Click_1(object sender, EventArgs e)
         {
-           tc.openChildForm1(new ThemPhong(MaDayTro,LoadForm), panelChinh);
+            if(ClickBtn != null)
+            {
+
+            QLBLL qLBLL = new QLBLL();
+            DayTro dt = qLBLL.GetDayTroById(ClickBtn.Name);
+            tc.openChildForm1(new ThemPhong(dt.MaDayTro,LoadForm), panelChinh);
+            }
             
         }
 

@@ -765,10 +765,12 @@
       <DependentUpon>DataPbl.edmx</DependentUpon>
       <LastGenOutput>DataPbl.cs</LastGenOutput>
     </Content>
+    <Content Include="icons\icons8-customer-20.png" />
+    <Content Include="icons\icons8-home-30.png" />
+    <Content Include="icons\icons8-location-16.png" />
+    <Content Include="icons\icons8-paid-bill-20.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="icons\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -173,6 +173,7 @@
             this.btnTroVe.Size = new System.Drawing.Size(43, 37);
             this.btnTroVe.TabIndex = 54;
             this.btnTroVe.UseVisualStyleBackColor = false;
+            this.btnTroVe.Click += new System.EventHandler(this.btnTroVe_Click);
             // 
             // ChitietPhongtro
             // 
