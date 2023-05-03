@@ -110,17 +110,12 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnCoc_Click_1(object sender, EventArgs e)
         {
-            DemoPhong demo = new DemoPhong();
-
             QLBLL qLBLL = new QLBLL();
             if (qLBLL.GetHopDongByIdPhong(IdPhong) == null)
             {
                 ThuePhong tp = new ThuePhong();
                 tp.hopDong.MaPhongTro = IdPhong;
-                CocPhong cp = new CocPhong(tp, LoadForm);
-
-                // openChildForm1(cp, demo.panel2);
-                cp.Show();//Close();
+                 openChildForm1(new CocPhong(tp, LoadForm), panel);
             }
             else
             {
@@ -138,7 +133,29 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnChoThue_Click(object sender, EventArgs e)
         {
-
+            //ThuePhong tp = new ThuePhong();
+            //QLBLL qLBLL = new QLBLL();
+            //tp.hopDong.MaHopDong = qLBLL.TaoIdHopDong();
+            //tp.hopDong.MaPhongTro = dgvPhongTro.CurrentRow.Cells[0].Value.ToString();
+            //tc.openChildForm1(new ThemKhach(tp, LoadForm), panelPhong);
+            QLBLL qLBLL = new QLBLL();
+            if (qLBLL.GetHopDongByIdPhong(IdPhong) == null)
+            {
+                ThuePhong tp = new ThuePhong();
+                tp.hopDong.MaHopDong = qLBLL.TaoIdHopDong();
+                tp.hopDong.MaPhongTro = IdPhong;
+                openChildForm1(new ThemKhach(tp, LoadForm), panel);
+            }
+            else if(qLBLL.PhongDaCocByIdPhong(IdPhong))
+            {
+                ThuePhong tp = new ThuePhong();
+                tp.hopDong = qLBLL.GetHopDongByIdPhong(IdPhong);
+                tc.openChildForm1(new ThemKhach(tp, LoadForm), panel);
+            }
+            else
+            {
+                MessageBox.Show("Phòng hiện tại đã được cho thuê", "Thông báo");
+            }
         }
     }
 }

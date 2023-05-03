@@ -30,7 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DemoPhong));
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtTenDay = new System.Windows.Forms.TextBox();
+            this.btnSuaDay = new FontAwesome.Sharp.IconButton();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.cbbTinhTrang = new System.Windows.Forms.ComboBox();
             this.btnThemday = new FontAwesome.Sharp.IconButton();
             this.btnTimKiem = new FontAwesome.Sharp.IconButton();
@@ -41,7 +42,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelPhong = new System.Windows.Forms.FlowLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnSuaDay = new FontAwesome.Sharp.IconButton();
             this.btnXoaDay = new FontAwesome.Sharp.IconButton();
             this.btnThemPhong = new FontAwesome.Sharp.IconButton();
             this.lblDiaChi = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.btnSuaDay);
-            this.panel3.Controls.Add(this.txtTenDay);
+            this.panel3.Controls.Add(this.txtTimKiem);
             this.panel3.Controls.Add(this.cbbTinhTrang);
             this.panel3.Controls.Add(this.btnThemday);
             this.panel3.Controls.Add(this.btnTimKiem);
@@ -70,21 +70,41 @@
             this.panel3.Size = new System.Drawing.Size(1409, 163);
             this.panel3.TabIndex = 0;
             // 
-            // txtTenDay
+            // btnSuaDay
             // 
-            this.txtTenDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenDay.Location = new System.Drawing.Point(399, 105);
-            this.txtTenDay.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTenDay.Name = "txtTenDay";
-            this.txtTenDay.Size = new System.Drawing.Size(145, 30);
-            this.txtTenDay.TabIndex = 47;
+            this.btnSuaDay.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnSuaDay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSuaDay.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSuaDay.IconChar = FontAwesome.Sharp.IconChar.ExternalLink;
+            this.btnSuaDay.IconColor = System.Drawing.Color.White;
+            this.btnSuaDay.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSuaDay.IconSize = 25;
+            this.btnSuaDay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSuaDay.Location = new System.Drawing.Point(1276, 98);
+            this.btnSuaDay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSuaDay.Name = "btnSuaDay";
+            this.btnSuaDay.Size = new System.Drawing.Size(69, 39);
+            this.btnSuaDay.TabIndex = 59;
+            this.btnSuaDay.Text = "Sửa";
+            this.btnSuaDay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSuaDay.UseVisualStyleBackColor = false;
+            this.btnSuaDay.Click += new System.EventHandler(this.btnSuaDay_Click);
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimKiem.Location = new System.Drawing.Point(460, 95);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(145, 30);
+            this.txtTimKiem.TabIndex = 47;
             // 
             // cbbTinhTrang
             // 
             this.cbbTinhTrang.DisplayMember = "Tình trạng";
             this.cbbTinhTrang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbTinhTrang.FormattingEnabled = true;
-            this.cbbTinhTrang.Location = new System.Drawing.Point(212, 105);
+            this.cbbTinhTrang.Location = new System.Drawing.Point(266, 94);
             this.cbbTinhTrang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbTinhTrang.Name = "cbbTinhTrang";
             this.cbbTinhTrang.Size = new System.Drawing.Size(148, 33);
@@ -119,18 +139,19 @@
             this.btnTimKiem.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnTimKiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTimKiem.IconSize = 25;
-            this.btnTimKiem.Location = new System.Drawing.Point(583, 105);
+            this.btnTimKiem.Location = new System.Drawing.Point(14, 95);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(35, 34);
             this.btnTimKiem.TabIndex = 44;
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // cbbDayTro
             // 
             this.cbbDayTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbDayTro.FormattingEnabled = true;
-            this.cbbDayTro.Location = new System.Drawing.Point(25, 105);
+            this.cbbDayTro.Location = new System.Drawing.Point(67, 94);
             this.cbbDayTro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbDayTro.Name = "cbbDayTro";
             this.cbbDayTro.Size = new System.Drawing.Size(148, 33);
@@ -212,26 +233,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1378, 56);
             this.panel5.TabIndex = 0;
-            // 
-            // btnSuaDay
-            // 
-            this.btnSuaDay.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnSuaDay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSuaDay.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnSuaDay.IconChar = FontAwesome.Sharp.IconChar.ExternalLink;
-            this.btnSuaDay.IconColor = System.Drawing.Color.White;
-            this.btnSuaDay.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSuaDay.IconSize = 25;
-            this.btnSuaDay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaDay.Location = new System.Drawing.Point(1276, 98);
-            this.btnSuaDay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSuaDay.Name = "btnSuaDay";
-            this.btnSuaDay.Size = new System.Drawing.Size(69, 39);
-            this.btnSuaDay.TabIndex = 59;
-            this.btnSuaDay.Text = "Sửa";
-            this.btnSuaDay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSuaDay.UseVisualStyleBackColor = false;
-            this.btnSuaDay.Click += new System.EventHandler(this.btnSuaDay_Click);
             // 
             // btnXoaDay
             // 
@@ -340,7 +341,7 @@
         private FontAwesome.Sharp.IconButton btnThemPhong;
         private System.Windows.Forms.Label lblDiaChi;
         public System.Windows.Forms.Panel panelChinh;
-        private System.Windows.Forms.TextBox txtTenDay;
+        private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.ComboBox cbbTinhTrang;
         private FontAwesome.Sharp.IconButton btnThemday;
         private FontAwesome.Sharp.IconButton btnTimKiem;

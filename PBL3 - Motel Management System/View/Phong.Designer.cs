@@ -209,7 +209,7 @@
             this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTimKiem.Location = new System.Drawing.Point(389, 33);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(155, 23);
+            this.txtTimKiem.Size = new System.Drawing.Size(155, 27);
             this.txtTimKiem.TabIndex = 36;
             // 
             // label4
@@ -218,7 +218,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(237, 14);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 17);
+            this.label4.Size = new System.Drawing.Size(0, 20);
             this.label4.TabIndex = 35;
             // 
             // cbbTinhTrang
@@ -228,7 +228,7 @@
             this.cbbTinhTrang.FormattingEnabled = true;
             this.cbbTinhTrang.Location = new System.Drawing.Point(225, 34);
             this.cbbTinhTrang.Name = "cbbTinhTrang";
-            this.cbbTinhTrang.Size = new System.Drawing.Size(148, 25);
+            this.cbbTinhTrang.Size = new System.Drawing.Size(148, 28);
             this.cbbTinhTrang.TabIndex = 34;
             // 
             // btnChoThue
@@ -271,7 +271,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(415, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 17);
+            this.label2.Size = new System.Drawing.Size(0, 20);
             this.label2.TabIndex = 31;
             // 
             // label1
@@ -279,7 +279,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(62, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.Size = new System.Drawing.Size(0, 16);
             this.label1.TabIndex = 30;
             // 
             // panPhong1
@@ -357,7 +357,7 @@
             this.cbbDayTro.FormattingEnabled = true;
             this.cbbDayTro.Location = new System.Drawing.Point(65, 35);
             this.cbbDayTro.Name = "cbbDayTro";
-            this.cbbDayTro.Size = new System.Drawing.Size(148, 25);
+            this.cbbDayTro.Size = new System.Drawing.Size(148, 28);
             this.cbbDayTro.TabIndex = 27;
             // 
             // label7
@@ -367,7 +367,7 @@
             this.label7.ForeColor = System.Drawing.Color.Chocolate;
             this.label7.Location = new System.Drawing.Point(12, 11);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(178, 23);
+            this.label7.Size = new System.Drawing.Size(217, 28);
             this.label7.TabIndex = 36;
             this.label7.Text = "DACH SÁCH PHÒNG";
             this.label7.Click += new System.EventHandler(this.label7_Click);

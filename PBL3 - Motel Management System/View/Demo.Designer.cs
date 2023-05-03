@@ -175,6 +175,7 @@
             // 
             // panelTenKhach
             // 
+            this.panelTenKhach.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.panelTenKhach.Location = new System.Drawing.Point(5, 60);
             this.panelTenKhach.Margin = new System.Windows.Forms.Padding(4);
             this.panelTenKhach.Name = "panelTenKhach";
