@@ -1,4 +1,5 @@
 ﻿using PBL3___Motel_Management_System.BLL;
+using PBL3___Motel_Management_System.DAL;
 using PBL3___Motel_Management_System.DTO;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,13 @@ namespace PBL3___Motel_Management_System
         }
         private void LoadForm(string txtTim)
         {
+
+            DataGridViewButtonColumn btnCol = new DataGridViewButtonColumn();
+            btnCol.HeaderText = "Button Column Header";
+            btnCol.Name = "btnCol";
+            btnCol.Text = "Click Me";
+            btnCol.UseColumnTextForButtonValue = true;
+            dgvDichVu.Columns.Add(btnCol);
             DataTable dt = new DataTable();
             dt.Columns.AddRange(new DataColumn[]
             {
@@ -33,11 +41,25 @@ namespace PBL3___Motel_Management_System
                 new DataColumn{ColumnName = "Tên dịch vụ",DataType =  typeof(string)},
                 new DataColumn{ColumnName = "Giá dịch vụ",DataType =  typeof(double)},
             });
+
             QLBLL qLBLL = new QLBLL();
-            foreach(ViewDichVu viewDichVu in qLBLL.DgvDichVu(txtTim))
+            foreach (ViewDichVu viewDichVu in qLBLL.DgvDichVu(txtTim))
             {
-                dt.Rows.Add(viewDichVu.MaDichVu, viewDichVu.Stt, viewDichVu.TenDichVu, viewDichVu.GiaDichVu);
+                DataRow row = dt.NewRow();
+                row["Mã dịch vụ"] = viewDichVu.MaDichVu;
+                row["STT"] = viewDichVu.Stt;
+                row["Tên dịch vụ"] = viewDichVu.TenDichVu;
+                row["Giá dịch vụ"] = viewDichVu.GiaDichVu;
+                dt.Rows.Add(row);
             }
+            foreach (DataGridViewRow row in dgvDichVu.Rows)
+            {
+                DataGridViewButtonCell btnCell = new DataGridViewButtonCell();
+                btnCell.Value = "Click Me";
+                row.Cells["btnCol"] = btnCell;
+            }
+
+
             dgvDichVu.DataSource = dt;
             dgvDichVu.Columns[0].Visible = false;
 

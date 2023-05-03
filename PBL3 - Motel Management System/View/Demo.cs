@@ -130,7 +130,8 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnChiTiet_Click_1(object sender, EventArgs e)
         {
-
+            ChitietPhongtro ct = new ChitietPhongtro();
+            ct.Show();
            // tc.openChildForm1(new ChisoDien(), dm.panelChinh);
         }
 

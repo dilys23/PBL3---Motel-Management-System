@@ -37,8 +37,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.paneMenu = new System.Windows.Forms.Panel();
             this.btnThietbi = new FontAwesome.Sharp.IconButton();
-            this.btnDay = new FontAwesome.Sharp.IconButton();
-            this.btnLogout = new FontAwesome.Sharp.IconButton();
             this.btnDoanhTHu = new FontAwesome.Sharp.IconButton();
             this.btnHoaDon = new FontAwesome.Sharp.IconButton();
             this.btnHopDong = new FontAwesome.Sharp.IconButton();
@@ -154,8 +152,6 @@
             // 
             this.paneMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(229)))), ((int)(((byte)(236)))));
             this.paneMenu.Controls.Add(this.btnThietbi);
-            this.paneMenu.Controls.Add(this.btnDay);
-            this.paneMenu.Controls.Add(this.btnLogout);
             this.paneMenu.Controls.Add(this.btnDoanhTHu);
             this.paneMenu.Controls.Add(this.btnHoaDon);
             this.paneMenu.Controls.Add(this.btnHopDong);
@@ -182,7 +178,7 @@
             this.btnThietbi.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThietbi.IconSize = 35;
             this.btnThietbi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThietbi.Location = new System.Drawing.Point(8, 408);
+            this.btnThietbi.Location = new System.Drawing.Point(8, 400);
             this.btnThietbi.Name = "btnThietbi";
             this.btnThietbi.Size = new System.Drawing.Size(186, 41);
             this.btnThietbi.TabIndex = 19;
@@ -190,45 +186,6 @@
             this.btnThietbi.Text = "Thiết bị ";
             this.btnThietbi.UseVisualStyleBackColor = true;
             this.btnThietbi.Click += new System.EventHandler(this.btnThietbi_Click);
-            // 
-            // btnDay
-            // 
-            this.btnDay.FlatAppearance.BorderSize = 0;
-            this.btnDay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDay.IconChar = FontAwesome.Sharp.IconChar.HomeLg;
-            this.btnDay.IconColor = System.Drawing.Color.SteelBlue;
-            this.btnDay.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDay.IconSize = 35;
-            this.btnDay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDay.Location = new System.Drawing.Point(8, 134);
-            this.btnDay.Name = "btnDay";
-            this.btnDay.Size = new System.Drawing.Size(186, 41);
-            this.btnDay.TabIndex = 18;
-            this.btnDay.Tag = "Dãy";
-            this.btnDay.Text = "Dãy";
-            this.btnDay.UseVisualStyleBackColor = true;
-            this.btnDay.Click += new System.EventHandler(this.btnDay_Click);
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.IconChar = FontAwesome.Sharp.IconChar.ShareFromSquare;
-            this.btnLogout.IconColor = System.Drawing.Color.CadetBlue;
-            this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            this.btnLogout.IconSize = 30;
-            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(12, 662);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(45, 45);
-            this.btnLogout.TabIndex = 17;
-            this.btnLogout.Tag = "Logout";
-            this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnDoanhTHu
             // 
@@ -259,7 +216,7 @@
             this.btnHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHoaDon.IconSize = 35;
             this.btnHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHoaDon.Location = new System.Drawing.Point(8, 530);
+            this.btnHoaDon.Location = new System.Drawing.Point(8, 524);
             this.btnHoaDon.Name = "btnHoaDon";
             this.btnHoaDon.Size = new System.Drawing.Size(186, 41);
             this.btnHoaDon.TabIndex = 12;
@@ -278,7 +235,7 @@
             this.btnHopDong.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHopDong.IconSize = 35;
             this.btnHopDong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHopDong.Location = new System.Drawing.Point(8, 465);
+            this.btnHopDong.Location = new System.Drawing.Point(8, 462);
             this.btnHopDong.Name = "btnHopDong";
             this.btnHopDong.Size = new System.Drawing.Size(186, 41);
             this.btnHopDong.TabIndex = 11;
@@ -297,7 +254,7 @@
             this.btnNuoc.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnNuoc.IconSize = 35;
             this.btnNuoc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuoc.Location = new System.Drawing.Point(8, 352);
+            this.btnNuoc.Location = new System.Drawing.Point(8, 338);
             this.btnNuoc.Name = "btnNuoc";
             this.btnNuoc.Size = new System.Drawing.Size(186, 41);
             this.btnNuoc.TabIndex = 10;
@@ -335,7 +292,7 @@
             this.btnDien.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDien.IconSize = 35;
             this.btnDien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDien.Location = new System.Drawing.Point(8, 293);
+            this.btnDien.Location = new System.Drawing.Point(8, 276);
             this.btnDien.Name = "btnDien";
             this.btnDien.Size = new System.Drawing.Size(182, 41);
             this.btnDien.TabIndex = 9;
@@ -354,7 +311,7 @@
             this.btnDichVu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDichVu.IconSize = 35;
             this.btnDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDichVu.Location = new System.Drawing.Point(8, 233);
+            this.btnDichVu.Location = new System.Drawing.Point(8, 214);
             this.btnDichVu.Name = "btnDichVu";
             this.btnDichVu.Size = new System.Drawing.Size(186, 41);
             this.btnDichVu.TabIndex = 8;
@@ -368,12 +325,12 @@
             this.btnPhong.FlatAppearance.BorderSize = 0;
             this.btnPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPhong.IconChar = FontAwesome.Sharp.IconChar.Box;
+            this.btnPhong.IconChar = FontAwesome.Sharp.IconChar.HomeUser;
             this.btnPhong.IconColor = System.Drawing.Color.SteelBlue;
             this.btnPhong.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPhong.IconSize = 35;
             this.btnPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPhong.Location = new System.Drawing.Point(8, 181);
+            this.btnPhong.Location = new System.Drawing.Point(8, 152);
             this.btnPhong.Name = "btnPhong";
             this.btnPhong.Size = new System.Drawing.Size(186, 41);
             this.btnPhong.TabIndex = 6;
@@ -484,8 +441,6 @@
         private FontAwesome.Sharp.IconButton btnPhong;
         private FontAwesome.Sharp.IconButton btnDoanhTHu;
         private FontAwesome.Sharp.IconButton btnHoaDon;
-        private FontAwesome.Sharp.IconButton btnLogout;
-        private FontAwesome.Sharp.IconButton btnDay;
         private FontAwesome.Sharp.IconButton btnThietbi;
         private FontAwesome.Sharp.IconButton btnTK;
         private System.Windows.Forms.Panel panelDesktop;

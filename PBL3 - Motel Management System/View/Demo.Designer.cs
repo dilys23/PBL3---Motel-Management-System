@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnXoaPhong = new FontAwesome.Sharp.IconButton();
             this.btnSuaDichVu = new FontAwesome.Sharp.IconButton();
@@ -37,6 +38,7 @@
             this.btnChoThue = new FontAwesome.Sharp.IconButton();
             this.panelTenKhach = new System.Windows.Forms.FlowLayoutPanel();
             this.panelTenPhongTro = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,6 +78,7 @@
             this.btnXoaPhong.TabIndex = 56;
             this.btnXoaPhong.Text = "Xóa";
             this.btnXoaPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnXoaPhong, "Xóa Phòng");
             this.btnXoaPhong.UseVisualStyleBackColor = false;
             // 
             // btnSuaDichVu
@@ -96,6 +99,7 @@
             this.btnSuaDichVu.TabIndex = 55;
             this.btnSuaDichVu.Text = "Sửa";
             this.btnSuaDichVu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnSuaDichVu, "Sửa Dịch Vụ");
             this.btnSuaDichVu.UseVisualStyleBackColor = false;
             // 
             // btnCoc
@@ -112,6 +116,7 @@
             this.btnCoc.Size = new System.Drawing.Size(40, 40);
             this.btnCoc.TabIndex = 38;
             this.btnCoc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnCoc, "Cọc phòng");
             this.btnCoc.UseVisualStyleBackColor = false;
             this.btnCoc.Click += new System.EventHandler(this.btnCoc_Click_1);
             // 
@@ -129,6 +134,7 @@
             this.btnChiTiet.Size = new System.Drawing.Size(40, 40);
             this.btnChiTiet.TabIndex = 40;
             this.btnChiTiet.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnChiTiet, "Chi tiết");
             this.btnChiTiet.UseVisualStyleBackColor = false;
             this.btnChiTiet.Click += new System.EventHandler(this.btnChiTiet_Click_1);
             // 
@@ -146,6 +152,7 @@
             this.btnTra.Size = new System.Drawing.Size(40, 40);
             this.btnTra.TabIndex = 41;
             this.btnTra.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnTra, "Trả Phòng");
             this.btnTra.UseVisualStyleBackColor = false;
             // 
             // btnChoThue
@@ -162,6 +169,7 @@
             this.btnChoThue.Size = new System.Drawing.Size(40, 40);
             this.btnChoThue.TabIndex = 39;
             this.btnChoThue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnChoThue, "Cho Thuê");
             this.btnChoThue.UseVisualStyleBackColor = false;
             this.btnChoThue.Click += new System.EventHandler(this.btnChoThue_Click);
             // 
@@ -209,5 +217,6 @@
         private System.Windows.Forms.Panel panelTenPhongTro;
         private FontAwesome.Sharp.IconButton btnXoaPhong;
         private FontAwesome.Sharp.IconButton btnSuaDichVu;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

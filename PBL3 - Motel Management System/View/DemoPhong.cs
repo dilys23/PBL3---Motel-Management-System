@@ -29,6 +29,7 @@ namespace PBL3___Motel_Management_System.View
         }
         public void LoadForm(string MaDayTro)
         {
+           
             panelPhong.AutoScroll = false;
             panelPhong.HorizontalScroll.Visible = false;
             panelPhong.HorizontalScroll.Maximum = 0;
@@ -62,7 +63,8 @@ namespace PBL3___Motel_Management_System.View
             {
                  SuKien(defaultBtn, EventArgs.Empty);
             }
-            
+            MaDayTro = defaultBtn.Name;
+
 
 
 
@@ -130,7 +132,7 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnThemPhong_Click_1(object sender, EventArgs e)
         {
-           // tc.openChildForm1(new ThemPhong(), panelChinh);
+           tc.openChildForm1(new ThemPhong(MaDayTro,LoadForm), panelChinh);
             
         }
 
