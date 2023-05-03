@@ -177,6 +177,7 @@ namespace PBL3___Motel_Management_System
             // dgvDichVu
             // 
             this.dgvDichVu.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dgvDichVu.AllowUserToAddRows = false;
             this.dgvDichVu.AllowUserToOrderColumns = true;
             this.dgvDichVu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
