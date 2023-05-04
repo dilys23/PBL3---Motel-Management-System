@@ -37,20 +37,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvChiSoDien = new System.Windows.Forms.DataGridView();
-            this.MaChiTietSuDungDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DayTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhongTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChiSoCu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChiSoMoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DaDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Thang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnSua = new FontAwesome.Sharp.IconButton();
+            this.panelChisoDien = new System.Windows.Forms.Panel();
             this.btnHuyXacThuc = new FontAwesome.Sharp.IconButton();
-            this.btnXoa = new FontAwesome.Sharp.IconButton();
             this.label5 = new System.Windows.Forms.Label();
             this.cbbTinhTrang = new System.Windows.Forms.ComboBox();
             this.btnTimKiem = new FontAwesome.Sharp.IconButton();
@@ -61,8 +49,18 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSuaHD = new FontAwesome.Sharp.IconButton();
             this.btnThemHD = new FontAwesome.Sharp.IconButton();
+            this.MaChiTietSuDungDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DayTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhongTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChiSoCu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChiSoMoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DaDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Thang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiSoDien)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.panelChisoDien.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,13 +119,14 @@
             // 
             // dgvChiSoDien
             // 
-            this.dgvChiSoDien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvChiSoDien.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dgvChiSoDien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvChiSoDien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvChiSoDien.BackgroundColor = System.Drawing.Color.Ivory;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.PaleTurquoise;
@@ -155,7 +154,7 @@
             this.dgvChiSoDien.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvChiSoDien.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvChiSoDien.GridColor = System.Drawing.Color.LightCyan;
-            this.dgvChiSoDien.Location = new System.Drawing.Point(43, 97);
+            this.dgvChiSoDien.Location = new System.Drawing.Point(17, 99);
             this.dgvChiSoDien.Name = "dgvChiSoDien";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -165,121 +164,38 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvChiSoDien.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvChiSoDien.RowHeadersWidth = 51;
+            this.dgvChiSoDien.RowHeadersWidth = 60;
             this.dgvChiSoDien.RowTemplate.Height = 24;
             this.dgvChiSoDien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvChiSoDien.Size = new System.Drawing.Size(950, 288);
+            this.dgvChiSoDien.Size = new System.Drawing.Size(993, 288);
             this.dgvChiSoDien.TabIndex = 8;
+            this.dgvChiSoDien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiSoDien_CellContentClick);
             // 
-            // MaChiTietSuDungDichVu
+            // panelChisoDien
             // 
-            this.MaChiTietSuDungDichVu.HeaderText = "MaChiTietSuDungDichVu";
-            this.MaChiTietSuDungDichVu.MinimumWidth = 6;
-            this.MaChiTietSuDungDichVu.Name = "MaChiTietSuDungDichVu";
-            this.MaChiTietSuDungDichVu.Visible = false;
-            // 
-            // Stt
-            // 
-            this.Stt.HeaderText = "STT";
-            this.Stt.MinimumWidth = 6;
-            this.Stt.Name = "Stt";
-            // 
-            // DayTro
-            // 
-            this.DayTro.HeaderText = "Dãy trọ";
-            this.DayTro.MinimumWidth = 6;
-            this.DayTro.Name = "DayTro";
-            // 
-            // PhongTro
-            // 
-            this.PhongTro.HeaderText = "Phòng trọ";
-            this.PhongTro.MinimumWidth = 6;
-            this.PhongTro.Name = "PhongTro";
-            // 
-            // ChiSoCu
-            // 
-            this.ChiSoCu.HeaderText = "Chỉ số cũ";
-            this.ChiSoCu.MinimumWidth = 6;
-            this.ChiSoCu.Name = "ChiSoCu";
-            // 
-            // ChiSoMoi
-            // 
-            this.ChiSoMoi.HeaderText = "Chỉ số mới";
-            this.ChiSoMoi.MinimumWidth = 6;
-            this.ChiSoMoi.Name = "ChiSoMoi";
-            // 
-            // DaDung
-            // 
-            this.DaDung.HeaderText = "Đã dùng";
-            this.DaDung.MinimumWidth = 6;
-            this.DaDung.Name = "DaDung";
-            // 
-            // NgayLap
-            // 
-            this.NgayLap.HeaderText = "Ngày lập";
-            this.NgayLap.MinimumWidth = 6;
-            this.NgayLap.Name = "NgayLap";
-            // 
-            // Thang
-            // 
-            this.Thang.HeaderText = "Tháng sử dung";
-            this.Thang.MinimumWidth = 6;
-            this.Thang.Name = "Thang";
-            // 
-            // TinhTrang
-            // 
-            this.TinhTrang.HeaderText = "Tình trạng";
-            this.TinhTrang.MinimumWidth = 6;
-            this.TinhTrang.Name = "TinhTrang";
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panelChisoDien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.btnSua);
-            this.panel2.Controls.Add(this.btnHuyXacThuc);
-            this.panel2.Controls.Add(this.btnXoa);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.cbbTinhTrang);
-            this.panel2.Controls.Add(this.btnTimKiem);
-            this.panel2.Controls.Add(this.cbbPhongTro);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.btnXacThuc);
-            this.panel2.Controls.Add(this.iconButton2);
-            this.panel2.Controls.Add(this.dgvChiSoDien);
-            this.panel2.Controls.Add(this.dtpThangSuDung);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.cbbDayTro);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(12, 75);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1023, 456);
-            this.panel2.TabIndex = 27;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // btnSua
-            // 
-            this.btnSua.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSua.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.IconChar = FontAwesome.Sharp.IconChar.ExternalLink;
-            this.btnSua.IconColor = System.Drawing.Color.White;
-            this.btnSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSua.IconSize = 25;
-            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(883, 33);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(56, 31);
-            this.btnSua.TabIndex = 67;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSua.UseVisualStyleBackColor = false;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            this.panelChisoDien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
+            this.panelChisoDien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelChisoDien.Controls.Add(this.btnHuyXacThuc);
+            this.panelChisoDien.Controls.Add(this.label5);
+            this.panelChisoDien.Controls.Add(this.cbbTinhTrang);
+            this.panelChisoDien.Controls.Add(this.btnTimKiem);
+            this.panelChisoDien.Controls.Add(this.cbbPhongTro);
+            this.panelChisoDien.Controls.Add(this.label3);
+            this.panelChisoDien.Controls.Add(this.btnXacThuc);
+            this.panelChisoDien.Controls.Add(this.iconButton2);
+            this.panelChisoDien.Controls.Add(this.dgvChiSoDien);
+            this.panelChisoDien.Controls.Add(this.dtpThangSuDung);
+            this.panelChisoDien.Controls.Add(this.label1);
+            this.panelChisoDien.Controls.Add(this.cbbDayTro);
+            this.panelChisoDien.Controls.Add(this.label2);
+            this.panelChisoDien.Location = new System.Drawing.Point(12, 75);
+            this.panelChisoDien.Name = "panelChisoDien";
+            this.panelChisoDien.Size = new System.Drawing.Size(1023, 456);
+            this.panelChisoDien.TabIndex = 27;
+            this.panelChisoDien.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btnHuyXacThuc
             // 
@@ -290,33 +206,15 @@
             this.btnHuyXacThuc.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHuyXacThuc.IconSize = 25;
             this.btnHuyXacThuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHuyXacThuc.Location = new System.Drawing.Point(820, 30);
+            this.btnHuyXacThuc.Location = new System.Drawing.Point(556, 395);
             this.btnHuyXacThuc.Margin = new System.Windows.Forms.Padding(2);
             this.btnHuyXacThuc.Name = "btnHuyXacThuc";
-            this.btnHuyXacThuc.Size = new System.Drawing.Size(58, 37);
+            this.btnHuyXacThuc.Size = new System.Drawing.Size(63, 37);
             this.btnHuyXacThuc.TabIndex = 68;
             this.btnHuyXacThuc.Text = "Hủy";
             this.btnHuyXacThuc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnHuyXacThuc.UseVisualStyleBackColor = false;
             this.btnHuyXacThuc.Click += new System.EventHandler(this.btnHuyXacThuc_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXoa.BackColor = System.Drawing.Color.Red;
-            this.btnXoa.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btnXoa.IconColor = System.Drawing.Color.White;
-            this.btnXoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnXoa.IconSize = 25;
-            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(944, 30);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(66, 36);
-            this.btnXoa.TabIndex = 61;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXoa.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
@@ -388,7 +286,7 @@
             this.btnXacThuc.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXacThuc.IconSize = 25;
             this.btnXacThuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXacThuc.Location = new System.Drawing.Point(717, 30);
+            this.btnXacThuc.Location = new System.Drawing.Point(453, 393);
             this.btnXacThuc.Name = "btnXacThuc";
             this.btnXacThuc.Size = new System.Drawing.Size(98, 39);
             this.btnXacThuc.TabIndex = 55;
@@ -400,13 +298,14 @@
             // iconButton2
             // 
             this.iconButton2.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.iconButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButton2.BackColor = System.Drawing.Color.DarkOrange;
             this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.FileArrowUp;
             this.iconButton2.IconColor = System.Drawing.Color.White;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.IconSize = 25;
             this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(633, 30);
+            this.iconButton2.Location = new System.Drawing.Point(931, 29);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Size = new System.Drawing.Size(79, 39);
             this.iconButton2.TabIndex = 54;
@@ -458,19 +357,80 @@
             this.btnThemHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemHD.UseVisualStyleBackColor = false;
             // 
+            // MaChiTietSuDungDichVu
+            // 
+            this.MaChiTietSuDungDichVu.HeaderText = "MaChiTietSuDungDichVu";
+            this.MaChiTietSuDungDichVu.MinimumWidth = 6;
+            this.MaChiTietSuDungDichVu.Name = "MaChiTietSuDungDichVu";
+            this.MaChiTietSuDungDichVu.Visible = false;
+            // 
+            // Stt
+            // 
+            this.Stt.HeaderText = "STT";
+            this.Stt.MinimumWidth = 6;
+            this.Stt.Name = "Stt";
+            // 
+            // DayTro
+            // 
+            this.DayTro.HeaderText = "Dãy trọ";
+            this.DayTro.MinimumWidth = 6;
+            this.DayTro.Name = "DayTro";
+            // 
+            // PhongTro
+            // 
+            this.PhongTro.HeaderText = "Phòng trọ";
+            this.PhongTro.MinimumWidth = 6;
+            this.PhongTro.Name = "PhongTro";
+            // 
+            // ChiSoCu
+            // 
+            this.ChiSoCu.HeaderText = "Chỉ số cũ";
+            this.ChiSoCu.MinimumWidth = 6;
+            this.ChiSoCu.Name = "ChiSoCu";
+            // 
+            // ChiSoMoi
+            // 
+            this.ChiSoMoi.HeaderText = "Chỉ số mới";
+            this.ChiSoMoi.MinimumWidth = 6;
+            this.ChiSoMoi.Name = "ChiSoMoi";
+            // 
+            // DaDung
+            // 
+            this.DaDung.HeaderText = "Đã dùng";
+            this.DaDung.MinimumWidth = 6;
+            this.DaDung.Name = "DaDung";
+            // 
+            // NgayLap
+            // 
+            this.NgayLap.HeaderText = "Ngày lập";
+            this.NgayLap.MinimumWidth = 6;
+            this.NgayLap.Name = "NgayLap";
+            // 
+            // Thang
+            // 
+            this.Thang.HeaderText = "Tháng sử dung";
+            this.Thang.MinimumWidth = 6;
+            this.Thang.Name = "Thang";
+            // 
+            // TinhTrang
+            // 
+            this.TinhTrang.HeaderText = "Tình trạng";
+            this.TinhTrang.MinimumWidth = 6;
+            this.TinhTrang.Name = "TinhTrang";
+            // 
             // ChisoDien
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1047, 619);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelChisoDien);
             this.Controls.Add(this.panel1);
             this.Name = "ChisoDien";
             this.Text = "ElecNum";
             this.Load += new System.EventHandler(this.ChisoDien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiSoDien)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panelChisoDien.ResumeLayout(false);
+            this.panelChisoDien.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -484,7 +444,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvChiSoDien;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelChisoDien;
         private System.Windows.Forms.Panel panel1;
 #pragma warning disable CS0169 // The field 'ChisoDien.iconButton3' is never used
         private FontAwesome.Sharp.IconButton iconButton3;
@@ -495,6 +455,10 @@
         private FontAwesome.Sharp.IconButton iconButton2;
         private System.Windows.Forms.ComboBox cbbPhongTro;
         private System.Windows.Forms.Label label3;
+        private FontAwesome.Sharp.IconButton btnTimKiem;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbbTinhTrang;
+        private FontAwesome.Sharp.IconButton btnHuyXacThuc;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaChiTietSuDungDichVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stt;
         private System.Windows.Forms.DataGridViewTextBoxColumn DayTro;
@@ -505,11 +469,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayLap;
         private System.Windows.Forms.DataGridViewTextBoxColumn Thang;
         private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrang;
-        private FontAwesome.Sharp.IconButton btnTimKiem;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cbbTinhTrang;
-        private FontAwesome.Sharp.IconButton btnXoa;
-        private FontAwesome.Sharp.IconButton btnSua;
-        private FontAwesome.Sharp.IconButton btnHuyXacThuc;
     }
 }

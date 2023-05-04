@@ -435,7 +435,41 @@ namespace PBL3___Motel_Management_System.DAL
                 
             }
         }
-        
+        public void DelThanhVienDAL(string id)
+        {
+            using(DataPbl data= new DataPbl())
+            {
+                var s = data.ThanhVienTrongPhong.Find(id);
+                data.ThanhVienTrongPhong.Remove(s);
+                data.SaveChanges() ;
+            }
+        }
+        public void DelNguoiDal(string id)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                var s = data.Nguoi.Find(id);
+                data.Nguoi.Remove(s);
+                data.SaveChanges();
+            }
+        }
+        public string GetIdThanhVienByIdNguoi(string id)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                foreach (ThanhVienTrongPhong thanhvien in GetAllThanhVienTrongPhong())
+                {
+                    if (thanhvien.MaNguoi == id)
+                    {
+                        return thanhvien.MaThanhVienTrongPhong;
+                    }
+
+                }
+                return null;
+            }
+        }
+
+
         public void DelHoaDonDal(string id)
         {
             using(DataPbl data = new DataPbl())

@@ -23,6 +23,19 @@ namespace PBL3___Motel_Management_System.View
             this.loader=loader;
             this.Idhd=Idhd;
             LoadForm();
+            SetFontAndColors();
+        }
+        private void SetFontAndColors()
+        {
+            this.dgvDichVu.DefaultCellStyle.Font = new Font("Tahoma", 10);
+            this.dgvDichVu.DefaultCellStyle.ForeColor = Color.Blue;
+            this.dgvDichVu.DefaultCellStyle.BackColor = Color.Beige;
+            this.dgvDichVu.DefaultCellStyle.SelectionForeColor = Color.Black;
+            this.dgvDichVu.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
+
+            DataGridViewRow row = this.dgvDichVu.RowTemplate;
+            row.Height = 35;
+            row.MinimumHeight = 20;
         }
         private void LoadForm()
         {

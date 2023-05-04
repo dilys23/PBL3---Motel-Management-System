@@ -31,6 +31,7 @@
             this.panelChitietDay = new System.Windows.Forms.Panel();
             this.btnTroVe = new FontAwesome.Sharp.IconButton();
             this.panPhong1 = new System.Windows.Forms.Panel();
+            this.pctDay = new System.Windows.Forms.PictureBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -39,11 +40,10 @@
             this.btnSua = new FontAwesome.Sharp.IconButton();
             this.btnThem = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.pctDay = new System.Windows.Forms.PictureBox();
             this.panelChitietDay.SuspendLayout();
             this.panPhong1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctDay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).BeginInit();
             this.SuspendLayout();
             // 
             // panelChitietDay
@@ -98,6 +98,16 @@
             this.panPhong1.Size = new System.Drawing.Size(1077, 497);
             this.panPhong1.TabIndex = 59;
             // 
+            // pctDay
+            // 
+            this.pctDay.BackColor = System.Drawing.Color.White;
+            this.pctDay.Location = new System.Drawing.Point(19, 14);
+            this.pctDay.Name = "pctDay";
+            this.pctDay.Size = new System.Drawing.Size(165, 169);
+            this.pctDay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctDay.TabIndex = 64;
+            this.pctDay.TabStop = false;
+            // 
             // textBox2
             // 
             this.textBox2.Enabled = false;
@@ -131,10 +141,12 @@
             // 
             // dgvPhong
             // 
+            this.dgvPhong.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.dgvPhong.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPhong.BackgroundColor = System.Drawing.Color.Ivory;
             this.dgvPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPhong.Location = new System.Drawing.Point(19, 202);
             this.dgvPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -214,16 +226,6 @@
             this.label1.TabIndex = 54;
             this.label1.Text = "Dãy";
             // 
-            // pctDay
-            // 
-            this.pctDay.BackColor = System.Drawing.Color.White;
-            this.pctDay.Location = new System.Drawing.Point(19, 14);
-            this.pctDay.Name = "pctDay";
-            this.pctDay.Size = new System.Drawing.Size(165, 169);
-            this.pctDay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctDay.TabIndex = 64;
-            this.pctDay.TabStop = false;
-            // 
             // ChitietDay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -237,8 +239,8 @@
             this.panelChitietDay.ResumeLayout(false);
             this.panPhong1.ResumeLayout(false);
             this.panPhong1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctDay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -1008,10 +1008,25 @@ namespace PBL3___Motel_Management_System.BLL
                 DelChiTietDichVu(Id);
             }
         }
+        public void DelNguoiBll(string id)
+        {
+            QLDAL qLDAL = new QLDAL();
+            qLDAL.DelNguoiDal(id);
+        }
+        public void DelThanhVienBLL(string id)
+        {
+            QLDAL qLDAL = new QLDAL();
+            qLDAL.DelThanhVienDAL(id);
+        }
         public void DelHoaDonBll(string id)
         {
             QLDAL qLDAL= new QLDAL();
             qLDAL.DelHoaDonDal(id);
+        }
+        public string GetIdThanhVienByIdNguoi(string id)
+        {
+            QLDAL qLDAL = new QLDAL();
+            return qLDAL.GetIdThanhVienByIdNguoi(id);
         }
         public List<string>GetChiTietSuDungDichVuByThangSuDung(string ThangSd)
         {

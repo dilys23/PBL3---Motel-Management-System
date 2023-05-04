@@ -24,6 +24,7 @@ namespace PBL3___Motel_Management_System.View
         {
             InitializeComponent();
             SetCBB();
+            SetFontAndColors();
             this.loader=loader;
             this.IdHd=idHd;
             if(this.IdHd != null )
@@ -45,6 +46,18 @@ namespace PBL3___Motel_Management_System.View
                 dtpThangThanhToan.Value = dt;
                 dtpNgayLap.Value = dt1;
             }
+        }
+        private void SetFontAndColors()
+        {
+            this.dgvDichVu.DefaultCellStyle.Font = new Font("Tahoma", 10);
+            this.dgvDichVu.DefaultCellStyle.ForeColor = Color.Blue;
+            this.dgvDichVu.DefaultCellStyle.BackColor = Color.Beige;
+            this.dgvDichVu.DefaultCellStyle.SelectionForeColor = Color.Black;
+            this.dgvDichVu.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
+
+            DataGridViewRow row = this.dgvDichVu.RowTemplate;
+            row.Height = 35;
+            row.MinimumHeight = 20;
         }
 
         private void SetCBB()

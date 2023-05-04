@@ -172,6 +172,14 @@ namespace PBL3___Motel_Management_System.View
             //string idDay = btn.Name;
             //tc.openChildForm1(new SuaDay(LoadForm), panelChinh);
             //panelBtnDay.Controls.Clear();
+            if (ClickBtn != null)
+            {
+
+                QLBLL qLBLL = new QLBLL();
+                DayTro dt = qLBLL.GetDayTroById(ClickBtn.Name);
+                tc.openChildForm1(new SuaDay(dt.MaDayTro, LoadForm), panelChinh);
+            }
+
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)

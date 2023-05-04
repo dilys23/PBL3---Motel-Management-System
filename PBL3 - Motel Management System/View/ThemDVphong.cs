@@ -42,7 +42,6 @@ namespace PBL3___Motel_Management_System.View
             foreach (ViewDichVu viewDichVu in qLBLL.DgvDichVu(null))
             {  if(viewDichVu.MaDichVu != "000" && viewDichVu.MaDichVu != "001")
                 {
-
                 dgvThemDichVu.Rows.Add(viewDichVu.MaDichVu, ++i, viewDichVu.TenDichVu, viewDichVu.GiaDichVu);
                 }
                 else
@@ -50,7 +49,8 @@ namespace PBL3___Motel_Management_System.View
                     dgvDVcodinh.Rows.Add(viewDichVu.MaDichVu, viewDichVu.Stt, viewDichVu.TenDichVu, viewDichVu.GiaDichVu);
                 }
             }
-
+         
+                     
             dgvThemDichVu.Columns[0].Visible = false;
 
         }

@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Drawing;
+
 namespace PBL3___Motel_Management_System.Properties
 {
 
@@ -33,6 +35,8 @@ namespace PBL3___Motel_Management_System.Properties
         internal Resources()
         {
         }
+
+        public static Image SomeImage { get; internal set; }
 
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.

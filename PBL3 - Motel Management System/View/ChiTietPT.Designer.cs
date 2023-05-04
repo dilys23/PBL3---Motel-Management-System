@@ -32,11 +32,11 @@
             this.btnTroVe = new FontAwesome.Sharp.IconButton();
             this.label7 = new System.Windows.Forms.Label();
             this.panelPhong = new System.Windows.Forms.Panel();
+            this.panelChitietPT = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnHopDong = new FontAwesome.Sharp.IconButton();
-            this.btnDichVu = new FontAwesome.Sharp.IconButton();
             this.btnThanhVien = new FontAwesome.Sharp.IconButton();
-            this.panelChitietPT = new System.Windows.Forms.Panel();
+            this.btnDichVu = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panelPhong.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -67,6 +67,7 @@
             this.btnTroVe.Size = new System.Drawing.Size(43, 37);
             this.btnTroVe.TabIndex = 62;
             this.btnTroVe.UseVisualStyleBackColor = false;
+            this.btnTroVe.Click += new System.EventHandler(this.btnTroVe_Click);
             // 
             // label7
             // 
@@ -89,6 +90,14 @@
             this.panelPhong.Name = "panelPhong";
             this.panelPhong.Size = new System.Drawing.Size(1120, 559);
             this.panelPhong.TabIndex = 47;
+            // 
+            // panelChitietPT
+            // 
+            this.panelChitietPT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChitietPT.Location = new System.Drawing.Point(0, 47);
+            this.panelChitietPT.Name = "panelChitietPT";
+            this.panelChitietPT.Size = new System.Drawing.Size(1120, 512);
+            this.panelChitietPT.TabIndex = 1;
             // 
             // flowLayoutPanel1
             // 
@@ -121,24 +130,6 @@
             this.btnHopDong.UseVisualStyleBackColor = true;
             this.btnHopDong.Click += new System.EventHandler(this.btnHopDong_Click_1);
             // 
-            // btnDichVu
-            // 
-            this.btnDichVu.FlatAppearance.BorderSize = 0;
-            this.btnDichVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDichVu.IconChar = FontAwesome.Sharp.IconChar.Blog;
-            this.btnDichVu.IconColor = System.Drawing.Color.DarkCyan;
-            this.btnDichVu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDichVu.IconSize = 35;
-            this.btnDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDichVu.Location = new System.Drawing.Point(769, 3);
-            this.btnDichVu.Name = "btnDichVu";
-            this.btnDichVu.Size = new System.Drawing.Size(339, 41);
-            this.btnDichVu.TabIndex = 50;
-            this.btnDichVu.Tag = "Dịch Vụ ";
-            this.btnDichVu.Text = "Dịch Vụ ";
-            this.btnDichVu.UseVisualStyleBackColor = true;
-            // 
             // btnThanhVien
             // 
             this.btnThanhVien.FlatAppearance.BorderSize = 0;
@@ -158,13 +149,24 @@
             this.btnThanhVien.UseVisualStyleBackColor = true;
             this.btnThanhVien.Click += new System.EventHandler(this.btnThanhVien_Click);
             // 
-            // panelChitietPT
+            // btnDichVu
             // 
-            this.panelChitietPT.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChitietPT.Location = new System.Drawing.Point(0, 47);
-            this.panelChitietPT.Name = "panelChitietPT";
-            this.panelChitietPT.Size = new System.Drawing.Size(1120, 512);
-            this.panelChitietPT.TabIndex = 1;
+            this.btnDichVu.FlatAppearance.BorderSize = 0;
+            this.btnDichVu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDichVu.IconChar = FontAwesome.Sharp.IconChar.Blog;
+            this.btnDichVu.IconColor = System.Drawing.Color.DarkCyan;
+            this.btnDichVu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDichVu.IconSize = 35;
+            this.btnDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDichVu.Location = new System.Drawing.Point(769, 3);
+            this.btnDichVu.Name = "btnDichVu";
+            this.btnDichVu.Size = new System.Drawing.Size(339, 41);
+            this.btnDichVu.TabIndex = 50;
+            this.btnDichVu.Tag = "Dịch Vụ ";
+            this.btnDichVu.Text = "Dịch Vụ ";
+            this.btnDichVu.UseVisualStyleBackColor = true;
+            this.btnDichVu.Click += new System.EventHandler(this.btnDichVu_Click);
             // 
             // ChiTietPT
             // 

@@ -53,7 +53,7 @@
             this.btnLuu.IconColor = System.Drawing.Color.White;
             this.btnLuu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLuu.IconSize = 30;
-            this.btnLuu.Location = new System.Drawing.Point(837, 47);
+            this.btnLuu.Location = new System.Drawing.Point(840, 35);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(45, 46);
@@ -71,7 +71,7 @@
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 35;
-            this.iconButton1.Location = new System.Drawing.Point(785, 47);
+            this.iconButton1.Location = new System.Drawing.Point(785, 37);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(45, 46);
@@ -83,7 +83,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 26);
+            this.label2.Location = new System.Drawing.Point(147, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 20);
             this.label2.TabIndex = 49;
@@ -93,10 +93,10 @@
             // 
             this.txtGiaDichVu.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.txtGiaDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGiaDichVu.Location = new System.Drawing.Point(155, 91);
+            this.txtGiaDichVu.Location = new System.Drawing.Point(310, 101);
             this.txtGiaDichVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtGiaDichVu.Name = "txtGiaDichVu";
-            this.txtGiaDichVu.Size = new System.Drawing.Size(215, 27);
+            this.txtGiaDichVu.Size = new System.Drawing.Size(256, 27);
             this.txtGiaDichVu.TabIndex = 52;
             // 
             // label3
@@ -104,7 +104,7 @@
             this.label3.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(39, 91);
+            this.label3.Location = new System.Drawing.Point(147, 101);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 20);
             this.label3.TabIndex = 51;
@@ -122,10 +122,10 @@
             this.panel2.Controls.Add(this.txtTenDichVu);
             this.panel2.Controls.Add(this.txtGiaDichVu);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(24, 107);
+            this.panel2.Location = new System.Drawing.Point(24, 87);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(861, 233);
+            this.panel2.Size = new System.Drawing.Size(861, 253);
             this.panel2.TabIndex = 57;
             // 
             // label9
@@ -133,7 +133,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(23, 197);
+            this.label9.Location = new System.Drawing.Point(147, 170);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(170, 20);
             this.label9.TabIndex = 55;
@@ -143,7 +143,7 @@
             // 
             this.txtTenDichVu.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.txtTenDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenDichVu.Location = new System.Drawing.Point(155, 26);
+            this.txtTenDichVu.Location = new System.Drawing.Point(310, 36);
             this.txtTenDichVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTenDichVu.Name = "txtTenDichVu";
             this.txtTenDichVu.Size = new System.Drawing.Size(256, 27);
@@ -154,7 +154,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Bahnschrift SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Chocolate;
-            this.label7.Location = new System.Drawing.Point(21, 55);
+            this.label7.Location = new System.Drawing.Point(23, 50);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(149, 28);
             this.label7.TabIndex = 58;
