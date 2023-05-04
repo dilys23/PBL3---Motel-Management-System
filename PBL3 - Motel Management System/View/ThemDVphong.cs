@@ -49,8 +49,14 @@ namespace PBL3___Motel_Management_System.View
                     dgvDVcodinh.Rows.Add(viewDichVu.MaDichVu, viewDichVu.Stt, viewDichVu.TenDichVu, viewDichVu.GiaDichVu);
                 }
             }
-         
-                     
+            foreach (string idDv in qLBLL.GetAllIdDichVuByIdPhong(tp.hopDong.MaPhongTro))
+            {
+                DichVu dv = new DichVu();
+                dv = qLBLL.GetDVByIdDV(idDv);
+                dgvXoaDichVu.Rows.Add(dv.MaDichVu, i++, dv.TenDichVu, dv.GiaDichVu);
+            }
+            
+                 
             dgvThemDichVu.Columns[0].Visible = false;
 
         }
@@ -62,8 +68,6 @@ namespace PBL3___Motel_Management_System.View
 
         private void iconButton4_Click(object sender, EventArgs e)
         {
-
-
             List<string> dsdv = new List<string>();
             foreach (DataGridViewRow dr in dgvXoaDichVu.Rows)
             {
@@ -75,6 +79,8 @@ namespace PBL3___Motel_Management_System.View
                 if (dr.Cells[0].Value != null) dsdv.Add(dr.Cells[0].Value.ToString());
 
             }
+            //tp.DsDichVu.Clear();
+            // tp.DsDichVu.AddRange(dsdv);
             tp.DsDichVu = dsdv;
             tc.openChildForm1(new ThemThietBiPhong(tp, Back), panelThemDV);
         }

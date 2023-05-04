@@ -3,11 +3,13 @@ using PBL3___Motel_Management_System.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Metadata.Edm;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media.Media3D;
+using System.Windows.Navigation;
 
 namespace PBL3___Motel_Management_System.BLL
 {
@@ -819,7 +821,8 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return null;
         }
-        
+       
+
         public List<string>GetAllIdDichVuByIdPhong(string idPhong)
         {
             QLDAL qLDAL= new QLDAL();
@@ -849,7 +852,22 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return null;
         }
-
+        
+        public Nguoi GetNguoiByIdHopDong(string idhopdong)
+        {
+            QLDAL qLDAL = new QLDAL();
+            foreach(HopDong hopdong in qLDAL.GetAllHopDong())
+            {
+                if (hopdong.MaHopDong == idhopdong)
+                {
+                    Nguoi nguoi = new Nguoi();
+                    nguoi = GetNguoiByIdNguoi(hopdong.MaNguoi);
+                    return nguoi;                    
+                }
+            }
+            return null;
+        }
+     
         public DayTro GetDayByIdDay(string id)
         {
             QLDAL qLDAL= new QLDAL();
@@ -975,6 +993,7 @@ namespace PBL3___Motel_Management_System.BLL
                 qLDAL.DelCHiTietThietBiById(id);
             }
         }
+       
         public void DelChiTietDichVu(string id)
         {
             QLDAL qLDAL=new QLDAL();

@@ -22,13 +22,24 @@ namespace PBL3___Motel_Management_System.View
             InitializeComponent();
             this.idPhong = idPhong;
             LoadForm(null);
+            SetFontAndColors();
+        }
+        private void SetFontAndColors()
+        {
+            this.dgvDichVu.DefaultCellStyle.Font = new Font("Tahoma", 10);
+            this.dgvDichVu.DefaultCellStyle.ForeColor = Color.Blue;
+            this.dgvDichVu.DefaultCellStyle.BackColor = Color.Beige;
+            this.dgvDichVu.DefaultCellStyle.SelectionForeColor = Color.AliceBlue;
+            this.dgvDichVu.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
+
+            DataGridViewRow row = this.dgvDichVu.RowTemplate;
+            row.Height = 35;
+            row.MinimumHeight = 20;
         }
         public void LoadForm(string txt)
         {
 
             dgvDichVu.Rows.Clear();
-            
-           
             QLBLL qLBLL = new QLBLL();
             dgvDichVu.RowCount = 1;
              int  i = 1;
@@ -38,33 +49,18 @@ namespace PBL3___Motel_Management_System.View
                 dv = qLBLL.GetDVByIdDV(idDv);
                 dgvDichVu.Rows.Add(dv.MaDichVu, i++, dv.TenDichVu, dv.GiaDichVu);
             }
-            //if (dgvDichVu.Columns["btnXoa"] == null)
-            //{
-            //    DataGridViewButtonColumn btnXoa = new DataGridViewButtonColumn();
-            //    {
-            //        btnXoa.HeaderText = "";
-            //        btnXoa.Name = "btnXoa";
-            //        btnXoa.Text = "Xóa";
-            //        btnXoa.UseColumnTextForButtonValue = true;
-            //        btnXoa.DisplayIndex = 1;
-            //        this.dgvDichVu.Columns.Add(btnXoa);
-
-            //    }
-            //}
+           
         }
         TrangChu tc= new TrangChu();
         private void dgvDichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                // Lấy tên cột của ô đã được nhấp
+                
                 string columnName = dgvDichVu.Columns[e.ColumnIndex].Name;
 
-                // Kiểm tra xem ô đã được nhấp có phải là nút Sửa hay Xóa không
                if (columnName == "btnXoa")
                 {
-                    // Lấy mã dịch vụ tương ứng với hàng đã được nhấp
-                    // string maDichVu = dgvDichVu.Rows[e.RowIndex].Cells["Mã dịch vụ"].Value.ToString();
                     DialogResult kq = MessageBox.Show("Bạn có thực sự muốn xóa", "Cảnh báo!!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     if (kq == DialogResult.OK)
                     {
@@ -73,7 +69,6 @@ namespace PBL3___Motel_Management_System.View
                         {
                             QLBLL qLBLL = new QLBLL();
                             qLBLL.DelChiTietDichVuByIdDichVu(id);
-                            qLBLL.DelDichVu(id);
                             MessageBox.Show("Xóa dịch vụ thành công", "Thông báo");
                             LoadForm(null);
                         }
