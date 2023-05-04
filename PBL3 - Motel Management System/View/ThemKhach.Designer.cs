@@ -33,6 +33,8 @@
             this.btnTrove = new FontAwesome.Sharp.IconButton();
             this.panelKhach = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnThemAnh = new FontAwesome.Sharp.IconButton();
+            this.pctKhach = new System.Windows.Forms.PictureBox();
             this.rdbtnNu = new System.Windows.Forms.RadioButton();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.rdbtnNam = new System.Windows.Forms.RadioButton();
@@ -48,12 +50,10 @@
             this.txtTen = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.pctKhach = new System.Windows.Forms.PictureBox();
-            this.btnThemAnh = new FontAwesome.Sharp.IconButton();
             this.panelKhach.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctKhach)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLuu
@@ -66,7 +66,7 @@
             this.btnLuu.IconColor = System.Drawing.Color.White;
             this.btnLuu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLuu.IconSize = 30;
-            this.btnLuu.Location = new System.Drawing.Point(1095, 5);
+            this.btnLuu.Location = new System.Drawing.Point(1036, 5);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(45, 46);
@@ -82,7 +82,7 @@
             this.btnTrove.IconColor = System.Drawing.Color.White;
             this.btnTrove.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTrove.IconSize = 30;
-            this.btnTrove.Location = new System.Drawing.Point(1043, 5);
+            this.btnTrove.Location = new System.Drawing.Point(984, 5);
             this.btnTrove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTrove.Name = "btnTrove";
             this.btnTrove.Size = new System.Drawing.Size(45, 46);
@@ -103,7 +103,7 @@
             this.panelKhach.Location = new System.Drawing.Point(8, 4);
             this.panelKhach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelKhach.Name = "panelKhach";
-            this.panelKhach.Size = new System.Drawing.Size(1164, 500);
+            this.panelKhach.Size = new System.Drawing.Size(1105, 500);
             this.panelKhach.TabIndex = 46;
             // 
             // panel1
@@ -130,14 +130,39 @@
             this.panel1.Location = new System.Drawing.Point(15, 57);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1125, 428);
+            this.panel1.Size = new System.Drawing.Size(1066, 428);
             this.panel1.TabIndex = 46;
+            // 
+            // btnThemAnh
+            // 
+            this.btnThemAnh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnThemAnh.IconChar = FontAwesome.Sharp.IconChar.Image;
+            this.btnThemAnh.IconColor = System.Drawing.Color.Bisque;
+            this.btnThemAnh.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThemAnh.IconSize = 30;
+            this.btnThemAnh.Location = new System.Drawing.Point(89, 268);
+            this.btnThemAnh.Name = "btnThemAnh";
+            this.btnThemAnh.Size = new System.Drawing.Size(67, 37);
+            this.btnThemAnh.TabIndex = 30;
+            this.btnThemAnh.UseVisualStyleBackColor = false;
+            this.btnThemAnh.Click += new System.EventHandler(this.btnThemAnh_Click);
+            // 
+            // pctKhach
+            // 
+            this.pctKhach.BackColor = System.Drawing.Color.White;
+            this.pctKhach.Location = new System.Drawing.Point(38, 65);
+            this.pctKhach.Name = "pctKhach";
+            this.pctKhach.Size = new System.Drawing.Size(176, 185);
+            this.pctKhach.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctKhach.TabIndex = 29;
+            this.pctKhach.TabStop = false;
+            this.pctKhach.Click += new System.EventHandler(this.pctKhach_Click);
             // 
             // rdbtnNu
             // 
             this.rdbtnNu.AutoSize = true;
             this.rdbtnNu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbtnNu.Location = new System.Drawing.Point(980, 229);
+            this.rdbtnNu.Location = new System.Drawing.Point(934, 234);
             this.rdbtnNu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdbtnNu.Name = "rdbtnNu";
             this.rdbtnNu.Size = new System.Drawing.Size(51, 24);
@@ -160,7 +185,7 @@
             // 
             this.rdbtnNam.AutoSize = true;
             this.rdbtnNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbtnNam.Location = new System.Drawing.Point(892, 229);
+            this.rdbtnNam.Location = new System.Drawing.Point(825, 234);
             this.rdbtnNam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdbtnNam.Name = "rdbtnNam";
             this.rdbtnNam.Size = new System.Drawing.Size(65, 24);
@@ -172,7 +197,7 @@
             // txtDiaChi
             // 
             this.txtDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiaChi.Location = new System.Drawing.Point(876, 144);
+            this.txtDiaChi.Location = new System.Drawing.Point(825, 144);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(206, 27);
@@ -181,7 +206,7 @@
             // txtSdt
             // 
             this.txtSdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSdt.Location = new System.Drawing.Point(876, 65);
+            this.txtSdt.Location = new System.Drawing.Point(825, 65);
             this.txtSdt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSdt.Name = "txtSdt";
             this.txtSdt.Size = new System.Drawing.Size(206, 27);
@@ -191,7 +216,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(703, 227);
+            this.label6.Location = new System.Drawing.Point(694, 234);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 20);
             this.label6.TabIndex = 22;
@@ -201,7 +226,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(703, 147);
+            this.label5.Location = new System.Drawing.Point(684, 144);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 20);
             this.label5.TabIndex = 21;
@@ -221,7 +246,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(703, 68);
+            this.label4.Location = new System.Drawing.Point(663, 68);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 20);
             this.label4.TabIndex = 19;
@@ -280,37 +305,13 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // pctKhach
-            // 
-            this.pctKhach.BackColor = System.Drawing.Color.White;
-            this.pctKhach.Location = new System.Drawing.Point(38, 65);
-            this.pctKhach.Name = "pctKhach";
-            this.pctKhach.Size = new System.Drawing.Size(176, 185);
-            this.pctKhach.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctKhach.TabIndex = 29;
-            this.pctKhach.TabStop = false;
-            this.pctKhach.Click += new System.EventHandler(this.pctKhach_Click);
-            // 
-            // btnThemAnh
-            // 
-            this.btnThemAnh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnThemAnh.IconChar = FontAwesome.Sharp.IconChar.Image;
-            this.btnThemAnh.IconColor = System.Drawing.Color.Bisque;
-            this.btnThemAnh.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnThemAnh.IconSize = 30;
-            this.btnThemAnh.Location = new System.Drawing.Point(89, 268);
-            this.btnThemAnh.Name = "btnThemAnh";
-            this.btnThemAnh.Size = new System.Drawing.Size(67, 37);
-            this.btnThemAnh.TabIndex = 30;
-            this.btnThemAnh.UseVisualStyleBackColor = false;
-            this.btnThemAnh.Click += new System.EventHandler(this.btnThemAnh_Click);
-            // 
             // ThemKhach
             // 
+            this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(1183, 505);
+            this.ClientSize = new System.Drawing.Size(1124, 505);
             this.Controls.Add(this.panelKhach);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ThemKhach";
@@ -320,8 +321,8 @@
             this.panelKhach.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctKhach)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }

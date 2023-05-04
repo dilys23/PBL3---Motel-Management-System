@@ -42,12 +42,12 @@ namespace PBL3___Motel_Management_System
 
         private void btnThemHD_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ThemCSNuoc(LoadForm), panel2);
+            tc.openChildForm1(new ThemCSNuoc(LoadForm), panelChisoNuoc);
         }
 
         private void btnSuaHD_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new SuaCSNuoc(), panel2);
+            tc.openChildForm1(new SuaCSNuoc(), panelChisoNuoc);
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -65,6 +65,32 @@ namespace PBL3___Motel_Management_System
         private void LoadForm(string txt)
         {
             dgvChiSoNuoc.Rows.Clear();
+            if (dgvChiSoNuoc.Columns["btnSua"] == null)
+            {
+                DataGridViewButtonColumn btnSua = new DataGridViewButtonColumn();
+                {
+                    btnSua.HeaderText = "";
+                    btnSua.Name = "btnSua";
+                    btnSua.Text = "Sửa";
+                    btnSua.UseColumnTextForButtonValue = true;
+                    btnSua.DisplayIndex = 0;
+                    this.dgvChiSoNuoc.Columns.Add(btnSua);
+
+                }
+            }
+            if (dgvChiSoNuoc.Columns["btnXoa"] == null)
+            {
+                DataGridViewButtonColumn btnXoa = new DataGridViewButtonColumn();
+                {
+                    btnXoa.HeaderText = "";
+                    btnXoa.Name = "btnXoa";
+                    btnXoa.Text = "Xóa";
+                    btnXoa.UseColumnTextForButtonValue = true;
+                    btnXoa.DisplayIndex = 1;
+                    this.dgvChiSoNuoc.Columns.Add(btnXoa);
+
+                }
+            }
             QLBLL qLBLL = new QLBLL();
             if (txt == null)
             {
@@ -129,7 +155,44 @@ namespace PBL3___Motel_Management_System
                     }
                 }
             }
+            dgvChiSoNuoc.CellContentClick += DgvChisoNuoc_CellContentClick;
+        }
+        private void DgvChisoNuoc_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                // Lấy tên cột của ô đã được nhấp
+                string columnName = dgvChiSoNuoc.Columns[e.ColumnIndex].Name;
 
+                // Kiểm tra xem ô đã được nhấp có phải là nút Sửa hay Xóa không
+                if (columnName == "btnSua")
+                {
+                    if (dgvChiSoNuoc.Rows[e.RowIndex].Cells[7].Value.ToString() == "Xác thực")
+                    {
+                        MessageBox.Show("Chỉ số hiện tại đã được xác thực nên không thể sửa!!Vui lòng bỏ xác thực trước khi sửa chỉ số", "Thông báo");
+                    }
+                    else
+                    {
+                        string id = dgvChiSoNuoc.CurrentRow.Cells[0].Value.ToString();
+                        tc.openChildForm1(new SuaCSDien(), panelChisoNuoc);
+
+                    }
+
+                }
+                else if (columnName == "btnXoa")
+                {
+                    // Lấy mã dịch vụ tương ứng với hàng đã được nhấp
+                    // string maDichVu = dgvDichVu.Rows[e.RowIndex].Cells["Mã dịch vụ"].Value.ToString();
+                    if (dgvChiSoNuoc.CurrentRow.Cells[7].Value.ToString() == "Chưa xác thực")
+                    {
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hóa đơn đã được xác thực!! Không thể xóa", "Thông báo");
+                    }
+                }
+            }
         }
         public void Setcbb()
         {
@@ -233,6 +296,11 @@ namespace PBL3___Motel_Management_System
                 LoadForm(null);
 
             }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -30,26 +30,18 @@
         {
             this.cbbDay = new System.Windows.Forms.ComboBox();
             this.panelHopDong = new System.Windows.Forms.Panel();
+            this.btnTimKiem = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.cbbPhong = new System.Windows.Forms.ComboBox();
             this.btnChiTiet = new FontAwesome.Sharp.IconButton();
-            this.dgvHopDong = new System.Windows.Forms.DataGridView();
-            this.MaHopDong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenNguoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenPhongTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDayTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayBatDau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayKetThuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TienCoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.btnTimKiem = new FontAwesome.Sharp.IconButton();
+            this.dgvHD = new System.Windows.Forms.DataGridView();
             this.panelHopDong.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHopDong)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).BeginInit();
             this.SuspendLayout();
             // 
             // cbbDay
@@ -69,11 +61,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelHopDong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.panelHopDong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelHopDong.Controls.Add(this.dgvHD);
             this.panelHopDong.Controls.Add(this.btnTimKiem);
             this.panelHopDong.Controls.Add(this.iconButton1);
             this.panelHopDong.Controls.Add(this.cbbPhong);
             this.panelHopDong.Controls.Add(this.btnChiTiet);
-            this.panelHopDong.Controls.Add(this.dgvHopDong);
             this.panelHopDong.Controls.Add(this.label1);
             this.panelHopDong.Controls.Add(this.label2);
             this.panelHopDong.Controls.Add(this.cbbDay);
@@ -81,6 +73,38 @@
             this.panelHopDong.Name = "panelHopDong";
             this.panelHopDong.Size = new System.Drawing.Size(914, 385);
             this.panelHopDong.TabIndex = 41;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnTimKiem.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.btnTimKiem.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.btnTimKiem.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnTimKiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTimKiem.IconSize = 25;
+            this.btnTimKiem.Location = new System.Drawing.Point(396, 29);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(35, 35);
+            this.btnTimKiem.TabIndex = 54;
+            this.btnTimKiem.UseVisualStyleBackColor = false;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.NotesMedical;
+            this.iconButton1.IconColor = System.Drawing.Color.White;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 25;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(120, 25);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(90, 43);
+            this.iconButton1.TabIndex = 53;
+            this.iconButton1.Text = "Gia hạn ";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // cbbPhong
             // 
@@ -106,81 +130,6 @@
             this.btnChiTiet.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnChiTiet.UseVisualStyleBackColor = false;
             this.btnChiTiet.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // dgvHopDong
-            // 
-            this.dgvHopDong.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvHopDong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvHopDong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHopDong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaHopDong,
-            this.Stt,
-            this.TenNguoi,
-            this.TenPhongTro,
-            this.TenDayTro,
-            this.NgayBatDau,
-            this.NgayKetThuc,
-            this.TienCoc});
-            this.dgvHopDong.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvHopDong.Location = new System.Drawing.Point(11, 94);
-            this.dgvHopDong.Name = "dgvHopDong";
-            this.dgvHopDong.RowHeadersWidth = 51;
-            this.dgvHopDong.RowTemplate.Height = 24;
-            this.dgvHopDong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHopDong.Size = new System.Drawing.Size(888, 173);
-            this.dgvHopDong.TabIndex = 8;
-            this.dgvHopDong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // MaHopDong
-            // 
-            this.MaHopDong.HeaderText = "Mã Hợp Đồng";
-            this.MaHopDong.MinimumWidth = 6;
-            this.MaHopDong.Name = "MaHopDong";
-            this.MaHopDong.Visible = false;
-            // 
-            // Stt
-            // 
-            this.Stt.HeaderText = "STT";
-            this.Stt.MinimumWidth = 6;
-            this.Stt.Name = "Stt";
-            // 
-            // TenNguoi
-            // 
-            this.TenNguoi.HeaderText = "Tên Khách Hàng";
-            this.TenNguoi.MinimumWidth = 6;
-            this.TenNguoi.Name = "TenNguoi";
-            // 
-            // TenPhongTro
-            // 
-            this.TenPhongTro.HeaderText = "Tên phòng trọ";
-            this.TenPhongTro.MinimumWidth = 6;
-            this.TenPhongTro.Name = "TenPhongTro";
-            // 
-            // TenDayTro
-            // 
-            this.TenDayTro.HeaderText = "Tên dãy trọ";
-            this.TenDayTro.MinimumWidth = 6;
-            this.TenDayTro.Name = "TenDayTro";
-            // 
-            // NgayBatDau
-            // 
-            this.NgayBatDau.HeaderText = "Ngày bắt đầu";
-            this.NgayBatDau.MinimumWidth = 6;
-            this.NgayBatDau.Name = "NgayBatDau";
-            // 
-            // NgayKetThuc
-            // 
-            this.NgayKetThuc.HeaderText = "Ngày kết thúc";
-            this.NgayKetThuc.MinimumWidth = 6;
-            this.NgayKetThuc.Name = "NgayKetThuc";
-            // 
-            // TienCoc
-            // 
-            this.TienCoc.HeaderText = "Tiền cọc";
-            this.TienCoc.MinimumWidth = 6;
-            this.TienCoc.Name = "TienCoc";
             // 
             // label1
             // 
@@ -226,36 +175,21 @@
             this.label4.TabIndex = 25;
             this.label4.Text = "QUẢN LÝ HỢP ĐỒNG";
             // 
-            // iconButton1
+            // dgvHD
             // 
-            this.iconButton1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.NotesMedical;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 25;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(120, 25);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(90, 43);
-            this.iconButton1.TabIndex = 53;
-            this.iconButton1.Text = "Gia hạn ";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton1.UseVisualStyleBackColor = false;
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnTimKiem.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.btnTimKiem.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnTimKiem.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnTimKiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTimKiem.IconSize = 25;
-            this.btnTimKiem.Location = new System.Drawing.Point(396, 29);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(35, 35);
-            this.btnTimKiem.TabIndex = 54;
-            this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.dgvHD.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dgvHD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvHD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHD.BackgroundColor = System.Drawing.Color.Ivory;
+            this.dgvHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHD.Location = new System.Drawing.Point(11, 102);
+            this.dgvHD.Name = "dgvHD";
+            this.dgvHD.RowHeadersWidth = 51;
+            this.dgvHD.RowTemplate.Height = 24;
+            this.dgvHD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHD.Size = new System.Drawing.Size(888, 200);
+            this.dgvHD.TabIndex = 55;
             // 
             // Hopdong
             // 
@@ -267,9 +201,9 @@
             this.Text = "  ";
             this.panelHopDong.ResumeLayout(false);
             this.panelHopDong.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHopDong)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -278,22 +212,14 @@
 
         private System.Windows.Forms.ComboBox cbbDay;
         private System.Windows.Forms.Panel panelHopDong;
-        private System.Windows.Forms.DataGridView dgvHopDong;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconButton btnChiTiet;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaHopDong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Stt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenNguoi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenPhongTro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenDayTro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayBatDau;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayKetThuc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TienCoc;
         private System.Windows.Forms.ComboBox cbbPhong;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton btnTimKiem;
+        private System.Windows.Forms.DataGridView dgvHD;
     }
 }

@@ -112,6 +112,7 @@
             // 
             // btnThemday
             // 
+            this.btnThemday.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.btnThemday.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnThemday.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnThemday.IconChar = FontAwesome.Sharp.IconChar.HouseChimneyMedical;

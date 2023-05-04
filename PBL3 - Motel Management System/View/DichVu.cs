@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Resources;
@@ -29,12 +30,14 @@ namespace PBL3___Motel_Management_System
             SetFontAndColors();
          
         }
+        //private Form activeForm = null;
+        TrangChu tc = new TrangChu();
         private void SetFontAndColors()
         {
             this.dgvDichVu.DefaultCellStyle.Font = new Font("Tahoma", 10);
             this.dgvDichVu.DefaultCellStyle.ForeColor = Color.Blue;
-            this.dgvDichVu.DefaultCellStyle.BackColor = Color.LightCoral;
-            this.dgvDichVu.DefaultCellStyle.SelectionForeColor = Color.LemonChiffon;
+            this.dgvDichVu.DefaultCellStyle.BackColor = Color.Beige;
+            this.dgvDichVu.DefaultCellStyle.SelectionForeColor = Color.Black;
             this.dgvDichVu.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
 
             DataGridViewRow row = this.dgvDichVu.RowTemplate;
@@ -44,33 +47,36 @@ namespace PBL3___Motel_Management_System
       
         private void LoadForm(string txtTim)
         {
-
-            DataGridViewButtonColumn btnCol = new DataGridViewButtonColumn();
+            if (dgvDichVu.Columns["btnSua"] == null)
+            {    
+                DataGridViewButtonColumn btnSua = new DataGridViewButtonColumn();
             {
-                btnCol.HeaderText = "Button Column Header";
-                btnCol.Name = "btnCol";
-                btnCol.Text = "Click Me";
-                btnCol.UseColumnTextForButtonValue = true;
-                this.dgvDichVu.Columns.Add(btnCol);
-            }
-
-            DataGridViewButtonColumn button = new DataGridViewButtonColumn();
+                btnSua.HeaderText = "";
+                btnSua.Name = "btnSua";
+                btnSua.Text = "Sửa";
+                btnSua.UseColumnTextForButtonValue = true;
+                this.dgvDichVu.Columns.Add(btnSua);
+               
+            }}
+            if (dgvDichVu.Columns["btnXoa"] == null)
+            {  
+                DataGridViewButtonColumn btnXoa = new DataGridViewButtonColumn();
             {
-                button.Name = "button";
-                button.HeaderText = "Chức năng";
-                button.Text = "Sửa";
-                // button.Icon
-                //button.Image = Properties.Resources.SomeIcon; 
-                //button.ImageLayout = DataGridViewImageCellLayout.Zoom;
-                button.FlatStyle = FlatStyle.Popup;
-                button.UseColumnTextForButtonValue = true; //dont forget this line
-                this.dgvDichVu.Columns.Add(button);
-            }
+                btnXoa.HeaderText = "";
+                btnXoa.Name = "btnXoa";
+                btnXoa.Text = "Xóa";
+                btnXoa.UseColumnTextForButtonValue = true;
+                this.dgvDichVu.Columns.Add(btnXoa);
+               
+            }}   
+
+
+            ///  string imagePath = @"E:\PBL3_MAIN\Icons\icons8-customer-20.png";
 
             DataTable dt = new DataTable();
             dt.Columns.AddRange(new DataColumn[]
             {
-               // new DataColumn{ColumnName = "Mã dịch vụ",DataType =  typeof(string)},
+               new DataColumn{ColumnName = "Mã dịch vụ",DataType =  typeof(string)},
                 new DataColumn{ColumnName = "STT",DataType =  typeof(int)},
                 new DataColumn{ColumnName = "Tên dịch vụ",DataType =  typeof(string)},
                 new DataColumn{ColumnName = "Giá dịch vụ",DataType =  typeof(double)},
@@ -83,7 +89,7 @@ namespace PBL3___Motel_Management_System
             foreach (ViewDichVu viewDichVu in qLBLL.DgvDichVu(txtTim))
             {
                 DataRow row = dt.NewRow();
-                //  row["Mã dịch vụ"] = viewDichVu.MaDichVu;
+                 row["Mã dịch vụ"] = viewDichVu.MaDichVu;
                 row["STT"] = viewDichVu.Stt;
                 row["Tên dịch vụ"] = viewDichVu.TenDichVu;
                 row["Giá dịch vụ"] = viewDichVu.GiaDichVu;
@@ -91,30 +97,73 @@ namespace PBL3___Motel_Management_System
                 dt.Rows.Add(row);
  
             }
-        
 
+            dgvDichVu.CellContentClick += DgvDichVu_CellContentClick;
+            // dgvDichVu.CellPainting += grid_CellPainting;
             dgvDichVu.DataSource = dt;
-            dgvDichVu.Columns[0].Visible = false;
-
+            //dgvDichVu.Columns[0].Visible = true;
+            dgvDichVu.Columns["Mã dịch vụ"].Visible = false;
         }
+        private void DgvDichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                // Lấy tên cột của ô đã được nhấp
+                string columnName = dgvDichVu.Columns[e.ColumnIndex].Name;
+
+                // Kiểm tra xem ô đã được nhấp có phải là nút Sửa hay Xóa không
+                if (columnName == "btnSua")
+                {
+                    // Lấy mã dịch vụ tương ứng với hàng đã được nhấp
+                    string maDichVu = dgvDichVu.Rows[e.RowIndex].Cells["Mã dịch vụ"].Value.ToString();
+
+                    
+                    tc.openChildForm1(new SuaDichVu(maDichVu, LoadForm), panelDV);
+                }
+                else if (columnName == "btnXoa")
+                {
+                    // Lấy mã dịch vụ tương ứng với hàng đã được nhấp
+                    // string maDichVu = dgvDichVu.Rows[e.RowIndex].Cells["Mã dịch vụ"].Value.ToString();
+
+                    string id = dgvDichVu.Rows[e.RowIndex].Cells["Mã dịch vụ"].Value.ToString();
+                    if (id != "000" && id != "001")
+                    {
+                        QLBLL qLBLL = new QLBLL();
+                        qLBLL.DelChiTietDichVuByIdDichVu(id);
+                        qLBLL.DelDichVu(id);
+                        MessageBox.Show("Xóa dịch vụ thành công", "Thông báo");
+                        LoadForm(null);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đây là dịch vụ cố định!! Không thể xóa");
+                    }
+                }
+            }
+        }
+
+
         //private void grid_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         //{
+        //    Debug.WriteLine("grid_CellPainting called");
         //    if (e.RowIndex < 0)
         //        return;
-        //    ResourceManager rm = Resources.ResourceManager;
-        //    Bitmap someImage = (Bitmap)rm.GetObject("E:\\PBL3_MAIN\\Icons\\icons8-customer-20.png");
-        //    //Image someImage = Properties.Resources.SomeImage;
+
         //    //I supposed your button column is at index 0
-        //    if (e.ColumnIndex == 0)
+        //    if (e.ColumnIndex == 0 && e.RowIndex >= 0)
         //    {
+        //        var button = (DataGridViewButtonCell)sender;
         //        e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-                
-        //        var w = Properties.Resources.SomeImage.Width;
-        //        var h = Properties.Resources.SomeImage.Height;
+        //        var buttonSize = button.Size;
+        //        var iconPath = @"C:\Users\HP VICTUS\Downloads\icons8-save-20.png";
+        //        var icon = Image.FromFile(iconPath);
+        //        var scaledIcon = new Bitmap(icon, buttonSize.Width - 10, buttonSize.Height - 10);
+        //        var w = icon.Width;
+        //        var h = icon.Height;
         //        var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
         //        var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
-
-        //        e.Graphics.DrawImage(someImage, new Rectangle(x, y, w, h));
+        //        e.Graphics.DrawImage(scaledIcon, new Point(button.ContentBounds.X + 5, button.ContentBounds.Y + 5));
+        //        e.Graphics.DrawImage(icon, new Rectangle(x, y, w, h));
         //        e.Handled = true;
         //    }
         //}
@@ -264,8 +313,7 @@ namespace PBL3___Motel_Management_System
         {
 
         }
-        private Form activeForm = null;
-        TrangChu tc = new TrangChu();
+        
 
       
         private void btnThemPhong_Click_1(object sender, EventArgs e)
@@ -282,7 +330,7 @@ namespace PBL3___Motel_Management_System
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            LoadForm(txtTimKiem.Text);
+            LoadForm(txtTim.Text);
         }
 
         private void btnXoaPhong_Click(object sender, EventArgs e)
