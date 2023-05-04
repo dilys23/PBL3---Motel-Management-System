@@ -81,6 +81,7 @@ namespace PBL3___Motel_Management_System.View
             QLBLL qLBLL = new QLBLL();  
             Nguoi nguoi = new Nguoi();
             nguoi = tp.hopDong.Nguoi;
+#pragma warning disable CS0168 // Variable is declared but never used
             try
             {
                 qLBLL.AddNguoiBll(nguoi);
@@ -89,6 +90,7 @@ namespace PBL3___Motel_Management_System.View
             {
                 qLBLL.UpdateNguoiBLL(nguoi);
             }
+#pragma warning restore CS0168 // Variable is declared but never used
             PhongTro pt = new PhongTro();
             pt = qLBLL.GetPhongTroByIdPhong(tp.hopDong.MaPhongTro);
             pt.TinhTrang = true;
@@ -114,6 +116,7 @@ namespace PBL3___Motel_Management_System.View
             hd.NgayKetThuc = tp.hopDong.NgayKetThuc;
             hd.TienCoc = tp.hopDong.TienCoc;
             hd.TinhTrang = true;
+#pragma warning disable CS0168 // Variable is declared but never used
             try
             {
                 qLBLL.AddHdBll(hd);
@@ -122,6 +125,7 @@ namespace PBL3___Motel_Management_System.View
             {
                 qLBLL.UpdateHopDongBLL(hd);
             }
+#pragma warning restore CS0168 // Variable is declared but never used
             MessageBox.Show("Xác nhận thuê phòng thành công", "Thông báo",MessageBoxButtons.OK); 
             this.loader(null);
             this.Close();

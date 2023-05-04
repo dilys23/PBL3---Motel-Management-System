@@ -13,7 +13,9 @@ namespace PBL3___Motel_Management_System.View
 {
     public partial class ChitietPhongtro : Form
     {
+#pragma warning disable CS0649 // Field 'ChitietPhongtro.tp' is never assigned to, and will always have its default value null
         private ThuePhong tp;
+#pragma warning restore CS0649 // Field 'ChitietPhongtro.tp' is never assigned to, and will always have its default value null
         public ChitietPhongtro()
         {
             InitializeComponent();

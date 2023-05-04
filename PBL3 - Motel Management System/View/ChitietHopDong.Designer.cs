@@ -560,7 +560,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.Label label13;
+#pragma warning disable CS0169 // The field 'ChitietHopDong.label14' is never used
         private System.Windows.Forms.Label label14;
+#pragma warning restore CS0169 // The field 'ChitietHopDong.label14' is never used
         private System.Windows.Forms.TextBox txtGiaPhong;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridView dgvThietbi;

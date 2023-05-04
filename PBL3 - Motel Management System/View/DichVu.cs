@@ -211,7 +211,9 @@ namespace PBL3___Motel_Management_System
         {
 
         }
+#pragma warning disable CS0414 // The field 'Dichvu.activeForm' is assigned but its value is never used
         private Form activeForm = null;
+#pragma warning restore CS0414 // The field 'Dichvu.activeForm' is assigned but its value is never used
         TrangChu tc = new TrangChu();
 
       

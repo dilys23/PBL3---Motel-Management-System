@@ -18,5 +18,19 @@ namespace PBL3___Motel_Management_System.View
             InitializeComponent();
             this.idPhong = idPhong;
         }
+
+        TrangChu tc = new TrangChu();
+        private void btnHopDong_Click_1(object sender, EventArgs e)
+        {
+            ChitietHopDong ct = new ChitietHopDong(null, null);
+            tc.openChildForm1(ct, panelChitietPT);
+            ct.btnXacNhan.Visible = false;
+        }
+
+        private void btnThanhVien_Click(object sender, EventArgs e)
+        {
+
+            tc.openChildForm1(new ChitietThanhVien(idPhong), panelChitietPT);
+        }
     }
 }

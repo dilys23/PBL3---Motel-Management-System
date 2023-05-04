@@ -205,7 +205,6 @@ namespace PBL3___Motel_Management_System.DAL
                 var s = data.DichVu.Select(p => p);
                 list = s.ToList<DichVu>();
             }
-
             return list;
         }
         public List<ThietBi> GetAllThietBi()
