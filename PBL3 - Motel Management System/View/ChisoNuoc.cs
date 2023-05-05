@@ -35,6 +35,7 @@ namespace PBL3___Motel_Management_System
             row.MinimumHeight = 20;
         }
         TrangChu tc = new TrangChu();
+        Dichvu dv = new Dichvu();   
         private void ChisoNuoc_Load(object sender, EventArgs e)
         {
 
@@ -71,7 +72,7 @@ namespace PBL3___Motel_Management_System
                 {
                     btnSua.HeaderText = "";
                     btnSua.Name = "btnSua";
-                    btnSua.Text = "Sửa";
+                    //btnSua.Text = "Sửa";
                     btnSua.UseColumnTextForButtonValue = true;
                     btnSua.DisplayIndex = 0;
                     this.dgvChiSoNuoc.Columns.Add(btnSua);
@@ -84,7 +85,7 @@ namespace PBL3___Motel_Management_System
                 {
                     btnXoa.HeaderText = "";
                     btnXoa.Name = "btnXoa";
-                    btnXoa.Text = "Xóa";
+                   // btnXoa.Text = "Xóa";
                     btnXoa.UseColumnTextForButtonValue = true;
                     btnXoa.DisplayIndex = 1;
                     this.dgvChiSoNuoc.Columns.Add(btnXoa);
@@ -156,6 +157,9 @@ namespace PBL3___Motel_Management_System
                 }
             }
             dgvChiSoNuoc.CellContentClick += DgvChisoNuoc_CellContentClick;
+            var Sua = System.Drawing.Image.FromFile(@"D:\PblProject\Pbl3_Main\PBL3 - Motel Management System\Icons\icons8-create-25.png");
+            var Xoa = System.Drawing.Image.FromFile(@"D:\PblProject\Pbl3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
+            dgvChiSoNuoc.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dv.dgvIcons_CellPainting1(dgvChiSoNuoc, e, Sua, Xoa));
         }
         private void DgvChisoNuoc_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
