@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBL3___Motel_Management_System.BLL;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
@@ -225,6 +226,14 @@ namespace PBL3___Motel_Management_System.DAL
                 data.DichVu.Add(dv);
                 data.SaveChanges();
 
+            }
+        }
+        public HopDong GetHopDongByIdPhong(string idphong)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+               var s= data.HopDong.Single(p=>p.MaPhongTro == idphong);
+                return s;
             }
         }
         public void ThemTBDal(ThietBi tb)

@@ -39,23 +39,30 @@ namespace PBL3___Motel_Management_System.View
             dgvXoaDichVu.Columns[0].Visible = false;
             QLBLL qLBLL = new QLBLL();
             int i = 0;
-            foreach (ViewDichVu viewDichVu in qLBLL.DgvDichVu(null))
-            {  if(viewDichVu.MaDichVu != "000" && viewDichVu.MaDichVu != "001")
-                {
-                dgvThemDichVu.Rows.Add(viewDichVu.MaDichVu, ++i, viewDichVu.TenDichVu, viewDichVu.GiaDichVu);
-                }
-                else
-                {
-                    dgvDVcodinh.Rows.Add(viewDichVu.MaDichVu, viewDichVu.Stt, viewDichVu.TenDichVu, viewDichVu.GiaDichVu);
-                }
-            }
-            foreach (string idDv in qLBLL.GetAllIdDichVuByIdPhong(tp.hopDong.MaPhongTro))
+            string maHD = qLBLL.GetHopDongByIdPhong(tp.hopDong.MaPhongTro).MaHopDong;
+            if (maHD== null)
             {
-                DichVu dv = new DichVu();
-                dv = qLBLL.GetDVByIdDV(idDv);
-                dgvXoaDichVu.Rows.Add(dv.MaDichVu, i++, dv.TenDichVu, dv.GiaDichVu);
+                foreach (ViewDichVu viewDichVu in qLBLL.DgvDichVu(null))
+                {
+                    if (viewDichVu.MaDichVu != "000" && viewDichVu.MaDichVu != "001")
+                    {
+                        dgvThemDichVu.Rows.Add(viewDichVu.MaDichVu, ++i, viewDichVu.TenDichVu, viewDichVu.GiaDichVu);
+                    }
+                    else
+                    {
+                        dgvDVcodinh.Rows.Add(viewDichVu.MaDichVu, viewDichVu.Stt, viewDichVu.TenDichVu, viewDichVu.GiaDichVu);
+                    }
+                }
             }
-            
+            else
+            {
+                foreach (string idDv in qLBLL.GetAllIdDichVuByIdPhong(tp.hopDong.MaPhongTro))
+                {
+                    DichVu dv = new DichVu();
+                    dv = qLBLL.GetDVByIdDV(idDv);
+                    dgvXoaDichVu.Rows.Add(dv.MaDichVu, i++, dv.TenDichVu, dv.GiaDichVu);
+                }
+            }
                  
             dgvThemDichVu.Columns[0].Visible = false;
 
