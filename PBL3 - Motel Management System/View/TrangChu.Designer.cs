@@ -79,7 +79,7 @@
             this.btnTK.IconColor = System.Drawing.Color.DarkCyan;
             this.btnTK.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTK.IconSize = 25;
-            this.btnTK.Location = new System.Drawing.Point(1081, 44);
+            this.btnTK.Location = new System.Drawing.Point(1081, 39);
             this.btnTK.Name = "btnTK";
             this.btnTK.Size = new System.Drawing.Size(45, 39);
             this.btnTK.TabIndex = 4;
@@ -273,7 +273,7 @@
             this.btnTrangchu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTrangchu.IconSize = 35;
             this.btnTrangchu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTrangchu.Location = new System.Drawing.Point(8, 90);
+            this.btnTrangchu.Location = new System.Drawing.Point(8, 92);
             this.btnTrangchu.Name = "btnTrangchu";
             this.btnTrangchu.Size = new System.Drawing.Size(186, 41);
             this.btnTrangchu.TabIndex = 7;

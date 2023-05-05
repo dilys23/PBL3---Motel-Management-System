@@ -175,6 +175,7 @@ namespace PBL3___Motel_Management_System
             this.dgvDichVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDichVu.Size = new System.Drawing.Size(872, 297);
             this.dgvDichVu.TabIndex = 50;
+            this.dgvDichVu.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDichVu_CellFormatting);
             // 
             // Dichvu
             // 

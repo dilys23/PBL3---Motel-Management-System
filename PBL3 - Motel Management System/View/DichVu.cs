@@ -102,11 +102,13 @@ namespace PBL3___Motel_Management_System
             }
 
             dgvDichVu.CellContentClick += DgvDichVu_CellContentClick;
-            var Sua = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-create-25.png");
-            var Xoa = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
+            var Sua = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-create-25.png");
+            var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-delete-25.png");
             dgvDichVu.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dgvIcons_CellPainting1(dgvDichVu, e, Sua, Xoa));
            // dgvDichVu.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvIcons_CellPainting);
+           dgvDichVu.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler((sender, e) => dgvToolTip_CellFormatting(dgvDichVu, e));
             dgvDichVu.DataSource = dt;
+            dgvDichVu.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDichVu_CellFormatting);
             dgvDichVu.Columns["Mã dịch vụ"].Visible = false;
         }
         private void DgvDichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -362,6 +364,65 @@ namespace PBL3___Motel_Management_System
             else
             {
                 MessageBox.Show("Đây là dịch vụ cố định!! Không thể xóa");
+            }
+        }
+
+        private void dgvDichVu_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvDichVu.Columns[e.ColumnIndex].Name == "btnSua")
+            {
+                if (e.Value != null)
+                {
+                    // Kiểm tra nếu ô là DataGridViewButtonCell
+                    if (dgvDichVu.Rows[e.RowIndex].Cells[e.ColumnIndex] is DataGridViewButtonCell)
+                    {
+                        // Đặt giá trị ToolTipText cho ô DataGridViewButtonCell
+                        DataGridViewButtonCell buttonCell = (DataGridViewButtonCell)dgvDichVu.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                        buttonCell.ToolTipText = "Chỉnh sửa";
+                    }
+                }
+            }
+            if (dgvDichVu.Columns[e.ColumnIndex].Name == "btnXoa")
+            {
+                if (e.Value != null)
+                {
+                    // Kiểm tra nếu ô là DataGridViewButtonCell
+                    if (dgvDichVu.Rows[e.RowIndex].Cells[e.ColumnIndex] is DataGridViewButtonCell)
+                    {
+                        // Đặt giá trị ToolTipText cho ô DataGridViewButtonCell
+                        DataGridViewButtonCell buttonCell = (DataGridViewButtonCell)dgvDichVu.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                        buttonCell.ToolTipText = "Xóa"; 
+                    }
+                }
+            }
+        }
+        public void dgvToolTip_CellFormatting(DataGridView dgv,  DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgv.Columns[e.ColumnIndex].Name == "btnSua")
+            {
+                if (e.Value != null)
+                {
+                    // Kiểm tra nếu ô là DataGridViewButtonCell
+                    if (dgvDichVu.Rows[e.RowIndex].Cells[e.ColumnIndex] is DataGridViewButtonCell)
+                    {
+                        // Đặt giá trị ToolTipText cho ô DataGridViewButtonCell
+                        DataGridViewButtonCell buttonCell = (DataGridViewButtonCell)dgvDichVu.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                        buttonCell.ToolTipText = "Chỉnh sửa";
+                    }
+                }
+            }
+            if (dgv.Columns[e.ColumnIndex].Name == "btnXoa")
+            {
+                if (e.Value != null)
+                {
+                    // Kiểm tra nếu ô là DataGridViewButtonCell
+                    if (dgv.Rows[e.RowIndex].Cells[e.ColumnIndex] is DataGridViewButtonCell)
+                    {
+                        // Đặt giá trị ToolTipText cho ô DataGridViewButtonCell
+                        DataGridViewButtonCell buttonCell = (DataGridViewButtonCell)dgvDichVu.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                        buttonCell.ToolTipText = "Xóa";
+                    }
+                }
             }
         }
     }

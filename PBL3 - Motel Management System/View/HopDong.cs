@@ -54,30 +54,31 @@ namespace PBL3___Motel_Management_System
         }
 
         TrangChu tc = new TrangChu();
+        Dichvu dv = new Dichvu();
        
         private void LoadForm(string txtTim)
         {
-            if (dgvHD.Columns["btnChiTiet"] == null)
+            if (dgvHD.Columns["btnSua"] == null)
             {
-                DataGridViewButtonColumn btnChiTiet = new DataGridViewButtonColumn();
+                DataGridViewButtonColumn btnSua = new DataGridViewButtonColumn();
                 {
-                    btnChiTiet.HeaderText = "";
-                    btnChiTiet.Name = "btnChiTiet";
-                    btnChiTiet.Text = "Chi Tiết";
-                    btnChiTiet.UseColumnTextForButtonValue = true;
-                    this.dgvHD.Columns.Add(btnChiTiet);
+                    btnSua.HeaderText = "";
+                    btnSua.Name = "btnSua";
+                   // btnSua.Text = "Chi Tiết";
+                    btnSua.UseColumnTextForButtonValue = true;
+                    this.dgvHD.Columns.Add(btnSua);
 
                 }
             }
-            if (dgvHD.Columns["btnGiaHan"] == null)
+            if (dgvHD.Columns["btnXoa"] == null)
             {
-                DataGridViewButtonColumn btnGiaHan = new DataGridViewButtonColumn();
+                DataGridViewButtonColumn btnXoa = new DataGridViewButtonColumn();
                 {
-                    btnGiaHan.HeaderText = "";
-                    btnGiaHan.Name = "btnGiaHan";
-                    btnGiaHan.Text = "Gia Hạn";
-                    btnGiaHan.UseColumnTextForButtonValue = true;
-                    this.dgvHD.Columns.Add(btnGiaHan);
+                    btnXoa.HeaderText = "";
+                    btnXoa.Name = "btnXoa";
+                  //  btnXoa.Text = "Gia Hạn";
+                    btnXoa.UseColumnTextForButtonValue = true;
+                    this.dgvHD.Columns.Add(btnXoa);
 
                 }
             }
@@ -108,6 +109,9 @@ namespace PBL3___Motel_Management_System
             }
 
             dgvHD.CellContentClick += DgvDichVu_CellContentClick;
+            var Sua = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-more-details-20.png");
+            var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-time-25.png");
+            dgvHD.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dv.dgvIcons_CellPainting1(dgvHD, e, Sua, Xoa));
             // dgvDichVu.CellPainting += grid_CellPainting;
             dgvHD.DataSource = dt;
             dgvHD.Columns["Mã HD"].Visible = false;
@@ -121,7 +125,7 @@ namespace PBL3___Motel_Management_System
                 string columnName = dgvHD.Columns[e.ColumnIndex].Name;
 
                 // Kiểm tra xem ô đã được nhấp có phải là nút Sửa hay Xóa không
-                if (columnName == "btnChitiet")
+                if (columnName == "btnSua")
                 {
                     // Lấy mã dịch vụ tương ứng với hàng đã được nhấp
                    // string id = dgvHD.Rows[e.RowIndex].Cells["Mã Thiết bị"].Value.ToString();

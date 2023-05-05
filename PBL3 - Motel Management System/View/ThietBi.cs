@@ -79,8 +79,8 @@ namespace PBL3___Motel_Management_System.View
             {
                 dt.Rows.Add(viewThietBi.MaThietBi, viewThietBi.Stt, viewThietBi.TenThietBi, viewThietBi.GiaThietBi);
             }
-            var Sua = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-create-25.png");
-            var Xoa = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
+            var Sua = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-create-25.png");
+            var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-delete-25.png");
             dgvThietBi.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dv.dgvIcons_CellPainting1(dgvThietBi, e, Sua, Xoa));
             
             dgvThietBi.CellContentClick += DgvThietBi_CellContentClick;
