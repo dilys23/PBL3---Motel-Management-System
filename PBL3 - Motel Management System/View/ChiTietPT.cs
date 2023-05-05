@@ -31,7 +31,6 @@ namespace PBL3___Motel_Management_System.View
         }
         TrangChu tc = new TrangChu();
         QLBLL qLBLL = new QLBLL();
-        //tp.hopDong.MaHopDong =qLBLL.GetHopDongByIdPhong(idPhong).MaHopDong;
         private void btnHopDong_Click_1(object sender, EventArgs e)
         {
             ThuePhong tp = new ThuePhong();

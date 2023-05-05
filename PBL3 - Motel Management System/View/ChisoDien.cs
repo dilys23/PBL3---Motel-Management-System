@@ -24,56 +24,21 @@ namespace PBL3___Motel_Management_System.View
             InitializeComponent();
             LoadForm(null);
             Setcbb();
-            SetFontAndColors();
         }
 
         TrangChu tc = new TrangChu();
         Dichvu dv = new Dichvu();
-        private void SetFontAndColors()
+        
+        private void LoadForm(string txt)
         {
+            dgvChiSoDien.Rows.Clear();
             this.dgvChiSoDien.DefaultCellStyle.Font = new Font("Tahoma", 10);
             this.dgvChiSoDien.DefaultCellStyle.ForeColor = Color.Blue;
             this.dgvChiSoDien.DefaultCellStyle.BackColor = Color.Beige;
             this.dgvChiSoDien.DefaultCellStyle.SelectionForeColor = Color.AliceBlue;
             this.dgvChiSoDien.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
-
-            DataGridViewRow row = this.dgvChiSoDien.RowTemplate;
-            row.Height = 35;
-            row.MinimumHeight = 20;
-        }
-        private void ChisoDien_Load(object sender, EventArgs e)
-        {
-
-        }
-        private void LoadForm(string txt)
-        {
-            dgvChiSoDien.Rows.Clear();
-            if (dgvChiSoDien.Columns["btnSua"] == null)
-            {
-                DataGridViewButtonColumn btnSua = new DataGridViewButtonColumn();
-                {
-                    btnSua.HeaderText = "";
-                    btnSua.Name = "btnSua";
-                   // btnSua.Text = "Sửa";
-                    btnSua.UseColumnTextForButtonValue = true;
-                    btnSua.DisplayIndex = 0;
-                    this.dgvChiSoDien.Columns.Add(btnSua);
-
-                }
-            }
-            if (dgvChiSoDien.Columns["btnXoa"] == null)
-            {
-                DataGridViewButtonColumn btnXoa = new DataGridViewButtonColumn();
-                {
-                    btnXoa.HeaderText = "";
-                    btnXoa.Name = "btnXoa";
-                    //btnXoa.Text = "Xóa";
-                    btnXoa.UseColumnTextForButtonValue = true;
-                    btnXoa.DisplayIndex = 1;
-                    this.dgvChiSoDien.Columns.Add(btnXoa);
-
-                }
-            }
+            this.dgvChiSoDien.RowTemplate.Height = 35;
+            this.dgvChiSoDien.RowTemplate.MinimumHeight = 20;
             QLBLL qLBLL = new QLBLL();
             if(txt==null)
             {
@@ -138,48 +103,9 @@ namespace PBL3___Motel_Management_System.View
                     }
                 }
             }
-
-            dgvChiSoDien.CellContentClick += DgvChisoDien_CellContentClick;
             var Sua = System.Drawing.Image.FromFile(@"D:\PblProject\Pbl3_Main\PBL3 - Motel Management System\Icons\icons8-create-25.png");
             var Xoa = System.Drawing.Image.FromFile(@"D:\PblProject\Pbl3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
             dgvChiSoDien.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dv.dgvIcons_CellPainting1(dgvChiSoDien, e, Sua, Xoa));
-        }
-        private void DgvChisoDien_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                // Lấy tên cột của ô đã được nhấp
-                string columnName = dgvChiSoDien.Columns[e.ColumnIndex].Name;
-
-                // Kiểm tra xem ô đã được nhấp có phải là nút Sửa hay Xóa không
-                if (columnName == "btnSua")
-                {
-                    if (dgvChiSoDien.Rows[e.RowIndex].Cells[7].Value.ToString() == "Xác thực")
-                    {
-                        MessageBox.Show("Chỉ số hiện tại đã được xác thực nên không thể sửa!!Vui lòng bỏ xác thực trước khi sửa chỉ số", "Thông báo");
-                    }
-                    else
-                    {
-                        string id = dgvChiSoDien.CurrentRow.Cells[0].Value.ToString();
-                        tc.openChildForm1(new SuaCSDien(), panelChisoDien);
-
-                    }
-
-                }
-                else if (columnName == "btnXoa")
-                {
-                    // Lấy mã dịch vụ tương ứng với hàng đã được nhấp
-                    // string maDichVu = dgvDichVu.Rows[e.RowIndex].Cells["Mã dịch vụ"].Value.ToString();
-                    if (dgvChiSoDien.CurrentRow.Cells[7].Value.ToString() == "Chưa xác thực")
-                    {
-                        
-                    }
-                    else
-                    {
-                        MessageBox.Show("Hóa đơn đã được xác thực!! Không thể xóa", "Thông báo");
-                    }
-                }
-            }
         }
         public void Setcbb()
         {
@@ -277,27 +203,10 @@ namespace PBL3___Motel_Management_System.View
             // Gán ngày đó cho DateTimePicker
             dtpThangSuDung.Value = date;
         }
-
-        private void cbbPhongTro_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             LoadForm("");
         }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            tc.openChildForm1(new SuaCSDien(), panelChisoDien);
-        }
-
         private void btnHuyXacThuc_Click(object sender, EventArgs e)
         {
             if(dgvChiSoDien.CurrentRow.Cells[9].Value.ToString() != "Đã xác thực")
@@ -319,7 +228,33 @@ namespace PBL3___Motel_Management_System.View
 
         private void dgvChiSoDien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            tc.openChildForm1(new SuaCSDien(), panelChisoDien);
+                string columnName = dgvChiSoDien.Columns[e.ColumnIndex].Name;
+                if (columnName == "btnSua")
+                {
+                    if (dgvChiSoDien.Rows[e.RowIndex].Cells[9].Value.ToString() == "Xác thực")
+                    {
+                        MessageBox.Show("Chỉ số hiện tại đã được xác thực nên không thể sửa!!Vui lòng bỏ xác thực trước khi sửa chỉ số", "Thông báo");
+                    }
+                    else
+                    {
+                        string id = dgvChiSoDien.CurrentRow.Cells[0].Value.ToString();
+                        tc.openChildForm1(new SuaCSDien(), panelChisoDien);
+
+                    }
+
+                }
+                else if (columnName == "btnXoa")
+                {
+                    if (dgvChiSoDien.CurrentRow.Cells[9].Value.ToString() == "Chưa xác thực")
+                    {
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hóa đơn đã được xác thực!! Không thể xóa", "Thông báo");
+                    }
+                }
+            
         }
 
         private void btnXoa_Click(object sender, EventArgs e)

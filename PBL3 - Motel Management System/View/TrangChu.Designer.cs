@@ -49,15 +49,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMenu = new FontAwesome.Sharp.IconButton();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.panelTitle.SuspendLayout();
             this.paneMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelDesktop.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTitle
@@ -386,55 +381,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDesktop.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panelDesktop.Controls.Add(this.panel5);
-            this.panelDesktop.Controls.Add(this.panel4);
-            this.panelDesktop.Controls.Add(this.panel3);
-            this.panelDesktop.Controls.Add(this.panel2);
             this.panelDesktop.Location = new System.Drawing.Point(200, 80);
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(1138, 669);
             this.panelDesktop.TabIndex = 5;
             this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
-            // 
-            // panel2
-            // 
-            this.panel2.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.panel2.AutoSize = true;
-            this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel2.Location = new System.Drawing.Point(24, 22);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(540, 300);
-            this.panel2.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel3.AutoSize = true;
-            this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel3.Location = new System.Drawing.Point(24, 350);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(540, 307);
-            this.panel3.TabIndex = 1;
-            // 
-            // panel4
-            // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.AutoSize = true;
-            this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel4.Location = new System.Drawing.Point(612, 22);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(514, 300);
-            this.panel4.TabIndex = 2;
-            // 
-            // panel5
-            // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.AutoSize = true;
-            this.panel5.BackColor = System.Drawing.SystemColors.Control;
-            this.panel5.Location = new System.Drawing.Point(612, 350);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(514, 307);
-            this.panel5.TabIndex = 3;
             // 
             // TrangChu
             // 
@@ -454,8 +405,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelDesktop.ResumeLayout(false);
-            this.panelDesktop.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -481,9 +430,5 @@
         private FontAwesome.Sharp.IconButton btnThietbi;
         private FontAwesome.Sharp.IconButton btnTK;
         private System.Windows.Forms.Panel panelDesktop;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
     }
 }

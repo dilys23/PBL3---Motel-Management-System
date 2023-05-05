@@ -32,10 +32,11 @@ namespace PBL3___Motel_Management_System.View
             DayTro dt = new DayTro();
             dt= qLBLL.GetDayTroByIdPhong(tp.hopDong.MaPhongTro);
             PhongTro pt = new PhongTro();
-             pt= qLBLL.GetPhongTroByIdPhong(tp.hopDong.MaPhongTro);
+            pt= qLBLL.GetPhongTroByIdPhong(tp.hopDong.MaPhongTro);
             Nguoi nguoi = new Nguoi();
-            string MaHD = qLBLL.GetHopDongByIdPhong(tp.hopDong.MaPhongTro).MaHopDong;
-            nguoi = qLBLL.GetNguoiByIdHopDong(MaHD);
+            nguoi = tp.hopDong.Nguoi;
+            //string MaHD = qLBLL.GetHopDongByIdPhong(tp.hopDong.MaPhongTro).MaHopDong;
+            //nguoi = qLBLL.GetNguoiByIdHopDong(MaHD);
             HopDong hopdong = new HopDong();
             hopdong = qLBLL.GetHopDongByIdPhong(tp.hopDong.MaPhongTro);
             txtHoVaTen.Text = nguoi.Ten;

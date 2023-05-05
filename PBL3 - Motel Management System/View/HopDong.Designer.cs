@@ -30,6 +30,7 @@
         {
             this.cbbDay = new System.Windows.Forms.ComboBox();
             this.panelHopDong = new System.Windows.Forms.Panel();
+            this.dgvHD = new System.Windows.Forms.DataGridView();
             this.btnTimKiem = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.cbbPhong = new System.Windows.Forms.ComboBox();
@@ -38,10 +39,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.dgvHD = new System.Windows.Forms.DataGridView();
             this.panelHopDong.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbbDay
@@ -73,6 +73,23 @@
             this.panelHopDong.Name = "panelHopDong";
             this.panelHopDong.Size = new System.Drawing.Size(914, 385);
             this.panelHopDong.TabIndex = 41;
+            // 
+            // dgvHD
+            // 
+            this.dgvHD.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dgvHD.AllowUserToAddRows = false;
+            this.dgvHD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvHD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHD.BackgroundColor = System.Drawing.Color.Ivory;
+            this.dgvHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHD.Location = new System.Drawing.Point(11, 102);
+            this.dgvHD.Name = "dgvHD";
+            this.dgvHD.RowHeadersWidth = 51;
+            this.dgvHD.RowTemplate.Height = 24;
+            this.dgvHD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvHD.Size = new System.Drawing.Size(888, 200);
+            this.dgvHD.TabIndex = 55;
             // 
             // btnTimKiem
             // 
@@ -175,22 +192,6 @@
             this.label4.TabIndex = 25;
             this.label4.Text = "QUẢN LÝ HỢP ĐỒNG";
             // 
-            // dgvHD
-            // 
-            this.dgvHD.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.dgvHD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvHD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvHD.BackgroundColor = System.Drawing.Color.Ivory;
-            this.dgvHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHD.Location = new System.Drawing.Point(11, 102);
-            this.dgvHD.Name = "dgvHD";
-            this.dgvHD.RowHeadersWidth = 51;
-            this.dgvHD.RowTemplate.Height = 24;
-            this.dgvHD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHD.Size = new System.Drawing.Size(888, 200);
-            this.dgvHD.TabIndex = 55;
-            // 
             // Hopdong
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -201,9 +202,9 @@
             this.Text = "  ";
             this.panelHopDong.ResumeLayout(false);
             this.panelHopDong.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).EndInit();
             this.ResumeLayout(false);
 
         }

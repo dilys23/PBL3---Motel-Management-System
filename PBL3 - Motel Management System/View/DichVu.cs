@@ -27,125 +27,31 @@ namespace PBL3___Motel_Management_System
         {
             InitializeComponent();
             LoadForm(null);
-            SetFontAndColors();
          
         }
-        //private Form activeForm = null;
         TrangChu tc = new TrangChu();
-        private void SetFontAndColors()
+        private Image editButtonImage;
+        private void LoadForm(string txtTim)
         {
+            dgvDichVu.Rows.Clear();
             this.dgvDichVu.DefaultCellStyle.Font = new Font("Tahoma", 10);
             this.dgvDichVu.DefaultCellStyle.ForeColor = Color.Blue;
             this.dgvDichVu.DefaultCellStyle.BackColor = Color.Beige;
             this.dgvDichVu.DefaultCellStyle.SelectionForeColor = Color.Black;
             this.dgvDichVu.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
-
-            DataGridViewRow row = this.dgvDichVu.RowTemplate;
-            row.Height = 35;
-            row.MinimumHeight = 20;
-        }
-        private Image editButtonImage;
-
-        private void LoadForm(string txtTim)
-        {
-          //  ToolTip toolTip1 = new ToolTip();
-
-            if (dgvDichVu.Columns["btnSua"] == null)
-            {    
-                DataGridViewButtonColumn btnSua = new DataGridViewButtonColumn();
-            {
-                btnSua.HeaderText = "";
-                btnSua.Name = "btnSua";
-               // btnSua.Text = "Sửa";
-                btnSua.UseColumnTextForButtonValue = true;
-                dgvDichVu.Columns.Add(btnSua);
-
-                }
-            }
-            if (dgvDichVu.Columns["btnXoa"] == null)
-            {  
-                DataGridViewButtonColumn btnXoa = new DataGridViewButtonColumn();
-            {
-                btnXoa.HeaderText = "";
-                btnXoa.Name = "btnXoa";
-               // btnXoa.Text = "Xóa";
-                btnXoa.UseColumnTextForButtonValue = true;
-                dgvDichVu.Columns.Add(btnXoa);
-
-                }
-            }
-            
-
-            DataTable dt = new DataTable();
-            dt.Columns.AddRange(new DataColumn[]
-            {
-               new DataColumn{ColumnName = "Mã dịch vụ",DataType =  typeof(string)},
-                new DataColumn{ColumnName = "STT",DataType =  typeof(int)},
-                new DataColumn{ColumnName = "Tên dịch vụ",DataType =  typeof(string)},
-                new DataColumn{ColumnName = "Giá dịch vụ",DataType =  typeof(double)},
-                
-
-        });
-
+            this.dgvDichVu.RowTemplate.Height = 35;
+            this.dgvDichVu.RowTemplate.MinimumHeight = 20;
             QLBLL qLBLL = new QLBLL();
-            
-            foreach (ViewDichVu viewDichVu in qLBLL.DgvDichVu(txtTim))
+            foreach(ViewDichVu viewDichVu in qLBLL.DgvDichVu(txtTim))
             {
-                DataRow row = dt.NewRow();
-                 row["Mã dịch vụ"] = viewDichVu.MaDichVu;
-                row["STT"] = viewDichVu.Stt;
-                row["Tên dịch vụ"] = viewDichVu.TenDichVu;
-                row["Giá dịch vụ"] = viewDichVu.GiaDichVu;
-               
-                dt.Rows.Add(row);
- 
-            }
-
-            dgvDichVu.CellContentClick += DgvDichVu_CellContentClick;
+                dgvDichVu.Rows.Add(viewDichVu.MaDichVu,viewDichVu.Stt,viewDichVu.TenDichVu,viewDichVu.GiaDichVu);
+            }    
             var Sua = System.Drawing.Image.FromFile(@"D:\PblProject\Pbl3_Main\PBL3 - Motel Management System\Icons\icons8-create-25.png");
             var Xoa = System.Drawing.Image.FromFile(@"D:\PblProject\Pbl3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
             dgvDichVu.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dgvIcons_CellPainting1(dgvDichVu, e, Sua, Xoa));
-           // dgvDichVu.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvIcons_CellPainting);
-            dgvDichVu.DataSource = dt;
-            dgvDichVu.Columns["Mã dịch vụ"].Visible = false;
+        
         }
-        private void DgvDichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                // Lấy tên cột của ô đã được nhấp
-                string columnName = dgvDichVu.Columns[e.ColumnIndex].Name;
-
-                // Kiểm tra xem ô đã được nhấp có phải là nút Sửa hay Xóa không
-                if (columnName == "btnSua")
-                {
-                    // Lấy mã dịch vụ tương ứng với hàng đã được nhấp
-                    string maDichVu = dgvDichVu.Rows[e.RowIndex].Cells["Mã dịch vụ"].Value.ToString();
-
-                    
-                    tc.openChildForm1(new SuaDichVu(maDichVu, LoadForm), panelDV);
-                }
-                else if (columnName == "btnXoa")
-                {
-                    // Lấy mã dịch vụ tương ứng với hàng đã được nhấp
-                    // string maDichVu = dgvDichVu.Rows[e.RowIndex].Cells["Mã dịch vụ"].Value.ToString();
-
-                    string id = dgvDichVu.Rows[e.RowIndex].Cells["Mã dịch vụ"].Value.ToString();
-                    if (id != "000" && id != "001")
-                    {
-                        QLBLL qLBLL = new QLBLL();
-                        qLBLL.DelChiTietDichVuByIdDichVu(id);
-                        qLBLL.DelDichVu(id);
-                        MessageBox.Show("Xóa dịch vụ thành công", "Thông báo");
-                        LoadForm(null);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Đây là dịch vụ cố định!! Không thể xóa");
-                    }
-                }
-            }
-        }
+        
         public void dgvIcons_CellPainting1(DataGridView dgv, DataGridViewCellPaintingEventArgs e, Image btSua, Image btXoa)
         {
             if (e.ColumnIndex >= 0 && dgv.Columns[e.ColumnIndex].Name == "btnSua" && e.RowIndex >= 0)
@@ -303,13 +209,8 @@ namespace PBL3___Motel_Management_System
             else
             {
                 this.WindowState = FormWindowState.Normal;
-               this.Size = formSize;
+                this.Size = formSize;
             }
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void btnThemPhong_Click(object sender, EventArgs e)
@@ -323,12 +224,6 @@ namespace PBL3___Motel_Management_System
             SuaDichVu suaDichVu = new SuaDichVu(null,LoadForm); ;
             suaDichVu.ShowDialog();
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        
 
       
         private void btnThemPhong_Click_1(object sender, EventArgs e)
@@ -362,6 +257,32 @@ namespace PBL3___Motel_Management_System
             else
             {
                 MessageBox.Show("Đây là dịch vụ cố định!! Không thể xóa");
+            }
+        }
+
+        private void dgvDichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvDichVu.Columns[e.ColumnIndex].Name == "btnSua")
+            {
+                string id = dgvDichVu.Rows[e.RowIndex].Cells[0].Value.ToString();
+                tc.openChildForm1(new SuaDichVu(id, LoadForm), panelDV);
+            }
+            else
+            {
+                string id = dgvDichVu.Rows[e.RowIndex].Cells[0].Value.ToString();
+                if (id != "000" && id != "001")
+                {
+                    QLBLL qLBLL = new QLBLL();
+                    qLBLL.DelChiTietDichVuByIdDichVu(id);
+                    qLBLL.DelDichVu(id);
+                    dgvDichVu.Rows.RemoveAt(e.RowIndex);
+                    MessageBox.Show("Xóa dịch vụ thành công", "Thông báo");
+                    LoadForm(null);
+                }
+                else
+                {
+                    MessageBox.Show("Đây là dịch vụ cố định!! Không thể xóa");
+                }
             }
         }
     }
