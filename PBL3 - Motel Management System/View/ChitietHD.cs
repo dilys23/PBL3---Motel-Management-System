@@ -37,6 +37,7 @@ namespace PBL3___Motel_Management_System.View
             string diachi = dt.TenDuong + " " + dt.TenHuyen + " " + dt.TenThanhPho;
             txtDiaChi.Text = diachi;
             txtGiaPhong.Text = phongTro.GiaTien.ToString();
+            txtSonguoitoida.Text = phongTro.ToiDa.ToString();
             Nguoi nguoi = new Nguoi();
             HopDong hd = new HopDong();
             hd = qLBLL.GetHopDongByIdPhong(tp.hopDong.MaPhongTro);

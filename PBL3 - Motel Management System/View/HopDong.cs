@@ -121,15 +121,18 @@ namespace PBL3___Motel_Management_System
                 string columnName = dgvHD.Columns[e.ColumnIndex].Name;
 
                 // Kiểm tra xem ô đã được nhấp có phải là nút Sửa hay Xóa không
-                if (columnName == "btnChitiet")
+                if (columnName == "btnChiTiet")
                 {
                     // Lấy mã dịch vụ tương ứng với hàng đã được nhấp
                    // string id = dgvHD.Rows[e.RowIndex].Cells["Mã Thiết bị"].Value.ToString();
-
+                    string id = dgvHD.Rows[e.RowIndex].Cells["Mã HD"].Value.ToString();
+                    ThuePhong tp = new ThuePhong();
+                    tp.hopDong.MaHopDong= id;
+                    tc.openChildForm1(new ChitietHopDong(tp, LoadForm), panelHopDong);
 
                    // tc.openChildForm1(new SuaThietBI(id, LoadForm), );
                 }
-                else if (columnName == "btnXoa")
+                else if (columnName == "btnGiaHan")
                 {
                     // Lấy mã dịch vụ tương ứng với hàng đã được nhấp
                     // string maDichVu = dgvDichVu.Rows[e.RowIndex].Cells["Mã dịch vụ"].Value.ToString();

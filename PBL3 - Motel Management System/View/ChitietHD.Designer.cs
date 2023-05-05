@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelThem = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtDienTich = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,7 +54,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayBatDau = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
+            this.txtSonguoitoida = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.panelThem.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +66,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
+            this.panelThem.Controls.Add(this.txtSonguoitoida);
+            this.panelThem.Controls.Add(this.label14);
             this.panelThem.Controls.Add(this.label10);
             this.panelThem.Controls.Add(this.label12);
             this.panelThem.Controls.Add(this.txtDienTich);
@@ -94,6 +98,17 @@
             this.panelThem.Size = new System.Drawing.Size(898, 505);
             this.panelThem.TabIndex = 62;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Bahnschrift SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Chocolate;
+            this.label10.Location = new System.Drawing.Point(16, 11);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(216, 28);
+            this.label10.TabIndex = 49;
+            this.label10.Text = "CHI TIẾT HỢP ĐỒNG";
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -110,7 +125,7 @@
             this.txtDienTich.Enabled = false;
             this.txtDienTich.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDienTich.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtDienTich.Location = new System.Drawing.Point(171, 210);
+            this.txtDienTich.Location = new System.Drawing.Point(197, 210);
             this.txtDienTich.Name = "txtDienTich";
             this.txtDienTich.Size = new System.Drawing.Size(207, 27);
             this.txtDienTich.TabIndex = 42;
@@ -131,7 +146,7 @@
             this.txtDiaChi.Enabled = false;
             this.txtDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtDiaChi.Location = new System.Drawing.Point(174, 335);
+            this.txtDiaChi.Location = new System.Drawing.Point(200, 335);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(210, 27);
             this.txtDiaChi.TabIndex = 39;
@@ -152,7 +167,7 @@
             this.txtGiaPhong.Enabled = false;
             this.txtGiaPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGiaPhong.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtGiaPhong.Location = new System.Drawing.Point(174, 272);
+            this.txtGiaPhong.Location = new System.Drawing.Point(200, 272);
             this.txtGiaPhong.Name = "txtGiaPhong";
             this.txtGiaPhong.Size = new System.Drawing.Size(207, 27);
             this.txtGiaPhong.TabIndex = 41;
@@ -173,7 +188,7 @@
             this.txtTenPhong.Enabled = false;
             this.txtTenPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenPhong.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtTenPhong.Location = new System.Drawing.Point(174, 148);
+            this.txtTenPhong.Location = new System.Drawing.Point(200, 148);
             this.txtTenPhong.Name = "txtTenPhong";
             this.txtTenPhong.Size = new System.Drawing.Size(207, 27);
             this.txtTenPhong.TabIndex = 36;
@@ -183,7 +198,7 @@
             this.txtTenDay.Enabled = false;
             this.txtTenDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenDay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtTenDay.Location = new System.Drawing.Point(174, 86);
+            this.txtTenDay.Location = new System.Drawing.Point(200, 86);
             this.txtTenDay.Name = "txtTenDay";
             this.txtTenDay.Size = new System.Drawing.Size(207, 27);
             this.txtTenDay.TabIndex = 35;
@@ -256,7 +271,7 @@
             this.txtTienCoc.Enabled = false;
             this.txtTienCoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTienCoc.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtTienCoc.Location = new System.Drawing.Point(174, 405);
+            this.txtTienCoc.Location = new System.Drawing.Point(630, 464);
             this.txtTienCoc.Name = "txtTienCoc";
             this.txtTienCoc.Size = new System.Drawing.Size(210, 27);
             this.txtTienCoc.TabIndex = 28;
@@ -266,7 +281,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(54, 407);
+            this.label6.Location = new System.Drawing.Point(468, 471);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 20);
             this.label6.TabIndex = 27;
@@ -344,18 +359,27 @@
             this.dtpNgayBatDau.Name = "dtpNgayBatDau";
             this.dtpNgayBatDau.Size = new System.Drawing.Size(210, 27);
             this.dtpNgayBatDau.TabIndex = 18;
-//            this.dtpNgayBatDau.ValueChanged += new System.EventHandler(this.dtpNgayBatDau_ValueChanged);
             // 
-            // label10
+            // txtSonguoitoida
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Bahnschrift SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Chocolate;
-            this.label10.Location = new System.Drawing.Point(16, 11);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(216, 28);
-            this.label10.TabIndex = 49;
-            this.label10.Text = "CHI TIẾT HỢP ĐỒNG";
+            this.txtSonguoitoida.Enabled = false;
+            this.txtSonguoitoida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSonguoitoida.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtSonguoitoida.Location = new System.Drawing.Point(197, 405);
+            this.txtSonguoitoida.Name = "txtSonguoitoida";
+            this.txtSonguoitoida.Size = new System.Drawing.Size(210, 27);
+            this.txtSonguoitoida.TabIndex = 51;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label14.Location = new System.Drawing.Point(51, 412);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(120, 20);
+            this.label14.TabIndex = 50;
+            this.label14.Text = "Số người tối đa";
             // 
             // ChitietHD
             // 
@@ -399,5 +423,7 @@
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private System.Windows.Forms.DateTimePicker dtpNgayBatDau;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtSonguoitoida;
+        private System.Windows.Forms.Label label14;
     }
 }

@@ -41,7 +41,7 @@ namespace PBL3___Motel_Management_System.View
            // dgvDichVu.Rows.
             dgvDichVu.Rows.Clear();
             QLBLL qLBLL = new QLBLL();
-            dgvDichVu.RowCount = 1;
+            //dgvDichVu.RowCount = 1;
              int  i = 1;
             foreach (string idDv in qLBLL.GetAllIdDichVuByIdPhong(this.idPhong))
             {
@@ -79,7 +79,7 @@ namespace PBL3___Motel_Management_System.View
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                
+               
                 string columnName = dgvDichVu.Columns[e.ColumnIndex].Name;
 
                if (columnName == "btnXoa")
