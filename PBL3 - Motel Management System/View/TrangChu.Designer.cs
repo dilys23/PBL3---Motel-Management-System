@@ -393,6 +393,8 @@
             // taiKhoan1
             // 
             this.taiKhoan1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.taiKhoan1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.taiKhoan1.DesktopPanel = this.panelDesktop;
             this.taiKhoan1.Location = new System.Drawing.Point(881, 10);
             this.taiKhoan1.Name = "taiKhoan1";

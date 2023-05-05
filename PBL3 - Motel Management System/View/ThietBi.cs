@@ -39,6 +39,7 @@ namespace PBL3___Motel_Management_System.View
         }
 
         TrangChu tc = new TrangChu();
+        Dichvu dv = new Dichvu();
         private void LoadForm(string txtTim)
         {
             if (dgvThietBi.Columns["btnSua"] == null)
@@ -47,7 +48,7 @@ namespace PBL3___Motel_Management_System.View
                 {
                     btnSua.HeaderText = "";
                     btnSua.Name = "btnSua";
-                    btnSua.Text = "Sửa";
+                    //btnSua.Text = "Sửa";
                     btnSua.UseColumnTextForButtonValue = true;
                     this.dgvThietBi.Columns.Add(btnSua);
 
@@ -59,7 +60,7 @@ namespace PBL3___Motel_Management_System.View
                 {
                     btnXoa.HeaderText = "";
                     btnXoa.Name = "btnXoa";
-                    btnXoa.Text = "Xóa";
+                   // btnXoa.Text = "Xóa";
                     btnXoa.UseColumnTextForButtonValue = true;
                     this.dgvThietBi.Columns.Add(btnXoa);
 
@@ -78,6 +79,10 @@ namespace PBL3___Motel_Management_System.View
             {
                 dt.Rows.Add(viewThietBi.MaThietBi, viewThietBi.Stt, viewThietBi.TenThietBi, viewThietBi.GiaThietBi);
             }
+            var Sua = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-create-25.png");
+            var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-delete-25.png");
+            dgvThietBi.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dv.dgvIcons_CellPainting1(dgvThietBi, e, Sua, Xoa));
+            
             dgvThietBi.CellContentClick += DgvThietBi_CellContentClick;
             dgvThietBi.DataSource = dt;
             //dgvThietBi.Columns[0].Visible = true;

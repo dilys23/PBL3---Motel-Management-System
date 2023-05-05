@@ -31,14 +31,16 @@ namespace PBL3___Motel_Management_System
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panelDV = new System.Windows.Forms.Panel();
+            this.txtTim = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new FontAwesome.Sharp.IconButton();
+            this.btnXoaPhong = new FontAwesome.Sharp.IconButton();
             this.btnThemDichVu = new FontAwesome.Sharp.IconButton();
             this.dgvDichVu = new System.Windows.Forms.DataGridView();
-            this.txtTim = new System.Windows.Forms.TextBox();
-            this.btnXoaPhong = new FontAwesome.Sharp.IconButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.panelDV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).BeginInit();
@@ -85,6 +87,14 @@ namespace PBL3___Motel_Management_System
             this.panelDV.Size = new System.Drawing.Size(901, 383);
             this.panelDV.TabIndex = 21;
             // 
+            // txtTim
+            // 
+            this.txtTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTim.Location = new System.Drawing.Point(109, 22);
+            this.txtTim.Name = "txtTim";
+            this.txtTim.Size = new System.Drawing.Size(177, 30);
+            this.txtTim.TabIndex = 56;
+            // 
             // btnTimKiem
             // 
             this.btnTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
@@ -100,6 +110,28 @@ namespace PBL3___Motel_Management_System
             this.btnTimKiem.TabIndex = 55;
             this.btnTimKiem.UseVisualStyleBackColor = false;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
+            // btnXoaPhong
+            // 
+            this.btnXoaPhong.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnXoaPhong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXoaPhong.BackColor = System.Drawing.Color.Red;
+            this.btnXoaPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaPhong.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnXoaPhong.IconColor = System.Drawing.Color.White;
+            this.btnXoaPhong.IconFont = FontAwesome.Sharp.IconFont.Regular;
+            this.btnXoaPhong.IconSize = 25;
+            this.btnXoaPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoaPhong.Location = new System.Drawing.Point(689, 14);
+            this.btnXoaPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXoaPhong.Name = "btnXoaPhong";
+            this.btnXoaPhong.Size = new System.Drawing.Size(93, 38);
+            this.btnXoaPhong.TabIndex = 54;
+            this.btnXoaPhong.Text = "Xóa";
+            this.btnXoaPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoaPhong.UseVisualStyleBackColor = false;
+            this.btnXoaPhong.Visible = false;
+            this.btnXoaPhong.Click += new System.EventHandler(this.btnXoaPhong_Click);
             // 
             // btnThemDichVu
             // 
@@ -144,41 +176,10 @@ namespace PBL3___Motel_Management_System
             this.dgvDichVu.Size = new System.Drawing.Size(872, 297);
             this.dgvDichVu.TabIndex = 50;
             // 
-            // txtTim
-            // 
-            this.txtTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTim.Location = new System.Drawing.Point(109, 22);
-            this.txtTim.Name = "txtTim";
-            this.txtTim.Size = new System.Drawing.Size(177, 30);
-            this.txtTim.TabIndex = 56;
-            // 
-            // btnXoaPhong
-            // 
-            this.btnXoaPhong.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnXoaPhong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXoaPhong.BackColor = System.Drawing.Color.Red;
-            this.btnXoaPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaPhong.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btnXoaPhong.IconColor = System.Drawing.Color.White;
-            this.btnXoaPhong.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            this.btnXoaPhong.IconSize = 25;
-            this.btnXoaPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaPhong.Location = new System.Drawing.Point(689, 14);
-            this.btnXoaPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnXoaPhong.Name = "btnXoaPhong";
-            this.btnXoaPhong.Size = new System.Drawing.Size(93, 38);
-            this.btnXoaPhong.TabIndex = 54;
-            this.btnXoaPhong.Text = "Xóa";
-            this.btnXoaPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXoaPhong.UseVisualStyleBackColor = false;
-            this.btnXoaPhong.Visible = false;
-            this.btnXoaPhong.Click += new System.EventHandler(this.btnXoaPhong_Click);
-            // 
             // Dichvu
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(915, 438);
             this.Controls.Add(this.panelDV);
@@ -208,5 +209,6 @@ namespace PBL3___Motel_Management_System
         private System.Windows.Forms.DataGridView dgvDichVu;
         private TextBox txtTim;
         private FontAwesome.Sharp.IconButton btnXoaPhong;
+        private ToolTip toolTip1;
     }
 }

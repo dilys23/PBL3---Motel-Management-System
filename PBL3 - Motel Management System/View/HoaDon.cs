@@ -26,6 +26,7 @@ namespace PBL3___Motel_Management_System
 
         }
         TrangChu tc= new TrangChu();
+        Dichvu dv = new Dichvu();
         private void SetFontAndColors()
         {
             this.dgvHoaDon.DefaultCellStyle.Font = new Font("Tahoma", 10);
@@ -50,7 +51,7 @@ namespace PBL3___Motel_Management_System
                 {
                     btnSua.HeaderText = "";
                     btnSua.Name = "btnSua";
-                    btnSua.Text = "Sửa";
+                    //btnSua.Text = "Sửa";
                     btnSua.UseColumnTextForButtonValue = true;
                     btnSua.DisplayIndex = 0;
                     this.dgvHoaDon.Columns.Add(btnSua);
@@ -63,7 +64,7 @@ namespace PBL3___Motel_Management_System
                 {
                     btnXoa.HeaderText = "";
                     btnXoa.Name = "btnXoa";
-                    btnXoa.Text = "Xóa";
+                   // btnXoa.Text = "Xóa";
                     btnXoa.UseColumnTextForButtonValue = true;
                     btnXoa.DisplayIndex = 1;
                     this.dgvHoaDon.Columns.Add(btnXoa);
@@ -100,6 +101,14 @@ namespace PBL3___Motel_Management_System
                 }
             }
             dgvHoaDon.CellContentClick += DgvHoaDon_CellContentClick;
+            var Sua = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-create-25.png");
+            var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-delete-25.png");
+            dgvHoaDon.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dv.dgvIcons_CellPainting1(dgvHoaDon, e,Sua, Xoa) );
+        }
+        private void dgvOther_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            var buttonImage = System.Drawing.Image.FromFile(@"C:\button.png");
+           // CustomDataGridView.dgvIcons_CellPainting_Custom(dgvOther, e, buttonImage);
         }
         private void DgvHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -141,6 +150,7 @@ namespace PBL3___Motel_Management_System
                 }
             }
         }
+
         private void SetCbb()
         {
             cbbDayTro.Items.Clear();

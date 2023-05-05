@@ -44,34 +44,37 @@ namespace PBL3___Motel_Management_System
             row.Height = 35;
             row.MinimumHeight = 20;
         }
-      
+        private Image editButtonImage;
+
         private void LoadForm(string txtTim)
         {
+          //  ToolTip toolTip1 = new ToolTip();
+
             if (dgvDichVu.Columns["btnSua"] == null)
             {    
                 DataGridViewButtonColumn btnSua = new DataGridViewButtonColumn();
             {
                 btnSua.HeaderText = "";
                 btnSua.Name = "btnSua";
-                btnSua.Text = "Sửa";
+               // btnSua.Text = "Sửa";
                 btnSua.UseColumnTextForButtonValue = true;
-                this.dgvDichVu.Columns.Add(btnSua);
-               
-            }}
+                dgvDichVu.Columns.Add(btnSua);
+
+                }
+            }
             if (dgvDichVu.Columns["btnXoa"] == null)
             {  
                 DataGridViewButtonColumn btnXoa = new DataGridViewButtonColumn();
             {
                 btnXoa.HeaderText = "";
                 btnXoa.Name = "btnXoa";
-                btnXoa.Text = "Xóa";
+               // btnXoa.Text = "Xóa";
                 btnXoa.UseColumnTextForButtonValue = true;
-                this.dgvDichVu.Columns.Add(btnXoa);
-               
-            }}   
+                dgvDichVu.Columns.Add(btnXoa);
 
-
-            ///  string imagePath = @"E:\PBL3_MAIN\Icons\icons8-customer-20.png";
+                }
+            }
+            
 
             DataTable dt = new DataTable();
             dt.Columns.AddRange(new DataColumn[]
@@ -99,9 +102,11 @@ namespace PBL3___Motel_Management_System
             }
 
             dgvDichVu.CellContentClick += DgvDichVu_CellContentClick;
-            // dgvDichVu.CellPainting += grid_CellPainting;
+            var Sua = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-create-25.png");
+            var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-delete-25.png");
+            dgvDichVu.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dgvIcons_CellPainting1(dgvDichVu, e, Sua, Xoa));
+           // dgvDichVu.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvIcons_CellPainting);
             dgvDichVu.DataSource = dt;
-            //dgvDichVu.Columns[0].Visible = true;
             dgvDichVu.Columns["Mã dịch vụ"].Visible = false;
         }
         private void DgvDichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -141,33 +146,43 @@ namespace PBL3___Motel_Management_System
                 }
             }
         }
+        public void dgvIcons_CellPainting1(DataGridView dgv, DataGridViewCellPaintingEventArgs e, Image btSua, Image btXoa)
+        {
+            if (e.ColumnIndex >= 0 && dgv.Columns[e.ColumnIndex].Name == "btnSua" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var btnSua = btSua;
+                var w = btnSua.Width;
+                var h = btnSua.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+                e.Graphics.DrawImage(btnSua, new Rectangle(x, y, w, h));
+                e.Handled = true;
 
+                // Thay đổi màu nền của cell khi được chọn
+                if (e.State == DataGridViewElementStates.Selected)
+                {
+                    e.CellStyle.SelectionBackColor = Color.Tomato;
+                }
+            }
+            if (e.ColumnIndex >= 0 && dgv.Columns[e.ColumnIndex].Name == "btnXoa" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var btnXoa = btXoa;
+                var w = btnXoa.Width;
+                var h = btnXoa.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+                e.Graphics.DrawImage(btnXoa, new Rectangle(x, y, w, h));
+                e.Handled = true;
 
-        //private void grid_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        //{
-        //    Debug.WriteLine("grid_CellPainting called");
-        //    if (e.RowIndex < 0)
-        //        return;
-
-        //    //I supposed your button column is at index 0
-        //    if (e.ColumnIndex == 0 && e.RowIndex >= 0)
-        //    {
-        //        var button = (DataGridViewButtonCell)sender;
-        //        e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-        //        var buttonSize = button.Size;
-        //        var iconPath = @"C:\Users\HP VICTUS\Downloads\icons8-save-20.png";
-        //        var icon = Image.FromFile(iconPath);
-        //        var scaledIcon = new Bitmap(icon, buttonSize.Width - 10, buttonSize.Height - 10);
-        //        var w = icon.Width;
-        //        var h = icon.Height;
-        //        var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
-        //        var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
-        //        e.Graphics.DrawImage(scaledIcon, new Point(button.ContentBounds.X + 5, button.ContentBounds.Y + 5));
-        //        e.Graphics.DrawImage(icon, new Rectangle(x, y, w, h));
-        //        e.Handled = true;
-        //    }
-        //}
-
+                // Thay đổi màu nền của cell khi được chọn
+                if (e.State == DataGridViewElementStates.Selected)
+                {
+                    e.CellStyle.SelectionBackColor = Color.Tomato;
+                }
+            }
+        }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]

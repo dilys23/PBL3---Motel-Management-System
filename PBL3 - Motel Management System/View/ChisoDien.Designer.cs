@@ -31,12 +31,23 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbbDayTro = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpThangSuDung = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvChiSoDien = new System.Windows.Forms.DataGridView();
+            this.MaChiTietSuDungDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DayTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhongTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChiSoCu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChiSoMoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DaDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Thang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelChisoDien = new System.Windows.Forms.Panel();
             this.btnHuyXacThuc = new FontAwesome.Sharp.IconButton();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,16 +60,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSuaHD = new FontAwesome.Sharp.IconButton();
             this.btnThemHD = new FontAwesome.Sharp.IconButton();
-            this.MaChiTietSuDungDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DayTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhongTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChiSoCu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChiSoMoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DaDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Thang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiSoDien)).BeginInit();
             this.panelChisoDien.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -146,7 +147,7 @@
             this.TinhTrang});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Turquoise;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.MintCream;
@@ -165,11 +166,74 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvChiSoDien.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvChiSoDien.RowHeadersWidth = 60;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvChiSoDien.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvChiSoDien.RowTemplate.Height = 24;
             this.dgvChiSoDien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvChiSoDien.Size = new System.Drawing.Size(993, 288);
             this.dgvChiSoDien.TabIndex = 8;
             this.dgvChiSoDien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiSoDien_CellContentClick);
+            // 
+            // MaChiTietSuDungDichVu
+            // 
+            this.MaChiTietSuDungDichVu.HeaderText = "MaChiTietSuDungDichVu";
+            this.MaChiTietSuDungDichVu.MinimumWidth = 6;
+            this.MaChiTietSuDungDichVu.Name = "MaChiTietSuDungDichVu";
+            this.MaChiTietSuDungDichVu.Visible = false;
+            // 
+            // Stt
+            // 
+            this.Stt.HeaderText = "STT";
+            this.Stt.MinimumWidth = 6;
+            this.Stt.Name = "Stt";
+            // 
+            // DayTro
+            // 
+            this.DayTro.HeaderText = "Dãy trọ";
+            this.DayTro.MinimumWidth = 6;
+            this.DayTro.Name = "DayTro";
+            // 
+            // PhongTro
+            // 
+            this.PhongTro.HeaderText = "Phòng trọ";
+            this.PhongTro.MinimumWidth = 6;
+            this.PhongTro.Name = "PhongTro";
+            // 
+            // ChiSoCu
+            // 
+            this.ChiSoCu.HeaderText = "Chỉ số cũ";
+            this.ChiSoCu.MinimumWidth = 6;
+            this.ChiSoCu.Name = "ChiSoCu";
+            // 
+            // ChiSoMoi
+            // 
+            this.ChiSoMoi.HeaderText = "Chỉ số mới";
+            this.ChiSoMoi.MinimumWidth = 6;
+            this.ChiSoMoi.Name = "ChiSoMoi";
+            // 
+            // DaDung
+            // 
+            this.DaDung.HeaderText = "Đã dùng";
+            this.DaDung.MinimumWidth = 6;
+            this.DaDung.Name = "DaDung";
+            // 
+            // NgayLap
+            // 
+            this.NgayLap.HeaderText = "Ngày lập";
+            this.NgayLap.MinimumWidth = 6;
+            this.NgayLap.Name = "NgayLap";
+            // 
+            // Thang
+            // 
+            this.Thang.HeaderText = "Tháng sử dung";
+            this.Thang.MinimumWidth = 6;
+            this.Thang.Name = "Thang";
+            // 
+            // TinhTrang
+            // 
+            this.TinhTrang.HeaderText = "Tình trạng";
+            this.TinhTrang.MinimumWidth = 6;
+            this.TinhTrang.Name = "TinhTrang";
             // 
             // panelChisoDien
             // 
@@ -316,6 +380,7 @@
             // 
             // panel1
             // 
+            this.panel1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
@@ -357,69 +422,9 @@
             this.btnThemHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemHD.UseVisualStyleBackColor = false;
             // 
-            // MaChiTietSuDungDichVu
-            // 
-            this.MaChiTietSuDungDichVu.HeaderText = "MaChiTietSuDungDichVu";
-            this.MaChiTietSuDungDichVu.MinimumWidth = 6;
-            this.MaChiTietSuDungDichVu.Name = "MaChiTietSuDungDichVu";
-            this.MaChiTietSuDungDichVu.Visible = false;
-            // 
-            // Stt
-            // 
-            this.Stt.HeaderText = "STT";
-            this.Stt.MinimumWidth = 6;
-            this.Stt.Name = "Stt";
-            // 
-            // DayTro
-            // 
-            this.DayTro.HeaderText = "Dãy trọ";
-            this.DayTro.MinimumWidth = 6;
-            this.DayTro.Name = "DayTro";
-            // 
-            // PhongTro
-            // 
-            this.PhongTro.HeaderText = "Phòng trọ";
-            this.PhongTro.MinimumWidth = 6;
-            this.PhongTro.Name = "PhongTro";
-            // 
-            // ChiSoCu
-            // 
-            this.ChiSoCu.HeaderText = "Chỉ số cũ";
-            this.ChiSoCu.MinimumWidth = 6;
-            this.ChiSoCu.Name = "ChiSoCu";
-            // 
-            // ChiSoMoi
-            // 
-            this.ChiSoMoi.HeaderText = "Chỉ số mới";
-            this.ChiSoMoi.MinimumWidth = 6;
-            this.ChiSoMoi.Name = "ChiSoMoi";
-            // 
-            // DaDung
-            // 
-            this.DaDung.HeaderText = "Đã dùng";
-            this.DaDung.MinimumWidth = 6;
-            this.DaDung.Name = "DaDung";
-            // 
-            // NgayLap
-            // 
-            this.NgayLap.HeaderText = "Ngày lập";
-            this.NgayLap.MinimumWidth = 6;
-            this.NgayLap.Name = "NgayLap";
-            // 
-            // Thang
-            // 
-            this.Thang.HeaderText = "Tháng sử dung";
-            this.Thang.MinimumWidth = 6;
-            this.Thang.Name = "Thang";
-            // 
-            // TinhTrang
-            // 
-            this.TinhTrang.HeaderText = "Tình trạng";
-            this.TinhTrang.MinimumWidth = 6;
-            this.TinhTrang.Name = "TinhTrang";
-            // 
             // ChisoDien
             // 
+            this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1047, 619);
