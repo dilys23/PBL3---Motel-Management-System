@@ -33,6 +33,16 @@
             this.panelChisoNuoc = new System.Windows.Forms.Panel();
             this.btnHuyXacThuc = new FontAwesome.Sharp.IconButton();
             this.dgvChiSoNuoc = new System.Windows.Forms.DataGridView();
+            this.MaChiTietSuDungDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DayTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhongTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChiSoCu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChiSoMoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DaDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Thang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnXacThuc = new FontAwesome.Sharp.IconButton();
             this.label5 = new System.Windows.Forms.Label();
             this.cbbTinhTrang = new System.Windows.Forms.ComboBox();
@@ -46,16 +56,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.MaChiTietSuDungDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DayTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhongTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChiSoCu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChiSoMoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DaDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Thang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelChisoNuoc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiSoNuoc)).BeginInit();
             this.panel1.SuspendLayout();
@@ -142,6 +142,67 @@
             this.dgvChiSoNuoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvChiSoNuoc.Size = new System.Drawing.Size(950, 273);
             this.dgvChiSoNuoc.TabIndex = 65;
+            // 
+            // MaChiTietSuDungDichVu
+            // 
+            this.MaChiTietSuDungDichVu.HeaderText = "MaChiTietSuDungDichVu";
+            this.MaChiTietSuDungDichVu.MinimumWidth = 6;
+            this.MaChiTietSuDungDichVu.Name = "MaChiTietSuDungDichVu";
+            this.MaChiTietSuDungDichVu.Visible = false;
+            // 
+            // Stt
+            // 
+            this.Stt.HeaderText = "STT";
+            this.Stt.MinimumWidth = 6;
+            this.Stt.Name = "Stt";
+            // 
+            // DayTro
+            // 
+            this.DayTro.HeaderText = "Dãy trọ";
+            this.DayTro.MinimumWidth = 6;
+            this.DayTro.Name = "DayTro";
+            // 
+            // PhongTro
+            // 
+            this.PhongTro.HeaderText = "Phòng trọ";
+            this.PhongTro.MinimumWidth = 6;
+            this.PhongTro.Name = "PhongTro";
+            // 
+            // ChiSoCu
+            // 
+            this.ChiSoCu.HeaderText = "Chỉ số cũ";
+            this.ChiSoCu.MinimumWidth = 6;
+            this.ChiSoCu.Name = "ChiSoCu";
+            // 
+            // ChiSoMoi
+            // 
+            this.ChiSoMoi.HeaderText = "Chỉ số mới";
+            this.ChiSoMoi.MinimumWidth = 6;
+            this.ChiSoMoi.Name = "ChiSoMoi";
+            // 
+            // DaDung
+            // 
+            this.DaDung.HeaderText = "Đã dùng";
+            this.DaDung.MinimumWidth = 6;
+            this.DaDung.Name = "DaDung";
+            // 
+            // NgayLap
+            // 
+            this.NgayLap.HeaderText = "Ngày lập";
+            this.NgayLap.MinimumWidth = 6;
+            this.NgayLap.Name = "NgayLap";
+            // 
+            // Thang
+            // 
+            this.Thang.HeaderText = "Tháng sử dung";
+            this.Thang.MinimumWidth = 6;
+            this.Thang.Name = "Thang";
+            // 
+            // TinhTrang
+            // 
+            this.TinhTrang.HeaderText = "Tình trạng";
+            this.TinhTrang.MinimumWidth = 6;
+            this.TinhTrang.Name = "TinhTrang";
             // 
             // btnXacThuc
             // 
@@ -287,9 +348,10 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1047, 49);
@@ -305,67 +367,6 @@
             this.label4.Size = new System.Drawing.Size(128, 24);
             this.label4.TabIndex = 25;
             this.label4.Text = "CHỈ SỐ NƯỚC";
-            // 
-            // MaChiTietSuDungDichVu
-            // 
-            this.MaChiTietSuDungDichVu.HeaderText = "MaChiTietSuDungDichVu";
-            this.MaChiTietSuDungDichVu.MinimumWidth = 6;
-            this.MaChiTietSuDungDichVu.Name = "MaChiTietSuDungDichVu";
-            this.MaChiTietSuDungDichVu.Visible = false;
-            // 
-            // Stt
-            // 
-            this.Stt.HeaderText = "STT";
-            this.Stt.MinimumWidth = 6;
-            this.Stt.Name = "Stt";
-            // 
-            // DayTro
-            // 
-            this.DayTro.HeaderText = "Dãy trọ";
-            this.DayTro.MinimumWidth = 6;
-            this.DayTro.Name = "DayTro";
-            // 
-            // PhongTro
-            // 
-            this.PhongTro.HeaderText = "Phòng trọ";
-            this.PhongTro.MinimumWidth = 6;
-            this.PhongTro.Name = "PhongTro";
-            // 
-            // ChiSoCu
-            // 
-            this.ChiSoCu.HeaderText = "Chỉ số cũ";
-            this.ChiSoCu.MinimumWidth = 6;
-            this.ChiSoCu.Name = "ChiSoCu";
-            // 
-            // ChiSoMoi
-            // 
-            this.ChiSoMoi.HeaderText = "Chỉ số mới";
-            this.ChiSoMoi.MinimumWidth = 6;
-            this.ChiSoMoi.Name = "ChiSoMoi";
-            // 
-            // DaDung
-            // 
-            this.DaDung.HeaderText = "Đã dùng";
-            this.DaDung.MinimumWidth = 6;
-            this.DaDung.Name = "DaDung";
-            // 
-            // NgayLap
-            // 
-            this.NgayLap.HeaderText = "Ngày lập";
-            this.NgayLap.MinimumWidth = 6;
-            this.NgayLap.Name = "NgayLap";
-            // 
-            // Thang
-            // 
-            this.Thang.HeaderText = "Tháng sử dung";
-            this.Thang.MinimumWidth = 6;
-            this.Thang.Name = "Thang";
-            // 
-            // TinhTrang
-            // 
-            this.TinhTrang.HeaderText = "Tình trạng";
-            this.TinhTrang.MinimumWidth = 6;
-            this.TinhTrang.Name = "TinhTrang";
             // 
             // ChisoNuoc
             // 

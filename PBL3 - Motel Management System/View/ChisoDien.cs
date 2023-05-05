@@ -28,6 +28,7 @@ namespace PBL3___Motel_Management_System.View
         }
 
         TrangChu tc = new TrangChu();
+        Dichvu dv = new Dichvu();
         private void SetFontAndColors()
         {
             this.dgvChiSoDien.DefaultCellStyle.Font = new Font("Tahoma", 10);
@@ -53,7 +54,7 @@ namespace PBL3___Motel_Management_System.View
                 {
                     btnSua.HeaderText = "";
                     btnSua.Name = "btnSua";
-                    btnSua.Text = "Sửa";
+                   // btnSua.Text = "Sửa";
                     btnSua.UseColumnTextForButtonValue = true;
                     btnSua.DisplayIndex = 0;
                     this.dgvChiSoDien.Columns.Add(btnSua);
@@ -66,7 +67,7 @@ namespace PBL3___Motel_Management_System.View
                 {
                     btnXoa.HeaderText = "";
                     btnXoa.Name = "btnXoa";
-                    btnXoa.Text = "Xóa";
+                    //btnXoa.Text = "Xóa";
                     btnXoa.UseColumnTextForButtonValue = true;
                     btnXoa.DisplayIndex = 1;
                     this.dgvChiSoDien.Columns.Add(btnXoa);
@@ -139,6 +140,9 @@ namespace PBL3___Motel_Management_System.View
             }
 
             dgvChiSoDien.CellContentClick += DgvChisoDien_CellContentClick;
+            var Sua = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-create-25.png");
+            var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-delete-25.png");
+            dgvChiSoDien.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dv.dgvIcons_CellPainting1(dgvChiSoDien, e, Sua, Xoa));
         }
         private void DgvChisoDien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
