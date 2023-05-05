@@ -23,101 +23,32 @@ namespace PBL3___Motel_Management_System.View
         {
             InitializeComponent();
             LoadForm(null);
-            SetFontAndColors();
         }
-        private void SetFontAndColors()
-        {
-            this.dgvThietBi.DefaultCellStyle.Font = new Font("Tahoma", 10);
-            this.dgvThietBi.DefaultCellStyle.ForeColor = Color.Blue;
-            this.dgvThietBi.DefaultCellStyle.BackColor = Color.Beige;
-            this.dgvThietBi.DefaultCellStyle.SelectionForeColor = Color.Black;
-            this.dgvThietBi.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
 
-            DataGridViewRow row = this.dgvThietBi.RowTemplate;
-            row.Height = 35;
-            row.MinimumHeight = 20;
-        }
 
         TrangChu tc = new TrangChu();
         Dichvu dv = new Dichvu();
         private void LoadForm(string txtTim)
         {
-            if (dgvThietBi.Columns["btnSua"] == null)
-            {
-                DataGridViewButtonColumn btnSua = new DataGridViewButtonColumn();
-                {
-                    btnSua.HeaderText = "";
-                    btnSua.Name = "btnSua";
-                    //btnSua.Text = "Sửa";
-                    btnSua.UseColumnTextForButtonValue = true;
-                    this.dgvThietBi.Columns.Add(btnSua);
-
-                }
-            }
-            if (dgvThietBi.Columns["btnXoa"] == null)
-            {
-                DataGridViewButtonColumn btnXoa = new DataGridViewButtonColumn();
-                {
-                    btnXoa.HeaderText = "";
-                    btnXoa.Name = "btnXoa";
-                   // btnXoa.Text = "Xóa";
-                    btnXoa.UseColumnTextForButtonValue = true;
-                    this.dgvThietBi.Columns.Add(btnXoa);
-
-                }
-            }
-            DataTable dt = new DataTable();
-            dt.Columns.AddRange(new DataColumn[]
-            {
-                new DataColumn{ColumnName = "Mã Thiết bị",DataType =  typeof(string)},
-                new DataColumn{ColumnName = "STT",DataType =  typeof(int)},
-                new DataColumn{ColumnName = "Tên thiết bị",DataType =  typeof(string)},
-                new DataColumn{ColumnName = "Giá thiết bị",DataType =  typeof(double)},
-            });
+            dgvThietBi.RowCount = 0;
+            this.dgvThietBi.DefaultCellStyle.Font = new Font("Tahoma", 10);
+            this.dgvThietBi.DefaultCellStyle.ForeColor = Color.Blue;
+            this.dgvThietBi.DefaultCellStyle.BackColor = Color.Beige;
+            this.dgvThietBi.DefaultCellStyle.SelectionForeColor = Color.Black;
+            this.dgvThietBi.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
+            this.dgvThietBi.RowTemplate.Height = 35;
+            this.dgvThietBi.RowTemplate.MinimumHeight = 20;
             QLBLL qLBLL = new QLBLL();
+            
             foreach (ViewThietBi viewThietBi in qLBLL.DgvThietBi(txtTim))
             {
-                dt.Rows.Add(viewThietBi.MaThietBi, viewThietBi.Stt, viewThietBi.TenThietBi, viewThietBi.GiaThietBi);
+                dgvThietBi.Rows.Add(viewThietBi.MaThietBi, viewThietBi.Stt, viewThietBi.TenThietBi, viewThietBi.GiaThietBi);
             }
             var Sua = System.Drawing.Image.FromFile(@"D:\PblProject\Pbl3_Main\PBL3 - Motel Management System\Icons\icons8-create-25.png");
             var Xoa = System.Drawing.Image.FromFile(@"D:\PblProject\Pbl3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
             dgvThietBi.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dv.dgvIcons_CellPainting1(dgvThietBi, e, Sua, Xoa));
-            
-            dgvThietBi.CellContentClick += DgvThietBi_CellContentClick;
-            dgvThietBi.DataSource = dt;
-            //dgvThietBi.Columns[0].Visible = true;
-            dgvThietBi.Columns["Mã Thiết bị"].Visible = false;
-
 
         }
-        private void DgvThietBi_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                // Lấy tên cột của ô đã được nhấp
-                string columnName = dgvThietBi.Columns[e.ColumnIndex].Name;
-
-                // Kiểm tra xem ô đã được nhấp có phải là nút Sửa hay Xóa không
-                if (columnName == "btnSua")
-                {
-                    // Lấy mã dịch vụ tương ứng với hàng đã được nhấp
-                    string id = dgvThietBi.Rows[e.RowIndex].Cells["Mã Thiết bị"].Value.ToString();
-
-
-                    tc.openChildForm1(new SuaThietBI(id, LoadForm), panelTB);
-                }
-                else if (columnName == "btnXoa")
-                {
-                    string idThietBi = dgvThietBi.Rows[e.RowIndex].Cells["Mã Thiết bị"].Value.ToString();
-                    QLBLL qLBLL = new QLBLL();
-                    qLBLL.DelChiTietThietBiByIdThietBi(idThietBi);
-                    qLBLL.DelThietBiBll(idThietBi);
-                    MessageBox.Show("Xóa thiết bị thành công", "Thông báo");
-                    LoadForm(null);
-                }
-            }
-        }
-
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -225,34 +156,12 @@ namespace PBL3___Motel_Management_System.View
                     break;
             }
         }
-
-
-
-       
-
         private void btnSuaDV_Click(object sender, EventArgs e)
         {
             string id = dgvThietBi.CurrentRow.Cells[0].Value.ToString();
             tc.openChildForm1(new SuaThietBI(id, LoadForm), panelTB);
             
         }
-
-        //private void ThietBi_Load(object sender, EventArgs e)
-        //{
-        //    formSize = this.ClientSize;
-        //    AdjustForm();
-        //    if (this.WindowState == FormWindowState.Normal)
-        //    {
-        //        formSize = this.ClientSize;
-        //        this.WindowState = FormWindowState.Maximized;
-        //    }
-        //    else
-        //    {
-        //        this.WindowState = FormWindowState.Normal;
-        //        this.Size = formSize;
-        //    }
-        //}
-
         private void btnThemThietBi_Click(object sender, EventArgs e)
         {
             tc.openChildForm1(new ThemThietBi(LoadForm), panelTB);
@@ -276,6 +185,32 @@ namespace PBL3___Motel_Management_System.View
         private void btnBaoHong_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvThietBi_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                // Lấy tên cột của ô đã được nhấp
+                string columnName = dgvThietBi.Columns[e.ColumnIndex].Name;
+
+                // Kiểm tra xem ô đã được nhấp có phải là nút Sửa hay Xóa không
+                if (columnName == "btnSua")
+                {
+                    // Lấy mã dịch vụ tương ứng với hàng đã được nhấp
+                    string id = dgvThietBi.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    tc.openChildForm1(new SuaThietBI(id, LoadForm), panelTB);
+                }
+                else if (columnName == "btnXoa")
+                {
+                    string idThietBi = dgvThietBi.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    QLBLL qLBLL = new QLBLL();
+                    qLBLL.DelChiTietThietBiByIdThietBi(idThietBi);
+                    qLBLL.DelThietBiBll(idThietBi);
+                    MessageBox.Show("Xóa thiết bị thành công", "Thông báo");
+                    LoadForm(null);
+                }
+            }
         }
     }
 }
