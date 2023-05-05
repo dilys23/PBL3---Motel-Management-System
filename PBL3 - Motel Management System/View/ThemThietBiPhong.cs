@@ -39,29 +39,29 @@ namespace PBL3___Motel_Management_System.View
             dgvThietBi.Columns[0].Visible = false;
             List<ChiTietThietBi> list = new List<ChiTietThietBi>();
             list = qLBLL.GetChiTietThietBiByIdPhong(tp.hopDong.MaPhongTro);
-            if(tp.hopDong.MaHopDong == null)
+            if (tp.hopDong.MaHopDong == null)
             {
-            foreach(ChiTietThietBi cttb in list)
-            {
-                for(int i = 0;i<dgvThietBi.Rows.Count;i++)
+                foreach (ChiTietThietBi cttb in list)
                 {
-                        if(dgvThietBi.Rows[i].Cells[0].Value != null)
+                    for (int i = 0; i < dgvThietBi.Rows.Count; i++)
+                    {
+                        if (dgvThietBi.Rows[i].Cells[0].Value != null)
                         {
 
-                    if(cttb.MaThietBi == dgvThietBi.Rows[i].Cells[0].Value.ToString())
-                        {
-                            ThietBi tb = new ThietBi();
-                            tb = qLBLL.GetThietBiByIdThietBi(cttb.MaThietBi);
-                            ViewThietBi v = new ViewThietBi();
-                            v.MaThietBi = tb.MaThietBi;
-                            v.TenThietBi = tb.TenThietBi;
-                            v.GiaThietBi = tb.GiaThietBi;
-                            
-                            dgvTBThem.Rows.Add(v.MaThietBi, 0, v.TenThietBi, v.GiaThietBi,cttb.SoLuong);
+                            if (cttb.MaThietBi == dgvThietBi.Rows[i].Cells[0].Value.ToString())
+                            {
+                                ThietBi tb = new ThietBi();
+                                tb = qLBLL.GetThietBiByIdThietBi(cttb.MaThietBi);
+                                ViewThietBi v = new ViewThietBi();
+                                v.MaThietBi = tb.MaThietBi;
+                                v.TenThietBi = tb.TenThietBi;
+                                v.GiaThietBi = tb.GiaThietBi;
+
+                                dgvTBThem.Rows.Add(v.MaThietBi, 0, v.TenThietBi, v.GiaThietBi, cttb.SoLuong);
+                            }
                         }
-                        }
+                    }
                 }
-            }
                 for (int i = 0; i < dgvTBThem.Rows.Count; i++)
                 {
                     dgvTBThem.Rows[i].Cells[1].Value = i + 1;
@@ -74,17 +74,15 @@ namespace PBL3___Motel_Management_System.View
             }
             else
             {
-                btnThemTB.Visible = false;
-                btnXoaTB.Visible = false;
-                dgvThietBi.Visible = false;
+               
                 int i = 0;
-                foreach(string idCttb in qLBLL.GetAllIdCHiTietThietBiByIdPhong(tp.hopDong.MaPhongTro))
+                foreach (string idCttb in qLBLL.GetAllIdCHiTietThietBiByIdPhong(tp.hopDong.MaPhongTro))
                 {
                     ChiTietThietBi cttb = qLBLL.GetChiTietThietBiById(idCttb);
                     ThietBi tb = qLBLL.GetThietBiByIdThietBi(cttb.MaThietBi);
                     dgvTBThem.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi, cttb.SoLuong);
                 }
-               
+
             }
 
         }

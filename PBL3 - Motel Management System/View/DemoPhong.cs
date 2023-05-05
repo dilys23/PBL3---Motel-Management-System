@@ -49,6 +49,7 @@ namespace PBL3___Motel_Management_System.View
         }
         public void LoadForm(string txt)
         {
+            
             panelBtnDay.Controls.Clear();
             panelPhong.AutoScroll = false;
             panelPhong.HorizontalScroll.Visible = false;
@@ -60,7 +61,7 @@ namespace PBL3___Motel_Management_System.View
 
             foreach(DayTro dt in qLBLL.GetAllDayTroBll())
             {
-
+                ToolTip tp = new ToolTip();
                 Button btn = new Button();
                 btn.BackColor = System.Drawing.Color.DarkOrange;
                 this.btnThemPhong.IconChar = FontAwesome.Sharp.IconChar.FileArrowUp;
@@ -72,6 +73,7 @@ namespace PBL3___Motel_Management_System.View
                 btn.TabIndex = 21;
                 btn.Text = dt.TenDayTro;
                 btn.Name = dt.MaDayTro;
+                tp.SetToolTip(btn, btn.Text);
                 btn.Click += new EventHandler(SuKien);
                 panelBtnDay.Controls.Add(btn);
                 if(defaultBtn == null)
@@ -243,6 +245,11 @@ namespace PBL3___Motel_Management_System.View
                 panelPhong.Controls.Add(p);
             }
             panelPhong.Invalidate();
+
+        }
+
+        private void btnXoaDay_Click(object sender, EventArgs e)
+        {
 
         }
     }

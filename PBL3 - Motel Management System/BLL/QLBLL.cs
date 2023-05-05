@@ -821,18 +821,18 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return null;
         }
-       
 
-        public List<string>GetAllIdDichVuByIdPhong(string idPhong)
+        public List<string> GetAllIdDichVuByIdPhong(string idPhong)
         {
-            QLDAL qLDAL= new QLDAL();
+            QLDAL qLDAL = new QLDAL();
             List<string> idDichVu = new List<string>();
-            foreach(ChiTietDichVu ctdv in qLDAL.GetAllChiTietDichVu())
+            foreach (ChiTietDichVu ctdv in qLDAL.GetAllChiTietDichVu())
             {
                 if (ctdv.MaPhongTro == idPhong) idDichVu.Add(ctdv.MaDichVu);
             }
             return idDichVu;
         }
+
         public List<string> GetAllIdThietBiByIdPhong(string idPhong)
         {
             QLDAL qLDAL = new QLDAL();
@@ -987,9 +987,9 @@ namespace PBL3___Motel_Management_System.BLL
         public void DelCHiTietDichVuByIdPhong(string IdPhong)
         {
             QLDAL qLDAL = new QLDAL();
-            foreach (string id in GetAllIdChitietDichVuByIdPhong(IdPhong))
+            foreach (string id in GetAllChiTietDichVuByIdDichVu(IdPhong))
             {
-                qLDAL.DelChiTietDichVuById(id);
+                qLDAL.DelChiTietDichVuDal(id);
             }
         }
         public List<string> GetAllChiTietThietBiByIdThietBi(string idThietBi)
@@ -1053,6 +1053,11 @@ namespace PBL3___Motel_Management_System.BLL
         {
             QLDAL qLDAL = new QLDAL();
             qLDAL.DelThanhVienDAL(id);
+        }
+        public void DelPhongTroBLL(string idphong)
+        {
+            QLDAL qLDAL = new QLDAL();
+            qLDAL.DelPhongTroDAL(idphong);
         }
         public void DelHoaDonBll(string id)
         {

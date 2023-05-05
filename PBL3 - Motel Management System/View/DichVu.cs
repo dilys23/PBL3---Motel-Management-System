@@ -364,5 +364,35 @@ namespace PBL3___Motel_Management_System
                 MessageBox.Show("Đây là dịch vụ cố định!! Không thể xóa");
             }
         }
+
+        private void dgvDichVu_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvDichVu.Columns[e.ColumnIndex].Name == "btnSua")
+            {
+                if (e.Value != null)
+                {
+                    // Kiểm tra nếu ô là DataGridViewButtonCell
+                    if (dgvDichVu.Rows[e.RowIndex].Cells[e.ColumnIndex] is DataGridViewButtonCell)
+                    {
+                        // Đặt giá trị ToolTipText cho ô DataGridViewButtonCell
+                        DataGridViewButtonCell buttonCell = (DataGridViewButtonCell)dgvDichVu.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                        buttonCell.ToolTipText = "Chỉnh sửa";
+                    }
+                }
+            }
+            if (dgvDichVu.Columns[e.ColumnIndex].Name == "btnXoa")
+            {
+                if (e.Value != null)
+                {
+                    // Kiểm tra nếu ô là DataGridViewButtonCell
+                    if (dgvDichVu.Rows[e.RowIndex].Cells[e.ColumnIndex] is DataGridViewButtonCell)
+                    {
+                        // Đặt giá trị ToolTipText cho ô DataGridViewButtonCell
+                        DataGridViewButtonCell buttonCell = (DataGridViewButtonCell)dgvDichVu.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                        buttonCell.ToolTipText = "Xóa";
+                    }
+                }
+            }
+        }
     }
 }

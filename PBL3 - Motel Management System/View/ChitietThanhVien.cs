@@ -177,20 +177,20 @@ namespace PBL3___Motel_Management_System.View
         {
             if (dgvThanhVien.CurrentRow.Cells[0].Value != null)
             {
-
+                ThuePhong tp = new ThuePhong();
                 string id = dgvThanhVien.CurrentRow.Cells[0].Value.ToString();
-                QLBLL qLBLL = new QLBLL();
-                Nguoi nguoi = qLBLL.GetNguoiByIdNguoi(id);
-                if (nguoi.HinhAnh != null)
-                {
-                    Image image = ChuyenDoiAnh.Base64ToImage(nguoi.HinhAnh);
-                    Anh anh = new Anh(image);
-                    anh.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("Không có dữ liệu ảnh");
-                }
+                tp.hopDong.MaNguoi = id;
+                ThemKhach tk = new ThemKhach(tp, LoadForm);
+                tc.openChildForm1(tk, panelThem);
+                tk.btnLuu.Visible= false;
+                tk.btnThemAnh.Visible= false;
+                tk.txtCccd.Enabled = false;
+                tk.txtDiaChi.Enabled = false;
+                tk.dtpNgaySinh.Enabled = false;
+                tk.txtSdt.Enabled = false;
+                tk.txtTen.Enabled = false;
+                tk.rdbtnNam.Enabled = false;
+                tk.rdbtnNu.Enabled = false;
             }
         }
 

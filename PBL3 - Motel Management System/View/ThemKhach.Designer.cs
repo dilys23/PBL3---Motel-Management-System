@@ -328,26 +328,26 @@
         }
 
         #endregion
-        private FontAwesome.Sharp.IconButton btnLuu;
-        private FontAwesome.Sharp.IconButton btnTrove;
         private System.Windows.Forms.Panel panelKhach;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton rdbtnNu;
-        private System.Windows.Forms.DateTimePicker dtpNgaySinh;
-        private System.Windows.Forms.RadioButton rdbtnNam;
-        private System.Windows.Forms.TextBox txtDiaChi;
-        private System.Windows.Forms.TextBox txtSdt;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtCccd;
-        private System.Windows.Forms.TextBox txtTen;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private FontAwesome.Sharp.IconButton btnThemAnh;
-        private System.Windows.Forms.PictureBox pctKhach;
+        public FontAwesome.Sharp.IconButton btnLuu;
+        public FontAwesome.Sharp.IconButton btnTrove;
+        public System.Windows.Forms.RadioButton rdbtnNu;
+        public System.Windows.Forms.DateTimePicker dtpNgaySinh;
+        public System.Windows.Forms.RadioButton rdbtnNam;
+        public System.Windows.Forms.TextBox txtDiaChi;
+        public System.Windows.Forms.TextBox txtSdt;
+        public System.Windows.Forms.TextBox txtCccd;
+        public System.Windows.Forms.TextBox txtTen;
+        public FontAwesome.Sharp.IconButton btnThemAnh;
+        public System.Windows.Forms.PictureBox pctKhach;
     }
 }
