@@ -1,6 +1,6 @@
 ﻿namespace PBL3___Motel_Management_System.View
 {
-    partial class ChitietDichVu
+    partial class ChitietDV
     {
         /// <summary>
         /// Required designer variable.

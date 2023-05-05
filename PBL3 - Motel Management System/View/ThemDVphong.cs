@@ -32,17 +32,15 @@ namespace PBL3___Motel_Management_System.View
             this.Close();
 
         }
-       
 
+        QLBLL qLBLL = new QLBLL();
         public void LoadForm()
         {
             dgvXoaDichVu.Columns[0].Visible = false;
-            QLBLL qLBLL = new QLBLL();
+            
             int i = 0;
             string maHD = qLBLL.GetHopDongByIdPhong(tp.hopDong.MaPhongTro).MaHopDong;
-            if (maHD== null)
-            {
-                foreach (ViewDichVu viewDichVu in qLBLL.DgvDichVu(null))
+             foreach (ViewDichVu viewDichVu in qLBLL.DgvDichVu(null))
                 {
                     if (viewDichVu.MaDichVu != "000" && viewDichVu.MaDichVu != "001")
                     {
@@ -53,16 +51,14 @@ namespace PBL3___Motel_Management_System.View
                         dgvDVcodinh.Rows.Add(viewDichVu.MaDichVu, viewDichVu.Stt, viewDichVu.TenDichVu, viewDichVu.GiaDichVu);
                     }
                 }
-            }
-            else
-            {
-                foreach (string idDv in qLBLL.GetAllIdDichVuByIdPhong(tp.hopDong.MaPhongTro))
+            
+              foreach (string idDv in qLBLL.GetAllIdDichVuByIdPhong(tp.hopDong.MaPhongTro))
                 {
                     DichVu dv = new DichVu();
                     dv = qLBLL.GetDVByIdDV(idDv);
                     dgvXoaDichVu.Rows.Add(dv.MaDichVu, i++, dv.TenDichVu, dv.GiaDichVu);
                 }
-            }
+            
                  
             dgvThemDichVu.Columns[0].Visible = false;
 
@@ -72,24 +68,44 @@ namespace PBL3___Motel_Management_System.View
 
         }
         TrangChu tc = new TrangChu();
-
+       
         private void iconButton4_Click(object sender, EventArgs e)
         {
-            List<string> dsdv = new List<string>();
-            foreach (DataGridViewRow dr in dgvXoaDichVu.Rows)
+            
+            if (tp.hopDong.MaHopDong != null)
             {
-                if (dr.Cells[0].Value != null) dsdv.Add(dr.Cells[0].Value.ToString());
 
+                List<string> dsdv = new List<string>();
+                foreach (DataGridViewRow dr in dgvXoaDichVu.Rows)
+                {
+                    if (dr.Cells[0].Value != null) dsdv.Add(dr.Cells[0].Value.ToString());
+                }
+                foreach (DataGridViewRow dr in dgvDVcodinh.Rows)
+                {
+                    if (dr.Cells[0].Value != null) dsdv.Add(dr.Cells[0].Value.ToString());
+                }
+                tp.DsDichVu = dsdv;
+                tc.openChildForm1(new ThemThietBiPhong(tp, Back), panelThemDV);
             }
-            foreach (DataGridViewRow dr in dgvDVcodinh.Rows)
+            else
             {
-                if (dr.Cells[0].Value != null) dsdv.Add(dr.Cells[0].Value.ToString());
-
+                QLBLL qLBLL = new QLBLL();
+                qLBLL.DelCHiTietDichVuByIdPhong(tp.hopDong.MaPhongTro);
+                foreach (DataGridViewRow dr in dgvXoaDichVu.Rows)
+                {
+                    if (dr.Cells[0].Value != null)
+                    {
+                        ChiTietDichVu ctdv = new ChiTietDichVu();
+                        ctdv.MaChiTietDichVu = qLBLL.TaoIdChiTietDichVu();
+                        ctdv.MaDichVu = dr.Cells["MaDichVu"].Value.ToString();
+                        ctdv.MaPhongTro = tp.hopDong.MaPhongTro;
+                        qLBLL.AddChiTietDichVuBll(ctdv);
+                    }
+                }
+                MessageBox.Show("Thay đổi thành công", "Thông báo", MessageBoxButtons.OK);
+                this.Close();
+                this.loader(null);
             }
-            //tp.DsDichVu.Clear();
-            // tp.DsDichVu.AddRange(dsdv);
-            tp.DsDichVu = dsdv;
-            tc.openChildForm1(new ThemThietBiPhong(tp, Back), panelThemDV);
         }
 
         private void iconButton2_Click(object sender, EventArgs e)

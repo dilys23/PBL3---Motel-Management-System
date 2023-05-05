@@ -422,11 +422,11 @@
     <Compile Include="View\ChitietDay.Designer.cs">
       <DependentUpon>ChitietDay.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ChitietDichVu.cs">
+    <Compile Include="View\ChitietDV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ChitietDichVu.Designer.cs">
-      <DependentUpon>ChitietDichVu.cs</DependentUpon>
+    <Compile Include="View\ChitietDV.Designer.cs">
+      <DependentUpon>ChitietDV.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ChitietHopDong.cs">
       <SubType>Form</SubType>
@@ -694,8 +694,8 @@
     <EmbeddedResource Include="View\ChitietDay.resx">
       <DependentUpon>ChitietDay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ChitietDichVu.resx">
-      <DependentUpon>ChitietDichVu.cs</DependentUpon>
+    <EmbeddedResource Include="View\ChitietDV.resx">
+      <DependentUpon>ChitietDV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ChitietHopDong.resx">
       <DependentUpon>ChitietHopDong.cs</DependentUpon>

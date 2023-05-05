@@ -957,6 +957,16 @@ namespace PBL3___Motel_Management_System.BLL
 
             return list;
         }
+        public List<string> GetAllIdChitietDichVuByIdPhong(string idphong)
+        {
+            List<string> list = new List<string>();
+            QLDAL qLDAL = new QLDAL();
+            foreach (ChiTietDichVu ctdv in qLDAL.GetAllChiTietDichVu())
+            {
+                if (ctdv.MaPhongTro == idphong) list.Add(ctdv.MaChiTietDichVu);
+            }
+            return list;
+        }
         public ChiTietThietBi GetChiTietThietBiById(string IdChiTiet)
         {
             QLDAL qLDAL = new QLDAL();
@@ -969,10 +979,17 @@ namespace PBL3___Motel_Management_System.BLL
         public void DelCHiTietThietBiByIdPhongBLL(string IdPhong)
         {
             QLDAL qLDAL = new QLDAL();
-
             foreach(string id in GetAllIdCHiTietThietBiByIdPhong(IdPhong))
             {
                 qLDAL.DelCHiTietThietBiById(id);
+            }
+        }
+        public void DelCHiTietDichVuByIdPhong(string IdPhong)
+        {
+            QLDAL qLDAL = new QLDAL();
+            foreach (string id in GetAllIdChitietDichVuByIdPhong(IdPhong))
+            {
+                qLDAL.DelChiTietDichVuById(id);
             }
         }
         public List<string> GetAllChiTietThietBiByIdThietBi(string idThietBi)

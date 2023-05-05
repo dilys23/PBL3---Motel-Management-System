@@ -14,10 +14,10 @@ using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System.View
 {
-    public partial class ChitietDichVu : Form
+    public partial class ChitietDV : Form
     {
         private string idPhong;
-        public ChitietDichVu(string idPhong)
+        public ChitietDV(string idPhong)
         {
             InitializeComponent();
             this.idPhong = idPhong;

@@ -412,8 +412,15 @@ namespace PBL3___Motel_Management_System.DAL
                 var s = data.ChiTietThietBi.Find(Id);
                 data.ChiTietThietBi.Remove(s);
                 data.SaveChanges() ;
-
-
+            }
+        }
+        public void DelChiTietDichVuById(string id)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                var s = data.ChiTietDichVu.Find(id);
+                data.ChiTietDichVu.Remove(s);
+                data.SaveChanges();
             }
         }
         public void DelChiTietDichVuDal(string id)

@@ -54,7 +54,7 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnDichVu_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ChitietDichVu(idPhong),panelChitietPT);
+            tc.openChildForm1(new ChitietDV(idPhong),panelChitietPT);
         }
     }
 }
