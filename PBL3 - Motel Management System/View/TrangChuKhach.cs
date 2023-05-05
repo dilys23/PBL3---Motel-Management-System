@@ -14,8 +14,12 @@ namespace PBL3___Motel_Management_System.View
 {
     public partial class TrangChuKhach : Form
     {
+#pragma warning disable CS0169 // The field 'TrangChuKhach.tp' is never used
         private ThuePhong tp;
+#pragma warning restore CS0169 // The field 'TrangChuKhach.tp' is never used
+#pragma warning disable CS0169 // The field 'TrangChuKhach.loader' is never used
         private Loader loader;
+#pragma warning restore CS0169 // The field 'TrangChuKhach.loader' is never used
         private int borderSize = 2;
         private Size formSize;
         public TrangChuKhach()
@@ -183,7 +187,9 @@ namespace PBL3___Motel_Management_System.View
 
 
         
+#pragma warning disable CS0414 // The field 'TrangChuKhach.activeForm' is assigned but its value is never used
         private Form activeForm = null;
+#pragma warning restore CS0414 // The field 'TrangChuKhach.activeForm' is assigned but its value is never used
 
         private void btnMaximized_Click_1(object sender, EventArgs e)
         {

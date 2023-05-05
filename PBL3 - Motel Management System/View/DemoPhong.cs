@@ -19,7 +19,9 @@ namespace PBL3___Motel_Management_System.View
 
     public partial class DemoPhong : Form
     {
+#pragma warning disable CS0414 // The field 'DemoPhong.defaultBtn' is assigned but its value is never used
         private Button defaultBtn = null;
+#pragma warning restore CS0414 // The field 'DemoPhong.defaultBtn' is assigned but its value is never used
         private Button ClickBtn = null;
         public DemoPhong()
         {
@@ -170,6 +172,14 @@ namespace PBL3___Motel_Management_System.View
             //string idDay = btn.Name;
             //tc.openChildForm1(new SuaDay(LoadForm), panelChinh);
             //panelBtnDay.Controls.Clear();
+            if (ClickBtn != null)
+            {
+
+                QLBLL qLBLL = new QLBLL();
+                DayTro dt = qLBLL.GetDayTroById(ClickBtn.Name);
+                tc.openChildForm1(new SuaDay(dt.MaDayTro, LoadForm), panelChinh);
+            }
+
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -215,7 +225,7 @@ namespace PBL3___Motel_Management_System.View
                     lbl.Name = nguoi.MaNguoi;
                     lbl.Text = "   " + nguoi.Ten;
                     lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    Image image1 = Image.FromFile("D:\\PblProject\\PBL3_MAIN\\PBL3 - Motel Management System\\Icons\\icons8-customer-20.png" + "    ");
+                    Image image1 = Image.FromFile("D:\\PBL3\\PBL3_Main\\PBL3 - Motel Management System\\Icons\\icons8-customer-20.png" + "    ");
                     lbl.Image = image1;
                     lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
                     // Set the size of the label to accommodate the bitmap size.

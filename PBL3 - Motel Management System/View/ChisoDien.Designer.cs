@@ -452,7 +452,9 @@
         private System.Windows.Forms.DataGridView dgvChiSoDien;
         private System.Windows.Forms.Panel panelChisoDien;
         private System.Windows.Forms.Panel panel1;
+#pragma warning disable CS0169 // The field 'ChisoDien.iconButton3' is never used
         private FontAwesome.Sharp.IconButton iconButton3;
+#pragma warning restore CS0169 // The field 'ChisoDien.iconButton3' is never used
         private FontAwesome.Sharp.IconButton btnSuaHD;
         private FontAwesome.Sharp.IconButton btnThemHD;
         private FontAwesome.Sharp.IconButton btnXacThuc;

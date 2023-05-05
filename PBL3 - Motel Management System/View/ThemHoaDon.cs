@@ -129,6 +129,7 @@ namespace PBL3___Motel_Management_System.View
 
             // Gán ngày đó cho DateTimePicker
             dtpThangThanhToan.Value = date;
+#pragma warning disable CS0168 // Variable is declared but never used
             try
             {
 
@@ -140,6 +141,7 @@ namespace PBL3___Motel_Management_System.View
             {
                 MessageBox.Show("Dãy hiện tại chưa có phòng để cho thuê");
             }
+#pragma warning restore CS0168 // Variable is declared but never used
         }
 
         private void cbbDayTro_SelectedIndexChanged(object sender, EventArgs e)

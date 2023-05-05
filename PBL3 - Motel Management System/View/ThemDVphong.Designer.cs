@@ -35,6 +35,10 @@
             this.panelThem = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDVcodinh = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnXoaDichVu = new FontAwesome.Sharp.IconButton();
             this.btnThemDichVu = new FontAwesome.Sharp.IconButton();
             this.dgvXoaDichVu = new System.Windows.Forms.DataGridView();
@@ -43,14 +47,10 @@
             this.TenDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GiaDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvThemDichVu = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaDichVu1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STT1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDichVu1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaDichVu1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelThemDV.SuspendLayout();
             this.panelThem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDVcodinh)).BeginInit();
@@ -175,6 +175,31 @@
             this.dgvDVcodinh.Size = new System.Drawing.Size(881, 143);
             this.dgvDVcodinh.TabIndex = 55;
             // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Mã dịch vụ";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "STT";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Tên dịch vụ";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Giá dịch vụ";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
             // btnXoaDichVu
             // 
             this.btnXoaDichVu.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -273,10 +298,10 @@
             this.dgvThemDichVu.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvThemDichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvThemDichVu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
+            this.MaDichVu1,
+            this.STT1,
+            this.TenDichVu1,
+            this.GiaDichVu1});
             this.dgvThemDichVu.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvThemDichVu.Location = new System.Drawing.Point(104, 12);
             this.dgvThemDichVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -287,54 +312,29 @@
             this.dgvThemDichVu.Size = new System.Drawing.Size(881, 152);
             this.dgvThemDichVu.TabIndex = 51;
             // 
-            // dataGridViewTextBoxColumn1
+            // MaDichVu1
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã dịch vụ";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.MaDichVu1.HeaderText = "Mã dịch vụ";
+            this.MaDichVu1.MinimumWidth = 6;
+            this.MaDichVu1.Name = "MaDichVu1";
             // 
-            // dataGridViewTextBoxColumn2
+            // STT1
             // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "STT";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.STT1.HeaderText = "STT";
+            this.STT1.MinimumWidth = 6;
+            this.STT1.Name = "STT1";
             // 
-            // dataGridViewTextBoxColumn3
+            // TenDichVu1
             // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Tên dịch vụ";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.TenDichVu1.HeaderText = "Tên dịch vụ";
+            this.TenDichVu1.MinimumWidth = 6;
+            this.TenDichVu1.Name = "TenDichVu1";
             // 
-            // dataGridViewTextBoxColumn4
+            // GiaDichVu1
             // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Giá dịch vụ";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Mã dịch vụ";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "STT";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "Tên dịch vụ";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "Giá dịch vụ";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.GiaDichVu1.HeaderText = "Giá dịch vụ";
+            this.GiaDichVu1.MinimumWidth = 6;
+            this.GiaDichVu1.Name = "GiaDichVu1";
             // 
             // ThemDVphong
             // 
@@ -371,15 +371,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Stt;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDichVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaDichVu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvDVcodinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaDichVu1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenDichVu1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiaDichVu1;
     }
 }

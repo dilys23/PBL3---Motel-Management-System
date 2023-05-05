@@ -135,6 +135,7 @@ namespace PBL3___Motel_Management_System.View
                 }
                 else
                 {
+#pragma warning disable CS0168 // Variable is declared but never used
                     try
                     {
 
@@ -147,6 +148,7 @@ namespace PBL3___Motel_Management_System.View
                     {
                         MessageBox.Show("Không hợp lệ");
                     }
+#pragma warning restore CS0168 // Variable is declared but never used
                     
 
                     
