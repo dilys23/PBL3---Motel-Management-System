@@ -81,6 +81,7 @@
             // dgvDichVu
             // 
             this.dgvDichVu.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dgvDichVu.AllowUserToAddRows = false;
             this.dgvDichVu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDichVu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;

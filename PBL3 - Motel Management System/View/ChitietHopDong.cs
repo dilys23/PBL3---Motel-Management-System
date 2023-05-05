@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System.View
 {
-    
+
     public partial class ChitietHopDong : Form
     {
         private ThuePhong tp;
@@ -23,16 +23,16 @@ namespace PBL3___Motel_Management_System.View
             InitializeComponent();
             this.tp = tp;
             LoadForm();
-            this.loader=loader;
-    
+            this.loader = loader;
+
         }
         public void LoadForm()
         {
-            QLBLL qLBLL = new QLBLL();                   
+            QLBLL qLBLL = new QLBLL();
             DayTro dt = new DayTro();
-            dt= qLBLL.GetDayTroByIdPhong(tp.hopDong.MaPhongTro);
+            dt = qLBLL.GetDayTroByIdPhong(tp.hopDong.MaPhongTro);
             PhongTro pt = new PhongTro();
-             pt= qLBLL.GetPhongTroByIdPhong(tp.hopDong.MaPhongTro);
+            pt = qLBLL.GetPhongTroByIdPhong(tp.hopDong.MaPhongTro);
             Nguoi nguoi = new Nguoi();
             string MaHD = qLBLL.GetHopDongByIdPhong(tp.hopDong.MaPhongTro).MaHopDong;
             nguoi = qLBLL.GetNguoiByIdHopDong(MaHD);
@@ -55,12 +55,12 @@ namespace PBL3___Motel_Management_System.View
             dtpNgayBatDau.Value = batdau;
             dtpNgayKetThuc.Value = ketthuc;
             int i = 0;
-            
-            foreach(string idDv in qLBLL.GetAllIdDichVuByIdPhong(tp.hopDong.MaPhongTro))
+
+            foreach (string idDv in qLBLL.GetAllIdDichVuByIdPhong(tp.hopDong.MaPhongTro))
             {
                 DichVu dv = new DichVu();
                 dv = qLBLL.GetDichVuByIdDichVu(idDv);
-                dgvDichvu.Rows.Add(dv.MaDichVu,++i,dv.TenDichVu,dv.GiaDichVu);
+                dgvDichvu.Rows.Add(dv.MaDichVu, ++i, dv.TenDichVu, dv.GiaDichVu);
             }
             foreach (string idTb in qLBLL.GetAllIdThietBiByIdPhong(tp.hopDong.MaPhongTro))
             {
@@ -83,7 +83,7 @@ namespace PBL3___Motel_Management_System.View
 
         public void btnXacNhan_Click(object sender, EventArgs e)
         {
-            QLBLL qLBLL = new QLBLL();  
+            QLBLL qLBLL = new QLBLL();
             Nguoi nguoi = new Nguoi();
             nguoi = tp.hopDong.Nguoi;
 #pragma warning disable CS0168 // Variable is declared but never used
@@ -105,7 +105,7 @@ namespace PBL3___Motel_Management_System.View
             tvtp.MaPhongTro = pt.MaPhongTro;
             tvtp.MaNguoi = nguoi.MaNguoi;
             qLBLL.AddThanhVienTrongPhongBll(tvtp);
-            foreach(string iddv in tp.DsDichVu)
+            foreach (string iddv in tp.DsDichVu)
             {
                 ChiTietDichVu ctdv = new ChiTietDichVu();
                 ctdv.MaChiTietDichVu = qLBLL.TaoIdChiTietDichVu();
@@ -126,12 +126,12 @@ namespace PBL3___Motel_Management_System.View
             {
                 qLBLL.AddHdBll(hd);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 qLBLL.UpdateHopDongBLL(hd);
             }
 #pragma warning restore CS0168 // Variable is declared but never used
-            MessageBox.Show("Xác nhận thuê phòng thành công", "Thông báo",MessageBoxButtons.OK); 
+            MessageBox.Show("Xác nhận thuê phòng thành công", "Thông báo", MessageBoxButtons.OK);
             this.loader(null);
             this.Close();
         }

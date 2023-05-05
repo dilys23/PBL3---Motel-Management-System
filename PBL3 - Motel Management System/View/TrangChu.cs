@@ -329,17 +329,7 @@ namespace PBL3___Motel_Management_System
         private void btnTK_Click(object sender, EventArgs e)
         {
             
-            taiKhoan1.BringToFront();
-           // taiKhoan1.Toggle();
-            if (taiKhoan1.Visible)
-            {
-                taiKhoan1.Visible=false;
-            }
-            else
-            {
-                taiKhoan1.Visible=true;
-            }
-            taiKhoan1.BringToFront();
+            
         }
 
         private void taiKhoan1_Load(object sender, EventArgs e)

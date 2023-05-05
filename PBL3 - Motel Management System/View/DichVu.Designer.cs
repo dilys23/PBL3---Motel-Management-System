@@ -32,14 +32,21 @@ namespace PBL3___Motel_Management_System
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panelDV = new System.Windows.Forms.Panel();
+            this.dgvDichVu = new System.Windows.Forms.DataGridView();
+            this.MaDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSua = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnXoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.txtTim = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new FontAwesome.Sharp.IconButton();
             this.btnXoaPhong = new FontAwesome.Sharp.IconButton();
             this.btnThemDichVu = new FontAwesome.Sharp.IconButton();
-            this.dgvDichVu = new System.Windows.Forms.DataGridView();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.panelDV.SuspendLayout();
@@ -57,7 +64,6 @@ namespace PBL3___Motel_Management_System
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(915, 49);
             this.panel1.TabIndex = 20;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label4
             // 
@@ -76,16 +82,88 @@ namespace PBL3___Motel_Management_System
             this.panelDV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelDV.Controls.Add(this.dgvDichVu);
             this.panelDV.Controls.Add(this.txtTim);
             this.panelDV.Controls.Add(this.btnTimKiem);
             this.panelDV.Controls.Add(this.btnXoaPhong);
             this.panelDV.Controls.Add(this.btnThemDichVu);
-            this.panelDV.Controls.Add(this.dgvDichVu);
             this.panelDV.Location = new System.Drawing.Point(5, 55);
             this.panelDV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelDV.Name = "panelDV";
             this.panelDV.Size = new System.Drawing.Size(901, 383);
             this.panelDV.TabIndex = 21;
+            // 
+            // dgvDichVu
+            // 
+            this.dgvDichVu.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dgvDichVu.AllowUserToAddRows = false;
+            this.dgvDichVu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDichVu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDichVu.BackgroundColor = System.Drawing.Color.Ivory;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDichVu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDichVu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaDichVu,
+            this.Stt,
+            this.TenDichVu,
+            this.GiaDichVu,
+            this.btnSua,
+            this.btnXoa});
+            this.dgvDichVu.Location = new System.Drawing.Point(12, 79);
+            this.dgvDichVu.Name = "dgvDichVu";
+            this.dgvDichVu.RowHeadersWidth = 51;
+            this.dgvDichVu.RowTemplate.Height = 24;
+            this.dgvDichVu.Size = new System.Drawing.Size(876, 273);
+            this.dgvDichVu.TabIndex = 57;
+            this.dgvDichVu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDichVu_CellContentClick);
+            this.dgvDichVu.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDichVu_CellFormatting);
+            // 
+            // MaDichVu
+            // 
+            this.MaDichVu.HeaderText = "MaDichVu";
+            this.MaDichVu.MinimumWidth = 6;
+            this.MaDichVu.Name = "MaDichVu";
+            this.MaDichVu.Visible = false;
+            // 
+            // Stt
+            // 
+            this.Stt.HeaderText = "STT";
+            this.Stt.MinimumWidth = 6;
+            this.Stt.Name = "Stt";
+            // 
+            // TenDichVu
+            // 
+            this.TenDichVu.HeaderText = "Tên dịch vụ";
+            this.TenDichVu.MinimumWidth = 6;
+            this.TenDichVu.Name = "TenDichVu";
+            // 
+            // GiaDichVu
+            // 
+            this.GiaDichVu.HeaderText = "Giá dịch vụ";
+            this.GiaDichVu.MinimumWidth = 6;
+            this.GiaDichVu.Name = "GiaDichVu";
+            // 
+            // btnSua
+            // 
+            this.btnSua.HeaderText = "";
+            this.btnSua.MinimumWidth = 6;
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnSua.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.HeaderText = "";
+            this.btnXoa.MinimumWidth = 6;
+            this.btnXoa.Name = "btnXoa";
             // 
             // txtTim
             // 
@@ -144,7 +222,7 @@ namespace PBL3___Motel_Management_System
             this.btnThemDichVu.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnThemDichVu.IconSize = 25;
             this.btnThemDichVu.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnThemDichVu.Location = new System.Drawing.Point(788, 16);
+            this.btnThemDichVu.Location = new System.Drawing.Point(788, 13);
             this.btnThemDichVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThemDichVu.Name = "btnThemDichVu";
             this.btnThemDichVu.Size = new System.Drawing.Size(100, 39);
@@ -153,29 +231,6 @@ namespace PBL3___Motel_Management_System
             this.btnThemDichVu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemDichVu.UseVisualStyleBackColor = false;
             this.btnThemDichVu.Click += new System.EventHandler(this.btnThemPhong_Click_1);
-            // 
-            // dgvDichVu
-            // 
-            this.dgvDichVu.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.dgvDichVu.AllowUserToAddRows = false;
-            this.dgvDichVu.AllowUserToOrderColumns = true;
-            this.dgvDichVu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvDichVu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDichVu.BackgroundColor = System.Drawing.Color.Ivory;
-            this.dgvDichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDichVu.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvDichVu.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dgvDichVu.Location = new System.Drawing.Point(16, 73);
-            this.dgvDichVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dgvDichVu.Name = "dgvDichVu";
-            this.dgvDichVu.RowHeadersWidth = 70;
-            this.dgvDichVu.RowTemplate.Height = 24;
-            this.dgvDichVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDichVu.Size = new System.Drawing.Size(872, 297);
-            this.dgvDichVu.TabIndex = 50;
-            this.dgvDichVu.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDichVu_CellFormatting);
             // 
             // Dichvu
             // 
@@ -207,9 +262,15 @@ namespace PBL3___Motel_Management_System
         private System.Windows.Forms.Panel panelDV;
         private FontAwesome.Sharp.IconButton btnTimKiem;
         private FontAwesome.Sharp.IconButton btnThemDichVu;
-        private System.Windows.Forms.DataGridView dgvDichVu;
         private TextBox txtTim;
         private FontAwesome.Sharp.IconButton btnXoaPhong;
         private ToolTip toolTip1;
+        private DataGridView dgvDichVu;
+        private DataGridViewTextBoxColumn MaDichVu;
+        private DataGridViewTextBoxColumn Stt;
+        private DataGridViewTextBoxColumn TenDichVu;
+        private DataGridViewTextBoxColumn GiaDichVu;
+        private DataGridViewButtonColumn btnSua;
+        private DataGridViewButtonColumn btnXoa;
     }
 }

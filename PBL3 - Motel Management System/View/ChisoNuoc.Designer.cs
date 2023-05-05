@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelChisoNuoc = new System.Windows.Forms.Panel();
             this.btnHuyXacThuc = new FontAwesome.Sharp.IconButton();
             this.dgvChiSoNuoc = new System.Windows.Forms.DataGridView();
@@ -43,6 +44,8 @@
             this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Thang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSua = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnXoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnXacThuc = new FontAwesome.Sharp.IconButton();
             this.label5 = new System.Windows.Forms.Label();
             this.cbbTinhTrang = new System.Windows.Forms.ComboBox();
@@ -108,6 +111,7 @@
             // dgvChiSoNuoc
             // 
             this.dgvChiSoNuoc.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dgvChiSoNuoc.AllowUserToAddRows = false;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvChiSoNuoc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvChiSoNuoc.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -133,7 +137,17 @@
             this.DaDung,
             this.NgayLap,
             this.Thang,
-            this.TinhTrang});
+            this.TinhTrang,
+            this.btnSua,
+            this.btnXoa});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvChiSoNuoc.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvChiSoNuoc.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvChiSoNuoc.Location = new System.Drawing.Point(35, 107);
             this.dgvChiSoNuoc.Name = "dgvChiSoNuoc";
@@ -142,6 +156,7 @@
             this.dgvChiSoNuoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvChiSoNuoc.Size = new System.Drawing.Size(950, 273);
             this.dgvChiSoNuoc.TabIndex = 65;
+            this.dgvChiSoNuoc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChiSoNuoc_CellContentClick_1);
             // 
             // MaChiTietSuDungDichVu
             // 
@@ -203,6 +218,18 @@
             this.TinhTrang.HeaderText = "Tình trạng";
             this.TinhTrang.MinimumWidth = 6;
             this.TinhTrang.Name = "TinhTrang";
+            // 
+            // btnSua
+            // 
+            this.btnSua.HeaderText = "";
+            this.btnSua.MinimumWidth = 6;
+            this.btnSua.Name = "btnSua";
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.HeaderText = "";
+            this.btnXoa.MinimumWidth = 6;
+            this.btnXoa.Name = "btnXoa";
             // 
             // btnXacThuc
             // 
@@ -376,7 +403,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "ChisoNuoc";
             this.Text = "WaterNum";
-            this.Load += new System.EventHandler(this.ChisoNuoc_Load);
             this.panelChisoNuoc.ResumeLayout(false);
             this.panelChisoNuoc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiSoNuoc)).EndInit();
@@ -413,5 +439,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayLap;
         private System.Windows.Forms.DataGridViewTextBoxColumn Thang;
         private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrang;
+        private System.Windows.Forms.DataGridViewButtonColumn btnSua;
+        private System.Windows.Forms.DataGridViewButtonColumn btnXoa;
     }
 }

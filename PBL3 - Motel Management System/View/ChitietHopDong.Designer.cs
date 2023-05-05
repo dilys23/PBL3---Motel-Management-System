@@ -29,7 +29,17 @@
         private void InitializeComponent()
         {
             this.panelThem = new System.Windows.Forms.Panel();
+            this.dgvDichvu = new System.Windows.Forms.DataGridView();
+            this.MaDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label12 = new System.Windows.Forms.Label();
+            this.dgvThietbi = new System.Windows.Forms.DataGridView();
+            this.MaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtDienTich = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
@@ -56,19 +66,9 @@
             this.dtpNgayBatDau = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.btnTroVe = new FontAwesome.Sharp.IconButton();
-            this.GiaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvThietbi = new System.Windows.Forms.DataGridView();
-            this.dgvDichvu = new System.Windows.Forms.DataGridView();
-            this.MaDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelThem.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvThietbi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichvu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThietbi)).BeginInit();
             this.SuspendLayout();
             // 
             // panelThem
@@ -111,6 +111,51 @@
             this.panelThem.TabIndex = 47;
             this.panelThem.Paint += new System.Windows.Forms.PaintEventHandler(this.panelThem_Paint);
             // 
+            // dgvDichvu
+            // 
+            this.dgvDichvu.AllowUserToAddRows = false;
+            this.dgvDichvu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDichvu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDichvu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDichvu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaDichVu,
+            this.STT,
+            this.TenDichVu,
+            this.GiaDichVu});
+            this.dgvDichvu.Location = new System.Drawing.Point(44, 270);
+            this.dgvDichvu.Name = "dgvDichvu";
+            this.dgvDichvu.RowHeadersWidth = 51;
+            this.dgvDichvu.RowTemplate.Height = 24;
+            this.dgvDichvu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDichvu.Size = new System.Drawing.Size(780, 57);
+            this.dgvDichvu.TabIndex = 48;
+            // 
+            // MaDichVu
+            // 
+            this.MaDichVu.HeaderText = "MaDichVu";
+            this.MaDichVu.MinimumWidth = 6;
+            this.MaDichVu.Name = "MaDichVu";
+            this.MaDichVu.Visible = false;
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            // 
+            // TenDichVu
+            // 
+            this.TenDichVu.HeaderText = "Tên dịch vụ";
+            this.TenDichVu.MinimumWidth = 6;
+            this.TenDichVu.Name = "TenDichVu";
+            // 
+            // GiaDichVu
+            // 
+            this.GiaDichVu.HeaderText = "Giá Dịch vụ";
+            this.GiaDichVu.MinimumWidth = 6;
+            this.GiaDichVu.Name = "GiaDichVu";
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -121,6 +166,62 @@
             this.label12.Size = new System.Drawing.Size(76, 20);
             this.label12.TabIndex = 47;
             this.label12.Text = "Diện tích";
+            // 
+            // dgvThietbi
+            // 
+            this.dgvThietbi.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dgvThietbi.AllowUserToAddRows = false;
+            this.dgvThietbi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvThietbi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvThietbi.BackgroundColor = System.Drawing.Color.PaleTurquoise;
+            this.dgvThietbi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvThietbi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaThietBi,
+            this.dataGridViewTextBoxColumn1,
+            this.TenThietBi,
+            this.GiaThietBi});
+            this.dgvThietbi.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvThietbi.Location = new System.Drawing.Point(44, 375);
+            this.dgvThietbi.Name = "dgvThietbi";
+            this.dgvThietbi.ReadOnly = true;
+            this.dgvThietbi.RowHeadersWidth = 51;
+            this.dgvThietbi.RowTemplate.Height = 24;
+            this.dgvThietbi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvThietbi.Size = new System.Drawing.Size(780, 78);
+            this.dgvThietbi.TabIndex = 46;
+            // 
+            // MaThietBi
+            // 
+            this.MaThietBi.HeaderText = "MaThietBi";
+            this.MaThietBi.MinimumWidth = 6;
+            this.MaThietBi.Name = "MaThietBi";
+            this.MaThietBi.ReadOnly = true;
+            this.MaThietBi.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.FillWeight = 95.69988F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "STT";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // TenThietBi
+            // 
+            this.TenThietBi.FillWeight = 104.4377F;
+            this.TenThietBi.HeaderText = "Tên thiết bị";
+            this.TenThietBi.MinimumWidth = 6;
+            this.TenThietBi.Name = "TenThietBi";
+            this.TenThietBi.ReadOnly = true;
+            // 
+            // GiaThietBi
+            // 
+            this.GiaThietBi.FillWeight = 99.86245F;
+            this.GiaThietBi.HeaderText = "Giá thiết bị";
+            this.GiaThietBi.MinimumWidth = 6;
+            this.GiaThietBi.Name = "GiaThietBi";
+            this.GiaThietBi.ReadOnly = true;
             // 
             // txtDienTich
             // 
@@ -402,105 +503,6 @@
             this.btnTroVe.UseVisualStyleBackColor = false;
             this.btnTroVe.Click += new System.EventHandler(this.btnTroVe_Click);
             // 
-            // GiaThietBi
-            // 
-            this.GiaThietBi.FillWeight = 99.86245F;
-            this.GiaThietBi.HeaderText = "Giá thiết bị";
-            this.GiaThietBi.MinimumWidth = 6;
-            this.GiaThietBi.Name = "GiaThietBi";
-            this.GiaThietBi.ReadOnly = true;
-            // 
-            // TenThietBi
-            // 
-            this.TenThietBi.FillWeight = 104.4377F;
-            this.TenThietBi.HeaderText = "Tên thiết bị";
-            this.TenThietBi.MinimumWidth = 6;
-            this.TenThietBi.Name = "TenThietBi";
-            this.TenThietBi.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.FillWeight = 95.69988F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "STT";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // MaThietBi
-            // 
-            this.MaThietBi.HeaderText = "MaThietBi";
-            this.MaThietBi.MinimumWidth = 6;
-            this.MaThietBi.Name = "MaThietBi";
-            this.MaThietBi.ReadOnly = true;
-            this.MaThietBi.Visible = false;
-            // 
-            // dgvThietbi
-            // 
-            this.dgvThietbi.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.dgvThietbi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvThietbi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvThietbi.BackgroundColor = System.Drawing.Color.PaleTurquoise;
-            this.dgvThietbi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvThietbi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaThietBi,
-            this.dataGridViewTextBoxColumn1,
-            this.TenThietBi,
-            this.GiaThietBi});
-            this.dgvThietbi.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvThietbi.Location = new System.Drawing.Point(44, 404);
-            this.dgvThietbi.Name = "dgvThietbi";
-            this.dgvThietbi.ReadOnly = true;
-            this.dgvThietbi.RowHeadersWidth = 51;
-            this.dgvThietbi.RowTemplate.Height = 24;
-            this.dgvThietbi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvThietbi.Size = new System.Drawing.Size(780, 78);
-            this.dgvThietbi.TabIndex = 46;
-            // 
-            // dgvDichvu
-            // 
-            this.dgvDichvu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvDichvu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDichvu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDichvu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaDichVu,
-            this.STT,
-            this.TenDichVu,
-            this.GiaDichVu});
-            this.dgvDichvu.Location = new System.Drawing.Point(44, 299);
-            this.dgvDichvu.Name = "dgvDichvu";
-            this.dgvDichvu.RowHeadersWidth = 51;
-            this.dgvDichvu.RowTemplate.Height = 24;
-            this.dgvDichvu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDichvu.Size = new System.Drawing.Size(780, 99);
-            this.dgvDichvu.TabIndex = 48;
-            // 
-            // MaDichVu
-            // 
-            this.MaDichVu.HeaderText = "MaDichVu";
-            this.MaDichVu.MinimumWidth = 6;
-            this.MaDichVu.Name = "MaDichVu";
-            this.MaDichVu.Visible = false;
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            // 
-            // TenDichVu
-            // 
-            this.TenDichVu.HeaderText = "Tên dịch vụ";
-            this.TenDichVu.MinimumWidth = 6;
-            this.TenDichVu.Name = "TenDichVu";
-            // 
-            // GiaDichVu
-            // 
-            this.GiaDichVu.HeaderText = "Giá Dịch vụ";
-            this.GiaDichVu.MinimumWidth = 6;
-            this.GiaDichVu.Name = "GiaDichVu";
-            // 
             // ChitietHopDong
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -515,8 +517,8 @@
             this.Text = "ChitietHopDong";
             this.panelThem.ResumeLayout(false);
             this.panelThem.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvThietbi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichvu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvThietbi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

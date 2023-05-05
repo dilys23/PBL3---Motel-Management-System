@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.btnTim = new FontAwesome.Sharp.IconButton();
@@ -54,7 +56,8 @@
             this.ConNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbbDayTro = new System.Windows.Forms.ComboBox();
             this.btnThemHoaDon = new FontAwesome.Sharp.IconButton();
-            this.btnXoa = new FontAwesome.Sharp.IconButton();
+            this.btnSua = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnXoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             this.panelHD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
@@ -68,7 +71,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(973, 49);
+            this.panel1.Size = new System.Drawing.Size(1176, 49);
             this.panel1.TabIndex = 41;
             // 
             // label4
@@ -129,7 +132,7 @@
             this.cbbPhongTro.Name = "cbbPhongTro";
             this.cbbPhongTro.Size = new System.Drawing.Size(148, 28);
             this.cbbPhongTro.TabIndex = 44;
-            this.cbbPhongTro.SelectedIndexChanged += new System.EventHandler(this.cbbPhongTro_SelectedIndexChanged);
+        
             // 
             // panelHD
             // 
@@ -144,7 +147,6 @@
             this.panelHD.Controls.Add(this.cbbTinhTrang);
             this.panelHD.Controls.Add(this.btnBoXacThuc);
             this.panelHD.Controls.Add(this.btnXacThuc);
-            this.panelHD.Controls.Add(this.btnXoa);
             this.panelHD.Controls.Add(this.dgvHoaDon);
             this.panelHD.Controls.Add(this.btnTim);
             this.panelHD.Controls.Add(this.cbbDayTro);
@@ -155,7 +157,7 @@
             this.panelHD.Location = new System.Drawing.Point(12, 65);
             this.panelHD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelHD.Name = "panelHD";
-            this.panelHD.Size = new System.Drawing.Size(949, 470);
+            this.panelHD.Size = new System.Drawing.Size(1152, 551);
             this.panelHD.TabIndex = 43;
             // 
             // dtpThangSuDung
@@ -164,7 +166,7 @@
             this.dtpThangSuDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpThangSuDung.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpThangSuDung.Location = new System.Drawing.Point(60, 44);
-            this.dtpThangSuDung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpThangSuDung.Margin = new System.Windows.Forms.Padding(4);
             this.dtpThangSuDung.Name = "dtpThangSuDung";
             this.dtpThangSuDung.ShowUpDown = true;
             this.dtpThangSuDung.Size = new System.Drawing.Size(133, 27);
@@ -211,10 +213,10 @@
             this.btnBoXacThuc.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBoXacThuc.IconSize = 25;
             this.btnBoXacThuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBoXacThuc.Location = new System.Drawing.Point(488, 349);
+            this.btnBoXacThuc.Location = new System.Drawing.Point(920, 36);
             this.btnBoXacThuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBoXacThuc.Name = "btnBoXacThuc";
-            this.btnBoXacThuc.Size = new System.Drawing.Size(128, 39);
+            this.btnBoXacThuc.Size = new System.Drawing.Size(113, 38);
             this.btnBoXacThuc.TabIndex = 65;
             this.btnBoXacThuc.Text = "Bỏ xác thực";
             this.btnBoXacThuc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -230,10 +232,10 @@
             this.btnXacThuc.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXacThuc.IconSize = 25;
             this.btnXacThuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXacThuc.Location = new System.Drawing.Point(383, 349);
+            this.btnXacThuc.Location = new System.Drawing.Point(788, 36);
             this.btnXacThuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXacThuc.Name = "btnXacThuc";
-            this.btnXacThuc.Size = new System.Drawing.Size(99, 39);
+            this.btnXacThuc.Size = new System.Drawing.Size(99, 38);
             this.btnXacThuc.TabIndex = 64;
             this.btnXacThuc.Text = "Xác Thực";
             this.btnXacThuc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -243,10 +245,19 @@
             // dgvHoaDon
             // 
             this.dgvHoaDon.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dgvHoaDon.AllowUserToAddRows = false;
             this.dgvHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHoaDon.BackgroundColor = System.Drawing.Color.Ivory;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaHoaDon,
@@ -258,17 +269,28 @@
             this.TongTien,
             this.TinhTrang,
             this.DaThanhToan,
-            this.ConNo});
+            this.ConNo,
+            this.btnSua,
+            this.btnXoa});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHoaDon.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvHoaDon.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvHoaDon.GridColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgvHoaDon.Location = new System.Drawing.Point(29, 103);
+            this.dgvHoaDon.Location = new System.Drawing.Point(17, 108);
             this.dgvHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvHoaDon.Name = "dgvHoaDon";
             this.dgvHoaDon.RowHeadersWidth = 51;
             this.dgvHoaDon.RowTemplate.Height = 24;
             this.dgvHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHoaDon.Size = new System.Drawing.Size(915, 223);
+            this.dgvHoaDon.Size = new System.Drawing.Size(1118, 223);
             this.dgvHoaDon.TabIndex = 8;
+            this.dgvHoaDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDon_CellContentClick_1);
             // 
             // MaHoaDon
             // 
@@ -353,7 +375,7 @@
             this.btnThemHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThemHoaDon.IconSize = 25;
             this.btnThemHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemHoaDon.Location = new System.Drawing.Point(758, 40);
+            this.btnThemHoaDon.Location = new System.Drawing.Point(1055, 36);
             this.btnThemHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThemHoaDon.Name = "btnThemHoaDon";
             this.btnThemHoaDon.Size = new System.Drawing.Size(92, 38);
@@ -363,33 +385,23 @@
             this.btnThemHoaDon.UseVisualStyleBackColor = false;
             this.btnThemHoaDon.Click += new System.EventHandler(this.btnThemHD_Click);
             // 
+            // btnSua
+            // 
+            this.btnSua.HeaderText = "";
+            this.btnSua.MinimumWidth = 6;
+            this.btnSua.Name = "btnSua";
+            // 
             // btnXoa
             // 
-            this.btnXoa.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXoa.BackColor = System.Drawing.Color.Red;
-            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btnXoa.IconColor = System.Drawing.Color.White;
-            this.btnXoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnXoa.IconSize = 25;
-            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(856, 39);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXoa.HeaderText = "";
+            this.btnXoa.MinimumWidth = 6;
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(77, 38);
-            this.btnXoa.TabIndex = 20;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXoa.UseVisualStyleBackColor = false;
-            this.btnXoa.Visible = false;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // Hoadon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(973, 559);
+            this.ClientSize = new System.Drawing.Size(1176, 640);
             this.Controls.Add(this.panelHD);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -432,6 +444,7 @@
         private System.Windows.Forms.DateTimePicker dtpThangSuDung;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dgvHoaDon;
-        public FontAwesome.Sharp.IconButton btnXoa;
+        private System.Windows.Forms.DataGridViewButtonColumn btnSua;
+        private System.Windows.Forms.DataGridViewButtonColumn btnXoa;
     }
 }

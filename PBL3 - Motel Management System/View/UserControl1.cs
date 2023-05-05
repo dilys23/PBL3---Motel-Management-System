@@ -43,14 +43,31 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnThongtin_Click(object sender, EventArgs e)
         {
-            
-            ChuTro form = new ChuTro(); // Tạo một đối tượng form mới
-            form.TopLevel = false; // Set TopLevel = false để hiển thị form trên panel của trang chủ
-            form.FormBorderStyle = FormBorderStyle.None;
+            //using (ChuTro frm = new ChuTro())
+            //{
+            //    frm.ShowDialog();
+            //}
+            // Khởi tạo form
+            //ChuTro form = new ChuTro();
+
+            //// Thiết lập DockStyle.Fill để form điền vào Panel
+            //form.TopLevel = false;
+            //form.FormBorderStyle = FormBorderStyle.None;
+            //form.Dock = DockStyle.Fill;
+
+            //// Hiển thị form trong Panel của trang chủ
+            //DesktopPanel.Controls.Clear();
+            //DesktopPanel.Controls.Add(form);
+            //form.Show();
+            //ChuTro form = new ChuTro(); // Tạo một đối tượng form mới
+           // form.TopLevel = false; // Set TopLevel = false để hiển thị form trên panel của trang chủ
+            //form.FormBorderStyle = FormBorderStyle.None;
             //form.Dock = DockStyle.None; // Dock form vào panel của trang chủ
-            this.Parent.Controls.Add(form); // Thêm form vào panel của trang chủ
-            this.Parent.Controls.Remove(this); // Xóa user control hiện tại
-            form.Show(); // Hiển thị form mới
+            //this.Parent.Controls.Add(form); // Thêm form vào panel của trang chủ
+           // this.Parent.Controls.Remove(this); // Xóa user control hiện tại
+           // form.Show(); // Hiển thị form mới
+          // TrangChu tc = new TrangChu();
+            
         }
     }
 }

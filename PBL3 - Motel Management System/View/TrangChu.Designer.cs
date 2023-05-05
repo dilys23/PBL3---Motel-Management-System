@@ -49,12 +49,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMenu = new FontAwesome.Sharp.IconButton();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.taiKhoan1 = new PBL3___Motel_Management_System.View.TaiKhoan();
             this.panelTitle.SuspendLayout();
             this.paneMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelDesktop.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTitle
@@ -383,24 +381,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDesktop.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panelDesktop.Controls.Add(this.taiKhoan1);
             this.panelDesktop.Location = new System.Drawing.Point(200, 80);
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(1138, 669);
             this.panelDesktop.TabIndex = 5;
             this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
-            // 
-            // taiKhoan1
-            // 
-            this.taiKhoan1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.taiKhoan1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.taiKhoan1.DesktopPanel = this.panelDesktop;
-            this.taiKhoan1.Location = new System.Drawing.Point(881, 10);
-            this.taiKhoan1.Name = "taiKhoan1";
-            this.taiKhoan1.Size = new System.Drawing.Size(217, 344);
-            this.taiKhoan1.TabIndex = 0;
-            this.taiKhoan1.Visible = false;
             // 
             // TrangChu
             // 
@@ -420,7 +405,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelDesktop.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -446,6 +430,5 @@
         private FontAwesome.Sharp.IconButton btnThietbi;
         private FontAwesome.Sharp.IconButton btnTK;
         private System.Windows.Forms.Panel panelDesktop;
-        private View.TaiKhoan taiKhoan1;
     }
 }
