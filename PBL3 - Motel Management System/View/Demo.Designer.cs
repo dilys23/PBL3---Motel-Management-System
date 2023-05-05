@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnXoaPhong = new FontAwesome.Sharp.IconButton();
-            this.btnSuaDichVu = new FontAwesome.Sharp.IconButton();
+            this.btnSuaPhong = new FontAwesome.Sharp.IconButton();
             this.btnCoc = new FontAwesome.Sharp.IconButton();
             this.btnChiTiet = new FontAwesome.Sharp.IconButton();
             this.btnTra = new FontAwesome.Sharp.IconButton();
@@ -46,7 +46,7 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Window;
             this.panel2.Controls.Add(this.btnXoaPhong);
-            this.panel2.Controls.Add(this.btnSuaDichVu);
+            this.panel2.Controls.Add(this.btnSuaPhong);
             this.panel2.Controls.Add(this.btnCoc);
             this.panel2.Controls.Add(this.btnChiTiet);
             this.panel2.Controls.Add(this.btnTra);
@@ -80,27 +80,29 @@
             this.btnXoaPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.btnXoaPhong, "Xóa Phòng");
             this.btnXoaPhong.UseVisualStyleBackColor = false;
+            this.btnXoaPhong.Click += new System.EventHandler(this.btnXoaPhong_Click);
             // 
-            // btnSuaDichVu
+            // btnSuaPhong
             // 
-            this.btnSuaDichVu.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnSuaDichVu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSuaDichVu.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnSuaDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaDichVu.IconChar = FontAwesome.Sharp.IconChar.Pen;
-            this.btnSuaDichVu.IconColor = System.Drawing.Color.White;
-            this.btnSuaDichVu.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSuaDichVu.IconSize = 25;
-            this.btnSuaDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaDichVu.Location = new System.Drawing.Point(20, 245);
-            this.btnSuaDichVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnSuaDichVu.Name = "btnSuaDichVu";
-            this.btnSuaDichVu.Size = new System.Drawing.Size(77, 39);
-            this.btnSuaDichVu.TabIndex = 55;
-            this.btnSuaDichVu.Text = "Sửa";
-            this.btnSuaDichVu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolTip1.SetToolTip(this.btnSuaDichVu, "Sửa Dịch Vụ");
-            this.btnSuaDichVu.UseVisualStyleBackColor = false;
+            this.btnSuaPhong.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnSuaPhong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSuaPhong.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSuaPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuaPhong.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            this.btnSuaPhong.IconColor = System.Drawing.Color.White;
+            this.btnSuaPhong.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSuaPhong.IconSize = 25;
+            this.btnSuaPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSuaPhong.Location = new System.Drawing.Point(20, 245);
+            this.btnSuaPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSuaPhong.Name = "btnSuaPhong";
+            this.btnSuaPhong.Size = new System.Drawing.Size(77, 39);
+            this.btnSuaPhong.TabIndex = 55;
+            this.btnSuaPhong.Text = "Sửa";
+            this.btnSuaPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnSuaPhong, "Sửa Dịch Vụ");
+            this.btnSuaPhong.UseVisualStyleBackColor = false;
+            this.btnSuaPhong.Click += new System.EventHandler(this.btnSuaPhong_Click);
             // 
             // btnCoc
             // 
@@ -217,7 +219,7 @@
         private System.Windows.Forms.FlowLayoutPanel panelTenKhach;
         private System.Windows.Forms.Panel panelTenPhongTro;
         private FontAwesome.Sharp.IconButton btnXoaPhong;
-        private FontAwesome.Sharp.IconButton btnSuaDichVu;
+        private FontAwesome.Sharp.IconButton btnSuaPhong;
         private System.Windows.Forms.ToolTip toolTip1;
     }
 }

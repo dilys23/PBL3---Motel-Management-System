@@ -37,6 +37,7 @@
             this.btnHopDong = new FontAwesome.Sharp.IconButton();
             this.btnThanhVien = new FontAwesome.Sharp.IconButton();
             this.btnDichVu = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panelPhong.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -105,6 +106,7 @@
             this.flowLayoutPanel1.Controls.Add(this.btnHopDong);
             this.flowLayoutPanel1.Controls.Add(this.btnThanhVien);
             this.flowLayoutPanel1.Controls.Add(this.btnDichVu);
+            this.flowLayoutPanel1.Controls.Add(this.iconButton1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -123,7 +125,7 @@
             this.btnHopDong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHopDong.Location = new System.Drawing.Point(3, 3);
             this.btnHopDong.Name = "btnHopDong";
-            this.btnHopDong.Size = new System.Drawing.Size(365, 41);
+            this.btnHopDong.Size = new System.Drawing.Size(273, 41);
             this.btnHopDong.TabIndex = 49;
             this.btnHopDong.Tag = "Hợp đồng";
             this.btnHopDong.Text = "   Hợp đồng";
@@ -140,9 +142,9 @@
             this.btnThanhVien.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThanhVien.IconSize = 35;
             this.btnThanhVien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThanhVien.Location = new System.Drawing.Point(374, 3);
+            this.btnThanhVien.Location = new System.Drawing.Point(282, 3);
             this.btnThanhVien.Name = "btnThanhVien";
-            this.btnThanhVien.Size = new System.Drawing.Size(389, 41);
+            this.btnThanhVien.Size = new System.Drawing.Size(273, 41);
             this.btnThanhVien.TabIndex = 51;
             this.btnThanhVien.Tag = "Thành Viên";
             this.btnThanhVien.Text = "Thành Viên";
@@ -159,14 +161,33 @@
             this.btnDichVu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDichVu.IconSize = 35;
             this.btnDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDichVu.Location = new System.Drawing.Point(769, 3);
+            this.btnDichVu.Location = new System.Drawing.Point(561, 3);
             this.btnDichVu.Name = "btnDichVu";
-            this.btnDichVu.Size = new System.Drawing.Size(339, 41);
+            this.btnDichVu.Size = new System.Drawing.Size(279, 41);
             this.btnDichVu.TabIndex = 50;
             this.btnDichVu.Tag = "Dịch Vụ ";
             this.btnDichVu.Text = "Dịch Vụ ";
             this.btnDichVu.UseVisualStyleBackColor = true;
             this.btnDichVu.Click += new System.EventHandler(this.btnDichVu_Click);
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Computer;
+            this.iconButton1.IconColor = System.Drawing.Color.DarkCyan;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 35;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton1.Location = new System.Drawing.Point(846, 3);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(271, 41);
+            this.iconButton1.TabIndex = 52;
+            this.iconButton1.Tag = "Thiết bị";
+            this.iconButton1.Text = "Thiết bị";
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // ChiTietPT
             // 
@@ -196,5 +217,6 @@
         private FontAwesome.Sharp.IconButton btnThanhVien;
         private FontAwesome.Sharp.IconButton btnDichVu;
         private System.Windows.Forms.Panel panelChitietPT;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

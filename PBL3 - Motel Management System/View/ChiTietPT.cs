@@ -25,19 +25,18 @@ namespace PBL3___Motel_Management_System.View
         {
             ThuePhong tp = new ThuePhong();
             tp.hopDong.MaPhongTro = idPhong;
-            ChitietHopDong ct = new ChitietHopDong(tp, LoadForm);
+            ChitietHD ct = new ChitietHD(tp, LoadForm);
             tc.openChildForm1(ct, panelChitietPT);
-            ct.btnXacNhan.Visible = false;
+
         }
-        TrangChu tc = new TrangChu();
-        QLBLL qLBLL = new QLBLL();
+        TrangChu tc = new TrangChu();     
         private void btnHopDong_Click_1(object sender, EventArgs e)
-        {
+        { 
             ThuePhong tp = new ThuePhong();
-            tp.hopDong.MaPhongTro = idPhong;
-            ChitietHopDong ct = new ChitietHopDong(tp, LoadForm);
+            tp.hopDong.MaPhongTro =idPhong;
+            ChitietHD ct= new ChitietHD(tp,LoadForm);
             tc.openChildForm1(ct, panelChitietPT);
-            ct.btnXacNhan.Visible = false;
+           
         }
 
         private void btnThanhVien_Click(object sender, EventArgs e)
@@ -54,6 +53,11 @@ namespace PBL3___Motel_Management_System.View
         private void btnDichVu_Click(object sender, EventArgs e)
         {
             tc.openChildForm1(new ChitietDV(idPhong),panelChitietPT);
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            tc.openChildForm1(new ChitietTB(idPhong), panelChitietPT);
         }
     }
 }

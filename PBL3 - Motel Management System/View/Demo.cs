@@ -155,5 +155,34 @@ namespace PBL3___Motel_Management_System.View
                 MessageBox.Show("Phòng hiện tại đã được cho thuê", "Thông báo");
             }
         }
+
+      
+
+        private void btnXoaPhong_Click(object sender, EventArgs e)
+        {
+            QLBLL qLBLL = new QLBLL();
+            if(qLBLL.TinhTrangPhongById(IdPhong)==true || qLBLL.PhongDaCocByIdPhong(IdPhong)==true)
+            {
+                MessageBox.Show("Phòng hiện không thể xóa", "Thông báo");
+            }
+            else
+            {
+                DialogResult kq = MessageBox.Show("Bạn có thực sự muốn xóa ","Cảnh báo",MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
+                if(kq == DialogResult.OK)
+                {
+                    qLBLL.DelCHiTietThietBiByIdPhongBLL(IdPhong);
+                    qLBLL.DelPhongTroBLL(IdPhong);
+                    MessageBox.Show("Xóa phòng trọ thành công", "Thông báo");
+                    this.Close();
+                    // LoadForm(null);
+                }
+               
+            }
+        }
+
+        private void btnSuaPhong_Click(object sender, EventArgs e)
+        {
+           tc.openChildForm1(new SuaPhong(IdPhong,LoadForm), panel);
+        }
     }
 }

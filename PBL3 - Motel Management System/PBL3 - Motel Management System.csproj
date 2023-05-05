@@ -428,6 +428,12 @@
     <Compile Include="View\ChitietDV.Designer.cs">
       <DependentUpon>ChitietDV.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ChitietHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ChitietHD.Designer.cs">
+      <DependentUpon>ChitietHD.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ChitietHopDong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -445,6 +451,12 @@
     </Compile>
     <Compile Include="View\ChiTietPT.Designer.cs">
       <DependentUpon>ChiTietPT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChitietTB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ChitietTB.Designer.cs">
+      <DependentUpon>ChitietTB.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ChitietThanhVien.cs">
       <SubType>Form</SubType>
@@ -697,6 +709,9 @@
     <EmbeddedResource Include="View\ChitietDV.resx">
       <DependentUpon>ChitietDV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ChitietHD.resx">
+      <DependentUpon>ChitietHD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ChitietHopDong.resx">
       <DependentUpon>ChitietHopDong.cs</DependentUpon>
     </EmbeddedResource>
@@ -705,6 +720,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ChiTietPT.resx">
       <DependentUpon>ChiTietPT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ChitietTB.resx">
+      <DependentUpon>ChitietTB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ChitietThanhVien.resx">
       <DependentUpon>ChitietThanhVien.cs</DependentUpon>

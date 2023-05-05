@@ -414,15 +414,7 @@ namespace PBL3___Motel_Management_System.DAL
                 data.SaveChanges() ;
             }
         }
-        public void DelChiTietDichVuById(string id)
-        {
-            using (DataPbl data = new DataPbl())
-            {
-                var s = data.ChiTietDichVu.Find(id);
-                data.ChiTietDichVu.Remove(s);
-                data.SaveChanges();
-            }
-        }
+        
         public void DelChiTietDichVuDal(string id)
         {
             using(DataPbl data = new DataPbl())
@@ -457,6 +449,15 @@ namespace PBL3___Motel_Management_System.DAL
             {
                 var s = data.ThanhVienTrongPhong.Find(id);
                 data.ThanhVienTrongPhong.Remove(s);
+                data.SaveChanges() ;
+            }
+        }
+        public void DelPhongTroDAL(string idPhong)
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                var s = data.PhongTro.Find(idPhong);
+                data.PhongTro.Remove(s);
                 data.SaveChanges() ;
             }
         }

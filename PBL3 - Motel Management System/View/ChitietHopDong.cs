@@ -29,15 +29,12 @@ namespace PBL3___Motel_Management_System.View
         public void LoadForm()
         {
             QLBLL qLBLL = new QLBLL();
+            Nguoi nguoi = new Nguoi();
+            nguoi = tp.hopDong.Nguoi;
             DayTro dt = new DayTro();
             dt = qLBLL.GetDayTroByIdPhong(tp.hopDong.MaPhongTro);
             PhongTro pt = new PhongTro();
             pt = qLBLL.GetPhongTroByIdPhong(tp.hopDong.MaPhongTro);
-            Nguoi nguoi = new Nguoi();
-            string MaHD = qLBLL.GetHopDongByIdPhong(tp.hopDong.MaPhongTro).MaHopDong;
-            nguoi = qLBLL.GetNguoiByIdHopDong(MaHD);
-            HopDong hopdong = new HopDong();
-            hopdong = qLBLL.GetHopDongByIdPhong(tp.hopDong.MaPhongTro);
             txtHoVaTen.Text = nguoi.Ten;
             txtTenDay.Text = dt.TenDayTro;
             txtTenPhong.Text = pt.TenPhongTro;
@@ -45,30 +42,28 @@ namespace PBL3___Motel_Management_System.View
             txtDiaChi.Text = diachi;
             txtGiaPhong.Text = pt.GiaTien.ToString();
             txtSdt.Text = nguoi.Sdt;
-            txtTienCoc.Text = hopdong.TienCoc.ToString();
+            txtTienCoc.Text = tp.hopDong.TienCoc.ToString();
             txtCccd.Text = nguoi.Cccd;
             txtDienTich.Text = pt.DienTich.ToString();
             DateTime ngaysinh = DateTime.ParseExact(nguoi.NgaySinh, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
-            DateTime batdau = DateTime.ParseExact(hopdong.NgayBatDau, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
-            DateTime ketthuc = DateTime.ParseExact(hopdong.NgayKetThuc, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
+            DateTime batdau = DateTime.ParseExact(tp.hopDong.NgayBatDau, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
+            DateTime ketthuc = DateTime.ParseExact(tp.hopDong.NgayKetThuc, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
             dtpNgaySinh.Value = ngaysinh;
             dtpNgayBatDau.Value = batdau;
             dtpNgayKetThuc.Value = ketthuc;
             int i = 0;
-
-            foreach (string idDv in qLBLL.GetAllIdDichVuByIdPhong(tp.hopDong.MaPhongTro))
+            foreach (string idDv in tp.DsDichVu)
             {
                 DichVu dv = new DichVu();
                 dv = qLBLL.GetDichVuByIdDichVu(idDv);
                 dgvDichvu.Rows.Add(dv.MaDichVu, ++i, dv.TenDichVu, dv.GiaDichVu);
             }
-            foreach (string idTb in qLBLL.GetAllIdThietBiByIdPhong(tp.hopDong.MaPhongTro))
+            foreach (string idTb in tp.DsThietBi)
             {
                 ThietBi tb = new ThietBi();
                 tb = qLBLL.GetThietBiByIdThietBi(idTb);
                 dgvThietbi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi);
             }
-
 
         }
         private void iconButton1_Click(object sender, EventArgs e)

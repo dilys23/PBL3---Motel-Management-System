@@ -41,13 +41,14 @@ namespace PBL3___Motel_Management_System
             txtTen.Text = nguoi.Ten;
             txtCccd.Text = nguoi.Cccd;
             txtSdt.Text = nguoi.Sdt;
-            txtDiaChi.Text = nguoi.Diachi;
+            txtDiaChi.Text = nguoi.Diachi;             
             if(nguoi.GioiTinh == true)rdbtnNam.Checked = true;
-            if(nguoi.HinhAnh != null )
+                else rdbtnNu.Checked = true;
+            if (nguoi.HinhAnh != null )
                 {
                     pctKhach.Image = ChuyenDoiAnh.Base64ToImage(nguoi.HinhAnh);
                 }
-            else rdbtnNu.Checked = true;
+            
             }
             
         }

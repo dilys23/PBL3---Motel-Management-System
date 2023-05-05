@@ -38,7 +38,7 @@ namespace PBL3___Motel_Management_System.View
         }
         public void LoadForm(string txt)
         {
-
+           // dgvDichVu.Rows.
             dgvDichVu.Rows.Clear();
             QLBLL qLBLL = new QLBLL();
             dgvDichVu.RowCount = 1;
@@ -51,7 +51,7 @@ namespace PBL3___Motel_Management_System.View
             }
             var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-delete-25.png");
             dgvDichVu.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dgvIcons_CellPainting1(dgvDichVu, e, Xoa));
-
+            
         }
         public void dgvIcons_CellPainting1(DataGridView dgv, DataGridViewCellPaintingEventArgs e,  Image btXoa)
         {

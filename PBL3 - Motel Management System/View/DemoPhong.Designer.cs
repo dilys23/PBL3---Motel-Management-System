@@ -254,6 +254,7 @@
             this.btnXoaDay.Text = "Xóa";
             this.btnXoaDay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoaDay.UseVisualStyleBackColor = false;
+            this.btnXoaDay.Click += new System.EventHandler(this.btnXoaDay_Click);
             // 
             // btnThemPhong
             // 
