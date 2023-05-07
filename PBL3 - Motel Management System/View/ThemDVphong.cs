@@ -53,10 +53,14 @@ namespace PBL3___Motel_Management_System.View
 
             foreach (string idDv in qLBLL.GetAllIdDichVuByIdPhong(tp.hopDong.MaPhongTro))
             {
-                DichVu dv = new DichVu();
-                dv = qLBLL.GetDVByIdDV(idDv);
-                dgvXoaDichVu.Rows.Add(dv.MaDichVu, i++, dv.TenDichVu, dv.GiaDichVu);
+                if (idDv != "000" && idDv != "001")
+                {
+                    DichVu dv = new DichVu();
+                    dv = qLBLL.GetDVByIdDV(idDv);
+                    dgvXoaDichVu.Rows.Add(dv.MaDichVu, i++, dv.TenDichVu, dv.GiaDichVu);
+                }
             }
+          
 
 
             dgvThemDichVu.Columns[0].Visible = false;
@@ -89,18 +93,36 @@ namespace PBL3___Motel_Management_System.View
             else
             {
                 QLBLL qLBLL = new QLBLL();
-                qLBLL.DelCHiTietDichVuByIdPhong(tp.hopDong.MaPhongTro);
+                List<string> dsdv = new List<string>();
+                 qLBLL.DelCHiTietDichVuByIdPhong(tp.hopDong.MaPhongTro);
+                
                 foreach (DataGridViewRow dr in dgvXoaDichVu.Rows)
                 {
                     if (dr.Cells[0].Value != null)
                     {
                         ChiTietDichVu ctdv = new ChiTietDichVu();
                         ctdv.MaChiTietDichVu = qLBLL.TaoIdChiTietDichVu();
-                        ctdv.MaDichVu = dr.Cells["MaDichVu"].Value.ToString();
                         ctdv.MaPhongTro = tp.hopDong.MaPhongTro;
+                        ctdv.MaDichVu = dr.Cells[0].Value.ToString();                  
                         qLBLL.AddChiTietDichVuBll(ctdv);
+                        dsdv.Add(dr.Cells[0].Value.ToString());
+
                     }
                 }
+                foreach (DataGridViewRow dr in dgvDVcodinh.Rows)
+                {
+
+                    if (dr.Cells[0].Value != null)
+                    {
+                        ChiTietDichVu ctdv = new ChiTietDichVu();
+                        ctdv.MaChiTietDichVu = qLBLL.TaoIdChiTietDichVu();
+                        ctdv.MaPhongTro = tp.hopDong.MaPhongTro;
+                        ctdv.MaDichVu = dr.Cells[0].Value.ToString();
+                        qLBLL.AddChiTietDichVuBll(ctdv);
+                        dsdv.Add(dr.Cells[0].Value.ToString());
+                    }
+                }
+                tp.DsDichVu = dsdv;
                 MessageBox.Show("Thay đổi thành công", "Thông báo", MessageBoxButtons.OK);
                 this.Close();
                 this.loader(null);

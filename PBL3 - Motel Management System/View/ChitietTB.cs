@@ -37,15 +37,17 @@ namespace PBL3___Motel_Management_System.View
         }
         public void LoadForm(string txt)
         {
+           // dgvThietBi.DataSource = null;
             dgvThietBi.Rows.Clear();
             QLBLL qLBLL = new QLBLL();
             dgvThietBi.RowCount = 1;
             int i = 1;
-            foreach (string idDv in qLBLL.GetAllIdThietBiByIdPhong(this.idPhong))
+           
+            foreach (string idCttb in qLBLL.GetAllIdCHiTietThietBiByIdPhong(this.idPhong))
             {
-                ThietBi tb = new ThietBi();
-                tb = qLBLL.GetThietBiByIdThietBi(idDv);
-                dgvThietBi.Rows.Add(tb.MaThietBi, i++, tb.TenThietBi, tb.GiaThietBi);
+                ChiTietThietBi cttb = qLBLL.GetChiTietThietBiById(idCttb);
+                ThietBi tb = qLBLL.GetThietBiByIdThietBi(cttb.MaThietBi);
+                dgvThietBi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi, cttb.SoLuong);
             }
             var Xoa = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
             dgvThietBi.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dgvIcons_CellPainting1(dgvThietBi, e, Xoa));
@@ -104,17 +106,12 @@ namespace PBL3___Motel_Management_System.View
                     if (kq == DialogResult.OK)
                     {
                         string id = dgvThietBi.Rows[e.RowIndex].Cells["MaThietBi"].Value.ToString();
-                        if (id != "000" && id != "001")
-                        {
-                            QLBLL qLBLL = new QLBLL();
-                            qLBLL.DelChiTietThietBiByIdThietBi(id);
-                            MessageBox.Show("Xóa thiết bị thành công", "Thông báo");
-                            LoadForm(null);
-                        }
-                        else
-                        {
-                            
-                        }
+
+                        QLBLL qLBLL = new QLBLL();
+                        qLBLL.DelChiTietThietBiByIdThietBi(id);
+                        MessageBox.Show("Xóa thiết bị thành công", "Thông báo");
+                        LoadForm(null);
+
                     }
                 }
             }

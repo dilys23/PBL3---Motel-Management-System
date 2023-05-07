@@ -889,7 +889,9 @@
       <DependentUpon>DataPbl.edmx</DependentUpon>
       <LastGenOutput>DataPbl.cs</LastGenOutput>
     </Content>
+    <Content Include="icons\icons8-create-25.png" />
     <Content Include="icons\icons8-customer-20.png" />
+    <Content Include="icons\icons8-delete-25.png" />
     <Content Include="icons\icons8-home-30.png" />
     <Content Include="icons\icons8-location-16.png" />
     <Content Include="icons\icons8-paid-bill-20.png" />

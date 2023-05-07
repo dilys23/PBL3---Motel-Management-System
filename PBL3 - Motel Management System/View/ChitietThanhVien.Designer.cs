@@ -122,7 +122,7 @@
             this.dgvThanhVien.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvThanhVien.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvThanhVien.GridColor = System.Drawing.Color.LightCyan;
-            this.dgvThanhVien.Location = new System.Drawing.Point(17, 101);
+            this.dgvThanhVien.Location = new System.Drawing.Point(17, 86);
             this.dgvThanhVien.Name = "dgvThanhVien";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -139,7 +139,6 @@
             this.dgvThanhVien.TabIndex = 9;
             this.dgvThanhVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThanhVien_CellContentClick);
             this.dgvThanhVien.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvThanhVien_CellFormatting);
-            this.dgvThanhVien.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvThanhVien_CellPainting);
             this.dgvThanhVien.DoubleClick += new System.EventHandler(this.dgvThanhVien_DoubleClick);
             // 
             // MaNguoi

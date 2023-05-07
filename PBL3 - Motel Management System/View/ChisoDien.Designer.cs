@@ -48,6 +48,8 @@
             this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Thang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSua = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnXoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panelChisoDien = new System.Windows.Forms.Panel();
             this.btnHuyXacThuc = new FontAwesome.Sharp.IconButton();
             this.label5 = new System.Windows.Forms.Label();
@@ -121,6 +123,7 @@
             // dgvChiSoDien
             // 
             this.dgvChiSoDien.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dgvChiSoDien.AllowUserToAddRows = false;
             this.dgvChiSoDien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvChiSoDien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -144,7 +147,9 @@
             this.DaDung,
             this.NgayLap,
             this.Thang,
-            this.TinhTrang});
+            this.TinhTrang,
+            this.btnSua,
+            this.btnXoa});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Turquoise;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -235,6 +240,18 @@
             this.TinhTrang.MinimumWidth = 6;
             this.TinhTrang.Name = "TinhTrang";
             // 
+            // btnSua
+            // 
+            this.btnSua.HeaderText = "";
+            this.btnSua.MinimumWidth = 6;
+            this.btnSua.Name = "btnSua";
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.HeaderText = "";
+            this.btnXoa.MinimumWidth = 6;
+            this.btnXoa.Name = "btnXoa";
+            // 
             // panelChisoDien
             // 
             this.panelChisoDien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -259,7 +276,6 @@
             this.panelChisoDien.Name = "panelChisoDien";
             this.panelChisoDien.Size = new System.Drawing.Size(1023, 456);
             this.panelChisoDien.TabIndex = 27;
-            this.panelChisoDien.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btnHuyXacThuc
             // 
@@ -326,7 +342,6 @@
             this.cbbPhongTro.Name = "cbbPhongTro";
             this.cbbPhongTro.Size = new System.Drawing.Size(118, 28);
             this.cbbPhongTro.TabIndex = 57;
-            this.cbbPhongTro.SelectedIndexChanged += new System.EventHandler(this.cbbPhongTro_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -432,7 +447,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "ChisoDien";
             this.Text = "ElecNum";
-            this.Load += new System.EventHandler(this.ChisoDien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiSoDien)).EndInit();
             this.panelChisoDien.ResumeLayout(false);
             this.panelChisoDien.PerformLayout();
@@ -474,5 +488,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayLap;
         private System.Windows.Forms.DataGridViewTextBoxColumn Thang;
         private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrang;
+        private System.Windows.Forms.DataGridViewButtonColumn btnSua;
+        private System.Windows.Forms.DataGridViewButtonColumn btnXoa;
     }
 }
