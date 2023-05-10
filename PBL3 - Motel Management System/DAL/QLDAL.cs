@@ -514,6 +514,21 @@ namespace PBL3___Motel_Management_System.DAL
                 return null;
             }
         }
+        public List<string> GetIDThanhvienbyIDPhong(string idphong)
+        {
+            List<string> list = new List<string>();
+            using (DataPbl data = new DataPbl())
+            {          
+                foreach(ThanhVienTrongPhong tv in GetAllThanhVienTrongPhong())
+                {
+                    if (tv.MaPhongTro == idphong)
+                        list.Add(tv.MaThanhVienTrongPhong);
+                }
+                return list;
+            }
+            return null;
+            
+        }
         public string GetMaChiTietDichVuByIdPhong(string idPhong)
         {
             using (DataPbl data = new DataPbl())
@@ -537,6 +552,15 @@ namespace PBL3___Motel_Management_System.DAL
                 var s = data.HoaDon.Find(id);
                 data.HoaDon.Remove(s);
                 data.SaveChanges() ;
+            }
+        }
+        public void DelHopDong(string idhopdong)
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                var s = data.HopDong.Find(idhopdong);
+                data.HopDong.Remove(s);
+                data.SaveChanges();
             }
         }
         public List<ChiTietThietBi>GetAllChiTietThietBiDAL()

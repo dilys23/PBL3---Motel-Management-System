@@ -184,5 +184,32 @@ namespace PBL3___Motel_Management_System.View
         {
            tc.openChildForm1(new SuaPhong(IdPhong,LoadForm), panel);
         }
+
+        private void btnTra_Click(object sender, EventArgs e)
+        {
+            QLBLL qLBLL = new QLBLL();
+            DialogResult kq = MessageBox.Show("Bạn có thực sự muốn hoàn trả phòng ", "Cảnh báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (kq == DialogResult.OK)
+            {
+                HopDong hd = qLBLL.GetHopDongByIdPhong(IdPhong);
+                qLBLL.DelHopDong(hd.MaHopDong);
+                foreach (ChiTietDichVu ct in qLBLL.GetChiTietDichVuByIdPhong(IdPhong))
+                {
+                    qLBLL.DelChiTietDichVu(ct.MaChiTietDichVu);
+                }
+                foreach (string tv in qLBLL.GetIDThanhvienbyIDPhong(IdPhong))
+                {
+                    qLBLL.DelThanhVienBLL(tv);
+                }
+                foreach(Nguoi nguoi in qLBLL.GetNguoiByIdPhong(IdPhong))
+                {
+                    qLBLL.DelNguoiBll(nguoi.MaNguoi);
+                }
+               
+                MessageBox.Show("Hoàn trả phòng thành công", "Thông báo");
+                this.Close();
+                LoadForm(null);
+            }
+        }
     }
 }
