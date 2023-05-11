@@ -58,6 +58,7 @@
             this.btnXoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.cbbDayTro = new System.Windows.Forms.ComboBox();
             this.btnThemHoaDon = new FontAwesome.Sharp.IconButton();
+            this.btnThanhToan = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panelHD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
@@ -140,6 +141,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.panelHD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelHD.Controls.Add(this.btnThanhToan);
             this.panelHD.Controls.Add(this.dtpThangSuDung);
             this.panelHD.Controls.Add(this.label5);
             this.panelHD.Controls.Add(this.label3);
@@ -212,7 +214,7 @@
             this.btnBoXacThuc.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBoXacThuc.IconSize = 25;
             this.btnBoXacThuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBoXacThuc.Location = new System.Drawing.Point(920, 36);
+            this.btnBoXacThuc.Location = new System.Drawing.Point(930, 36);
             this.btnBoXacThuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBoXacThuc.Name = "btnBoXacThuc";
             this.btnBoXacThuc.Size = new System.Drawing.Size(113, 38);
@@ -231,7 +233,7 @@
             this.btnXacThuc.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXacThuc.IconSize = 25;
             this.btnXacThuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXacThuc.Location = new System.Drawing.Point(788, 36);
+            this.btnXacThuc.Location = new System.Drawing.Point(824, 36);
             this.btnXacThuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXacThuc.Name = "btnXacThuc";
             this.btnXacThuc.Size = new System.Drawing.Size(99, 38);
@@ -397,6 +399,24 @@
             this.btnThemHoaDon.UseVisualStyleBackColor = false;
             this.btnThemHoaDon.Click += new System.EventHandler(this.btnThemHD_Click);
             // 
+            // btnThanhToan
+            // 
+            this.btnThanhToan.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnThanhToan.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnThanhToan.IconChar = FontAwesome.Sharp.IconChar.CreditCardAlt;
+            this.btnThanhToan.IconColor = System.Drawing.Color.White;
+            this.btnThanhToan.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThanhToan.IconSize = 25;
+            this.btnThanhToan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThanhToan.Location = new System.Drawing.Point(697, 37);
+            this.btnThanhToan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.Size = new System.Drawing.Size(112, 38);
+            this.btnThanhToan.TabIndex = 70;
+            this.btnThanhToan.Text = "Thanh Toán";
+            this.btnThanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThanhToan.UseVisualStyleBackColor = false;
+            // 
             // Hoadon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -446,5 +466,6 @@
         private System.Windows.Forms.DataGridView dgvHoaDon;
         private System.Windows.Forms.DataGridViewButtonColumn btnSua;
         private System.Windows.Forms.DataGridViewButtonColumn btnXoa;
+        private FontAwesome.Sharp.IconButton btnThanhToan;
     }
 }
