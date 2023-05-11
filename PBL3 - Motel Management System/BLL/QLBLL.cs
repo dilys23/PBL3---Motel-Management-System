@@ -1,4 +1,4 @@
-﻿using PBL3___Motel_Management_System.DAL;
+﻿ using PBL3___Motel_Management_System.DAL;
 using PBL3___Motel_Management_System.DTO;
 using System;
 using System.Collections.Generic;
@@ -1180,6 +1180,35 @@ namespace PBL3___Motel_Management_System.BLL
             {
                 if (hd.ThangChiTra == ThangCt) list.Add(hd.MaHoaDon);
             }
+            return list;
+        }
+
+        public List<TinhTrangPhongTro> GetAllTinhTrangPhongTro ()
+        {
+            List<TinhTrangPhongTro> list = new List<TinhTrangPhongTro>();
+            QLDAL qLDAL = new QLDAL();
+            // Lấy ds các phòng 
+            List<PhongTro> phongTroList = qLDAL.GetAllPhongTro();
+            foreach (PhongTro phongTro in phongTroList)
+            {
+                TinhTrangPhongTro tinhTrangPhongTro = new TinhTrangPhongTro();
+                tinhTrangPhongTro.MaPhongTro = phongTro.MaPhongTro;
+                tinhTrangPhongTro.TinhTrangPhong = phongTro.TinhTrang;
+
+                // lấy thông tin HD dựa trên id phòng
+                HopDong hopDong = qLDAL.GetHopDongByIdPhong(phongTro.MaDayTro);
+                if (hopDong != null)
+                {
+                    tinhTrangPhongTro.TinhTrangHD = (bool)hopDong.TinhTrang;
+                }
+                else
+                {
+                    tinhTrangPhongTro.TinhTrangHD =false;
+                } 
+                list.Add( tinhTrangPhongTro );
+                    
+
+            }    
             return list;
         }
         public List<string> GetHoaDonByIdDay(string IdDay)

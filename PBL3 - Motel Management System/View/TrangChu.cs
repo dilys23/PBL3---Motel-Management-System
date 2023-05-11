@@ -1,4 +1,7 @@
-﻿using PBL3___Motel_Management_System.View;
+﻿using PBL3___Motel_Management_System.BLL;
+using PBL3___Motel_Management_System.DAL;
+using PBL3___Motel_Management_System.DTO;
+using PBL3___Motel_Management_System.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace PBL3___Motel_Management_System
 {
@@ -22,8 +26,8 @@ namespace PBL3___Motel_Management_System
         {
             InitializeComponent();
             // Tạo UserControl và truyền Panel của trang chủ vào
-            TaiKhoan myUserControl = new TaiKhoan();
-            myUserControl.DesktopPanel = panelDesktop;
+           // TaiKhoan myUserControl = new TaiKhoan();
+          // myUserControl.DesktopPanel = panelDesktop;
 
             // Hiển thị UserControl
             //panelDesktop.Controls.Add(myUserControl);
@@ -31,7 +35,8 @@ namespace PBL3___Motel_Management_System
             CollapseMenu();
             this.Padding = new Padding(borderSize);//Border size
             this.BackColor = Color.FromArgb(217, 247, 249);
-          
+            LoadForm();
+            LoadForm1();
 
         }
 
@@ -154,7 +159,119 @@ namespace PBL3___Motel_Management_System
                     break;
             }
         }
+        public void customDGV(DataGridView dgv)
+        {
+           dgv.DefaultCellStyle.Font = new Font("Tahoma", 10);
+           dgv.DefaultCellStyle.ForeColor = Color.Blue;
+            dgv.DefaultCellStyle.BackColor = Color.Beige;
+            dgv.DefaultCellStyle.SelectionForeColor = Color.AliceBlue;
+            dgv.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
+            dgv.RowTemplate.Height = 35;
+            dgv.RowTemplate.MinimumHeight = 20;
+        }
+        private void LoadForm()
+        {
+            DataTable dt = new DataTable();
+            customDGV(dgvTinhTrang);
+            dt.Columns.AddRange(new DataColumn[]
+                {
+                    new DataColumn{ColumnName = "MaPhongTro",DataType = typeof(string)},
+                new DataColumn{ColumnName = "STT",DataType = typeof(int)},
+                  new DataColumn{ColumnName = "Tên Dãy trọ",DataType = typeof(string)},
+                new DataColumn{ColumnName = "Tên phòng trọ",DataType = typeof(string)},
+                 new DataColumn{ColumnName = "Tình trạng",DataType = typeof(string)},
+                });
+            QLBLL qLBLL = new QLBLL();
+            foreach (ViewPhongTro pt in qLBLL.DgvPhongTro(null))
+            {
+                string TinhTrang;
+                HopDong hd = qLBLL.GetHopDongByIdPhong(pt.MaPhongTro);
+                if (hd == null) TinhTrang = "Còn trống";
+                else if (hd.TinhTrang == true) TinhTrang = "Đã cho thuê";
+                else TinhTrang = "Đã cọc";
+                dt.Rows.Add(pt.MaPhongTro, pt.Stt, qLBLL.GetDayTroByIdPhong(pt.MaPhongTro).TenDayTro, pt.TenPhongTro, TinhTrang);
 
+            }
+            dgvTinhTrang.DataSource = dt;
+            dgvTinhTrang.Columns[0].Visible = false;
+        }
+        private void LoadForm1()
+        {
+            DataTable dt = new DataTable();
+            customDGV(dgvSoLuong);
+            dt.Columns.AddRange(new DataColumn[]
+            {
+        new DataColumn{ColumnName = "Tình trạng", DataType = typeof(string)},
+        new DataColumn{ColumnName = "Số lượng phòng", DataType = typeof(int)}
+            });
+
+            QLBLL qLBLL = new QLBLL();
+            List<ViewPhongTro> phongTroList = qLBLL.DgvPhongTro(null);
+
+            // Tạo một Dictionary để lưu trữ số lượng phòng theo tình trạng
+            Dictionary<string, int> tinhTrangCounts = new Dictionary<string, int>();
+
+            foreach (ViewPhongTro pt in phongTroList)
+            {
+                string tinhTrang;
+                HopDong hd = qLBLL.GetHopDongByIdPhong(pt.MaPhongTro);
+                if (hd == null) tinhTrang = "Còn trống";
+                else if (hd.TinhTrang == true) tinhTrang = "Đã cho thuê";
+                else tinhTrang = "Đang cọc";
+
+                // Kiểm tra nếu tình trạng đã có trong Dictionary, tăng số lượng phòng lên 1
+                if (tinhTrangCounts.ContainsKey(tinhTrang))
+                {
+                    tinhTrangCounts[tinhTrang]++;
+                }
+                else
+                {
+                    // Nếu tình trạng chưa có trong Dictionary, thêm mới và đặt số lượng phòng là 1
+                    tinhTrangCounts.Add(tinhTrang, 1);
+                }
+            }
+
+            // Tạo các dòng trong bảng mới từ Dictionary
+            foreach (var kvp in tinhTrangCounts)
+            {
+                dt.Rows.Add(kvp.Key, kvp.Value);
+            }
+
+            dgvSoLuong.DataSource = dt;
+            DrawPieChart();
+        }
+        private void DrawPieChart()
+        {
+            // Lấy dữ liệu từ bảng
+            DataTable dt = (DataTable)dgvSoLuong.DataSource;
+            List<string> tinhTrangList = new List<string>();
+            List<int> soLuongList = new List<int>();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                string tinhTrang = row["Tình trạng"].ToString();
+                int soLuong = Convert.ToInt32(row["Số lượng phòng"]);
+
+                tinhTrangList.Add(tinhTrang);
+                soLuongList.Add(soLuong);
+            }
+
+            // Xóa các series hiện có trong biểu đồ
+            TinhTrang.Series.Clear();
+
+            // Tạo series mới và thêm data points
+            var series = new Series("Tình trạng");
+            series.ChartType = SeriesChartType.Pie;
+            series["PieLabelStyle"] = "Disabled"; // Tắt hiển thị nhãn trên mỗi phần tử
+
+            for (int i = 0; i < tinhTrangList.Count; i++)
+            {
+                series.Points.AddXY(tinhTrangList[i], soLuongList[i]);
+            }
+
+            // Thêm series vào biểu đồ
+            TinhTrang.Series.Add(series);
+        }
         private void CollapseMenu()
         {
             if (this.paneMenu.Width > 200) //Collapse menu
@@ -300,16 +417,7 @@ namespace PBL3___Motel_Management_System
             activeForm.Close();
         }
 
-        private void panelDesktop_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void paneMenu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+      
         private void btnDay_Click(object sender, EventArgs e)
         {
             openChildForm(new Daytro());
@@ -326,20 +434,6 @@ namespace PBL3___Motel_Management_System
         }
        // taiKhoan1.BringToFront();
 
-        private void btnTK_Click(object sender, EventArgs e)
-        {
-            
-            
-        }
-
-        private void taiKhoan1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void taiKhoan1_Load_1(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

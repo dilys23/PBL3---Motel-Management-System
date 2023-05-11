@@ -22,24 +22,15 @@ namespace PBL3___Motel_Management_System.View
             InitializeComponent();
             this.idPhong = idPhong;
             LoadForm(null);
-            SetFontAndColors();
+    
         }
-        private void SetFontAndColors()
-        {
-            this.dgvDichVu.DefaultCellStyle.Font = new Font("Tahoma", 10);
-            this.dgvDichVu.DefaultCellStyle.ForeColor = Color.Blue;
-            this.dgvDichVu.DefaultCellStyle.BackColor = Color.Beige;
-            this.dgvDichVu.DefaultCellStyle.SelectionForeColor = Color.AliceBlue;
-            this.dgvDichVu.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
-
-            DataGridViewRow row = this.dgvDichVu.RowTemplate;
-            row.Height = 35;
-            row.MinimumHeight = 20;
-        }
+        TrangChu tc = new TrangChu();
+        
         public void LoadForm(string txt)
         {
            // dgvDichVu.Rows.
             dgvDichVu.Rows.Clear();
+            tc.customDGV(dgvDichVu);
             QLBLL qLBLL = new QLBLL();
             dgvDichVu.RowCount = 1;
              int  i = 1;
@@ -74,7 +65,7 @@ namespace PBL3___Motel_Management_System.View
                 }
             }
         }
-        TrangChu tc= new TrangChu();
+       
         private void dgvDichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)

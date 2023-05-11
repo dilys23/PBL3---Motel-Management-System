@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChu));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.btnTK = new FontAwesome.Sharp.IconButton();
             this.btnMinimized = new FontAwesome.Sharp.IconButton();
@@ -49,10 +55,26 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMenu = new FontAwesome.Sharp.IconButton();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dgvTinhTrang = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.TinhTrang = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dgvSoLuong = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
             this.panelTitle.SuspendLayout();
             this.paneMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelDesktop.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTinhTrang)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TinhTrang)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSoLuong)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTitle
@@ -65,7 +87,7 @@
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitle.Location = new System.Drawing.Point(200, 0);
             this.panelTitle.Name = "panelTitle";
-            this.panelTitle.Size = new System.Drawing.Size(1138, 83);
+            this.panelTitle.Size = new System.Drawing.Size(1133, 83);
             this.panelTitle.TabIndex = 4;
             this.panelTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitle_MouseDown);
             // 
@@ -77,12 +99,11 @@
             this.btnTK.IconColor = System.Drawing.Color.DarkCyan;
             this.btnTK.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTK.IconSize = 25;
-            this.btnTK.Location = new System.Drawing.Point(1081, 39);
+            this.btnTK.Location = new System.Drawing.Point(1076, 39);
             this.btnTK.Name = "btnTK";
             this.btnTK.Size = new System.Drawing.Size(45, 39);
             this.btnTK.TabIndex = 4;
             this.btnTK.UseVisualStyleBackColor = true;
-            this.btnTK.Click += new System.EventHandler(this.btnTK_Click);
             // 
             // btnMinimized
             // 
@@ -94,7 +115,7 @@
             this.btnMinimized.IconColor = System.Drawing.Color.LightCyan;
             this.btnMinimized.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinimized.IconSize = 30;
-            this.btnMinimized.Location = new System.Drawing.Point(1032, 7);
+            this.btnMinimized.Location = new System.Drawing.Point(1027, 7);
             this.btnMinimized.Name = "btnMinimized";
             this.btnMinimized.Size = new System.Drawing.Size(30, 31);
             this.btnMinimized.TabIndex = 3;
@@ -111,7 +132,7 @@
             this.btnExit.IconColor = System.Drawing.Color.Red;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExit.IconSize = 30;
-            this.btnExit.Location = new System.Drawing.Point(1104, 7);
+            this.btnExit.Location = new System.Drawing.Point(1099, 7);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(30, 31);
             this.btnExit.TabIndex = 2;
@@ -128,7 +149,7 @@
             this.btnMaximized.IconColor = System.Drawing.Color.LightSeaGreen;
             this.btnMaximized.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMaximized.IconSize = 30;
-            this.btnMaximized.Location = new System.Drawing.Point(1068, 7);
+            this.btnMaximized.Location = new System.Drawing.Point(1063, 7);
             this.btnMaximized.Name = "btnMaximized";
             this.btnMaximized.Size = new System.Drawing.Size(30, 31);
             this.btnMaximized.TabIndex = 1;
@@ -162,9 +183,8 @@
             this.paneMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.paneMenu.Location = new System.Drawing.Point(0, 0);
             this.paneMenu.Name = "paneMenu";
-            this.paneMenu.Size = new System.Drawing.Size(200, 749);
+            this.paneMenu.Size = new System.Drawing.Size(200, 759);
             this.paneMenu.TabIndex = 3;
-            this.paneMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.paneMenu_Paint);
             // 
             // btnThietbi
             // 
@@ -380,17 +400,130 @@
             this.panelDesktop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelDesktop.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panelDesktop.BackColor = System.Drawing.Color.LightCyan;
+            this.panelDesktop.Controls.Add(this.panel4);
+            this.panelDesktop.Controls.Add(this.panel3);
+            this.panelDesktop.Controls.Add(this.panel2);
             this.panelDesktop.Location = new System.Drawing.Point(200, 80);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1138, 669);
+            this.panelDesktop.Size = new System.Drawing.Size(1133, 699);
             this.panelDesktop.TabIndex = 5;
-            this.panelDesktop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDesktop_Paint);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.dgvTinhTrang);
+            this.panel3.Location = new System.Drawing.Point(577, 13);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(537, 327);
+            this.panel3.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label2.Location = new System.Drawing.Point(36, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(192, 20);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "DANH SÁCH PHÒNG";
+            // 
+            // dgvTinhTrang
+            // 
+            this.dgvTinhTrang.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dgvTinhTrang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTinhTrang.BackgroundColor = System.Drawing.Color.Ivory;
+            this.dgvTinhTrang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTinhTrang.Location = new System.Drawing.Point(12, 121);
+            this.dgvTinhTrang.Name = "dgvTinhTrang";
+            this.dgvTinhTrang.RowHeadersWidth = 51;
+            this.dgvTinhTrang.RowTemplate.Height = 24;
+            this.dgvTinhTrang.Size = new System.Drawing.Size(513, 191);
+            this.dgvTinhTrang.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.TinhTrang);
+            this.panel2.Location = new System.Drawing.Point(18, 13);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(535, 327);
+            this.panel2.TabIndex = 0;
+            // 
+            // TinhTrang
+            // 
+            chartArea1.Area3DStyle.Enable3D = true;
+            chartArea1.Name = "ChartArea1";
+            this.TinhTrang.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.TinhTrang.Legends.Add(legend1);
+            this.TinhTrang.Location = new System.Drawing.Point(42, 59);
+            this.TinhTrang.Name = "TinhTrang";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "TinhTrang";
+            this.TinhTrang.Series.Add(series1);
+            this.TinhTrang.Size = new System.Drawing.Size(414, 253);
+            this.TinhTrang.TabIndex = 1;
+            this.TinhTrang.Text = "Tinhtrang";
+            title1.Name = "ConTrong";
+            title2.Name = "ChoThue";
+            title3.Name = "DangCoc";
+            this.TinhTrang.Titles.Add(title1);
+            this.TinhTrang.Titles.Add(title2);
+            this.TinhTrang.Titles.Add(title3);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.dgvSoLuong);
+            this.panel4.Location = new System.Drawing.Point(18, 352);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(537, 284);
+            this.panel4.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(36, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 16);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "label3";
+            // 
+            // dgvSoLuong
+            // 
+            this.dgvSoLuong.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dgvSoLuong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSoLuong.BackgroundColor = System.Drawing.Color.Ivory;
+            this.dgvSoLuong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSoLuong.Location = new System.Drawing.Point(12, 75);
+            this.dgvSoLuong.Name = "dgvSoLuong";
+            this.dgvSoLuong.RowHeadersWidth = 51;
+            this.dgvSoLuong.RowTemplate.Height = 24;
+            this.dgvSoLuong.Size = new System.Drawing.Size(513, 191);
+            this.dgvSoLuong.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label4.Location = new System.Drawing.Point(9, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(194, 20);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "TÌNH TRẠNG PHÒNG";
             // 
             // TrangChu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1338, 749);
+            this.ClientSize = new System.Drawing.Size(1333, 759);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.paneMenu);
@@ -405,6 +538,16 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelDesktop.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTinhTrang)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TinhTrang)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSoLuong)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -430,5 +573,14 @@
         private FontAwesome.Sharp.IconButton btnThietbi;
         private FontAwesome.Sharp.IconButton btnTK;
         private System.Windows.Forms.Panel panelDesktop;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataVisualization.Charting.Chart TinhTrang;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dgvTinhTrang;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dgvSoLuong;
+        private System.Windows.Forms.Label label4;
     }
 }
