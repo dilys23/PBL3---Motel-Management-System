@@ -127,6 +127,7 @@ namespace PBL3___Motel_Management_System.View
                     ChiSoMoi = Convert.ToDouble(txtChiSoMoi.Text),
                     ThoiGian = dtpThang.Value.ToString("MM-yyyy"),
                     TinhTrang = false,
+                    TonTai = true,
                     NgayLap = dtpNgayLap.Value.ToString("dd-MM-yyyy")
                 };
                 if (dv.ChiSoCu > dv.ChiSoMoi)

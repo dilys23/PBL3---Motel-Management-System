@@ -16,17 +16,9 @@ namespace PBL3___Motel_Management_System.BLL
     internal class QLBLL
     {
         public string GetIdTk(string taikhoan, string matkhau)
-        {
-            string id = null;
+        {  
             QLDAL qLDAL = new QLDAL();
-            foreach (TaiKhoan tk in qLDAL.GetAllTaiKhoan())
-            {
-                if (taikhoan == tk.TenTaiKhoan && matkhau == tk.MatKhau)
-                {
-                    id = tk.MaTaiKhoan; break;
-                }
-            }
-            return id;
+            return qLDAL.GetIdTkDal(taikhoan,matkhau);
         }
         public string GetIdNguoiByTaiKhoan(string idTaiKhoan)
         {
@@ -1054,7 +1046,6 @@ namespace PBL3___Motel_Management_System.BLL
         }
         public void DelChiTietDichVuByIdDichVu(string id)
         {
-
             foreach (string Id in GetAllChiTietDichVuByIdDichVu(id))
             {
                 DelChiTietDichVu(Id);

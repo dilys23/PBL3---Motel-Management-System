@@ -35,6 +35,7 @@
           <Property Name="MaThietBi" Type="varchar" MaxLength="8" Nullable="false" />
           <Property Name="MaPhongTro" Type="varchar" MaxLength="8" Nullable="false" />
           <Property Name="SoLuong" Type="float" Nullable="false" />
+          <Property Name="TonTai" Type="bit" />
         </EntityType>
         <EntityType Name="DayTro">
           <Key>
@@ -435,6 +436,7 @@
           <Property Name="MaThietBi" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MaPhongTro" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="SoLuong" Type="Double" Nullable="false" />
+          <Property Name="TonTai" Type="Boolean" />
           <NavigationProperty Name="PhongTro" Relationship="Self.FK_MaPhongTroChiTietThietBi" FromRole="ChiTietThietBi" ToRole="PhongTro" />
           <NavigationProperty Name="ThietBi" Relationship="Self.FK_MaThietBiChiTietThietBi" FromRole="ChiTietThietBi" ToRole="ThietBi" />
         </EntityType>
@@ -857,6 +859,7 @@
                 <ScalarProperty Name="MaThietBi" ColumnName="MaThietBi" />
                 <ScalarProperty Name="MaPhongTro" ColumnName="MaPhongTro" />
                 <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="TonTai" ColumnName="TonTai" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

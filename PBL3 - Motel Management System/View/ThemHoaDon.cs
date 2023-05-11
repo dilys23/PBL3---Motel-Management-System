@@ -234,8 +234,6 @@ namespace PBL3___Motel_Management_System.View
         {
             if(CheckHopLe())
             {
-                
-
                 double tienPhong = Convert.ToDouble(txtTienPhong.Text);
                 double tienDv = Convert.ToDouble(txtTienDichVu.Text);
                 double giamGia = Convert.ToDouble(txtGiamGia.Text);
@@ -262,6 +260,7 @@ namespace PBL3___Motel_Management_System.View
                         ThangChiTra = dtpThangThanhToan.Value.ToString("MM-yyyy"),
                         TinhTrang = false,
                         TongTien = tongCong,
+                        TonTai = true,
                         DaThanhToan = 0
                     };
                     qLBLL.AddHoaDonBll(hd);

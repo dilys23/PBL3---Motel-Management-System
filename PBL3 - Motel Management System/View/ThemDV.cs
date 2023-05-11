@@ -76,6 +76,7 @@ namespace PBL3___Motel_Management_System
                 dv.TenDichVu = txtTenDichVu.Text;
                 dv.GiaDichVu = Convert.ToDouble(txtGiaDichVu.Text);
                 dv.MaDichVu = qLBLL.TaoIdDichVu();
+                dv.TonTai = true;
                 qLBLL.ThemDVBll(dv);
                 MessageBox.Show("Thêm dịch vụ thành công", "Thông báo");
                 Loader(null);
