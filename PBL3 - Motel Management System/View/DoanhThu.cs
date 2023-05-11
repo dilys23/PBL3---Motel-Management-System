@@ -32,7 +32,7 @@ namespace PBL3___Motel_Management_System
             foreach (string hd in qLBLL.GetHoaDonByThangChiTra(thang))
             {
                 HoaDon hoadon = qLBLL.GetHoaDonById(hd);
-                PhongTro pt = qLBLL.GetPhongTroByMaHD(hoadon.MaHoaDon);
+                PhongTro pt = qLBLL.GetPhongTroByMaHoaDon(hoadon.MaHoaDon);
                 DayTro dt = qLBLL.GetDayTroByIdPhong(pt.MaPhongTro);
                 dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro,hoadon.TongTien);
             }

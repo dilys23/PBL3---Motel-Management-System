@@ -454,8 +454,6 @@ namespace PBL3___Motel_Management_System.BLL
                     }
                 }
             }
-
-
             return list;
         }
 
@@ -990,16 +988,16 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return kq;
         }
-        public PhongTro GetPhongTroByMaHD(string idHD)
+        public PhongTro GetPhongTroByMaHoaDon(string idHD)
         {
             QLDAL qLDAL = new QLDAL();
-            return qLDAL.GetPhongTroByIdHopDong(idHD);
+            return qLDAL.GetPhongTroByIdHoaDon(idHD);
         }
 
-        public Nguoi GetNguoiByMaHD(string idNguoi)
+        public Nguoi GetNguoiByMaHopDong(string MaHd)
         {
             QLDAL qLDAL = new QLDAL();
-            return qLDAL.GetNguoiByIdHopDong(idNguoi);
+            return qLDAL.GetNguoiByIdHopDong(MaHd);
         }
     }
 }

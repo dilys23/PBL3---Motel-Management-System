@@ -49,8 +49,7 @@ namespace PBL3___Motel_Management_System.View
                 {
                     if(qLBLL.TinhTrangPhongById(pt.MaPhongTro))
                     {
-
-                    cbbPhongTro.Items.Add(new ViewCbb {key = pt.MaPhongTro, value = pt.TenPhongTro });
+                        cbbPhongTro.Items.Add(new ViewCbb {key = pt.MaPhongTro, value = pt.TenPhongTro });
                     }
                 }
             }
@@ -125,7 +124,8 @@ namespace PBL3___Motel_Management_System.View
                     ThoiGian = dtpThang.Value.ToString("MM-yyyy"),
                     TinhTrang = false,
                     TonTai = true,
-                    NgayLap = dtpNgayLap.Value.ToString("dd-MM-yyyy")
+                    NgayLap = dtpNgayLap.Value.ToString("dd-MM-yyyy"),
+                    
                 };
                 if(dv.ChiSoCu > dv.ChiSoMoi)
                 {
@@ -134,22 +134,18 @@ namespace PBL3___Motel_Management_System.View
                 }
                 else
                 {
-#pragma warning disable CS0168 // Variable is declared but never used
                     try
                     {
-
-                     qLBLL.AddChiTietSuDungDichVuBLL(dv);
-                        MessageBox.Show("Thêm chỉ số thành công");
+                        qLBLL.AddChiTietSuDungDichVuBLL(dv);
+                        MessageBox.Show("thêm chỉ số thành công");
                         this.Close();
                         this.loader(null);
                     }
                     catch(Exception ex)
                     {
-                        MessageBox.Show("Không hợp lệ");
+                        MessageBox.Show("không hợp lệ");
                     }
-#pragma warning restore CS0168 // Variable is declared but never used
-
-                
+               
                 }
                 
             }

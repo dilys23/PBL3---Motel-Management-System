@@ -19,11 +19,11 @@ namespace PBL3___Motel_Management_System
     public partial class ThemDay : Form
     {
 
-        public Loader1 Loader;
-        public ThemDay(Loader1 loader)
+        private _SuKien suKien;
+        public ThemDay(_SuKien suKien)
         {
             InitializeComponent();
-            this.Loader = loader;
+            this.suKien = suKien;
         }
 
 
@@ -86,10 +86,13 @@ namespace PBL3___Motel_Management_System
                 if(pictureDayTro.Image != null)
                 {
                 dt.HinhAnh = ChuyenDoiAnh.ImageToBase64(pictureDayTro.Image, pictureDayTro.Image.RawFormat);
-                }    
+                }
+                dt.TonTai = true;
                 qLBLL.AddDayTroBll(dt);
                 MessageBox.Show("Bạn đã thêm dãy thành công", "Thông báo");
-                Loader(null);
+                Button btn = new Button();
+                btn.Name = dt.MaDayTro;
+                suKien(btn,EventArgs.Empty);
                 this.Close();
                 
 

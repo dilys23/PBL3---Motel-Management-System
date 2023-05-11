@@ -17,14 +17,13 @@ namespace PBL3___Motel_Management_System
     public partial class ThemPhong : Form
     {
         private string IdDay;
-        public Loader Loader;
-        public ThemPhong(string IdDay,Loader Loader)
+        public _SuKien sukien;
+        public ThemPhong(string IdDay,_SuKien sukien)
         {
             InitializeComponent();
             this.IdDay = IdDay;
-            this.Loader = Loader;
+            this.sukien = sukien;
         }
-
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -117,14 +116,17 @@ namespace PBL3___Motel_Management_System
                 pt.TinhTrang = false;
                 pt.ToiDa = Convert.ToInt32(txtToiDa.Text);          
                 pt.MaDayTro = IdDay;
+                pt.TonTai = true;
                 if(pictutePhong.Image != null)
                 {
-
                 pt.HinhAnh = ChuyenDoiAnh.ImageToBase64(pictutePhong.Image, pictutePhong.Image.RawFormat);
                 }    
                 qLBLL.AddPhongTroBll(pt);
                 MessageBox.Show("Thêm phòng trọ vào dãy thành công", "Thông báo");
-                Loader(null);
+                //Loader(null);
+                Button btn = new Button();
+                btn.Name = qLBLL.GetIdDayByIdPhong(pt.MaPhongTro);
+                sukien(btn,EventArgs.Empty);
                 this.Close();
             }
 

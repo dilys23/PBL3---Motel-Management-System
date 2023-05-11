@@ -23,7 +23,7 @@ namespace PBL3___Motel_Management_System.DAL
         {
             using(DataPbl data = new DataPbl())
             {
-                return data.TaiKhoan.Where(p => p.TenTaiKhoan == taikhoan && p.MatKhau == matkhau).Select(p => p.MaTaiKhoan).ToString();
+                return data.TaiKhoan.Where(p => p.TenTaiKhoan == taikhoan && p.MatKhau == matkhau).FirstOrDefault().MaTaiKhoan;
             }
         }
         public List<VaiTro> GetAllVaiTro()
@@ -79,7 +79,7 @@ namespace PBL3___Motel_Management_System.DAL
         {
             using(DataPbl data = new DataPbl())
             {
-                return data.VaiTro.Where(p => p.MaTaiKhoan == idTaiKhoan).Select(p => p.MaNguoi).ToString();
+                return data.VaiTro.Where(p => p.MaTaiKhoan == idTaiKhoan).FirstOrDefault().MaNguoi;
             }
         }
         public List<HopDong> GetAllHopDong()
@@ -272,7 +272,7 @@ namespace PBL3___Motel_Management_System.DAL
         {
             using (DataPbl data = new DataPbl())
             {
-               return data.HopDong.Where(p => p.TonTai == true).Single(p=>p.MaPhongTro == idphong);
+               return (HopDong)data.HopDong.Where(p => p.TonTai == true && p.MaPhongTro == idphong).FirstOrDefault();
             }
         }
         public void ThemTBDal(ThietBi tb)
@@ -348,14 +348,14 @@ namespace PBL3___Motel_Management_System.DAL
         {
             using (DataPbl data = new DataPbl())
             {
-                return data.PhongTro.Where(p => p.TonTai == true).Single(p => p.MaPhongTro == idPhong);
+                return data.PhongTro.Find(idPhong);
             }
         }
         public HopDong GetHopDongByMaHD(string MaHD)
         {
             using (DataPbl data = new DataPbl())
             {
-                return data.HopDong.Where(p => p.TonTai == true).Single(p => p.MaHopDong == MaHD);
+                return data.HopDong.Find(MaHD);
             }
         }
         public void UpdatePTDAL(PhongTro PT)
@@ -483,14 +483,21 @@ namespace PBL3___Motel_Management_System.DAL
         {
             using(DataPbl data = new DataPbl())
             {
-                return (PhongTro)data.HopDong.Where(p => p.TonTai == true && p.MaHopDong == idHd).Select(p => p.PhongTro);
+                return data.HopDong.Where(p => p.TonTai == true && p.MaHopDong == idHd).FirstOrDefault().PhongTro;
             }
         }
-        public Nguoi GetNguoiByIdHopDong(string idNguoi)
+        public PhongTro GetPhongTroByIdHoaDon(string idHd)
         {
             using (DataPbl data = new DataPbl())
             {
-                return (Nguoi)data.HopDong.Where(p => p.TonTai == true && p.MaNguoi == idNguoi).Select(p => p.Nguoi);
+                return data.HoaDon.Where(p => p.TonTai == true && p.MaHoaDon == idHd).FirstOrDefault().PhongTro;
+            }
+        }
+        public Nguoi GetNguoiByIdHopDong(string idHopDong)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return (Nguoi)data.HopDong.Where(p => p.TonTai == true && p.MaHopDong == idHopDong).FirstOrDefault().Nguoi;
             }
         }
         public List<string> GetHoaDonByTinhTrang(bool tinhTrang)
@@ -550,17 +557,17 @@ namespace PBL3___Motel_Management_System.DAL
             }
         }
         public string GetIdChiTietDichVuDienByIdPhongDal(string idPhong)
-        { 
-            using(DataPbl data = new DataPbl())
+        {
+            using (DataPbl data = new DataPbl())
             {
-                return data.ChiTietDichVu.Where(p => p.MaPhongTro == idPhong && p.MaDichVu == "001").Select(p => p.MaChiTietDichVu).ToString();
+                return  data.ChiTietDichVu.Where(p => p.MaPhongTro == idPhong && p.MaDichVu == "001" && p.TonTai == true).FirstOrDefault().MaChiTietDichVu;
             }
         }
         public string GetIdChiTietDichVuNuocByIdPhongDal(string idPhong)
         {
             using (DataPbl data = new DataPbl())
             {
-                return data.ChiTietDichVu.Where(p => p.MaPhongTro == idPhong && p.MaDichVu == "000").Select(p => p.MaChiTietDichVu).ToString();
+                return data.ChiTietDichVu.Where(p => p.MaPhongTro == idPhong && p.MaDichVu == "000").FirstOrDefault().MaChiTietDichVu;
             }
         }
         public string GetIdDayByIdPhong(string IdPhong)
@@ -574,7 +581,7 @@ namespace PBL3___Motel_Management_System.DAL
         {
             using(DataPbl data = new DataPbl())
             {
-                return data.ThanhVienTrongPhong.Where(p => p.TonTai == true && p.MaNguoi == idNguoi).Select(p => p.MaPhongTro).ToString();
+                return data.ThanhVienTrongPhong.Where(p => p.TonTai == true && p.MaNguoi == idNguoi).FirstOrDefault().MaPhongTro;
             }
         }
         public void DelCHiTietThietBiById(string Id)
@@ -695,7 +702,7 @@ namespace PBL3___Motel_Management_System.DAL
         {
             using (DataPbl data = new DataPbl())
             {
-                return data.ThanhVienTrongPhong.Where(p => p.MaNguoi == id).Select(p => p.MaThanhVienTrongPhong).ToString();
+                return data.ThanhVienTrongPhong.Where(p => p.MaNguoi == id && p.TonTai == true).FirstOrDefault().MaThanhVienTrongPhong;
             }
         }
         public List<string> GetIDThanhvienbyIDPhong(string idphong)
@@ -709,7 +716,7 @@ namespace PBL3___Motel_Management_System.DAL
         {
             using(DataPbl data = new DataPbl())
             {
-                return data.ChiTietDichVu.Where(p => p.TonTai == true && p.MaPhongTro == idPhong).Select(p => p.MaChiTietDichVu).ToString();
+                return data.ChiTietDichVu.Where(p => p.TonTai == true && p.MaPhongTro == idPhong).FirstOrDefault().MaChiTietDichVu;
             }
         }
         public void DelHoaDonDal(string id)

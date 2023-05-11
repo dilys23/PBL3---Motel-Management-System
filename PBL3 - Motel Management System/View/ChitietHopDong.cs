@@ -81,16 +81,14 @@ namespace PBL3___Motel_Management_System.View
             QLBLL qLBLL = new QLBLL();
             Nguoi nguoi = new Nguoi();
             nguoi = tp.hopDong.Nguoi;
-#pragma warning disable CS0168 // Variable is declared but never used
+            nguoi.TonTai = true;
             try
             {
-                qLBLL.AddNguoiBll(nguoi);
+            qLBLL.AddNguoiBll(nguoi);
             }
-            catch (Exception ex)
-            {
+            catch{
                 qLBLL.UpdateNguoiBLL(nguoi);
             }
-#pragma warning restore CS0168 // Variable is declared but never used
             PhongTro pt = new PhongTro();
             pt = qLBLL.GetPhongTroByIdPhong(tp.hopDong.MaPhongTro);
             pt.TinhTrang = true;
@@ -99,6 +97,7 @@ namespace PBL3___Motel_Management_System.View
             tvtp.MaThanhVienTrongPhong = qLBLL.TaoIdThanhVienTrongPhong();
             tvtp.MaPhongTro = pt.MaPhongTro;
             tvtp.MaNguoi = nguoi.MaNguoi;
+            tvtp.TonTai = true;
             qLBLL.AddThanhVienTrongPhongBll(tvtp);
             foreach (string iddv in tp.DsDichVu)
             {
@@ -106,6 +105,7 @@ namespace PBL3___Motel_Management_System.View
                 ctdv.MaChiTietDichVu = qLBLL.TaoIdChiTietDichVu();
                 ctdv.MaDichVu = iddv;
                 ctdv.MaPhongTro = tp.hopDong.MaPhongTro;
+                ctdv.TonTai = true;
                 qLBLL.AddChiTietDichVuBll(ctdv);
             }
             HopDong hd = new HopDong();
@@ -116,6 +116,7 @@ namespace PBL3___Motel_Management_System.View
             hd.NgayKetThuc = tp.hopDong.NgayKetThuc;
             hd.TienCoc = tp.hopDong.TienCoc;
             hd.TinhTrang = true;
+            hd.TonTai = true;
 #pragma warning disable CS0168 // Variable is declared but never used
             try
             {
@@ -130,7 +131,6 @@ namespace PBL3___Motel_Management_System.View
             this.loader(null);
             this.Close();
         }
-
         private void label2_Click(object sender, EventArgs e)
         {
 

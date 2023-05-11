@@ -106,7 +106,6 @@ namespace PBL3___Motel_Management_System.View
                         ctdv.MaDichVu = dr.Cells[0].Value.ToString();                  
                         qLBLL.AddChiTietDichVuBll(ctdv);
                         dsdv.Add(dr.Cells[0].Value.ToString());
-
                     }
                 }
                 foreach (DataGridViewRow dr in dgvDVcodinh.Rows)

@@ -15,7 +15,7 @@ using System.Windows.Forms;
 namespace PBL3___Motel_Management_System.View
 {
      public delegate void Loader1(String s);
-    public delegate void _SuKien(object sender, EventArgs e);
+     public delegate void _SuKien(object sender, EventArgs e);
 
     public partial class DemoPhong : Form
     {
@@ -57,8 +57,6 @@ namespace PBL3___Motel_Management_System.View
             panelPhong.AutoScroll = true;
             QLBLL qLBLL = new QLBLL();
             Button defaultBtn = null;
-            
-
             foreach(DayTro dt in qLBLL.GetAllDayTroBll())
             {
                 ToolTip tp = new ToolTip();
@@ -121,7 +119,7 @@ namespace PBL3___Motel_Management_System.View
                 {
                     Label lbl = new Label();
                     lbl.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-                   lbl.AutoSize = true;
+                    lbl.AutoSize = true;
                     lbl.Name = nguoi.MaNguoi;
                     lbl.Text = "   " + nguoi.Ten;
                     lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -149,14 +147,12 @@ namespace PBL3___Motel_Management_System.View
         {
             if(ClickBtn != null)
             {
-
             QLBLL qLBLL = new QLBLL();
             DayTro dt = qLBLL.GetDayTroById(ClickBtn.Name);
-            tc.openChildForm1(new ThemPhong(dt.MaDayTro,LoadForm), panelChinh);
+            tc.openChildForm1(new ThemPhong(dt.MaDayTro, SuKien), panelChinh);
             }
             
         }
-
         private void lblDiaChi_Click(object sender, EventArgs e)
         {
 
@@ -165,8 +161,7 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnThemday_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ThemDay(LoadForm), panelChinh);
-            //panelBtnDay.Controls.Clear();
+            tc.openChildForm1(new ThemDay(SuKien), panelChinh);
         }
 
         private void btnSuaDay_Click(object sender, EventArgs e)

@@ -131,11 +131,6 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnChoThue_Click(object sender, EventArgs e)
         {
-            //ThuePhong tp = new ThuePhong();
-            //QLBLL qLBLL = new QLBLL();
-            //tp.hopDong.MaHopDong = qLBLL.TaoIdHopDong();
-            //tp.hopDong.MaPhongTro = dgvPhongTro.CurrentRow.Cells[0].Value.ToString();
-            //tc.openChildForm1(new ThemKhach(tp, LoadForm), panelPhong);
             QLBLL qLBLL = new QLBLL();
             if (qLBLL.GetHopDongByIdPhong(IdPhong) == null)
             {

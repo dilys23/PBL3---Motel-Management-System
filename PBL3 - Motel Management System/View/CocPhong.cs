@@ -85,7 +85,8 @@ namespace PBL3___Motel_Management_System.View
                     Sdt = txtSdt.Text,
                     Diachi = "",
                     GioiTinh = false,
-                    NgaySinh = ""
+                    NgaySinh = "",
+                    TonTai = true
             };
 
                 HopDong hd = new HopDong
@@ -96,7 +97,8 @@ namespace PBL3___Motel_Management_System.View
                     NgayBatDau = dtpNgayCoc.Value.ToString("yyyy-MM-dd"),
                     NgayKetThuc = dtpNgayNhanPhong.Value.ToString("yyyy-MM-dd"),
                     TienCoc = Convert.ToDouble(txtTienCoc.Text),
-                    TinhTrang = false
+                    TinhTrang = false,
+                    TonTai = true
 
             };
                 qLBLL.AddNguoiBll(nguoi);
