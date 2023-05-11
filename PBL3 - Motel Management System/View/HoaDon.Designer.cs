@@ -54,10 +54,10 @@
             this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DaThanhToan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ConNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbbDayTro = new System.Windows.Forms.ComboBox();
-            this.btnThemHoaDon = new FontAwesome.Sharp.IconButton();
             this.btnSua = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnXoa = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cbbDayTro = new System.Windows.Forms.ComboBox();
+            this.btnThemHoaDon = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panelHD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
@@ -132,7 +132,6 @@
             this.cbbPhongTro.Name = "cbbPhongTro";
             this.cbbPhongTro.Size = new System.Drawing.Size(148, 28);
             this.cbbPhongTro.TabIndex = 44;
-        
             // 
             // panelHD
             // 
@@ -246,7 +245,8 @@
             // 
             this.dgvHoaDon.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.dgvHoaDon.AllowUserToAddRows = false;
-            this.dgvHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHoaDon.BackgroundColor = System.Drawing.Color.Ivory;
@@ -353,6 +353,18 @@
             this.ConNo.MinimumWidth = 6;
             this.ConNo.Name = "ConNo";
             // 
+            // btnSua
+            // 
+            this.btnSua.HeaderText = "";
+            this.btnSua.MinimumWidth = 6;
+            this.btnSua.Name = "btnSua";
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.HeaderText = "";
+            this.btnXoa.MinimumWidth = 6;
+            this.btnXoa.Name = "btnXoa";
+            // 
             // cbbDayTro
             // 
             this.cbbDayTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -384,18 +396,6 @@
             this.btnThemHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemHoaDon.UseVisualStyleBackColor = false;
             this.btnThemHoaDon.Click += new System.EventHandler(this.btnThemHD_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.HeaderText = "";
-            this.btnSua.MinimumWidth = 6;
-            this.btnSua.Name = "btnSua";
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.HeaderText = "";
-            this.btnXoa.MinimumWidth = 6;
-            this.btnXoa.Name = "btnXoa";
             // 
             // Hoadon
             // 

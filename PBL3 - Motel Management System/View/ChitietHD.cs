@@ -37,6 +37,7 @@ namespace PBL3___Motel_Management_System.View
             string diachi = dt.TenDuong + " " + dt.TenHuyen + " " + dt.TenThanhPho;
             txtDiaChi.Text = diachi;
             txtGiaPhong.Text = phongTro.GiaTien.ToString();
+            txtSonguoitoida.Text = phongTro.ToiDa.ToString();
             Nguoi nguoi = new Nguoi();
             HopDong hd = new HopDong();
             hd = qLBLL.GetHopDongByIdPhong(tp.hopDong.MaPhongTro);
@@ -44,7 +45,7 @@ namespace PBL3___Motel_Management_System.View
             {
                 if(qLBLL.PhongDaCocByIdPhong(tp.hopDong.MaPhongTro)==false)
                 {
-                    nguoi = qLBLL.GetNguoiByIdHopDong(hd.MaHopDong);
+                    nguoi = qLBLL.GetNguoiByMaHD(hd.MaHopDong);
                     txtHoVaTen.Text = nguoi.Ten;
                     txtSdt.Text = nguoi.Sdt;
                     txtTienCoc.Text = hd.TienCoc.ToString();

@@ -32,7 +32,7 @@ namespace PBL3___Motel_Management_System.View
             dgvDichVu.Rows.Clear();
             tc.customDGV(dgvDichVu);
             QLBLL qLBLL = new QLBLL();
-            dgvDichVu.RowCount = 1;
+            //dgvDichVu.RowCount = 1;
              int  i = 1;
             foreach (string idDv in qLBLL.GetAllIdDichVuByIdPhong(this.idPhong))
             {
@@ -40,7 +40,7 @@ namespace PBL3___Motel_Management_System.View
                 dv = qLBLL.GetDVByIdDV(idDv);
                 dgvDichVu.Rows.Add(dv.MaDichVu, i++, dv.TenDichVu, dv.GiaDichVu);
             }
-            var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-delete-25.png");
+            var Xoa = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
             dgvDichVu.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dgvIcons_CellPainting1(dgvDichVu, e, Xoa));
             
         }
@@ -70,7 +70,7 @@ namespace PBL3___Motel_Management_System.View
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                
+               
                 string columnName = dgvDichVu.Columns[e.ColumnIndex].Name;
 
                if (columnName == "btnXoa")

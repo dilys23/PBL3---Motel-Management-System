@@ -112,6 +112,7 @@
             this.dgvHD.Size = new System.Drawing.Size(888, 200);
             this.dgvHD.TabIndex = 55;
             this.dgvHD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHD_CellContentClick);
+            this.dgvHD.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvHD_CellFormatting);
             // 
             // btnTimKiem
             // 
@@ -268,12 +269,14 @@
             this.btnSua.HeaderText = "";
             this.btnSua.MinimumWidth = 6;
             this.btnSua.Name = "btnSua";
+            this.btnSua.UseColumnTextForButtonValue = true;
             // 
             // btnXoa
             // 
             this.btnXoa.HeaderText = "";
             this.btnXoa.MinimumWidth = 6;
             this.btnXoa.Name = "btnXoa";
+            this.btnXoa.UseColumnTextForButtonValue = true;
             // 
             // Hopdong
             // 

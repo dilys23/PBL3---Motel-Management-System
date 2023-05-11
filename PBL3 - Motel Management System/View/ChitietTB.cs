@@ -37,17 +37,27 @@ namespace PBL3___Motel_Management_System.View
         }
         public void LoadForm(string txt)
         {
+           // dgvThietBi.DataSource = null;
             dgvThietBi.Rows.Clear();
             QLBLL qLBLL = new QLBLL();
             dgvThietBi.RowCount = 1;
             int i = 1;
-            foreach (string idDv in qLBLL.GetAllIdThietBiByIdPhong(this.idPhong))
+            ThuePhong tp = new ThuePhong();
+            tp.hopDong.MaPhongTro = idPhong;
+
+            foreach (string idCttb in qLBLL.GetAllIdCHiTietThietBiByIdPhong(tp.hopDong.MaPhongTro))
             {
-                ThietBi tb = new ThietBi();
-                tb = qLBLL.GetThietBiByIdThietBi(idDv);
-                dgvThietBi.Rows.Add(tb.MaThietBi, i++, tb.TenThietBi, tb.GiaThietBi);
+                ChiTietThietBi cttb = qLBLL.GetChiTietThietBiById(idCttb);
+                ThietBi tb = qLBLL.GetThietBiByIdThietBi(cttb.MaThietBi);
+                dgvThietBi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi, cttb.SoLuong);
             }
-            var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-delete-25.png");
+            //foreach (string idCttb in qLBLL.GetAllIdCHiTietThietBiByIdPhong(this.idPhong))
+            //{
+            //    ChiTietThietBi cttb = qLBLL.GetChiTietThietBiById(idCttb);
+            //    ThietBi tb = qLBLL.GetThietBiByIdThietBi(cttb.MaThietBi);
+            //    dgvThietBi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi, cttb.SoLuong);
+            //}
+            var Xoa = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
             dgvThietBi.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dgvIcons_CellPainting1(dgvThietBi, e, Xoa));
 
         }
@@ -100,21 +110,40 @@ namespace PBL3___Motel_Management_System.View
 
                 if (columnName == "btnXoa")
                 {
+                    QLBLL qLBLL = new QLBLL();
+
                     DialogResult kq = MessageBox.Show("Bạn có thực sự muốn xóa", "Cảnh báo!!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     if (kq == DialogResult.OK)
                     {
                         string id = dgvThietBi.Rows[e.RowIndex].Cells["MaThietBi"].Value.ToString();
-                        if (id != "000" && id != "001")
+                        if (Convert.ToInt32(dgvThietBi.Rows[e.RowIndex].Cells["SoLuong"].Value.ToString()) == 1)
                         {
-                            QLBLL qLBLL = new QLBLL();
                             qLBLL.DelChiTietThietBiByIdThietBi(id);
-                            MessageBox.Show("Xóa thiết bị thành công", "Thông báo");
-                            LoadForm(null);
                         }
                         else
                         {
-                            
+                            qLBLL.DelCHiTietThietBiByIdPhongBLL(idPhong);
+                            foreach (DataGridViewRow dr in dgvThietBi.Rows)
+                            {
+                                if (dr.Cells[0].Value != null)
+                                {
+                                    ChiTietThietBi cttb = new ChiTietThietBi();
+                                    cttb.MaChiTietThietBi = qLBLL.TaoIdChiTietThietBi();
+                                    cttb.MaThietBi = dr.Cells[0].Value.ToString();
+                                    cttb.MaPhongTro = idPhong;
+                                    if (cttb.MaThietBi == id)
+                                    { cttb.SoLuong = Convert.ToInt32(dr.Cells[4].Value.ToString()) - 1; }
+                                    else cttb.SoLuong = Convert.ToInt32(dr.Cells[4].Value.ToString()) ;
+                                    qLBLL.AddChiTietThietBiBll(cttb);
+                                }
+
+                            }
                         }
+
+                     
+                        MessageBox.Show("Xóa thiết bị thành công", "Thông báo");
+                        LoadForm(null);
+
                     }
                 }
             }

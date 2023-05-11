@@ -178,35 +178,30 @@ namespace PBL3___Motel_Management_System.View
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
-        { 
-            if(tp.hopDong.MaHopDong != null)
+        {
+            QLBLL qLBLL = new QLBLL();
+            qLBLL.DelCHiTietThietBiByIdPhongBLL(tp.hopDong.MaPhongTro);
+            foreach (DataGridViewRow dr in dgvTBThem.Rows)
             {
-                List<string> dstb = new List<string>();
-                foreach (DataGridViewRow dr in dgvTBThem.Rows)
+                if (dr.Cells[0].Value != null)
                 {
-                    if (dr.Cells[0].Value != null) dstb.Add(dr.Cells[0].Value.ToString());
-
+                    ChiTietThietBi cttb = new ChiTietThietBi();
+                    cttb.MaChiTietThietBi = qLBLL.TaoIdChiTietThietBi();
+                    cttb.MaThietBi = dr.Cells[0].Value.ToString();
+                    cttb.MaPhongTro = tp.hopDong.MaPhongTro;
+                    cttb.SoLuong = Convert.ToInt32(dr.Cells[4].Value.ToString());
+                    qLBLL.AddChiTietThietBiBll(cttb);
                 }
-                tp.DsThietBi = dstb;
-                tc.openChildForm1(new ThemHopDong(tp, Back), panelThemHD);
+
+            }
+
+            if (tp.hopDong.MaHopDong != null)
+            {     
+            tc.openChildForm1(new ThemHopDong(tp, Back), panelThemHD);
             }
             else
-            {
-                QLBLL qLBLL = new QLBLL();
-                qLBLL.DelCHiTietThietBiByIdPhongBLL(tp.hopDong.MaPhongTro);
-                foreach (DataGridViewRow dr in dgvTBThem.Rows)
-                {
-                    if (dr.Cells[0].Value != null)
-                    {
-                        ChiTietThietBi cttb = new ChiTietThietBi();
-                        cttb.MaChiTietThietBi = qLBLL.TaoIdChiTietThietBi();
-                        cttb.MaThietBi = dr.Cells[0].Value.ToString();
-                        cttb.MaPhongTro = tp.hopDong.MaPhongTro;
-                        cttb.SoLuong = Convert.ToInt32(dr.Cells[4].Value.ToString());
-                        qLBLL.AddChiTietThietBiBll(cttb);
-                    }
-
-                }
+            {   
+                
                 MessageBox.Show("Thay đổi thành công","Thông báo",MessageBoxButtons.OK);
                 this.Close();
                 this.loader(null);

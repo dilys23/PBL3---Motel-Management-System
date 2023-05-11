@@ -156,6 +156,7 @@
             this.btnTra.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolTip1.SetToolTip(this.btnTra, "Trả Phòng");
             this.btnTra.UseVisualStyleBackColor = false;
+            this.btnTra.Click += new System.EventHandler(this.btnTra_Click);
             // 
             // btnChoThue
             // 
