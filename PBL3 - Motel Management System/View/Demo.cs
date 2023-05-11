@@ -69,7 +69,7 @@ namespace PBL3___Motel_Management_System.View
         {
             lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
-            Image image1 = Image.FromFile("D:\\PBL3\\PBL3_Main\\PBL3 - Motel Management System\\Icons\\icons8-home-30.png" + "    ");
+            Image image1 = Image.FromFile("D:\\Pblproject\\PBL3_Main\\PBL3 - Motel Management System\\Icons\\icons8-home-30.png" + "    ");
             lbl.Image = image1;
             lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             // Set the size of the label to accommodate the bitmap size.
