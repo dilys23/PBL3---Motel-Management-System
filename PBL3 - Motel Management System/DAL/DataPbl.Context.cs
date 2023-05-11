@@ -13,10 +13,10 @@ namespace PBL3___Motel_Management_System.DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DataPbl : DbContext
+    public partial class datapbl : DbContext
     {
-        public DataPbl()
-            : base("name=DataPbl")
+        public datapbl()
+            : base("name=datapbl")
         {
         }
     

@@ -21,8 +21,8 @@ namespace PBL3___Motel_Management_System.DAL
         public string ThoiGian { get; set; }
         public string NgayLap { get; set; }
         public bool TinhTrang { get; set; }
+        public Nullable<bool> TonTai { get; set; }
     
         public virtual ChiTietDichVu ChiTietDichVu { get; set; }
-        public virtual ChiTietDichVu ChiTietDichVu1 { get; set; }
     }
 }

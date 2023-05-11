@@ -18,6 +18,7 @@ namespace PBL3___Motel_Management_System.DAL
         public string MaThietBi { get; set; }
         public string MaPhongTro { get; set; }
         public double SoLuong { get; set; }
+        public Nullable<bool> TonTai { get; set; }
     
         public virtual PhongTro PhongTro { get; set; }
         public virtual ThietBi ThietBi { get; set; }
