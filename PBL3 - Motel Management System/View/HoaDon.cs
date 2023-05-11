@@ -278,5 +278,10 @@ namespace PBL3___Motel_Management_System
                 }
             }
         }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
