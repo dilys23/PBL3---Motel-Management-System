@@ -21,8 +21,8 @@ namespace PBL3___Motel_Management_System.DAL
         public bool TinhTrang { get; set; }
         public double TongTien { get; set; }
         public double DaThanhToan { get; set; }
+        public Nullable<bool> TonTai { get; set; }
     
         public virtual PhongTro PhongTro { get; set; }
-        public virtual PhongTro PhongTro1 { get; set; }
     }
 }

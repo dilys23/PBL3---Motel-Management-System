@@ -17,6 +17,7 @@ namespace PBL3___Motel_Management_System.DAL
         public string MaThanhVienTrongPhong { get; set; }
         public string MaPhongTro { get; set; }
         public string MaNguoi { get; set; }
+        public Nullable<bool> TonTai { get; set; }
     
         public virtual Nguoi Nguoi { get; set; }
         public virtual PhongTro PhongTro { get; set; }

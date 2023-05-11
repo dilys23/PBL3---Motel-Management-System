@@ -501,6 +501,24 @@
     <Compile Include="View\DoiMK.Designer.cs">
       <DependentUpon>DoiMK.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\KhachHang\ChitietDienPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\KhachHang\ChitietDienPhong.Designer.cs">
+      <DependentUpon>ChitietDienPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\KhachHang\ChitietNuocPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\KhachHang\ChitietNuocPhong.Designer.cs">
+      <DependentUpon>ChitietNuocPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\KhachHang\HoaDonPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\KhachHang\HoaDonPhong.Designer.cs">
+      <DependentUpon>HoaDonPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\PKhach.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -548,12 +566,6 @@
     </Compile>
     <Compile Include="View\TaiKhoanPhong.Designer.cs">
       <DependentUpon>TaiKhoanPhong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\TCdemo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\TCdemo.Designer.cs">
-      <DependentUpon>TCdemo.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ThanhToan.cs">
       <SubType>Form</SubType>
@@ -701,10 +713,10 @@
     <Compile Include="View\ChisoNuoc.Designer.cs">
       <DependentUpon>ChisoNuoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\TrangChuKhach.cs">
+    <Compile Include="View\KhachHang\TrangChuKhach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\TrangChuKhach.Designer.cs">
+    <Compile Include="View\KhachHang\TrangChuKhach.Designer.cs">
       <DependentUpon>TrangChuKhach.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UserControl1.cs">
@@ -765,6 +777,15 @@
     <EmbeddedResource Include="View\DoiMK.resx">
       <DependentUpon>DoiMK.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\KhachHang\ChitietDienPhong.resx">
+      <DependentUpon>ChitietDienPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\KhachHang\ChitietNuocPhong.resx">
+      <DependentUpon>ChitietNuocPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\KhachHang\HoaDonPhong.resx">
+      <DependentUpon>HoaDonPhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\PKhach.resx">
       <DependentUpon>PKhach.cs</DependentUpon>
     </EmbeddedResource>
@@ -788,9 +809,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\TaiKhoanPhong.resx">
       <DependentUpon>TaiKhoanPhong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\TCdemo.resx">
-      <DependentUpon>TCdemo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ThanhToan.resx">
       <DependentUpon>ThanhToan.cs</DependentUpon>
@@ -873,7 +891,7 @@
     <EmbeddedResource Include="View\ChisoNuoc.resx">
       <DependentUpon>ChisoNuoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\TrangChuKhach.resx">
+    <EmbeddedResource Include="View\KhachHang\TrangChuKhach.resx">
       <DependentUpon>TrangChuKhach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControl1.resx">

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panelThem = new System.Windows.Forms.Panel();
+            this.txtSonguoitoida = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtDienTich = new System.Windows.Forms.TextBox();
@@ -54,8 +56,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayBatDau = new System.Windows.Forms.DateTimePicker();
-            this.txtSonguoitoida = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.panelThem.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,10 +93,31 @@
             this.panelThem.Controls.Add(this.label2);
             this.panelThem.Controls.Add(this.dtpNgaySinh);
             this.panelThem.Controls.Add(this.dtpNgayBatDau);
-            this.panelThem.Location = new System.Drawing.Point(12, 41);
+            this.panelThem.Location = new System.Drawing.Point(11, 30);
             this.panelThem.Name = "panelThem";
             this.panelThem.Size = new System.Drawing.Size(898, 505);
             this.panelThem.TabIndex = 62;
+            // 
+            // txtSonguoitoida
+            // 
+            this.txtSonguoitoida.Enabled = false;
+            this.txtSonguoitoida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSonguoitoida.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtSonguoitoida.Location = new System.Drawing.Point(197, 405);
+            this.txtSonguoitoida.Name = "txtSonguoitoida";
+            this.txtSonguoitoida.Size = new System.Drawing.Size(210, 27);
+            this.txtSonguoitoida.TabIndex = 51;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label14.Location = new System.Drawing.Point(51, 412);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(120, 20);
+            this.label14.TabIndex = 50;
+            this.label14.Text = "Số người tối đa";
             // 
             // label10
             // 
@@ -156,7 +177,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label13.Location = new System.Drawing.Point(475, 275);
+            this.label13.Location = new System.Drawing.Point(472, 278);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(83, 20);
             this.label13.TabIndex = 44;
@@ -218,7 +239,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(472, 206);
+            this.label8.Location = new System.Drawing.Point(472, 215);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(111, 20);
             this.label8.TabIndex = 33;
@@ -229,7 +250,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label9.Location = new System.Drawing.Point(478, 151);
+            this.label9.Location = new System.Drawing.Point(472, 152);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(58, 20);
             this.label9.TabIndex = 32;
@@ -281,7 +302,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(468, 471);
+            this.label6.Location = new System.Drawing.Point(472, 467);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 20);
             this.label6.TabIndex = 27;
@@ -314,7 +335,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(463, 405);
+            this.label3.Location = new System.Drawing.Point(472, 404);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(111, 20);
             this.label3.TabIndex = 21;
@@ -334,7 +355,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(468, 337);
+            this.label2.Location = new System.Drawing.Point(472, 341);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 20);
             this.label2.TabIndex = 19;
@@ -359,27 +380,6 @@
             this.dtpNgayBatDau.Name = "dtpNgayBatDau";
             this.dtpNgayBatDau.Size = new System.Drawing.Size(210, 27);
             this.dtpNgayBatDau.TabIndex = 18;
-            // 
-            // txtSonguoitoida
-            // 
-            this.txtSonguoitoida.Enabled = false;
-            this.txtSonguoitoida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSonguoitoida.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtSonguoitoida.Location = new System.Drawing.Point(197, 405);
-            this.txtSonguoitoida.Name = "txtSonguoitoida";
-            this.txtSonguoitoida.Size = new System.Drawing.Size(210, 27);
-            this.txtSonguoitoida.TabIndex = 51;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label14.Location = new System.Drawing.Point(51, 412);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(120, 20);
-            this.label14.TabIndex = 50;
-            this.label14.Text = "Số người tối đa";
             // 
             // ChitietHD
             // 

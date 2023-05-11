@@ -169,8 +169,18 @@ namespace PBL3___Motel_Management_System
             dgv.RowTemplate.Height = 35;
             dgv.RowTemplate.MinimumHeight = 20;
         }
-        private void LoadForm()
+        //public void ResizeColumn()
+        //{
+        //    dgvDoanhThu.Columns["STT"].Width = 50;
+        //    dgvDoanhThu.Columns["DayTro"].Width = 240;
+        //    dgvDoanhThu.Columns["PhongTro"].Width = 80;
+        //    dgvDoanhThu.Columns["TongTien"].Width = 80;
+        //}
+
+        
+            private void LoadForm()
         {
+            dgvSoLuong.Rows.Clear();    
             DataTable dt = new DataTable();
             customDGV(dgvTinhTrang);
             dt.Columns.AddRange(new DataColumn[]
@@ -194,9 +204,12 @@ namespace PBL3___Motel_Management_System
             }
             dgvTinhTrang.DataSource = dt;
             dgvTinhTrang.Columns[0].Visible = false;
+           // dgvSoLuong.Rows.Clear();
+            //  LoadChart();
         }
         private void LoadForm1()
         {
+            dgvSoLuong.Rows.Clear();
             DataTable dt = new DataTable();
             customDGV(dgvSoLuong);
             dt.Columns.AddRange(new DataColumn[]
@@ -229,6 +242,7 @@ namespace PBL3___Motel_Management_System
                     // Nếu tình trạng chưa có trong Dictionary, thêm mới và đặt số lượng phòng là 1
                     tinhTrangCounts.Add(tinhTrang, 1);
                 }
+
             }
 
             // Tạo các dòng trong bảng mới từ Dictionary
@@ -239,6 +253,7 @@ namespace PBL3___Motel_Management_System
 
             dgvSoLuong.DataSource = dt;
             DrawPieChart();
+           // dgvSoLuong.Rows.Clear();
         }
         private void DrawPieChart()
         {
@@ -272,6 +287,12 @@ namespace PBL3___Motel_Management_System
             // Thêm series vào biểu đồ
             TinhTrang.Series.Add(series);
         }
+        private void LoadChart()
+        {
+            LoadForm();
+            LoadForm1();
+            DrawPieChart();
+        }    
         private void CollapseMenu()
         {
             if (this.paneMenu.Width > 200) //Collapse menu
@@ -432,8 +453,43 @@ namespace PBL3___Motel_Management_System
         {
             openChildForm(new Thietbi());   
         }
-       // taiKhoan1.BringToFront();
 
-       
+        private void panelDesktop_SizeChanged(object sender, EventArgs e)
+        {
+            int panelWidth = panelDesktop.Width;
+            int panelHeight = panelDesktop.Height;
+
+            int dgvWidth = (panelWidth - 40) / 2;
+            int dgvHeight = (panelHeight - 30) / 2;
+
+            int chartWidth = dgvWidth;
+            int chartHeight = dgvHeight;
+            int chartX = 10;
+            int chartY = 10;
+
+            int dgvTinhTrangWidth = dgvWidth - 4;
+            int dgvTinhTrangHeight = dgvHeight - 3;
+            int dgvTinhTrangX = dgvWidth + 15;
+            int dgvTinhTrangY = 5;
+
+            int dgvSoLuongWidth = dgvWidth;
+            int dgvSoLuongHeight = dgvHeight - 25;
+            int dgvSoLuongX = dgvWidth + 15;
+            int dgvSoLuongY = dgvHeight + 5;
+
+            TinhTrang.Size = new Size(chartWidth, chartHeight);
+            TinhTrang.Location = new Point(chartX, chartY);
+
+            dgvTinhTrang.Size = new Size(dgvTinhTrangWidth, dgvTinhTrangHeight);
+            dgvTinhTrang.Location = new Point(dgvTinhTrangX, dgvTinhTrangY);
+
+            dgvSoLuong.Size = new Size(dgvSoLuongWidth, dgvSoLuongHeight);
+            dgvSoLuong.Location = new Point(dgvSoLuongX, dgvSoLuongY);
+
+
+        }
+        // taiKhoan1.BringToFront();
+
+
     }
 }

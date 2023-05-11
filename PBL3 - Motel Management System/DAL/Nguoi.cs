@@ -18,7 +18,6 @@ namespace PBL3___Motel_Management_System.DAL
         public Nguoi()
         {
             this.DayTro = new HashSet<DayTro>();
-            this.DayTro1 = new HashSet<DayTro>();
             this.HopDong = new HashSet<HopDong>();
             this.ThanhVienTrongPhong = new HashSet<ThanhVienTrongPhong>();
             this.VaiTro = new HashSet<VaiTro>();
@@ -32,11 +31,10 @@ namespace PBL3___Motel_Management_System.DAL
         public string NgaySinh { get; set; }
         public bool GioiTinh { get; set; }
         public byte[] HinhAnh { get; set; }
+        public Nullable<bool> TonTai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DayTro> DayTro { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DayTro> DayTro1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HopDong> HopDong { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
