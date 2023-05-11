@@ -23,6 +23,7 @@ namespace PBL3___Motel_Management_System.DAL
         public string MaThietBi { get; set; }
         public string TenThietBi { get; set; }
         public double GiaThietBi { get; set; }
+        public Nullable<bool> TonTai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietThietBi> ChiTietThietBi { get; set; }

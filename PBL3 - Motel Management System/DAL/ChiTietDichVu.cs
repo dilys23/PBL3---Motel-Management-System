@@ -18,17 +18,15 @@ namespace PBL3___Motel_Management_System.DAL
         public ChiTietDichVu()
         {
             this.ChiTietSuDungDichVu = new HashSet<ChiTietSuDungDichVu>();
-            this.ChiTietSuDungDichVu1 = new HashSet<ChiTietSuDungDichVu>();
         }
     
         public string MaChiTietDichVu { get; set; }
         public string MaDichVu { get; set; }
         public string MaPhongTro { get; set; }
+        public Nullable<bool> TonTai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietSuDungDichVu> ChiTietSuDungDichVu { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietSuDungDichVu> ChiTietSuDungDichVu1 { get; set; }
         public virtual DichVu DichVu { get; set; }
         public virtual PhongTro PhongTro { get; set; }
     }
