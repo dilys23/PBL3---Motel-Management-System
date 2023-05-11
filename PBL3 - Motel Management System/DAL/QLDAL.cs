@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -596,5 +597,32 @@ namespace PBL3___Motel_Management_System.DAL
         //    }
 
         //}
+        //public List<object> GetDoanhThu()
+        //{
+        //    using(DataPbl data= new DataPbl())
+        //    {
+        //        var s = data.PhongTro.Where(p=>p.DayTro.MaDayTro==p.MaPhongTro && p.HOa)
+        //            .Select(p => new { p.DayTro.TenDayTro, })
+        //    }
+        //}
+        public List<HoaDon> GetHoaDonByNam(string nam)
+        {
+            List<HoaDon> list = new List<HoaDon>();
+            using (DataPbl data= new DataPbl())
+            {
+                foreach(HoaDon hoadon in GetAllHoaDon())
+                {
+                    DateTime dateTime; 
+                    if (DateTime.TryParseExact(hoadon.ThangChiTra, "MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out dateTime))
+                    {
+                        if (dateTime.Year.ToString() == nam)
+                        {
+                            list.Add(hoadon);
+                        }
+                    }
+                }
+                return list;
+            }
+        }
     }
 }

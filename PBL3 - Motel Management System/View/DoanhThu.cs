@@ -1,4 +1,5 @@
-﻿using PBL3___Motel_Management_System.BLL;
+﻿using LiveCharts;
+using PBL3___Motel_Management_System.BLL;
 using PBL3___Motel_Management_System.DAL;
 using PBL3___Motel_Management_System.DTO;
 using System;
@@ -6,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +23,7 @@ namespace PBL3___Motel_Management_System
             InitializeComponent();
             LoadForm(dtpThang.Value.ToString("MM-yyyy"));
             ResizeColumn();
-            SetCbb();
+            
         }
         public void LoadForm(string thang)
         {
@@ -42,9 +44,10 @@ namespace PBL3___Motel_Management_System
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-            string daytro = ((ViewCbb)cbbDayTro.SelectedItem).IdDayTro;
+           // string daytro = ((ViewCbb)cbbDayTro.SelectedItem).IdDayTro;
             string thang = dtpThang.Value.ToString("MM-yyyy");
             LoadForm(thang);
+
 
         }
         public void ResizeColumn()
@@ -70,7 +73,7 @@ namespace PBL3___Motel_Management_System
 
         private void DoanhThu_Load(object sender, EventArgs e)
         {
-            
+
             ChartDuong.BackColor = Color.White;
             var series = new Series();
             series.ChartType = SeriesChartType.Line;
@@ -80,17 +83,20 @@ namespace PBL3___Motel_Management_System
             series.Points.AddXY(3, 1);
             series.Points.AddXY(4, 5);
             series.Points.AddXY(5, 4);
-            ChartDuong.Series.Add(series);
-            ChartDuong.Titles.Add("Biểu đồ đường");
-            ChartDuong.ChartAreas[0].AxisX.Title = "Tháng";
-            ChartDuong.ChartAreas[0].AxisY.Title = "Tiền";
+            //dgvDoanhThu.DataSource = new List<HoaDon>();
+            //ChartDuong.AxisX.Add(new LiveCharts.Wpf.Axis
+            //{
+            //    Title = "Tháng",
+            //    Labels = new[] { "T1", "T2", "T3", "T4", "T5", "T6", "T7", "T8", "T9", "T10", "T11", "T12" }
+            //});
+            //ChartDuong.AxisY.Add(new LiveCharts.Wpf.Axis
+            //{
+            //    Title = "Dãy",
+            //    LabelFormatter = value => value.ToString("C")
+            //});
+            //ChartDuong.LegendLocation = LiveCharts.LegendLocation.Right;
+
         }
-        private void SetCbb()
-        {
-            cbbDayTro.Items.Clear();
-            QLBLL qLBLL = new QLBLL();
-            cbbDayTro.Items.AddRange(qLBLL.GetCbbDayTro().ToArray());
-            cbbDayTro.Items.RemoveAt(0);
-        }
+
     }
 }
