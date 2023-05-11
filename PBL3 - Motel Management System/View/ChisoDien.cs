@@ -32,13 +32,7 @@ namespace PBL3___Motel_Management_System.View
         private void LoadForm(string txt)
         {
             dgvChiSoDien.Rows.Clear();
-            this.dgvChiSoDien.DefaultCellStyle.Font = new Font("Tahoma", 10);
-            this.dgvChiSoDien.DefaultCellStyle.ForeColor = Color.Blue;
-            this.dgvChiSoDien.DefaultCellStyle.BackColor = Color.Beige;
-            this.dgvChiSoDien.DefaultCellStyle.SelectionForeColor = Color.AliceBlue;
-            this.dgvChiSoDien.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
-            this.dgvChiSoDien.RowTemplate.Height = 35;
-            this.dgvChiSoDien.RowTemplate.MinimumHeight = 20;
+            tc.customDGV(dgvChiSoDien);
             QLBLL qLBLL = new QLBLL();
             if(txt==null)
             {

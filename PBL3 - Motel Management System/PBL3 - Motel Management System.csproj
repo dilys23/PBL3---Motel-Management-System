@@ -414,6 +414,7 @@
     <Compile Include="DTO\ChuyenDoiAnh.cs" />
     <Compile Include="DTO\DgvHopDong.cs" />
     <Compile Include="DTO\ThuePhong.cs" />
+    <Compile Include="DTO\TinhTrangPhongTro.cs" />
     <Compile Include="DTO\ViewChiSoDien.cs" />
     <Compile Include="DTO\ViewChiSoNuoc.cs" />
     <Compile Include="DTO\ViewDay.cs" />
@@ -551,6 +552,24 @@
     </Compile>
     <Compile Include="View\SuaThietBi.Designer.cs">
       <DependentUpon>SuaThietBi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TaiKhoanPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TaiKhoanPhong.Designer.cs">
+      <DependentUpon>TaiKhoanPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TCdemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TCdemo.Designer.cs">
+      <DependentUpon>TCdemo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThanhToan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ThanhToan.Designer.cs">
+      <DependentUpon>ThanhToan.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ThemCSDien.cs">
       <SubType>Form</SubType>
@@ -776,6 +795,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\SuaThietBi.resx">
       <DependentUpon>SuaThietBi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TaiKhoanPhong.resx">
+      <DependentUpon>TaiKhoanPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TCdemo.resx">
+      <DependentUpon>TCdemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ThanhToan.resx">
+      <DependentUpon>ThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ThemCSDien.resx">
       <DependentUpon>ThemCSDien.cs</DependentUpon>

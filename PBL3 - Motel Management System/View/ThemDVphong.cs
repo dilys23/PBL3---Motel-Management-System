@@ -94,7 +94,7 @@ namespace PBL3___Motel_Management_System.View
             {
                 QLBLL qLBLL = new QLBLL();
                 List<string> dsdv = new List<string>();
-                 qLBLL.DelCHiTietDichVuByIdPhong(tp.hopDong.MaPhongTro);
+                qLBLL.DelCHiTietDichVuByIdPhong(tp.hopDong.MaPhongTro);
                 
                 foreach (DataGridViewRow dr in dgvXoaDichVu.Rows)
                 {

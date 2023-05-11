@@ -1,5 +1,4 @@
-﻿using LiveCharts.Wpf.Charts.Base;
-using PBL3___Motel_Management_System.DAL;
+﻿using PBL3___Motel_Management_System.DAL;
 using PBL3___Motel_Management_System.DTO;
 using System;
 using System.Collections.Generic;
@@ -7,6 +6,7 @@ using System.Data.Entity.Core.Metadata.Edm;
 using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -560,7 +560,7 @@ namespace PBL3___Motel_Management_System.BLL
             QLDAL qLDAL = new QLDAL();
             qLDAL.DelThietBiDal(id);
         }
-
+        
         public void UpdateChiTietSuDungDichVu(ChiTietSuDungDichVu dv)
         {
             QLDAL qLDAL = new QLDAL();
@@ -997,7 +997,7 @@ namespace PBL3___Motel_Management_System.BLL
                 qLDAL.DelCHiTietThietBiById(id);
             }
         }
-        // SAi 
+       
         public void DelCHiTietDichVuByIdPhong(string IdPhong)
         {
             QLDAL qLDAL = new QLDAL();
@@ -1006,7 +1006,8 @@ namespace PBL3___Motel_Management_System.BLL
                 qLDAL.DelChiTietDichVuDal(id);
             }
         }
-        // sai
+        
+       
         public string GetMaChiTietDichVuByIdPhong(string idPhong)
         {
             QLDAL qLDAL = new QLDAL();
@@ -1214,7 +1215,35 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return list;
         }
-      
+
+        public List<TinhTrangPhongTro> GetAllTinhTrangPhongTro ()
+        {
+            List<TinhTrangPhongTro> list = new List<TinhTrangPhongTro>();
+            QLDAL qLDAL = new QLDAL();
+            // Lấy ds các phòng 
+            List<PhongTro> phongTroList = qLDAL.GetAllPhongTro();
+            foreach (PhongTro phongTro in phongTroList)
+            {
+                TinhTrangPhongTro tinhTrangPhongTro = new TinhTrangPhongTro();
+                tinhTrangPhongTro.MaPhongTro = phongTro.MaPhongTro;
+                tinhTrangPhongTro.TinhTrangPhong = phongTro.TinhTrang;
+
+                // lấy thông tin HD dựa trên id phòng
+                HopDong hopDong = qLDAL.GetHopDongByIdPhong(phongTro.MaDayTro);
+                if (hopDong != null)
+                {
+                    tinhTrangPhongTro.TinhTrangHD = (bool)hopDong.TinhTrang;
+                }
+                else
+                {
+                    tinhTrangPhongTro.TinhTrangHD =false;
+                } 
+                list.Add( tinhTrangPhongTro );
+                    
+
+            }    
+            return list;
+        }
         public List<string> GetHoaDonByIdDay(string IdDay)
         {
             List<string> list = new List<string>();
@@ -1298,9 +1327,9 @@ namespace PBL3___Motel_Management_System.BLL
 
             foreach (PhongTro pt in qLDAL.GetAllPhongTro())
             {
-                foreach (HopDong hd in qLDAL.GetAllHopDong())
+                foreach (HoaDon hd in qLDAL.GetAllHoaDon())
                 {
-                    if (pt.MaPhongTro == hd.MaPhongTro)
+                    if (pt.MaPhongTro == hd.MaPhongTro && hd.MaHoaDon==idHD)
                         return pt;
                 }
             }
@@ -1338,19 +1367,36 @@ namespace PBL3___Motel_Management_System.BLL
             list = qLDAL.GetHoaDonByNam(nam);
             return list;
         }
-
-        //public Chart Cot(string nam)
-        //{
-        //    Chart chart = new Chart();
-        //    foreach(HoaDon hoadon in GetHoaDonByNam(nam))
-        //    {
-        //        //DayTro daytro = get
-        //    }
-
-        //    return chart;
-        //}
-
-
-
+        public List<string> GetHoaDonByThangNam(string thang,string nam)
+        {
+            List<string> list = new List<string>();
+            foreach(HoaDon hoadon in GetHoaDonByNam(nam))
+            {
+                foreach(string mhd in GetHoaDonByThangChiTra(thang))
+                {
+                    if(hoadon.MaHoaDon == mhd) list.Add(mhd);
+                }    
+            }
+            return list;
+        }
+        public double GetTongTien(string madt,string thang,string nam)
+        {
+            double Tong = 0;
+            foreach(string mhd in GetHoaDonByThangNam(thang,nam))
+            {
+               
+                foreach(PhongTro pt in GetPhongTroByIdDay(madt))
+                {
+                    HoaDon hd = GetHoaDonById(mhd);
+                    if (pt.MaPhongTro == hd.MaPhongTro)
+                    {
+                        Tong += hd.TongTien;
+                    }
+                }
+                
+            }
+            return Tong;
+        }
+       
     }
 }
