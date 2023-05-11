@@ -42,7 +42,7 @@ namespace PBL3___Motel_Management_System
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-            string daytro = ((ViewCbb)cbbDayTro.SelectedItem).IdDayTro;
+            string daytro = ((ViewCbb)cbbDayTro.SelectedItem).key;
             string thang = dtpThang.Value.ToString("MM-yyyy");
             LoadForm(thang);
 

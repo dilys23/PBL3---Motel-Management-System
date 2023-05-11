@@ -8,11 +8,11 @@ namespace PBL3___Motel_Management_System.DTO
 {
     internal class ViewCbb
     {
-        public string IdDayTro { get; set; }
-        public string TenDayTro { get; set; }
+        public string key { get; set; }
+        public string value { get; set; }
         public override string ToString()
         {
-            return TenDayTro;
+            return value;
         }
     }
 }

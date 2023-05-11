@@ -36,7 +36,6 @@ namespace PBL3___Motel_Management_System.View
             QLBLL qLBLL = new QLBLL();
             if(txt==null)
             {
-
             int i = 0;
             foreach(ChiTietSuDungDichVu dv in qLBLL.GetAllChiTietSuDungDichVuBll())
             {
@@ -55,7 +54,6 @@ namespace PBL3___Motel_Management_System.View
                        NgayLap = dv.NgayLap,
                        ThangSuDung = dv.ThoiGian,
                        TinhTrang = dv.TinhTrang
-                       
                    };
                     string tinhTrang = (view.TinhTrang) ? "Đã xác thực" : "Chưa xác thực";
 
@@ -67,9 +65,9 @@ namespace PBL3___Motel_Management_System.View
             else
             {
                 string ThangSuDung = dtpThangSuDung.Value.ToString("MM-yyyy");
-                string IdDay = ((ViewCbb)cbbDayTro.SelectedItem).IdDayTro;
-                string IdPhong = ((ViewCbb)cbbPhongTro.SelectedItem).IdDayTro;
-                string IdTinhTrang = ((ViewCbb)cbbTinhTrang.SelectedItem).IdDayTro;
+                string IdDay = ((ViewCbb)cbbDayTro.SelectedItem).key;
+                string IdPhong = ((ViewCbb)cbbPhongTro.SelectedItem).key;
+                string IdTinhTrang = ((ViewCbb)cbbTinhTrang.SelectedItem).key;
                 int i = 0;
                 foreach (ChiTietSuDungDichVu dv in qLBLL.GetChiTietSuDungDichVuTimKiem(ThangSuDung,IdDay,IdPhong, IdTinhTrang))
                 {
@@ -91,7 +89,6 @@ namespace PBL3___Motel_Management_System.View
 
                         };
                         string tinhTrang = (view.TinhTrang) ? "Đã xác thực" : "Chưa xác thực";
-
                         dgvChiSoDien.Rows.Add(view.MaChiTietSuDungDichVu, view.Stt, view.DayTro, view.PhongTro, view.ChiSoCu, view.ChiSoMoi, view.DaDung
                             , view.NgayLap, view.ThangSuDung, tinhTrang);
                     }
@@ -110,9 +107,9 @@ namespace PBL3___Motel_Management_System.View
             QLBLL qLBLL = new QLBLL();
             cbbDayTro.Items.AddRange(qLBLL.GetCbbDayTro().ToArray());
             cbbDayTro.SelectedIndex = 0;
-            cbbTinhTrang.Items.Add(new ViewCbb { IdDayTro = "0", TenDayTro = "All" });
-            cbbTinhTrang.Items.Add(new ViewCbb { IdDayTro = "1", TenDayTro = "Đã xác thực" });
-            cbbTinhTrang.Items.Add(new ViewCbb { IdDayTro = "2", TenDayTro = "Chưa xác thực" });
+            cbbTinhTrang.Items.Add(new ViewCbb { key = "-1", value = "All" });
+            cbbTinhTrang.Items.Add(new ViewCbb {key = "1", value = "Đã xác thực" });
+            cbbTinhTrang.Items.Add(new ViewCbb {key = "2", value = "Chưa xác thực" });
             cbbTinhTrang.SelectedIndex = 0;
 
         }
@@ -162,21 +159,20 @@ namespace PBL3___Motel_Management_System.View
         {
             QLBLL qLBLL = new QLBLL();
             cbbPhongTro.Items.Clear();
-            cbbPhongTro.Items.Add(new ViewCbb { IdDayTro="0", TenDayTro="All" });
-            string id = ((ViewCbb)cbbDayTro.SelectedItem).IdDayTro;
-            if (id == "0")
+            cbbPhongTro.Items.Add(new ViewCbb { key="-1", value="All" });
+            string id = ((ViewCbb)cbbDayTro.SelectedItem).key;
+            if (id == "-1")
             {
-                
                 foreach (PhongTro pt in qLBLL.GetAllPhongTro())
                 {
-                    cbbPhongTro.Items.Add(new ViewCbb { IdDayTro = pt.MaPhongTro, TenDayTro = pt.TenPhongTro });
+                    cbbPhongTro.Items.Add(new ViewCbb { key = pt.MaPhongTro, value = pt.TenPhongTro });
                 }
             }
             else
             {
                 foreach(ViewPhongTro pt in qLBLL.GetAllPhongTroByIdDay(id))
                 {
-                    cbbPhongTro.Items.Add(new ViewCbb { IdDayTro=pt.MaPhongTro,TenDayTro=pt.TenPhongTro });
+                    cbbPhongTro.Items.Add(new ViewCbb {key = pt.MaPhongTro, value = pt.TenPhongTro });
                 }
             }
             if(cbbPhongTro.Items.Count != 0)

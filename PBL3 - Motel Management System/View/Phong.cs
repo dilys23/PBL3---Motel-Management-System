@@ -66,8 +66,8 @@ namespace PBL3___Motel_Management_System
             }
             else
             {
-                string idDay = ((ViewCbb)(cbbDayTro.SelectedItem)).IdDayTro;
-                string idTinhTrang = ((ViewCbb)(cbbTinhTrang.SelectedItem)).IdDayTro;
+                string idDay = ((ViewCbb)(cbbDayTro.SelectedItem)).key;
+                string idTinhTrang = ((ViewCbb)(cbbTinhTrang.SelectedItem)).key;
                 
                 foreach (ViewPhongTro pt in qLBLL.DgvPhongTroTimKiem(idDay, idTinhTrang, txtTimKiem.Text))
                 {
@@ -92,10 +92,10 @@ namespace PBL3___Motel_Management_System
             cbbDayTro.SelectedIndex = 0;
             cbbTinhTrang.Items.AddRange(new ViewCbb[]
             {
-                new ViewCbb{IdDayTro = "-1",TenDayTro = "All"},
-                new ViewCbb{IdDayTro = "1",TenDayTro = "Đã cho thuê"},
-                new ViewCbb{IdDayTro = "0",TenDayTro = "Còn trống"},
-                new ViewCbb{IdDayTro = "2",TenDayTro = "Đã cọc"},
+                new ViewCbb{key = "-1",value = "All"},
+                new ViewCbb{key = "1",value = "Đã cho thuê"},
+                new ViewCbb{key = "0",value = "Còn trống"},
+                new ViewCbb{key = "2",value = "Đã cọc"},
             }) ;
             cbbTinhTrang.SelectedIndex = 0;
         }
