@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -44,12 +47,13 @@
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnTim = new FontAwesome.Sharp.IconButton();
             this.dtpThang = new System.Windows.Forms.DateTimePicker();
-            this.ChartDuong = new LiveCharts.WinForms.CartesianChart();
             this.ChartCot = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.ChartDuong = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoanhThu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChartCot)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartDuong)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -99,14 +103,14 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvDoanhThu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDoanhThu.BackgroundColor = System.Drawing.Color.Ivory;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDoanhThu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDoanhThu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDoanhThu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDoanhThu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaHoaDon,
@@ -114,14 +118,14 @@
             this.DayTro,
             this.PhongTro,
             this.TongTien});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDoanhThu.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDoanhThu.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDoanhThu.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvDoanhThu.GridColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvDoanhThu.Location = new System.Drawing.Point(18, 230);
@@ -190,33 +194,42 @@
             this.dtpThang.Size = new System.Drawing.Size(124, 22);
             this.dtpThang.TabIndex = 0;
             // 
-            // ChartDuong
-            // 
-            this.ChartDuong.Location = new System.Drawing.Point(523, 19);
-            this.ChartDuong.Name = "ChartDuong";
-            this.ChartDuong.Size = new System.Drawing.Size(408, 205);
-            this.ChartDuong.TabIndex = 38;
-            this.ChartDuong.Text = "cartesianChart1";
-            // 
             // ChartCot
             // 
             this.ChartCot.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.ChartCot.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea1.Name = "ChartArea1";
-            this.ChartCot.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.ChartCot.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.ChartCot.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.ChartCot.Legends.Add(legend2);
             this.ChartCot.Location = new System.Drawing.Point(523, 230);
             this.ChartCot.Name = "ChartCot";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.ChartCot.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.ChartCot.Series.Add(series2);
             this.ChartCot.Size = new System.Drawing.Size(408, 191);
             this.ChartCot.TabIndex = 35;
             this.ChartCot.Text = "chart1";
+            // 
+            // ChartDuong
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.ChartDuong.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.ChartDuong.Legends.Add(legend1);
+            this.ChartDuong.Location = new System.Drawing.Point(523, 17);
+            this.ChartDuong.Name = "ChartDuong";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.ChartDuong.Series.Add(series1);
+            this.ChartDuong.Size = new System.Drawing.Size(408, 207);
+            this.ChartDuong.TabIndex = 38;
+            this.ChartDuong.Text = "chart1";
             // 
             // DoanhThu
             // 
@@ -233,6 +246,7 @@
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDoanhThu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChartCot)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartDuong)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -250,7 +264,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DayTro;
         private System.Windows.Forms.DataGridViewTextBoxColumn PhongTro;
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
-        private LiveCharts.WinForms.CartesianChart ChartDuong;
         private System.Windows.Forms.DataVisualization.Charting.Chart ChartCot;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ChartDuong;
     }
 }

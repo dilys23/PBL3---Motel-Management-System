@@ -1339,16 +1339,16 @@ namespace PBL3___Motel_Management_System.BLL
             return list;
         }
 
-        public Chart Cot(string nam)
-        {
-            Chart chart = new Chart();
-            foreach(HoaDon hoadon in GetHoaDonByNam(nam))
-            {
-                //DayTro daytro = get
-            }
+        //public Chart Cot(string nam)
+        //{
+        //    Chart chart = new Chart();
+        //    foreach(HoaDon hoadon in GetHoaDonByNam(nam))
+        //    {
+        //        //DayTro daytro = get
+        //    }
 
-            return chart;
-        }
+        //    return chart;
+        //}
 
 
 

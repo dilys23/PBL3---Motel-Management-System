@@ -48,7 +48,6 @@ namespace PBL3___Motel_Management_System
             string thang = dtpThang.Value.ToString("MM-yyyy");
             LoadForm(thang);
 
-
         }
         public void ResizeColumn()
         {
