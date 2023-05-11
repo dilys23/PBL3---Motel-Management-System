@@ -15,10 +15,8 @@ using PBL3___Motel_Management_System.View;
 
 namespace PBL3___Motel_Management_System.View
 {
-
     public partial class ChisoDien : Form
     {
-        
         public ChisoDien()
         {
             InitializeComponent();
@@ -28,39 +26,23 @@ namespace PBL3___Motel_Management_System.View
 
         TrangChu tc = new TrangChu();
         Dichvu dv = new Dichvu();
-        
         private void LoadForm(string txt)
         {
             dgvChiSoDien.Rows.Clear();
             tc.customDGV(dgvChiSoDien);
             QLBLL qLBLL = new QLBLL();
+            int i = 0;
             if(txt==null)
             {
-            int i = 0;
-            foreach(ChiTietSuDungDichVu dv in qLBLL.GetAllChiTietSuDungDichVuBll())
-            {
-                ChiTietDichVu ctdv = qLBLL.GetChiTietDichVuById(dv.MaCHiTietDichVu);
-                if(ctdv.MaDichVu == "001")
+            foreach(ViewChiSo view in qLBLL.GetAllViewChiSo())
                 {
-                   ViewChiSoDien view = new ViewChiSoDien
-                   {
-                       MaChiTietSuDungDichVu = dv.MaChiTietSuDungDichVu,
-                       Stt = ++i,
-                       DayTro = qLBLL.GetDayTroByIdPhong(ctdv.MaPhongTro).TenDayTro,
-                       PhongTro = qLBLL.GetPhongTroByIdPhong(ctdv.MaPhongTro).TenPhongTro,
-                       ChiSoCu = dv.ChiSoCu,
-                       ChiSoMoi = dv.ChiSoMoi,
-                       DaDung = dv.ChiSoMoi-dv.ChiSoCu,
-                       NgayLap = dv.NgayLap,
-                       ThangSuDung = dv.ThoiGian,
-                       TinhTrang = dv.TinhTrang
-                   };
-                    string tinhTrang = (view.TinhTrang) ? "Đã xác thực" : "Chưa xác thực";
-
-                    dgvChiSoDien.Rows.Add(view.MaChiTietSuDungDichVu,view.Stt,view.DayTro,view.PhongTro,view.ChiSoCu,view.ChiSoMoi,view.DaDung
-                        ,view.NgayLap,view.ThangSuDung, tinhTrang);
+                    if(qLBLL.GetChiTietDichVuById(view.MaChiTietDichVu).MaDichVu == "001")
+                    {
+                        string tinhTrang = (view.TinhTrang) ? "Đã xác thực" : "Chưa xác thực";
+                        dgvChiSoDien.Rows.Add(view.MaChiTietSuDungDichVu, ++i, view.TenDayTro, view.TenPhongTro, view.ChiSoCu, view.ChiSoMoi, view.DaDung
+                        ,view.NgayLap, view.ThangSuDung, tinhTrang);
+                    }
                 }
-            }
             }
             else
             {
@@ -68,34 +50,16 @@ namespace PBL3___Motel_Management_System.View
                 string IdDay = ((ViewCbb)cbbDayTro.SelectedItem).key;
                 string IdPhong = ((ViewCbb)cbbPhongTro.SelectedItem).key;
                 string IdTinhTrang = ((ViewCbb)cbbTinhTrang.SelectedItem).key;
-                int i = 0;
-                foreach (ChiTietSuDungDichVu dv in qLBLL.GetChiTietSuDungDichVuTimKiem(ThangSuDung,IdDay,IdPhong, IdTinhTrang))
+                foreach(ViewChiSo view in qLBLL.GetViewChiSoByTimKiem(ThangSuDung, IdDay, IdPhong, IdTinhTrang))
                 {
-                    ChiTietDichVu ctdv = qLBLL.GetChiTietDichVuById(dv.MaCHiTietDichVu);
-                    if (ctdv.MaDichVu == "001")
+                    if (qLBLL.GetChiTietDichVuById(view.MaChiTietDichVu).MaDichVu == "001")
                     {
-                        ViewChiSoDien view = new ViewChiSoDien
-                        {
-                            MaChiTietSuDungDichVu = dv.MaChiTietSuDungDichVu,
-                            Stt = ++i,
-                            DayTro = qLBLL.GetDayTroByIdPhong(ctdv.MaPhongTro).TenDayTro,
-                            PhongTro = qLBLL.GetPhongTroByIdPhong(ctdv.MaPhongTro).TenPhongTro,
-                            ChiSoCu = dv.ChiSoCu,
-                            ChiSoMoi = dv.ChiSoMoi,
-                            DaDung = dv.ChiSoMoi-dv.ChiSoCu,
-                            NgayLap = dv.NgayLap,
-                            ThangSuDung = dv.ThoiGian,
-                            TinhTrang = dv.TinhTrang
-
-                        };
                         string tinhTrang = (view.TinhTrang) ? "Đã xác thực" : "Chưa xác thực";
-                        dgvChiSoDien.Rows.Add(view.MaChiTietSuDungDichVu, view.Stt, view.DayTro, view.PhongTro, view.ChiSoCu, view.ChiSoMoi, view.DaDung
-                            , view.NgayLap, view.ThangSuDung, tinhTrang);
+                        dgvChiSoDien.Rows.Add(view.MaChiTietSuDungDichVu, ++i, view.TenDayTro, view.TenPhongTro, view.ChiSoCu, view.ChiSoMoi, view.DaDung
+                        , view.NgayLap, view.ThangSuDung, tinhTrang);
                     }
                 }
             }
-
-            //dgvChiSoDien.CellContentClick += DgvChisoDien_CellContentClick;
             var Sua = System.Drawing.Image.FromFile(@"D:\pblproject\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-create-25.png");
             var Xoa = System.Drawing.Image.FromFile(@"D:\pblproject\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
             dgvChiSoDien.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dv.dgvIcons_CellPainting1(dgvChiSoDien, e, Sua, Xoa));
@@ -111,9 +75,7 @@ namespace PBL3___Motel_Management_System.View
             cbbTinhTrang.Items.Add(new ViewCbb {key = "1", value = "Đã xác thực" });
             cbbTinhTrang.Items.Add(new ViewCbb {key = "2", value = "Chưa xác thực" });
             cbbTinhTrang.SelectedIndex = 0;
-
         }
-
         private void iconButton2_Click(object sender, EventArgs e)
         {
             tc.openChildForm1(new ThemCSDien(LoadForm), panelChisoDien);
@@ -124,8 +86,8 @@ namespace PBL3___Motel_Management_System.View
             if (dgvChiSoDien.CurrentRow.Cells[9].Value.ToString() != "Đã xác thực")
             {
                 QLBLL qLBLL = new QLBLL();
-                 string id = dgvChiSoDien.CurrentRow.Cells[0].Value.ToString();
-                 ChiTietSuDungDichVu dv = qLBLL.GetChiTietSuDungDichVuByIdBLL(id);
+                string id = dgvChiSoDien.CurrentRow.Cells[0].Value.ToString();
+                ChiTietSuDungDichVu dv = qLBLL.GetChiTietSuDungDichVuByIdBLL(id);
                 ChiTietDichVu ctdv = qLBLL.GetChiTietDichVuById(dv.MaCHiTietDichVu);
                 List<ChiTietSuDungDichVu> list = qLBLL.GetChiTietSuDungDichVuTimKiem(dv.ThoiGian,"0",ctdv.MaPhongTro,"1");
                 List<ChiTietSuDungDichVu> myList = new List<ChiTietSuDungDichVu>();
@@ -170,8 +132,9 @@ namespace PBL3___Motel_Management_System.View
             }
             else
             {
-                foreach(ViewPhongTro pt in qLBLL.GetAllPhongTroByIdDay(id))
+                foreach(string idp in qLBLL.GetAllPhongTroByIdDay(id))
                 {
+                    PhongTro pt = qLBLL.GetPhongTroByIdPhong(idp);
                     cbbPhongTro.Items.Add(new ViewCbb {key = pt.MaPhongTro, value = pt.TenPhongTro });
                 }
             }
@@ -179,8 +142,6 @@ namespace PBL3___Motel_Management_System.View
             {
                 cbbPhongTro.SelectedIndex = 0;
             }
-
-
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)

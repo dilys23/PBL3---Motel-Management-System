@@ -176,20 +176,22 @@ namespace PBL3___Motel_Management_System
             dt.Columns.AddRange(new DataColumn[]
                 {
                     new DataColumn{ColumnName = "MaPhongTro",DataType = typeof(string)},
-                new DataColumn{ColumnName = "STT",DataType = typeof(int)},
-                  new DataColumn{ColumnName = "Tên Dãy trọ",DataType = typeof(string)},
-                new DataColumn{ColumnName = "Tên phòng trọ",DataType = typeof(string)},
-                 new DataColumn{ColumnName = "Tình trạng",DataType = typeof(string)},
+                    new DataColumn{ColumnName = "STT",DataType = typeof(int)},
+                    new DataColumn{ColumnName = "Tên Dãy trọ",DataType = typeof(string)},
+                    new DataColumn{ColumnName = "Tên phòng trọ",DataType = typeof(string)},
+                    new DataColumn{ColumnName = "Tình trạng",DataType = typeof(string)},
                 });
             QLBLL qLBLL = new QLBLL();
-            foreach (ViewPhongTro pt in qLBLL.DgvPhongTro(null))
+            int i = 0;
+            foreach (string idp in qLBLL.DgvPhongTro(null))
             {
+                PhongTro pt = qLBLL.GetPhongTroByIdPhong(idp);
                 string TinhTrang;
                 HopDong hd = qLBLL.GetHopDongByIdPhong(pt.MaPhongTro);
                 if (hd == null) TinhTrang = "Còn trống";
                 else if (hd.TinhTrang == true) TinhTrang = "Đã cho thuê";
                 else TinhTrang = "Đã cọc";
-                dt.Rows.Add(pt.MaPhongTro, pt.Stt, qLBLL.GetDayTroByIdPhong(pt.MaPhongTro).TenDayTro, pt.TenPhongTro, TinhTrang);
+                dt.Rows.Add(pt.MaPhongTro, ++i, qLBLL.GetDayTroByIdPhong(pt.MaPhongTro).TenDayTro, pt.TenPhongTro, TinhTrang);
 
             }
             dgvTinhTrang.DataSource = dt;
@@ -206,13 +208,14 @@ namespace PBL3___Motel_Management_System
             });
 
             QLBLL qLBLL = new QLBLL();
-            List<ViewPhongTro> phongTroList = qLBLL.DgvPhongTro(null);
+            List<string> phongTroList = qLBLL.DgvPhongTro(null);
 
             // Tạo một Dictionary để lưu trữ số lượng phòng theo tình trạng
             Dictionary<string, int> tinhTrangCounts = new Dictionary<string, int>();
 
-            foreach (ViewPhongTro pt in phongTroList)
+            foreach (string idp in phongTroList)
             {
+                PhongTro pt = qLBLL.GetPhongTroByIdPhong(idp);
                 string tinhTrang;
                 HopDong hd = qLBLL.GetHopDongByIdPhong(pt.MaPhongTro);
                 if (hd == null) tinhTrang = "Còn trống";
@@ -420,7 +423,7 @@ namespace PBL3___Motel_Management_System
       
         private void btnDay_Click(object sender, EventArgs e)
         {
-            openChildForm(new Daytro());
+            //openChildForm(new Daytro());
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

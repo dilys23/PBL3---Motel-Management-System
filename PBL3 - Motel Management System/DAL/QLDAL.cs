@@ -47,6 +47,20 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.PhongTro.Where(p => p.MaDayTro == idDay && p.TonTai == true).Select(p => p).ToList<PhongTro>();
             }
         }
+        public List<string>GetAllIdPhongTroByIdDayDal(string idDay)
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                return data.PhongTro.Where(p => p.MaDayTro == idDay && p.TonTai == true).Select(p => p.MaPhongTro).ToList<string>();
+            }
+        }
+        public List<string>GetAllIdPhongTroDal()
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                return data.PhongTro.Where(p => p.TonTai == true).Select(p => p.MaPhongTro).ToList<string>();
+            }
+        }
         public Nguoi GetNguoiByIdNguoiDal(string id)
         {
             using(DataPbl data = new DataPbl())

@@ -154,8 +154,9 @@ namespace PBL3___Motel_Management_System
             }
             else
             {
-                foreach (ViewPhongTro pt in qLBLL.GetAllPhongTroByIdDay(id))
+                foreach (string idp in qLBLL.GetAllPhongTroByIdDay(id))
                 {
+                    PhongTro pt = qLBLL.GetPhongTroByIdPhong(idp);
                     cbbPhongTro.Items.Add(new ViewCbb {key = pt.MaPhongTro, value = pt.TenPhongTro });
                 }
             }

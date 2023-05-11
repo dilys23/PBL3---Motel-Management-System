@@ -201,7 +201,7 @@ namespace PBL3___Motel_Management_System.View
             {
             lblDiaChi.Text = "";
             }
-            foreach (ViewPhongTro pt in qLBLL.DgvPhongTroTimKiem(idDay,idTinhTrang,txtTimKiem.Text))
+            foreach (PhongTro pt in qLBLL.PhongTroTimKiem(idDay,idTinhTrang,txtTimKiem.Text))
             {
                 Demo p = new Demo(SuKien, pt.MaPhongTro, panelChinh);
                 p.TopLevel = false;
