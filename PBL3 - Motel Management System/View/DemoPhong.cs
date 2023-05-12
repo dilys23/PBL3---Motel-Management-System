@@ -153,11 +153,6 @@ namespace PBL3___Motel_Management_System.View
             }
             
         }
-        private void lblDiaChi_Click(object sender, EventArgs e)
-        {
-
-        }
-       
 
         private void btnThemday_Click(object sender, EventArgs e)
         {
@@ -166,9 +161,6 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnSuaDay_Click(object sender, EventArgs e)
         {
-            //string idDay = btn.Name;
-            //tc.openChildForm1(new SuaDay(LoadForm), panelChinh);
-            //panelBtnDay.Controls.Clear();
             if (ClickBtn != null)
             {
 
@@ -242,9 +234,5 @@ namespace PBL3___Motel_Management_System.View
 
         }
 
-        private void btnXoaDay_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

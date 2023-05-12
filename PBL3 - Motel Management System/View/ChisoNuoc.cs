@@ -30,11 +30,6 @@ namespace PBL3___Motel_Management_System
             tc.openChildForm1(new ThemCSNuoc(LoadForm), panelChisoNuoc);
         }
 
-        private void btnSuaHD_Click(object sender, EventArgs e)
-        {
-            tc.openChildForm1(new SuaCSNuoc(), panelChisoNuoc);
-        }
-
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             // Lấy tháng và năm được chọn
@@ -194,38 +189,36 @@ namespace PBL3___Motel_Management_System
 
         private void dgvChiSoNuoc_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            string columnName = dgvChiSoNuoc.Columns[e.ColumnIndex].Name;
+            if (columnName == "btnSua")
             {
-                // Lấy tên cột của ô đã được nhấp
-                string columnName = dgvChiSoNuoc.Columns[e.ColumnIndex].Name;
-
-                // Kiểm tra xem ô đã được nhấp có phải là nút Sửa hay Xóa không
-                if (columnName == "btnSua")
+                if (dgvChiSoNuoc.Rows[e.RowIndex].Cells[9].Value.ToString() == "Đã xác thực")
                 {
-                    if (dgvChiSoNuoc.Rows[e.RowIndex].Cells[7].Value.ToString() == "Xác thực")
-                    {
-                        MessageBox.Show("Chỉ số hiện tại đã được xác thực nên không thể sửa!!Vui lòng bỏ xác thực trước khi sửa chỉ số", "Thông báo");
-                    }
-                    else
-                    {
-                        string id = dgvChiSoNuoc.CurrentRow.Cells[0].Value.ToString();
-                        tc.openChildForm1(new SuaCSDien(), panelChisoNuoc);
-
-                    }
+                    MessageBox.Show("Chỉ số hiện tại đã được xác thực nên không thể sửa!!Vui lòng bỏ xác thực trước khi sửa chỉ số", "Thông báo");
+                }
+                else
+                {
+                    string id = dgvChiSoNuoc.CurrentRow.Cells[0].Value.ToString();
+                    tc.openChildForm1(new SuaCSNuoc(id, LoadForm), panelChisoNuoc);
 
                 }
-                else if (columnName == "btnXoa")
-                {
-                    // Lấy mã dịch vụ tương ứng với hàng đã được nhấp
-                    // string maDichVu = dgvDichVu.Rows[e.RowIndex].Cells["Mã dịch vụ"].Value.ToString();
-                    if (dgvChiSoNuoc.CurrentRow.Cells[7].Value.ToString() == "Chưa xác thực")
-                    {
 
-                    }
-                    else
-                    {
-                        MessageBox.Show("Hóa đơn đã được xác thực!! Không thể xóa", "Thông báo");
-                    }
+            }
+            else if (columnName == "btnXoa")
+            {
+                if (dgvChiSoNuoc.CurrentRow.Cells[9].Value.ToString() == "Chưa xác thực")
+                {
+                    string id = dgvChiSoNuoc.CurrentRow.Cells[0].Value.ToString();
+                    QLBLL qLBLL = new QLBLL();
+                    qLBLL.DelChiTietSuDungDichVubyId(id);
+                    qLBLL.DelChiTietSuDungDichVu(id);
+                    dgvChiSoNuoc.Rows.RemoveAt(e.RowIndex);
+                    MessageBox.Show("Xóa chỉ số điện thành công", "Thông báo");
+                    LoadForm(null);
+                }
+                else
+                {
+                    MessageBox.Show("Hóa đơn đã được xác thực!! Không thể xóa", "Thông báo");
                 }
             }
         }

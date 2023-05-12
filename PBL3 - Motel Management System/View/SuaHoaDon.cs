@@ -47,5 +47,10 @@ namespace PBL3___Motel_Management_System.View
         {
             this.Close();
         }
+
+        private void iconButton4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

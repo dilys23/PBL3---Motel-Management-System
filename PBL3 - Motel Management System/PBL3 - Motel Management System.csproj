@@ -495,12 +495,6 @@
     <Compile Include="View\KhachHang\HoaDonPhong.Designer.cs">
       <DependentUpon>HoaDonPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\PKhach.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\PKhach.Designer.cs">
-      <DependentUpon>PKhach.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\SuaCSDien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -746,9 +740,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\KhachHang\HoaDonPhong.resx">
       <DependentUpon>HoaDonPhong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\PKhach.resx">
-      <DependentUpon>PKhach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SuaCSDien.resx">
       <DependentUpon>SuaCSDien.cs</DependentUpon>

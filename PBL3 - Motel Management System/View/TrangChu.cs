@@ -367,21 +367,6 @@ namespace PBL3___Motel_Management_System
         }
 
         private Form activeForm = null;
-        public void openChildForm(Form childForm)
-        {
-            if(activeForm != null)
-                activeForm.Close();
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panelDesktop.Controls.Add(childForm);
-            panelDesktop.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-
-        }
-
         public  void openChildForm1(Form childForm, System.Windows.Forms.Panel p)
         {
             if (activeForm != null)
@@ -406,34 +391,34 @@ namespace PBL3___Motel_Management_System
 
         private void btnDichVu_Click(object sender, EventArgs e)
         {
-            openChildForm(new Dichvu());
+            openChildForm1(new Dichvu(), panelDesktop);
 
         }
 
         private void btnDien_Click(object sender, EventArgs e)
         {
-            openChildForm(new ChisoDien());
+            openChildForm1(new ChisoDien(), panelDesktop);
 
         }
 
         private void btnNuoc_Click(object sender, EventArgs e)
         {
-            openChildForm(new ChisoNuoc());
+            openChildForm1(new ChisoNuoc(), panelDesktop);
         }
 
         private void btnHopDong_Click(object sender, EventArgs e)
         {
-            openChildForm(new Hopdong());
+            openChildForm1(new Hopdong(), panelDesktop);
         }
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
-            openChildForm(new Hoadon());
+            openChildForm1(new Hoadon(), panelDesktop);
         }
 
         private void btnDoanhTHu_Click(object sender, EventArgs e)
         {
-            openChildForm(new DoanhThu());
+            openChildForm1(new DoanhThu(), panelDesktop);
         }
 
         private void btnTrangchu_Click(object sender, EventArgs e)
@@ -454,7 +439,7 @@ namespace PBL3___Motel_Management_System
 
         private void btnThietbi_Click(object sender, EventArgs e)
         {
-            openChildForm(new Thietbi());   
+            openChildForm1(new Thietbi(), panelDesktop);   
         }
 
         private void panelDesktop_SizeChanged(object sender, EventArgs e)

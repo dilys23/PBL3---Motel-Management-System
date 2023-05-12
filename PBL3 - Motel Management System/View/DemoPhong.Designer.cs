@@ -254,7 +254,7 @@
             this.btnXoaDay.Text = "Xóa";
             this.btnXoaDay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoaDay.UseVisualStyleBackColor = false;
-            this.btnXoaDay.Click += new System.EventHandler(this.btnXoaDay_Click);
+          
             // 
             // btnThemPhong
             // 
@@ -289,7 +289,7 @@
             this.lblDiaChi.TabIndex = 0;
             this.lblDiaChi.Text = "     label1";
             this.lblDiaChi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblDiaChi.Click += new System.EventHandler(this.lblDiaChi_Click);
+          
             // 
             // panelChinh
             // 
