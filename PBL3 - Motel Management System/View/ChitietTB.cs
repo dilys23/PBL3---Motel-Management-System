@@ -131,9 +131,11 @@ namespace PBL3___Motel_Management_System.View
                                     cttb.MaChiTietThietBi = qLBLL.TaoIdChiTietThietBi();
                                     cttb.MaThietBi = dr.Cells[0].Value.ToString();
                                     cttb.MaPhongTro = idPhong;
+                                    cttb.TonTai = true;
                                     if (cttb.MaThietBi == id)
                                     { cttb.SoLuong = Convert.ToInt32(dr.Cells[4].Value.ToString()) - 1; }
                                     else cttb.SoLuong = Convert.ToInt32(dr.Cells[4].Value.ToString()) ;
+                                    
                                     qLBLL.AddChiTietThietBiBll(cttb);
                                 }
 

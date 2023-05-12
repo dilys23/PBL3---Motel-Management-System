@@ -28,21 +28,28 @@ namespace PBL3___Motel_Management_System.View
         
         public void LoadForm(string txt)
         {
-           // dgvDichVu.Rows.
-            dgvDichVu.Rows.Clear();
-            tc.customDGV(dgvDichVu);
-            QLBLL qLBLL = new QLBLL();
-            //dgvDichVu.RowCount = 1;
-             int  i = 1;
-            foreach (string idDv in qLBLL.GetAllIdDichVuByIdPhong(this.idPhong))
+            try
             {
-                DichVu dv = new DichVu();
-                dv = qLBLL.GetDVByIdDV(idDv);
-                dgvDichVu.Rows.Add(dv.MaDichVu, i++, dv.TenDichVu, dv.GiaDichVu);
+                dgvDichVu.Rows.Clear();
+                tc.customDGV(dgvDichVu);
+                QLBLL qLBLL = new QLBLL();
+                int i = 1;
+                foreach (string idDv in qLBLL.GetAllIdDichVuByIdPhong(this.idPhong))
+                {
+                    DichVu dv = new DichVu();
+                    dv = qLBLL.GetDVByIdDV(idDv);
+                    dgvDichVu.Rows.Add(dv.MaDichVu, i++, dv.TenDichVu, dv.GiaDichVu);
+                }
+                var Xoa = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
+                dgvDichVu.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dgvIcons_CellPainting1(dgvDichVu, e, Xoa));
             }
-            var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-delete-25.png");
-            dgvDichVu.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dgvIcons_CellPainting1(dgvDichVu, e, Xoa));
-            
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
+                Console.WriteLine(ex.InnerException?.Message);
+                Console.WriteLine(ex.InnerException?.StackTrace);
+            }
         }
         public void dgvIcons_CellPainting1(DataGridView dgv, DataGridViewCellPaintingEventArgs e,  Image btXoa)
         {

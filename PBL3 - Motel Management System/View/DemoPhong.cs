@@ -156,17 +156,17 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnThemday_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ThemDay(SuKien), panelChinh);
+            tc.openChildForm1(new ThemDay(null,LoadForm,SuKien), panelChinh);
         }
 
         private void btnSuaDay_Click(object sender, EventArgs e)
         {
+            
             if (ClickBtn != null)
             {
-
                 QLBLL qLBLL = new QLBLL();
                 DayTro dt = qLBLL.GetDayTroById(ClickBtn.Name);
-                tc.openChildForm1(new SuaDay(dt.MaDayTro, LoadForm), panelChinh);
+                tc.openChildForm1(new ThemDay(dt.MaDayTro, LoadForm, SuKien), panelChinh);
             }
 
         }
@@ -234,5 +234,34 @@ namespace PBL3___Motel_Management_System.View
 
         }
 
+        private void btnXoaDay_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoaDay_Click_1(object sender, EventArgs e)
+        {
+            if (ClickBtn != null)
+            {
+                
+                QLBLL qLBLL = new QLBLL();
+                if(qLBLL.CheckDay(ClickBtn.Name)==false)
+                {
+                    DialogResult kq = MessageBox.Show("Bạn có thực sự muốn xóa", "Cảnh báo!!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (kq == DialogResult.OK)
+                    {
+                        qLBLL.DelDayTroBll(ClickBtn.Name);
+                        LoadForm(null);
+                    }
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Dãy có phòng đang thuê không được xóa ");
+                }
+               
+               
+            }
+        }
     }
 }

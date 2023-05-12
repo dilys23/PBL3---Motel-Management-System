@@ -210,9 +210,10 @@
             this.btnTaiKhoan.Name = "btnTaiKhoan";
             this.btnTaiKhoan.Size = new System.Drawing.Size(171, 41);
             this.btnTaiKhoan.TabIndex = 53;
-            this.btnTaiKhoan.Tag = "Thiết bị";
-            this.btnTaiKhoan.Text = "Thiết bị";
+            this.btnTaiKhoan.Tag = "Tài khoản";
+            this.btnTaiKhoan.Text = "Tài khoản";
             this.btnTaiKhoan.UseVisualStyleBackColor = false;
+            this.btnTaiKhoan.Click += new System.EventHandler(this.btnTaiKhoan_Click);
             // 
             // ChiTietPT
             // 

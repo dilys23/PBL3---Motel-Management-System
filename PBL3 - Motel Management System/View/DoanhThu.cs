@@ -1,4 +1,6 @@
-﻿using PBL3___Motel_Management_System.BLL;
+﻿using LiveCharts;
+using LiveCharts.Charts;
+using PBL3___Motel_Management_System.BLL;
 using PBL3___Motel_Management_System.DAL;
 using PBL3___Motel_Management_System.DTO;
 using System;
@@ -6,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +24,7 @@ namespace PBL3___Motel_Management_System
             InitializeComponent();
             LoadForm(dtpThang.Value.ToString("MM-yyyy"));
             ResizeColumn();
-            SetCbb();
+            
         }
         public void LoadForm(string thang)
         {
@@ -42,9 +45,14 @@ namespace PBL3___Motel_Management_System
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-            string daytro = ((ViewCbb)cbbDayTro.SelectedItem).key;
+           // string daytro = ((ViewCbb)cbbDayTro.SelectedItem).key;
             string thang = dtpThang.Value.ToString("MM-yyyy");
+            DateTime date = DateTime.ParseExact(thang, "MM-yyyy", CultureInfo.InvariantCulture);
+            int nam = date.Year;
             LoadForm(thang);
+            ThongKe(date);
+            //   BDCot(nam.ToString());
+         //   BDDuong(nam.ToString());
 
         }
         public void ResizeColumn()
@@ -70,27 +78,87 @@ namespace PBL3___Motel_Management_System
 
         private void DoanhThu_Load(object sender, EventArgs e)
         {
-            
-            ChartDuong.BackColor = Color.White;
-            var series = new Series();
-            series.ChartType = SeriesChartType.Line;
-            series.Color = Color.Blue;
-            series.Points.AddXY(1, 2);
-            series.Points.AddXY(2, 3);
-            series.Points.AddXY(3, 1);
-            series.Points.AddXY(4, 5);
-            series.Points.AddXY(5, 4);
-            ChartDuong.Series.Add(series);
-            ChartDuong.Titles.Add("Biểu đồ đường");
-            ChartDuong.ChartAreas[0].AxisX.Title = "Tháng";
-            ChartDuong.ChartAreas[0].AxisY.Title = "Tiền";
+            string thang = dtpThang.Value.ToString("MM-yyyy");
+            DateTime date = DateTime.ParseExact(thang, "MM-yyyy", CultureInfo.InvariantCulture);
+            int nam = date.Year;
+            LoadForm(thang);
+            ThongKe(date);
+            //BDCot(thang,nam.ToString());
+            //BDDuong(nam.ToString());
+
         }
-        private void SetCbb()
+        public void ThongKe(DateTime thangnam)
         {
-            cbbDayTro.Items.Clear();
             QLBLL qLBLL = new QLBLL();
-            cbbDayTro.Items.AddRange(qLBLL.GetCbbDayTro().ToArray());
-            cbbDayTro.Items.RemoveAt(0);
+            ChartCot.Series[0].XValueMember = "MaDayTro";
+            ChartCot.Series[0].YValueMembers = "TongTien";
+            foreach (DayTro dt in qLBLL.GetAllDayTroBll())
+            {
+                ChartCot.DataSource = qLBLL.ThongKe(dt.MaDayTro, thangnam);
+                
+                //   ChartCot.ChartAreas[0].AxisX.IntervalType= DateTimeIntervalType.
+                ChartCot.ChartAreas[0].AxisX.Title = "Dãy trọ";
+                ChartCot.ChartAreas[0].AxisY.Title = "Tổng tiền";
+            }
         }
+        //public void BDDuong(string nam)
+        //{
+           
+        //    ChartDuong.Series.Clear();
+        //    QLBLL qLBLL = new QLBLL();
+        //    List<DayTro> list = qLBLL.GetAllDayTroBll();
+        //    foreach(DayTro dt in list)
+        //    {
+        //        Series series = ChartDuong.Series.Add(dt.TenDayTro);
+        //        series.ChartType =SeriesChartType.Line;
+
+        //        for(int  month=1; month <= 12; month++)
+        //        {
+        //            //double Tongtien = qLBLL.GetTongTien(dt.MaDayTro,month.ToString(), nam);
+        //            //series.Points.AddXY(month, Tongtien);   
+        //        }
+
+        //    }
+        //    ChartDuong.ChartAreas[0].AxisX.Interval = 1;
+        //    ChartDuong.ChartAreas[0].AxisX.Minimum = 1;
+        //    ChartDuong.ChartAreas[0].AxisX.Maximum = 12;
+        //    ChartDuong.ChartAreas[0].AxisX.Title = "Tháng";
+        //    ChartDuong.ChartAreas[0].AxisY.Title = "Tổng tiền";
+        //}
+        ////loop rows 
+        //public void BDCot(string thang,string nam)
+        //{
+
+        //    ChartCot.Series.Clear();
+        //    QLBLL qLBLL = new QLBLL();
+        //    List<DayTro> list = qLBLL.GetAllDayTroBll();
+            
+        //    ChartCot.Titles.Add(new Title("Bieu do cot", Docking.Top, new Font("Times New Roman", 16, FontStyle.Bold), Color.Firebrick));
+        //    ChartCot.Series.Add("Tên Dãy trọ");
+        //    ChartCot.Series["Tên Dãy trọ"].ChartType = SeriesChartType.Column;
+        //    ChartCot.Series["Tên Dãy trọ"].XValueType = ChartValueType.String;
+        //    foreach(DayTro dt in list)
+        //    {
+        //      //  double tongtien = qLBLL.GetTongTien(dt.MaDayTro, thang, nam);
+        //    //    ChartCot.Series["Tên Dãy trọ"].Points.AddXY(dt.TenDayTro, tongtien);
+        //        ChartCot.Series[0]["PixelPointWidth"] = "30";
+        //    }
+        //    if (ChartCot.ChartAreas.Count == 0)
+        //    {
+        //        ChartArea area = new ChartArea();
+        //        ChartCot.ChartAreas.Add(area);
+        //        area.AxisX.CustomLabels.Clear();
+        //        area.AxisX.Interval = 0.5;
+        //        area.AxisX.IsMarginVisible = true;
+        //        area.AxisX.Minimum = 0;
+        //        area.AxisX.Maximum = list.Count + 1;
+        //        //area.AxisX.Title = "Dãy trọ";
+        //        area.AxisY.Title = "Tổng tiền";
+        //    }
+
+        //}
+
+     
+
     }
 }

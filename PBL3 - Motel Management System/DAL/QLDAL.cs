@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
+using System.Globalization;
 using System.IO.Packaging;
 using System.Linq;
 using System.Text;
@@ -323,11 +324,11 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.DayTro.Find(Id);
             }
         }
-        public List<String>GetAllIdDichVuByIdPhongDal(string idPhong)
+        public List<string>GetAllIdDichVuByIdPhongDal(string idPhong)
         {
             using(DataPbl data = new DataPbl())
             {
-                return data.ChiTietDichVu.Where(p => p.MaPhongTro == idPhong && p.TonTai == true).Select(p => p.MaDichVu).ToList<string>();
+                return data.ChiTietDichVu.Where(p => p.MaPhongTro == idPhong && p.TonTai ==true).Select(p => p.MaDichVu).ToList<string>();
             }
         }
         public List<String> GetAllIdThietBiByIdPhongDal(string idPhong)
@@ -424,8 +425,8 @@ namespace PBL3___Motel_Management_System.DAL
                 var s = data.ChiTietDichVu.Where(p => p.TonTai == true).Single(p => p.MaChiTietDichVu == ct.MaChiTietDichVu);
                 s.MaDichVu = ct.MaDichVu;
                 s.MaPhongTro = ct.MaPhongTro;
-                s.TonTai = ct.TonTai;
-                data.SaveChanges() ;
+                s.TonTai = false;
+                data.SaveChanges();
             }
         }
         public ChiTietSuDungDichVu GetChiTietSuDungDichVuByIdDAL(string id)
@@ -474,7 +475,7 @@ namespace PBL3___Motel_Management_System.DAL
                 s.TenDuong = day.TenDuong; 
                 s.TenThanhPho = day.TenThanhPho;
                 s.HinhAnh = day.HinhAnh;
-                s.TonTai = day.TonTai;
+                s.TonTai = day.TonTai ;
                 data.SaveChanges();
 
             }
@@ -628,7 +629,7 @@ namespace PBL3___Motel_Management_System.DAL
                 ChiTietDichVu s = (ChiTietDichVu)data.ChiTietDichVu.Find(id);
                 s.TonTai = false;
                 UpdateChitietdichvu(s);
-
+              
             }
         }
         public void DelChiTietSuDungDichVuDal(string id)
@@ -670,6 +671,15 @@ namespace PBL3___Motel_Management_System.DAL
                 s.TonTai = false;
                 UpdateThietBiDal(s);
                 
+            }
+        }
+        public void DelDayTroDal(string MaDay)
+        {
+            using(DataPbl data= new DataPbl())
+            {
+                DayTro s= (DayTro)data.DayTro.Find(MaDay);
+                s.TonTai = false;
+                SuaDayDal(s);
             }
         }
         public void DelThanhVienDAL(string id)
@@ -844,5 +854,94 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.ChiTietDichVu.Where(p => p.TonTai == true && p.MaDichVu == idDichVu).Select(p => p.MaChiTietDichVu).ToList<string>();
             }
         }
+       //public Nguoi GetNguoiByMaHD(string MaHD)
+       // {     
+       //         using (DataPbl data = new DataPbl())
+       //         {
+       //             var s = data.HopDong.FirstOrDefault(p => p.MaHopDong == MaHD);
+       //             if (s != null)
+       //                 return s.Nguoi;
+       //             else return null;
+       //         }
+            
+       // }
+       
+        //public PhongTro GetPhongTroByMaHD(string MaHD)
+        //{
+        //    using (DataPbl data = new DataPbl())
+        //    {
+        //        var s = data.HopDong.FirstOrDefault(p => p.MaHopDong == MaHD);
+        //        if (s != null)
+        //            return s.PhongTro;
+        //        else return null;
+        //    }
+
+        //}
+        //public List<object> GetDoanhThu()
+        //{
+        //    using(DataPbl data= new DataPbl())
+        //    {
+        //        var s = data.PhongTro.Where(p=>p.DayTro.MaDayTro==p.MaPhongTro && p.HOa)
+        //            .Select(p => new { p.DayTro.TenDayTro, })
+        //    }
+        //}
+        public List<HoaDon> GetHoaDonByNam(string nam)
+        {
+            List<HoaDon> list = new List<HoaDon>();
+            using (DataPbl data= new DataPbl())
+            {
+                foreach(HoaDon hoadon in GetAllHoaDon())
+                {
+                    DateTime dateTime; 
+                    if (DateTime.TryParseExact(hoadon.ThangChiTra, "MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out dateTime))
+                    {
+                        if (dateTime.Year.ToString() == nam)
+                        {
+                            list.Add(hoadon);
+                        }
+                    }
+                }
+                return list;
+            }
+        }
+        //public string GetIDChitietDichVuByIDPhongvaIDDichVu(string MaPhong,string MaDV)
+        //{
+        //    using (DataPbl data= new DataPbl())
+        //    {
+        //        foreach(ChiTietDichVu ctdv in GetAllChiTietDichVu())
+        //        {
+        //            if(ctdv.MaDichVu== MaDV && ctdv.MaPhongTro==MaPhong && ctdv.TonTai ==true)
+        //            {
+        //                return ctdv.MaChiTietDichVu;
+        //            }
+        //        }
+        //        return null;
+        //    }
+        //}
+        public string GetIDChitietDichVuByIDPhongvaIDDichVu(string MaPhong, string MaDV)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                var s = data.ChiTietDichVu.FirstOrDefault(p => p.TonTai == true && p.MaPhongTro == MaPhong && p.MaDichVu == MaDV).MaChiTietDichVu;
+                return s;
+            }
+        }
+        public List<object> ThongKe(string MaDT,DateTime thangnam)
+        {
+           using(DataPbl data= new DataPbl())
+           {
+                if (MaDT != null)
+                {
+                    var s = data.HoaDon.ToList()
+                        .Where(p => p.PhongTro.MaDayTro == MaDT && p.NgayTao == thangnam.Day.ToString())
+                        .GroupBy(p => p.PhongTro.MaDayTro)
+                        .Select(p => new { MaDayTro = p.Key, TongTien = p.Sum(k => k.TongTien) })
+                        .ToList<object>();
+                    return s;
+                }
+                return null;
+           }
+        }
+
     }
 }

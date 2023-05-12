@@ -94,7 +94,7 @@ namespace PBL3___Motel_Management_System.View
             {
                 QLBLL qLBLL = new QLBLL();
                 List<string> dsdv = new List<string>();
-                 qLBLL.DelCHiTietDichVuByIdPhong(tp.hopDong.MaPhongTro);
+                qLBLL.DelCHiTietDichVuByIdPhong(tp.hopDong.MaPhongTro);
                 
                 foreach (DataGridViewRow dr in dgvXoaDichVu.Rows)
                 {
@@ -102,8 +102,10 @@ namespace PBL3___Motel_Management_System.View
                     {
                         ChiTietDichVu ctdv = new ChiTietDichVu();
                         ctdv.MaChiTietDichVu = qLBLL.TaoIdChiTietDichVu();
+                        //ctdv.MaChiTietDichVu = qLBLL.GetIDChitietDichVuByIDPhongvaIDDichVu(tp.hopDong.MaPhongTro, dr.Cells[0].Value.ToString());
                         ctdv.MaPhongTro = tp.hopDong.MaPhongTro;
-                        ctdv.MaDichVu = dr.Cells[0].Value.ToString();                  
+                        ctdv.MaDichVu = dr.Cells[0].Value.ToString();
+                        ctdv.TonTai = true;
                         qLBLL.AddChiTietDichVuBll(ctdv);
                         dsdv.Add(dr.Cells[0].Value.ToString());
                     }
@@ -114,9 +116,10 @@ namespace PBL3___Motel_Management_System.View
                     if (dr.Cells[0].Value != null)
                     {
                         ChiTietDichVu ctdv = new ChiTietDichVu();
-                        ctdv.MaChiTietDichVu = qLBLL.TaoIdChiTietDichVu();
+                        ctdv.MaChiTietDichVu= qLBLL.TaoIdChiTietDichVu();
                         ctdv.MaPhongTro = tp.hopDong.MaPhongTro;
                         ctdv.MaDichVu = dr.Cells[0].Value.ToString();
+                        ctdv.TonTai = true;
                         qLBLL.AddChiTietDichVuBll(ctdv);
                         dsdv.Add(dr.Cells[0].Value.ToString());
                     }

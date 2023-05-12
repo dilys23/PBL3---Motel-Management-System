@@ -59,5 +59,10 @@ namespace PBL3___Motel_Management_System.View
         {
             tc.openChildForm1(new ChitietTB(idPhong), panelChitietPT);
         }
+
+        private void btnTaiKhoan_Click(object sender, EventArgs e)
+        {
+            tc.openChildForm1(new TaiKhoanPhong(), panelChitietPT);
+        }
     }
 }

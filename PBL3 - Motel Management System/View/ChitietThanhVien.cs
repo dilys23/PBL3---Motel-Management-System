@@ -140,7 +140,7 @@ namespace PBL3___Motel_Management_System.View
                         }
                         else
                         {
-                           // MessageBox.Show("Đây là dịch vụ cố định!! Không thể xóa");
+                           
                         }
                     }
                 }

@@ -144,6 +144,7 @@ namespace PBL3___Motel_Management_System
                     pt.DienTich = Convert.ToDouble(txtDienTich.Text);
                     pt.GiaTien = Convert.ToDouble(txtGiaTien.Text);
                     pt.ToiDa = Convert.ToInt32(txtToiDa.Text);
+                    pt.TonTai = true;
                     if (pt.HinhAnh != null)
                     { pt.HinhAnh = ChuyenDoiAnh.ImageToBase64(picturePhongTro.Image, picturePhongTro.Image.RawFormat); }
                     qLBLL.UpdatePTBLL(pt);
