@@ -49,8 +49,8 @@ namespace PBL3___Motel_Management_System
             }
 
             //dgvHD.CellContentClick += DgvDichVu_CellContentClick;
-            var Sua = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-more-details-20.png");
-            var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-time-25.png");
+            var Sua = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-more-details-20.png");
+            var Xoa = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-time-25.png");
             dgvHD.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dv.dgvIcons_CellPainting1(dgvHD, e, Sua, Xoa));
       
         }
@@ -70,27 +70,22 @@ namespace PBL3___Motel_Management_System
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                // Lấy tên cột của ô đã được nhấp
                 string columnName = dgvHD.Columns[e.ColumnIndex].Name;
-
-                // Kiểm tra xem ô đã được nhấp có phải là nút Sửa hay Xóa không
                 if (columnName == "btnSua")
                 {
                     string id = dgvHD.Rows[e.RowIndex].Cells[0].Value.ToString();
-                  //  tc.openChildForm1(new ChitietHopDong(id, LoadForm), panelHopDong);
                     ThuePhong tp = new ThuePhong();
-                    tp.hopDong.MaPhongTro = id;
+                    tp.hopDong.MaHopDong = id;
                     ChitietHopDong ct = new ChitietHopDong(tp, LoadForm);
+                    ct.btnXacNhan.Visible = false;
                     tc.openChildForm1(ct, panelHopDong);
                 }
                 else if (columnName == "btnXoa")
                 {
-                    // Lấy mã dịch vụ tương ứng với hàng đã được nhấp
-                    // string maDichVu = dgvDichVu.Rows[e.RowIndex].Cells["Mã dịch vụ"].Value.ToString();
-
-                    // Xóa dịch vụ từ CSDL của bạn sử dụng mã dịch vụ tương ứng
-
-                    // Cập nhật lại DataGridView sau khi đã xóa
+                    string id = dgvHD.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    ThuePhong tp = new ThuePhong();
+                    tp.hopDong.MaHopDong = id;
+                    tc.openChildForm1(new ThemHopDong(tp,LoadForm), panelHopDong);
                 }
             }
 

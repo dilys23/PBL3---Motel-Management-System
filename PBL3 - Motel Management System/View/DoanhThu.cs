@@ -24,38 +24,24 @@ namespace PBL3___Motel_Management_System
             InitializeComponent();
             LoadForm(dtpThang.Value.ToString("MM-yyyy"));
             ResizeColumn();
-            LoadForm2(dtpThang.Value.ToString("MM-yyyy"));
-            
         }
         public void LoadForm(string thang)
         {
             dgvDoanhThu.Rows.Clear();
             QLBLL qLBLL = new QLBLL();
-            
             int i = 0;
             foreach (string hd in qLBLL.GetHoaDonByThangChiTra(thang))
             {
                 HoaDon hoadon = qLBLL.GetHoaDonById(hd);
-                PhongTro pt = qLBLL.GetPhongTroByMaHoaDon(hoadon.MaHoaDon);
-                DayTro dt = qLBLL.GetDayTroByIdPhong(pt.MaPhongTro);
-                dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro,hoadon.TongTien);
+                if(hoadon.TinhTrang == true)
+                {
+                    PhongTro pt = qLBLL.GetPhongTroByMaHoaDon(hoadon.MaHoaDon);
+                    DayTro dt = qLBLL.GetDayTroByIdPhong(pt.MaPhongTro);
+                    dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hoadon.TongTien);
+                }
+               
             }
         }
-        public void LoadForm2(string thang)
-        {
-            dataGridView1.Rows.Clear();
-            QLBLL qLBLL = new QLBLL();
-            int i = 0;
-          
-                foreach(string hd in qLBLL.GetHoaDonByThangChiTra(thang))
-                {
-                    HoaDon hoadon = qLBLL.GetHoaDonById(hd);
-                    PhongTro pt = qLBLL.GetPhongTroByMaHoaDon(hoadon.MaHoaDon);
-                    DayTro daytro = qLBLL.GetDayTroByIdPhong(pt.MaPhongTro);              
-                    dataGridView1.Rows.Add(hoadon.MaHoaDon, ++i, daytro.TenDayTro, qLBLL.GetTongTien(daytro.MaDayTro));
-                }
-        }
-
         private void btnTim_Click(object sender, EventArgs e)
         {
            // string daytro = ((ViewCbb)cbbDayTro.SelectedItem).key;
@@ -64,9 +50,6 @@ namespace PBL3___Motel_Management_System
             int nam = date.Year;
             LoadForm(thang);
             ThongKe(thang);
-            //   BDCot(nam.ToString());
-         //   BDDuong(nam.ToString());
-
         }
         public void ResizeColumn()
         {
@@ -107,14 +90,18 @@ namespace PBL3___Motel_Management_System
             ChartCot.Series[0].XValueMember = "TenDayTro";
             ChartCot.Series[0].YValueMembers = "TongTien";
             List<object> data = new List<object>(); 
-
-            
-                ChartCot.DataSource = qLBLL.ThongKe(thang);
-                ChartCot.ChartAreas[0].AxisX.Title = "Dãy trọ";
-                ChartCot.ChartAreas[0].AxisY.Title = "Tổng tiền";
-            
+            ChartCot.DataSource = qLBLL.ThongKe(thang);
+            ChartCot.ChartAreas[0].AxisX.Title = "Dãy trọ";
+            ChartCot.ChartAreas[0].AxisY.Title = "Tổng tiền";
             ChartCot.DataBind();
-            
+
+            ChartDuong.Series[0].XValueMember = "TenDayTro";
+            ChartDuong.Series[0].YValueMembers = "TongTien";
+            List<object> data1 = new List<object>();
+            ChartDuong.DataSource = qLBLL.ThongKe(thang);
+            ChartDuong.ChartAreas[0].AxisX.Title = "Dãy trọ";
+            ChartDuong.ChartAreas[0].AxisY.Title = "Tổng tiền";
+            ChartDuong.DataBind();
         }
        
 

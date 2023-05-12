@@ -44,8 +44,8 @@ namespace PBL3___Motel_Management_System.View
             {
                 dgvThietBi.Rows.Add(viewThietBi.MaThietBi, viewThietBi.Stt, viewThietBi.TenThietBi, viewThietBi.GiaThietBi);
             }
-            var Sua = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-create-25.png");
-            var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-create-25.png");
+            var Sua = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-create-25.png");
+            var Xoa = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-create-25.png");
             dgvThietBi.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dv.dgvIcons_CellPainting1(dgvThietBi, e, Sua, Xoa));
 
         }
@@ -159,12 +159,12 @@ namespace PBL3___Motel_Management_System.View
         private void btnSuaDV_Click(object sender, EventArgs e)
         {
             string id = dgvThietBi.CurrentRow.Cells[0].Value.ToString();
-            tc.openChildForm1(new SuaThietBI(id, LoadForm), panelTB);
+            tc.openChildForm1(new ThemThietBi(id, LoadForm), panelTB);
             
         }
         private void btnThemThietBi_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ThemThietBi(LoadForm), panelTB);
+            tc.openChildForm1(new ThemThietBi(null,LoadForm), panelTB);
         }
 
         private void btnTim_Click(object sender, EventArgs e)

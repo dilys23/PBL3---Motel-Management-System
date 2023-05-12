@@ -90,9 +90,9 @@
             this.label6.ForeColor = System.Drawing.Color.Chocolate;
             this.label6.Location = new System.Drawing.Point(25, 69);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(206, 28);
+            this.label6.Size = new System.Drawing.Size(141, 28);
             this.label6.TabIndex = 47;
-            this.label6.Text = "THÊM CHỈ SỐ ĐIỆN";
+            this.label6.Text = "CHỈ SỐ ĐIỆN";
             // 
             // panel2
             // 
@@ -277,9 +277,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtpNgayLap;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cbbPhongTro;
-        private System.Windows.Forms.ComboBox cbbDayTro;
         private System.Windows.Forms.DateTimePicker dtpThang;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        public System.Windows.Forms.ComboBox cbbPhongTro;
+        public System.Windows.Forms.ComboBox cbbDayTro;
     }
 }

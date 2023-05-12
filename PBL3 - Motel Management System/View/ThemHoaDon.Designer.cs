@@ -87,9 +87,9 @@
             this.lbl.ForeColor = System.Drawing.Color.Chocolate;
             this.lbl.Location = new System.Drawing.Point(11, 21);
             this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(175, 28);
+            this.lbl.Size = new System.Drawing.Size(110, 28);
             this.lbl.TabIndex = 51;
-            this.lbl.Text = "THÊM HÓA ĐƠN";
+            this.lbl.Text = "HÓA ĐƠN";
             // 
             // iconButton4
             // 
@@ -154,7 +154,7 @@
             // 
             this.btnBoChon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnBoChon.Location = new System.Drawing.Point(443, 293);
-            this.btnBoChon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBoChon.Margin = new System.Windows.Forms.Padding(4);
             this.btnBoChon.Name = "btnBoChon";
             this.btnBoChon.Size = new System.Drawing.Size(100, 28);
             this.btnBoChon.TabIndex = 82;
@@ -166,7 +166,7 @@
             // 
             this.btnChon.BackColor = System.Drawing.Color.Tomato;
             this.btnChon.Location = new System.Drawing.Point(318, 293);
-            this.btnChon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnChon.Margin = new System.Windows.Forms.Padding(4);
             this.btnChon.Name = "btnChon";
             this.btnChon.Size = new System.Drawing.Size(100, 28);
             this.btnChon.TabIndex = 81;
@@ -192,7 +192,7 @@
             this.TinhTrang});
             this.dgvDichVu.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvDichVu.Location = new System.Drawing.Point(13, 339);
-            this.dgvDichVu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDichVu.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDichVu.Name = "dgvDichVu";
             this.dgvDichVu.RowHeadersWidth = 51;
             this.dgvDichVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -244,7 +244,7 @@
             // dtpNgayLap
             // 
             this.dtpNgayLap.Location = new System.Drawing.Point(177, 230);
-            this.dtpNgayLap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpNgayLap.Margin = new System.Windows.Forms.Padding(4);
             this.dtpNgayLap.Name = "dtpNgayLap";
             this.dtpNgayLap.Size = new System.Drawing.Size(225, 22);
             this.dtpNgayLap.TabIndex = 79;

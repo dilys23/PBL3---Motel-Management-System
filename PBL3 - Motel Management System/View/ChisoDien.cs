@@ -62,8 +62,8 @@ namespace PBL3___Motel_Management_System.View
             }
 
             //dgvChiSoDien.CellContentClick += DgvChisoDien_CellContentClick;
-            var Sua = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-create-25.png");
-            var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-delete-25.png");
+            var Sua = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-create-25.png");
+            var Xoa = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
             dgvChiSoDien.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dv.dgvIcons_CellPainting1(dgvChiSoDien, e, Sua, Xoa));
         }
         public void Setcbb()
@@ -80,7 +80,7 @@ namespace PBL3___Motel_Management_System.View
         }
         private void iconButton2_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ThemCSDien(LoadForm), panelChisoDien);
+            tc.openChildForm1(new ThemCSDien(null,LoadForm), panelChisoDien);
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
@@ -193,7 +193,10 @@ namespace PBL3___Motel_Management_System.View
                     else
                     {
                         string id = dgvChiSoDien.CurrentRow.Cells[0].Value.ToString();
-                        tc.openChildForm1(new SuaCSDien(id, LoadForm), panelChisoDien);
+                    ThemCSDien frm = new ThemCSDien(id, LoadForm);
+                    frm.cbbDayTro.Enabled = false;
+                    frm.cbbPhongTro.Enabled = false;
+                        tc.openChildForm1(frm, panelChisoDien);
 
                     }
 
