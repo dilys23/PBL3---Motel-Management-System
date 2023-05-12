@@ -251,8 +251,6 @@ namespace PBL3___Motel_Management_System.View
                     QLBLL qLBLL = new QLBLL();
                     if (this.IdHd == null)
                     {
-
-                    
                     HoaDon hd = new HoaDon
                     { MaHoaDon = qLBLL.TaoIdHoaDon(),
                         MaPhongTro = ((ViewCbb)cbbPhongTro.SelectedItem).key,

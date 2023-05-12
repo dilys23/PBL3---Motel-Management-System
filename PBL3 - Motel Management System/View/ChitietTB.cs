@@ -51,12 +51,6 @@ namespace PBL3___Motel_Management_System.View
                 ThietBi tb = qLBLL.GetThietBiByIdThietBi(cttb.MaThietBi);
                 dgvThietBi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi, cttb.SoLuong);
             }
-            //foreach (string idCttb in qLBLL.GetAllIdCHiTietThietBiByIdPhong(this.idPhong))
-            //{
-            //    ChiTietThietBi cttb = qLBLL.GetChiTietThietBiById(idCttb);
-            //    ThietBi tb = qLBLL.GetThietBiByIdThietBi(cttb.MaThietBi);
-            //    dgvThietBi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi, cttb.SoLuong);
-            //}
             var Xoa = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
             dgvThietBi.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dgvIcons_CellPainting1(dgvThietBi, e, Xoa));
 
@@ -131,9 +125,11 @@ namespace PBL3___Motel_Management_System.View
                                     cttb.MaChiTietThietBi = qLBLL.TaoIdChiTietThietBi();
                                     cttb.MaThietBi = dr.Cells[0].Value.ToString();
                                     cttb.MaPhongTro = idPhong;
+                                    cttb.TonTai = true;
                                     if (cttb.MaThietBi == id)
                                     { cttb.SoLuong = Convert.ToInt32(dr.Cells[4].Value.ToString()) - 1; }
                                     else cttb.SoLuong = Convert.ToInt32(dr.Cells[4].Value.ToString()) ;
+                                    
                                     qLBLL.AddChiTietThietBiBll(cttb);
                                 }
 

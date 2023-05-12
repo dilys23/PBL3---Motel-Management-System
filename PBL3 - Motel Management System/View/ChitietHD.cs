@@ -46,7 +46,7 @@ namespace PBL3___Motel_Management_System.View
             {
                 if(qLBLL.PhongDaCocByIdPhong(tp.hopDong.MaPhongTro)==false)
                 {
-                    nguoi = qLBLL.GetNguoiByMaHD(hd.MaHopDong);
+                    nguoi = qLBLL.GetNguoiByMaHopDong(hd.MaHopDong);
                     txtHoVaTen.Text = nguoi.Ten;
                     txtSdt.Text = nguoi.Sdt;
                     txtTienCoc.Text = hd.TienCoc.ToString();

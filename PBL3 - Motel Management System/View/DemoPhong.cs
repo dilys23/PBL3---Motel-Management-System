@@ -15,7 +15,7 @@ using System.Windows.Forms;
 namespace PBL3___Motel_Management_System.View
 {
      public delegate void Loader1(String s);
-    public delegate void _SuKien(object sender, EventArgs e);
+     public delegate void _SuKien(object sender, EventArgs e);
 
     public partial class DemoPhong : Form
     {
@@ -57,8 +57,6 @@ namespace PBL3___Motel_Management_System.View
             panelPhong.AutoScroll = true;
             QLBLL qLBLL = new QLBLL();
             Button defaultBtn = null;
-            
-
             foreach(DayTro dt in qLBLL.GetAllDayTroBll())
             {
                 ToolTip tp = new ToolTip();
@@ -121,7 +119,7 @@ namespace PBL3___Motel_Management_System.View
                 {
                     Label lbl = new Label();
                     lbl.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-                   lbl.AutoSize = true;
+                    lbl.AutoSize = true;
                     lbl.Name = nguoi.MaNguoi;
                     lbl.Text = "   " + nguoi.Ten;
                     lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -149,14 +147,12 @@ namespace PBL3___Motel_Management_System.View
         {
             if(ClickBtn != null)
             {
-
             QLBLL qLBLL = new QLBLL();
             DayTro dt = qLBLL.GetDayTroById(ClickBtn.Name);
-            tc.openChildForm1(new ThemPhong(dt.MaDayTro,LoadForm), panelChinh);
+            tc.openChildForm1(new ThemPhong(dt.MaDayTro, SuKien), panelChinh);
             }
             
         }
-
         private void lblDiaChi_Click(object sender, EventArgs e)
         {
 
@@ -165,21 +161,17 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnThemday_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ThemDay(LoadForm), panelChinh);
-            //panelBtnDay.Controls.Clear();
+            tc.openChildForm1(new ThemDay(null,LoadForm,SuKien), panelChinh);
         }
 
         private void btnSuaDay_Click(object sender, EventArgs e)
         {
-            //string idDay = btn.Name;
-            //tc.openChildForm1(new SuaDay(LoadForm), panelChinh);
-            //panelBtnDay.Controls.Clear();
+            
             if (ClickBtn != null)
             {
-
                 QLBLL qLBLL = new QLBLL();
                 DayTro dt = qLBLL.GetDayTroById(ClickBtn.Name);
-                tc.openChildForm1(new SuaDay(dt.MaDayTro, LoadForm), panelChinh);
+                tc.openChildForm1(new ThemDay(dt.MaDayTro, LoadForm, SuKien), panelChinh);
             }
 
         }
@@ -250,6 +242,31 @@ namespace PBL3___Motel_Management_System.View
         private void btnXoaDay_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnXoaDay_Click_1(object sender, EventArgs e)
+        {
+            if (ClickBtn != null)
+            {
+                
+                QLBLL qLBLL = new QLBLL();
+                if(qLBLL.CheckDay(ClickBtn.Name)==false)
+                {
+                    DialogResult kq = MessageBox.Show("Bạn có thực sự muốn xóa", "Cảnh báo!!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (kq == DialogResult.OK)
+                    {
+                        qLBLL.DelDayTroBll(ClickBtn.Name);
+                        LoadForm(null);
+                    }
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Dãy có phòng đang thuê không được xóa ");
+                }
+               
+               
+            }
         }
     }
 }

@@ -190,6 +190,7 @@ namespace PBL3___Motel_Management_System.View
                     cttb.MaThietBi = dr.Cells[0].Value.ToString();
                     cttb.MaPhongTro = tp.hopDong.MaPhongTro;
                     cttb.SoLuong = Convert.ToInt32(dr.Cells[4].Value.ToString());
+                    cttb.TonTai = true;
                     qLBLL.AddChiTietThietBiBll(cttb);
                 }
 

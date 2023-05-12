@@ -86,13 +86,16 @@ namespace PBL3___Motel_Management_System.View
             if(checkHopLe())
             {
                 QLBLL qLBLL = new QLBLL();
-                DayTro day = new DayTro();
+                DayTro day = qLBLL.GetDayByIdDay(IdDay);
                 day.MaDayTro = IdDay;
                 day.TenDayTro = txtTenDay.Text;
                 day.TenHuyen = txtQuanHuyen.Text;
                 day.TenDuong  = txtdiachi.Text;
                 day.TenThanhPho = txtThanhpho.Text;
+                if(pctKhach.Image != null)
+                {
                 day.HinhAnh = ChuyenDoiAnh.ImageToBase64(pctKhach.Image, pctKhach.Image.RawFormat);
+                }
                 qLBLL.SuaDayBll(day);
                 MessageBox.Show("Thay đổi thông tin thành công", "Thông báo");
                 Loader(null);

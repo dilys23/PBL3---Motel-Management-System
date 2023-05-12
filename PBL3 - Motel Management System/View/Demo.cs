@@ -131,11 +131,6 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnChoThue_Click(object sender, EventArgs e)
         {
-            //ThuePhong tp = new ThuePhong();
-            //QLBLL qLBLL = new QLBLL();
-            //tp.hopDong.MaHopDong = qLBLL.TaoIdHopDong();
-            //tp.hopDong.MaPhongTro = dgvPhongTro.CurrentRow.Cells[0].Value.ToString();
-            //tc.openChildForm1(new ThemKhach(tp, LoadForm), panelPhong);
             QLBLL qLBLL = new QLBLL();
             if (qLBLL.GetHopDongByIdPhong(IdPhong) == null)
             {
@@ -170,7 +165,7 @@ namespace PBL3___Motel_Management_System.View
                 DialogResult kq = MessageBox.Show("Bạn có thực sự muốn xóa ","Cảnh báo",MessageBoxButtons.OKCancel,MessageBoxIcon.Question);
                 if(kq == DialogResult.OK)
                 {
-                    qLBLL.DelCHiTietThietBiByIdPhongBLL(IdPhong);
+                    //qLBLL.DelCHiTietThietBiByIdPhongBLL(IdPhong);
                     qLBLL.DelPhongTroBLL(IdPhong);
                     MessageBox.Show("Xóa phòng trọ thành công", "Thông báo");
                     this.Close();

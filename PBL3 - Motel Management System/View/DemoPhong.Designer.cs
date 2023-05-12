@@ -42,10 +42,11 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panelPhong = new System.Windows.Forms.FlowLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnXoaDay = new FontAwesome.Sharp.IconButton();
+            this.btnXoaPhong = new FontAwesome.Sharp.IconButton();
             this.btnThemPhong = new FontAwesome.Sharp.IconButton();
             this.lblDiaChi = new System.Windows.Forms.Label();
             this.panelChinh = new System.Windows.Forms.Panel();
+            this.btnXoaDay = new FontAwesome.Sharp.IconButton();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -57,6 +58,7 @@
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.btnXoaDay);
             this.panel3.Controls.Add(this.btnSuaDay);
             this.panel3.Controls.Add(this.txtTimKiem);
             this.panel3.Controls.Add(this.cbbTinhTrang);
@@ -80,10 +82,10 @@
             this.btnSuaDay.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSuaDay.IconSize = 25;
             this.btnSuaDay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaDay.Location = new System.Drawing.Point(1276, 98);
+            this.btnSuaDay.Location = new System.Drawing.Point(1221, 98);
             this.btnSuaDay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSuaDay.Name = "btnSuaDay";
-            this.btnSuaDay.Size = new System.Drawing.Size(69, 39);
+            this.btnSuaDay.Size = new System.Drawing.Size(86, 39);
             this.btnSuaDay.TabIndex = 59;
             this.btnSuaDay.Text = "Sửa";
             this.btnSuaDay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -120,7 +122,7 @@
             this.btnThemday.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThemday.IconSize = 30;
             this.btnThemday.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemday.Location = new System.Drawing.Point(1153, 98);
+            this.btnThemday.Location = new System.Drawing.Point(1110, 98);
             this.btnThemday.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThemday.Name = "btnThemday";
             this.btnThemday.Size = new System.Drawing.Size(105, 41);
@@ -226,7 +228,7 @@
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.Controls.Add(this.btnXoaDay);
+            this.panel5.Controls.Add(this.btnXoaPhong);
             this.panel5.Controls.Add(this.btnThemPhong);
             this.panel5.Controls.Add(this.lblDiaChi);
             this.panel5.Location = new System.Drawing.Point(12, 7);
@@ -235,26 +237,26 @@
             this.panel5.Size = new System.Drawing.Size(1378, 56);
             this.panel5.TabIndex = 0;
             // 
-            // btnXoaDay
+            // btnXoaPhong
             // 
-            this.btnXoaDay.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnXoaDay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXoaDay.BackColor = System.Drawing.Color.Red;
-            this.btnXoaDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaDay.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btnXoaDay.IconColor = System.Drawing.Color.White;
-            this.btnXoaDay.IconFont = FontAwesome.Sharp.IconFont.Regular;
-            this.btnXoaDay.IconSize = 25;
-            this.btnXoaDay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaDay.Location = new System.Drawing.Point(1298, 3);
-            this.btnXoaDay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnXoaDay.Name = "btnXoaDay";
-            this.btnXoaDay.Size = new System.Drawing.Size(72, 38);
-            this.btnXoaDay.TabIndex = 58;
-            this.btnXoaDay.Text = "Xóa";
-            this.btnXoaDay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXoaDay.UseVisualStyleBackColor = false;
-            this.btnXoaDay.Click += new System.EventHandler(this.btnXoaDay_Click);
+            this.btnXoaPhong.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnXoaPhong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXoaPhong.BackColor = System.Drawing.Color.Red;
+            this.btnXoaPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaPhong.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnXoaPhong.IconColor = System.Drawing.Color.White;
+            this.btnXoaPhong.IconFont = FontAwesome.Sharp.IconFont.Regular;
+            this.btnXoaPhong.IconSize = 25;
+            this.btnXoaPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoaPhong.Location = new System.Drawing.Point(1298, 3);
+            this.btnXoaPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXoaPhong.Name = "btnXoaPhong";
+            this.btnXoaPhong.Size = new System.Drawing.Size(72, 38);
+            this.btnXoaPhong.TabIndex = 58;
+            this.btnXoaPhong.Text = "Xóa";
+            this.btnXoaPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoaPhong.UseVisualStyleBackColor = false;
+            this.btnXoaPhong.Click += new System.EventHandler(this.btnXoaDay_Click);
             // 
             // btnThemPhong
             // 
@@ -307,6 +309,27 @@
             this.panelChinh.Size = new System.Drawing.Size(1427, 736);
             this.panelChinh.TabIndex = 43;
             // 
+            // btnXoaDay
+            // 
+            this.btnXoaDay.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnXoaDay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXoaDay.BackColor = System.Drawing.Color.Red;
+            this.btnXoaDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaDay.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnXoaDay.IconColor = System.Drawing.Color.White;
+            this.btnXoaDay.IconFont = FontAwesome.Sharp.IconFont.Regular;
+            this.btnXoaDay.IconSize = 25;
+            this.btnXoaDay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoaDay.Location = new System.Drawing.Point(1315, 98);
+            this.btnXoaDay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXoaDay.Name = "btnXoaDay";
+            this.btnXoaDay.Size = new System.Drawing.Size(90, 38);
+            this.btnXoaDay.TabIndex = 59;
+            this.btnXoaDay.Text = "Xóa";
+            this.btnXoaDay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoaDay.UseVisualStyleBackColor = false;
+            this.btnXoaDay.Click += new System.EventHandler(this.btnXoaDay_Click_1);
+            // 
             // DemoPhong
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -339,7 +362,7 @@
         private System.Windows.Forms.FlowLayoutPanel panelPhong;
         private System.Windows.Forms.Panel panel5;
         private FontAwesome.Sharp.IconButton btnSuaDay;
-        private FontAwesome.Sharp.IconButton btnXoaDay;
+        private FontAwesome.Sharp.IconButton btnXoaPhong;
         private FontAwesome.Sharp.IconButton btnThemPhong;
         private System.Windows.Forms.Label lblDiaChi;
         public System.Windows.Forms.Panel panelChinh;
@@ -348,5 +371,6 @@
         private FontAwesome.Sharp.IconButton btnThemday;
         private FontAwesome.Sharp.IconButton btnTimKiem;
         private System.Windows.Forms.ComboBox cbbDayTro;
+        private FontAwesome.Sharp.IconButton btnXoaDay;
     }
 }
