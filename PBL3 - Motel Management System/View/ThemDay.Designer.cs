@@ -73,9 +73,9 @@
             this.label6.ForeColor = System.Drawing.Color.Chocolate;
             this.label6.Location = new System.Drawing.Point(19, 40);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(200, 28);
+            this.label6.Size = new System.Drawing.Size(135, 28);
             this.label6.TabIndex = 26;
-            this.label6.Text = "THÊM DÃY PHÒNG";
+            this.label6.Text = "DÃY PHÒNG";
             // 
             // iconButton1
             // 

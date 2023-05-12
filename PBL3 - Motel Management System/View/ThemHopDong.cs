@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PBL3___Motel_Management_System.BLL;
 using PBL3___Motel_Management_System.DAL;
 using PBL3___Motel_Management_System.DTO;
 using PBL3___Motel_Management_System.View;
@@ -22,7 +23,30 @@ namespace PBL3___Motel_Management_System
             InitializeComponent();
             this.tp=tp;
             this.loader=loader;
-            txtTienCoc.Text = tp.hopDong.TienCoc.ToString();
+            
+            if(tp.hopDong.MaHopDong!=null)
+            {
+                SetGUI();
+            }
+            else
+            {
+                txtTienCoc.Text = tp.hopDong.TienCoc.ToString();
+            }
+        }
+        public void SetGUI()
+        {
+            QLBLL qLBLL = new QLBLL();
+            //HopDong hopdong = qLBLL.GetHopDongByMaHD(tp.hopDong.MaHopDong);
+            if (tp.hopDong.MaHopDong!=null && tp.hopDong.MaPhongTro==null)
+            {
+               
+                HopDong hopdong = qLBLL.GetHopDongByMaHD(tp.hopDong.MaHopDong);
+                dtpBatDau.Value = Convert.ToDateTime(hopdong.NgayBatDau);
+                dtpKetThuc.Value = Convert.ToDateTime(hopdong.NgayKetThuc);
+                txtTienCoc.Text =Convert.ToDouble(hopdong.TienCoc).ToString();
+
+
+            }
         }
         private void Back(string txt)
         {
@@ -90,15 +114,38 @@ namespace PBL3___Motel_Management_System
         }
         private void iconButton4_Click(object sender, EventArgs e)
         {
-            if(CheckHopLe())
+            QLBLL qLBLL = new QLBLL();
+            if(tp.hopDong.MaHopDong!=null && tp.hopDong.MaPhongTro==null)
             {
-            string dateStart = dtpBatDau.Value.ToString("yyyy-MM-dd");
-            string dateEnd = dtpKetThuc.Value.ToString("yyyy-MM-dd");
-            tp.hopDong.NgayBatDau = dateStart;
-            tp.hopDong.NgayKetThuc = dateEnd;
-            tp.hopDong.TienCoc = Convert.ToDouble(txtTienCoc.Text);
-            tc.openChildForm1(new ChitietHopDong(tp,Back),panelThemHD);
+                if (CheckHopLe())
+                {
+                    HopDong hopdong = qLBLL.GetHopDongByMaHD(tp.hopDong.MaHopDong);
+                    hopdong.MaHopDong = tp.hopDong.MaHopDong;
+                    string dateStart = dtpBatDau.Value.ToString("yyyy-MM-dd");
+                    string dateEnd = dtpKetThuc.Value.ToString("yyyy-MM-dd");
+                    hopdong.NgayBatDau = dateStart;
+                    hopdong.NgayKetThuc = dateEnd;
+                    hopdong.TienCoc = Convert.ToDouble(txtTienCoc.Text);
+                    hopdong.TonTai = true;
+                    qLBLL.UpdateHopDongBLL(hopdong);
+                    MessageBox.Show("Gia hạn hợp đồng thành công");
+                    loader(null);
+                    this.Close();
+                }
             }
+            else
+            {
+                if (CheckHopLe())
+                {
+                    string dateStart = dtpBatDau.Value.ToString("yyyy-MM-dd");
+                    string dateEnd = dtpKetThuc.Value.ToString("yyyy-MM-dd");
+                    tp.hopDong.NgayBatDau = dateStart;
+                    tp.hopDong.NgayKetThuc = dateEnd;
+                    tp.hopDong.TienCoc = Convert.ToDouble(txtTienCoc.Text);
+                    tc.openChildForm1(new ChitietHopDong(tp, Back), panelThemHD);
+                }
+            }
+           
             
         }
 

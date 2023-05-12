@@ -15,14 +15,35 @@ namespace PBL3___Motel_Management_System.View
 {
     public partial class ThemCSDien : Form
     {
+        private string IdSudungDV;
         private Loader loader;
-        public ThemCSDien(Loader loader)
+        public ThemCSDien(string IdSudungDV, Loader loader)
         {
             InitializeComponent();
             SetCbb();
+            this.IdSudungDV = IdSudungDV;
             this.loader=loader;
+            if(IdSudungDV != null )
+            {
+                SetGUI();
+            }
+            
         }
-
+       public void SetGUI()
+        {
+            QLBLL qLBLL = new QLBLL();
+            ChiTietSuDungDichVu cs = qLBLL.GetChiTietSudungDichVuById(IdSudungDV);
+            ChiTietDichVu ct = qLBLL.GetChiTietDichVuById(cs.MaCHiTietDichVu);
+            PhongTro pt = qLBLL.GetPhongTroByIdPhong(ct.MaPhongTro);
+            DayTro dt = qLBLL.GetDayByIdDay(pt.MaDayTro);
+            cbbDayTro.Text = dt.TenDayTro;
+            cbbPhongTro.Text = pt.TenPhongTro;
+            txtChiSoCu.Text = cs.ChiSoCu.ToString();
+            txtChiSoMoi.Text = cs.ChiSoMoi.ToString();
+            dtpNgayLap.Value = DateTime.ParseExact(cs.NgayLap, "dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture);
+            dtpThang.Value = DateTime.ParseExact(cs.ThoiGian, "MM-yyyy", System.Globalization.CultureInfo.InvariantCulture);
+        }
+        
         private void btnTroVe_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -111,44 +132,71 @@ namespace PBL3___Motel_Management_System.View
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if(CheckHopLe())
+            if (IdSudungDV != null)
             {
-                QLBLL qLBLL = new QLBLL();
-                string idPhong = ((ViewCbb)cbbPhongTro.SelectedItem).key;
-                ChiTietSuDungDichVu dv = new ChiTietSuDungDichVu
+                if (CheckHopLe())
                 {
-                    MaChiTietSuDungDichVu = qLBLL.TaoIdChiTietSuDungDichVu(),
-                    MaCHiTietDichVu = qLBLL.GetIdCHiTietDichVuDienByIdPhong(idPhong),
-                    ChiSoCu = Convert.ToDouble(txtChiSoCu.Text),
-                    ChiSoMoi = Convert.ToDouble(txtChiSoMoi.Text),
-                    ThoiGian = dtpThang.Value.ToString("MM-yyyy"),
-                    TinhTrang = false,
-                    TonTai = true,
-                    NgayLap = dtpNgayLap.Value.ToString("dd-MM-yyyy"),
-                    
-                };
-                if(dv.ChiSoCu > dv.ChiSoMoi)
-                {
-                    MessageBox.Show("Chỉ số cũ phải bé hơn hoặc bằng chỉ số mới","Thông báo");
-                    
-                }
-                else
-                {
-                    try
+                    double csCu = Convert.ToDouble(txtChiSoCu.Text);
+                    double csMoi = Convert.ToDouble(txtChiSoMoi.Text);
+                    if (csCu > csMoi)
                     {
-                        qLBLL.AddChiTietSuDungDichVuBLL(dv);
-                        MessageBox.Show("thêm chỉ số thành công");
+                        MessageBox.Show("Chỉ số cũ lớn hơn chỉ số mới", "Thông báo");
+                        return;
+                    }
+                    else
+                    {
+                        QLBLL qLBLL = new QLBLL();
+                        ChiTietSuDungDichVu cs = qLBLL.GetChiTietSudungDichVuById(this.IdSudungDV);
+                        cs.ChiSoCu = Convert.ToDouble(txtChiSoCu.Text);
+                        cs.ChiSoMoi = Convert.ToDouble(txtChiSoMoi.Text);
+                        cs.TonTai = true;
+                        qLBLL.UpdateChiTietSuDungDichVu(cs);
+                        MessageBox.Show("Thay đổi thông tin thành công", "Thông báo");
+                        loader(null);
                         this.Close();
-                        this.loader(null);
                     }
-                    catch(Exception ex)
-                    {
-                        MessageBox.Show("không hợp lệ");
-                    }
-               
                 }
-                
             }
+            else
+            {
+                if (CheckHopLe())
+                {
+                    QLBLL qLBLL = new QLBLL();
+                    string idPhong = ((ViewCbb)cbbPhongTro.SelectedItem).key;
+                    ChiTietSuDungDichVu dv = new ChiTietSuDungDichVu
+                    {
+                        MaChiTietSuDungDichVu = qLBLL.TaoIdChiTietSuDungDichVu(),
+                        MaCHiTietDichVu = qLBLL.GetIdCHiTietDichVuDienByIdPhong(idPhong),
+                        ChiSoCu = Convert.ToDouble(txtChiSoCu.Text),
+                        ChiSoMoi = Convert.ToDouble(txtChiSoMoi.Text),
+                        ThoiGian = dtpThang.Value.ToString("MM-yyyy"),
+                        TinhTrang = false,
+                        TonTai = true,
+                        NgayLap = dtpNgayLap.Value.ToString("dd-MM-yyyy"),
+                    };
+                    if (dv.ChiSoCu > dv.ChiSoMoi)
+                    {
+                        MessageBox.Show("Chỉ số cũ phải bé hơn hoặc bằng chỉ số mới", "Thông báo");
+                    }
+                    else
+                    {
+                        try
+                        {
+                            qLBLL.AddChiTietSuDungDichVuBLL(dv);
+                            MessageBox.Show("thêm chỉ số thành công");
+                            this.Close();
+                            this.loader(null);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("không hợp lệ");
+                        }
+
+                    }
+                }
+            }
+                
+            
 
         }
 

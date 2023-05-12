@@ -27,7 +27,7 @@ namespace PBL3___Motel_Management_System
        
         private void btnThemHD_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ThemCSNuoc(LoadForm), panelChisoNuoc);
+            tc.openChildForm1(new ThemCSNuoc(null,LoadForm), panelChisoNuoc);
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -77,8 +77,8 @@ namespace PBL3___Motel_Management_System
                 }
             }
            
-            var Sua = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-create-25.png");
-            var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-delete-25.png");
+            var Sua = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-create-25.png");
+            var Xoa = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
             dgvChiSoNuoc.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dv.dgvIcons_CellPainting1(dgvChiSoNuoc, e, Sua, Xoa));
 
         }
@@ -199,7 +199,10 @@ namespace PBL3___Motel_Management_System
                 else
                 {
                     string id = dgvChiSoNuoc.CurrentRow.Cells[0].Value.ToString();
-                    tc.openChildForm1(new SuaCSNuoc(id, LoadForm), panelChisoNuoc);
+                    ThemCSNuoc frm = new ThemCSNuoc(id, LoadForm);
+                    frm.cbbDayTro.Enabled = false;
+                    frm.cbbPhongTro.Enabled=false;
+                    tc.openChildForm1(frm, panelChisoNuoc);
 
                 }
 

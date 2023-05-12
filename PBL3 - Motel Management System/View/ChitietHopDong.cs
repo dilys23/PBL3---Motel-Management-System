@@ -29,43 +29,81 @@ namespace PBL3___Motel_Management_System.View
         public void LoadForm()
         {
             QLBLL qLBLL = new QLBLL();
-            Nguoi nguoi = new Nguoi();
-            nguoi = tp.hopDong.Nguoi;
             DayTro dt = new DayTro();
-            dt = qLBLL.GetDayTroByIdPhong(tp.hopDong.MaPhongTro);
-            PhongTro pt = new PhongTro();
-            pt = qLBLL.GetPhongTroByIdPhong(tp.hopDong.MaPhongTro);
-            txtHoVaTen.Text = nguoi.Ten;
+            PhongTro phongTro = new PhongTro();
+            Nguoi nguoi = new Nguoi();
+            HopDong hopdong = new HopDong();
+            if (tp.hopDong.MaPhongTro==null)
+            {
+                hopdong = qLBLL.GetHopDongByMaHD(tp.hopDong.MaHopDong);
+                phongTro = qLBLL.GetPhongTroByMaHopDong(tp.hopDong.MaHopDong);
+                dt = qLBLL.GetDayTroByIdPhong(phongTro.MaPhongTro);  
+                nguoi = qLBLL.GetNguoiByMaHopDong(hopdong.MaHopDong);
+                SetGUI(dt, nguoi, phongTro, hopdong);            
+            }
+            else
+            {    
+                nguoi = tp.hopDong.Nguoi;
+                dt = qLBLL.GetDayTroByIdPhong(tp.hopDong.MaPhongTro);
+                phongTro = qLBLL.GetPhongTroByIdPhong(tp.hopDong.MaPhongTro);
+                hopdong = qLBLL.GetHopDongByMaHD(tp.hopDong.MaHopDong);
+                SetGUI(dt, nguoi, phongTro, hopdong);             
+            }
+        }
+        public void SetGUI(DayTro dt, Nguoi nguoi,PhongTro phongTro, HopDong hopdong)
+        {
+
+            QLBLL qLBLL = new QLBLL();
             txtTenDay.Text = dt.TenDayTro;
-            txtTenPhong.Text = pt.TenPhongTro;
+            txtDienTich.Text = phongTro.DienTich.ToString();
+            txtTenPhong.Text = phongTro.TenPhongTro;
             string diachi = dt.TenDuong + " " + dt.TenHuyen + " " + dt.TenThanhPho;
             txtDiaChi.Text = diachi;
-            txtGiaPhong.Text = pt.GiaTien.ToString();
+            txtGiaPhong.Text = phongTro.GiaTien.ToString();
+            txtHoVaTen.Text = nguoi.Ten;
             txtSdt.Text = nguoi.Sdt;
-            txtTienCoc.Text = tp.hopDong.TienCoc.ToString();
+            txtTienCoc.Text = hopdong.TienCoc.ToString();
             txtCccd.Text = nguoi.Cccd;
-            txtDienTich.Text = pt.DienTich.ToString();
             DateTime ngaysinh = DateTime.ParseExact(nguoi.NgaySinh, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
-            DateTime batdau = DateTime.ParseExact(tp.hopDong.NgayBatDau, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
-            DateTime ketthuc = DateTime.ParseExact(tp.hopDong.NgayKetThuc, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
+            DateTime batdau = DateTime.ParseExact(hopdong.NgayBatDau, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
+            DateTime ketthuc = DateTime.ParseExact(hopdong.NgayKetThuc, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
             dtpNgaySinh.Value = ngaysinh;
             dtpNgayBatDau.Value = batdau;
             dtpNgayKetThuc.Value = ketthuc;
-            //int i = 0;
-            //foreach (string idDv in tp.DsDichVu)
-            //{
-            //    DichVu dv = new DichVu();
-            //    dv = qLBLL.GetDichVuByIdDichVu(idDv);
-            //    dgvDichvu.Rows.Add(dv.MaDichVu, ++i, dv.TenDichVu, dv.GiaDichVu);
-            //}
-            //foreach (string idTb in tp.DsThietBi)
-            //{
-            //    ThietBi tb = new ThietBi();
-            //    tb = qLBLL.GetThietBiByIdThietBi(idTb);
-            //    dgvThietbi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi);
-            //}
-
+            int i = 0;
+            if (tp.hopDong.MaPhongTro == null)
+            {
+                
+                foreach (ChiTietDichVu ctdv in qLBLL.GetChiTietDichVuByIdPhong(phongTro.MaPhongTro))
+                {
+                    DichVu dv = new DichVu();
+                    dv = qLBLL.GetDichVuByIdDichVu(ctdv.MaDichVu);
+                    dgvDichvu.Rows.Add(dv.MaDichVu, ++i, dv.TenDichVu, dv.GiaDichVu);
+                }
+                foreach (ChiTietThietBi cttb in qLBLL.GetChiTietThietBiByIdPhong(phongTro.MaPhongTro))
+                {
+                    ThietBi tb = new ThietBi();
+                    tb = qLBLL.GetTBByIdTB(cttb.MaThietBi);
+                    dgvThietbi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi);
+                }
+            }
+            else
+            {
+                foreach (string idDv in tp.DsDichVu)
+                {
+                    DichVu dv = new DichVu();
+                    dv = qLBLL.GetDichVuByIdDichVu(idDv);
+                    dgvDichvu.Rows.Add(dv.MaDichVu, ++i, dv.TenDichVu, dv.GiaDichVu);
+                }
+                foreach (string idTb in tp.DsThietBi)
+                {
+                    ThietBi tb = new ThietBi();
+                    tb = qLBLL.GetTBByIdTB(idTb);
+                    dgvThietbi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi);
+                }
+            }
         }
+        
         private void iconButton1_Click(object sender, EventArgs e)
         {
             this.Close();

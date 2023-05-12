@@ -24,25 +24,24 @@ namespace PBL3___Motel_Management_System
             InitializeComponent();
             LoadForm(dtpThang.Value.ToString("MM-yyyy"));
             ResizeColumn();
-            
         }
         public void LoadForm(string thang)
         {
             dgvDoanhThu.Rows.Clear();
             QLBLL qLBLL = new QLBLL();
-            
             int i = 0;
             foreach (string hd in qLBLL.GetHoaDonByThangChiTra(thang))
             {
                 HoaDon hoadon = qLBLL.GetHoaDonById(hd);
-                PhongTro pt = qLBLL.GetPhongTroByMaHoaDon(hoadon.MaHoaDon);
-                DayTro dt = qLBLL.GetDayTroByIdPhong(pt.MaPhongTro);
-                dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro,hoadon.TongTien);
+                if(hoadon.TinhTrang == true)
+                {
+                    PhongTro pt = qLBLL.GetPhongTroByMaHoaDon(hoadon.MaHoaDon);
+                    DayTro dt = qLBLL.GetDayTroByIdPhong(pt.MaPhongTro);
+                    dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hoadon.TongTien);
+                }
+               
             }
-        
-          
         }
-
         private void btnTim_Click(object sender, EventArgs e)
         {
            // string daytro = ((ViewCbb)cbbDayTro.SelectedItem).key;
@@ -50,10 +49,7 @@ namespace PBL3___Motel_Management_System
             DateTime date = DateTime.ParseExact(thang, "MM-yyyy", CultureInfo.InvariantCulture);
             int nam = date.Year;
             LoadForm(thang);
-            ThongKe(date);
-            //   BDCot(nam.ToString());
-         //   BDDuong(nam.ToString());
-
+            ThongKe(thang);
         }
         public void ResizeColumn()
         {
@@ -75,6 +71,7 @@ namespace PBL3___Motel_Management_System
             dgvDoanhThu.Location = new Point(5, dgvHeight + 10);
             ChartCot.Location = new Point(dgvWidth + 10, dgvHeight + 10);
         }
+        
 
         private void DoanhThu_Load(object sender, EventArgs e)
         {
@@ -82,83 +79,31 @@ namespace PBL3___Motel_Management_System
             DateTime date = DateTime.ParseExact(thang, "MM-yyyy", CultureInfo.InvariantCulture);
             int nam = date.Year;
             LoadForm(thang);
-            ThongKe(date);
+            ThongKe(thang);
             //BDCot(thang,nam.ToString());
             //BDDuong(nam.ToString());
 
         }
-        public void ThongKe(DateTime thangnam)
+        public void ThongKe(string thang)
         {
             QLBLL qLBLL = new QLBLL();
-            ChartCot.Series[0].XValueMember = "MaDayTro";
+            ChartCot.Series[0].XValueMember = "TenDayTro";
             ChartCot.Series[0].YValueMembers = "TongTien";
-            foreach (DayTro dt in qLBLL.GetAllDayTroBll())
-            {
-                ChartCot.DataSource = qLBLL.ThongKe(dt.MaDayTro, thangnam);
-                
-                //   ChartCot.ChartAreas[0].AxisX.IntervalType= DateTimeIntervalType.
-                ChartCot.ChartAreas[0].AxisX.Title = "Dãy trọ";
-                ChartCot.ChartAreas[0].AxisY.Title = "Tổng tiền";
-            }
+            List<object> data = new List<object>(); 
+            ChartCot.DataSource = qLBLL.ThongKe(thang);
+            ChartCot.ChartAreas[0].AxisX.Title = "Dãy trọ";
+            ChartCot.ChartAreas[0].AxisY.Title = "Tổng tiền";
+            ChartCot.DataBind();
+
+            ChartDuong.Series[0].XValueMember = "TenDayTro";
+            ChartDuong.Series[0].YValueMembers = "TongTien";
+            List<object> data1 = new List<object>();
+            ChartDuong.DataSource = qLBLL.ThongKe(thang);
+            ChartDuong.ChartAreas[0].AxisX.Title = "Dãy trọ";
+            ChartDuong.ChartAreas[0].AxisY.Title = "Tổng tiền";
+            ChartDuong.DataBind();
         }
-        //public void BDDuong(string nam)
-        //{
-           
-        //    ChartDuong.Series.Clear();
-        //    QLBLL qLBLL = new QLBLL();
-        //    List<DayTro> list = qLBLL.GetAllDayTroBll();
-        //    foreach(DayTro dt in list)
-        //    {
-        //        Series series = ChartDuong.Series.Add(dt.TenDayTro);
-        //        series.ChartType =SeriesChartType.Line;
-
-        //        for(int  month=1; month <= 12; month++)
-        //        {
-        //            //double Tongtien = qLBLL.GetTongTien(dt.MaDayTro,month.ToString(), nam);
-        //            //series.Points.AddXY(month, Tongtien);   
-        //        }
-
-        //    }
-        //    ChartDuong.ChartAreas[0].AxisX.Interval = 1;
-        //    ChartDuong.ChartAreas[0].AxisX.Minimum = 1;
-        //    ChartDuong.ChartAreas[0].AxisX.Maximum = 12;
-        //    ChartDuong.ChartAreas[0].AxisX.Title = "Tháng";
-        //    ChartDuong.ChartAreas[0].AxisY.Title = "Tổng tiền";
-        //}
-        ////loop rows 
-        //public void BDCot(string thang,string nam)
-        //{
-
-        //    ChartCot.Series.Clear();
-        //    QLBLL qLBLL = new QLBLL();
-        //    List<DayTro> list = qLBLL.GetAllDayTroBll();
-            
-        //    ChartCot.Titles.Add(new Title("Bieu do cot", Docking.Top, new Font("Times New Roman", 16, FontStyle.Bold), Color.Firebrick));
-        //    ChartCot.Series.Add("Tên Dãy trọ");
-        //    ChartCot.Series["Tên Dãy trọ"].ChartType = SeriesChartType.Column;
-        //    ChartCot.Series["Tên Dãy trọ"].XValueType = ChartValueType.String;
-        //    foreach(DayTro dt in list)
-        //    {
-        //      //  double tongtien = qLBLL.GetTongTien(dt.MaDayTro, thang, nam);
-        //    //    ChartCot.Series["Tên Dãy trọ"].Points.AddXY(dt.TenDayTro, tongtien);
-        //        ChartCot.Series[0]["PixelPointWidth"] = "30";
-        //    }
-        //    if (ChartCot.ChartAreas.Count == 0)
-        //    {
-        //        ChartArea area = new ChartArea();
-        //        ChartCot.ChartAreas.Add(area);
-        //        area.AxisX.CustomLabels.Clear();
-        //        area.AxisX.Interval = 0.5;
-        //        area.AxisX.IsMarginVisible = true;
-        //        area.AxisX.Minimum = 0;
-        //        area.AxisX.Maximum = list.Count + 1;
-        //        //area.AxisX.Title = "Dãy trọ";
-        //        area.AxisY.Title = "Tổng tiền";
-        //    }
-
-        //}
-
-     
+       
 
     }
 }

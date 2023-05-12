@@ -15,12 +15,21 @@ namespace PBL3___Motel_Management_System.View
 {
     public partial class ThemThietBi : Form
     {
+        private string IdTb;
         private Loader Loader;
         
-        public ThemThietBi(Loader loader)
+        public ThemThietBi(string IdTb, Loader loader)
         {
             InitializeComponent();
             this.Loader = loader;
+            this.IdTb = IdTb;
+            if(IdTb != null )
+            {
+                QLBLL qLBLL = new QLBLL();
+                ThietBi tb = qLBLL.GetTBByIdTB(IdTb);
+                txtTenTB.Text = tb.TenThietBi;
+                txtGia.Text = tb.GiaThietBi.ToString();
+            }
         }
         private Boolean checkHopLe()
         {
@@ -55,20 +64,40 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-
             if (checkHopLe())
             {
                 QLBLL qLBLL = new QLBLL();
-                ThietBi tb = new ThietBi();
-                tb.TenThietBi = txtTenTB.Text;
-                tb.GiaThietBi = Convert.ToDouble(txtGia.Text);
-                tb.MaThietBi = qLBLL.TaoIdThietBi();
-                tb.TonTai = true;
-                qLBLL.ThemTBBll(tb);
-                MessageBox.Show("Thêm dịch vụ thành công", "Thông báo");
+                if (IdTb != null)
+                {
+                    ThietBi tb = qLBLL.GetTBByIdTB(IdTb);
+                    tb.MaThietBi = IdTb;
+                    tb.TenThietBi = txtTenTB.Text;
+                    tb.GiaThietBi = Convert.ToDouble(txtGia.Text);
+                    tb.TonTai = true;
+                    qLBLL.SuaTBBll(tb);
+                    MessageBox.Show("Thay đổi thông tin thành công", "Thông báo");
+                }
+                else
+                {
+                    ThietBi tb = new ThietBi();
+                    tb.MaThietBi = qLBLL.TaoIdThietBi();
+                    tb.TenThietBi = txtTenTB.Text;
+                    tb.GiaThietBi = Convert.ToDouble(txtGia.Text);        
+                    tb.TonTai = true;
+                    qLBLL.ThemTBBll(tb);
+                    MessageBox.Show("Thêm dịch vụ thành công", "Thông báo");
+                }
                 Loader(null);
                 this.Close();
             }
+          
+               
+                
+            
+
+            
+               
+            
         }
     }
 }
