@@ -21,12 +21,13 @@ namespace PBL3___Motel_Management_System
         public Hopdong()
         {
             InitializeComponent();
-           
             LoadForm(null);
          
         }
-       
+        private void SetCbb()
+        {
 
+        }
         TrangChu tc = new TrangChu();
         Dichvu dv = new Dichvu();
        
@@ -47,20 +48,15 @@ namespace PBL3___Motel_Management_System
                 dgvHD.Rows.Add(hd.MaHopDong, hd.Stt, hd.TenKhachHang, hd.TenPhongTro, hd.TenDayTro, hd.NgayBatDau, hd.NgayKetThuc, hd.TienCoc);
 
             }
-
-            //dgvHD.CellContentClick += DgvDichVu_CellContentClick;
-            var Sua = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-more-details-20.png");
-            var Xoa = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-time-25.png");
+            var Sua = System.Drawing.Image.FromFile(@"D:\PBLproject\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-more-details-20.png");
+            var Xoa = System.Drawing.Image.FromFile(@"D:\PBLproject\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-time-25.png");
             dgvHD.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dv.dgvIcons_CellPainting1(dgvHD, e, Sua, Xoa));
-      
         }
-       
         private void btnThem_Click(object sender, EventArgs e)
         {
             
             
         }
-
         private void iconButton1_Click(object sender, EventArgs e)
         {
 
@@ -90,7 +86,6 @@ namespace PBL3___Motel_Management_System
             }
 
         }
-
         private void dgvHD_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (dgvHD.Columns[e.ColumnIndex].Name == "btnSua")

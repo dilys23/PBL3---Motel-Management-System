@@ -60,10 +60,8 @@ namespace PBL3___Motel_Management_System.View
                     }
                 }
             }
-
-            //dgvChiSoDien.CellContentClick += DgvChisoDien_CellContentClick;
-            var Sua = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-create-25.png");
-            var Xoa = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
+            var Sua = System.Drawing.Image.FromFile(@"D:\PBLproject\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-create-25.png");
+            var Xoa = System.Drawing.Image.FromFile(@"D:\PBLproject\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
             dgvChiSoDien.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dv.dgvIcons_CellPainting1(dgvChiSoDien, e, Sua, Xoa));
         }
         public void Setcbb()
@@ -72,53 +70,38 @@ namespace PBL3___Motel_Management_System.View
             cbbPhongTro.Items.Clear();
             QLBLL qLBLL = new QLBLL();
             cbbDayTro.Items.AddRange(qLBLL.GetCbbDayTro().ToArray());
+            cbbTinhTrang.Items.AddRange(qLBLL.GetCbbTinhTrang().ToArray());
             cbbDayTro.SelectedIndex = 0;
-            cbbTinhTrang.Items.Add(new ViewCbb { key = "-1", value = "All" });
-            cbbTinhTrang.Items.Add(new ViewCbb {key = "1", value = "Đã xác thực" });
-            cbbTinhTrang.Items.Add(new ViewCbb {key = "2", value = "Chưa xác thực" });
             cbbTinhTrang.SelectedIndex = 0;
         }
         private void iconButton2_Click(object sender, EventArgs e)
         {
             tc.openChildForm1(new ThemCSDien(null,LoadForm), panelChisoDien);
         }
-
         private void iconButton1_Click(object sender, EventArgs e)
         {
             if (dgvChiSoDien.CurrentRow.Cells[9].Value.ToString() != "Đã xác thực")
             {
                 QLBLL qLBLL = new QLBLL();
                 string id = dgvChiSoDien.CurrentRow.Cells[0].Value.ToString();
-                ChiTietSuDungDichVu dv = qLBLL.GetChiTietSuDungDichVuByIdBLL(id);
-                ChiTietDichVu ctdv = qLBLL.GetChiTietDichVuById(dv.MaCHiTietDichVu);
-                List<ChiTietSuDungDichVu> list = qLBLL.GetChiTietSuDungDichVuTimKiem(dv.ThoiGian,"-1",ctdv.MaPhongTro,"1");
-                List<ChiTietSuDungDichVu> myList = new List<ChiTietSuDungDichVu>();
-                foreach(ChiTietSuDungDichVu ct in list)
+                if (qLBLL.ChoPhepXacThucChiSo(id, "001"))
                 {
-                    if(qLBLL.GetChiTietDichVuById(ct.MaCHiTietDichVu).MaDichVu == "001") myList.Add(ct);
-                }
-                if(myList.Count == 0)
-                {
+                    ChiTietSuDungDichVu dv = qLBLL.GetChiTietSuDungDichVuByIdBLL(id);
                     dv.TinhTrang = true;
                     qLBLL.UpdateChiTietSuDungDichVu(dv);
-                    MessageBox.Show("Xác thực thành công","Thông báo");
+                    MessageBox.Show("Xác thực thành công", "Thông báo");
                     LoadForm(null);
                 }
-
                 else
                 {
                     MessageBox.Show("Phòng hiện tại của bạn đã có một chi tiết được xác nhận!!!", "Thông báo");
                 }
-
             } 
             else
             {
                 MessageBox.Show("Dịch vụ hiện tại đã được xác thực", "Thông báo");
             }
-
-
         }
-
         private void cbbDayTro_SelectedIndexChanged(object sender, EventArgs e)
         {
             QLBLL qLBLL = new QLBLL();
@@ -205,24 +188,19 @@ namespace PBL3___Motel_Management_System.View
                 {
                     if (dgvChiSoDien.CurrentRow.Cells[9].Value.ToString() == "Chưa xác thực")
                     {
-                    string id = dgvChiSoDien.CurrentRow.Cells[0].Value.ToString();
-                    QLBLL qLBLL = new QLBLL();
-                    qLBLL.DelChiTietSuDungDichVu(id);
-                    dgvChiSoDien.Rows.RemoveAt(e.RowIndex);
-                    MessageBox.Show("Xóa chỉ số điện thành công", "Thông báo");
-                    LoadForm(null);
-                }
+                        string id = dgvChiSoDien.CurrentRow.Cells[0].Value.ToString();
+                        QLBLL qLBLL = new QLBLL();
+                        qLBLL.DelChiTietSuDungDichVu(id);
+                        dgvChiSoDien.Rows.RemoveAt(e.RowIndex);
+                        MessageBox.Show("Xóa chỉ số điện thành công", "Thông báo");
+                        LoadForm(null);
+                    }
                     else
                     {
                         MessageBox.Show("Hóa đơn đã được xác thực!! Không thể xóa", "Thông báo");
                     }
                 }
             
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

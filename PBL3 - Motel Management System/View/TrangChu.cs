@@ -158,31 +158,13 @@ namespace PBL3___Motel_Management_System
                         this.Padding = new Padding(borderSize);
                     break;
             }
-        }
-        public void customDGV(DataGridView dgv)
-        {
-           dgv.DefaultCellStyle.Font = new Font("Tahoma", 10);
-           dgv.DefaultCellStyle.ForeColor = Color.Blue;
-            dgv.DefaultCellStyle.BackColor = Color.Beige;
-            dgv.DefaultCellStyle.SelectionForeColor = Color.AliceBlue;
-            dgv.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
-            dgv.RowTemplate.Height = 35;
-            dgv.RowTemplate.MinimumHeight = 20;
-        }
-        //public void ResizeColumn()
-        //{
-        //    dgvDoanhThu.Columns["STT"].Width = 50;
-        //    dgvDoanhThu.Columns["DayTro"].Width = 240;
-        //    dgvDoanhThu.Columns["PhongTro"].Width = 80;
-        //    dgvDoanhThu.Columns["TongTien"].Width = 80;
-        //}
-
-        
+        }    
             private void LoadForm()
-        {
+            {
+            QLBLL qLBLL = new QLBLL();
             dgvSoLuong.Rows.Clear();    
             DataTable dt = new DataTable();
-            customDGV(dgvTinhTrang);
+            qLBLL.customDGV(dgvTinhTrang);
             dt.Columns.AddRange(new DataColumn[]
                 {
                     new DataColumn{ColumnName = "MaPhongTro",DataType = typeof(string)},
@@ -191,7 +173,7 @@ namespace PBL3___Motel_Management_System
                     new DataColumn{ColumnName = "Tên phòng trọ",DataType = typeof(string)},
                     new DataColumn{ColumnName = "Tình trạng",DataType = typeof(string)},
                 });
-            QLBLL qLBLL = new QLBLL();
+            
             int i = 0;
             foreach (string idp in qLBLL.DgvPhongTro(null))
             {
@@ -211,16 +193,17 @@ namespace PBL3___Motel_Management_System
         }
         private void LoadForm1()
         {
+            QLBLL qLBLL = new QLBLL();
             dgvSoLuong.Rows.Clear();
             DataTable dt = new DataTable();
-            customDGV(dgvSoLuong);
+            qLBLL.customDGV(dgvSoLuong);
             dt.Columns.AddRange(new DataColumn[]
             {
         new DataColumn{ColumnName = "Tình trạng", DataType = typeof(string)},
         new DataColumn{ColumnName = "Số lượng phòng", DataType = typeof(int)}
             });
 
-            QLBLL qLBLL = new QLBLL();
+            
             List<string> phongTroList = qLBLL.DgvPhongTro(null);
 
             // Tạo một Dictionary để lưu trữ số lượng phòng theo tình trạng
@@ -328,9 +311,6 @@ namespace PBL3___Motel_Management_System
         {
             AdjustForm();
         }
-
-      
-
       
         private void btnMaximized_Click(object sender, EventArgs e)
         {
@@ -377,11 +357,8 @@ namespace PBL3___Motel_Management_System
             childForm.Dock = DockStyle.Fill;
             p.Controls.Add(childForm);
             p.Tag = childForm;
-            //panelDesktop.Controls.Add(childForm);
-            //panelDesktop.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-
         }
 
         private void iconButton10_Click(object sender, EventArgs e)
@@ -423,13 +400,10 @@ namespace PBL3___Motel_Management_System
 
         private void btnTrangchu_Click(object sender, EventArgs e)
         {
-            activeForm.Close();
-        }
-
-      
-        private void btnDay_Click(object sender, EventArgs e)
-        {
-            //openChildForm(new Daytro());
+            if(activeForm != null)
+            {
+                activeForm.Close();
+            }
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -476,7 +450,6 @@ namespace PBL3___Motel_Management_System
 
 
         }
-        // taiKhoan1.BringToFront();
 
 
     }

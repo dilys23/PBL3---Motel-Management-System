@@ -76,8 +76,7 @@ namespace PBL3___Motel_Management_System.View
         private void dgvDichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-               
+            { 
                 string columnName = dgvDichVu.Columns[e.ColumnIndex].Name;
 
                if (columnName == "btnXoa")

@@ -69,23 +69,15 @@ namespace PBL3___Motel_Management_System.View
         {
             lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
-            Image image1 = Image.FromFile("D:\\PBL3\\PBL3_Main\\PBL3 - Motel Management System\\Icons\\icons8-home-30.png" + "    ");
+            Image image1 = Image.FromFile("D:\\PBLproject\\PBL3_Main\\PBL3 - Motel Management System\\Icons\\icons8-home-30.png" + "    ");
             lbl.Image = image1;
             lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            // Set the size of the label to accommodate the bitmap size.
             lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             lbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             lbl.TabIndex = 0;
-            // lbl.Size = new Size(50,50 );
             lbl.Size = new System.Drawing.Size(110, 50);
             panelTenPhongTro.Controls.Add(lbl);
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private Form activeForm = null;
         public void openChildForm1(Form childForm, System.Windows.Forms.Panel p)
         {
@@ -101,13 +93,6 @@ namespace PBL3___Motel_Management_System.View
             childForm.Show();
 
         }
-        //TrangChu tc = new TrangChu();
-      
-        private void btnChiTiet_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCoc_Click_1(object sender, EventArgs e)
         {
             QLBLL qLBLL = new QLBLL();
@@ -150,9 +135,6 @@ namespace PBL3___Motel_Management_System.View
                 MessageBox.Show("Phòng hiện tại đã được cho thuê", "Thông báo");
             }
         }
-
-      
-
         private void btnXoaPhong_Click(object sender, EventArgs e)
         {
             QLBLL qLBLL = new QLBLL();
@@ -174,7 +156,6 @@ namespace PBL3___Motel_Management_System.View
                
             }
         }
-
         private void btnSuaPhong_Click(object sender, EventArgs e)
         {
             QLBLL qLBLL = new QLBLL();

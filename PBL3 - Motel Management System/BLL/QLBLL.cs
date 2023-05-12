@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Metadata.Edm;
 using System.Diagnostics.Eventing.Reader;
+using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography;
@@ -43,6 +44,23 @@ namespace PBL3___Motel_Management_System.BLL
             {
                 list.Add(new ViewCbb { key = dt.MaDayTro, value = dt.TenDayTro });//ok
             }
+            return list;
+        }
+        public List<ViewCbb> GetCbbTinhTrang()
+        {
+            List<ViewCbb> list = new List<ViewCbb>();
+            list.Add(new ViewCbb { key = "-1", value = "All" });
+            list.Add(new ViewCbb { key = "1", value = "Đã xác thực" });
+            list.Add(new ViewCbb { key = "2", value = "Chưa xác thực" });
+            return list;
+        }
+        public List<ViewCbb> GetCbbTinhTrangPhong()
+        {
+            List<ViewCbb> list = new List<ViewCbb>();
+            list.Add(new ViewCbb { key = "-1", value = "All" });
+            list.Add(new ViewCbb { key = "1", value = "Đã cho thuê" });
+            list.Add(new ViewCbb { key = "0", value = "Còn trống" });
+            list.Add(new ViewCbb { key = "2", value = "Đã cọc" });
             return list;
         }
         public DayTro GetDayTroById(string id)
@@ -1055,6 +1073,49 @@ namespace PBL3___Motel_Management_System.BLL
             QLDAL qLDAL = new QLDAL();
             return qLDAL.ThongKe(thang);
         }
-       
+        public bool ChoPhepXacThucChiSo(string id, string MaChiSo)
+        {
+            ChiTietSuDungDichVu dv = GetChiTietSuDungDichVuByIdBLL(id);
+            ChiTietDichVu ctdv = GetChiTietDichVuById(dv.MaCHiTietDichVu);
+            List<ChiTietSuDungDichVu> list = GetChiTietSuDungDichVuTimKiem(dv.ThoiGian, "-1", ctdv.MaPhongTro, "1");
+            List<ChiTietSuDungDichVu> mylist = new List<ChiTietSuDungDichVu>();
+            foreach(ChiTietSuDungDichVu ct in list)
+            {
+                if(GetChiTietDichVuById(ct.MaCHiTietDichVu).MaDichVu == MaChiSo) mylist.Add(ct);
+            }
+            if(mylist.Count == 0)
+            { 
+                return true;
+            }
+            return false;
+
+        }
+        public bool ChoPhepXacThucHoaDon(string id)
+        {
+            HoaDon hd = GetHoaDonById(id);
+            List<HoaDon> list = GetHoaDonTimKiem(hd.ThangChiTra, "0", hd.MaPhongTro, "1");
+            if(list.Count == 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public string GetDiaChiByIdDay(string id)
+        {
+            DayTro dt = GetDayByIdDay(id);
+            string DiaChi = "    " + dt.TenDuong + " " + dt.TenHuyen + " " + dt.TenThanhPho;
+            return DiaChi;
+        }
+        public void customDGV(DataGridView dgv)
+        {
+            dgv.DefaultCellStyle.Font = new Font("Tahoma", 10);
+            dgv.DefaultCellStyle.ForeColor = Color.Blue;
+            dgv.DefaultCellStyle.BackColor = Color.Beige;
+            dgv.DefaultCellStyle.SelectionForeColor = Color.AliceBlue;
+            dgv.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
+            dgv.RowTemplate.Height = 35;
+            dgv.RowTemplate.MinimumHeight = 20;
+        }
+
     }
 }

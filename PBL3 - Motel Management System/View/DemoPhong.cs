@@ -28,28 +28,19 @@ namespace PBL3___Motel_Management_System.View
             InitializeComponent();
             LoadForm(null);
             SetCbb();
-            
         }
-
         private void SetCbb()
         {
             cbbDayTro.Items.Clear();
             cbbTinhTrang.Items.Clear();
             QLBLL qLBLL = new QLBLL();
             cbbDayTro.Items.AddRange(qLBLL.GetCbbDayTro().ToArray());
+            cbbTinhTrang.Items.AddRange(qLBLL.GetCbbTinhTrangPhong().ToArray());
             cbbDayTro.SelectedIndex = 0;
-            cbbTinhTrang.Items.AddRange(new ViewCbb[]
-            {
-                new ViewCbb{key = "-1",value = "All"},
-                new ViewCbb{key = "1", value = "Đã cho thuê"},
-                new ViewCbb{key = "0", value = "Còn trống"},
-                new ViewCbb{key = "2", value = "Đã cọc"},
-            });
             cbbTinhTrang.SelectedIndex = 0;
         }
         public void LoadForm(string txt)
-        {
-            
+        {      
             panelBtnDay.Controls.Clear();
             panelPhong.AutoScroll = false;
             panelPhong.HorizontalScroll.Visible = false;
@@ -66,7 +57,6 @@ namespace PBL3___Motel_Management_System.View
                 this.btnThemPhong.IconFont = FontAwesome.Sharp.IconFont.Auto;
                 this.btnThemPhong.IconSize = 25;
                 btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-                // "    " + btn.IconSize = 25;
                 btn.Size = new System.Drawing.Size(80, 50);
                 btn.TabIndex = 21;
                 btn.Text = dt.TenDayTro;
@@ -123,17 +113,13 @@ namespace PBL3___Motel_Management_System.View
                     lbl.Name = nguoi.MaNguoi;
                     lbl.Text = "   " + nguoi.Ten;
                     lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    Image image1 = Image.FromFile("D:\\PBL3\\PBL3_Main\\PBL3 - Motel Management System\\Icons\\icons8-customer-20.png" + "    ");
+                    Image image1 = Image.FromFile("D:\\PBLproject\\PBL3_Main\\PBL3 - Motel Management System\\Icons\\icons8-customer-20.png" + "    ");
                     lbl.Image = image1;
                     lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-                    // Set the size of the label to accommodate the bitmap size.
                     lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
                     lbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
                     lbl.TabIndex = 0;
-                    // lbl.Size = new Size(50,50 );
                     lbl.Size = new System.Drawing.Size(50, 80);
-                    // Initialize the label control's Image property.
-
                     lbl.Visible = true;
                     p.SetPanelKhach(lbl);
                 }
@@ -147,11 +133,10 @@ namespace PBL3___Motel_Management_System.View
         {
             if(ClickBtn != null)
             {
-            QLBLL qLBLL = new QLBLL();
-            DayTro dt = qLBLL.GetDayTroById(ClickBtn.Name);
-            tc.openChildForm1(new ThemPhong(dt.MaDayTro,null,LoadForm, SuKien), panelChinh);
-            }
-            
+                QLBLL qLBLL = new QLBLL();
+                DayTro dt = qLBLL.GetDayTroById(ClickBtn.Name);
+                tc.openChildForm1(new ThemPhong(dt.MaDayTro,null,LoadForm, SuKien), panelChinh);
+            }         
         }
 
         private void btnThemday_Click(object sender, EventArgs e)
@@ -168,9 +153,7 @@ namespace PBL3___Motel_Management_System.View
                 DayTro dt = qLBLL.GetDayTroById(ClickBtn.Name);
                 tc.openChildForm1(new ThemDay(dt.MaDayTro, LoadForm, SuKien), panelChinh);
             }
-
         }
-
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             string idDay = ((ViewCbb)(cbbDayTro.SelectedItem)).key;
@@ -179,14 +162,11 @@ namespace PBL3___Motel_Management_System.View
             panelPhong.Controls.Clear();
             if(idDay != "-1")
             {
-                DayTro dt = new DayTro();
-                dt = qLBLL.GetDayByIdDay(idDay);
-                string DiaChi = "    " + dt.TenDuong + " " + dt.TenHuyen + " " + dt.TenThanhPho;
-                lblDiaChi.Text = DiaChi;
+                lblDiaChi.Text = qLBLL.GetDiaChiByIdDay(idDay);
             }
             else
             {
-            lblDiaChi.Text = "";
+                lblDiaChi.Text = "";
             }
             foreach (PhongTro pt in qLBLL.PhongTroTimKiem(idDay,idTinhTrang,txtTimKiem.Text))
             {
@@ -213,17 +193,13 @@ namespace PBL3___Motel_Management_System.View
                     lbl.Name = nguoi.MaNguoi;
                     lbl.Text = "   " + nguoi.Ten;
                     lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    Image image1 = Image.FromFile("E:\\PBL3_MAIN\\Icons\\icons8-customer-20.png" + "    ");
+                    Image image1 = Image.FromFile("D:\\PBLproject\\PBL3_Main\\PBL3 - Motel Management System\\Icons\\icons8-customer-20.png" + "    ");
                     lbl.Image = image1;
                     lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-                    // Set the size of the label to accommodate the bitmap size.
                     lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
                     lbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
                     lbl.TabIndex = 0;
-                    // lbl.Size = new Size(50,50 );
                     lbl.Size = new System.Drawing.Size(50, 80);
-                    // Initialize the label control's Image property.
-
                     lbl.Visible = true;
                     p.SetPanelKhach(lbl);
                 }
@@ -233,12 +209,6 @@ namespace PBL3___Motel_Management_System.View
             panelPhong.Invalidate();
 
         }
-
-        private void btnXoaDay_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnXoaDay_Click_1(object sender, EventArgs e)
         {
             if (ClickBtn != null)
@@ -252,15 +222,12 @@ namespace PBL3___Motel_Management_System.View
                     {
                         qLBLL.DelDayTroBll(ClickBtn.Name);
                         LoadForm(null);
-                    }
-                    
+                    }              
                 }
                 else
                 {
                     MessageBox.Show("Dãy có phòng đang thuê không được xóa ");
-                }
-               
-               
+                } 
             }
         }
     }
