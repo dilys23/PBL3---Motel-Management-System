@@ -39,32 +39,32 @@ namespace PBL3___Motel_Management_System
             this.dgvHoaDon.RowTemplate.Height = 35;
             this.dgvHoaDon.RowTemplate.MinimumHeight = 20;
 
-            if (dgvHoaDon.Columns["btnSua"] == null)
-            {
-                DataGridViewButtonColumn btnSua = new DataGridViewButtonColumn();
-                {
-                    btnSua.HeaderText = "";
-                    btnSua.Name = "btnSua";
-                    //btnSua.Text = "Sửa";
-                    btnSua.UseColumnTextForButtonValue = true;
-                    btnSua.DisplayIndex = 0;
-                    this.dgvHoaDon.Columns.Add(btnSua);
+            //if (dgvHoaDon.Columns["btnSua"] == null)
+            //{
+            //    DataGridViewButtonColumn btnSua = new DataGridViewButtonColumn();
+            //    {
+            //        btnSua.HeaderText = "";
+            //        btnSua.Name = "btnSua";
+            //        //btnSua.Text = "Sửa";
+            //        btnSua.UseColumnTextForButtonValue = true;
+            //        btnSua.DisplayIndex = 0;
+            //        this.dgvHoaDon.Columns.Add(btnSua);
 
-                }
-            }
-            if (dgvHoaDon.Columns["btnXoa"] == null)
-            {
-                DataGridViewButtonColumn btnXoa = new DataGridViewButtonColumn();
-                {
-                    btnXoa.HeaderText = "";
-                    btnXoa.Name = "btnXoa";
-                   // btnXoa.Text = "Xóa";
-                    btnXoa.UseColumnTextForButtonValue = true;
-                    btnXoa.DisplayIndex = 1;
-                    this.dgvHoaDon.Columns.Add(btnXoa);
+            //    }
+            //}
+            //if (dgvHoaDon.Columns["btnXoa"] == null)
+            //{
+            //    DataGridViewButtonColumn btnXoa = new DataGridViewButtonColumn();
+            //    {
+            //        btnXoa.HeaderText = "";
+            //        btnXoa.Name = "btnXoa";
+            //       // btnXoa.Text = "Xóa";
+            //        btnXoa.UseColumnTextForButtonValue = true;
+            //        btnXoa.DisplayIndex = 1;
+            //        this.dgvHoaDon.Columns.Add(btnXoa);
 
-                }
-            }
+            //    }
+            //}
            
             QLBLL qLBLL = new QLBLL();
             if(txt == null)

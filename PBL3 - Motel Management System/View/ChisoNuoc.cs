@@ -77,8 +77,8 @@ namespace PBL3___Motel_Management_System
                 }
             }
            
-            var Sua = System.Drawing.Image.FromFile(@"D:\pblproject\pbl3_main\PBL3 - Motel Management System\icons\icons8-create-25.png");
-            var Xoa = System.Drawing.Image.FromFile(@"D:\pblproject\pbl3_main\PBL3 - Motel Management System\icons\icons8-delete-25.png");
+            var Sua = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-create-25.png");
+            var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-delete-25.png");
             dgvChiSoNuoc.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dv.dgvIcons_CellPainting1(dgvChiSoNuoc, e, Sua, Xoa));
 
         }
