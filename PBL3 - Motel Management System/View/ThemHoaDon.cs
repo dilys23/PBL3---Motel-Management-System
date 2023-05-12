@@ -96,7 +96,7 @@ namespace PBL3___Motel_Management_System.View
                 else if(!status)
                 {
                     status = true;
-                    List<ChiTietSuDungDichVu> list = qLBLL.GetChiTietSuDungDichVuTimKiem(thang, "0", idPhong, "1");
+                    List<ChiTietSuDungDichVu> list = qLBLL.GetChiTietSuDungDichVuTimKiem(thang, "-1", idPhong, "1");
                     foreach(ChiTietSuDungDichVu dv in list)
                     {
                         ChiTietDichVu ct = qLBLL.GetChiTietDichVuById(dv.MaCHiTietDichVu);
@@ -105,8 +105,6 @@ namespace PBL3___Motel_Management_System.View
                     }
 
                 }
-                
-
             }
             SetTxtTienDichVu();
 
@@ -151,7 +149,7 @@ namespace PBL3___Motel_Management_System.View
             QLBLL qLBLL = new QLBLL();
             cbbPhongTro.Items.Clear();
             string id = ((ViewCbb)cbbDayTro.SelectedItem).key;
-            if (id == "0")
+            if (id == "-1")
             {
 
                 foreach (PhongTro pt in qLBLL.GetAllPhongTro())
