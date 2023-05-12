@@ -367,6 +367,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\QLBLL.cs" />
+    <Compile Include="BLL\QLDichVuBLL.cs" />
+    <Compile Include="BLL\QLHoaDonBLL.cs" />
+    <Compile Include="BLL\QLPhongBLL.cs" />
     <Compile Include="DAL\ChiTietDichVu.cs">
       <DependentUpon>DataPbl.tt</DependentUpon>
     </Compile>
@@ -520,30 +523,6 @@
     <Compile Include="View\KhachHang\HoaDonPhong.Designer.cs">
       <DependentUpon>HoaDonPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\SuaCSDien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\SuaCSDien.Designer.cs">
-      <DependentUpon>SuaCSDien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\SuaCSNuoc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\SuaCSNuoc.Designer.cs">
-      <DependentUpon>SuaCSNuoc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\SuaDay.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\SuaDay.Designer.cs">
-      <DependentUpon>SuaDay.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\SuaHoaDon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\SuaHoaDon.Designer.cs">
-      <DependentUpon>SuaHoaDon.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\SuaHopDong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -609,12 +588,6 @@
     </Compile>
     <Compile Include="View\SuaDichVu.Designer.cs">
       <DependentUpon>SuaDichVu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\SuaPhong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\SuaPhong.Designer.cs">
-      <DependentUpon>SuaPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ThemDay.cs">
       <SubType>Form</SubType>
@@ -766,18 +739,6 @@
     <EmbeddedResource Include="View\KhachHang\HoaDonPhong.resx">
       <DependentUpon>HoaDonPhong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\SuaCSDien.resx">
-      <DependentUpon>SuaCSDien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\SuaCSNuoc.resx">
-      <DependentUpon>SuaCSNuoc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\SuaDay.resx">
-      <DependentUpon>SuaDay.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\SuaHoaDon.resx">
-      <DependentUpon>SuaHoaDon.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\SuaHopDong.resx">
       <DependentUpon>SuaHopDong.cs</DependentUpon>
     </EmbeddedResource>
@@ -810,9 +771,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\SuaDichVu.resx">
       <DependentUpon>SuaDichVu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\SuaPhong.resx">
-      <DependentUpon>SuaPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ThemDay.resx">
       <DependentUpon>ThemDay.cs</DependentUpon>

@@ -69,7 +69,7 @@ namespace PBL3___Motel_Management_System.View
         {
             lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
-            Image image1 = Image.FromFile("E:\\PBL3_MAIN\\Icons\\icons8-home-30.png" + "    ");
+            Image image1 = Image.FromFile("D:\\PBL3\\PBL3_Main\\PBL3 - Motel Management System\\Icons\\icons8-home-30.png" + "    ");
             lbl.Image = image1;
             lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             // Set the size of the label to accommodate the bitmap size.
@@ -177,7 +177,9 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnSuaPhong_Click(object sender, EventArgs e)
         {
-           tc.openChildForm1(new SuaPhong(IdPhong,LoadForm), panel);
+            QLBLL qLBLL = new QLBLL();
+            string idDay = qLBLL.GetDayTroByIdPhong(IdPhong).MaDayTro;
+           tc.openChildForm1(new ThemPhong(idDay,IdPhong,LoadForm,null), panel);
         }
 
         private void btnTra_Click(object sender, EventArgs e)

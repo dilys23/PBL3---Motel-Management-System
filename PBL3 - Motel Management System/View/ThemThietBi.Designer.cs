@@ -144,9 +144,9 @@
             this.label6.ForeColor = System.Drawing.Color.Chocolate;
             this.label6.Location = new System.Drawing.Point(24, 82);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(178, 26);
+            this.label6.Size = new System.Drawing.Size(109, 26);
             this.label6.TabIndex = 56;
-            this.label6.Text = "THÊM THIẾT BỊ";
+            this.label6.Text = "THIẾT BỊ";
             // 
             // errorProvider1
             // 

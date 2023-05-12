@@ -68,8 +68,8 @@ namespace PBL3___Motel_Management_System
                 }
             }
            
-            var Sua = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-create-25.png");
-            var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-delete-25.png");
+            var Sua = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-create-25.png");
+            var Xoa = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
             dgvHoaDon.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dv.dgvIcons_CellPainting1(dgvHoaDon, e,Sua, Xoa) );
         }
        
@@ -236,8 +236,6 @@ namespace PBL3___Motel_Management_System
                 }
                 else if (columnName == "btnXoa")
                 {
-                    // Lấy mã dịch vụ tương ứng với hàng đã được nhấp
-                    // string maDichVu = dgvDichVu.Rows[e.RowIndex].Cells["Mã dịch vụ"].Value.ToString();
                     if (dgvHoaDon.CurrentRow.Cells[7].Value.ToString() == "Chưa xác thực")
                     {
                         QLBLL qLBLL = new QLBLL();

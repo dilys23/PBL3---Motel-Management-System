@@ -57,10 +57,9 @@
             this.label6.ForeColor = System.Drawing.Color.Chocolate;
             this.label6.Location = new System.Drawing.Point(14, 40);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 23);
+            this.label6.Size = new System.Drawing.Size(135, 28);
             this.label6.TabIndex = 26;
-            this.label6.Text = "THÊM PHÒNG";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+            this.label6.Text = "PHÒNG TRỌ";
             // 
             // btnLuu
             // 
@@ -99,7 +98,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(291, 70);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 17);
+            this.label1.Size = new System.Drawing.Size(93, 20);
             this.label1.TabIndex = 28;
             this.label1.Text = "Tên phòng*";
             // 
@@ -108,7 +107,7 @@
             this.txtTenPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenPhong.Location = new System.Drawing.Point(428, 69);
             this.txtTenPhong.Name = "txtTenPhong";
-            this.txtTenPhong.Size = new System.Drawing.Size(225, 23);
+            this.txtTenPhong.Size = new System.Drawing.Size(225, 27);
             this.txtTenPhong.TabIndex = 29;
             // 
             // label2
@@ -117,7 +116,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(707, 71);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 17);
+            this.label2.Size = new System.Drawing.Size(67, 20);
             this.label2.TabIndex = 30;
             this.label2.Text = "Giá tiền";
             // 
@@ -127,7 +126,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(291, 122);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 17);
+            this.label3.Size = new System.Drawing.Size(76, 20);
             this.label3.TabIndex = 31;
             this.label3.Text = "Diện tích";
             // 
@@ -152,7 +151,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1109, 287);
             this.panel2.TabIndex = 46;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // btnThemAnh
             // 
@@ -183,7 +181,7 @@
             this.txtGiaTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGiaTien.Location = new System.Drawing.Point(852, 68);
             this.txtGiaTien.Name = "txtGiaTien";
-            this.txtGiaTien.Size = new System.Drawing.Size(225, 23);
+            this.txtGiaTien.Size = new System.Drawing.Size(225, 27);
             this.txtGiaTien.TabIndex = 48;
             // 
             // label9
@@ -193,7 +191,7 @@
             this.label9.ForeColor = System.Drawing.Color.Red;
             this.label9.Location = new System.Drawing.Point(291, 174);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(146, 17);
+            this.label9.Size = new System.Drawing.Size(170, 20);
             this.label9.TabIndex = 47;
             this.label9.Text = "(*) Thông tin bắt buộc";
             // 
@@ -202,7 +200,7 @@
             this.txtDienTich.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDienTich.Location = new System.Drawing.Point(428, 121);
             this.txtDienTich.Name = "txtDienTich";
-            this.txtDienTich.Size = new System.Drawing.Size(225, 23);
+            this.txtDienTich.Size = new System.Drawing.Size(225, 27);
             this.txtDienTich.TabIndex = 42;
             // 
             // label8
@@ -211,7 +209,7 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(707, 120);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(108, 17);
+            this.label8.Size = new System.Drawing.Size(126, 20);
             this.label8.TabIndex = 40;
             this.label8.Text = "Số người tối đa*";
             // 
@@ -220,7 +218,7 @@
             this.txtToiDa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtToiDa.Location = new System.Drawing.Point(852, 120);
             this.txtToiDa.Name = "txtToiDa";
-            this.txtToiDa.Size = new System.Drawing.Size(225, 23);
+            this.txtToiDa.Size = new System.Drawing.Size(225, 27);
             this.txtToiDa.TabIndex = 41;
             // 
             // errorProvider1
@@ -239,7 +237,6 @@
             this.Name = "ThemPhong";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThemPhong";
-            this.Load += new System.EventHandler(this.ThemPhong_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictutePhong)).EndInit();
