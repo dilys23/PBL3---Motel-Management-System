@@ -39,33 +39,6 @@ namespace PBL3___Motel_Management_System
             this.dgvHoaDon.RowTemplate.Height = 35;
             this.dgvHoaDon.RowTemplate.MinimumHeight = 20;
 
-            //if (dgvHoaDon.Columns["btnSua"] == null)
-            //{
-            //    DataGridViewButtonColumn btnSua = new DataGridViewButtonColumn();
-            //    {
-            //        btnSua.HeaderText = "";
-            //        btnSua.Name = "btnSua";
-            //        //btnSua.Text = "Sửa";
-            //        btnSua.UseColumnTextForButtonValue = true;
-            //        btnSua.DisplayIndex = 0;
-            //        this.dgvHoaDon.Columns.Add(btnSua);
-
-            //    }
-            //}
-            //if (dgvHoaDon.Columns["btnXoa"] == null)
-            //{
-            //    DataGridViewButtonColumn btnXoa = new DataGridViewButtonColumn();
-            //    {
-            //        btnXoa.HeaderText = "";
-            //        btnXoa.Name = "btnXoa";
-            //       // btnXoa.Text = "Xóa";
-            //        btnXoa.UseColumnTextForButtonValue = true;
-            //        btnXoa.DisplayIndex = 1;
-            //        this.dgvHoaDon.Columns.Add(btnXoa);
-
-            //    }
-            //}
-           
             QLBLL qLBLL = new QLBLL();
             if(txt == null)
             {
@@ -281,8 +254,29 @@ namespace PBL3___Motel_Management_System
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
-        {
+        {           
+              if (dgvHoaDon.CurrentRow.Cells[7].Value.ToString() == "Chưa xác thực")
+                {
+                    MessageBox.Show("Hóa đơn hiện tại chưa được xác thực nên không thể thanh toán!!Vui lòng bỏ xác thực trước khi Thanh toán", "Thông báo");
+                }
+              else
+                  {
+                double tongTien = Convert.ToDouble(dgvHoaDon.CurrentRow.Cells[6].Value.ToString());
+                double daThanhToan = Convert.ToDouble(dgvHoaDon.CurrentRow.Cells[8].Value.ToString());
 
+                if (daThanhToan >= tongTien)
+                {
+                    MessageBox.Show("Đã thanh toán đủ tiền cho hóa đơn này", "Thông báo");
+                }
+                else
+                {
+                    string id = dgvHoaDon.CurrentRow.Cells[0].Value.ToString();
+                    tc.openChildForm1(new ThanhToan(id, LoadForm), panelHD);
+                }
+            }
+
+            
+              
         }
     }
 }
