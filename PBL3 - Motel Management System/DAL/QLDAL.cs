@@ -895,22 +895,40 @@ namespace PBL3___Motel_Management_System.DAL
                 return s;
             }
         }
-        public List<object> ThongKe(string MaDT,DateTime thangnam)
+        public List<object> ThongKe(string thang)
         {
            using(DataPbl data= new DataPbl())
            {
-                if (MaDT != null)
-                {
+               
                     var s = data.HoaDon.ToList()
-                        .Where(p => p.PhongTro.MaDayTro == MaDT && p.NgayTao == thangnam.Day.ToString())
-                        .GroupBy(p => p.PhongTro.MaDayTro)
-                        .Select(p => new { MaDayTro = p.Key, TongTien = p.Sum(k => k.TongTien) })
+                        .Where(p =>  p.ThangChiTra == thang)
+                        .GroupBy(p => p.PhongTro.DayTro.TenDayTro)
+                        .Select(p => new { TenDayTro = p.Key, TongTien = p.Sum(k => k.TongTien) })
                         .ToList<object>();
                     return s;
-                }
-                return null;
+               
            }
         }
+        public double GetTongTien(string madt)
+        {
+           
+            using(DataPbl data= new DataPbl())
+            {
+                double tong = 0;
+                List<string> listMaHoaDon = GetHoaDonByIdDay(madt);
+                List<HoaDon> listHoaDon = new List<HoaDon>();
 
+                foreach (string maHoaDon in listMaHoaDon)
+                {
+                    HoaDon hoaDon = GetHoaDonByIdDal(maHoaDon);
+                    listHoaDon.Add(hoaDon);
+                }
+
+                tong = listHoaDon.Sum(hd => hd.TongTien);
+
+                return tong;
+            }
+            
+        }
     }
 }

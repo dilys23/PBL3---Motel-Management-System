@@ -1031,10 +1031,15 @@ namespace PBL3___Motel_Management_System.BLL
             QLDAL qLDAL = new QLDAL();
             return qLDAL.GetNguoiByIdHopDong(MaHd);
         }
-       public List<object> ThongKe(string MaDT,DateTime thangnam)
+       public List<object> ThongKe(string thang)
         {
             QLDAL qLDAL = new QLDAL();
-            return qLDAL.ThongKe(MaDT,thangnam);
+            return qLDAL.ThongKe(thang);
+        }
+        public double GetTongTien(string madt)
+        {
+            QLDAL qLDAL = new QLDAL();
+            return qLDAL.GetTongTien(madt);
         }
     }
 }
