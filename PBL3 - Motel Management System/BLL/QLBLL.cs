@@ -198,6 +198,11 @@ namespace PBL3___Motel_Management_System.BLL
             QLDAL qLDAL = new QLDAL();
             return qLDAL.GetIdChiTietDichVuNuocByIdPhongDal(idPhong);
         }
+        public ChiTietSuDungDichVu GetChiTietSudungDichVuById(string id)
+        {
+            QLDAL qLDAL= new QLDAL();   
+            return qLDAL.GetChiTietSuDungDichVuById(id);
+        }
         public string TaoIdDayTro()
         {
             string id = null;
@@ -739,6 +744,11 @@ namespace PBL3___Motel_Management_System.BLL
             QLDAL qLDAL = new QLDAL();
             qLDAL.DelChiTietDichVuDal(id);
         }
+        public void DelChiTietSuDungDichVu(string id)
+        {
+            QLDAL qLDAL= new QLDAL();
+            qLDAL.DelChiTietSuDungDichVuDal(id);
+        }
         public void DelDichVu(string id)
         {
             QLDAL qLDAL = new QLDAL();
@@ -748,6 +758,11 @@ namespace PBL3___Motel_Management_System.BLL
         {
             QLDAL qLDAL = new QLDAL();
             return qLDAL.GetAllIdChiTietDichVuByIdDichVu(id);
+        }
+        public List<string> GetAllChiTietSuDungDichVubyIdChiTiet (string id)
+        {
+            QLDAL qLDAL= new QLDAL();   
+            return qLDAL.GetChiTietSuDungDichVuByIdChitiet(id);
         }
         public List<DayTro> GetAllDayTroBll()
         {
@@ -759,6 +774,13 @@ namespace PBL3___Motel_Management_System.BLL
             foreach (string Id in GetAllChiTietDichVuByIdDichVu(id))
             {
                 DelChiTietDichVu(Id);
+            }
+        }
+        public void DelChiTietSuDungDichVubyId(string id)
+        {
+            foreach (string Id in GetAllChiTietSuDungDichVubyIdChiTiet(id)) ;
+            {
+                DelChiTietSuDungDichVubyId(id);
             }
         }
         public void DelNguoiBll(string id)

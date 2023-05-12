@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PBL3___Motel_Management_System.View
+namespace PBL3___Motel_Management_System.View.KhachHang
 {
-    public partial class PKhach : Form
+    public partial class HoaDonPhong : Form
     {
-        public PKhach()
+        public HoaDonPhong()
         {
             InitializeComponent();
         }

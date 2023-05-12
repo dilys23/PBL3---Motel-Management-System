@@ -25,7 +25,7 @@ namespace PBL3___Motel_Management_System.View
         {
             ThuePhong tp = new ThuePhong();
             tp.hopDong.MaPhongTro = idPhong;
-            ChitietHD ct = new ChitietHD(tp, LoadForm);
+            ChitietHopDongPhong ct = new ChitietHopDongPhong(tp, LoadForm);
             tc.openChildForm1(ct, panelChitietPT);
 
         }
@@ -34,7 +34,7 @@ namespace PBL3___Motel_Management_System.View
         { 
             ThuePhong tp = new ThuePhong();
             tp.hopDong.MaPhongTro =idPhong;
-            ChitietHD ct= new ChitietHD(tp,LoadForm);
+            ChitietHopDongPhong ct= new ChitietHopDongPhong(tp,LoadForm);
             tc.openChildForm1(ct, panelChitietPT);
            
         }

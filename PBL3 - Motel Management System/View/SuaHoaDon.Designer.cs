@@ -106,6 +106,7 @@
             this.iconButton4.Size = new System.Drawing.Size(52, 37);
             this.iconButton4.TabIndex = 57;
             this.iconButton4.UseVisualStyleBackColor = false;
+            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
             // 
             // panelThem
             // 
@@ -190,7 +191,7 @@
             // 
             this.btnBoChon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnBoChon.Location = new System.Drawing.Point(423, 219);
-            this.btnBoChon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBoChon.Margin = new System.Windows.Forms.Padding(4);
             this.btnBoChon.Name = "btnBoChon";
             this.btnBoChon.Size = new System.Drawing.Size(100, 28);
             this.btnBoChon.TabIndex = 99;
@@ -201,7 +202,7 @@
             // 
             this.btnChon.BackColor = System.Drawing.Color.Tomato;
             this.btnChon.Location = new System.Drawing.Point(305, 219);
-            this.btnChon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnChon.Margin = new System.Windows.Forms.Padding(4);
             this.btnChon.Name = "btnChon";
             this.btnChon.Size = new System.Drawing.Size(100, 28);
             this.btnChon.TabIndex = 98;
@@ -226,7 +227,7 @@
             this.TinhTrang});
             this.dgvDichVu.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvDichVu.Location = new System.Drawing.Point(30, 270);
-            this.dgvDichVu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDichVu.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDichVu.Name = "dgvDichVu";
             this.dgvDichVu.RowHeadersWidth = 51;
             this.dgvDichVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -278,7 +279,7 @@
             // dtpNgayLap
             // 
             this.dtpNgayLap.Location = new System.Drawing.Point(180, 161);
-            this.dtpNgayLap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpNgayLap.Margin = new System.Windows.Forms.Padding(4);
             this.dtpNgayLap.Name = "dtpNgayLap";
             this.dtpNgayLap.Size = new System.Drawing.Size(225, 22);
             this.dtpNgayLap.TabIndex = 96;

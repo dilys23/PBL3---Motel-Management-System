@@ -410,9 +410,6 @@
       <DependentUpon>DataPbl.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\QLDAL.cs" />
-    <Compile Include="DAL\sysdiagrams.cs">
-      <DependentUpon>DataPbl.tt</DependentUpon>
-    </Compile>
     <Compile Include="DAL\TaiKhoan.cs">
       <DependentUpon>DataPbl.tt</DependentUpon>
     </Compile>
@@ -445,11 +442,11 @@
     <Compile Include="View\ChitietDV.Designer.cs">
       <DependentUpon>ChitietDV.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ChitietHD.cs">
+    <Compile Include="View\ChitietHopDongPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ChitietHD.Designer.cs">
-      <DependentUpon>ChitietHD.cs</DependentUpon>
+    <Compile Include="View\ChitietHopDongPhong.Designer.cs">
+      <DependentUpon>ChitietHopDongPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ChitietHopDong.cs">
       <SubType>Form</SubType>
@@ -505,11 +502,23 @@
     <Compile Include="View\DoiMK.Designer.cs">
       <DependentUpon>DoiMK.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\PKhach.cs">
+    <Compile Include="View\KhachHang\ChitietDienPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\PKhach.Designer.cs">
-      <DependentUpon>PKhach.cs</DependentUpon>
+    <Compile Include="View\KhachHang\ChitietDienPhong.Designer.cs">
+      <DependentUpon>ChitietDienPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\KhachHang\ChitietNuocPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\KhachHang\ChitietNuocPhong.Designer.cs">
+      <DependentUpon>ChitietNuocPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\KhachHang\HoaDonPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\KhachHang\HoaDonPhong.Designer.cs">
+      <DependentUpon>HoaDonPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="View\SuaCSDien.cs">
       <SubType>Form</SubType>
@@ -693,10 +702,10 @@
     <Compile Include="View\ChisoNuoc.Designer.cs">
       <DependentUpon>ChisoNuoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\TrangChuKhach.cs">
+    <Compile Include="View\KhachHang\TrangChuKhach.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\TrangChuKhach.Designer.cs">
+    <Compile Include="View\KhachHang\TrangChuKhach.Designer.cs">
       <DependentUpon>TrangChuKhach.cs</DependentUpon>
     </Compile>
     <Compile Include="View\UserControl1.cs">
@@ -717,8 +726,8 @@
     <EmbeddedResource Include="View\ChitietDV.resx">
       <DependentUpon>ChitietDV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ChitietHD.resx">
-      <DependentUpon>ChitietHD.cs</DependentUpon>
+    <EmbeddedResource Include="View\ChitietHopDongPhong.resx">
+      <DependentUpon>ChitietHopDongPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ChitietHopDong.resx">
       <DependentUpon>ChitietHopDong.cs</DependentUpon>
@@ -748,8 +757,14 @@
     <EmbeddedResource Include="View\DoiMK.resx">
       <DependentUpon>DoiMK.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\PKhach.resx">
-      <DependentUpon>PKhach.cs</DependentUpon>
+    <EmbeddedResource Include="View\KhachHang\ChitietDienPhong.resx">
+      <DependentUpon>ChitietDienPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\KhachHang\ChitietNuocPhong.resx">
+      <DependentUpon>ChitietNuocPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\KhachHang\HoaDonPhong.resx">
+      <DependentUpon>HoaDonPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SuaCSDien.resx">
       <DependentUpon>SuaCSDien.cs</DependentUpon>
@@ -850,7 +865,7 @@
     <EmbeddedResource Include="View\ChisoNuoc.resx">
       <DependentUpon>ChisoNuoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\TrangChuKhach.resx">
+    <EmbeddedResource Include="View\KhachHang\TrangChuKhach.resx">
       <DependentUpon>TrangChuKhach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\UserControl1.resx">

@@ -60,8 +60,10 @@ namespace PBL3___Motel_Management_System.View
                     }
                 }
             }
-            var Sua = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-create-25.png");
-            var Xoa = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
+
+            //dgvChiSoDien.CellContentClick += DgvChisoDien_CellContentClick;
+            var Sua = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-create-25.png");
+            var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-delete-25.png");
             dgvChiSoDien.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dv.dgvIcons_CellPainting1(dgvChiSoDien, e, Sua, Xoa));
         }
         public void Setcbb()
@@ -89,7 +91,7 @@ namespace PBL3___Motel_Management_System.View
                 string id = dgvChiSoDien.CurrentRow.Cells[0].Value.ToString();
                 ChiTietSuDungDichVu dv = qLBLL.GetChiTietSuDungDichVuByIdBLL(id);
                 ChiTietDichVu ctdv = qLBLL.GetChiTietDichVuById(dv.MaCHiTietDichVu);
-                List<ChiTietSuDungDichVu> list = qLBLL.GetChiTietSuDungDichVuTimKiem(dv.ThoiGian,"0",ctdv.MaPhongTro,"1");
+                List<ChiTietSuDungDichVu> list = qLBLL.GetChiTietSuDungDichVuTimKiem(dv.ThoiGian,"-1",ctdv.MaPhongTro,"1");
                 List<ChiTietSuDungDichVu> myList = new List<ChiTietSuDungDichVu>();
                 foreach(ChiTietSuDungDichVu ct in list)
                 {
@@ -184,14 +186,14 @@ namespace PBL3___Motel_Management_System.View
                 string columnName = dgvChiSoDien.Columns[e.ColumnIndex].Name;
                 if (columnName == "btnSua")
                 {
-                    if (dgvChiSoDien.Rows[e.RowIndex].Cells[9].Value.ToString() == "Xác thực")
+                    if (dgvChiSoDien.Rows[e.RowIndex].Cells[9].Value.ToString() == "Đã xác thực")
                     {
                         MessageBox.Show("Chỉ số hiện tại đã được xác thực nên không thể sửa!!Vui lòng bỏ xác thực trước khi sửa chỉ số", "Thông báo");
                     }
                     else
                     {
                         string id = dgvChiSoDien.CurrentRow.Cells[0].Value.ToString();
-                        tc.openChildForm1(new SuaCSDien(), panelChisoDien);
+                        tc.openChildForm1(new SuaCSDien(id, LoadForm), panelChisoDien);
 
                     }
 
@@ -200,8 +202,13 @@ namespace PBL3___Motel_Management_System.View
                 {
                     if (dgvChiSoDien.CurrentRow.Cells[9].Value.ToString() == "Chưa xác thực")
                     {
-                        
-                    }
+                    string id = dgvChiSoDien.CurrentRow.Cells[0].Value.ToString();
+                    QLBLL qLBLL = new QLBLL();
+                    qLBLL.DelChiTietSuDungDichVu(id);
+                    dgvChiSoDien.Rows.RemoveAt(e.RowIndex);
+                    MessageBox.Show("Xóa chỉ số điện thành công", "Thông báo");
+                    LoadForm(null);
+                }
                     else
                     {
                         MessageBox.Show("Hóa đơn đã được xác thực!! Không thể xóa", "Thông báo");

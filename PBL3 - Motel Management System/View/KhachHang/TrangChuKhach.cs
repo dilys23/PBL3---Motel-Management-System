@@ -1,4 +1,5 @@
 ﻿using PBL3___Motel_Management_System.DTO;
+using PBL3___Motel_Management_System.View.KhachHang;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -235,6 +236,29 @@ namespace PBL3___Motel_Management_System.View
             Hoadon hd = new Hoadon();
             //hd.btnXoa.Visible = false;
             tc.openChildForm1(hd, panelMain);
+        }
+
+        private void btnPhong_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnDien_Click(object sender, EventArgs e)
+        {
+            ChitietDienPhong ct = new ChitietDienPhong();
+            tc.openChildForm1(ct, panelMain);
+        }
+
+        private void btnNuoc_Click(object sender, EventArgs e)
+        {
+            ChitietNuocPhong ct = new ChitietNuocPhong();
+            tc.openChildForm1(ct, panelMain);
+        }
+
+        private void btnHoaDon_Click(object sender, EventArgs e)
+        {
+            HoaDonPhong ct = new HoaDonPhong();
+            tc.openChildForm1(ct, panelMain);
         }
     }
 }

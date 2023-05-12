@@ -107,7 +107,7 @@
             this.panelThem.Controls.Add(this.dtpNgayBatDau);
             this.panelThem.Location = new System.Drawing.Point(12, 55);
             this.panelThem.Name = "panelThem";
-            this.panelThem.Size = new System.Drawing.Size(898, 550);
+            this.panelThem.Size = new System.Drawing.Size(906, 531);
             this.panelThem.TabIndex = 47;
             this.panelThem.Paint += new System.Windows.Forms.PaintEventHandler(this.panelThem_Paint);
             // 
@@ -116,6 +116,7 @@
             this.dgvDichvu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDichvu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDichvu.BackgroundColor = System.Drawing.Color.Ivory;
             this.dgvDichvu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDichvu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaDichVu,
@@ -127,7 +128,7 @@
             this.dgvDichvu.RowHeadersWidth = 51;
             this.dgvDichvu.RowTemplate.Height = 24;
             this.dgvDichvu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDichvu.Size = new System.Drawing.Size(780, 99);
+            this.dgvDichvu.Size = new System.Drawing.Size(788, 99);
             this.dgvDichvu.TabIndex = 48;
             // 
             // MaDichVu
@@ -172,7 +173,7 @@
             this.dgvThietbi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvThietbi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvThietbi.BackgroundColor = System.Drawing.Color.PaleTurquoise;
+            this.dgvThietbi.BackgroundColor = System.Drawing.Color.Ivory;
             this.dgvThietbi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvThietbi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaThietBi,
@@ -186,7 +187,7 @@
             this.dgvThietbi.RowHeadersWidth = 51;
             this.dgvThietbi.RowTemplate.Height = 24;
             this.dgvThietbi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvThietbi.Size = new System.Drawing.Size(780, 78);
+            this.dgvThietbi.Size = new System.Drawing.Size(788, 78);
             this.dgvThietbi.TabIndex = 46;
             // 
             // MaThietBi
@@ -494,7 +495,7 @@
             this.btnTroVe.IconColor = System.Drawing.Color.White;
             this.btnTroVe.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTroVe.IconSize = 30;
-            this.btnTroVe.Location = new System.Drawing.Point(867, 12);
+            this.btnTroVe.Location = new System.Drawing.Point(875, 12);
             this.btnTroVe.Name = "btnTroVe";
             this.btnTroVe.Size = new System.Drawing.Size(43, 37);
             this.btnTroVe.TabIndex = 61;
@@ -506,7 +507,7 @@
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(922, 558);
+            this.ClientSize = new System.Drawing.Size(930, 598);
             this.Controls.Add(this.btnTroVe);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.panelThem);

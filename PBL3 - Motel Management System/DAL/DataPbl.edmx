@@ -113,16 +113,6 @@
           <Property Name="HinhAnh" Type="varbinary(max)" />
           <Property Name="TonTai" Type="bit" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <EntityType Name="TaiKhoan">
           <Key>
             <PropertyRef Name="MaTaiKhoan" />
@@ -277,18 +267,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_MaPhongTroTietDichVu">
-          <End Role="PhongTro" Type="Self.PhongTro" Multiplicity="1" />
-          <End Role="ChiTietDichVu" Type="Self.ChiTietDichVu" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PhongTro">
-              <PropertyRef Name="MaPhongTro" />
-            </Principal>
-            <Dependent Role="ChiTietDichVu">
-              <PropertyRef Name="MaPhongTro" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_MaPhongTroThanhVienTrongPhong">
           <End Role="PhongTro" Type="Self.PhongTro" Multiplicity="1" />
           <End Role="ThanhVienTrongPhong" Type="Self.ThanhVienTrongPhong" Multiplicity="*" />
@@ -297,6 +275,18 @@
               <PropertyRef Name="MaPhongTro" />
             </Principal>
             <Dependent Role="ThanhVienTrongPhong">
+              <PropertyRef Name="MaPhongTro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MaPhongTroTietDichVu">
+          <End Role="PhongTro" Type="Self.PhongTro" Multiplicity="1" />
+          <End Role="ChiTietDichVu" Type="Self.ChiTietDichVu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhongTro">
+              <PropertyRef Name="MaPhongTro" />
+            </Principal>
+            <Dependent Role="ChiTietDichVu">
               <PropertyRef Name="MaPhongTro" />
             </Dependent>
           </ReferentialConstraint>
@@ -335,7 +325,6 @@
           <EntitySet Name="HopDong" EntityType="Self.HopDong" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Nguoi" EntityType="Self.Nguoi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PhongTro" EntityType="Self.PhongTro" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ThanhVienTrongPhong" EntityType="Self.ThanhVienTrongPhong" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ThietBi" EntityType="Self.ThietBi" Schema="dbo" store:Type="Tables" />
@@ -380,13 +369,13 @@
             <End Role="PhongTro" EntitySet="PhongTro" />
             <End Role="HopDong" EntitySet="HopDong" />
           </AssociationSet>
-          <AssociationSet Name="FK_MaPhongTroTietDichVu" Association="Self.FK_MaPhongTroTietDichVu">
-            <End Role="PhongTro" EntitySet="PhongTro" />
-            <End Role="ChiTietDichVu" EntitySet="ChiTietDichVu" />
-          </AssociationSet>
           <AssociationSet Name="FK_MaPhongTroThanhVienTrongPhong" Association="Self.FK_MaPhongTroThanhVienTrongPhong">
             <End Role="PhongTro" EntitySet="PhongTro" />
             <End Role="ThanhVienTrongPhong" EntitySet="ThanhVienTrongPhong" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaPhongTroTietDichVu" Association="Self.FK_MaPhongTroTietDichVu">
+            <End Role="PhongTro" EntitySet="PhongTro" />
+            <End Role="ChiTietDichVu" EntitySet="ChiTietDichVu" />
           </AssociationSet>
           <AssociationSet Name="FK_MaTaiKhoanVaiTro" Association="Self.FK_MaTaiKhoanVaiTro">
             <End Role="TaiKhoan" EntitySet="TaiKhoan" />
@@ -531,16 +520,6 @@
           <NavigationProperty Name="HoaDon" Relationship="Self.FK__HoaDon__MaPhongT__5441852A" FromRole="PhongTro" ToRole="HoaDon" />
           <NavigationProperty Name="HopDong" Relationship="Self.FK_MaPhongTroHopDong" FromRole="PhongTro" ToRole="HopDong" />
           <NavigationProperty Name="ThanhVienTrongPhong" Relationship="Self.FK_MaPhongTroThanhVienTrongPhong" FromRole="PhongTro" ToRole="ThanhVienTrongPhong" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="TaiKhoan">
           <Key>
@@ -760,7 +739,6 @@
           <EntitySet Name="HopDong" EntityType="Self.HopDong" />
           <EntitySet Name="Nguoi" EntityType="Self.Nguoi" />
           <EntitySet Name="PhongTro" EntityType="Self.PhongTro" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" />
           <EntitySet Name="ThanhVienTrongPhong" EntityType="Self.ThanhVienTrongPhong" />
           <EntitySet Name="ThietBi" EntityType="Self.ThietBi" />
@@ -942,17 +920,6 @@
                 <ScalarProperty Name="ToiDa" ColumnName="ToiDa" />
                 <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
                 <ScalarProperty Name="TonTai" ColumnName="TonTai" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="DataPblModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

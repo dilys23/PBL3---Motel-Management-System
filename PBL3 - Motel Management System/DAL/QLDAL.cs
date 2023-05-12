@@ -564,6 +564,21 @@ namespace PBL3___Motel_Management_System.DAL
                 return  data.ChiTietDichVu.Where(p => p.MaPhongTro == idPhong && p.MaDichVu == "001" && p.TonTai == true).FirstOrDefault().MaChiTietDichVu;
             }
         }
+        
+        public List<ChiTietSuDungDichVu> GetAllChiTietSuDungDichVuByIdPhong(string idPhong)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietSuDungDichVu.Where(p=> p.ChiTietDichVu.MaPhongTro == idPhong).ToList();
+            }
+        }
+        public ChiTietSuDungDichVu GetChiTietSuDungDichVuById(string id)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietSuDungDichVu.Find(id);
+            }
+        }
         public string GetIdChiTietDichVuNuocByIdPhongDal(string idPhong)
         {
             using (DataPbl data = new DataPbl())
@@ -616,6 +631,15 @@ namespace PBL3___Motel_Management_System.DAL
                 UpdateChitietdichvu(s);
               
             }
+        }
+        public void DelChiTietSuDungDichVuDal(string id)
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                ChiTietSuDungDichVu ct = (ChiTietSuDungDichVu)data.ChiTietSuDungDichVu.Find(id);
+                ct.TonTai = false;
+                UpdateChiTietSuDungDichVuDAL(ct);
+            }    
         }
         public void DelDichVuDal(string id)
         {
@@ -783,6 +807,13 @@ namespace PBL3___Motel_Management_System.DAL
             using(DataPbl data = new DataPbl())
             {   
                 return data.ChiTietSuDungDichVu.Where(p => p.ChiTietDichVu.PhongTro.MaDayTro == IdDay && p.TonTai == true).Select(p => p.MaChiTietSuDungDichVu).ToList<string>();
+            }
+        }
+        public List<string> GetChiTietSuDungDichVuByIdChitiet(string IdChitiet)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietSuDungDichVu.Where(p => p.MaChiTietSuDungDichVu == IdChitiet && p.TonTai == true).Select(p => p.MaChiTietSuDungDichVu).ToList<string>();
             }
         }
         public List<string>GetAllIdChiTietSuDungDichVuDal()

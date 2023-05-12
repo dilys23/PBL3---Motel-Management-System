@@ -110,6 +110,7 @@
             this.btnHoaDon.Tag = "Hoá Đơn";
             this.btnHoaDon.Text = "   Hóa đơn";
             this.btnHoaDon.UseVisualStyleBackColor = true;
+            this.btnHoaDon.Click += new System.EventHandler(this.btnHoaDon_Click);
             // 
             // btnHopDong
             // 
@@ -147,6 +148,7 @@
             this.btnNuoc.Tag = "Chỉ số nước";
             this.btnNuoc.Text = "  Chỉ số nước";
             this.btnNuoc.UseVisualStyleBackColor = true;
+            this.btnNuoc.Click += new System.EventHandler(this.btnNuoc_Click);
             // 
             // btnTrangchu
             // 
@@ -183,6 +185,7 @@
             this.btnDien.Tag = "Chỉ số điện ";
             this.btnDien.Text = "  Chỉ số điện ";
             this.btnDien.UseVisualStyleBackColor = true;
+            this.btnDien.Click += new System.EventHandler(this.btnDien_Click);
             // 
             // btnPhong
             // 
@@ -201,6 +204,7 @@
             this.btnPhong.Tag = "Phòng";
             this.btnPhong.Text = "Phòng";
             this.btnPhong.UseVisualStyleBackColor = true;
+            this.btnPhong.Click += new System.EventHandler(this.btnPhong_Click);
             // 
             // panel1
             // 

@@ -51,19 +51,19 @@ namespace PBL3___Motel_Management_System.View
             dtpNgaySinh.Value = ngaysinh;
             dtpNgayBatDau.Value = batdau;
             dtpNgayKetThuc.Value = ketthuc;
-            int i = 0;
-            foreach (string idDv in tp.DsDichVu)
-            {
-                DichVu dv = new DichVu();
-                dv = qLBLL.GetDichVuByIdDichVu(idDv);
-                dgvDichvu.Rows.Add(dv.MaDichVu, ++i, dv.TenDichVu, dv.GiaDichVu);
-            }
-            foreach (string idTb in tp.DsThietBi)
-            {
-                ThietBi tb = new ThietBi();
-                tb = qLBLL.GetThietBiByIdThietBi(idTb);
-                dgvThietbi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi);
-            }
+            //int i = 0;
+            //foreach (string idDv in tp.DsDichVu)
+            //{
+            //    DichVu dv = new DichVu();
+            //    dv = qLBLL.GetDichVuByIdDichVu(idDv);
+            //    dgvDichvu.Rows.Add(dv.MaDichVu, ++i, dv.TenDichVu, dv.GiaDichVu);
+            //}
+            //foreach (string idTb in tp.DsThietBi)
+            //{
+            //    ThietBi tb = new ThietBi();
+            //    tb = qLBLL.GetThietBiByIdThietBi(idTb);
+            //    dgvThietbi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi);
+            //}
 
         }
         private void iconButton1_Click(object sender, EventArgs e)
