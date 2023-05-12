@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.btnTim = new FontAwesome.Sharp.IconButton();
@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbbPhongTro = new System.Windows.Forms.ComboBox();
             this.panelHD = new System.Windows.Forms.Panel();
+            this.btnThanhToan = new FontAwesome.Sharp.IconButton();
             this.dtpThangSuDung = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,6 +45,8 @@
             this.btnBoXacThuc = new FontAwesome.Sharp.IconButton();
             this.btnXacThuc = new FontAwesome.Sharp.IconButton();
             this.dgvHoaDon = new System.Windows.Forms.DataGridView();
+            this.cbbDayTro = new System.Windows.Forms.ComboBox();
+            this.btnThemHoaDon = new FontAwesome.Sharp.IconButton();
             this.MaHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DayTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,9 +59,6 @@
             this.ConNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSua = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnXoa = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cbbDayTro = new System.Windows.Forms.ComboBox();
-            this.btnThemHoaDon = new FontAwesome.Sharp.IconButton();
-            this.btnThanhToan = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panelHD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
@@ -161,6 +161,25 @@
             this.panelHD.Size = new System.Drawing.Size(1152, 551);
             this.panelHD.TabIndex = 43;
             // 
+            // btnThanhToan
+            // 
+            this.btnThanhToan.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnThanhToan.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnThanhToan.IconChar = FontAwesome.Sharp.IconChar.CreditCardAlt;
+            this.btnThanhToan.IconColor = System.Drawing.Color.White;
+            this.btnThanhToan.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThanhToan.IconSize = 25;
+            this.btnThanhToan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThanhToan.Location = new System.Drawing.Point(697, 37);
+            this.btnThanhToan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.Size = new System.Drawing.Size(112, 38);
+            this.btnThanhToan.TabIndex = 70;
+            this.btnThanhToan.Text = "Thanh Toán";
+            this.btnThanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThanhToan.UseVisualStyleBackColor = false;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
+            // 
             // dtpThangSuDung
             // 
             this.dtpThangSuDung.CustomFormat = "MM/yyyy";
@@ -252,14 +271,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHoaDon.BackgroundColor = System.Drawing.Color.Ivory;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaHoaDon,
@@ -274,14 +293,14 @@
             this.ConNo,
             this.btnSua,
             this.btnXoa});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHoaDon.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvHoaDon.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvHoaDon.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvHoaDon.GridColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvHoaDon.Location = new System.Drawing.Point(17, 108);
@@ -293,6 +312,38 @@
             this.dgvHoaDon.Size = new System.Drawing.Size(1118, 223);
             this.dgvHoaDon.TabIndex = 8;
             this.dgvHoaDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDon_CellContentClick_1);
+            // 
+            // cbbDayTro
+            // 
+            this.cbbDayTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbDayTro.FormattingEnabled = true;
+            this.cbbDayTro.Location = new System.Drawing.Point(201, 42);
+            this.cbbDayTro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbbDayTro.Name = "cbbDayTro";
+            this.cbbDayTro.Size = new System.Drawing.Size(148, 28);
+            this.cbbDayTro.TabIndex = 42;
+            this.cbbDayTro.SelectedIndexChanged += new System.EventHandler(this.cbbDayTro_SelectedIndexChanged);
+            // 
+            // btnThemHoaDon
+            // 
+            this.btnThemHoaDon.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnThemHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThemHoaDon.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnThemHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemHoaDon.IconChar = FontAwesome.Sharp.IconChar.Calculator;
+            this.btnThemHoaDon.IconColor = System.Drawing.Color.White;
+            this.btnThemHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThemHoaDon.IconSize = 25;
+            this.btnThemHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThemHoaDon.Location = new System.Drawing.Point(1055, 36);
+            this.btnThemHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThemHoaDon.Name = "btnThemHoaDon";
+            this.btnThemHoaDon.Size = new System.Drawing.Size(92, 38);
+            this.btnThemHoaDon.TabIndex = 21;
+            this.btnThemHoaDon.Text = "Thêm ";
+            this.btnThemHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThemHoaDon.UseVisualStyleBackColor = false;
+            this.btnThemHoaDon.Click += new System.EventHandler(this.btnThemHD_Click);
             // 
             // MaHoaDon
             // 
@@ -348,6 +399,7 @@
             this.DaThanhToan.HeaderText = "Đã thanh toán";
             this.DaThanhToan.MinimumWidth = 6;
             this.DaThanhToan.Name = "DaThanhToan";
+            this.DaThanhToan.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // ConNo
             // 
@@ -366,57 +418,6 @@
             this.btnXoa.HeaderText = "";
             this.btnXoa.MinimumWidth = 6;
             this.btnXoa.Name = "btnXoa";
-            // 
-            // cbbDayTro
-            // 
-            this.cbbDayTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbDayTro.FormattingEnabled = true;
-            this.cbbDayTro.Location = new System.Drawing.Point(201, 42);
-            this.cbbDayTro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbbDayTro.Name = "cbbDayTro";
-            this.cbbDayTro.Size = new System.Drawing.Size(148, 28);
-            this.cbbDayTro.TabIndex = 42;
-            this.cbbDayTro.SelectedIndexChanged += new System.EventHandler(this.cbbDayTro_SelectedIndexChanged);
-            // 
-            // btnThemHoaDon
-            // 
-            this.btnThemHoaDon.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnThemHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThemHoaDon.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnThemHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemHoaDon.IconChar = FontAwesome.Sharp.IconChar.Calculator;
-            this.btnThemHoaDon.IconColor = System.Drawing.Color.White;
-            this.btnThemHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnThemHoaDon.IconSize = 25;
-            this.btnThemHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemHoaDon.Location = new System.Drawing.Point(1055, 36);
-            this.btnThemHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnThemHoaDon.Name = "btnThemHoaDon";
-            this.btnThemHoaDon.Size = new System.Drawing.Size(92, 38);
-            this.btnThemHoaDon.TabIndex = 21;
-            this.btnThemHoaDon.Text = "Thêm ";
-            this.btnThemHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThemHoaDon.UseVisualStyleBackColor = false;
-            this.btnThemHoaDon.Click += new System.EventHandler(this.btnThemHD_Click);
-            // 
-            // btnThanhToan
-            // 
-            this.btnThanhToan.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnThanhToan.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnThanhToan.IconChar = FontAwesome.Sharp.IconChar.CreditCardAlt;
-            this.btnThanhToan.IconColor = System.Drawing.Color.White;
-            this.btnThanhToan.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnThanhToan.IconSize = 25;
-            this.btnThanhToan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThanhToan.Location = new System.Drawing.Point(697, 37);
-            this.btnThanhToan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(112, 38);
-            this.btnThanhToan.TabIndex = 70;
-            this.btnThanhToan.Text = "Thanh Toán";
-            this.btnThanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThanhToan.UseVisualStyleBackColor = false;
-            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // Hoadon
             // 
@@ -450,6 +451,12 @@
         private System.Windows.Forms.ComboBox cbbDayTro;
         private FontAwesome.Sharp.IconButton btnBoXacThuc;
         private FontAwesome.Sharp.IconButton btnXacThuc;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbbTinhTrang;
+        private System.Windows.Forms.DateTimePicker dtpThangSuDung;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dgvHoaDon;
+        private FontAwesome.Sharp.IconButton btnThanhToan;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHoaDon;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stt;
         private System.Windows.Forms.DataGridViewTextBoxColumn DayTro;
@@ -460,13 +467,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrang;
         private System.Windows.Forms.DataGridViewTextBoxColumn DaThanhToan;
         private System.Windows.Forms.DataGridViewTextBoxColumn ConNo;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbbTinhTrang;
-        private System.Windows.Forms.DateTimePicker dtpThangSuDung;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dgvHoaDon;
         private System.Windows.Forms.DataGridViewButtonColumn btnSua;
         private System.Windows.Forms.DataGridViewButtonColumn btnXoa;
-        private FontAwesome.Sharp.IconButton btnThanhToan;
     }
 }

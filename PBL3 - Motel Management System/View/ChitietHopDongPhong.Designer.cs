@@ -1,6 +1,6 @@
 ﻿namespace PBL3___Motel_Management_System.View
 {
-    partial class ChitietHD
+    partial class ChitietHopDongPhong
     {
         /// <summary>
         /// Required designer variable.
@@ -381,14 +381,14 @@
             this.dtpNgayBatDau.Size = new System.Drawing.Size(210, 27);
             this.dtpNgayBatDau.TabIndex = 18;
             // 
-            // ChitietHD
+            // ChitietHopDongPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(922, 558);
             this.Controls.Add(this.panelThem);
-            this.Name = "ChitietHD";
-            this.Text = "ChitietHD";
+            this.Name = "ChitietHopDongPhong";
+            this.Text = "ChitietHopDongPhong";
             this.panelThem.ResumeLayout(false);
             this.panelThem.PerformLayout();
             this.ResumeLayout(false);

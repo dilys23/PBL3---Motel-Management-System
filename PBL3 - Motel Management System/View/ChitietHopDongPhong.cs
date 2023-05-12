@@ -14,11 +14,11 @@ using System.Windows.Forms;
 namespace PBL3___Motel_Management_System.View
 {
     public delegate void Loader(string txt);
-    public partial class ChitietHD : Form
+    public partial class ChitietHopDongPhong : Form
     {
         private ThuePhong tp;
         private Loader loader;
-        public ChitietHD(ThuePhong tp,Loader loader)
+        public ChitietHopDongPhong(ThuePhong tp,Loader loader)
         {
             InitializeComponent();
             this.tp = tp;
