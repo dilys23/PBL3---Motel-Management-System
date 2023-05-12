@@ -277,18 +277,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_MaPhongTroThanhVienTrongPhong">
-          <End Role="PhongTro" Type="Self.PhongTro" Multiplicity="1" />
-          <End Role="ThanhVienTrongPhong" Type="Self.ThanhVienTrongPhong" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PhongTro">
-              <PropertyRef Name="MaPhongTro" />
-            </Principal>
-            <Dependent Role="ThanhVienTrongPhong">
-              <PropertyRef Name="MaPhongTro" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_MaPhongTroTietDichVu">
           <End Role="PhongTro" Type="Self.PhongTro" Multiplicity="1" />
           <End Role="ChiTietDichVu" Type="Self.ChiTietDichVu" Multiplicity="*" />
@@ -297,6 +285,18 @@
               <PropertyRef Name="MaPhongTro" />
             </Principal>
             <Dependent Role="ChiTietDichVu">
+              <PropertyRef Name="MaPhongTro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MaPhongTroThanhVienTrongPhong">
+          <End Role="PhongTro" Type="Self.PhongTro" Multiplicity="1" />
+          <End Role="ThanhVienTrongPhong" Type="Self.ThanhVienTrongPhong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhongTro">
+              <PropertyRef Name="MaPhongTro" />
+            </Principal>
+            <Dependent Role="ThanhVienTrongPhong">
               <PropertyRef Name="MaPhongTro" />
             </Dependent>
           </ReferentialConstraint>
@@ -380,13 +380,13 @@
             <End Role="PhongTro" EntitySet="PhongTro" />
             <End Role="HopDong" EntitySet="HopDong" />
           </AssociationSet>
-          <AssociationSet Name="FK_MaPhongTroThanhVienTrongPhong" Association="Self.FK_MaPhongTroThanhVienTrongPhong">
-            <End Role="PhongTro" EntitySet="PhongTro" />
-            <End Role="ThanhVienTrongPhong" EntitySet="ThanhVienTrongPhong" />
-          </AssociationSet>
           <AssociationSet Name="FK_MaPhongTroTietDichVu" Association="Self.FK_MaPhongTroTietDichVu">
             <End Role="PhongTro" EntitySet="PhongTro" />
             <End Role="ChiTietDichVu" EntitySet="ChiTietDichVu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MaPhongTroThanhVienTrongPhong" Association="Self.FK_MaPhongTroThanhVienTrongPhong">
+            <End Role="PhongTro" EntitySet="PhongTro" />
+            <End Role="ThanhVienTrongPhong" EntitySet="ThanhVienTrongPhong" />
           </AssociationSet>
           <AssociationSet Name="FK_MaTaiKhoanVaiTro" Association="Self.FK_MaTaiKhoanVaiTro">
             <End Role="TaiKhoan" EntitySet="TaiKhoan" />

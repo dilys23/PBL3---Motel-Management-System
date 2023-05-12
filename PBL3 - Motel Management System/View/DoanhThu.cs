@@ -45,7 +45,7 @@ namespace PBL3___Motel_Management_System
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-            // string daytro = ((ViewCbb)cbbDayTro.SelectedItem).IdDayTro;
+           // string daytro = ((ViewCbb)cbbDayTro.SelectedItem).key;
             string thang = dtpThang.Value.ToString("MM-yyyy");
             DateTime date = DateTime.ParseExact(thang, "MM-yyyy", CultureInfo.InvariantCulture);
             int nam = date.Year;
@@ -98,8 +98,8 @@ namespace PBL3___Motel_Management_System
 
                 for(int  month=1; month <= 12; month++)
                 {
-                    double Tongtien = qLBLL.GetTongTien(dt.MaDayTro,month.ToString(), nam);
-                    series.Points.AddXY(month, Tongtien);   
+                    //double Tongtien = qLBLL.GetTongTien(dt.MaDayTro,month.ToString(), nam);
+                    //series.Points.AddXY(month, Tongtien);   
                 }
 
             }
@@ -123,8 +123,8 @@ namespace PBL3___Motel_Management_System
             ChartCot.Series["Tên Dãy trọ"].XValueType = ChartValueType.String;
             foreach(DayTro dt in list)
             {
-                double tongtien = qLBLL.GetTongTien(dt.MaDayTro, thang, nam);
-                ChartCot.Series["Tên Dãy trọ"].Points.AddXY(dt.TenDayTro, tongtien);
+              //  double tongtien = qLBLL.GetTongTien(dt.MaDayTro, thang, nam);
+            //    ChartCot.Series["Tên Dãy trọ"].Points.AddXY(dt.TenDayTro, tongtien);
                 ChartCot.Series[0]["PixelPointWidth"] = "30";
             }
             if (ChartCot.ChartAreas.Count == 0)

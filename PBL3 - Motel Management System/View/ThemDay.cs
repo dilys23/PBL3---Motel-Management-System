@@ -85,7 +85,6 @@ namespace PBL3___Motel_Management_System
                 dt.MaChuTro = "1";
                 if(pictureDayTro.Image != null)
                 {
-
                 dt.HinhAnh = ChuyenDoiAnh.ImageToBase64(pictureDayTro.Image, pictureDayTro.Image.RawFormat);
                 }    
                 qLBLL.AddDayTroBll(dt);

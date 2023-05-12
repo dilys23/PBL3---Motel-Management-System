@@ -82,9 +82,9 @@ namespace PBL3___Motel_Management_System
             else
             {
                 string ThangSuDung = dtpThangSuDung.Value.ToString("MM-yyyy");
-                string IdDay = ((ViewCbb)cbbDayTro.SelectedItem).IdDayTro;
-                string IdPhong = ((ViewCbb)cbbPhongTro.SelectedItem).IdDayTro;
-                string IdTinhTrang = ((ViewCbb)cbbTinhTrang.SelectedItem).IdDayTro;
+                string IdDay = ((ViewCbb)cbbDayTro.SelectedItem).key;
+                string IdPhong = ((ViewCbb)cbbPhongTro.SelectedItem).key;
+                string IdTinhTrang = ((ViewCbb)cbbTinhTrang.SelectedItem).key;
                 int i = 0;
                 foreach(HoaDon hd in qLBLL.GetHoaDonTimKiem(ThangSuDung,IdDay,IdPhong,IdTinhTrang))
                 {
@@ -108,9 +108,9 @@ namespace PBL3___Motel_Management_System
             QLBLL qLBLL = new QLBLL();
             cbbDayTro.Items.AddRange(qLBLL.GetCbbDayTro().ToArray());
             cbbDayTro.SelectedIndex = 0;
-            cbbTinhTrang.Items.Add(new ViewCbb { IdDayTro = "0", TenDayTro = "All" });
-            cbbTinhTrang.Items.Add(new ViewCbb { IdDayTro = "1", TenDayTro = "Đã xác thực" });
-            cbbTinhTrang.Items.Add(new ViewCbb { IdDayTro = "2", TenDayTro = "Chưa xác thực" });
+            cbbTinhTrang.Items.Add(new ViewCbb { key = "0", value = "All" });
+            cbbTinhTrang.Items.Add(new ViewCbb {key = "1", value = "Đã xác thực" });
+            cbbTinhTrang.Items.Add(new ViewCbb {key = "2", value = "Chưa xác thực" });
             cbbTinhTrang.SelectedIndex = 0;
         }
         private void btnIn_Click(object sender, EventArgs e)
@@ -142,21 +142,22 @@ namespace PBL3___Motel_Management_System
         {
             QLBLL qLBLL = new QLBLL();
             cbbPhongTro.Items.Clear();
-            cbbPhongTro.Items.Add(new ViewCbb { IdDayTro="0", TenDayTro="All" });
-            string id = ((ViewCbb)cbbDayTro.SelectedItem).IdDayTro;
+            cbbPhongTro.Items.Add(new ViewCbb {key = "0", value = "All" });
+            string id = ((ViewCbb)cbbDayTro.SelectedItem).key;
             if (id == "0")
             {
 
                 foreach (PhongTro pt in qLBLL.GetAllPhongTro())
                 {
-                    cbbPhongTro.Items.Add(new ViewCbb { IdDayTro = pt.MaPhongTro, TenDayTro = pt.TenPhongTro });
+                    cbbPhongTro.Items.Add(new ViewCbb {key = pt.MaPhongTro, value = pt.TenPhongTro });
                 }
             }
             else
             {
-                foreach (ViewPhongTro pt in qLBLL.GetAllPhongTroByIdDay(id))
+                foreach (string idp in qLBLL.GetAllPhongTroByIdDay(id))
                 {
-                    cbbPhongTro.Items.Add(new ViewCbb { IdDayTro=pt.MaPhongTro, TenDayTro=pt.TenPhongTro });
+                    PhongTro pt = qLBLL.GetPhongTroByIdPhong(idp);
+                    cbbPhongTro.Items.Add(new ViewCbb {key = pt.MaPhongTro, value = pt.TenPhongTro });
                 }
             }
             if (cbbPhongTro.Items.Count != 0)

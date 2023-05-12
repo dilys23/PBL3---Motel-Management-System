@@ -13,6 +13,7 @@ using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System.View
 {
+    public delegate void Loader(string txt);
     public partial class ChitietHD : Form
     {
         private ThuePhong tp;

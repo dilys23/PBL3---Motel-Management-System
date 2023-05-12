@@ -104,8 +104,6 @@ namespace PBL3___Motel_Management_System.View
                 MessageBox.Show("Cọc phòng thành công");
                 this.Close();
                 this.loader(null);
-                
-
             }
         }
     }

@@ -40,10 +40,10 @@ namespace PBL3___Motel_Management_System.View
             cbbDayTro.SelectedIndex = 0;
             cbbTinhTrang.Items.AddRange(new ViewCbb[]
             {
-                new ViewCbb{IdDayTro = "-1",TenDayTro = "All"},
-                new ViewCbb{IdDayTro = "1",TenDayTro = "Đã cho thuê"},
-                new ViewCbb{IdDayTro = "0",TenDayTro = "Còn trống"},
-                new ViewCbb{IdDayTro = "2",TenDayTro = "Đã cọc"},
+                new ViewCbb{key = "-1",value = "All"},
+                new ViewCbb{key = "1", value = "Đã cho thuê"},
+                new ViewCbb{key = "0", value = "Còn trống"},
+                new ViewCbb{key = "2", value = "Đã cọc"},
             });
             cbbTinhTrang.SelectedIndex = 0;
         }
@@ -186,11 +186,11 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            string idDay = ((ViewCbb)(cbbDayTro.SelectedItem)).IdDayTro;
-            string idTinhTrang = ((ViewCbb)(cbbTinhTrang.SelectedItem)).IdDayTro;
+            string idDay = ((ViewCbb)(cbbDayTro.SelectedItem)).key;
+            string idTinhTrang = ((ViewCbb)(cbbTinhTrang.SelectedItem)).key;
             QLBLL qLBLL = new QLBLL();
             panelPhong.Controls.Clear();
-            if(idDay != "0")
+            if(idDay != "-1")
             {
                 DayTro dt = new DayTro();
                 dt = qLBLL.GetDayByIdDay(idDay);
@@ -199,10 +199,9 @@ namespace PBL3___Motel_Management_System.View
             }
             else
             {
-
             lblDiaChi.Text = "";
             }
-            foreach (ViewPhongTro pt in qLBLL.DgvPhongTroTimKiem(idDay,idTinhTrang,txtTimKiem.Text))
+            foreach (PhongTro pt in qLBLL.PhongTroTimKiem(idDay,idTinhTrang,txtTimKiem.Text))
             {
                 Demo p = new Demo(SuKien, pt.MaPhongTro, panelChinh);
                 p.TopLevel = false;
@@ -227,7 +226,7 @@ namespace PBL3___Motel_Management_System.View
                     lbl.Name = nguoi.MaNguoi;
                     lbl.Text = "   " + nguoi.Ten;
                     lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    Image image1 = Image.FromFile("E:\\PBL3_MAIN\\Icons\\icons8-customer-20.png" + "    ");
+                    Image image1 = Image.FromFile("D:\\Pblproject\\PBL3_MAIN\\PBL3 - Motel Management System\\Icons\\icons8-customer-20.png" + "    ");
                     lbl.Image = image1;
                     lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
                     // Set the size of the label to accommodate the bitmap size.
