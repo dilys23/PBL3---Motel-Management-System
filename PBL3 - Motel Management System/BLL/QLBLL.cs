@@ -450,18 +450,15 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return list;
         }
-        public List<ViewDichVu> DgvDichVu(string txtTim)
+        public List<DichVu> DgvDichVu(string txtTim)
         {
-            List<ViewDichVu> list = new List<ViewDichVu>();
+            List<DichVu> list = new List<DichVu>();
             QLDAL qLDAL = new QLDAL();
-            int i = 0;
             foreach (DichVu dv in qLDAL.GetAllDichVu())
             {
                 if (txtTim == null)
                 {
-                    i++;
-                    ViewDichVu s = new ViewDichVu();
-                    s.Stt = i;
+                    DichVu s = new DichVu();
                     s.TenDichVu = dv.TenDichVu;
                     s.MaDichVu = dv.MaDichVu;
                     s.GiaDichVu = dv.GiaDichVu;
@@ -471,9 +468,7 @@ namespace PBL3___Motel_Management_System.BLL
                 {
                     if (dv.TenDichVu.IndexOf(txtTim, 0, StringComparison.OrdinalIgnoreCase) != -1)
                     {
-                        i++;
-                        ViewDichVu s = new ViewDichVu();
-                        s.Stt = i;
+                        DichVu s = new DichVu();
                         s.TenDichVu = dv.TenDichVu;
                         s.MaDichVu = dv.MaDichVu;
                         s.GiaDichVu = dv.GiaDichVu;
@@ -483,19 +478,21 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return list;
         }
-
-        public List<ViewThietBi> DgvThietBi(string txtTim)
+        public List<DichVu> GetAllDichVuByIdPhong(string idPhong)
         {
-            List<ViewThietBi> list = new List<ViewThietBi>();
             QLDAL qLDAL = new QLDAL();
-            int i = 0;
+            return qLDAL.getAllDichVuByIdPhong(idPhong);
+        }
+
+        public List<ThietBi> DgvThietBi(string txtTim)
+        {
+            List<ThietBi> list = new List<ThietBi>();
+            QLDAL qLDAL = new QLDAL();
             foreach (ThietBi dv in qLDAL.GetAllThietBi())
             {
                 if (txtTim == null)
                 {
-                    i++;
-                    ViewThietBi s = new ViewThietBi();
-                    s.Stt = i;
+                    ThietBi s = new ThietBi();
                     s.TenThietBi = dv.TenThietBi;
                     s.MaThietBi = dv.MaThietBi;
                     s.GiaThietBi = dv.GiaThietBi;
@@ -505,9 +502,7 @@ namespace PBL3___Motel_Management_System.BLL
                 {
                     if (dv.TenThietBi.IndexOf(txtTim, 0, StringComparison.OrdinalIgnoreCase) != -1)
                     {
-                        i++;
-                        ViewThietBi s = new ViewThietBi();
-                        s.Stt = i;
+                        ThietBi s = new ThietBi();
                         s.TenThietBi = dv.TenThietBi;
                         s.MaThietBi = dv.MaThietBi;
                         s.GiaThietBi = dv.GiaThietBi;
@@ -515,8 +510,6 @@ namespace PBL3___Motel_Management_System.BLL
                     }
                 }
             }
-
-
             return list;
         }
         public void AddHdBll(HopDong hd)
@@ -653,11 +646,60 @@ namespace PBL3___Motel_Management_System.BLL
             List<DgvHopDong> list = new List<DgvHopDong>();
             QLDAL qLDAL = new QLDAL();
             int i = 1;
-            foreach (HopDong hopDong in qLDAL.GetAllHopDong())
+            foreach (HopDong hopDong in qLDAL.GetAllHopDongDangThue())
             {
                 DgvHopDong hd = new DgvHopDong();
                 hd.MaHopDong = hopDong.MaHopDong;
                 hd.Stt = i++;
+                hd.TenKhachHang = GetNguoiByIdNguoi(hopDong.MaNguoi).Ten;
+                hd.TenPhongTro = GetPhongTroByIdPhong(hopDong.MaPhongTro).TenPhongTro;
+                hd.TenDayTro = GetDayTroByIdPhong(hopDong.MaPhongTro).TenDayTro;
+                hd.NgayBatDau = hopDong.NgayBatDau;
+                hd.NgayKetThuc = hopDong.NgayKetThuc;
+                hd.TienCoc = hopDong.TienCoc;
+                list.Add(hd);
+            }
+            return list;
+        }
+        public List<string> GetAllIdHopDongByIdDay(string idDay)
+        {
+            QLDAL qLDAL = new QLDAL();
+            if(idDay != "-1")
+            {
+                return qLDAL.GetAllIdHopDongDangThueByIdDay(idDay);
+            }
+            else
+            {
+                return qLDAL.GetAllIdHopDongDangThue();
+            }
+
+        }
+        public List<string> GetAllIdHopDongByIdPhong(string idPhong)
+        {
+            QLDAL qLDAL = new QLDAL();
+            if(idPhong != "-1")
+            {
+                return qLDAL.GetAllIdHopDongDangThueByIdPhong(idPhong);
+            }
+            else
+            {
+                return qLDAL.GetAllIdHopDongDangThue();
+            }
+        }
+        public List<DgvHopDong> GetAllHopDongTimKiem(string idDay, string idPhong)
+        {
+            List<string> ListDay = GetAllIdHopDongByIdDay(idDay);
+            List<string> ListPhong = GetAllIdHopDongByIdPhong(idPhong);
+            List<string> myList = new List<string>();
+            myList = ListDay.Intersect(ListPhong).ToList();
+            List<DgvHopDong> list = new List<DgvHopDong>();
+            int i = 0;
+            foreach(string id in myList)
+            {
+                HopDong hopDong = GetHopDongByMaHD(id);
+                DgvHopDong hd = new DgvHopDong();
+                hd.MaHopDong = hopDong.MaHopDong;
+                hd.Stt = ++i;
                 hd.TenKhachHang = GetNguoiByIdNguoi(hopDong.MaNguoi).Ten;
                 hd.TenPhongTro = GetPhongTroByIdPhong(hopDong.MaPhongTro).TenPhongTro;
                 hd.TenDayTro = GetDayTroByIdPhong(hopDong.MaPhongTro).TenDayTro;
@@ -787,7 +829,7 @@ namespace PBL3___Motel_Management_System.BLL
         }
         public void DelChiTietSuDungDichVubyId(string id)
         {
-            foreach (string Id in GetAllChiTietSuDungDichVubyIdChiTiet(id)) ;
+            foreach (string Id in GetAllChiTietSuDungDichVubyIdChiTiet(id));
             {
                 DelChiTietSuDungDichVubyId(id);
             }
@@ -1116,6 +1158,94 @@ namespace PBL3___Motel_Management_System.BLL
             dgv.RowTemplate.Height = 35;
             dgv.RowTemplate.MinimumHeight = 20;
         }
+        public void openChildForm1(Form childForm, System.Windows.Forms.Panel p)
+        {
+            DemoForm.Instance.SetActiveForm(childForm);
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            p.Controls.Add(childForm);
+            p.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+        public void dgvIcons_CellPainting1(DataGridView dgv, DataGridViewCellPaintingEventArgs e, Image btSua, Image btXoa)
+        {
+            if (e.ColumnIndex >= 0 && dgv.Columns[e.ColumnIndex].Name == "btnSua" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var btnSua = btSua;
+                var w = btnSua.Width;
+                var h = btnSua.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+                e.Graphics.DrawImage(btnSua, new Rectangle(x, y, w, h));
+                e.Handled = true;
 
+                // Thay đổi màu nền của cell khi được chọn
+                if (e.State == DataGridViewElementStates.Selected)
+                {
+                    e.CellStyle.SelectionBackColor = Color.Tomato;
+                }
+            }
+            if (e.ColumnIndex >= 0 && dgv.Columns[e.ColumnIndex].Name == "btnXoa" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var btnXoa = btXoa;
+                var w = btnXoa.Width;
+                var h = btnXoa.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+                e.Graphics.DrawImage(btnXoa, new Rectangle(x, y, w, h));
+                e.Handled = true;
+
+                // Thay đổi màu nền của cell khi được chọn
+                if (e.State == DataGridViewElementStates.Selected)
+                {
+                    e.CellStyle.SelectionBackColor = Color.Tomato;
+                }
+            }
+        }
+        public List<ViewCbb>GetViewCbbPhongByDay(string id)
+        {
+            List<ViewCbb>list = new List<ViewCbb> ();
+            list.Add(new ViewCbb { key = "-1", value = "All" });
+            if (id == "-1")
+            { 
+                foreach(PhongTro pt in GetAllPhongTro())
+                {
+                    list.Add(new ViewCbb { key = pt.MaPhongTro, value = pt.TenPhongTro });
+                }
+            }
+            else
+            {
+                foreach (string idp in GetAllPhongTroByIdDay(id))
+                { 
+                    PhongTro pt = GetPhongTroByIdPhong(idp);
+                    list.Add(new ViewCbb { key = pt.MaPhongTro, value = pt.TenPhongTro });
+                }
+            }
+            return list;
+        }
+        public List<ViewCbb> GetViewCbbPhongByDayForThemHoaDon(string id)
+        {
+            List<ViewCbb> list = new List<ViewCbb>();
+            if (id == "-1")
+            {
+                foreach (PhongTro pt in GetAllPhongTro())
+                {
+                    list.Add(new ViewCbb { key = pt.MaPhongTro, value = pt.TenPhongTro });
+                }
+            }
+            else
+            {
+                foreach (string idp in GetAllPhongTroByIdDay(id))
+                {
+                    PhongTro pt = GetPhongTroByIdPhong(idp);
+                    list.Add(new ViewCbb { key = pt.MaPhongTro, value = pt.TenPhongTro });
+                }
+            }
+            return list;
+        }
     }
 }

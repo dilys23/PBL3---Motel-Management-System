@@ -72,7 +72,6 @@ namespace PBL3___Motel_Management_System.View
         private void LoadDgv(string idPhong, string thang)
         {
             dgvDichVu.Rows.Clear();
-            
             txtGiamGia.Text = "0";
             QLBLL qLBLL = new QLBLL();
             HopDong hd = qLBLL.GetHopDongByIdPhong(idPhong);
@@ -107,9 +106,6 @@ namespace PBL3___Motel_Management_System.View
                 }
             }
             SetTxtTienDichVu();
-
-
-
         }
         private void iconButton2_Click(object sender, EventArgs e)
         {
@@ -145,38 +141,15 @@ namespace PBL3___Motel_Management_System.View
         private void cbbDayTro_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbbPhongTro.Items.Clear();
-            
             QLBLL qLBLL = new QLBLL();
-            cbbPhongTro.Items.Clear();
             string id = ((ViewCbb)cbbDayTro.SelectedItem).key;
-            if (id == "-1")
-            {
+            cbbPhongTro.Items.AddRange(qLBLL.GetViewCbbPhongByDayForThemHoaDon(id).ToArray());
 
-                foreach (PhongTro pt in qLBLL.GetAllPhongTro())
-                {
-                    if(qLBLL.TinhTrangPhongById(pt.MaPhongTro))
-                    {
-                    cbbPhongTro.Items.Add(new ViewCbb { key = pt.MaPhongTro, value = pt.TenPhongTro });
-                    }
-                }
-            }
-            else
-            {
-                foreach (string idp in qLBLL.GetAllPhongTroByIdDay(id))
-                {
-                    PhongTro pt = qLBLL.GetPhongTroByIdPhong(idp);
-                    if(qLBLL.TinhTrangPhongById(pt.MaPhongTro))
-                    {
-                    cbbPhongTro.Items.Add(new ViewCbb {key = pt.MaPhongTro, value = pt.TenPhongTro });
-                    }
-                }
-            }
             if (cbbPhongTro.Items.Count != 0)
             {
                 cbbPhongTro.SelectedIndex = 0;
             }
         }
-
         private void cbbPhongTro_SelectedIndexChanged(object sender, EventArgs e)
         {
             string idPhong = ((ViewCbb)cbbPhongTro.SelectedItem).key;
@@ -203,20 +176,12 @@ namespace PBL3___Motel_Management_System.View
                     }
                 }
             }
-            txtTienDichVu.Text = TienDichVu.ToString();
-            
-            
-            
+            txtTienDichVu.Text = TienDichVu.ToString();    
         }
         private void btnBoChon_Click(object sender, EventArgs e)
         {
             dgvDichVu.CurrentRow.Cells[6].Value = "Hủy";
             SetTxtTienDichVu();
-        }
-
-        private void txtGiamGia_TextChanged(object sender, EventArgs e)
-        {
-            
         }
         private bool CheckHopLe()
         {
@@ -278,8 +243,6 @@ namespace PBL3___Motel_Management_System.View
                         this.loader(null);
                     }
                 }
-                
-                
             }
         }
     }

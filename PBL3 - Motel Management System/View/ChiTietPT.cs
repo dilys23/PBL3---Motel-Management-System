@@ -1,10 +1,12 @@
 ﻿using PBL3___Motel_Management_System.BLL;
+using PBL3___Motel_Management_System.DAL;
 using PBL3___Motel_Management_System.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,10 +17,12 @@ namespace PBL3___Motel_Management_System.View
     public partial class ChiTietPT : Form
     {
         private string idPhong;
-        public ChiTietPT(string idPhong)
+        private _SuKien suKien;
+        public ChiTietPT(_SuKien suKien,string idPhong)
         {
             InitializeComponent();
             this.idPhong = idPhong;
+            this.suKien = suKien;
             LoadForm(null);
         }
         public void LoadForm(string a)
@@ -26,43 +30,53 @@ namespace PBL3___Motel_Management_System.View
             ThuePhong tp = new ThuePhong();
             tp.hopDong.MaPhongTro = idPhong;
             ChitietHopDongPhong ct = new ChitietHopDongPhong(tp, LoadForm);
-            tc.openChildForm1(ct, panelChitietPT);
+            QLBLL qLBLL = new QLBLL();
+            qLBLL.openChildForm1(ct, panelChitietPT);
 
         }
-        TrangChu tc = new TrangChu();     
         private void btnHopDong_Click_1(object sender, EventArgs e)
-        { 
+        {
+            QLBLL qLBLL = new QLBLL();
             ThuePhong tp = new ThuePhong();
             tp.hopDong.MaPhongTro =idPhong;
             ChitietHopDongPhong ct= new ChitietHopDongPhong(tp,LoadForm);
-            tc.openChildForm1(ct, panelChitietPT);
+            qLBLL.openChildForm1(ct, panelChitietPT);
            
         }
 
         private void btnThanhVien_Click(object sender, EventArgs e)
         {
-
-            tc.openChildForm1(new ChitietThanhVien(idPhong), panelChitietPT);
+            QLBLL qLBLL = new QLBLL();
+            qLBLL.openChildForm1(new ChitietThanhVien(idPhong), panelChitietPT);
         }
 
         private void btnTroVe_Click(object sender, EventArgs e)
         {
+            QLBLL qLBLL = new QLBLL();
+            PhongTro pt = qLBLL.GetPhongTroByIdPhong(idPhong);
+            Button btn = new Button();
+            btn.Name = pt.MaDayTro;
             this.Close();
+            suKien(btn,EventArgs.Empty);
+
         }
 
         private void btnDichVu_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ChitietDV(idPhong),panelChitietPT);
+            QLBLL qLBLL = new QLBLL();
+            qLBLL.openChildForm1(new ChitietDV(idPhong),panelChitietPT);
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ChitietTB(idPhong), panelChitietPT);
+            QLBLL qLBLL = new QLBLL();
+            qLBLL.openChildForm1(new ChitietTB(idPhong), panelChitietPT);
         }
 
         private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new TaiKhoanPhong(), panelChitietPT);
+            QLBLL qLBLL = new QLBLL();
+            qLBLL.openChildForm1(new TaiKhoanPhong(), panelChitietPT);
         }
     }
 }

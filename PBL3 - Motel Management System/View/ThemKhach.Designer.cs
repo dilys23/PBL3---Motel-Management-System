@@ -316,7 +316,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ThemKhach";
             this.Text = "ThemKhach";
-            this.Load += new System.EventHandler(this.ThemKhach_Load);
             this.panelKhach.ResumeLayout(false);
             this.panelKhach.PerformLayout();
             this.panel1.ResumeLayout(false);

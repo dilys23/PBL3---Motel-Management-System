@@ -22,17 +22,14 @@ namespace PBL3___Motel_Management_System.View
             InitializeComponent();
             this.idPhong = idPhong;
             LoadForm(null);
-    
         }
-        TrangChu tc = new TrangChu();
-        
         public void LoadForm(string txt)
         {
             try
             {
                 dgvDichVu.Rows.Clear();
-                tc.customDGV(dgvDichVu);
                 QLBLL qLBLL = new QLBLL();
+                qLBLL.customDGV(dgvDichVu);
                 int i = 1;
                 foreach (string idDv in qLBLL.GetAllIdDichVuByIdPhong(this.idPhong))
                 {
@@ -71,8 +68,7 @@ namespace PBL3___Motel_Management_System.View
                     e.CellStyle.SelectionBackColor = Color.Tomato;
                 }
             }
-        }
-       
+        }     
         private void dgvDichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -105,7 +101,8 @@ namespace PBL3___Motel_Management_System.View
         {
             ThuePhong tp = new ThuePhong();
             tp.hopDong.MaPhongTro = idPhong;
-            tc.openChildForm1(new ThemDVphong(tp, LoadForm), panelThem);
+            QLBLL qLBLL = new QLBLL();
+            qLBLL.openChildForm1(new ThemDVphong(tp, LoadForm), panelThem);
         }
 
         private void dgvDichVu_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

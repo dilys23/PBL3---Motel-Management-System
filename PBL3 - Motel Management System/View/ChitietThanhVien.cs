@@ -23,11 +23,6 @@ namespace PBL3___Motel_Management_System.View
             LoadForm(null);
             SetFontAndColors();
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
         private void SetFontAndColors()
         {
             this.dgvThanhVien.DefaultCellStyle.Font = new Font("Tahoma", 10);
@@ -42,13 +37,9 @@ namespace PBL3___Motel_Management_System.View
         }
         public void LoadForm(string txt)
         {
-
-            dgvThanhVien.Rows.Clear();
-       
+                dgvThanhVien.Rows.Clear();
                 dgvThanhVien.Columns[8].ValueType = typeof(Image);
-                dgvThanhVien.RowCount = 1;
-               
-
+                dgvThanhVien.RowCount = 0;
                 QLBLL qLBLL = new QLBLL();
                 int i = 1;
                 //dgvThanhVien.Columns[6].ValueType = typeof(Boolean);
@@ -63,8 +54,8 @@ namespace PBL3___Motel_Management_System.View
                     }
                     dgvThanhVien.Rows.Add(nguoi.MaNguoi, i++, nguoi.Ten, nguoi.Cccd, nguoi.Sdt, nguoi.Diachi, nguoi.NgaySinh, (nguoi.GioiTinh) ? "Nam" : "Nữ", image);
                 }
-            var Sua = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-create-25.png");
-            var Xoa = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
+            var Sua = System.Drawing.Image.FromFile(@"D:\PBLproject\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-create-25.png");
+            var Xoa = System.Drawing.Image.FromFile(@"D:\PBLproject\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
             dgvThanhVien.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dgvIcons_CellPainting1(dgvThanhVien, e, Sua, Xoa));
         }
         public void dgvIcons_CellPainting1(DataGridView dgv, DataGridViewCellPaintingEventArgs e, Image btSua, Image btXoa)
@@ -104,8 +95,6 @@ namespace PBL3___Motel_Management_System.View
                 }
             }
         }
-
-        TrangChu tc= new TrangChu();
         private void dgvThanhVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -119,7 +108,8 @@ namespace PBL3___Motel_Management_System.View
                    
                     ThuePhong tp = new ThuePhong();
                     tp.hopDong.MaNguoi = dgvThanhVien.CurrentRow.Cells[0].Value.ToString();
-                    tc.openChildForm1(new ThemKhach(tp, LoadForm), panelThem);
+                    QLBLL qLBLL = new QLBLL();
+                    qLBLL.openChildForm1(new ThemKhach(tp, LoadForm), panelThem);
 
 
                 }
@@ -160,7 +150,7 @@ namespace PBL3___Motel_Management_System.View
                     string IdPhong = qLBLL.GetIdPhongByIdNguoi(IdThanhVien);
                     ThuePhong tp = new ThuePhong();
                     tp.hopDong.MaPhongTro = idPhong;
-                    tc.openChildForm1(new ThemKhach(tp, LoadForm), panelThem);
+                    qLBLL.openChildForm1(new ThemKhach(tp, LoadForm), panelThem);
                 }
                 else
                 {
@@ -177,11 +167,12 @@ namespace PBL3___Motel_Management_System.View
         {
             if (dgvThanhVien.CurrentRow.Cells[0].Value != null)
             {
+                QLBLL qLBLL = new QLBLL();
                 ThuePhong tp = new ThuePhong();
                 string id = dgvThanhVien.CurrentRow.Cells[0].Value.ToString();
                 tp.hopDong.MaNguoi = id;
                 ThemKhach tk = new ThemKhach(tp, LoadForm);
-                tc.openChildForm1(tk, panelThem);
+                qLBLL.openChildForm1(tk, panelThem);
                 tk.btnLuu.Visible= false;
                 tk.btnThemAnh.Visible= false;
                 tk.txtCccd.Enabled = false;

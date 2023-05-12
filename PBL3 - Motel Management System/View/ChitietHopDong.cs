@@ -46,7 +46,7 @@ namespace PBL3___Motel_Management_System.View
                 nguoi = tp.hopDong.Nguoi;
                 dt = qLBLL.GetDayTroByIdPhong(tp.hopDong.MaPhongTro);
                 phongTro = qLBLL.GetPhongTroByIdPhong(tp.hopDong.MaPhongTro);
-                hopdong = qLBLL.GetHopDongByMaHD(tp.hopDong.MaHopDong);
+                hopdong = this.tp.hopDong;
                 SetGUI(dt, nguoi, phongTro, hopdong);             
             }
         }
@@ -72,8 +72,7 @@ namespace PBL3___Motel_Management_System.View
             dtpNgayKetThuc.Value = ketthuc;
             int i = 0;
             if (tp.hopDong.MaPhongTro == null)
-            {
-                
+            {          
                 foreach (ChiTietDichVu ctdv in qLBLL.GetChiTietDichVuByIdPhong(phongTro.MaPhongTro))
                 {
                     DichVu dv = new DichVu();
@@ -169,14 +168,6 @@ namespace PBL3___Motel_Management_System.View
             this.loader(null);
             this.Close();
         }
-        private void label2_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void panelThem_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

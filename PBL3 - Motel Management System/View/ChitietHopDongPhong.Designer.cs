@@ -360,7 +360,6 @@
             this.label2.Size = new System.Drawing.Size(107, 20);
             this.label2.TabIndex = 19;
             this.label2.Text = "Ngày bắt đầu";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // dtpNgaySinh
             // 

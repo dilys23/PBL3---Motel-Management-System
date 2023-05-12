@@ -22,24 +22,9 @@ namespace PBL3___Motel_Management_System
             this.Loader = loader;
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void iconButton1_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
         }
         private Boolean checkHopLe()
         {

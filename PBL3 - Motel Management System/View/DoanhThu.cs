@@ -103,7 +103,5 @@ namespace PBL3___Motel_Management_System
             ChartDuong.ChartAreas[0].AxisY.Title = "Tổng tiền";
             ChartDuong.DataBind();
         }
-       
-
     }
 }

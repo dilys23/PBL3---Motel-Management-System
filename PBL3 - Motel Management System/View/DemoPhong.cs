@@ -128,20 +128,20 @@ namespace PBL3___Motel_Management_System.View
             }
             panelPhong.Invalidate();
         }
-        TrangChu tc = new TrangChu();
         private void btnThemPhong_Click_1(object sender, EventArgs e)
         {
             if(ClickBtn != null)
             {
                 QLBLL qLBLL = new QLBLL();
                 DayTro dt = qLBLL.GetDayTroById(ClickBtn.Name);
-                tc.openChildForm1(new ThemPhong(dt.MaDayTro,null,LoadForm, SuKien), panelChinh);
+                qLBLL.openChildForm1(new ThemPhong(dt.MaDayTro,null,LoadForm, SuKien), panelChinh);
             }         
         }
 
         private void btnThemday_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ThemDay(null,LoadForm,SuKien), panelChinh);
+            QLBLL qLBLL = new QLBLL();
+            qLBLL.openChildForm1(new ThemDay(null,LoadForm,SuKien), panelChinh);
         }
 
         private void btnSuaDay_Click(object sender, EventArgs e)
@@ -151,7 +151,7 @@ namespace PBL3___Motel_Management_System.View
             {
                 QLBLL qLBLL = new QLBLL();
                 DayTro dt = qLBLL.GetDayTroById(ClickBtn.Name);
-                tc.openChildForm1(new ThemDay(dt.MaDayTro, LoadForm, SuKien), panelChinh);
+                qLBLL.openChildForm1(new ThemDay(dt.MaDayTro, LoadForm, SuKien), panelChinh);
             }
         }
         private void btnTimKiem_Click(object sender, EventArgs e)

@@ -21,13 +21,10 @@ namespace PBL3___Motel_Management_System
             LoadForm(null);
             Setcbb();
         }
-       
-        TrangChu tc = new TrangChu();
-        Dichvu dv = new Dichvu();   
-       
         private void btnThemHD_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ThemCSNuoc(null,LoadForm), panelChisoNuoc);
+            QLBLL qLBLL = new QLBLL();
+            qLBLL.openChildForm1(new ThemCSNuoc(null, LoadForm), panelChisoNuoc);
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -45,8 +42,8 @@ namespace PBL3___Motel_Management_System
         private void LoadForm(string txt)
         {
             dgvChiSoNuoc.Rows.Clear();
-            tc.customDGV(dgvChiSoNuoc);
             QLBLL qLBLL = new QLBLL();
+            qLBLL.customDGV(dgvChiSoNuoc);
             int i = 0;
             if (txt==null)
             {
@@ -78,7 +75,7 @@ namespace PBL3___Motel_Management_System
             }
             var Sua = System.Drawing.Image.FromFile(@"D:\PBLproject\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-create-25.png");
             var Xoa = System.Drawing.Image.FromFile(@"D:\PBLproject\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
-            dgvChiSoNuoc.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dv.dgvIcons_CellPainting1(dgvChiSoNuoc, e, Sua, Xoa));
+            dgvChiSoNuoc.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => qLBLL.dgvIcons_CellPainting1(dgvChiSoNuoc, e, Sua, Xoa));
         }
         public void Setcbb()
         {
@@ -94,30 +91,13 @@ namespace PBL3___Motel_Management_System
         {
             QLBLL qLBLL = new QLBLL();
             cbbPhongTro.Items.Clear();
-            cbbPhongTro.Items.Add(new ViewCbb {key = "-1", value = "All" });
             string id = ((ViewCbb)cbbDayTro.SelectedItem).key;
-            if (id == "-1")
-            {
-
-                foreach (PhongTro pt in qLBLL.GetAllPhongTro())
-                {
-                    cbbPhongTro.Items.Add(new ViewCbb {key = pt.MaPhongTro, value = pt.TenPhongTro });
-                }
-            }
-            else
-            {
-                foreach (string idp in qLBLL.GetAllPhongTroByIdDay(id))
-                {
-                    PhongTro pt = qLBLL.GetPhongTroByIdPhong(idp);
-                    cbbPhongTro.Items.Add(new ViewCbb {key = pt.MaPhongTro, value = pt.TenPhongTro });
-                }
-            }
+            cbbPhongTro.Items.AddRange(qLBLL.GetViewCbbPhongByDay(id).ToArray());
             if (cbbPhongTro.Items.Count != 0)
             {
                 cbbPhongTro.SelectedIndex = 0;
             }
         }
-
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             LoadForm("");
@@ -183,8 +163,8 @@ namespace PBL3___Motel_Management_System
                     ThemCSNuoc frm = new ThemCSNuoc(id, LoadForm);
                     frm.cbbDayTro.Enabled = false;
                     frm.cbbPhongTro.Enabled=false;
-                    tc.openChildForm1(frm, panelChisoNuoc);
-
+                    QLBLL qLBLL = new QLBLL();
+                    qLBLL.openChildForm1(frm, panelChisoNuoc);
                 }
 
             }

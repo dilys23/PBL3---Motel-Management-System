@@ -57,7 +57,6 @@
             this.panelThemHD.Name = "panelThemHD";
             this.panelThemHD.Size = new System.Drawing.Size(920, 454);
             this.panelThemHD.TabIndex = 0;
-            this.panelThemHD.Paint += new System.Windows.Forms.PaintEventHandler(this.panelThemHD_Paint);
             // 
             // iconButton2
             // 
@@ -85,7 +84,6 @@
             this.label7.Size = new System.Drawing.Size(156, 23);
             this.label7.TabIndex = 47;
             this.label7.Text = "THÊM HỢP ĐỒNG";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // btnLuu
             // 
@@ -120,7 +118,6 @@
             this.panelThem.Name = "panelThem";
             this.panelThem.Size = new System.Drawing.Size(890, 206);
             this.panelThem.TabIndex = 46;
-            this.panelThem.Paint += new System.Windows.Forms.PaintEventHandler(this.panelThem_Paint);
             // 
             // txtTienCoc
             // 
@@ -129,7 +126,6 @@
             this.txtTienCoc.Name = "txtTienCoc";
             this.txtTienCoc.Size = new System.Drawing.Size(178, 23);
             this.txtTienCoc.TabIndex = 28;
-            this.txtTienCoc.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label6
             // 
@@ -140,7 +136,6 @@
             this.label6.Size = new System.Drawing.Size(62, 17);
             this.label6.TabIndex = 27;
             this.label6.Text = "Tiền cọc";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label3
             // 
@@ -151,7 +146,6 @@
             this.label3.Size = new System.Drawing.Size(95, 17);
             this.label3.TabIndex = 21;
             this.label3.Text = "Ngày kết thúc";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // dtpKetThuc
             // 
@@ -160,7 +154,6 @@
             this.dtpKetThuc.Name = "dtpKetThuc";
             this.dtpKetThuc.Size = new System.Drawing.Size(178, 23);
             this.dtpKetThuc.TabIndex = 20;
-            this.dtpKetThuc.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // label2
             // 
@@ -171,7 +164,6 @@
             this.label2.Size = new System.Drawing.Size(93, 17);
             this.label2.TabIndex = 19;
             this.label2.Text = "Ngày bắt đầu";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // dtpBatDau
             // 
@@ -180,7 +172,6 @@
             this.dtpBatDau.Name = "dtpBatDau";
             this.dtpBatDau.Size = new System.Drawing.Size(178, 23);
             this.dtpBatDau.TabIndex = 18;
-            this.dtpBatDau.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // ThemHopDong
             // 
@@ -190,7 +181,6 @@
             this.Controls.Add(this.panelThemHD);
             this.Name = "ThemHopDong";
             this.Text = "ThemHD";
-            this.Load += new System.EventHandler(this.ThemHD_Load);
             this.panelThemHD.ResumeLayout(false);
             this.panelThemHD.PerformLayout();
             this.panelThem.ResumeLayout(false);

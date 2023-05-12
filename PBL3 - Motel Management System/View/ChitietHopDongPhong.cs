@@ -63,11 +63,5 @@ namespace PBL3___Motel_Management_System.View
               
 
         }
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-      
     }
 }

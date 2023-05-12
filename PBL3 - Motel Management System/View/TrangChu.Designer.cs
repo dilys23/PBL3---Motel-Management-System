@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChu));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.btnTK = new FontAwesome.Sharp.IconButton();
             this.btnMinimized = new FontAwesome.Sharp.IconButton();
@@ -59,6 +59,13 @@
             this.dgvSoLuong = new System.Windows.Forms.DataGridView();
             this.TinhTrang = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dgvTinhTrang = new System.Windows.Forms.DataGridView();
+            this.TinhTrang1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuongPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Maphongtro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDayTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenPhongTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TinhTrang2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelTitle.SuspendLayout();
             this.paneMenu.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -155,7 +162,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(139)))), ((int)(((byte)(90)))));
             this.label1.Location = new System.Drawing.Point(49, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 40);
+            this.label1.Size = new System.Drawing.Size(67, 34);
             this.label1.TabIndex = 0;
             this.label1.Text = "DREAM \r\nHOUSE";
             // 
@@ -410,7 +417,7 @@
             this.label4.ForeColor = System.Drawing.Color.DarkCyan;
             this.label4.Location = new System.Drawing.Point(65, 22);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(194, 20);
+            this.label4.Size = new System.Drawing.Size(164, 17);
             this.label4.TabIndex = 4;
             this.label4.Text = "TÌNH TRẠNG PHÒNG";
             // 
@@ -421,6 +428,9 @@
             this.dgvSoLuong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSoLuong.BackgroundColor = System.Drawing.Color.Ivory;
             this.dgvSoLuong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSoLuong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TinhTrang1,
+            this.SoLuongPhong});
             this.dgvSoLuong.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvSoLuong.Location = new System.Drawing.Point(580, 350);
             this.dgvSoLuong.Name = "dgvSoLuong";
@@ -432,27 +442,27 @@
             // 
             // TinhTrang
             // 
-            chartArea1.Area3DStyle.Enable3D = true;
-            chartArea1.Name = "ChartArea1";
-            this.TinhTrang.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.TinhTrang.Legends.Add(legend1);
+            chartArea2.Area3DStyle.Enable3D = true;
+            chartArea2.Name = "ChartArea1";
+            this.TinhTrang.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.TinhTrang.Legends.Add(legend2);
             this.TinhTrang.Location = new System.Drawing.Point(58, 72);
             this.TinhTrang.Name = "TinhTrang";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "TinhTrang";
-            this.TinhTrang.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "TinhTrang";
+            this.TinhTrang.Series.Add(series2);
             this.TinhTrang.Size = new System.Drawing.Size(414, 253);
             this.TinhTrang.TabIndex = 1;
             this.TinhTrang.Text = "Tinhtrang";
-            title1.Name = "ConTrong";
-            title2.Name = "ChoThue";
-            title3.Name = "DangCoc";
-            this.TinhTrang.Titles.Add(title1);
-            this.TinhTrang.Titles.Add(title2);
-            this.TinhTrang.Titles.Add(title3);
+            title4.Name = "ConTrong";
+            title5.Name = "ChoThue";
+            title6.Name = "DangCoc";
+            this.TinhTrang.Titles.Add(title4);
+            this.TinhTrang.Titles.Add(title5);
+            this.TinhTrang.Titles.Add(title6);
             // 
             // dgvTinhTrang
             // 
@@ -461,6 +471,12 @@
             this.dgvTinhTrang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTinhTrang.BackgroundColor = System.Drawing.Color.Ivory;
             this.dgvTinhTrang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTinhTrang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Maphongtro,
+            this.Stt,
+            this.TenDayTro,
+            this.TenPhongTro,
+            this.TinhTrang2});
             this.dgvTinhTrang.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvTinhTrang.Location = new System.Drawing.Point(580, 72);
             this.dgvTinhTrang.Name = "dgvTinhTrang";
@@ -469,6 +485,42 @@
             this.dgvTinhTrang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTinhTrang.Size = new System.Drawing.Size(513, 253);
             this.dgvTinhTrang.TabIndex = 2;
+            // 
+            // TinhTrang1
+            // 
+            this.TinhTrang1.HeaderText = "Tình trạng";
+            this.TinhTrang1.Name = "TinhTrang1";
+            // 
+            // SoLuongPhong
+            // 
+            this.SoLuongPhong.HeaderText = "Số lượng phòng";
+            this.SoLuongPhong.Name = "SoLuongPhong";
+            // 
+            // Maphongtro
+            // 
+            this.Maphongtro.HeaderText = "Maphongtro";
+            this.Maphongtro.Name = "Maphongtro";
+            this.Maphongtro.Visible = false;
+            // 
+            // Stt
+            // 
+            this.Stt.HeaderText = "STT";
+            this.Stt.Name = "Stt";
+            // 
+            // TenDayTro
+            // 
+            this.TenDayTro.HeaderText = "Tên dãy trọ";
+            this.TenDayTro.Name = "TenDayTro";
+            // 
+            // TenPhongTro
+            // 
+            this.TenPhongTro.HeaderText = "Tên phòng trọ";
+            this.TenPhongTro.Name = "TenPhongTro";
+            // 
+            // TinhTrang2
+            // 
+            this.TinhTrang2.HeaderText = "Tình trạng";
+            this.TinhTrang2.Name = "TinhTrang2";
             // 
             // TrangChu
             // 
@@ -522,5 +574,12 @@
         private System.Windows.Forms.DataGridView dgvTinhTrang;
         private System.Windows.Forms.DataGridView dgvSoLuong;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrang1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Maphongtro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Stt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenDayTro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenPhongTro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrang2;
     }
 }

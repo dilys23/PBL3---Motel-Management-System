@@ -90,6 +90,13 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.HopDong.Where(p => p.TonTai == true).Select(p => p).ToList<HopDong>();
             }
         }
+        public List<HopDong> GetAllHopDongDangThue()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.HopDong.Where(p => p.TonTai == true && p.TinhTrang == true).Select(p => p).ToList<HopDong>();
+            }
+        }
         public List<string> GetAllIdHoaDon()
         {
             using(DataPbl data = new DataPbl())
@@ -276,6 +283,27 @@ namespace PBL3___Motel_Management_System.DAL
                return (HopDong)data.HopDong.Where(p => p.TonTai == true && p.MaPhongTro == idphong).FirstOrDefault();
             }
         }
+        public List<string> GetAllIdHopDongDangThueByIdDay(string idDay)
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                return data.HopDong.Where(p => p.TonTai == true && p.PhongTro.MaDayTro == idDay && p.TinhTrang == true).Select(p => p.MaHopDong).ToList<string>();
+            }
+        }
+        public List<string> GetAllIdHopDongDangThue()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.HopDong.Where(p => p.TonTai == true && p.TinhTrang == true).Select(p => p.MaHopDong).ToList<string>();
+            }
+        }
+        public List<string> GetAllIdHopDongDangThueByIdPhong(string idPhong)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.HopDong.Where(p => p.TonTai == true && p.MaPhongTro == idPhong && p.TinhTrang == true).Select(p => p.MaHopDong).ToList<string>();
+            }
+        }
         public void ThemTBDal(ThietBi tb)
         {
             using (DataPbl data = new DataPbl())
@@ -297,7 +325,6 @@ namespace PBL3___Motel_Management_System.DAL
                 
             }
         }
-
         public void SuaTBDal(ThietBi tb)
         {
             using (DataPbl data = new DataPbl())
@@ -926,5 +953,12 @@ namespace PBL3___Motel_Management_System.DAL
                
            }
         } 
+        public List<DichVu> getAllDichVuByIdPhong(string idPhong)
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                return data.ChiTietDichVu.Where(p => p.TonTai == true && p.MaPhongTro == idPhong).Select(p => p.DichVu).ToList<DichVu>();
+            }
+        }
     }
 }

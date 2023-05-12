@@ -107,11 +107,9 @@ namespace PBL3___Motel_Management_System.View
                 MessageBox.Show("Phòng hiện tại không thể cọc", "Thông báo");
             }
         }
-        TrangChu tc = new TrangChu();
-
         private void btnChiTiet_Click_1(object sender, EventArgs e)
         {
-            openChildForm1(new ChiTietPT(IdPhong), panel);
+            openChildForm1(new ChiTietPT(sk,IdPhong), panel);
         }
 
         private void btnChoThue_Click(object sender, EventArgs e)
@@ -128,7 +126,7 @@ namespace PBL3___Motel_Management_System.View
             {
                 ThuePhong tp = new ThuePhong();
                 tp.hopDong = qLBLL.GetHopDongByIdPhong(IdPhong);
-                tc.openChildForm1(new ThemKhach(tp, LoadForm), panel);
+                qLBLL.openChildForm1(new ThemKhach(tp, LoadForm), panel);
             }
             else
             {
@@ -159,8 +157,8 @@ namespace PBL3___Motel_Management_System.View
         private void btnSuaPhong_Click(object sender, EventArgs e)
         {
             QLBLL qLBLL = new QLBLL();
-            string idDay = qLBLL.GetDayTroByIdPhong(IdPhong).MaDayTro;
-           tc.openChildForm1(new ThemPhong(idDay,IdPhong,LoadForm,null), panel);
+            DayTro dt = qLBLL.GetDayTroByIdPhong(IdPhong);
+            qLBLL.openChildForm1(new ThemPhong(dt.MaDayTro,IdPhong,LoadForm,null), panel);
         }
 
         private void btnTra_Click(object sender, EventArgs e)

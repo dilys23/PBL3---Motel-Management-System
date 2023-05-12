@@ -69,10 +69,10 @@
             this.panelThemDV.Controls.Add(this.label7);
             this.panelThemDV.Controls.Add(this.btnLuu);
             this.panelThemDV.Controls.Add(this.panelThem);
-            this.panelThemDV.Location = new System.Drawing.Point(-3, 1);
-            this.panelThemDV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelThemDV.Location = new System.Drawing.Point(-2, 1);
+            this.panelThemDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelThemDV.Name = "panelThemDV";
-            this.panelThemDV.Size = new System.Drawing.Size(1052, 625);
+            this.panelThemDV.Size = new System.Drawing.Size(789, 508);
             this.panelThemDV.TabIndex = 1;
             this.panelThemDV.Paint += new System.Windows.Forms.PaintEventHandler(this.panelThemHD_Paint);
             // 
@@ -85,10 +85,10 @@
             this.btnTroVe.IconColor = System.Drawing.Color.White;
             this.btnTroVe.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTroVe.IconSize = 30;
-            this.btnTroVe.Location = new System.Drawing.Point(935, 4);
-            this.btnTroVe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTroVe.Location = new System.Drawing.Point(701, 3);
+            this.btnTroVe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTroVe.Name = "btnTroVe";
-            this.btnTroVe.Size = new System.Drawing.Size(43, 37);
+            this.btnTroVe.Size = new System.Drawing.Size(32, 30);
             this.btnTroVe.TabIndex = 48;
             this.btnTroVe.UseVisualStyleBackColor = false;
             this.btnTroVe.Click += new System.EventHandler(this.iconButton2_Click);
@@ -98,9 +98,10 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Bahnschrift SemiBold", 13.8F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.Chocolate;
-            this.label7.Location = new System.Drawing.Point(15, 7);
+            this.label7.Location = new System.Drawing.Point(11, 6);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(164, 28);
+            this.label7.Size = new System.Drawing.Size(135, 23);
             this.label7.TabIndex = 47;
             this.label7.Text = "CHỌN DỊCH VỤ";
             // 
@@ -114,10 +115,10 @@
             this.btnLuu.IconColor = System.Drawing.Color.White;
             this.btnLuu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLuu.IconSize = 30;
-            this.btnLuu.Location = new System.Drawing.Point(984, 2);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLuu.Location = new System.Drawing.Point(738, 2);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(52, 37);
+            this.btnLuu.Size = new System.Drawing.Size(39, 30);
             this.btnLuu.TabIndex = 49;
             this.btnLuu.UseVisualStyleBackColor = false;
             this.btnLuu.Click += new System.EventHandler(this.iconButton4_Click);
@@ -134,10 +135,10 @@
             this.panelThem.Controls.Add(this.btnThemDichVu);
             this.panelThem.Controls.Add(this.dgvXoaDichVu);
             this.panelThem.Controls.Add(this.dgvThemDichVu);
-            this.panelThem.Location = new System.Drawing.Point(17, 47);
-            this.panelThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelThem.Location = new System.Drawing.Point(13, 38);
+            this.panelThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelThem.Name = "panelThem";
-            this.panelThem.Size = new System.Drawing.Size(1023, 560);
+            this.panelThem.Size = new System.Drawing.Size(767, 455);
             this.panelThem.TabIndex = 46;
             // 
             // label1
@@ -145,15 +146,16 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label1.Location = new System.Drawing.Point(100, 347);
+            this.label1.Location = new System.Drawing.Point(75, 282);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 22);
+            this.label1.Size = new System.Drawing.Size(124, 18);
             this.label1.TabIndex = 56;
             this.label1.Text = "Dịch vụ cố định";
             // 
             // dgvDVcodinh
             // 
-            this.dgvDVcodinh.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dgvDVcodinh.AllowUserToAddRows = false;
             this.dgvDVcodinh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -166,13 +168,13 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.dgvDVcodinh.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvDVcodinh.Location = new System.Drawing.Point(104, 378);
-            this.dgvDVcodinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvDVcodinh.Location = new System.Drawing.Point(78, 307);
+            this.dgvDVcodinh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvDVcodinh.Name = "dgvDVcodinh";
             this.dgvDVcodinh.RowHeadersWidth = 51;
             this.dgvDVcodinh.RowTemplate.Height = 24;
             this.dgvDVcodinh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDVcodinh.Size = new System.Drawing.Size(881, 143);
+            this.dgvDVcodinh.Size = new System.Drawing.Size(661, 116);
             this.dgvDVcodinh.TabIndex = 55;
             // 
             // dataGridViewTextBoxColumn5
@@ -210,10 +212,10 @@
             this.btnXoaDichVu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXoaDichVu.IconSize = 25;
             this.btnXoaDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaDichVu.Location = new System.Drawing.Point(8, 196);
-            this.btnXoaDichVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXoaDichVu.Location = new System.Drawing.Point(6, 159);
+            this.btnXoaDichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnXoaDichVu.Name = "btnXoaDichVu";
-            this.btnXoaDichVu.Size = new System.Drawing.Size(77, 38);
+            this.btnXoaDichVu.Size = new System.Drawing.Size(58, 31);
             this.btnXoaDichVu.TabIndex = 53;
             this.btnXoaDichVu.Text = "Xóa";
             this.btnXoaDichVu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -230,10 +232,10 @@
             this.btnThemDichVu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThemDichVu.IconSize = 25;
             this.btnThemDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemDichVu.Location = new System.Drawing.Point(8, 12);
-            this.btnThemDichVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThemDichVu.Location = new System.Drawing.Point(6, 10);
+            this.btnThemDichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnThemDichVu.Name = "btnThemDichVu";
-            this.btnThemDichVu.Size = new System.Drawing.Size(83, 42);
+            this.btnThemDichVu.Size = new System.Drawing.Size(62, 34);
             this.btnThemDichVu.TabIndex = 54;
             this.btnThemDichVu.Text = "Thêm ";
             this.btnThemDichVu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -242,7 +244,7 @@
             // 
             // dgvXoaDichVu
             // 
-            this.dgvXoaDichVu.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dgvXoaDichVu.AllowUserToAddRows = false;
             this.dgvXoaDichVu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -255,13 +257,13 @@
             this.TenDichVu,
             this.GiaDichVu});
             this.dgvXoaDichVu.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvXoaDichVu.Location = new System.Drawing.Point(104, 196);
-            this.dgvXoaDichVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvXoaDichVu.Location = new System.Drawing.Point(78, 159);
+            this.dgvXoaDichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvXoaDichVu.Name = "dgvXoaDichVu";
             this.dgvXoaDichVu.RowHeadersWidth = 51;
             this.dgvXoaDichVu.RowTemplate.Height = 24;
             this.dgvXoaDichVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvXoaDichVu.Size = new System.Drawing.Size(881, 135);
+            this.dgvXoaDichVu.Size = new System.Drawing.Size(661, 110);
             this.dgvXoaDichVu.TabIndex = 52;
             // 
             // MaDichVu
@@ -290,7 +292,7 @@
             // 
             // dgvThemDichVu
             // 
-            this.dgvThemDichVu.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dgvThemDichVu.AllowUserToAddRows = false;
             this.dgvThemDichVu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -303,13 +305,13 @@
             this.TenDichVu1,
             this.GiaDichVu1});
             this.dgvThemDichVu.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvThemDichVu.Location = new System.Drawing.Point(104, 12);
-            this.dgvThemDichVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvThemDichVu.Location = new System.Drawing.Point(78, 10);
+            this.dgvThemDichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvThemDichVu.Name = "dgvThemDichVu";
             this.dgvThemDichVu.RowHeadersWidth = 51;
             this.dgvThemDichVu.RowTemplate.Height = 24;
             this.dgvThemDichVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvThemDichVu.Size = new System.Drawing.Size(881, 152);
+            this.dgvThemDichVu.Size = new System.Drawing.Size(661, 124);
             this.dgvThemDichVu.TabIndex = 51;
             // 
             // MaDichVu1
@@ -338,11 +340,11 @@
             // 
             // ThemDVphong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1047, 619);
+            this.ClientSize = new System.Drawing.Size(785, 503);
             this.Controls.Add(this.panelThemDV);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ThemDVphong";
             this.Text = "ThemDVphong";
             this.panelThemDV.ResumeLayout(false);

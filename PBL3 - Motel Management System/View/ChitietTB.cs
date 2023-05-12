@@ -30,7 +30,6 @@ namespace PBL3___Motel_Management_System.View
             this.dgvThietBi.DefaultCellStyle.BackColor = Color.Beige;
             this.dgvThietBi.DefaultCellStyle.SelectionForeColor = Color.AliceBlue;
             this.dgvThietBi.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
-
             DataGridViewRow row = this.dgvThietBi.RowTemplate;
             row.Height = 35;
             row.MinimumHeight = 20;
@@ -40,7 +39,7 @@ namespace PBL3___Motel_Management_System.View
            // dgvThietBi.DataSource = null;
             dgvThietBi.Rows.Clear();
             QLBLL qLBLL = new QLBLL();
-            dgvThietBi.RowCount = 1;
+            dgvThietBi.RowCount = 0;
             int i = 1;
             ThuePhong tp = new ThuePhong();
             tp.hopDong.MaPhongTro = idPhong;
@@ -51,15 +50,8 @@ namespace PBL3___Motel_Management_System.View
                 ThietBi tb = qLBLL.GetTBByIdTB(cttb.MaThietBi);
                 dgvThietBi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi, cttb.SoLuong);
             }
-            //foreach (string idCttb in qLBLL.GetAllIdCHiTietThietBiByIdPhong(this.idPhong))
-            //{
-            //    ChiTietThietBi cttb = qLBLL.GetChiTietThietBiById(idCttb);
-            //    ThietBi tb = qLBLL.GetThietBiByIdThietBi(cttb.MaThietBi);
-            //    dgvThietBi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi, cttb.SoLuong);
-            //}
-            var Xoa = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
+            var Xoa = System.Drawing.Image.FromFile(@"D:\PBLproject\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
             dgvThietBi.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dgvIcons_CellPainting1(dgvThietBi, e, Xoa));
-
         }
         public void dgvIcons_CellPainting1(DataGridView dgv, DataGridViewCellPaintingEventArgs e, Image btXoa)
         {
@@ -150,12 +142,12 @@ namespace PBL3___Motel_Management_System.View
                 }
             }
         }
-        TrangChu tc = new TrangChu();
         private void btnThemThietbi_Click(object sender, EventArgs e)
         {
+            QLBLL qLBLL = new QLBLL();
             ThuePhong tp= new ThuePhong();
             tp.hopDong.MaPhongTro = idPhong;
-            tc.openChildForm1(new ThemThietBiPhong(tp, LoadForm), panelThem);
+            qLBLL.openChildForm1(new ThemThietBiPhong(tp, LoadForm), panelThem);
         }
     }
 }

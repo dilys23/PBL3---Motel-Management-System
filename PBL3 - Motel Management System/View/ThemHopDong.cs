@@ -17,7 +17,6 @@ namespace PBL3___Motel_Management_System
     {
         private ThuePhong tp;
         private Loader loader;
-
         public ThemHopDong(ThuePhong tp, Loader loader)
         {
             InitializeComponent();
@@ -36,7 +35,6 @@ namespace PBL3___Motel_Management_System
         public void SetGUI()
         {
             QLBLL qLBLL = new QLBLL();
-            //HopDong hopdong = qLBLL.GetHopDongByMaHD(tp.hopDong.MaHopDong);
             if (tp.hopDong.MaHopDong!=null && tp.hopDong.MaPhongTro==null)
             {
                
@@ -44,8 +42,6 @@ namespace PBL3___Motel_Management_System
                 dtpBatDau.Value = Convert.ToDateTime(hopdong.NgayBatDau);
                 dtpKetThuc.Value = Convert.ToDateTime(hopdong.NgayKetThuc);
                 txtTienCoc.Text =Convert.ToDouble(hopdong.TienCoc).ToString();
-
-
             }
         }
         private void Back(string txt)
@@ -53,42 +49,15 @@ namespace PBL3___Motel_Management_System
             this.loader(null);
             this.Close();
         }
-        
-        private void ThemHD_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-        TrangChu tc = new TrangChu();
-      
-
         private void btnThemKhach_Click_1(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ThemKhach(null, null), panelThemHD);
+            QLBLL qLBLL = new QLBLL();
+            qLBLL.openChildForm1(new ThemKhach(null, null), panelThemHD);
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void panelThemHD_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelThem_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
         }
         private bool CheckHopLe()
         {
@@ -142,76 +111,9 @@ namespace PBL3___Motel_Management_System
                     tp.hopDong.NgayBatDau = dateStart;
                     tp.hopDong.NgayKetThuc = dateEnd;
                     tp.hopDong.TienCoc = Convert.ToDouble(txtTienCoc.Text);
-                    tc.openChildForm1(new ChitietHopDong(tp, Back), panelThemHD);
+                    qLBLL.openChildForm1(new ChitietHopDong(tp, Back), panelThemHD);
                 }
             }
-           
-            
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -16,7 +16,6 @@ namespace PBL3___Motel_Management_System
 {
     public partial class Hoadon : Form
     {
-       // Hopdong thd = new Hopdong();
         public Hoadon()
         {
             InitializeComponent();
@@ -24,8 +23,6 @@ namespace PBL3___Motel_Management_System
             LoadForm(null);
 
         }
-        TrangChu tc= new TrangChu();
-        Dichvu dv = new Dichvu();
         private void LoadForm(string txt)
         {
             dgvHoaDon.Rows.Clear();
@@ -66,7 +63,7 @@ namespace PBL3___Motel_Management_System
             } 
             var Sua = System.Drawing.Image.FromFile(@"D:\PBLproject\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-create-25.png");
             var Xoa = System.Drawing.Image.FromFile(@"D:\PBLproject\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
-            dgvHoaDon.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dv.dgvIcons_CellPainting1(dgvHoaDon, e,Sua, Xoa) );
+            dgvHoaDon.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => qLBLL.dgvIcons_CellPainting1(dgvHoaDon, e,Sua, Xoa) );
         }
        
 
@@ -82,12 +79,14 @@ namespace PBL3___Motel_Management_System
         }
         private void btnIn_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new XuatHoaDon(), panelHD);
+            QLBLL qLBLL = new QLBLL();
+            qLBLL.openChildForm1(new XuatHoaDon(), panelHD);
         }
 
         private void btnThemHD_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ThemHoaDon(LoadForm,null), panelHD);
+            QLBLL qLBLL = new QLBLL();
+            qLBLL.openChildForm1(new ThemHoaDon(LoadForm,null), panelHD);
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -98,41 +97,24 @@ namespace PBL3___Motel_Management_System
             }    
             else
             {
+                QLBLL qLBLL = new QLBLL();
                 string id = dgvHoaDon.CurrentRow.Cells[0].Value.ToString();
-                tc.openChildForm1(new ThemHoaDon(LoadForm, id), panelHD);
+                qLBLL.openChildForm1(new ThemHoaDon(LoadForm, id), panelHD);
 
             }
-
         }
 
         private void cbbDayTro_SelectedIndexChanged(object sender, EventArgs e)
         {
             QLBLL qLBLL = new QLBLL();
             cbbPhongTro.Items.Clear();
-            cbbPhongTro.Items.Add(new ViewCbb {key = "0", value = "All" });
             string id = ((ViewCbb)cbbDayTro.SelectedItem).key;
-            if (id == "0")
-            {
-
-                foreach (PhongTro pt in qLBLL.GetAllPhongTro())
-                {
-                    cbbPhongTro.Items.Add(new ViewCbb {key = pt.MaPhongTro, value = pt.TenPhongTro });
-                }
-            }
-            else
-            {
-                foreach (string idp in qLBLL.GetAllPhongTroByIdDay(id))
-                {
-                    PhongTro pt = qLBLL.GetPhongTroByIdPhong(idp);
-                    cbbPhongTro.Items.Add(new ViewCbb {key = pt.MaPhongTro, value = pt.TenPhongTro });
-                }
-            }
+            cbbPhongTro.Items.AddRange(qLBLL.GetViewCbbPhongByDay(id).ToArray());
             if (cbbPhongTro.Items.Count != 0)
             {
                 cbbPhongTro.SelectedIndex = 0;
             }
         }
-
         private void btnTim_Click(object sender, EventArgs e)
         {
             LoadForm("");
@@ -163,7 +145,6 @@ namespace PBL3___Motel_Management_System
             }
 
         }
-
         private void btnBoXacThuc_Click(object sender, EventArgs e)
         {
             if (dgvHoaDon.CurrentRow.Cells[7].Value.ToString() != "Chưa xác thực")
@@ -203,7 +184,6 @@ namespace PBL3___Motel_Management_System
             }
 
         }
-
         private void dgvHoaDon_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -220,8 +200,9 @@ namespace PBL3___Motel_Management_System
                     }
                     else
                     {
+                        QLBLL qLBLL = new QLBLL();
                         string id = dgvHoaDon.CurrentRow.Cells[0].Value.ToString();
-                        tc.openChildForm1(new ThemHoaDon(LoadForm, id), panelHD);
+                        qLBLL.openChildForm1(new ThemHoaDon(LoadForm, id), panelHD);
 
                     }
 
@@ -261,12 +242,10 @@ namespace PBL3___Motel_Management_System
                 else
                 {
                     string id = dgvHoaDon.CurrentRow.Cells[0].Value.ToString();
-                    tc.openChildForm1(new ThanhToan(id, LoadForm), panelHD);
+                    QLBLL qLBLL = new QLBLL();
+                    qLBLL.openChildForm1(new ThanhToan(id, LoadForm), panelHD);
                 }
             }
-
-            
-              
         }
     }
 }

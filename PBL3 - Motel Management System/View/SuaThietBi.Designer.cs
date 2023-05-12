@@ -91,7 +91,6 @@
             this.txtTenTB.Name = "txtTenTB";
             this.txtTenTB.Size = new System.Drawing.Size(314, 27);
             this.txtTenTB.TabIndex = 50;
-            this.txtTenTB.TextChanged += new System.EventHandler(this.txtTenTB_TextChanged);
             // 
             // txtGia
             // 
@@ -100,7 +99,6 @@
             this.txtGia.Name = "txtGia";
             this.txtGia.Size = new System.Drawing.Size(314, 27);
             this.txtGia.TabIndex = 52;
-            this.txtGia.TextChanged += new System.EventHandler(this.txtGia_TextChanged);
             // 
             // label3
             // 
