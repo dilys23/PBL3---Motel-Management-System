@@ -77,8 +77,8 @@ namespace PBL3___Motel_Management_System
                 }
             }
            
-            var Sua = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-create-25.png");
-            var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-delete-25.png");
+            var Sua = System.Drawing.Image.FromFile(@"D:\pblproject\pbl3_main\PBL3 - Motel Management System\icons\icons8-create-25.png");
+            var Xoa = System.Drawing.Image.FromFile(@"D:\pblproject\pbl3_main\PBL3 - Motel Management System\icons\icons8-delete-25.png");
             dgvChiSoNuoc.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dv.dgvIcons_CellPainting1(dgvChiSoNuoc, e, Sua, Xoa));
 
         }
@@ -140,7 +140,7 @@ namespace PBL3___Motel_Management_System
                 string id = dgvChiSoNuoc.CurrentRow.Cells[0].Value.ToString();
                 ChiTietSuDungDichVu dv = qLBLL.GetChiTietSuDungDichVuByIdBLL(id);
                 ChiTietDichVu ctdv = qLBLL.GetChiTietDichVuById(dv.MaCHiTietDichVu);
-                List<ChiTietSuDungDichVu> list = qLBLL.GetChiTietSuDungDichVuTimKiem(dv.ThoiGian, "0", ctdv.MaPhongTro, "1");
+                List<ChiTietSuDungDichVu> list = qLBLL.GetChiTietSuDungDichVuTimKiem(dv.ThoiGian, "-1", ctdv.MaPhongTro, "1");
                 List<ChiTietSuDungDichVu> myList = new List<ChiTietSuDungDichVu>();
                 foreach (ChiTietSuDungDichVu ct in list)
                 {
@@ -210,7 +210,6 @@ namespace PBL3___Motel_Management_System
                 {
                     string id = dgvChiSoNuoc.CurrentRow.Cells[0].Value.ToString();
                     QLBLL qLBLL = new QLBLL();
-                    qLBLL.DelChiTietSuDungDichVubyId(id);
                     qLBLL.DelChiTietSuDungDichVu(id);
                     dgvChiSoNuoc.Rows.RemoveAt(e.RowIndex);
                     MessageBox.Show("Xóa chỉ số điện thành công", "Thông báo");
