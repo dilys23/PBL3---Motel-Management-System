@@ -15,7 +15,7 @@ using System.Windows.Forms;
 namespace PBL3___Motel_Management_System.View
 {
      public delegate void Loader1(String s);
-    public delegate void _SuKien(object sender, EventArgs e);
+     public delegate void _SuKien(object sender, EventArgs e);
 
     public partial class DemoPhong : Form
     {
@@ -40,10 +40,10 @@ namespace PBL3___Motel_Management_System.View
             cbbDayTro.SelectedIndex = 0;
             cbbTinhTrang.Items.AddRange(new ViewCbb[]
             {
-                new ViewCbb{IdDayTro = "-1",TenDayTro = "All"},
-                new ViewCbb{IdDayTro = "1",TenDayTro = "Đã cho thuê"},
-                new ViewCbb{IdDayTro = "0",TenDayTro = "Còn trống"},
-                new ViewCbb{IdDayTro = "2",TenDayTro = "Đã cọc"},
+                new ViewCbb{key = "-1",value = "All"},
+                new ViewCbb{key = "1", value = "Đã cho thuê"},
+                new ViewCbb{key = "0", value = "Còn trống"},
+                new ViewCbb{key = "2", value = "Đã cọc"},
             });
             cbbTinhTrang.SelectedIndex = 0;
         }
@@ -57,8 +57,6 @@ namespace PBL3___Motel_Management_System.View
             panelPhong.AutoScroll = true;
             QLBLL qLBLL = new QLBLL();
             Button defaultBtn = null;
-            
-
             foreach(DayTro dt in qLBLL.GetAllDayTroBll())
             {
                 ToolTip tp = new ToolTip();
@@ -121,7 +119,7 @@ namespace PBL3___Motel_Management_System.View
                 {
                     Label lbl = new Label();
                     lbl.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-                   lbl.AutoSize = true;
+                    lbl.AutoSize = true;
                     lbl.Name = nguoi.MaNguoi;
                     lbl.Text = "   " + nguoi.Ten;
                     lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -149,14 +147,12 @@ namespace PBL3___Motel_Management_System.View
         {
             if(ClickBtn != null)
             {
-
             QLBLL qLBLL = new QLBLL();
             DayTro dt = qLBLL.GetDayTroById(ClickBtn.Name);
-            tc.openChildForm1(new ThemPhong(dt.MaDayTro,LoadForm), panelChinh);
+            tc.openChildForm1(new ThemPhong(dt.MaDayTro, SuKien), panelChinh);
             }
             
         }
-
         private void lblDiaChi_Click(object sender, EventArgs e)
         {
 
@@ -165,8 +161,7 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnThemday_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ThemDay(LoadForm), panelChinh);
-            //panelBtnDay.Controls.Clear();
+            tc.openChildForm1(new ThemDay(SuKien), panelChinh);
         }
 
         private void btnSuaDay_Click(object sender, EventArgs e)
@@ -186,11 +181,11 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            string idDay = ((ViewCbb)(cbbDayTro.SelectedItem)).IdDayTro;
-            string idTinhTrang = ((ViewCbb)(cbbTinhTrang.SelectedItem)).IdDayTro;
+            string idDay = ((ViewCbb)(cbbDayTro.SelectedItem)).key;
+            string idTinhTrang = ((ViewCbb)(cbbTinhTrang.SelectedItem)).key;
             QLBLL qLBLL = new QLBLL();
             panelPhong.Controls.Clear();
-            if(idDay != "0")
+            if(idDay != "-1")
             {
                 DayTro dt = new DayTro();
                 dt = qLBLL.GetDayByIdDay(idDay);
@@ -199,10 +194,9 @@ namespace PBL3___Motel_Management_System.View
             }
             else
             {
-
             lblDiaChi.Text = "";
             }
-            foreach (ViewPhongTro pt in qLBLL.DgvPhongTroTimKiem(idDay,idTinhTrang,txtTimKiem.Text))
+            foreach (PhongTro pt in qLBLL.PhongTroTimKiem(idDay,idTinhTrang,txtTimKiem.Text))
             {
                 Demo p = new Demo(SuKien, pt.MaPhongTro, panelChinh);
                 p.TopLevel = false;

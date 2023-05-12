@@ -41,27 +41,26 @@ namespace PBL3___Motel_Management_System.View
         {
             QLBLL qLBLL = new QLBLL();
             cbbPhongTro.Items.Clear();
-            cbbPhongTro.Items.Add(new ViewCbb { IdDayTro="-1", TenDayTro="All" });
-            string id = ((ViewCbb)cbbDayTro.SelectedItem).IdDayTro;
+            cbbPhongTro.Items.Add(new ViewCbb { key="-1", value="All" });
+            string id = ((ViewCbb)cbbDayTro.SelectedItem).key;
             if (id == "0")
             {
                 foreach (PhongTro pt in qLBLL.GetAllPhongTro())
                 {
                     if(qLBLL.TinhTrangPhongById(pt.MaPhongTro))
                     {
-
-                    cbbPhongTro.Items.Add(new ViewCbb { IdDayTro = pt.MaPhongTro, TenDayTro = pt.TenPhongTro });
+                        cbbPhongTro.Items.Add(new ViewCbb {key = pt.MaPhongTro, value = pt.TenPhongTro });
                     }
                 }
             }
             else
             {
-                foreach (ViewPhongTro pt in qLBLL.GetAllPhongTroByIdDay(id))
+                foreach (string idp in qLBLL.GetAllPhongTroByIdDay(id))
                 {
+                    PhongTro pt = qLBLL.GetPhongTroByIdPhong(idp);
                     if (qLBLL.TinhTrangPhongById(pt.MaPhongTro))
                     {
-
-                        cbbPhongTro.Items.Add(new ViewCbb { IdDayTro=pt.MaPhongTro, TenDayTro=pt.TenPhongTro });
+                        cbbPhongTro.Items.Add(new ViewCbb {key = pt.MaPhongTro, value = pt.TenPhongTro });
                     }
                 }
             }
@@ -115,7 +114,7 @@ namespace PBL3___Motel_Management_System.View
             if(CheckHopLe())
             {
                 QLBLL qLBLL = new QLBLL();
-                string idPhong = ((ViewCbb)cbbPhongTro.SelectedItem).IdDayTro;
+                string idPhong = ((ViewCbb)cbbPhongTro.SelectedItem).key;
                 ChiTietSuDungDichVu dv = new ChiTietSuDungDichVu
                 {
                     MaChiTietSuDungDichVu = qLBLL.TaoIdChiTietSuDungDichVu(),
@@ -124,7 +123,9 @@ namespace PBL3___Motel_Management_System.View
                     ChiSoMoi = Convert.ToDouble(txtChiSoMoi.Text),
                     ThoiGian = dtpThang.Value.ToString("MM-yyyy"),
                     TinhTrang = false,
-                    NgayLap = dtpNgayLap.Value.ToString("dd-MM-yyyy")
+                    TonTai = true,
+                    NgayLap = dtpNgayLap.Value.ToString("dd-MM-yyyy"),
+                    
                 };
                 if(dv.ChiSoCu > dv.ChiSoMoi)
                 {
@@ -133,22 +134,18 @@ namespace PBL3___Motel_Management_System.View
                 }
                 else
                 {
-#pragma warning disable CS0168 // Variable is declared but never used
                     try
                     {
-
-                     qLBLL.AddChiTietSuDungDichVuBLL(dv);
-                        MessageBox.Show("Thêm chỉ số thành công");
+                        qLBLL.AddChiTietSuDungDichVuBLL(dv);
+                        MessageBox.Show("thêm chỉ số thành công");
                         this.Close();
                         this.loader(null);
                     }
                     catch(Exception ex)
                     {
-                        MessageBox.Show("Không hợp lệ");
+                        MessageBox.Show("không hợp lệ");
                     }
-#pragma warning restore CS0168 // Variable is declared but never used
-
-                
+               
                 }
                 
             }
@@ -159,7 +156,7 @@ namespace PBL3___Motel_Management_System.View
         {
             if(cbbPhongTro.SelectedIndex != 0)
             {
-                string idPhong = ((ViewCbb)cbbPhongTro.SelectedItem).IdDayTro;
+                string idPhong = ((ViewCbb)cbbPhongTro.SelectedItem).key;
                 QLBLL qLBLL = new QLBLL();
                 HopDong hd = qLBLL.GetHopDongByIdPhong(idPhong);
                 DateTime dt1 = DateTime.ParseExact(hd.NgayBatDau, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);

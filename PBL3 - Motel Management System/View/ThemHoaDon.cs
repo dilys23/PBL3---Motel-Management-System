@@ -37,7 +37,7 @@ namespace PBL3___Motel_Management_System.View
                 int index = -1;
                 for(int i=0;i<cbbPhongTro.Items.Count;i++)
                 {
-                    if (((ViewCbb)cbbPhongTro.Items[i]).IdDayTro == hd.MaPhongTro) index = i;
+                    if (((ViewCbb)cbbPhongTro.Items[i]).key == hd.MaPhongTro) index = i;
                 }
                 cbbPhongTro.SelectedIndex = index;
                 DateTime dt = DateTime.ParseExact(hd.ThangChiTra, "MM-yyyy", System.Globalization.CultureInfo.InvariantCulture);
@@ -133,7 +133,7 @@ namespace PBL3___Motel_Management_System.View
             try
             {
 
-            string idPhong = ((ViewCbb)cbbPhongTro.SelectedItem).IdDayTro;
+            string idPhong = ((ViewCbb)cbbPhongTro.SelectedItem).key;
             string thang = dtpThangThanhToan.Value.ToString("MM-yyyy");
             LoadDgv(idPhong, thang);
             }
@@ -150,7 +150,7 @@ namespace PBL3___Motel_Management_System.View
             
             QLBLL qLBLL = new QLBLL();
             cbbPhongTro.Items.Clear();
-            string id = ((ViewCbb)cbbDayTro.SelectedItem).IdDayTro;
+            string id = ((ViewCbb)cbbDayTro.SelectedItem).key;
             if (id == "0")
             {
 
@@ -158,18 +158,18 @@ namespace PBL3___Motel_Management_System.View
                 {
                     if(qLBLL.TinhTrangPhongById(pt.MaPhongTro))
                     {
-                    cbbPhongTro.Items.Add(new ViewCbb { IdDayTro = pt.MaPhongTro, TenDayTro = pt.TenPhongTro });
+                    cbbPhongTro.Items.Add(new ViewCbb { key = pt.MaPhongTro, value = pt.TenPhongTro });
                     }
                 }
             }
             else
             {
-                foreach (ViewPhongTro pt in qLBLL.GetAllPhongTroByIdDay(id))
+                foreach (string idp in qLBLL.GetAllPhongTroByIdDay(id))
                 {
+                    PhongTro pt = qLBLL.GetPhongTroByIdPhong(idp);
                     if(qLBLL.TinhTrangPhongById(pt.MaPhongTro))
                     {
-
-                    cbbPhongTro.Items.Add(new ViewCbb { IdDayTro=pt.MaPhongTro, TenDayTro=pt.TenPhongTro });
+                    cbbPhongTro.Items.Add(new ViewCbb {key = pt.MaPhongTro, value = pt.TenPhongTro });
                     }
                 }
             }
@@ -181,7 +181,7 @@ namespace PBL3___Motel_Management_System.View
 
         private void cbbPhongTro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string idPhong = ((ViewCbb)cbbPhongTro.SelectedItem).IdDayTro;
+            string idPhong = ((ViewCbb)cbbPhongTro.SelectedItem).key;
             string thang = dtpThangThanhToan.Value.ToString("MM-yyyy");
             LoadDgv(idPhong, thang);
         }
@@ -234,8 +234,6 @@ namespace PBL3___Motel_Management_System.View
         {
             if(CheckHopLe())
             {
-                
-
                 double tienPhong = Convert.ToDouble(txtTienPhong.Text);
                 double tienDv = Convert.ToDouble(txtTienDichVu.Text);
                 double giamGia = Convert.ToDouble(txtGiamGia.Text);
@@ -253,15 +251,14 @@ namespace PBL3___Motel_Management_System.View
                     QLBLL qLBLL = new QLBLL();
                     if (this.IdHd == null)
                     {
-
-                    
                     HoaDon hd = new HoaDon
                     { MaHoaDon = qLBLL.TaoIdHoaDon(),
-                        MaPhongTro = ((ViewCbb)cbbPhongTro.SelectedItem).IdDayTro,
+                        MaPhongTro = ((ViewCbb)cbbPhongTro.SelectedItem).key,
                         NgayTao = dtpNgayLap.Value.ToString("dd-MM-yyyy"),
                         ThangChiTra = dtpThangThanhToan.Value.ToString("MM-yyyy"),
                         TinhTrang = false,
                         TongTien = tongCong,
+                        TonTai = true,
                         DaThanhToan = 0
                     };
                     qLBLL.AddHoaDonBll(hd);

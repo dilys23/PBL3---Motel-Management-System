@@ -63,6 +63,7 @@ namespace PBL3___Motel_Management_System.View
                 tb.TenThietBi = txtTenTB.Text;
                 tb.GiaThietBi = Convert.ToDouble(txtGia.Text);
                 tb.MaThietBi = qLBLL.TaoIdThietBi();
+                tb.TonTai = true;
                 qLBLL.ThemTBBll(tb);
                 MessageBox.Show("Thêm dịch vụ thành công", "Thông báo");
                 Loader(null);

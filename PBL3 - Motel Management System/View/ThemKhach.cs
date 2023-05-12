@@ -37,11 +37,11 @@ namespace PBL3___Motel_Management_System
             if(this.thuePhong.hopDong.MaNguoi != null)
             {
                 Nguoi nguoi = new Nguoi();
-            nguoi = qLBLL.GetNguoiByIdNguoi(thuePhong.hopDong.MaNguoi);
-            txtTen.Text = nguoi.Ten;
-            txtCccd.Text = nguoi.Cccd;
-            txtSdt.Text = nguoi.Sdt;
-            txtDiaChi.Text = nguoi.Diachi;             
+                nguoi = qLBLL.GetNguoiByIdNguoi(thuePhong.hopDong.MaNguoi);
+                txtTen.Text = nguoi.Ten;
+                txtCccd.Text = nguoi.Cccd;
+                txtSdt.Text = nguoi.Sdt;
+                txtDiaChi.Text = nguoi.Diachi;             
             if(nguoi.GioiTinh == true)rdbtnNam.Checked = true;
                 else rdbtnNu.Checked = true;
             if (nguoi.HinhAnh != null )
@@ -127,7 +127,7 @@ namespace PBL3___Motel_Management_System
 
                 nguoi.MaNguoi = thuePhong.hopDong.MaNguoi;
                 }
-
+                nguoi.TonTai = true;
                 nguoi.Cccd = txtCccd.Text;
                 nguoi.Ten = txtTen.Text;
                 nguoi.Sdt = txtSdt.Text;
@@ -149,6 +149,7 @@ namespace PBL3___Motel_Management_System
                     tvtp.MaThanhVienTrongPhong = qLBLL.TaoIdThanhVienTrongPhong();
                     tvtp.MaNguoi = nguoi.MaNguoi;
                     tvtp.MaPhongTro = thuePhong.hopDong.MaPhongTro;
+                    tvtp.TonTai = true;
                     qLBLL.AddNguoiBll(nguoi);
                     qLBLL.AddThanhVienTrongPhongBll(tvtp);
                     MessageBox.Show("Thêm thành viên vào phòng thành công", "Thông báo", MessageBoxButtons.OK);

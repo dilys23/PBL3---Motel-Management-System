@@ -397,28 +397,19 @@
     <Compile Include="DAL\VaiTro.cs">
       <DependentUpon>DataPbl.tt</DependentUpon>
     </Compile>
-    <Compile Include="DTO\CbbDayTro.cs" />
+    <Compile Include="DTO\ViewCbb.cs" />
     <Compile Include="DTO\ChuyenDoiAnh.cs" />
     <Compile Include="DTO\DgvHopDong.cs" />
     <Compile Include="DTO\ThuePhong.cs" />
     <Compile Include="DTO\TinhTrangPhongTro.cs" />
-    <Compile Include="DTO\ViewChiSoDien.cs" />
-    <Compile Include="DTO\ViewChiSoNuoc.cs" />
-    <Compile Include="DTO\ViewDay.cs" />
+    <Compile Include="DTO\ViewChiSo.cs" />
     <Compile Include="DTO\ViewDichVu.cs" />
-    <Compile Include="DTO\ViewPhongTro.cs" />
     <Compile Include="DTO\ViewThietBi.cs" />
     <Compile Include="View\Anh.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Anh.Designer.cs">
       <DependentUpon>Anh.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\ChitietDay.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ChitietDay.Designer.cs">
-      <DependentUpon>ChitietDay.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ChitietDV.cs">
       <SubType>Form</SubType>
@@ -437,12 +428,6 @@
     </Compile>
     <Compile Include="View\ChitietHopDong.Designer.cs">
       <DependentUpon>ChitietHopDong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\ChitietPhong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ChitietPhong.Designer.cs">
-      <DependentUpon>ChitietPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ChiTietPT.cs">
       <SubType>Form</SubType>
@@ -473,12 +458,6 @@
     </Compile>
     <Compile Include="View\CocPhong.Designer.cs">
       <DependentUpon>CocPhong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Daytro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Daytro.Designer.cs">
-      <DependentUpon>Daytro.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Demo.cs">
       <SubType>Form</SubType>
@@ -686,12 +665,6 @@
     <Compile Include="View\DoanhThu.Designer.cs">
       <DependentUpon>DoanhThu.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Phong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Phong.Designer.cs">
-      <DependentUpon>Phong.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Dichvu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -731,9 +704,6 @@
     <EmbeddedResource Include="View\Anh.resx">
       <DependentUpon>Anh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ChitietDay.resx">
-      <DependentUpon>ChitietDay.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\ChitietDV.resx">
       <DependentUpon>ChitietDV.cs</DependentUpon>
     </EmbeddedResource>
@@ -742,9 +712,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ChitietHopDong.resx">
       <DependentUpon>ChitietHopDong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ChitietPhong.resx">
-      <DependentUpon>ChitietPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ChiTietPT.resx">
       <DependentUpon>ChiTietPT.cs</DependentUpon>
@@ -760,9 +727,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\CocPhong.resx">
       <DependentUpon>CocPhong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Daytro.resx">
-      <DependentUpon>Daytro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Demo.resx">
       <DependentUpon>Demo.cs</DependentUpon>
@@ -878,9 +842,6 @@
     </Compile>
     <EmbeddedResource Include="View\DoanhThu.resx">
       <DependentUpon>DoanhThu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Phong.resx">
-      <DependentUpon>Phong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Dichvu.resx">
       <DependentUpon>Dichvu.cs</DependentUpon>
