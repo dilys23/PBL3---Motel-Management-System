@@ -199,9 +199,9 @@ namespace PBL3___Motel_Management_System.BLL
             {
                 id = random.Next(1, 1000).ToString();
                 status = false;
-                foreach (PhongTro phongTro in QLDAL.Instance.GetAllPhongTro())//ok
+                if (QLDAL.Instance.KiemTraTonTaiIdPhongTro(id))
                 {
-                    if (phongTro.MaPhongTro == id) status = true;
+                    status = true;
                 }
             }
             return id;
@@ -1052,12 +1052,12 @@ namespace PBL3___Motel_Management_System.BLL
             ChiTietSuDungDichVu dv = GetChiTietSuDungDichVuByIdBLL(id);
             ChiTietDichVu ctdv = GetChiTietDichVuById(dv.MaCHiTietDichVu);
             List<ChiTietSuDungDichVu> list = GetChiTietSuDungDichVuTimKiem(dv.ThoiGian, "-1", ctdv.MaPhongTro, "1");
-            List<ChiTietSuDungDichVu> mylist = new List<ChiTietSuDungDichVu>();
-            foreach(ChiTietSuDungDichVu ct in list)
-            {
-                if(GetChiTietDichVuById(ct.MaCHiTietDichVu).MaDichVu == MaChiSo) mylist.Add(ct);
-            }
-            if(mylist.Count == 0)
+           // List<ChiTietSuDungDichVu> mylist = new List<ChiTietSuDungDichVu>();
+            //foreach(ChiTietSuDungDichVu ct in list)
+            //{
+            //    if(GetChiTietDichVuById(ct.MaCHiTietDichVu).MaDichVu == MaChiSo) mylist.Add(ct);
+            //}
+            if(list.Count == 0)
             { 
                 return true;
             }
@@ -1067,7 +1067,7 @@ namespace PBL3___Motel_Management_System.BLL
         public bool ChoPhepXacThucHoaDon(string id)
         {
             HoaDon hd = GetHoaDonById(id);
-            List<HoaDon> list = GetHoaDonTimKiem(hd.ThangChiTra, "0", hd.MaPhongTro, "1");
+            List<HoaDon> list = GetHoaDonTimKiem(hd.ThangChiTra, "-1", hd.MaPhongTro, "1");
             if(list.Count == 0)
             {
                 return true;
