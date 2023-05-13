@@ -45,7 +45,20 @@ namespace PBL3___Motel_Management_System.View
                 dt = QLBLL.Instance.GetDayTroByIdPhong(tp.hopDong.MaPhongTro);
                 phongTro = QLBLL.Instance.GetPhongTroByIdPhong(tp.hopDong.MaPhongTro);
                 hopdong = this.tp.hopDong;
-                SetGUI(dt, nguoi, phongTro, hopdong);             
+                SetGUI(dt, nguoi, phongTro, hopdong);
+                int i = 0;
+                foreach (string idDv in tp.DsDichVu)
+                {
+                    DichVu dv = new DichVu();
+                    dv = QLBLL.Instance.GetDichVuByIdDichVu(idDv);
+                    dgvDichvu.Rows.Add(dv.MaDichVu, ++i, dv.TenDichVu, dv.GiaDichVu);
+                }
+                foreach (string idTb in tp.DsThietBi)
+                {
+                    ThietBi tb = new ThietBi();
+                    tb = QLBLL.Instance.GetTBByIdTB(idTb);
+                    dgvThietbi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi);
+                }
             }
         }
         public void SetGUI(DayTro dt, Nguoi nguoi,PhongTro phongTro, HopDong hopdong)
@@ -82,21 +95,7 @@ namespace PBL3___Motel_Management_System.View
                     dgvThietbi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi);
                 }
             }
-            else
-            {
-                foreach (string idDv in tp.DsDichVu)
-                {
-                    DichVu dv = new DichVu();
-                    dv = QLBLL.Instance.GetDichVuByIdDichVu(idDv);
-                    dgvDichvu.Rows.Add(dv.MaDichVu, ++i, dv.TenDichVu, dv.GiaDichVu);
-                }
-                foreach (string idTb in tp.DsThietBi)
-                {
-                    ThietBi tb = new ThietBi();
-                    tb = QLBLL.Instance.GetTBByIdTB(idTb);
-                    dgvThietbi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi);
-                }
-            }
+            
         }
         
         private void iconButton1_Click(object sender, EventArgs e)
