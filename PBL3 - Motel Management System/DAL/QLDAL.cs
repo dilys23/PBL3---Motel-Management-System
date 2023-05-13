@@ -579,6 +579,20 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.HoaDon.Where(p => p.ThangChiTra == ThangCt && p.TonTai == true ).Select(p => p.MaHoaDon).ToList<string>();
             }
         }
+        public string GetIdPhongByIdHoaDon(string idHoaDon)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.HoaDon.Find(idHoaDon).MaPhongTro;
+            }    
+        }
+        public string GetIdPhongbyIdChitietsudungDichVu(string idChitiet)
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                return data.ChiTietSuDungDichVu.Find(idChitiet).ChiTietDichVu.MaPhongTro;
+            }    
+        }    
         public HoaDon GetHoaDonByIdDal(string id)
         {
             using(DataPbl data = new DataPbl())

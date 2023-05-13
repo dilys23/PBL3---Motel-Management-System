@@ -56,8 +56,8 @@ namespace PBL3___Motel_Management_System.View
                     }
                 }
             }
-            var Sua = System.Drawing.Image.FromFile(@"D:\PBLproject\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-create-25.png");
-            var Xoa = System.Drawing.Image.FromFile(@"D:\PBLproject\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
+            var Sua = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-create-25.png");
+            var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-delete-25.png");
             dgvChiSoDien.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => QLBLL.Instance.dgvIcons_CellPainting1(dgvChiSoDien, e, Sua, Xoa));
         }
         public void Setcbb()
@@ -127,16 +127,22 @@ namespace PBL3___Motel_Management_System.View
         {
             if(dgvChiSoDien.CurrentRow.Cells[9].Value.ToString() != "Đã xác thực")
             {
-                MessageBox.Show("Dịch vụ hiện tại hiện đang chưa xác thực");
+                MessageBox.Show("Chỉ số điện hiện tại đang chưa xác thực");
             }
             else
             {
                 string id = dgvChiSoDien.CurrentRow.Cells[0].Value.ToString();
+                string thangct = dgvChiSoDien.CurrentRow.Cells[8].Value.ToString();
+
+                if (QLBLL.Instance.TinhTrangThanhToan(id, thangct))
+                {
                 ChiTietSuDungDichVu dv = QLBLL.Instance.GetChiTietSuDungDichVuByIdBLL(id);
                 dv.TinhTrang = false;
                 QLBLL.Instance.UpdateChiTietSuDungDichVu(dv);
                 MessageBox.Show("Hủy bỏ xác thực thành công", "Thông báo");
                 LoadForm(null);
+                }    
+               
 
             }
         }

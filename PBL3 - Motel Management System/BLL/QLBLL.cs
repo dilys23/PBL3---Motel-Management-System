@@ -909,7 +909,29 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return kq;
         }
+        public bool TinhTrangThanhToan (string IdPhong, string Thangct)
+        {
+            List<string> Phong = QLDAL.Instance.GetHoaDonByIdPhong(IdPhong);
+            List<string> Thang = QLDAL.Instance.GetIdHoaDonByThangChiTra(Thangct);
+            List<string> list = new List<string>();
+            list = Phong.Intersect(Thang).ToList();
+            foreach (string idHoaDon in list)
+            {
+                HoaDon hd = GetHoaDonById(idHoaDon);
+                if (hd.TinhTrang == true) return false;
+            }  
+            return true;
 
+        }
+        public string GetIdPhongByIdHoaDon(string idHoaDon)
+        {
+            return QLDAL.Instance.GetIdPhongByIdHoaDon(idHoaDon);
+        }
+          
+        public string GetIdPhongbyIdChitietsudungDichVu(string idChitiet)
+        {
+            return QLDAL.Instance.GetIdPhongbyIdChitietsudungDichVu(idChitiet);
+        }
         public bool TinhTrangPhongById(string IdPhong)
         {
             if (GetHopDongByIdPhong(IdPhong) == null) return false;
