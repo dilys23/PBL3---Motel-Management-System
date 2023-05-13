@@ -51,11 +51,8 @@ namespace PBL3___Motel_Management_System.View
 
                 }
             }
-
             if (i == 0) return true;
             return false;
-
-
         }
         private void iconButton1_Click(object sender, EventArgs e)
         {
@@ -66,7 +63,7 @@ namespace PBL3___Motel_Management_System.View
         {
             if (checkHopLe())
             {
-                ThietBi tb = new ThietBi();
+                ThietBi tb = QLBLL.Instance.GetTBByIdTB(IdTb);
                 tb.MaThietBi = IdTb;
                 tb.TenThietBi = txtTenTB.Text;
                 tb.GiaThietBi = Convert.ToDouble(txtGia.Text);
