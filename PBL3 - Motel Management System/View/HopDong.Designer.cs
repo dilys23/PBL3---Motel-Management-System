@@ -100,6 +100,7 @@
             this.TienCoc,
             this.btnSua,
             this.btnXoa});
+            this.dgvHD.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvHD.Location = new System.Drawing.Point(11, 102);
             this.dgvHD.MultiSelect = false;
             this.dgvHD.Name = "dgvHD";

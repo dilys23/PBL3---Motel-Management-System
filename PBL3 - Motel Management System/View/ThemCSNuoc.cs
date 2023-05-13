@@ -58,6 +58,7 @@ namespace PBL3___Motel_Management_System.View
         private void cbbDayTro_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbbPhongTro.Items.Clear();
+            cbbPhongTro.Text = "";
             string id = ((ViewCbb)cbbDayTro.SelectedItem).key;
             cbbPhongTro.Items.AddRange(QLBLL.Instance.GetViewCbbPhongByDayForThemHoaDon(id).ToArray());
             if (cbbPhongTro.Items.Count != 0)
@@ -108,7 +109,6 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-
             if (IdSudungDV != null)
             {
                 if (CheckHopLe())
@@ -137,36 +137,44 @@ namespace PBL3___Motel_Management_System.View
             {
                 if (CheckHopLe())
                 {
-                    string idPhong = ((ViewCbb)cbbPhongTro.SelectedItem).key;
-                    ChiTietSuDungDichVu dv = new ChiTietSuDungDichVu
+                    if(cbbPhongTro.SelectedItem != null)
                     {
-                        MaChiTietSuDungDichVu = QLBLL.Instance.TaoIdChiTietSuDungDichVu(),
-                        MaCHiTietDichVu = QLBLL.Instance.GetIdCHiTietDichVuNuocByIdPhong(idPhong),
-                        ChiSoCu = Convert.ToDouble(txtChiSoCu.Text),
-                        ChiSoMoi = Convert.ToDouble(txtChiSoMoi.Text),
-                        ThoiGian = dtpThang.Value.ToString("MM-yyyy"),
-                        TinhTrang = false,
-                        TonTai = true,
-                        NgayLap = dtpNgayLap.Value.ToString("dd-MM-yyyy")
-                    };
-                    if (dv.ChiSoCu > dv.ChiSoMoi)
-                    {
-                        MessageBox.Show("Chỉ số cũ phải bé hơn hoặc bằng chỉ số mới", "Thông báo");
+                        string idPhong = ((ViewCbb)cbbPhongTro.SelectedItem).key;
+                        ChiTietSuDungDichVu dv = new ChiTietSuDungDichVu
+                        {
+                            MaChiTietSuDungDichVu = QLBLL.Instance.TaoIdChiTietSuDungDichVu(),
+                            MaCHiTietDichVu = QLBLL.Instance.GetIdCHiTietDichVuNuocByIdPhong(idPhong),
+                            ChiSoCu = Convert.ToDouble(txtChiSoCu.Text),
+                            ChiSoMoi = Convert.ToDouble(txtChiSoMoi.Text),
+                            ThoiGian = dtpThang.Value.ToString("MM-yyyy"),
+                            TinhTrang = false,
+                            TonTai = true,
+                            NgayLap = dtpNgayLap.Value.ToString("dd-MM-yyyy")
+                        };
+                        if (dv.ChiSoCu > dv.ChiSoMoi)
+                        {
+                            MessageBox.Show("Chỉ số cũ phải bé hơn hoặc bằng chỉ số mới", "Thông báo");
+                        }
+                        else
+                        {
+                            try
+                            {
+                                QLBLL.Instance.AddChiTietSuDungDichVuBLL(dv);
+                                MessageBox.Show("Thêm chỉ số thành công");
+                                this.Close();
+                                this.loader(null);
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Không hợp lệ");
+                            }
+                        }              
+
                     }
                     else
                     {
-                        try
-                        {
-                            QLBLL.Instance.AddChiTietSuDungDichVuBLL(dv);
-                            MessageBox.Show("Thêm chỉ số thành công");
-                            this.Close();
-                            this.loader(null);
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Không hợp lệ");
-                        }
-                    }              
+                        MessageBox.Show("Dãy hiện tại không phòng hoặc chưa có phòng nào được cho thuê");
+                    }
                 }
 
             }

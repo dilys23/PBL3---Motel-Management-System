@@ -59,6 +59,7 @@ namespace PBL3___Motel_Management_System.View
         private void cbbDayTro_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbbPhongTro.Items.Clear();
+            cbbPhongTro.Text = "";
             string id = ((ViewCbb)cbbDayTro.SelectedItem).key;
             cbbPhongTro.Items.AddRange(QLBLL.Instance.GetViewCbbPhongByDayForThemHoaDon(id).ToArray());
             if (cbbPhongTro.Items.Count != 0)
@@ -136,37 +137,45 @@ namespace PBL3___Motel_Management_System.View
             {
                 if (CheckHopLe())
                 {
-                    string idPhong = ((ViewCbb)cbbPhongTro.SelectedItem).key;
-                    ChiTietSuDungDichVu dv = new ChiTietSuDungDichVu
-                    {
-                        MaChiTietSuDungDichVu = QLBLL.Instance.TaoIdChiTietSuDungDichVu(),
-                        MaCHiTietDichVu = QLBLL.Instance.GetIdCHiTietDichVuDienByIdPhong(idPhong),
-                        ChiSoCu = Convert.ToDouble(txtChiSoCu.Text),
-                        ChiSoMoi = Convert.ToDouble(txtChiSoMoi.Text),
-                        ThoiGian = dtpThang.Value.ToString("MM-yyyy"),
-                        TinhTrang = false,
-                        TonTai = true,
-                        NgayLap = dtpNgayLap.Value.ToString("dd-MM-yyyy"),
-                    };
-                    if (dv.ChiSoCu > dv.ChiSoMoi)
-                    {
-                        MessageBox.Show("Chỉ số cũ phải bé hơn hoặc bằng chỉ số mới", "Thông báo");
-                    }
+                        if(cbbPhongTro.SelectedItem != null)
+                        {
+                            string idPhong = ((ViewCbb)cbbPhongTro.SelectedItem).key;
+                            ChiTietSuDungDichVu dv = new ChiTietSuDungDichVu
+                            {
+                                MaChiTietSuDungDichVu = QLBLL.Instance.TaoIdChiTietSuDungDichVu(),
+                                MaCHiTietDichVu = QLBLL.Instance.GetIdCHiTietDichVuDienByIdPhong(idPhong),
+                                ChiSoCu = Convert.ToDouble(txtChiSoCu.Text),
+                                ChiSoMoi = Convert.ToDouble(txtChiSoMoi.Text),
+                                ThoiGian = dtpThang.Value.ToString("MM-yyyy"),
+                                TinhTrang = false,
+                                TonTai = true,
+                                NgayLap = dtpNgayLap.Value.ToString("dd-MM-yyyy"),
+                            };
+                            if (dv.ChiSoCu > dv.ChiSoMoi)
+                            {
+                                MessageBox.Show("Chỉ số cũ phải bé hơn hoặc bằng chỉ số mới", "Thông báo");
+                            }
+                            else
+                            {
+                                try
+                                {
+                                    QLBLL.Instance.AddChiTietSuDungDichVuBLL(dv);
+                                    MessageBox.Show("thêm chỉ số thành công");
+                                    this.Close();
+                                    this.loader(null);
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show("không hợp lệ");
+                                }
+
+                            }
+                        }
                     else
                     {
-                        try
-                        {
-                            QLBLL.Instance.AddChiTietSuDungDichVuBLL(dv);
-                            MessageBox.Show("thêm chỉ số thành công");
-                            this.Close();
-                            this.loader(null);
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("không hợp lệ");
-                        }
-
+                        MessageBox.Show("Dãy hiện tại không phòng hoặc chưa có phòng nào được cho thuê");
                     }
+                        
                 }
             }
         }

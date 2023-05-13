@@ -1285,5 +1285,23 @@ namespace PBL3___Motel_Management_System.BLL
                 }
             }
         }
+        public Label GetLabelByNguoi(Nguoi nguoi)
+        {
+            Label lbl = new Label();
+            lbl.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            lbl.AutoSize = true;
+            lbl.Name = nguoi.MaNguoi;
+            lbl.Text = "   " + nguoi.Ten;
+            lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            Image image1 = Image.FromFile("D:\\PBL\\PBL3_MAIN\\PBL3 - Motel Management System\\Icons\\icons8-customer-20.png" + "    ");
+            lbl.Image = image1;
+            lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            lbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            lbl.TabIndex = 0;
+            lbl.Size = new System.Drawing.Size(50, 80);
+            lbl.Visible = true;
+            return lbl;
+        }
     }
 }

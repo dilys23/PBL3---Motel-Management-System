@@ -266,7 +266,6 @@
             this.dgvXoaDichVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvXoaDichVu.Size = new System.Drawing.Size(661, 110);
             this.dgvXoaDichVu.TabIndex = 52;
-            this.dgvXoaDichVu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvXoaDichVu_CellContentClick);
             // 
             // MaDichVu
             // 

@@ -194,10 +194,5 @@ namespace PBL3___Motel_Management_System.View
             }
 
         }
-
-        private void dgvXoaDichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }
