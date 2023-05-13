@@ -42,15 +42,15 @@
             this.btnXoaDichVu = new FontAwesome.Sharp.IconButton();
             this.btnThemDichVu = new FontAwesome.Sharp.IconButton();
             this.dgvXoaDichVu = new System.Windows.Forms.DataGridView();
+            this.MaDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvThemDichVu = new System.Windows.Forms.DataGridView();
             this.MaDichVu1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.STT1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDichVu1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GiaDichVu1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelThemDV.SuspendLayout();
             this.panelThem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDVcodinh)).BeginInit();
@@ -74,7 +74,6 @@
             this.panelThemDV.Name = "panelThemDV";
             this.panelThemDV.Size = new System.Drawing.Size(789, 508);
             this.panelThemDV.TabIndex = 1;
-            this.panelThemDV.Paint += new System.Windows.Forms.PaintEventHandler(this.panelThemHD_Paint);
             // 
             // btnTroVe
             // 
@@ -170,6 +169,7 @@
             this.dgvDVcodinh.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvDVcodinh.Location = new System.Drawing.Point(78, 307);
             this.dgvDVcodinh.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvDVcodinh.MultiSelect = false;
             this.dgvDVcodinh.Name = "dgvDVcodinh";
             this.dgvDVcodinh.RowHeadersWidth = 51;
             this.dgvDVcodinh.RowTemplate.Height = 24;
@@ -259,12 +259,39 @@
             this.dgvXoaDichVu.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvXoaDichVu.Location = new System.Drawing.Point(78, 159);
             this.dgvXoaDichVu.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvXoaDichVu.MultiSelect = false;
             this.dgvXoaDichVu.Name = "dgvXoaDichVu";
             this.dgvXoaDichVu.RowHeadersWidth = 51;
             this.dgvXoaDichVu.RowTemplate.Height = 24;
             this.dgvXoaDichVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvXoaDichVu.Size = new System.Drawing.Size(661, 110);
             this.dgvXoaDichVu.TabIndex = 52;
+            this.dgvXoaDichVu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvXoaDichVu_CellContentClick);
+            // 
+            // MaDichVu
+            // 
+            this.MaDichVu.HeaderText = "Mã dịch vụ";
+            this.MaDichVu.MinimumWidth = 6;
+            this.MaDichVu.Name = "MaDichVu";
+            this.MaDichVu.Visible = false;
+            // 
+            // Stt
+            // 
+            this.Stt.HeaderText = "STT";
+            this.Stt.MinimumWidth = 6;
+            this.Stt.Name = "Stt";
+            // 
+            // TenDichVu
+            // 
+            this.TenDichVu.HeaderText = "Tên dịch vụ";
+            this.TenDichVu.MinimumWidth = 6;
+            this.TenDichVu.Name = "TenDichVu";
+            // 
+            // GiaDichVu
+            // 
+            this.GiaDichVu.HeaderText = "Giá dịch vụ";
+            this.GiaDichVu.MinimumWidth = 6;
+            this.GiaDichVu.Name = "GiaDichVu";
             // 
             // dgvThemDichVu
             // 
@@ -283,6 +310,7 @@
             this.dgvThemDichVu.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvThemDichVu.Location = new System.Drawing.Point(78, 10);
             this.dgvThemDichVu.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvThemDichVu.MultiSelect = false;
             this.dgvThemDichVu.Name = "dgvThemDichVu";
             this.dgvThemDichVu.RowHeadersWidth = 51;
             this.dgvThemDichVu.RowTemplate.Height = 24;
@@ -314,31 +342,6 @@
             this.GiaDichVu1.HeaderText = "Giá dịch vụ";
             this.GiaDichVu1.MinimumWidth = 6;
             this.GiaDichVu1.Name = "GiaDichVu1";
-            // 
-            // MaDichVu
-            // 
-            this.MaDichVu.HeaderText = "Mã dịch vụ";
-            this.MaDichVu.MinimumWidth = 6;
-            this.MaDichVu.Name = "MaDichVu";
-            this.MaDichVu.Visible = false;
-            // 
-            // Stt
-            // 
-            this.Stt.HeaderText = "STT";
-            this.Stt.MinimumWidth = 6;
-            this.Stt.Name = "Stt";
-            // 
-            // TenDichVu
-            // 
-            this.TenDichVu.HeaderText = "Tên dịch vụ";
-            this.TenDichVu.MinimumWidth = 6;
-            this.TenDichVu.Name = "TenDichVu";
-            // 
-            // GiaDichVu
-            // 
-            this.GiaDichVu.HeaderText = "Giá dịch vụ";
-            this.GiaDichVu.MinimumWidth = 6;
-            this.GiaDichVu.Name = "GiaDichVu";
             // 
             // ThemDVphong
             // 

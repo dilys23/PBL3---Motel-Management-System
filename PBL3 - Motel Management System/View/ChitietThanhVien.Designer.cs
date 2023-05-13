@@ -59,7 +59,7 @@
             this.panelThem.Controls.Add(this.btnThemDichVu);
             this.panelThem.Controls.Add(this.dgvThanhVien);
             this.panelThem.Location = new System.Drawing.Point(20, 43);
-            this.panelThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelThem.Margin = new System.Windows.Forms.Padding(2);
             this.panelThem.Name = "panelThem";
             this.panelThem.Size = new System.Drawing.Size(652, 401);
             this.panelThem.TabIndex = 48;
@@ -76,7 +76,7 @@
             this.btnThemDichVu.IconSize = 25;
             this.btnThemDichVu.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnThemDichVu.Location = new System.Drawing.Point(510, 14);
-            this.btnThemDichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThemDichVu.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemDichVu.Name = "btnThemDichVu";
             this.btnThemDichVu.Size = new System.Drawing.Size(122, 32);
             this.btnThemDichVu.TabIndex = 55;
@@ -124,7 +124,8 @@
             this.dgvThanhVien.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvThanhVien.GridColor = System.Drawing.Color.LightCyan;
             this.dgvThanhVien.Location = new System.Drawing.Point(13, 70);
-            this.dgvThanhVien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvThanhVien.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvThanhVien.MultiSelect = false;
             this.dgvThanhVien.Name = "dgvThanhVien";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -224,7 +225,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(692, 453);
             this.Controls.Add(this.panelThem);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ChitietThanhVien";
             this.Text = "ChitietThanhVien";
             this.panelThem.ResumeLayout(false);

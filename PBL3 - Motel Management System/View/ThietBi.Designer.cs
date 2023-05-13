@@ -34,16 +34,16 @@
             this.panelTB = new System.Windows.Forms.Panel();
             this.btnBaoHong = new FontAwesome.Sharp.IconButton();
             this.dgvThietBi = new System.Windows.Forms.DataGridView();
-            this.btnTim = new FontAwesome.Sharp.IconButton();
-            this.btnXoaPhong = new FontAwesome.Sharp.IconButton();
-            this.btnThemThietBi = new FontAwesome.Sharp.IconButton();
-            this.txtTim = new System.Windows.Forms.TextBox();
             this.MaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GiaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSua = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnXoa = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnTim = new FontAwesome.Sharp.IconButton();
+            this.btnXoaPhong = new FontAwesome.Sharp.IconButton();
+            this.btnThemThietBi = new FontAwesome.Sharp.IconButton();
+            this.txtTim = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panelTB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThietBi)).BeginInit();
@@ -114,7 +114,6 @@
             // 
             // dgvThietBi
             // 
-            this.dgvThietBi.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.dgvThietBi.AllowUserToAddRows = false;
             this.dgvThietBi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -140,6 +139,7 @@
             this.dgvThietBi.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvThietBi.Location = new System.Drawing.Point(22, 81);
             this.dgvThietBi.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvThietBi.MultiSelect = false;
             this.dgvThietBi.Name = "dgvThietBi";
             this.dgvThietBi.RowHeadersWidth = 60;
             this.dgvThietBi.RowTemplate.Height = 24;
@@ -147,6 +147,37 @@
             this.dgvThietBi.Size = new System.Drawing.Size(635, 204);
             this.dgvThietBi.TabIndex = 56;
             this.dgvThietBi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThietBi_CellContentClick);
+            // 
+            // MaThietBi
+            // 
+            this.MaThietBi.HeaderText = "MaThietBi";
+            this.MaThietBi.Name = "MaThietBi";
+            this.MaThietBi.Visible = false;
+            // 
+            // STT
+            // 
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            // 
+            // TenThietBi
+            // 
+            this.TenThietBi.HeaderText = "Tên thiết bị";
+            this.TenThietBi.Name = "TenThietBi";
+            // 
+            // GiaThietBi
+            // 
+            this.GiaThietBi.HeaderText = "Giá thiết bị";
+            this.GiaThietBi.Name = "GiaThietBi";
+            // 
+            // btnSua
+            // 
+            this.btnSua.HeaderText = "";
+            this.btnSua.Name = "btnSua";
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.HeaderText = "";
+            this.btnXoa.Name = "btnXoa";
             // 
             // btnTim
             // 
@@ -215,37 +246,6 @@
             this.txtTim.Name = "txtTim";
             this.txtTim.Size = new System.Drawing.Size(136, 23);
             this.txtTim.TabIndex = 51;
-            // 
-            // MaThietBi
-            // 
-            this.MaThietBi.HeaderText = "MaThietBi";
-            this.MaThietBi.Name = "MaThietBi";
-            this.MaThietBi.Visible = false;
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            // 
-            // TenThietBi
-            // 
-            this.TenThietBi.HeaderText = "Tên thiết bị";
-            this.TenThietBi.Name = "TenThietBi";
-            // 
-            // GiaThietBi
-            // 
-            this.GiaThietBi.HeaderText = "Giá thiết bị";
-            this.GiaThietBi.Name = "GiaThietBi";
-            // 
-            // btnSua
-            // 
-            this.btnSua.HeaderText = "";
-            this.btnSua.Name = "btnSua";
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.HeaderText = "";
-            this.btnXoa.Name = "btnXoa";
             // 
             // Thietbi
             // 

@@ -72,7 +72,7 @@ namespace PBL3___Motel_Management_System
             this.label4.ForeColor = System.Drawing.Color.Chocolate;
             this.label4.Location = new System.Drawing.Point(12, 11);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(229, 28);
+            this.label4.Size = new System.Drawing.Size(188, 23);
             this.label4.TabIndex = 26;
             this.label4.Text = "DANH SÁCH DỊCH VỤ";
             // 
@@ -95,7 +95,6 @@ namespace PBL3___Motel_Management_System
             // 
             // dgvDichVu
             // 
-            this.dgvDichVu.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.dgvDichVu.AllowUserToAddRows = false;
             this.dgvDichVu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -117,10 +116,13 @@ namespace PBL3___Motel_Management_System
             this.GiaDichVu,
             this.btnSua,
             this.btnXoa});
+            this.dgvDichVu.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvDichVu.Location = new System.Drawing.Point(12, 79);
+            this.dgvDichVu.MultiSelect = false;
             this.dgvDichVu.Name = "dgvDichVu";
             this.dgvDichVu.RowHeadersWidth = 51;
             this.dgvDichVu.RowTemplate.Height = 24;
+            this.dgvDichVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDichVu.Size = new System.Drawing.Size(876, 273);
             this.dgvDichVu.TabIndex = 57;
             this.dgvDichVu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDichVu_CellContentClick);
@@ -170,7 +172,7 @@ namespace PBL3___Motel_Management_System
             this.txtTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTim.Location = new System.Drawing.Point(109, 22);
             this.txtTim.Name = "txtTim";
-            this.txtTim.Size = new System.Drawing.Size(177, 30);
+            this.txtTim.Size = new System.Drawing.Size(177, 26);
             this.txtTim.TabIndex = 56;
             // 
             // btnTimKiem

@@ -33,7 +33,6 @@
             this.dtpThangSuDung = new System.Windows.Forms.DateTimePicker();
             this.cbbTinhTrang = new System.Windows.Forms.ComboBox();
             this.dgvHoaDon = new System.Windows.Forms.DataGridView();
-            this.btnTim = new FontAwesome.Sharp.IconButton();
             this.MaHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DayTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +45,7 @@
             this.ConNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSua = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnXoa = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnTim = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,11 +54,10 @@
             this.dtpThangSuDung.CustomFormat = "MM/yyyy";
             this.dtpThangSuDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpThangSuDung.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpThangSuDung.Location = new System.Drawing.Point(59, 109);
-            this.dtpThangSuDung.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpThangSuDung.Location = new System.Drawing.Point(44, 89);
             this.dtpThangSuDung.Name = "dtpThangSuDung";
             this.dtpThangSuDung.ShowUpDown = true;
-            this.dtpThangSuDung.Size = new System.Drawing.Size(133, 27);
+            this.dtpThangSuDung.Size = new System.Drawing.Size(101, 23);
             this.dtpThangSuDung.TabIndex = 73;
             // 
             // cbbTinhTrang
@@ -66,15 +65,14 @@
             this.cbbTinhTrang.DisplayMember = "Tình trạng";
             this.cbbTinhTrang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbTinhTrang.FormattingEnabled = true;
-            this.cbbTinhTrang.Location = new System.Drawing.Point(211, 109);
-            this.cbbTinhTrang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbbTinhTrang.Location = new System.Drawing.Point(158, 89);
+            this.cbbTinhTrang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbbTinhTrang.Name = "cbbTinhTrang";
-            this.cbbTinhTrang.Size = new System.Drawing.Size(148, 28);
+            this.cbbTinhTrang.Size = new System.Drawing.Size(112, 25);
             this.cbbTinhTrang.TabIndex = 72;
             // 
             // dgvHoaDon
             // 
-            this.dgvHoaDon.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.dgvHoaDon.AllowUserToAddRows = false;
             this.dgvHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -113,30 +111,15 @@
             this.dgvHoaDon.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvHoaDon.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvHoaDon.GridColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgvHoaDon.Location = new System.Drawing.Point(16, 173);
-            this.dgvHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvHoaDon.Location = new System.Drawing.Point(12, 141);
+            this.dgvHoaDon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvHoaDon.MultiSelect = false;
             this.dgvHoaDon.Name = "dgvHoaDon";
             this.dgvHoaDon.RowHeadersWidth = 51;
             this.dgvHoaDon.RowTemplate.Height = 24;
             this.dgvHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHoaDon.Size = new System.Drawing.Size(1118, 223);
+            this.dgvHoaDon.Size = new System.Drawing.Size(838, 181);
             this.dgvHoaDon.TabIndex = 70;
-            // 
-            // btnTim
-            // 
-            this.btnTim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTim.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.btnTim.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnTim.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnTim.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTim.IconSize = 25;
-            this.btnTim.Location = new System.Drawing.Point(18, 107);
-            this.btnTim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(35, 34);
-            this.btnTim.TabIndex = 71;
-            this.btnTim.UseVisualStyleBackColor = false;
             // 
             // MaHoaDon
             // 
@@ -213,15 +196,32 @@
             this.btnXoa.MinimumWidth = 6;
             this.btnXoa.Name = "btnXoa";
             // 
+            // btnTim
+            // 
+            this.btnTim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTim.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.btnTim.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.btnTim.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnTim.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTim.IconSize = 25;
+            this.btnTim.Location = new System.Drawing.Point(14, 87);
+            this.btnTim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(26, 28);
+            this.btnTim.TabIndex = 71;
+            this.btnTim.UseVisualStyleBackColor = false;
+            // 
             // HoaDonPhong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1151, 503);
+            this.ClientSize = new System.Drawing.Size(863, 409);
             this.Controls.Add(this.dtpThangSuDung);
             this.Controls.Add(this.cbbTinhTrang);
             this.Controls.Add(this.dgvHoaDon);
             this.Controls.Add(this.btnTim);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "HoaDonPhong";
             this.Text = "HoaDonPhong";
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).EndInit();

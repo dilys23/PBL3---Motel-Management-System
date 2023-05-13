@@ -87,11 +87,6 @@ namespace PBL3___Motel_Management_System.View
                 dgvDVcodinh.Rows[j].Cells[1].Value = j+1;
             }
             }
-        
-        private void panelThemHD_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         private void iconButton4_Click(object sender, EventArgs e)
         {
             
@@ -107,40 +102,27 @@ namespace PBL3___Motel_Management_System.View
                     if (dr.Cells[0].Value != null) dsdv.Add(dr.Cells[0].Value.ToString());
                 }
                 tp.DsDichVu = dsdv;
-                QLBLL.Instance.openChildForm1(new ThemThietBiPhong(tp, Back), panelThemDV);
+                QLBLL.Instance.openChildForm1(new ThemHopDong(tp, Back), panelThemDV);
             }
             else
             {
                 List<string> dsdv = new List<string>();
-                QLBLL.Instance.DelCHiTietDichVuByIdPhong(tp.hopDong.MaPhongTro);
+                List<string> ListId = QLBLL.Instance.GetAllIdDichVuByIdPhong(tp.hopDong.MaPhongTro);
                 foreach (DataGridViewRow dr in dgvXoaDichVu.Rows)
                 {
                     if (dr.Cells[0].Value != null)
                     {
-                        ChiTietDichVu ctdv = new ChiTietDichVu();
-                        ctdv.MaChiTietDichVu = QLBLL.Instance.TaoIdChiTietDichVu();
-                        ctdv.MaPhongTro = tp.hopDong.MaPhongTro;
-                        ctdv.MaDichVu = dr.Cells[0].Value.ToString();
-                        ctdv.TonTai = true;
-                        QLBLL.Instance.AddChiTietDichVuBll(ctdv);
                         dsdv.Add(dr.Cells[0].Value.ToString());
                     }
                 }
-                foreach (DataGridViewRow dr in dgvDVcodinh.Rows)
+                foreach(DataGridViewRow dr in dgvDVcodinh.Rows)
                 {
-
                     if (dr.Cells[0].Value != null)
                     {
-                        ChiTietDichVu ctdv = new ChiTietDichVu();
-                        ctdv.MaChiTietDichVu= QLBLL.Instance.TaoIdChiTietDichVu();
-                        ctdv.MaPhongTro = tp.hopDong.MaPhongTro;
-                        ctdv.MaDichVu = dr.Cells[0].Value.ToString();
-                        ctdv.TonTai = true;
-                        QLBLL.Instance.AddChiTietDichVuBll(ctdv);
                         dsdv.Add(dr.Cells[0].Value.ToString());
                     }
                 }
-                tp.DsDichVu = dsdv;
+                QLBLL.Instance.ThayDoiDichVuPhong(dsdv, tp.hopDong.MaPhongTro);
                 MessageBox.Show("Thay đổi thành công", "Thông báo", MessageBoxButtons.OK);
                 this.Close();
                 this.loader(null);
@@ -210,6 +192,11 @@ namespace PBL3___Motel_Management_System.View
             {
                 MessageBox.Show("Danh sách dịch vụ dã trống", "Thông báo");
             }
+
+        }
+
+        private void dgvXoaDichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

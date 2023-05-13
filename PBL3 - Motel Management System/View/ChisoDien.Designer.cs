@@ -73,7 +73,7 @@
             this.cbbDayTro.FormattingEnabled = true;
             this.cbbDayTro.Location = new System.Drawing.Point(207, 40);
             this.cbbDayTro.Name = "cbbDayTro";
-            this.cbbDayTro.Size = new System.Drawing.Size(123, 28);
+            this.cbbDayTro.Size = new System.Drawing.Size(123, 25);
             this.cbbDayTro.TabIndex = 31;
             this.cbbDayTro.SelectedIndexChanged += new System.EventHandler(this.cbbDayTro_SelectedIndexChanged);
             // 
@@ -83,7 +83,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(201, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 20);
+            this.label2.Size = new System.Drawing.Size(37, 17);
             this.label2.TabIndex = 30;
             this.label2.Text = "Dãy:";
             // 
@@ -95,7 +95,7 @@
             this.dtpThangSuDung.Location = new System.Drawing.Point(53, 41);
             this.dtpThangSuDung.Name = "dtpThangSuDung";
             this.dtpThangSuDung.ShowUpDown = true;
-            this.dtpThangSuDung.Size = new System.Drawing.Size(125, 27);
+            this.dtpThangSuDung.Size = new System.Drawing.Size(125, 23);
             this.dtpThangSuDung.TabIndex = 29;
             this.dtpThangSuDung.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -105,7 +105,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(49, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 20);
+            this.label1.Size = new System.Drawing.Size(71, 17);
             this.label1.TabIndex = 28;
             this.label1.Text = "Thời gian:";
             // 
@@ -116,13 +116,12 @@
             this.label4.ForeColor = System.Drawing.Color.Chocolate;
             this.label4.Location = new System.Drawing.Point(12, 11);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 24);
+            this.label4.Size = new System.Drawing.Size(98, 19);
             this.label4.TabIndex = 25;
             this.label4.Text = "CHỈ SỐ ĐIỆN";
             // 
             // dgvChiSoDien
             // 
-            this.dgvChiSoDien.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.dgvChiSoDien.AllowUserToAddRows = false;
             this.dgvChiSoDien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -161,6 +160,7 @@
             this.dgvChiSoDien.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvChiSoDien.GridColor = System.Drawing.Color.LightCyan;
             this.dgvChiSoDien.Location = new System.Drawing.Point(17, 99);
+            this.dgvChiSoDien.MultiSelect = false;
             this.dgvChiSoDien.Name = "dgvChiSoDien";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -305,7 +305,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(487, 14);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 20);
+            this.label5.Size = new System.Drawing.Size(73, 17);
             this.label5.TabIndex = 60;
             this.label5.Text = "Tình trạng";
             // 
@@ -315,7 +315,7 @@
             this.cbbTinhTrang.FormattingEnabled = true;
             this.cbbTinhTrang.Location = new System.Drawing.Point(490, 40);
             this.cbbTinhTrang.Name = "cbbTinhTrang";
-            this.cbbTinhTrang.Size = new System.Drawing.Size(129, 28);
+            this.cbbTinhTrang.Size = new System.Drawing.Size(129, 25);
             this.cbbTinhTrang.TabIndex = 59;
             // 
             // btnTimKiem
@@ -340,7 +340,7 @@
             this.cbbPhongTro.FormattingEnabled = true;
             this.cbbPhongTro.Location = new System.Drawing.Point(353, 41);
             this.cbbPhongTro.Name = "cbbPhongTro";
-            this.cbbPhongTro.Size = new System.Drawing.Size(118, 28);
+            this.cbbPhongTro.Size = new System.Drawing.Size(118, 25);
             this.cbbPhongTro.TabIndex = 57;
             // 
             // label3
@@ -352,7 +352,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(350, 14);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 20);
+            this.label3.Size = new System.Drawing.Size(53, 17);
             this.label3.TabIndex = 56;
             this.label3.Text = "Phòng:";
             // 

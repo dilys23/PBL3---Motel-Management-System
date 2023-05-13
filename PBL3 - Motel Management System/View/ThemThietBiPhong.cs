@@ -28,46 +28,23 @@ namespace PBL3___Motel_Management_System.View
 
         }
         public void LoadForm()
-        {
-            dgvTBThem.Columns[0].Visible = false;
-            int j = 0;
+        {   
+            dgvTBThem.RowCount = 0;
+            dgvThietBi.RowCount = 0;
             foreach (ThietBi viewThietBi in QLBLL.Instance.DgvThietBi(null))
             {
-                dgvThietBi.Rows.Add(viewThietBi.MaThietBi, ++j, viewThietBi.TenThietBi, viewThietBi.GiaThietBi);
+                dgvThietBi.Rows.Add(viewThietBi.MaThietBi, 1, viewThietBi.TenThietBi, viewThietBi.GiaThietBi);
             }
-
-            dgvThietBi.Columns[0].Visible = false;
-            List<ChiTietThietBi> list = new List<ChiTietThietBi>();
-            list = QLBLL.Instance.GetChiTietThietBiByIdPhong(tp.hopDong.MaPhongTro);
             if (tp.hopDong.MaHopDong == null)
             {
-                foreach (ChiTietThietBi cttb in list)
+                foreach(ChiTietThietBi ct in QLBLL.Instance.GetChiTietThietBiByIdPhong(tp.hopDong.MaPhongTro))
                 {
-                    for (int i = 0; i < dgvThietBi.Rows.Count; i++)
-                    {
-                        if (dgvThietBi.Rows[i].Cells[0].Value != null)
-                        {
-                            if (cttb.MaThietBi == dgvThietBi.Rows[i].Cells[0].Value.ToString())
-                            {
-                                ThietBi v = QLBLL.Instance.GetTBByIdTB(cttb.MaThietBi); 
-                                dgvTBThem.Rows.Add(v.MaThietBi, 0, v.TenThietBi, v.GiaThietBi, cttb.SoLuong);
-                            }
-                        }
-                    }
-                }
-                for (int i = 0; i < dgvTBThem.Rows.Count; i++)
-                {
-                    dgvTBThem.Rows[i].Cells[1].Value = i + 1;
-
-                }
-                for (int i = 0; i < dgvThietBi.Rows.Count; i++)
-                {
-                    dgvThietBi.Rows[i].Cells[1].Value = i + 1;
+                    ThietBi tb = QLBLL.Instance.GetTBByIdTB(ct.MaThietBi);
+                    dgvTBThem.Rows.Add(tb.MaThietBi,1,tb.TenThietBi,tb.GiaThietBi,ct.SoLuong);
                 }
             }
             else
-            {
-               
+            {    
                 int i = 0;
                 foreach (string idCttb in QLBLL.Instance.GetAllIdCHiTietThietBiByIdPhong(tp.hopDong.MaPhongTro))
                 {
@@ -75,9 +52,16 @@ namespace PBL3___Motel_Management_System.View
                     ThietBi tb = QLBLL.Instance.GetTBByIdTB(cttb.MaThietBi);
                     dgvTBThem.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi, cttb.SoLuong);
                 }
+            }
+            for (int i = 0; i < dgvTBThem.Rows.Count; i++)
+            {
+                dgvTBThem.Rows[i].Cells[1].Value = i + 1;
 
             }
-
+            for (int i = 0; i < dgvThietBi.Rows.Count; i++)
+            {
+                dgvThietBi.Rows[i].Cells[1].Value = i + 1;
+            }
         }
         private void Back(string txt)
         {
@@ -130,34 +114,36 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnXoaTB_Click(object sender, EventArgs e)
         {
-            DataGridViewRow row = dgvTBThem.CurrentRow;
-            ThietBi v = new ThietBi();
-            if (row.Cells[0].Value != null)
+            if(dgvTBThem.RowCount > 0)
             {
-                v.MaThietBi = row.Cells[0].Value.ToString();
-                v.TenThietBi = row.Cells[2].Value.ToString();
-                v.GiaThietBi = Convert.ToDouble(row.Cells[3].Value.ToString());
-                if(dgvTBThem.CurrentRow.Cells[4].Value != null)
+                DataGridViewRow row = dgvTBThem.CurrentRow;
+                ThietBi v = new ThietBi();
+                if (row.Cells[0].Value != null)
                 {
-
-                if (Convert.ToInt32(dgvTBThem.CurrentRow.Cells[4].Value.ToString()) == 1)
-                    { 
-
-                dgvTBThem.Rows.RemoveAt(dgvTBThem.CurrentRow.Index);
-                }
-                    else
+                    v.MaThietBi = row.Cells[0].Value.ToString();
+                    v.TenThietBi = row.Cells[2].Value.ToString();
+                    v.GiaThietBi = Convert.ToDouble(row.Cells[3].Value.ToString());
+                    if(dgvTBThem.CurrentRow.Cells[4].Value != null)
                     {
-                        int k = Convert.ToInt32(dgvTBThem.CurrentRow.Cells[4].Value.ToString());
-                        dgvTBThem.CurrentRow.Cells[4].Value = k-1;
+
+                    if (Convert.ToInt32(dgvTBThem.CurrentRow.Cells[4].Value.ToString()) == 1)
+                        { 
+                             dgvTBThem.Rows.RemoveAt(dgvTBThem.CurrentRow.Index);
+                    }
+                        else
+                        {
+                            int k = Convert.ToInt32(dgvTBThem.CurrentRow.Cells[4].Value.ToString());
+                            dgvTBThem.CurrentRow.Cells[4].Value = k-1;
+                        }
+                    }
+                
+                    for (int i = 0; i < dgvTBThem.Rows.Count; i++)
+                    {
+                        dgvTBThem.Rows[i].Cells[1].Value = i + 1;
+
                     }
                 }
-                
-                for (int i = 0; i < dgvTBThem.Rows.Count; i++)
-                {
-                    dgvTBThem.Rows[i].Cells[1].Value = i + 1;
 
-                }
-                
             }
             else
             {
@@ -168,32 +154,24 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            QLBLL.Instance.DelCHiTietThietBiByIdPhongBLL(tp.hopDong.MaPhongTro);
+            List<ChiTietThietBi> list = new List<ChiTietThietBi>();
             foreach (DataGridViewRow dr in dgvTBThem.Rows)
             {
                 if (dr.Cells[0].Value != null)
                 {
-                    ChiTietThietBi cttb = new ChiTietThietBi();
-                    cttb.MaChiTietThietBi = QLBLL.Instance.TaoIdChiTietThietBi();
-                    cttb.MaThietBi = dr.Cells[0].Value.ToString();
-                    cttb.MaPhongTro = tp.hopDong.MaPhongTro;
-                    cttb.SoLuong = Convert.ToInt32(dr.Cells[4].Value.ToString());
-                    cttb.TonTai = true;
-                    QLBLL.Instance.AddChiTietThietBiBll(cttb);
+                    list.Add(new ChiTietThietBi()
+                    {
+                        MaThietBi = dr.Cells[0].Value.ToString(),
+                        SoLuong = Convert.ToInt32(dr.Cells[4].Value.ToString()),
+                        MaPhongTro = tp.hopDong.MaPhongTro
+                    });
                 }
+            }
+            QLBLL.Instance.ThayDoiThietBiPhong(list, tp.hopDong.MaPhongTro);
+            MessageBox.Show("Thay đổi thành công", "Thông báo", MessageBoxButtons.OK);
+            this.Close();
+            this.loader(null);
 
-            }
-            if (tp.hopDong.MaHopDong != null)
-            {
-                QLBLL.Instance.openChildForm1(new ThemHopDong(tp, Back), panelThemHD);
-            }
-            else
-            {   
-                
-                MessageBox.Show("Thay đổi thành công","Thông báo",MessageBoxButtons.OK);
-                this.Close();
-                this.loader(null);
-            }
         }
     }
 }

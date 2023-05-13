@@ -52,9 +52,10 @@
             this.panelThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
             this.panelThem.Controls.Add(this.btnThemDichVu);
             this.panelThem.Controls.Add(this.dgvDichVu);
-            this.panelThem.Location = new System.Drawing.Point(27, 33);
+            this.panelThem.Location = new System.Drawing.Point(20, 27);
+            this.panelThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelThem.Name = "panelThem";
-            this.panelThem.Size = new System.Drawing.Size(869, 493);
+            this.panelThem.Size = new System.Drawing.Size(652, 401);
             this.panelThem.TabIndex = 49;
             // 
             // btnThemDichVu
@@ -68,10 +69,10 @@
             this.btnThemDichVu.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnThemDichVu.IconSize = 25;
             this.btnThemDichVu.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnThemDichVu.Location = new System.Drawing.Point(697, 11);
-            this.btnThemDichVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThemDichVu.Location = new System.Drawing.Point(523, 9);
+            this.btnThemDichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnThemDichVu.Name = "btnThemDichVu";
-            this.btnThemDichVu.Size = new System.Drawing.Size(145, 39);
+            this.btnThemDichVu.Size = new System.Drawing.Size(109, 32);
             this.btnThemDichVu.TabIndex = 54;
             this.btnThemDichVu.Text = "Thêm dịch vụ";
             this.btnThemDichVu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -80,7 +81,6 @@
             // 
             // dgvDichVu
             // 
-            this.dgvDichVu.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.dgvDichVu.AllowUserToAddRows = false;
             this.dgvDichVu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -111,7 +111,9 @@
             this.dgvDichVu.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDichVu.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvDichVu.GridColor = System.Drawing.Color.LightCyan;
-            this.dgvDichVu.Location = new System.Drawing.Point(17, 101);
+            this.dgvDichVu.Location = new System.Drawing.Point(13, 82);
+            this.dgvDichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvDichVu.MultiSelect = false;
             this.dgvDichVu.Name = "dgvDichVu";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -124,7 +126,7 @@
             this.dgvDichVu.RowHeadersWidth = 60;
             this.dgvDichVu.RowTemplate.Height = 24;
             this.dgvDichVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDichVu.Size = new System.Drawing.Size(825, 367);
+            this.dgvDichVu.Size = new System.Drawing.Size(619, 298);
             this.dgvDichVu.TabIndex = 9;
             this.dgvDichVu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDichVu_CellContentClick);
             this.dgvDichVu.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDichVu_CellFormatting);
@@ -166,11 +168,12 @@
             // 
             // ChitietDV
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(922, 558);
+            this.ClientSize = new System.Drawing.Size(692, 453);
             this.Controls.Add(this.panelThem);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ChitietDV";
             this.Text = "ChitietDichVu";
             this.panelThem.ResumeLayout(false);

@@ -58,7 +58,7 @@
             this.cbbDayTro.FormattingEnabled = true;
             this.cbbDayTro.Location = new System.Drawing.Point(97, 31);
             this.cbbDayTro.Name = "cbbDayTro";
-            this.cbbDayTro.Size = new System.Drawing.Size(161, 28);
+            this.cbbDayTro.Size = new System.Drawing.Size(161, 25);
             this.cbbDayTro.TabIndex = 43;
             this.cbbDayTro.SelectedIndexChanged += new System.EventHandler(this.cbbDayTro_SelectedIndexChanged);
             // 
@@ -83,7 +83,6 @@
             // 
             // dgvHD
             // 
-            this.dgvHD.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.dgvHD.AllowUserToAddRows = false;
             this.dgvHD.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -102,6 +101,7 @@
             this.btnSua,
             this.btnXoa});
             this.dgvHD.Location = new System.Drawing.Point(11, 102);
+            this.dgvHD.MultiSelect = false;
             this.dgvHD.Name = "dgvHD";
             this.dgvHD.RowHeadersWidth = 51;
             this.dgvHD.RowTemplate.Height = 24;
@@ -195,7 +195,7 @@
             this.cbbPhongTro.FormattingEnabled = true;
             this.cbbPhongTro.Location = new System.Drawing.Point(376, 35);
             this.cbbPhongTro.Name = "cbbPhongTro";
-            this.cbbPhongTro.Size = new System.Drawing.Size(146, 24);
+            this.cbbPhongTro.Size = new System.Drawing.Size(146, 21);
             this.cbbPhongTro.TabIndex = 52;
             // 
             // label1
@@ -204,7 +204,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(300, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 20);
+            this.label1.Size = new System.Drawing.Size(49, 17);
             this.label1.TabIndex = 45;
             this.label1.Text = "Phòng";
             // 
@@ -214,7 +214,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(52, 34);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 20);
+            this.label2.Size = new System.Drawing.Size(33, 17);
             this.label2.TabIndex = 48;
             this.label2.Text = "Dãy";
             // 
@@ -238,7 +238,7 @@
             this.label4.ForeColor = System.Drawing.Color.Chocolate;
             this.label4.Location = new System.Drawing.Point(3, 13);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(222, 28);
+            this.label4.Size = new System.Drawing.Size(182, 23);
             this.label4.TabIndex = 25;
             this.label4.Text = "QUẢN LÝ HỢP ĐỒNG";
             // 

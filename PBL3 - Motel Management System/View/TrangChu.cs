@@ -251,9 +251,7 @@ namespace PBL3___Motel_Management_System
 
         private void btnTrangchu_Click(object sender, EventArgs e)
         {
-            //QLBLL.Instance.openChildForm1(new FormTrangChu(), panelDesktop);
-            MessageBox.Show(QLDAL.Instance.KiemTraTonTaiIdPhongTro("131").ToString());
-            //QLDAL.Instance.KiemTraTonTaiIdPhongTro()
+            QLBLL.Instance.openChildForm1(new FormTrangChu(), panelDesktop);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

@@ -36,10 +36,6 @@
             this.GiaDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label12 = new System.Windows.Forms.Label();
             this.dgvThietbi = new System.Windows.Forms.DataGridView();
-            this.MaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtDienTich = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
@@ -66,6 +62,11 @@
             this.dtpNgayBatDau = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.btnTroVe = new FontAwesome.Sharp.IconButton();
+            this.MaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelThem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichvu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThietbi)).BeginInit();
@@ -124,6 +125,7 @@
             this.TenDichVu,
             this.GiaDichVu});
             this.dgvDichvu.Location = new System.Drawing.Point(44, 299);
+            this.dgvDichvu.MultiSelect = false;
             this.dgvDichvu.Name = "dgvDichvu";
             this.dgvDichvu.RowHeadersWidth = 51;
             this.dgvDichvu.RowTemplate.Height = 24;
@@ -180,9 +182,11 @@
             this.MaThietBi,
             this.dataGridViewTextBoxColumn1,
             this.TenThietBi,
-            this.GiaThietBi});
+            this.GiaThietBi,
+            this.SoLuong});
             this.dgvThietbi.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvThietbi.Location = new System.Drawing.Point(44, 404);
+            this.dgvThietbi.MultiSelect = false;
             this.dgvThietbi.Name = "dgvThietbi";
             this.dgvThietbi.ReadOnly = true;
             this.dgvThietbi.RowHeadersWidth = 51;
@@ -190,38 +194,6 @@
             this.dgvThietbi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvThietbi.Size = new System.Drawing.Size(788, 78);
             this.dgvThietbi.TabIndex = 46;
-            // 
-            // MaThietBi
-            // 
-            this.MaThietBi.HeaderText = "MaThietBi";
-            this.MaThietBi.MinimumWidth = 6;
-            this.MaThietBi.Name = "MaThietBi";
-            this.MaThietBi.ReadOnly = true;
-            this.MaThietBi.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.FillWeight = 95.69988F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "STT";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // TenThietBi
-            // 
-            this.TenThietBi.FillWeight = 104.4377F;
-            this.TenThietBi.HeaderText = "Tên thiết bị";
-            this.TenThietBi.MinimumWidth = 6;
-            this.TenThietBi.Name = "TenThietBi";
-            this.TenThietBi.ReadOnly = true;
-            // 
-            // GiaThietBi
-            // 
-            this.GiaThietBi.FillWeight = 99.86245F;
-            this.GiaThietBi.HeaderText = "Giá thiết bị";
-            this.GiaThietBi.MinimumWidth = 6;
-            this.GiaThietBi.Name = "GiaThietBi";
-            this.GiaThietBi.ReadOnly = true;
             // 
             // txtDienTich
             // 
@@ -502,6 +474,44 @@
             this.btnTroVe.UseVisualStyleBackColor = false;
             this.btnTroVe.Click += new System.EventHandler(this.btnTroVe_Click);
             // 
+            // MaThietBi
+            // 
+            this.MaThietBi.HeaderText = "MaThietBi";
+            this.MaThietBi.MinimumWidth = 6;
+            this.MaThietBi.Name = "MaThietBi";
+            this.MaThietBi.ReadOnly = true;
+            this.MaThietBi.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.FillWeight = 95.69988F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "STT";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // TenThietBi
+            // 
+            this.TenThietBi.FillWeight = 104.4377F;
+            this.TenThietBi.HeaderText = "Tên thiết bị";
+            this.TenThietBi.MinimumWidth = 6;
+            this.TenThietBi.Name = "TenThietBi";
+            this.TenThietBi.ReadOnly = true;
+            // 
+            // GiaThietBi
+            // 
+            this.GiaThietBi.FillWeight = 99.86245F;
+            this.GiaThietBi.HeaderText = "Giá thiết bị";
+            this.GiaThietBi.MinimumWidth = 6;
+            this.GiaThietBi.Name = "GiaThietBi";
+            this.GiaThietBi.ReadOnly = true;
+            // 
+            // SoLuong
+            // 
+            this.SoLuong.HeaderText = "Số lượng";
+            this.SoLuong.Name = "SoLuong";
+            this.SoLuong.ReadOnly = true;
+            // 
             // ChitietHopDong
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -566,5 +576,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenThietBi;
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaThietBi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
     }
 }

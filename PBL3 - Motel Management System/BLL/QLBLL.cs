@@ -1,5 +1,6 @@
 ﻿using PBL3___Motel_Management_System.DAL;
 using PBL3___Motel_Management_System.DTO;
+using PBL3___Motel_Management_System.View;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Metadata.Edm;
@@ -681,7 +682,10 @@ namespace PBL3___Motel_Management_System.BLL
                 QLDAL.Instance.DelCHiTietThietBiById(id);
             }
         }
-       
+        public void DelCHiTietThietBiById(string id)
+        {
+            QLDAL.Instance.DelCHiTietThietBiById(id);
+        }
         public void DelCHiTietDichVuByIdPhong(string IdPhong)
         {
             foreach (string id in GetAllIdChitietDichVuByIdPhong(IdPhong))
@@ -710,6 +714,10 @@ namespace PBL3___Motel_Management_System.BLL
         public void DelChiTietDichVu(string id)
         {
             QLDAL.Instance.DelChiTietDichVuDal(id);
+        }
+        public string GetIdChiTietDichVuByIdPhongAndIdDichVu(string idp, string iddv)
+        {
+            return QLDAL.Instance.GetIdChiTietDichVuByIdPhongAndIdDichVu(idp, iddv);
         }
         public void DelChiTietSuDungDichVu(string id)
         {
@@ -1195,6 +1203,87 @@ namespace PBL3___Motel_Management_System.BLL
                 }
             }
             return list;
+        }
+        public void ThayDoiDichVuPhong(List<string> dsdv, string idP)
+        {
+            List<string> ListCu = GetAllIdDichVuByIdPhong(idP);
+            foreach (string id in ListCu)
+            {
+                if (!dsdv.Contains(id))
+                {
+                    DelChiTietDichVu(GetIdChiTietDichVuByIdPhongAndIdDichVu(idP,id));
+                }
+            }
+            foreach (string id in dsdv)
+            {
+                if(!ListCu.Contains(id))
+                {
+                    AddChiTietDichVuBll(new ChiTietDichVu()
+                    {
+                        MaChiTietDichVu = TaoIdChiTietDichVu(),
+                        MaDichVu = id,
+                        MaPhongTro = idP,
+                        TonTai = true
+                    });
+                }
+            }
+        }
+        public ChiTietThietBi GetChiTietThietBiByIdPhongAndIdThietBi(string idp, string idtb)
+        {
+            return QLDAL.Instance.GetChiTietThietBiByIdPhongAndIdThietBi(idp,idtb);
+        }
+        public void UpdateChiTietThietBi(ChiTietThietBi cttb)
+        {
+            QLDAL.Instance.UpdateChiTietThietBiDal(cttb);
+        }
+        public void ThayDoiThietBiPhong(List<ChiTietThietBi> listMoi, string idp)
+        {
+            List<ChiTietThietBi> listCu = GetChiTietThietBiByIdPhong(idp);
+            List<string> idphong = new List<string>();
+            List<string> idthietbi = new List<string>();
+            foreach(ChiTietThietBi ct in listMoi)
+            {
+                idphong.Add(ct.MaPhongTro);
+                idthietbi.Add(ct.MaThietBi);
+            }
+            foreach (ChiTietThietBi ct in listCu)
+            {
+                bool status = true;
+                foreach (ChiTietThietBi cttb in listMoi)
+                {
+                    if(cttb.MaThietBi == ct.MaThietBi && cttb.MaPhongTro == ct.MaPhongTro)
+                    {
+                        status = false;
+                    }
+                }
+                if(status)
+                {
+                    DelCHiTietThietBiById(ct.MaChiTietThietBi);
+                }
+            }
+            foreach(ChiTietThietBi ct in listMoi)
+            {
+                ChiTietThietBi cttb = GetChiTietThietBiByIdPhongAndIdThietBi(idp, ct.MaThietBi);
+                if(cttb != null)
+                {
+                    if(cttb.SoLuong != ct.SoLuong)
+                    {
+                        cttb.SoLuong = ct.SoLuong;
+                        UpdateChiTietThietBi(cttb);
+                    }
+                }
+                else
+                {
+                    AddChiTietThietBiBll(new ChiTietThietBi()
+                    {
+                        MaChiTietThietBi = QLBLL.Instance.TaoIdChiTietThietBi(),
+                        MaThietBi = ct.MaThietBi,
+                        MaPhongTro = idp,
+                        SoLuong = ct.SoLuong,
+                        TonTai = true
+                    });
+                }
+            }
         }
     }
 }
