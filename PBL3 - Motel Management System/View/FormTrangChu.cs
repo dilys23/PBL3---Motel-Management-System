@@ -88,15 +88,55 @@ namespace PBL3___Motel_Management_System.View
             // Tạo series mới và thêm data points
             var series = new Series("Tình trạng");
             series.ChartType = SeriesChartType.Pie;
-            series["PieLabelStyle"] = "Disabled"; // Tắt hiển thị nhãn trên mỗi phần tử
-
             for (int i = 0; i < tinhTrangList.Count; i++)
             {
-                series.Points.AddXY(tinhTrangList[i], soLuongList[i]);
+                series.Points.Add(soLuongList[i]);
+                series.Points[i].LegendText = string.Format("{0} ({1})", tinhTrangList[i], soLuongList[i]);
             }
-
+            foreach (DataPoint dataPoint in series.Points)
+            {
+                dataPoint.Label = string.Format("{0} ({1})", dataPoint.AxisLabel, dataPoint.YValues[0]);
+            }
             // Thêm series vào biểu đồ
             TinhTrang.Series.Add(series);
+        }
+
+        private void panelDesktop_SizeChanged(object sender, EventArgs e)
+        {
+            int panelWidth = panelDesktop.Width;
+            int panelHeight = panelDesktop.Height;
+
+            int dgvWidth = (panelWidth - 40) / 2;
+            int dgvHeight = (panelHeight - 30) / 2;
+
+            int chartWidth = dgvWidth;
+            int chartHeight = dgvHeight;
+            int chartX = 10;
+            int chartY = 10;
+
+            int dgvTinhTrangWidth = dgvWidth - 4;
+            int dgvTinhTrangHeight = dgvHeight - 3;
+            int dgvTinhTrangX = dgvWidth + 15;
+            int dgvTinhTrangY = 5;
+
+            int dgvSoLuongWidth = dgvWidth;
+            int dgvSoLuongHeight = dgvHeight - 25;
+            int dgvSoLuongX = dgvWidth + 15;
+            int dgvSoLuongY = dgvHeight + 5;
+
+            TinhTrang.Size = new Size(chartWidth, chartHeight);
+            TinhTrang.Location = new Point(chartX, chartY);
+
+            dgvTinhTrang.Size = new Size(dgvTinhTrangWidth, dgvTinhTrangHeight);
+            dgvTinhTrang.Location = new Point(dgvTinhTrangX, dgvTinhTrangY);
+
+            dgvSoLuong.Size = new Size(dgvSoLuongWidth, dgvSoLuongHeight);
+            dgvSoLuong.Location = new Point(dgvSoLuongX, dgvSoLuongY);
+        }
+
+        private void TinhTrang_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -41,7 +41,7 @@ namespace PBL3___Motel_Management_System.View
                 dgvThietBi.Rows.Add(viewThietBi.MaThietBi, ++i, viewThietBi.TenThietBi, viewThietBi.GiaThietBi);
             }
             var Sua = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-create-25.png");
-            var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-create-25.png");
+            var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-delete-25.png");
             dgvThietBi.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => QLBLL.Instance.dgvIcons_CellPainting1(dgvThietBi, e, Sua, Xoa));
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
