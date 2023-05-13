@@ -22,8 +22,7 @@ namespace PBL3___Motel_Management_System
             InitializeComponent();
             this.IdDv=idDv;
             this.Loader = loader;
-            QLBLL qLBLL = new QLBLL();
-            DichVu dv = qLBLL.GetDVByIdDV(idDv);
+            DichVu dv = QLBLL.Instance.GetDVByIdDV(idDv);
             if(idDv == "001" || idDv == "000")
             {
                 txtTenDichVu.ReadOnly = true;
@@ -71,12 +70,11 @@ namespace PBL3___Motel_Management_System
         {
             if (checkHopLe())
             {
-                QLBLL qLBLL = new QLBLL();
                 DichVu dv = new DichVu();
                 dv.MaDichVu = IdDv;
                 dv.TenDichVu = txtTenDichVu.Text;
                 dv.GiaDichVu = Convert.ToDouble(txtGiaDichVu.Text);
-                qLBLL.SuaDVBll(dv);
+                QLBLL.Instance.SuaDVBll(dv);
                 MessageBox.Show("Thay đổi thông tin thành công", "Thông báo");
                 Loader(null);
                 this.Close();

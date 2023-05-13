@@ -39,15 +39,14 @@ namespace PBL3___Motel_Management_System
             this.dgvDichVu.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
             this.dgvDichVu.RowTemplate.Height = 35;
             this.dgvDichVu.RowTemplate.MinimumHeight = 20;
-            QLBLL qLBLL = new QLBLL();
             int i = 0;
-            foreach(DichVu viewDichVu in qLBLL.DgvDichVu(txtTim))
+            foreach(DichVu viewDichVu in QLBLL.Instance.DgvDichVu(txtTim))
             {
                 dgvDichVu.Rows.Add(viewDichVu.MaDichVu,++i,viewDichVu.TenDichVu,viewDichVu.GiaDichVu);
-            }    
+            }
             var Sua = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-create-25.png");
             var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-delete-25.png");
-            dgvDichVu.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => qLBLL.dgvIcons_CellPainting1(dgvDichVu, e, Sua, Xoa));
+            dgvDichVu.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => QLBLL.Instance.dgvIcons_CellPainting1(dgvDichVu, e, Sua, Xoa));
         
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -189,15 +188,13 @@ namespace PBL3___Motel_Management_System
       
         private void btnThemPhong_Click_1(object sender, EventArgs e)
         {
-            QLBLL qLBLL = new QLBLL();
-            qLBLL.openChildForm1(new ThemDV(LoadForm), panelDV);
+            QLBLL.Instance.openChildForm1(new ThemDV(LoadForm), panelDV);
         }
 
         private void btnSuaDV_Click(object sender, EventArgs e)
         {
-            QLBLL qLBLL = new QLBLL();
             string id = dgvDichVu.CurrentRow.Cells[0].Value.ToString();
-            qLBLL.openChildForm1(new SuaDichVu(id,LoadForm), panelDV);
+            QLBLL.Instance.openChildForm1(new SuaDichVu(id,LoadForm), panelDV);
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -210,9 +207,8 @@ namespace PBL3___Motel_Management_System
             string id = dgvDichVu.CurrentRow.Cells[0].Value.ToString();
             if(id != "000" && id != "001")
             {
-                QLBLL qLBLL = new QLBLL();
-                qLBLL.DelChiTietDichVuByIdDichVu(id);
-                qLBLL.DelDichVu(id);
+                QLBLL.Instance.DelChiTietDichVuByIdDichVu(id);
+                QLBLL.Instance.DelDichVu(id);
                 MessageBox.Show("Xóa dịch vụ thành công", "Thông báo");
                 LoadForm(null);
             }
@@ -226,18 +222,16 @@ namespace PBL3___Motel_Management_System
         {
             if (dgvDichVu.Columns[e.ColumnIndex].Name == "btnSua")
             {
-                QLBLL qLBLL = new QLBLL();
                 string id = dgvDichVu.Rows[e.RowIndex].Cells[0].Value.ToString();
-                qLBLL.openChildForm1(new SuaDichVu(id, LoadForm), panelDV);
+                QLBLL.Instance.openChildForm1(new SuaDichVu(id, LoadForm), panelDV);
             }
             else
             {
                 string id = dgvDichVu.Rows[e.RowIndex].Cells[0].Value.ToString();
                 if (id != "000" && id != "001")
                 {
-                    QLBLL qLBLL = new QLBLL();
-                    qLBLL.DelChiTietDichVuByIdDichVu(id);
-                    qLBLL.DelDichVu(id);
+                    QLBLL.Instance.DelChiTietDichVuByIdDichVu(id);
+                    QLBLL.Instance.DelDichVu(id);
                     dgvDichVu.Rows.RemoveAt(e.RowIndex);
                     MessageBox.Show("Xóa dịch vụ thành công", "Thông báo");
                     LoadForm(null);

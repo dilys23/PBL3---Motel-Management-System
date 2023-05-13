@@ -19,8 +19,7 @@ namespace PBL3___Motel_Management_System.View
         }
         private void btnThemKhach_Click(object sender, EventArgs e)
         {
-            QLBLL qLBLL = new QLBLL();
-            qLBLL.openChildForm1(new ThemKhach(null, null), panelThemHD);
+            QLBLL.Instance.openChildForm1(new ThemKhach(null, null), panelThemHD);
         }
     }
 }

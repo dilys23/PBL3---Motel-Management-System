@@ -28,15 +28,14 @@ namespace PBL3___Motel_Management_System
         public void LoadForm(string thang)
         {
             dgvDoanhThu.Rows.Clear();
-            QLBLL qLBLL = new QLBLL();
             int i = 0;
-            foreach (string hd in qLBLL.GetHoaDonByThangChiTra(thang))
+            foreach (string hd in QLBLL.Instance.GetHoaDonByThangChiTra(thang))
             {
-                HoaDon hoadon = qLBLL.GetHoaDonById(hd);
+                HoaDon hoadon = QLBLL.Instance.GetHoaDonById(hd);
                 if(hoadon.TinhTrang == true)
                 {
-                    PhongTro pt = qLBLL.GetPhongTroByMaHoaDon(hoadon.MaHoaDon);
-                    DayTro dt = qLBLL.GetDayTroByIdPhong(pt.MaPhongTro);
+                    PhongTro pt = QLBLL.Instance.GetPhongTroByMaHoaDon(hoadon.MaHoaDon);
+                    DayTro dt = QLBLL.Instance.GetDayTroByIdPhong(pt.MaPhongTro);
                     dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hoadon.TongTien);
                 }
                
@@ -86,11 +85,10 @@ namespace PBL3___Motel_Management_System
         }
         public void ThongKe(string thang)
         {
-            QLBLL qLBLL = new QLBLL();
             ChartCot.Series[0].XValueMember = "TenDayTro";
             ChartCot.Series[0].YValueMembers = "TongTien";
             List<object> data = new List<object>(); 
-            ChartCot.DataSource = qLBLL.ThongKe(thang);
+            ChartCot.DataSource = QLBLL.Instance.ThongKe(thang);
             ChartCot.ChartAreas[0].AxisX.Title = "Dãy trọ";
             ChartCot.ChartAreas[0].AxisY.Title = "Tổng tiền";
             ChartCot.DataBind();
@@ -98,7 +96,7 @@ namespace PBL3___Motel_Management_System
             ChartDuong.Series[0].XValueMember = "TenDayTro";
             ChartDuong.Series[0].YValueMembers = "TongTien";
             List<object> data1 = new List<object>();
-            ChartDuong.DataSource = qLBLL.ThongKe(thang);
+            ChartDuong.DataSource = QLBLL.Instance.ThongKe(thang);
             ChartDuong.ChartAreas[0].AxisX.Title = "Dãy trọ";
             ChartDuong.ChartAreas[0].AxisY.Title = "Tổng tiền";
             ChartDuong.DataBind();

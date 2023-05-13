@@ -22,29 +22,28 @@ namespace PBL3___Motel_Management_System.View
         }
         private void LoadForm()
         {
-            QLBLL qLBLL = new QLBLL();
             dgvTinhTrang.RowCount = 0;
             dgvSoLuong.RowCount = 0;
-            qLBLL.customDGV(dgvTinhTrang);
-            qLBLL.customDGV(dgvSoLuong);
+            QLBLL.Instance.customDGV(dgvTinhTrang);
+            QLBLL.Instance.customDGV(dgvSoLuong);
             int i = 0;
-            foreach (string idp in qLBLL.DgvPhongTro(null))
+            foreach (string idp in QLBLL.Instance.DgvPhongTro(null))
             {
-                PhongTro pt = qLBLL.GetPhongTroByIdPhong(idp);
+                PhongTro pt = QLBLL.Instance.GetPhongTroByIdPhong(idp);
                 string TinhTrang;
-                HopDong hd = qLBLL.GetHopDongByIdPhong(pt.MaPhongTro);
+                HopDong hd = QLBLL.Instance.GetHopDongByIdPhong(pt.MaPhongTro);
                 if (hd == null) TinhTrang = "Còn trống";
                 else if (hd.TinhTrang == true) TinhTrang = "Đã cho thuê";
                 else TinhTrang = "Đã cọc";
-                dgvTinhTrang.Rows.Add(pt.MaPhongTro, ++i, qLBLL.GetDayTroByIdPhong(pt.MaPhongTro).TenDayTro, pt.TenPhongTro, TinhTrang);
+                dgvTinhTrang.Rows.Add(pt.MaPhongTro, ++i, QLBLL.Instance.GetDayTroByIdPhong(pt.MaPhongTro).TenDayTro, pt.TenPhongTro, TinhTrang);
             }
-            List<string> phongTroList = qLBLL.DgvPhongTro(null);
+            List<string> phongTroList = QLBLL.Instance.DgvPhongTro(null);
             Dictionary<string, int> tinhTrangCounts = new Dictionary<string, int>();
             foreach (string idp in phongTroList)
             {
-                PhongTro pt = qLBLL.GetPhongTroByIdPhong(idp);
+                PhongTro pt = QLBLL.Instance.GetPhongTroByIdPhong(idp);
                 string tinhTrang;
-                HopDong hd = qLBLL.GetHopDongByIdPhong(pt.MaPhongTro);
+                HopDong hd = QLBLL.Instance.GetHopDongByIdPhong(pt.MaPhongTro);
                 if (hd == null) tinhTrang = "Còn trống";
                 else if (hd.TinhTrang == true) tinhTrang = "Đã cho thuê";
                 else tinhTrang = "Đang cọc";

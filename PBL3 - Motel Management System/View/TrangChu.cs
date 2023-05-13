@@ -21,14 +21,14 @@ namespace PBL3___Motel_Management_System
     {
         private int borderSize = 2;
         private Size formSize; //Keep form size when it is minimized and restored.Since the form is resized because it takes into account the size of the title bar and borders.
+        
         public TrangChu()
         {
             InitializeComponent();
             CollapseMenu();
             this.Padding = new Padding(borderSize);//Border size
             this.BackColor = Color.FromArgb(217, 247, 249);
-            QLBLL qLBLL = new QLBLL();
-            qLBLL.openChildForm1(new FormTrangChu(), panelDesktop);
+            QLBLL.Instance.openChildForm1(new FormTrangChu(), panelDesktop);
 
         }
 
@@ -153,29 +153,28 @@ namespace PBL3___Motel_Management_System
         }    
         private void LoadForm()
                 {
-                    QLBLL qLBLL = new QLBLL();
                     dgvTinhTrang.RowCount = 0;
                     dgvSoLuong.RowCount = 0;
-                    qLBLL.customDGV(dgvTinhTrang);
-                    qLBLL.customDGV(dgvSoLuong);
+                    QLBLL.Instance.customDGV(dgvTinhTrang);
+                    QLBLL.Instance.customDGV(dgvSoLuong);
                     int i = 0;
-                    foreach (string idp in qLBLL.DgvPhongTro(null))
+                    foreach (string idp in QLBLL.Instance.DgvPhongTro(null))
                     {
-                        PhongTro pt = qLBLL.GetPhongTroByIdPhong(idp);
+                        PhongTro pt = QLBLL.Instance.GetPhongTroByIdPhong(idp);
                         string TinhTrang;
-                        HopDong hd = qLBLL.GetHopDongByIdPhong(pt.MaPhongTro);
+                        HopDong hd = QLBLL.Instance.GetHopDongByIdPhong(pt.MaPhongTro);
                         if (hd == null) TinhTrang = "Còn trống";
                         else if (hd.TinhTrang == true) TinhTrang = "Đã cho thuê";
                         else TinhTrang = "Đã cọc";
-                        dgvTinhTrang.Rows.Add(pt.MaPhongTro, ++i, qLBLL.GetDayTroByIdPhong(pt.MaPhongTro).TenDayTro, pt.TenPhongTro, TinhTrang);
+                        dgvTinhTrang.Rows.Add(pt.MaPhongTro, ++i, QLBLL.Instance.GetDayTroByIdPhong(pt.MaPhongTro).TenDayTro, pt.TenPhongTro, TinhTrang);
                     }
-                    List<string> phongTroList = qLBLL.DgvPhongTro(null);
+                    List<string> phongTroList = QLBLL.Instance.DgvPhongTro(null);
                     Dictionary<string, int> tinhTrangCounts = new Dictionary<string, int>();
                     foreach (string idp in phongTroList)
                     {
-                        PhongTro pt = qLBLL.GetPhongTroByIdPhong(idp);
+                        PhongTro pt = QLBLL.Instance.GetPhongTroByIdPhong(idp);
                         string tinhTrang;
-                        HopDong hd = qLBLL.GetHopDongByIdPhong(pt.MaPhongTro);
+                        HopDong hd = QLBLL.Instance.GetHopDongByIdPhong(pt.MaPhongTro);
                         if (hd == null) tinhTrang = "Còn trống";
                         else if (hd.TinhTrang == true) tinhTrang = "Đã cho thuê";
                         else tinhTrang = "Đang cọc";
@@ -298,51 +297,43 @@ namespace PBL3___Motel_Management_System
         }
         private void iconButton10_Click(object sender, EventArgs e)
         {
-            QLBLL qLBLL = new QLBLL();
-            qLBLL.openChildForm1(new DemoPhong(), panelDesktop);
+            QLBLL.Instance.openChildForm1(new DemoPhong(), panelDesktop);
         }
 
         private void btnDichVu_Click(object sender, EventArgs e)
         {
-            QLBLL qLBLL = new QLBLL();
-            qLBLL.openChildForm1(new Dichvu(), panelDesktop);
+            QLBLL.Instance.openChildForm1(new Dichvu(), panelDesktop);
 
         }
 
         private void btnDien_Click(object sender, EventArgs e)
         {
-            QLBLL qLBLL = new QLBLL();
-            qLBLL.openChildForm1(new ChisoDien(), panelDesktop);
+            QLBLL.Instance.openChildForm1(new ChisoDien(), panelDesktop);
         }
 
         private void btnNuoc_Click(object sender, EventArgs e)
         {
-            QLBLL qLBLL = new QLBLL();
-            qLBLL.openChildForm1(new ChisoNuoc(), panelDesktop);
+            QLBLL.Instance.openChildForm1(new ChisoNuoc(), panelDesktop);
         }
 
         private void btnHopDong_Click(object sender, EventArgs e)
         {
-            QLBLL qLBLL = new QLBLL();
-            qLBLL.openChildForm1(new Hopdong(), panelDesktop);
+            QLBLL.Instance.openChildForm1(new Hopdong(), panelDesktop);
         }
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
-            QLBLL qLBLL = new QLBLL();
-            qLBLL.openChildForm1(new Hoadon(), panelDesktop);
+            QLBLL.Instance.openChildForm1(new Hoadon(), panelDesktop);
         }
 
         private void btnDoanhTHu_Click(object sender, EventArgs e)
         {
-            QLBLL qLBLL = new QLBLL();
-            qLBLL.openChildForm1(new DoanhThu(), panelDesktop);
+            QLBLL.Instance.openChildForm1(new DoanhThu(), panelDesktop);
         }
 
         private void btnTrangchu_Click(object sender, EventArgs e)
         {
-            QLBLL qLBLL = new QLBLL();
-            qLBLL.openChildForm1(new FormTrangChu(), panelDesktop);
+            QLBLL.Instance.openChildForm1(new FormTrangChu(), panelDesktop);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -352,8 +343,7 @@ namespace PBL3___Motel_Management_System
 
         private void btnThietbi_Click(object sender, EventArgs e)
         {
-            QLBLL qLBLL = new QLBLL();
-            qLBLL.openChildForm1(new Thietbi(), panelDesktop);
+            QLBLL.Instance.openChildForm1(new Thietbi(), panelDesktop);
         }
         private void panelDesktop_SizeChanged(object sender, EventArgs e)
         {

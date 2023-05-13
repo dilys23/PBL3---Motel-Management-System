@@ -25,8 +25,7 @@ namespace PBL3___Motel_Management_System.View
             this.IdTb = IdTb;
             if(IdTb != null )
             {
-                QLBLL qLBLL = new QLBLL();
-                ThietBi tb = qLBLL.GetTBByIdTB(IdTb);
+                ThietBi tb = QLBLL.Instance.GetTBByIdTB(IdTb);
                 txtTenTB.Text = tb.TenThietBi;
                 txtGia.Text = tb.GiaThietBi.ToString();
             }
@@ -66,38 +65,29 @@ namespace PBL3___Motel_Management_System.View
         {
             if (checkHopLe())
             {
-                QLBLL qLBLL = new QLBLL();
                 if (IdTb != null)
                 {
-                    ThietBi tb = qLBLL.GetTBByIdTB(IdTb);
+                    ThietBi tb = QLBLL.Instance.GetTBByIdTB(IdTb);
                     tb.MaThietBi = IdTb;
                     tb.TenThietBi = txtTenTB.Text;
                     tb.GiaThietBi = Convert.ToDouble(txtGia.Text);
                     tb.TonTai = true;
-                    qLBLL.SuaTBBll(tb);
+                    QLBLL.Instance.SuaTBBll(tb);
                     MessageBox.Show("Thay đổi thông tin thành công", "Thông báo");
                 }
                 else
                 {
                     ThietBi tb = new ThietBi();
-                    tb.MaThietBi = qLBLL.TaoIdThietBi();
+                    tb.MaThietBi = QLBLL.Instance.TaoIdThietBi();
                     tb.TenThietBi = txtTenTB.Text;
                     tb.GiaThietBi = Convert.ToDouble(txtGia.Text);        
                     tb.TonTai = true;
-                    qLBLL.ThemTBBll(tb);
+                    QLBLL.Instance.ThemTBBll(tb);
                     MessageBox.Show("Thêm dịch vụ thành công", "Thông báo");
                 }
                 Loader(null);
                 this.Close();
             }
-          
-               
-                
-            
-
-            
-               
-            
         }
     }
 }

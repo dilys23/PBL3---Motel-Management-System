@@ -36,18 +36,16 @@ namespace PBL3___Motel_Management_System.View
         }
         public void LoadForm(string txt)
         {
-           // dgvThietBi.DataSource = null;
             dgvThietBi.Rows.Clear();
-            QLBLL qLBLL = new QLBLL();
             dgvThietBi.RowCount = 0;
             int i = 1;
             ThuePhong tp = new ThuePhong();
             tp.hopDong.MaPhongTro = idPhong;
 
-            foreach (string idCttb in qLBLL.GetAllIdCHiTietThietBiByIdPhong(tp.hopDong.MaPhongTro))
+            foreach (string idCttb in QLBLL.Instance.GetAllIdCHiTietThietBiByIdPhong(tp.hopDong.MaPhongTro))
             {
-                ChiTietThietBi cttb = qLBLL.GetChiTietThietBiById(idCttb);
-                ThietBi tb = qLBLL.GetTBByIdTB(cttb.MaThietBi);
+                ChiTietThietBi cttb = QLBLL.Instance.GetChiTietThietBiById(idCttb);
+                ThietBi tb = QLBLL.Instance.GetTBByIdTB(cttb.MaThietBi);
                 dgvThietBi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi, cttb.SoLuong);
             }
             var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-delete-25.png");
@@ -102,7 +100,6 @@ namespace PBL3___Motel_Management_System.View
 
                 if (columnName == "btnXoa")
                 {
-                    QLBLL qLBLL = new QLBLL();
 
                     DialogResult kq = MessageBox.Show("Bạn có thực sự muốn xóa", "Cảnh báo!!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     if (kq == DialogResult.OK)
@@ -110,17 +107,17 @@ namespace PBL3___Motel_Management_System.View
                         string id = dgvThietBi.Rows[e.RowIndex].Cells["MaThietBi"].Value.ToString();
                         if (Convert.ToInt32(dgvThietBi.Rows[e.RowIndex].Cells["SoLuong"].Value.ToString()) == 1)
                         {
-                            qLBLL.DelChiTietThietBiByIdThietBi(id);
+                            QLBLL.Instance.DelChiTietThietBiByIdThietBi(id);
                         }
                         else
                         {
-                            qLBLL.DelCHiTietThietBiByIdPhongBLL(idPhong);
+                            QLBLL.Instance.DelCHiTietThietBiByIdPhongBLL(idPhong);
                             foreach (DataGridViewRow dr in dgvThietBi.Rows)
                             {
                                 if (dr.Cells[0].Value != null)
                                 {
                                     ChiTietThietBi cttb = new ChiTietThietBi();
-                                    cttb.MaChiTietThietBi = qLBLL.TaoIdChiTietThietBi();
+                                    cttb.MaChiTietThietBi = QLBLL.Instance.TaoIdChiTietThietBi();
                                     cttb.MaThietBi = dr.Cells[0].Value.ToString();
                                     cttb.MaPhongTro = idPhong;
                                     cttb.TonTai = true;
@@ -128,7 +125,7 @@ namespace PBL3___Motel_Management_System.View
                                     { cttb.SoLuong = Convert.ToInt32(dr.Cells[4].Value.ToString()) - 1; }
                                     else cttb.SoLuong = Convert.ToInt32(dr.Cells[4].Value.ToString()) ;
                                     
-                                    qLBLL.AddChiTietThietBiBll(cttb);
+                                    QLBLL.Instance.AddChiTietThietBiBll(cttb);
                                 }
 
                             }
@@ -144,10 +141,9 @@ namespace PBL3___Motel_Management_System.View
         }
         private void btnThemThietbi_Click(object sender, EventArgs e)
         {
-            QLBLL qLBLL = new QLBLL();
             ThuePhong tp= new ThuePhong();
             tp.hopDong.MaPhongTro = idPhong;
-            qLBLL.openChildForm1(new ThemThietBiPhong(tp, LoadForm), panelThem);
+            QLBLL.Instance.openChildForm1(new ThemThietBiPhong(tp, LoadForm), panelThem);
         }
     }
 }

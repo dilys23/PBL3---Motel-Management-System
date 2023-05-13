@@ -19,8 +19,7 @@ namespace PBL3___Motel_Management_System
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            QLBLL qLBLL = new QLBLL();
-            if(qLBLL.GetIdTk(txtTaiKhoan.Text,txtMatKhau.Text) != null)
+            if(QLBLL.Instance.GetIdTk(txtTaiKhoan.Text,txtMatKhau.Text) != null)
             {
                 TrangChu tc = new TrangChu();
                 tc.ShowDialog();

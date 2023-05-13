@@ -234,10 +234,9 @@ namespace PBL3___Motel_Management_System.View
         TrangChu tc = new TrangChu();
         private void btnHopDong_Click(object sender, EventArgs e)
         {
-            QLBLL qLBLL = new QLBLL();
             Hoadon hd = new Hoadon();
             //hd.btnXoa.Visible = false;
-            qLBLL.openChildForm1(hd, panelMain);
+            QLBLL.Instance.openChildForm1(hd, panelMain);
         }
 
         private void btnPhong_Click(object sender, EventArgs e)
@@ -247,23 +246,20 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnDien_Click(object sender, EventArgs e)
         {
-            QLBLL qLBLL = new QLBLL();
             ChitietDienPhong ct = new ChitietDienPhong();
-            qLBLL.openChildForm1(ct, panelMain);
+            QLBLL.Instance.openChildForm1(ct, panelMain);
         }
 
         private void btnNuoc_Click(object sender, EventArgs e)
         {
             ChitietNuocPhong ct = new ChitietNuocPhong();
-            QLBLL qLBLL = new QLBLL();
-            qLBLL.openChildForm1(ct, panelMain);
+            QLBLL.Instance.openChildForm1(ct, panelMain);
         }
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
-            QLBLL qLBLL = new QLBLL();
             HoaDonPhong ct = new HoaDonPhong();
-            qLBLL.openChildForm1(ct, panelMain);
+            QLBLL.Instance.openChildForm1(ct, panelMain);
         }
     }
 }

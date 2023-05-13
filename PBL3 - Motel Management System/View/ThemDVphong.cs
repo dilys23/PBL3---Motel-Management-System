@@ -32,13 +32,11 @@ namespace PBL3___Motel_Management_System.View
             this.Close();
 
         }
-
-        QLBLL qLBLL = new QLBLL();
         public void LoadForm()
         {
             dgvXoaDichVu.Columns[0].Visible = false;
             int i = 0;
-                foreach (DichVu viewDichVu in qLBLL.DgvDichVu(null))
+                foreach (DichVu viewDichVu in QLBLL.Instance.DgvDichVu(null))
                 {
                     if (viewDichVu.MaDichVu != "000" && viewDichVu.MaDichVu != "001")
                     {
@@ -49,7 +47,7 @@ namespace PBL3___Motel_Management_System.View
                     }
                     else
                     {
-                        foreach (string idDv in qLBLL.GetAllIdDichVuByIdPhong(tp.hopDong.MaPhongTro))
+                        foreach (string idDv in QLBLL.Instance.GetAllIdDichVuByIdPhong(tp.hopDong.MaPhongTro))
                         {
                             if(idDv != "000" && idDv != "001")
                             {
@@ -66,12 +64,12 @@ namespace PBL3___Motel_Management_System.View
                         dgvDVcodinh.Rows.Add(viewDichVu.MaDichVu, ++i, viewDichVu.TenDichVu, viewDichVu.GiaDichVu);
                     }
                 }
-                foreach (string idDv in qLBLL.GetAllIdDichVuByIdPhong(tp.hopDong.MaPhongTro))
+                foreach (string idDv in QLBLL.Instance.GetAllIdDichVuByIdPhong(tp.hopDong.MaPhongTro))
                 {
                     if (idDv != "000" && idDv != "001")
                     {
                         DichVu dv = new DichVu();
-                        dv = qLBLL.GetDVByIdDV(idDv);
+                        dv = QLBLL.Instance.GetDVByIdDV(idDv);
                         dgvXoaDichVu.Rows.Add(dv.MaDichVu, i++, dv.TenDichVu, dv.GiaDichVu);
                     }
                 }
@@ -97,7 +95,6 @@ namespace PBL3___Motel_Management_System.View
             
             if (tp.hopDong.MaHopDong != null)
             {
-                QLBLL qLBLL = new QLBLL();
                 List<string> dsdv = new List<string>();
                 foreach (DataGridViewRow dr in dgvXoaDichVu.Rows)
                 {
@@ -108,23 +105,22 @@ namespace PBL3___Motel_Management_System.View
                     if (dr.Cells[0].Value != null) dsdv.Add(dr.Cells[0].Value.ToString());
                 }
                 tp.DsDichVu = dsdv;
-                qLBLL.openChildForm1(new ThemThietBiPhong(tp, Back), panelThemDV);
+                QLBLL.Instance.openChildForm1(new ThemThietBiPhong(tp, Back), panelThemDV);
             }
             else
             {
-                QLBLL qLBLL = new QLBLL();
                 List<string> dsdv = new List<string>();
-                qLBLL.DelCHiTietDichVuByIdPhong(tp.hopDong.MaPhongTro);
+                QLBLL.Instance.DelCHiTietDichVuByIdPhong(tp.hopDong.MaPhongTro);
                 foreach (DataGridViewRow dr in dgvXoaDichVu.Rows)
                 {
                     if (dr.Cells[0].Value != null)
                     {
                         ChiTietDichVu ctdv = new ChiTietDichVu();
-                        ctdv.MaChiTietDichVu = qLBLL.TaoIdChiTietDichVu();
+                        ctdv.MaChiTietDichVu = QLBLL.Instance.TaoIdChiTietDichVu();
                         ctdv.MaPhongTro = tp.hopDong.MaPhongTro;
                         ctdv.MaDichVu = dr.Cells[0].Value.ToString();
                         ctdv.TonTai = true;
-                        qLBLL.AddChiTietDichVuBll(ctdv);
+                        QLBLL.Instance.AddChiTietDichVuBll(ctdv);
                         dsdv.Add(dr.Cells[0].Value.ToString());
                     }
                 }
@@ -134,11 +130,11 @@ namespace PBL3___Motel_Management_System.View
                     if (dr.Cells[0].Value != null)
                     {
                         ChiTietDichVu ctdv = new ChiTietDichVu();
-                        ctdv.MaChiTietDichVu= qLBLL.TaoIdChiTietDichVu();
+                        ctdv.MaChiTietDichVu= QLBLL.Instance.TaoIdChiTietDichVu();
                         ctdv.MaPhongTro = tp.hopDong.MaPhongTro;
                         ctdv.MaDichVu = dr.Cells[0].Value.ToString();
                         ctdv.TonTai = true;
-                        qLBLL.AddChiTietDichVuBll(ctdv);
+                        QLBLL.Instance.AddChiTietDichVuBll(ctdv);
                         dsdv.Add(dr.Cells[0].Value.ToString());
                     }
                 }

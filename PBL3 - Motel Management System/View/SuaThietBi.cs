@@ -22,8 +22,7 @@ namespace PBL3___Motel_Management_System.View
             InitializeComponent();
             this.IdTb = idTb;
             this.Loader = loader;
-            QLBLL qLBLL = new QLBLL();
-            ThietBi tb = qLBLL.GetTBByIdTB(idTb);
+            ThietBi tb = QLBLL.Instance.GetTBByIdTB(idTb);
             txtTenTB.Text = tb.TenThietBi;
             txtGia.Text = tb.GiaThietBi.ToString();
 
@@ -67,12 +66,11 @@ namespace PBL3___Motel_Management_System.View
         {
             if (checkHopLe())
             {
-                QLBLL qLBLL = new QLBLL();
-                ThietBi tb = new ThietBi();
+                ThietBi tb = QLBLL.Instance.GetTBByIdTB(IdTb);
                 tb.MaThietBi = IdTb;
                 tb.TenThietBi = txtTenTB.Text;
                 tb.GiaThietBi = Convert.ToDouble(txtGia.Text);
-                qLBLL.SuaTBBll(tb);
+                QLBLL.Instance.SuaTBBll(tb);
                 MessageBox.Show("Thay đổi thông tin thành công", "Thông báo");
                 Loader(null);
                 this.Close();

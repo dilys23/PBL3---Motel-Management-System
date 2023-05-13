@@ -28,13 +28,12 @@ namespace PBL3___Motel_Management_System.View
             try
             {
                 dgvDichVu.Rows.Clear();
-                QLBLL qLBLL = new QLBLL();
-                qLBLL.customDGV(dgvDichVu);
+                QLBLL.Instance.customDGV(dgvDichVu);
                 int i = 1;
-                foreach (string idDv in qLBLL.GetAllIdDichVuByIdPhong(this.idPhong))
+                foreach (string idDv in QLBLL.Instance.GetAllIdDichVuByIdPhong(this.idPhong))
                 {
                     DichVu dv = new DichVu();
-                    dv = qLBLL.GetDVByIdDV(idDv);
+                    dv = QLBLL.Instance.GetDVByIdDV(idDv);
                     dgvDichVu.Rows.Add(dv.MaDichVu, i++, dv.TenDichVu, dv.GiaDichVu);
                 }
                 var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-delete-25.png");
@@ -83,8 +82,7 @@ namespace PBL3___Motel_Management_System.View
                         string id = dgvDichVu.Rows[e.RowIndex].Cells["MaDichVu"].Value.ToString();
                         if (id != "000" && id != "001")
                         {
-                            QLBLL qLBLL = new QLBLL();
-                            qLBLL.DelChiTietDichVuByIdDichVu(id);
+                            QLBLL.Instance.DelChiTietDichVuByIdDichVu(id);
                             MessageBox.Show("Xóa dịch vụ thành công", "Thông báo");
                             LoadForm(null);
                         }
@@ -101,8 +99,7 @@ namespace PBL3___Motel_Management_System.View
         {
             ThuePhong tp = new ThuePhong();
             tp.hopDong.MaPhongTro = idPhong;
-            QLBLL qLBLL = new QLBLL();
-            qLBLL.openChildForm1(new ThemDVphong(tp, LoadForm), panelThem);
+            QLBLL.Instance.openChildForm1(new ThemDVphong(tp, LoadForm), panelThem);
         }
 
         private void dgvDichVu_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

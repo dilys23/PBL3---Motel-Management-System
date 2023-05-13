@@ -367,9 +367,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\QLBLL.cs" />
-    <Compile Include="BLL\QLDichVuBLL.cs" />
-    <Compile Include="BLL\QLHoaDonBLL.cs" />
-    <Compile Include="BLL\QLPhongBLL.cs" />
     <Compile Include="DAL\ChiTietDichVu.cs">
       <DependentUpon>DataPbl.tt</DependentUpon>
     </Compile>

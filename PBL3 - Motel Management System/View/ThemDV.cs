@@ -56,13 +56,12 @@ namespace PBL3___Motel_Management_System
         {
             if(checkHopLe())
             {
-                QLBLL qLBLL = new QLBLL();
                 DichVu dv = new DichVu();
                 dv.TenDichVu = txtTenDichVu.Text;
                 dv.GiaDichVu = Convert.ToDouble(txtGiaDichVu.Text);
-                dv.MaDichVu = qLBLL.TaoIdDichVu();
+                dv.MaDichVu = QLBLL.Instance.TaoIdDichVu();
                 dv.TonTai = true;
-                qLBLL.ThemDVBll(dv);
+                QLBLL.Instance.ThemDVBll(dv);
                 MessageBox.Show("Thêm dịch vụ thành công", "Thông báo");
                 Loader(null);
                 this.Close();
