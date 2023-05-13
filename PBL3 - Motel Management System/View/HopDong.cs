@@ -21,15 +21,11 @@ namespace PBL3___Motel_Management_System
         public Hopdong()
         {
             InitializeComponent();
-           
             LoadForm(null);
-         
-        }
-       
+            SetCbb();
 
-        TrangChu tc = new TrangChu();
-        Dichvu dv = new Dichvu();
-       
+
+        }
         private void LoadForm(string txtTim)
         {
             dgvHD.Rows.Clear();
@@ -41,31 +37,35 @@ namespace PBL3___Motel_Management_System
             dgvHD.RowTemplate.Height = 35;
             dgvHD.RowTemplate.MinimumHeight = 20;
             QLBLL qLBLL = new QLBLL();
-
+            if(txtTim == null)
+            {
             foreach (DgvHopDong hd in qLBLL.DgvHopDong())
             {
                 dgvHD.Rows.Add(hd.MaHopDong, hd.Stt, hd.TenKhachHang, hd.TenPhongTro, hd.TenDayTro, hd.NgayBatDau, hd.NgayKetThuc, hd.TienCoc);
 
             }
-
-            //dgvHD.CellContentClick += DgvDichVu_CellContentClick;
-            var Sua = System.Drawing.Image.FromFile(@"E:\PBL3_MAIN\Icons\icons8-more-details-20.png");
-            var Xoa = System.Drawing.Image.FromFile(@"E:\PBL3_MAIN\Icons\icons8-time-25.png");
-            dgvHD.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dv.dgvIcons_CellPainting1(dgvHD, e, Sua, Xoa));
-      
+            }
+            else
+            {
+                string idDay = ((ViewCbb)(cbbDayTro.SelectedItem)).key;
+                string idPhong = ((ViewCbb)(cbbPhongTro.SelectedItem)).key;
+                foreach(DgvHopDong hd in qLBLL.GetAllHopDongTimKiem(idDay,idPhong))
+                {
+                    dgvHD.Rows.Add(hd.MaHopDong, hd.Stt, hd.TenKhachHang, hd.TenPhongTro, hd.TenDayTro, hd.NgayBatDau, hd.NgayKetThuc, hd.TienCoc);
+                }
+            }
+            var Sua = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-more-details-20.png");
+            var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-time-25.png");
+            dgvHD.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => qLBLL.dgvIcons_CellPainting1(dgvHD, e, Sua, Xoa));
         }
-       
-        private void btnThem_Click(object sender, EventArgs e)
+        private void SetCbb()
         {
-            
-            
+            cbbDayTro.Items.Clear();
+            cbbPhongTro.Items.Clear();
+            QLBLL qLBLL = new QLBLL();
+            cbbDayTro.Items.AddRange(qLBLL.GetCbbDayTro().ToArray());
+            cbbDayTro.SelectedIndex = 0;
         }
-
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-        
         private void dgvHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -78,19 +78,20 @@ namespace PBL3___Motel_Management_System
                     tp.hopDong.MaHopDong = id;
                     ChitietHopDong ct = new ChitietHopDong(tp, LoadForm);
                     ct.btnXacNhan.Visible = false;
-                    tc.openChildForm1(ct, panelHopDong);
+                    QLBLL qLBLL = new QLBLL();
+                    qLBLL.openChildForm1(ct, panelHopDong);
                 }
                 else if (columnName == "btnXoa")
                 {
                     string id = dgvHD.Rows[e.RowIndex].Cells[0].Value.ToString();
                     ThuePhong tp = new ThuePhong();
                     tp.hopDong.MaHopDong = id;
-                    tc.openChildForm1(new ThemHopDong(tp,LoadForm), panelHopDong);
+                    QLBLL qLBLL = new QLBLL();
+                    qLBLL.openChildForm1(new ThemHopDong(tp,LoadForm), panelHopDong);
                 }
             }
 
         }
-
         private void dgvHD_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (dgvHD.Columns[e.ColumnIndex].Name == "btnSua")
@@ -120,6 +121,23 @@ namespace PBL3___Motel_Management_System
                 }
             }
 
+        }
+
+        private void cbbDayTro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            QLBLL qLBLL = new QLBLL();
+            cbbPhongTro.Items.Clear();
+            string id = ((ViewCbb)cbbDayTro.SelectedItem).key;
+            cbbPhongTro.Items.AddRange(qLBLL.GetViewCbbPhongByDay(id).ToArray());
+            if (cbbPhongTro.Items.Count != 0)
+            {
+                cbbPhongTro.SelectedIndex = 0;
+            }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            LoadForm("");
         }
     }
 }

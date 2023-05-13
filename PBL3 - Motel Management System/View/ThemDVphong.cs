@@ -38,46 +38,66 @@ namespace PBL3___Motel_Management_System.View
         {
             dgvXoaDichVu.Columns[0].Visible = false;
             int i = 0;
-           
-            foreach (ViewDichVu viewDichVu in qLBLL.DgvDichVu(null))
+                foreach (DichVu viewDichVu in qLBLL.DgvDichVu(null))
+                {
+                    if (viewDichVu.MaDichVu != "000" && viewDichVu.MaDichVu != "001")
+                    {
+                        if(tp.hopDong.MaHopDong != null)
+                    {
+                        dgvThemDichVu.Rows.Add(viewDichVu.MaDichVu, ++i, viewDichVu.TenDichVu, viewDichVu.GiaDichVu);
+
+                    }
+                    else
+                    {
+                        foreach (string idDv in qLBLL.GetAllIdDichVuByIdPhong(tp.hopDong.MaPhongTro))
+                        {
+                            if(idDv != "000" && idDv != "001")
+                            {
+                                if(idDv != viewDichVu.MaDichVu)
+                                {
+                                    dgvThemDichVu.Rows.Add(viewDichVu.MaDichVu, ++i, viewDichVu.TenDichVu, viewDichVu.GiaDichVu);
+                                }
+                            }
+                        }
+                    }
+                    }
+                    else
+                    {
+                        dgvDVcodinh.Rows.Add(viewDichVu.MaDichVu, ++i, viewDichVu.TenDichVu, viewDichVu.GiaDichVu);
+                    }
+                }
+                foreach (string idDv in qLBLL.GetAllIdDichVuByIdPhong(tp.hopDong.MaPhongTro))
+                {
+                    if (idDv != "000" && idDv != "001")
+                    {
+                        DichVu dv = new DichVu();
+                        dv = qLBLL.GetDVByIdDV(idDv);
+                        dgvXoaDichVu.Rows.Add(dv.MaDichVu, i++, dv.TenDichVu, dv.GiaDichVu);
+                    }
+                }
+
+            for (int j = 0; j<dgvXoaDichVu.Rows.Count; j++)
             {
-                if (viewDichVu.MaDichVu != "000" && viewDichVu.MaDichVu != "001")
-                {
-                    dgvThemDichVu.Rows.Add(viewDichVu.MaDichVu, ++i, viewDichVu.TenDichVu, viewDichVu.GiaDichVu);
-                }
-                else
-                {
-                    dgvDVcodinh.Rows.Add(viewDichVu.MaDichVu, viewDichVu.Stt, viewDichVu.TenDichVu, viewDichVu.GiaDichVu);
-                }
+                dgvXoaDichVu.Rows[j].Cells[1].Value = j+1;
             }
-
-            foreach (string idDv in qLBLL.GetAllIdDichVuByIdPhong(tp.hopDong.MaPhongTro))
+            for (int j = 0; j<dgvThemDichVu.Rows.Count; j++)
             {
-                if (idDv != "000" && idDv != "001")
-                {
-                    DichVu dv = new DichVu();
-                    dv = qLBLL.GetDVByIdDV(idDv);
-                    dgvXoaDichVu.Rows.Add(dv.MaDichVu, i++, dv.TenDichVu, dv.GiaDichVu);
-                }
+
+                dgvThemDichVu.Rows[j].Cells[1].Value = j+1;
             }
-          
-
-
             dgvThemDichVu.Columns[0].Visible = false;
-          
-        }
+            }
+        
         private void panelThemHD_Paint(object sender, PaintEventArgs e)
         {
 
         }
-        TrangChu tc = new TrangChu();
-       
         private void iconButton4_Click(object sender, EventArgs e)
         {
             
             if (tp.hopDong.MaHopDong != null)
             {
-
+                QLBLL qLBLL = new QLBLL();
                 List<string> dsdv = new List<string>();
                 foreach (DataGridViewRow dr in dgvXoaDichVu.Rows)
                 {
@@ -88,21 +108,19 @@ namespace PBL3___Motel_Management_System.View
                     if (dr.Cells[0].Value != null) dsdv.Add(dr.Cells[0].Value.ToString());
                 }
                 tp.DsDichVu = dsdv;
-                tc.openChildForm1(new ThemThietBiPhong(tp, Back), panelThemDV);
+                qLBLL.openChildForm1(new ThemThietBiPhong(tp, Back), panelThemDV);
             }
             else
             {
                 QLBLL qLBLL = new QLBLL();
                 List<string> dsdv = new List<string>();
                 qLBLL.DelCHiTietDichVuByIdPhong(tp.hopDong.MaPhongTro);
-                
                 foreach (DataGridViewRow dr in dgvXoaDichVu.Rows)
                 {
                     if (dr.Cells[0].Value != null)
                     {
                         ChiTietDichVu ctdv = new ChiTietDichVu();
                         ctdv.MaChiTietDichVu = qLBLL.TaoIdChiTietDichVu();
-                        //ctdv.MaChiTietDichVu = qLBLL.GetIDChitietDichVuByIDPhongvaIDDichVu(tp.hopDong.MaPhongTro, dr.Cells[0].Value.ToString());
                         ctdv.MaPhongTro = tp.hopDong.MaPhongTro;
                         ctdv.MaDichVu = dr.Cells[0].Value.ToString();
                         ctdv.TonTai = true;
@@ -139,13 +157,12 @@ namespace PBL3___Motel_Management_System.View
         private void btnThemDichVu_Click(object sender, EventArgs e)
         {
             DataGridViewRow row = dgvThemDichVu.CurrentRow;
-            ViewDichVu v = new ViewDichVu();
+            DichVu v = new DichVu();
             if (row.Cells[0].Value != null)
             {
                 v.MaDichVu = row.Cells[0].Value.ToString();
                 v.TenDichVu = row.Cells[2].Value.ToString();
                 v.GiaDichVu = Convert.ToDouble(row.Cells[3].Value.ToString());
-                v.Stt = 0;
                 dgvThemDichVu.Rows.RemoveAt(dgvThemDichVu.CurrentRow.Index);
                 dgvXoaDichVu.Rows.Add(v.MaDichVu, 0, v.TenDichVu, v.GiaDichVu);
                 for(int i=0;i<dgvXoaDichVu.Rows.Count;i++)
@@ -169,13 +186,12 @@ namespace PBL3___Motel_Management_System.View
         private void btnXoaDichVu_Click(object sender, EventArgs e)
         {
             DataGridViewRow row = dgvXoaDichVu.CurrentRow;
-            ViewDichVu v = new ViewDichVu();
+            DichVu v = new DichVu();
             if (row.Cells[0].Value != null)
             {
                 v.MaDichVu = row.Cells[0].Value.ToString();
                 v.TenDichVu = row.Cells[2].Value.ToString();
                 v.GiaDichVu = Convert.ToDouble(row.Cells[3].Value.ToString());
-                v.Stt = 0;
                 dgvXoaDichVu.Rows.RemoveAt(dgvXoaDichVu.CurrentRow.Index);
                 dgvThemDichVu.Rows.Add(v.MaDichVu, 0, v.TenDichVu, v.GiaDichVu);
                 for (int i = 0; i<dgvXoaDichVu.Rows.Count; i++)
@@ -186,7 +202,6 @@ namespace PBL3___Motel_Management_System.View
                 {
                     dgvThemDichVu.Rows[i].Cells[1].Value = i + 1;
                 }
-
             }
             else
             {

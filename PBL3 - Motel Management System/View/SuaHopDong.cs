@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PBL3___Motel_Management_System.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,10 +17,10 @@ namespace PBL3___Motel_Management_System.View
         {
             InitializeComponent();
         }
-        TrangChu tc = new TrangChu();
         private void btnThemKhach_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ThemKhach(null, null), panelThemHD);
+            QLBLL qLBLL = new QLBLL();
+            qLBLL.openChildForm1(new ThemKhach(null, null), panelThemHD);
         }
     }
 }

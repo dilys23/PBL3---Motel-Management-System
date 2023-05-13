@@ -67,11 +67,6 @@ namespace PBL3___Motel_Management_System
 
 
         }
-        private void SuaDichVu_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnLuu_Click(object sender, EventArgs e)
         {
             if (checkHopLe())

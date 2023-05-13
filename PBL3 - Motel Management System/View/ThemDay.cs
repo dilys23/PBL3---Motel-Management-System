@@ -45,12 +45,6 @@ namespace PBL3___Motel_Management_System
                 pictureDayTro.Image = ChuyenDoiAnh.Base64ToImage(day.HinhAnh);
             }
         }
-
-        private void AddRoom_Load(object sender, EventArgs e)
-        {
-            //paneDesktop.Controls.Add(this);
-        }
-        TrangChu tc = new TrangChu();
         private void iconButton1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -139,9 +133,6 @@ namespace PBL3___Motel_Management_System
                     loader(null);
                     this.Close();
                 }
-               
-               
-                
 
             }
         }
@@ -155,11 +146,6 @@ namespace PBL3___Motel_Management_System
                 imgLocation = dialog.FileName.ToString();
                 pictureDayTro.ImageLocation = imgLocation;
             }
-
-        }
-
-        private void pctKhach_Click(object sender, EventArgs e)
-        {
 
         }
     }

@@ -248,7 +248,6 @@ namespace PBL3___Motel_Management_System.View
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(559, 428);
             this.panel2.TabIndex = 32;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // iconButton2
             // 

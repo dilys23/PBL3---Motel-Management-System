@@ -61,7 +61,6 @@
             this.panelLogin.Name = "panelLogin";
             this.panelLogin.Size = new System.Drawing.Size(1137, 606);
             this.panelLogin.TabIndex = 0;
-            this.panelLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLogin_Paint);
             // 
             // pictureBox2
             // 

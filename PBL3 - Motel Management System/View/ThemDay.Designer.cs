@@ -195,7 +195,6 @@
             this.pictureDayTro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureDayTro.TabIndex = 49;
             this.pictureDayTro.TabStop = false;
-            this.pictureDayTro.Click += new System.EventHandler(this.pctKhach_Click);
             // 
             // txtTenHuyen
             // 
@@ -242,7 +241,6 @@
             this.Name = "ThemDay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddRoom";
-            this.Load += new System.EventHandler(this.AddRoom_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDayTro)).EndInit();

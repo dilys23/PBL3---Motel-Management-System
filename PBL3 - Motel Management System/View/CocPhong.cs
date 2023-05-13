@@ -88,7 +88,6 @@ namespace PBL3___Motel_Management_System.View
                     NgaySinh = "",
                     TonTai = true
             };
-
                 HopDong hd = new HopDong
                 {
                     MaHopDong = qLBLL.TaoIdHopDong(),

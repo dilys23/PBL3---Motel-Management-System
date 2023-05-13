@@ -319,7 +319,6 @@
             this.txtGiamGia.Name = "txtGiamGia";
             this.txtGiamGia.Size = new System.Drawing.Size(209, 27);
             this.txtGiamGia.TabIndex = 66;
-            this.txtGiamGia.TextChanged += new System.EventHandler(this.txtGiamGia_TextChanged);
             // 
             // txtTienPhong
             // 

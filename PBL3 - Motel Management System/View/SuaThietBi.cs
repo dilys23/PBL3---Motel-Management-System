@@ -78,15 +78,5 @@ namespace PBL3___Motel_Management_System.View
                 this.Close();
             }
         }
-
-        private void txtGia_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTenTB_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -61,32 +61,8 @@ namespace PBL3___Motel_Management_System.View
         {
             QLBLL qLBLL = new QLBLL();
             cbbPhongTro.Items.Clear();
-            cbbPhongTro.Items.Add(new ViewCbb { key = "-1", value = "All" });
             string id = ((ViewCbb)cbbDayTro.SelectedItem).key;
-            if (id == "0")
-            {
-
-                foreach (PhongTro pt in qLBLL.GetAllPhongTro())
-                {
-                    if(qLBLL.TinhTrangPhongById(pt.MaPhongTro))
-                    {
-
-                    cbbPhongTro.Items.Add(new ViewCbb { key = pt.MaPhongTro, value = pt.TenPhongTro });
-                    }
-                }
-            }
-            else
-            {
-                foreach (string idp in qLBLL.GetAllPhongTroByIdDay(id))
-                {
-                    PhongTro pt = qLBLL.GetPhongTroByIdPhong(idp);
-                    if(qLBLL.TinhTrangPhongById(pt.MaPhongTro))
-                    {
-
-                    cbbPhongTro.Items.Add(new ViewCbb {key = pt.MaPhongTro, value = pt.TenPhongTro });
-                    }
-                }
-            }
+            cbbPhongTro.Items.AddRange(qLBLL.GetViewCbbPhongByDay(id).ToArray());
             if (cbbPhongTro.Items.Count != 0)
             {
                 cbbPhongTro.SelectedIndex = 0;

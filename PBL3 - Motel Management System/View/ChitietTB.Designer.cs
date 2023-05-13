@@ -53,9 +53,10 @@
             this.panelThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
             this.panelThem.Controls.Add(this.btnThemThietbi);
             this.panelThem.Controls.Add(this.dgvThietBi);
-            this.panelThem.Location = new System.Drawing.Point(27, 33);
+            this.panelThem.Location = new System.Drawing.Point(20, 27);
+            this.panelThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelThem.Name = "panelThem";
-            this.panelThem.Size = new System.Drawing.Size(869, 493);
+            this.panelThem.Size = new System.Drawing.Size(652, 401);
             this.panelThem.TabIndex = 50;
             // 
             // btnThemThietbi
@@ -69,10 +70,10 @@
             this.btnThemThietbi.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnThemThietbi.IconSize = 25;
             this.btnThemThietbi.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnThemThietbi.Location = new System.Drawing.Point(697, 11);
-            this.btnThemThietbi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThemThietbi.Location = new System.Drawing.Point(523, 9);
+            this.btnThemThietbi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnThemThietbi.Name = "btnThemThietbi";
-            this.btnThemThietbi.Size = new System.Drawing.Size(145, 39);
+            this.btnThemThietbi.Size = new System.Drawing.Size(109, 32);
             this.btnThemThietbi.TabIndex = 54;
             this.btnThemThietbi.Text = "Thêm thiết bị";
             this.btnThemThietbi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -81,7 +82,7 @@
             // 
             // dgvThietBi
             // 
-            this.dgvThietBi.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.dgvThietBi.AllowUserToAddRows = false;
             this.dgvThietBi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvThietBi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -112,7 +113,8 @@
             this.dgvThietBi.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvThietBi.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvThietBi.GridColor = System.Drawing.Color.LightCyan;
-            this.dgvThietBi.Location = new System.Drawing.Point(17, 101);
+            this.dgvThietBi.Location = new System.Drawing.Point(13, 82);
+            this.dgvThietBi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvThietBi.Name = "dgvThietBi";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -125,7 +127,7 @@
             this.dgvThietBi.RowHeadersWidth = 60;
             this.dgvThietBi.RowTemplate.Height = 24;
             this.dgvThietBi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvThietBi.Size = new System.Drawing.Size(825, 367);
+            this.dgvThietBi.Size = new System.Drawing.Size(619, 298);
             this.dgvThietBi.TabIndex = 9;
             this.dgvThietBi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThietBi_CellContentClick);
             this.dgvThietBi.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvThietBi_CellFormatting);
@@ -173,11 +175,12 @@
             // 
             // ChitietTB
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(922, 558);
+            this.ClientSize = new System.Drawing.Size(692, 453);
             this.Controls.Add(this.panelThem);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ChitietTB";
             this.Text = "ChitietTB";
             this.panelThem.ResumeLayout(false);

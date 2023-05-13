@@ -31,9 +31,10 @@ namespace PBL3___Motel_Management_System.View
         {
             dgvTBThem.Columns[0].Visible = false;
             QLBLL qLBLL = new QLBLL();
-            foreach (ViewThietBi viewThietBi in qLBLL.DgvThietBi(null))
+            int j = 0;
+            foreach (ThietBi viewThietBi in qLBLL.DgvThietBi(null))
             {
-                dgvThietBi.Rows.Add(viewThietBi.MaThietBi, viewThietBi.Stt, viewThietBi.TenThietBi, viewThietBi.GiaThietBi);
+                dgvThietBi.Rows.Add(viewThietBi.MaThietBi, ++j, viewThietBi.TenThietBi, viewThietBi.GiaThietBi);
             }
 
             dgvThietBi.Columns[0].Visible = false;
@@ -47,16 +48,9 @@ namespace PBL3___Motel_Management_System.View
                     {
                         if (dgvThietBi.Rows[i].Cells[0].Value != null)
                         {
-
                             if (cttb.MaThietBi == dgvThietBi.Rows[i].Cells[0].Value.ToString())
                             {
-                                ThietBi tb = new ThietBi();
-                                tb = qLBLL.GetTBByIdTB(cttb.MaThietBi);
-                                ViewThietBi v = new ViewThietBi();
-                                v.MaThietBi = tb.MaThietBi;
-                                v.TenThietBi = tb.TenThietBi;
-                                v.GiaThietBi = tb.GiaThietBi;
-
+                                ThietBi v = qLBLL.GetTBByIdTB(cttb.MaThietBi); 
                                 dgvTBThem.Rows.Add(v.MaThietBi, 0, v.TenThietBi, v.GiaThietBi, cttb.SoLuong);
                             }
                         }
@@ -92,8 +86,6 @@ namespace PBL3___Motel_Management_System.View
             this.Close();
 
         }
-
-        TrangChu tc = new TrangChu();
         private void btnTrove_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -102,14 +94,13 @@ namespace PBL3___Motel_Management_System.View
         private void btnThemTB_Click(object sender, EventArgs e)
         {
             DataGridViewRow row = dgvThietBi.CurrentRow;
-            ViewThietBi v = new ViewThietBi();
+            ThietBi v = new ThietBi();
             if (row.Cells[0].Value != null)
             {
                 bool Status = false;
                 v.MaThietBi = row.Cells[0].Value.ToString();
                 v.TenThietBi = row.Cells[2].Value.ToString();
                 v.GiaThietBi = Convert.ToDouble(row.Cells[3].Value.ToString());
-                v.Stt = 0;
                 for(int i=0;i<dgvTBThem.Rows.Count;i++)
                 {
                     if(dgvTBThem.Rows[i].Cells[0].Value != null)
@@ -141,13 +132,12 @@ namespace PBL3___Motel_Management_System.View
         private void btnXoaTB_Click(object sender, EventArgs e)
         {
             DataGridViewRow row = dgvTBThem.CurrentRow;
-            ViewThietBi v = new ViewThietBi();
+            ThietBi v = new ThietBi();
             if (row.Cells[0].Value != null)
             {
                 v.MaThietBi = row.Cells[0].Value.ToString();
                 v.TenThietBi = row.Cells[2].Value.ToString();
                 v.GiaThietBi = Convert.ToDouble(row.Cells[3].Value.ToString());
-                v.Stt = 0;
                 if(dgvTBThem.CurrentRow.Cells[4].Value != null)
                 {
 
@@ -195,10 +185,9 @@ namespace PBL3___Motel_Management_System.View
                 }
 
             }
-
             if (tp.hopDong.MaHopDong != null)
-            {     
-            tc.openChildForm1(new ThemHopDong(tp, Back), panelThemHD);
+            {
+                qLBLL.openChildForm1(new ThemHopDong(tp, Back), panelThemHD);
             }
             else
             {   

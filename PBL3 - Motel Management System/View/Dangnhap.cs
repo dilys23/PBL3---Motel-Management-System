@@ -17,12 +17,6 @@ namespace PBL3___Motel_Management_System
         {
             InitializeComponent();
         }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-        TrangChu tc = new TrangChu();
         private void btnLogin_Click(object sender, EventArgs e)
         {
             QLBLL qLBLL = new QLBLL();
@@ -38,11 +32,6 @@ namespace PBL3___Motel_Management_System
             }
 
             
-        }
-
-        private void panelLogin_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

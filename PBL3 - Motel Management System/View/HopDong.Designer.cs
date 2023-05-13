@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cbbDay = new System.Windows.Forms.ComboBox();
+            this.cbbDayTro = new System.Windows.Forms.ComboBox();
             this.panelHopDong = new System.Windows.Forms.Panel();
             this.dgvHD = new System.Windows.Forms.DataGridView();
             this.MaHopDong = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,7 +42,7 @@
             this.btnSua = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnXoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnTimKiem = new FontAwesome.Sharp.IconButton();
-            this.cbbPhong = new System.Windows.Forms.ComboBox();
+            this.cbbPhongTro = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -52,14 +52,15 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // cbbDay
+            // cbbDayTro
             // 
-            this.cbbDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbDay.FormattingEnabled = true;
-            this.cbbDay.Location = new System.Drawing.Point(97, 31);
-            this.cbbDay.Name = "cbbDay";
-            this.cbbDay.Size = new System.Drawing.Size(161, 28);
-            this.cbbDay.TabIndex = 43;
+            this.cbbDayTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbDayTro.FormattingEnabled = true;
+            this.cbbDayTro.Location = new System.Drawing.Point(97, 31);
+            this.cbbDayTro.Name = "cbbDayTro";
+            this.cbbDayTro.Size = new System.Drawing.Size(161, 25);
+            this.cbbDayTro.TabIndex = 43;
+            this.cbbDayTro.SelectedIndexChanged += new System.EventHandler(this.cbbDayTro_SelectedIndexChanged);
             // 
             // panelHopDong
             // 
@@ -71,10 +72,10 @@
             this.panelHopDong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelHopDong.Controls.Add(this.dgvHD);
             this.panelHopDong.Controls.Add(this.btnTimKiem);
-            this.panelHopDong.Controls.Add(this.cbbPhong);
+            this.panelHopDong.Controls.Add(this.cbbPhongTro);
             this.panelHopDong.Controls.Add(this.label1);
             this.panelHopDong.Controls.Add(this.label2);
-            this.panelHopDong.Controls.Add(this.cbbDay);
+            this.panelHopDong.Controls.Add(this.cbbDayTro);
             this.panelHopDong.Location = new System.Drawing.Point(0, 51);
             this.panelHopDong.Name = "panelHopDong";
             this.panelHopDong.Size = new System.Drawing.Size(914, 385);
@@ -187,14 +188,15 @@
             this.btnTimKiem.Size = new System.Drawing.Size(35, 35);
             this.btnTimKiem.TabIndex = 54;
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
-            // cbbPhong
+            // cbbPhongTro
             // 
-            this.cbbPhong.FormattingEnabled = true;
-            this.cbbPhong.Location = new System.Drawing.Point(376, 35);
-            this.cbbPhong.Name = "cbbPhong";
-            this.cbbPhong.Size = new System.Drawing.Size(146, 24);
-            this.cbbPhong.TabIndex = 52;
+            this.cbbPhongTro.FormattingEnabled = true;
+            this.cbbPhongTro.Location = new System.Drawing.Point(376, 35);
+            this.cbbPhongTro.Name = "cbbPhongTro";
+            this.cbbPhongTro.Size = new System.Drawing.Size(146, 21);
+            this.cbbPhongTro.TabIndex = 52;
             // 
             // label1
             // 
@@ -202,7 +204,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(300, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 20);
+            this.label1.Size = new System.Drawing.Size(49, 17);
             this.label1.TabIndex = 45;
             this.label1.Text = "Phòng";
             // 
@@ -212,7 +214,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(52, 34);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 20);
+            this.label2.Size = new System.Drawing.Size(33, 17);
             this.label2.TabIndex = 48;
             this.label2.Text = "Dãy";
             // 
@@ -236,7 +238,7 @@
             this.label4.ForeColor = System.Drawing.Color.Chocolate;
             this.label4.Location = new System.Drawing.Point(3, 13);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(222, 28);
+            this.label4.Size = new System.Drawing.Size(182, 23);
             this.label4.TabIndex = 25;
             this.label4.Text = "QUẢN LÝ HỢP ĐỒNG";
             // 
@@ -259,13 +261,13 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cbbDay;
+        private System.Windows.Forms.ComboBox cbbDayTro;
         private System.Windows.Forms.Panel panelHopDong;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbbPhong;
+        private System.Windows.Forms.ComboBox cbbPhongTro;
         private FontAwesome.Sharp.IconButton btnTimKiem;
         private System.Windows.Forms.DataGridView dgvHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHopDong;

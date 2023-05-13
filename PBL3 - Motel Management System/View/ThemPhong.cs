@@ -16,16 +16,16 @@ namespace PBL3___Motel_Management_System
 {
     public partial class ThemPhong : Form
     {
-        private string IdDay;
         public _SuKien sukien;
         private Loader loader;
         private string IdPhong;
+        private string IdDay;
         public ThemPhong(string IdDay,string IdPhong, Loader loader,_SuKien sukien)
         {
             InitializeComponent();
-            this.IdDay = IdDay;
             this.sukien = sukien;
             this.IdPhong = IdPhong;
+            this.IdDay = IdDay;
             this.loader= loader;
             if(IdPhong!=null)
             {
@@ -146,7 +146,7 @@ namespace PBL3___Motel_Management_System
                     pt.DienTich = Convert.ToDouble(txtDienTich.Text);
                     pt.TinhTrang = false;
                     pt.ToiDa = Convert.ToInt32(txtToiDa.Text);
-                    pt.MaDayTro = IdDay;
+                    pt.MaDayTro = this.IdDay;
                     pt.TonTai = true;
                     if (pictutePhong.Image != null)
                     {

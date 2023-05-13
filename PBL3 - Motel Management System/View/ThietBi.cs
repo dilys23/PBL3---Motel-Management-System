@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using PBL3___Motel_Management_System.View;
 using System.Runtime.InteropServices;
 using System.Windows.Controls;
+using PBL3___Motel_Management_System.DAL;
 
 namespace PBL3___Motel_Management_System.View
 {
@@ -24,10 +25,6 @@ namespace PBL3___Motel_Management_System.View
             InitializeComponent();
             LoadForm(null);
         }
-
-
-        TrangChu tc = new TrangChu();
-        Dichvu dv = new Dichvu();
         private void LoadForm(string txtTim)
         {
             dgvThietBi.RowCount = 0;
@@ -39,15 +36,14 @@ namespace PBL3___Motel_Management_System.View
             this.dgvThietBi.RowTemplate.Height = 35;
             this.dgvThietBi.RowTemplate.MinimumHeight = 20;
             QLBLL qLBLL = new QLBLL();
-            
-            foreach (ViewThietBi viewThietBi in qLBLL.DgvThietBi(txtTim))
+            int i = 0;
+            foreach (ThietBi viewThietBi in qLBLL.DgvThietBi(txtTim))
             {
-                dgvThietBi.Rows.Add(viewThietBi.MaThietBi, viewThietBi.Stt, viewThietBi.TenThietBi, viewThietBi.GiaThietBi);
+                dgvThietBi.Rows.Add(viewThietBi.MaThietBi, ++i, viewThietBi.TenThietBi, viewThietBi.GiaThietBi);
             }
             var Sua = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-create-25.png");
             var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-create-25.png");
-            dgvThietBi.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dv.dgvIcons_CellPainting1(dgvThietBi, e, Sua, Xoa));
-
+            dgvThietBi.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => qLBLL.dgvIcons_CellPainting1(dgvThietBi, e, Sua, Xoa));
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -159,12 +155,14 @@ namespace PBL3___Motel_Management_System.View
         private void btnSuaDV_Click(object sender, EventArgs e)
         {
             string id = dgvThietBi.CurrentRow.Cells[0].Value.ToString();
-            tc.openChildForm1(new ThemThietBi(id, LoadForm), panelTB);
+            QLBLL qLBLL = new QLBLL();
+            qLBLL.openChildForm1(new ThemThietBi(id, LoadForm), panelTB);
             
         }
         private void btnThemThietBi_Click(object sender, EventArgs e)
         {
-            tc.openChildForm1(new ThemThietBi(null,LoadForm), panelTB);
+            QLBLL qLBLL = new QLBLL();
+            qLBLL.openChildForm1(new ThemThietBi(null,LoadForm), panelTB);
         }
 
         private void btnTim_Click(object sender, EventArgs e)
@@ -199,7 +197,8 @@ namespace PBL3___Motel_Management_System.View
                 {
                     // Lấy mã dịch vụ tương ứng với hàng đã được nhấp
                     string id = dgvThietBi.Rows[e.RowIndex].Cells[0].Value.ToString();
-                    tc.openChildForm1(new SuaThietBI(id, LoadForm), panelTB);
+                    QLBLL qLBLL = new QLBLL();
+                    qLBLL.openChildForm1(new SuaThietBI(id, LoadForm), panelTB);
                 }
                 else if (columnName == "btnXoa")
                 {

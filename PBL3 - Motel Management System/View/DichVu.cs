@@ -29,8 +29,6 @@ namespace PBL3___Motel_Management_System
             LoadForm(null);
          
         }
-        TrangChu tc = new TrangChu();
-        private Image editButtonImage;
         private void LoadForm(string txtTim)
         {
             dgvDichVu.Rows.Clear();
@@ -42,52 +40,15 @@ namespace PBL3___Motel_Management_System
             this.dgvDichVu.RowTemplate.Height = 35;
             this.dgvDichVu.RowTemplate.MinimumHeight = 20;
             QLBLL qLBLL = new QLBLL();
-            foreach(ViewDichVu viewDichVu in qLBLL.DgvDichVu(txtTim))
+            int i = 0;
+            foreach(DichVu viewDichVu in qLBLL.DgvDichVu(txtTim))
             {
-                dgvDichVu.Rows.Add(viewDichVu.MaDichVu,viewDichVu.Stt,viewDichVu.TenDichVu,viewDichVu.GiaDichVu);
+                dgvDichVu.Rows.Add(viewDichVu.MaDichVu,++i,viewDichVu.TenDichVu,viewDichVu.GiaDichVu);
             }    
             var Sua = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-create-25.png");
             var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-delete-25.png");
-            dgvDichVu.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dgvIcons_CellPainting1(dgvDichVu, e, Sua, Xoa));
+            dgvDichVu.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => qLBLL.dgvIcons_CellPainting1(dgvDichVu, e, Sua, Xoa));
         
-        }
-        
-        public void dgvIcons_CellPainting1(DataGridView dgv, DataGridViewCellPaintingEventArgs e, Image btSua, Image btXoa)
-        {
-            if (e.ColumnIndex >= 0 && dgv.Columns[e.ColumnIndex].Name == "btnSua" && e.RowIndex >= 0)
-            {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-                var btnSua = btSua;
-                var w = btnSua.Width;
-                var h = btnSua.Height;
-                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
-                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
-                e.Graphics.DrawImage(btnSua, new Rectangle(x, y, w, h));
-                e.Handled = true;
-
-                // Thay đổi màu nền của cell khi được chọn
-                if (e.State == DataGridViewElementStates.Selected)
-                {
-                    e.CellStyle.SelectionBackColor = Color.Tomato;
-                }
-            }
-            if (e.ColumnIndex >= 0 && dgv.Columns[e.ColumnIndex].Name == "btnXoa" && e.RowIndex >= 0)
-            {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-                var btnXoa = btXoa;
-                var w = btnXoa.Width;
-                var h = btnXoa.Height;
-                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
-                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
-                e.Graphics.DrawImage(btnXoa, new Rectangle(x, y, w, h));
-                e.Handled = true;
-
-                // Thay đổi màu nền của cell khi được chọn
-                if (e.State == DataGridViewElementStates.Selected)
-                {
-                    e.CellStyle.SelectionBackColor = Color.Tomato;
-                }
-            }
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -228,14 +189,15 @@ namespace PBL3___Motel_Management_System
       
         private void btnThemPhong_Click_1(object sender, EventArgs e)
         {
-            
-            tc.openChildForm1(new ThemDV(LoadForm), panelDV);
+            QLBLL qLBLL = new QLBLL();
+            qLBLL.openChildForm1(new ThemDV(LoadForm), panelDV);
         }
 
         private void btnSuaDV_Click(object sender, EventArgs e)
         {
+            QLBLL qLBLL = new QLBLL();
             string id = dgvDichVu.CurrentRow.Cells[0].Value.ToString();
-            tc.openChildForm1(new SuaDichVu(id,LoadForm), panelDV);
+            qLBLL.openChildForm1(new SuaDichVu(id,LoadForm), panelDV);
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -264,8 +226,9 @@ namespace PBL3___Motel_Management_System
         {
             if (dgvDichVu.Columns[e.ColumnIndex].Name == "btnSua")
             {
+                QLBLL qLBLL = new QLBLL();
                 string id = dgvDichVu.Rows[e.RowIndex].Cells[0].Value.ToString();
-                tc.openChildForm1(new SuaDichVu(id, LoadForm), panelDV);
+                qLBLL.openChildForm1(new SuaDichVu(id, LoadForm), panelDV);
             }
             else
             {

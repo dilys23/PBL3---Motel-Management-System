@@ -425,14 +425,13 @@
     <Compile Include="DAL\VaiTro.cs">
       <DependentUpon>DataPbl.tt</DependentUpon>
     </Compile>
+    <Compile Include="DTO\DemoForm.cs" />
     <Compile Include="DTO\ViewCbb.cs" />
     <Compile Include="DTO\ChuyenDoiAnh.cs" />
     <Compile Include="DTO\DgvHopDong.cs" />
     <Compile Include="DTO\ThuePhong.cs" />
     <Compile Include="DTO\TinhTrangPhongTro.cs" />
     <Compile Include="DTO\ViewChiSo.cs" />
-    <Compile Include="DTO\ViewDichVu.cs" />
-    <Compile Include="DTO\ViewThietBi.cs" />
     <Compile Include="View\Anh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -504,6 +503,12 @@
     </Compile>
     <Compile Include="View\DoiMK.Designer.cs">
       <DependentUpon>DoiMK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormTrangChu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormTrangChu.Designer.cs">
+      <DependentUpon>FormTrangChu.cs</DependentUpon>
     </Compile>
     <Compile Include="View\KhachHang\ChitietDienPhong.cs">
       <SubType>Form</SubType>
@@ -729,6 +734,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\DoiMK.resx">
       <DependentUpon>DoiMK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormTrangChu.resx">
+      <DependentUpon>FormTrangChu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\KhachHang\ChitietDienPhong.resx">
       <DependentUpon>ChitietDienPhong.cs</DependentUpon>

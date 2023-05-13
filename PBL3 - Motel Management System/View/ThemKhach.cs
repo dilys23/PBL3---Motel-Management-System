@@ -52,23 +52,10 @@ namespace PBL3___Motel_Management_System
             }
             
         }
-        private void ThemKhach_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void iconButton2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        TrangChu tc = new TrangChu();
-
-
         private Boolean checkHopLe()
         {
             int i = 0;
@@ -141,7 +128,7 @@ namespace PBL3___Motel_Management_System
                 if (thuePhong.hopDong.MaHopDong != null)
                 {
                 thuePhong.hopDong.Nguoi = nguoi;
-                tc.openChildForm1(new ThemDVphong(thuePhong, Back), panelKhach);
+                qLBLL.openChildForm1(new ThemDVphong(thuePhong, Back), panelKhach);
                 }
                 else if (this.thuePhong.hopDong.MaNguoi == null)
                 {

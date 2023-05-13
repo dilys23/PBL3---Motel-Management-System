@@ -17,17 +17,6 @@ namespace PBL3___Motel_Management_System.View
         {
             InitializeComponent();
         }
-
-        private void pctChuTro_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnTrove_Click(object sender, EventArgs e)
         {
             Close();
