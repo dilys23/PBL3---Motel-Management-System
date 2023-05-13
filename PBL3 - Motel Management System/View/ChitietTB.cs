@@ -48,7 +48,7 @@ namespace PBL3___Motel_Management_System.View
                 ThietBi tb = QLBLL.Instance.GetTBByIdTB(cttb.MaThietBi);
                 dgvThietBi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi, cttb.SoLuong);
             }
-            var Xoa = System.Drawing.Image.FromFile(@"E:\PBL3_MAIN\PBL3---Motel-Management-System\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
+            var Xoa = System.Drawing.Image.FromFile(@"D:\PBL\PBL3_MAIN\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
             dgvThietBi.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dgvIcons_CellPainting1(dgvThietBi, e, Xoa));
         }
         public void dgvIcons_CellPainting1(DataGridView dgv, DataGridViewCellPaintingEventArgs e, Image btXoa)
