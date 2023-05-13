@@ -23,9 +23,8 @@ namespace PBL3___Motel_Management_System.View
             InitializeComponent();
             this.loader = loader;
             this.IdHd = idHd;
-            QLBLL qLBLL = new QLBLL();
-            HoaDon hd = qLBLL.GetHoaDonById(idHd);
-            PhongTro pt = qLBLL.GetPhongTroByMaHoaDon(idHd);
+            HoaDon hd = QLBLL.Instance.GetHoaDonById(idHd);
+            PhongTro pt = QLBLL.Instance.GetPhongTroByMaHoaDon(idHd);
             txtTenPhong.Text = pt.TenPhongTro;
             txtTongTien.Text = hd.TongTien.ToString();
             txtConNo.Text = (Convert.ToDouble(txtTongTien.Text) - hd.DaThanhToan).ToString();
@@ -59,12 +58,11 @@ namespace PBL3___Motel_Management_System.View
             {
                 double thanhToan = Convert.ToDouble(txtThanhToan.Text);
 
-                QLBLL qLBLL = new QLBLL();
-                HoaDon hd = qLBLL.GetHoaDonById(this.IdHd);
+                HoaDon hd = QLBLL.Instance.GetHoaDonById(this.IdHd);
 
                 // Cập nhật số tiền đã thanh toán
                 hd.DaThanhToan += thanhToan;
-                qLBLL.UpdateHoaDonBLL(hd);
+                QLBLL.Instance.UpdateHoaDonBLL(hd);
 
                 // Tính số tiền còn nợ mới
                 double conNoMoi = Convert.ToDouble(txtTongTien.Text) - hd.DaThanhToan;

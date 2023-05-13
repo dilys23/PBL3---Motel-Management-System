@@ -30,16 +30,15 @@ namespace PBL3___Motel_Management_System.View
         public void LoadForm()
         {
             dgvTBThem.Columns[0].Visible = false;
-            QLBLL qLBLL = new QLBLL();
             int j = 0;
-            foreach (ThietBi viewThietBi in qLBLL.DgvThietBi(null))
+            foreach (ThietBi viewThietBi in QLBLL.Instance.DgvThietBi(null))
             {
                 dgvThietBi.Rows.Add(viewThietBi.MaThietBi, ++j, viewThietBi.TenThietBi, viewThietBi.GiaThietBi);
             }
 
             dgvThietBi.Columns[0].Visible = false;
             List<ChiTietThietBi> list = new List<ChiTietThietBi>();
-            list = qLBLL.GetChiTietThietBiByIdPhong(tp.hopDong.MaPhongTro);
+            list = QLBLL.Instance.GetChiTietThietBiByIdPhong(tp.hopDong.MaPhongTro);
             if (tp.hopDong.MaHopDong == null)
             {
                 foreach (ChiTietThietBi cttb in list)
@@ -50,7 +49,7 @@ namespace PBL3___Motel_Management_System.View
                         {
                             if (cttb.MaThietBi == dgvThietBi.Rows[i].Cells[0].Value.ToString())
                             {
-                                ThietBi v = qLBLL.GetTBByIdTB(cttb.MaThietBi); 
+                                ThietBi v = QLBLL.Instance.GetTBByIdTB(cttb.MaThietBi); 
                                 dgvTBThem.Rows.Add(v.MaThietBi, 0, v.TenThietBi, v.GiaThietBi, cttb.SoLuong);
                             }
                         }
@@ -70,10 +69,10 @@ namespace PBL3___Motel_Management_System.View
             {
                
                 int i = 0;
-                foreach (string idCttb in qLBLL.GetAllIdCHiTietThietBiByIdPhong(tp.hopDong.MaPhongTro))
+                foreach (string idCttb in QLBLL.Instance.GetAllIdCHiTietThietBiByIdPhong(tp.hopDong.MaPhongTro))
                 {
-                    ChiTietThietBi cttb = qLBLL.GetChiTietThietBiById(idCttb);
-                    ThietBi tb = qLBLL.GetTBByIdTB(cttb.MaThietBi);
+                    ChiTietThietBi cttb = QLBLL.Instance.GetChiTietThietBiById(idCttb);
+                    ThietBi tb = QLBLL.Instance.GetTBByIdTB(cttb.MaThietBi);
                     dgvTBThem.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi, cttb.SoLuong);
                 }
 
@@ -169,25 +168,24 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            QLBLL qLBLL = new QLBLL();
-            qLBLL.DelCHiTietThietBiByIdPhongBLL(tp.hopDong.MaPhongTro);
+            QLBLL.Instance.DelCHiTietThietBiByIdPhongBLL(tp.hopDong.MaPhongTro);
             foreach (DataGridViewRow dr in dgvTBThem.Rows)
             {
                 if (dr.Cells[0].Value != null)
                 {
                     ChiTietThietBi cttb = new ChiTietThietBi();
-                    cttb.MaChiTietThietBi = qLBLL.TaoIdChiTietThietBi();
+                    cttb.MaChiTietThietBi = QLBLL.Instance.TaoIdChiTietThietBi();
                     cttb.MaThietBi = dr.Cells[0].Value.ToString();
                     cttb.MaPhongTro = tp.hopDong.MaPhongTro;
                     cttb.SoLuong = Convert.ToInt32(dr.Cells[4].Value.ToString());
                     cttb.TonTai = true;
-                    qLBLL.AddChiTietThietBiBll(cttb);
+                    QLBLL.Instance.AddChiTietThietBiBll(cttb);
                 }
 
             }
             if (tp.hopDong.MaHopDong != null)
             {
-                qLBLL.openChildForm1(new ThemHopDong(tp, Back), panelThemHD);
+                QLBLL.Instance.openChildForm1(new ThemHopDong(tp, Back), panelThemHD);
             }
             else
             {   

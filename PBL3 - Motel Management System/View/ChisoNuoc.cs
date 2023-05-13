@@ -23,8 +23,7 @@ namespace PBL3___Motel_Management_System
         }
         private void btnThemHD_Click(object sender, EventArgs e)
         {
-            QLBLL qLBLL = new QLBLL();
-            qLBLL.openChildForm1(new ThemCSNuoc(null, LoadForm), panelChisoNuoc);
+            QLBLL.Instance.openChildForm1(new ThemCSNuoc(null, LoadForm), panelChisoNuoc);
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -42,14 +41,13 @@ namespace PBL3___Motel_Management_System
         private void LoadForm(string txt)
         {
             dgvChiSoNuoc.Rows.Clear();
-            QLBLL qLBLL = new QLBLL();
-            qLBLL.customDGV(dgvChiSoNuoc);
+            QLBLL.Instance.customDGV(dgvChiSoNuoc);
             int i = 0;
             if (txt==null)
             {
-                foreach (ViewChiSo view in qLBLL.GetAllViewChiSo())
+                foreach (ViewChiSo view in QLBLL.Instance.GetAllViewChiSo())
                 {
-                    if (qLBLL.GetChiTietDichVuById(view.MaChiTietDichVu).MaDichVu == "000")
+                    if (QLBLL.Instance.GetChiTietDichVuById(view.MaChiTietDichVu).MaDichVu == "000")
                     {
                         string tinhTrang = (view.TinhTrang) ? "Đã xác thực" : "Chưa xác thực";
                         dgvChiSoNuoc.Rows.Add(view.MaChiTietSuDungDichVu, ++i, view.TenDayTro, view.TenPhongTro, view.ChiSoCu, view.ChiSoMoi, view.DaDung
@@ -63,9 +61,9 @@ namespace PBL3___Motel_Management_System
                 string IdDay = ((ViewCbb)cbbDayTro.SelectedItem).key;
                 string IdPhong = ((ViewCbb)cbbPhongTro.SelectedItem).key;
                 string IdTinhTrang = ((ViewCbb)cbbTinhTrang.SelectedItem).key;
-                foreach (ViewChiSo view in qLBLL.GetViewChiSoByTimKiem(ThangSuDung, IdDay, IdPhong, IdTinhTrang))
+                foreach (ViewChiSo view in QLBLL.Instance.GetViewChiSoByTimKiem(ThangSuDung, IdDay, IdPhong, IdTinhTrang))
                 {
-                    if (qLBLL.GetChiTietDichVuById(view.MaChiTietDichVu).MaDichVu == "000")
+                    if (QLBLL.Instance.GetChiTietDichVuById(view.MaChiTietDichVu).MaDichVu == "000")
                     {
                         string tinhTrang = (view.TinhTrang) ? "Đã xác thực" : "Chưa xác thực";
                         dgvChiSoNuoc.Rows.Add(view.MaChiTietSuDungDichVu, ++i, view.TenDayTro, view.TenPhongTro, view.ChiSoCu, view.ChiSoMoi, view.DaDung
@@ -75,24 +73,22 @@ namespace PBL3___Motel_Management_System
             }
             var Sua = System.Drawing.Image.FromFile(@"D:\PBLproject\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-create-25.png");
             var Xoa = System.Drawing.Image.FromFile(@"D:\PBLproject\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
-            dgvChiSoNuoc.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => qLBLL.dgvIcons_CellPainting1(dgvChiSoNuoc, e, Sua, Xoa));
+            dgvChiSoNuoc.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => QLBLL.Instance.dgvIcons_CellPainting1(dgvChiSoNuoc, e, Sua, Xoa));
         }
         public void Setcbb()
         {
             cbbDayTro.Items.Clear();
             cbbPhongTro.Items.Clear();
-            QLBLL qLBLL = new QLBLL();
-            cbbDayTro.Items.AddRange(qLBLL.GetCbbDayTro().ToArray());
-            cbbTinhTrang.Items.AddRange(qLBLL.GetCbbTinhTrang().ToArray());
+            cbbDayTro.Items.AddRange(QLBLL.Instance.GetCbbDayTro().ToArray());
+            cbbTinhTrang.Items.AddRange(QLBLL.Instance.GetCbbTinhTrang().ToArray());
             cbbDayTro.SelectedIndex = 0;
             cbbTinhTrang.SelectedIndex = 0;
         }
         private void cbbDayTro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            QLBLL qLBLL = new QLBLL();
             cbbPhongTro.Items.Clear();
             string id = ((ViewCbb)cbbDayTro.SelectedItem).key;
-            cbbPhongTro.Items.AddRange(qLBLL.GetViewCbbPhongByDay(id).ToArray());
+            cbbPhongTro.Items.AddRange(QLBLL.Instance.GetViewCbbPhongByDay(id).ToArray());
             if (cbbPhongTro.Items.Count != 0)
             {
                 cbbPhongTro.SelectedIndex = 0;
@@ -109,13 +105,12 @@ namespace PBL3___Motel_Management_System
         {
             if (dgvChiSoNuoc.CurrentRow.Cells[9].Value.ToString() != "Đã xác thực")
             {
-                QLBLL qLBLL = new QLBLL();
                 string id = dgvChiSoNuoc.CurrentRow.Cells[0].Value.ToString();
-                if (qLBLL.ChoPhepXacThucChiSo(id,"000"))
+                if (QLBLL.Instance.ChoPhepXacThucChiSo(id,"000"))
                 {
-                    ChiTietSuDungDichVu dv = qLBLL.GetChiTietSuDungDichVuByIdBLL(id);
+                    ChiTietSuDungDichVu dv = QLBLL.Instance.GetChiTietSuDungDichVuByIdBLL(id);
                     dv.TinhTrang = true;
-                    qLBLL.UpdateChiTietSuDungDichVu(dv);
+                    QLBLL.Instance.UpdateChiTietSuDungDichVu(dv);
                     MessageBox.Show("Xác thực thành công", "Thông báo");
                     LoadForm(null);
                 }
@@ -138,11 +133,10 @@ namespace PBL3___Motel_Management_System
             }
             else
             {
-                QLBLL qLBLL = new QLBLL();
                 string id = dgvChiSoNuoc.CurrentRow.Cells[0].Value.ToString();
-                ChiTietSuDungDichVu dv = qLBLL.GetChiTietSuDungDichVuByIdBLL(id);
+                ChiTietSuDungDichVu dv = QLBLL.Instance.GetChiTietSuDungDichVuByIdBLL(id);
                 dv.TinhTrang = false;
-                qLBLL.UpdateChiTietSuDungDichVu(dv);
+                QLBLL.Instance.UpdateChiTietSuDungDichVu(dv);
                 MessageBox.Show("Hủy bỏ xác thực thành công", "Thông báo");
                 LoadForm(null);
 
@@ -163,8 +157,7 @@ namespace PBL3___Motel_Management_System
                     ThemCSNuoc frm = new ThemCSNuoc(id, LoadForm);
                     frm.cbbDayTro.Enabled = false;
                     frm.cbbPhongTro.Enabled=false;
-                    QLBLL qLBLL = new QLBLL();
-                    qLBLL.openChildForm1(frm, panelChisoNuoc);
+                    QLBLL.Instance.openChildForm1(frm, panelChisoNuoc);
                 }
 
             }
@@ -173,8 +166,7 @@ namespace PBL3___Motel_Management_System
                 if (dgvChiSoNuoc.CurrentRow.Cells[9].Value.ToString() == "Chưa xác thực")
                 {
                     string id = dgvChiSoNuoc.CurrentRow.Cells[0].Value.ToString();
-                    QLBLL qLBLL = new QLBLL();
-                    qLBLL.DelChiTietSuDungDichVu(id);
+                    QLBLL.Instance.DelChiTietSuDungDichVu(id);
                     dgvChiSoNuoc.Rows.RemoveAt(e.RowIndex);
                     MessageBox.Show("Xóa chỉ số điện thành công", "Thông báo");
                     LoadForm(null);

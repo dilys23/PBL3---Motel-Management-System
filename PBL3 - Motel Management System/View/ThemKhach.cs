@@ -32,12 +32,11 @@ namespace PBL3___Motel_Management_System
         }
         private void LoadForm()
         {
-            QLBLL qLBLL = new QLBLL();
 
             if(this.thuePhong.hopDong.MaNguoi != null)
             {
                 Nguoi nguoi = new Nguoi();
-                nguoi = qLBLL.GetNguoiByIdNguoi(thuePhong.hopDong.MaNguoi);
+                nguoi = QLBLL.Instance.GetNguoiByIdNguoi(thuePhong.hopDong.MaNguoi);
                 txtTen.Text = nguoi.Ten;
                 txtCccd.Text = nguoi.Cccd;
                 txtSdt.Text = nguoi.Sdt;
@@ -102,11 +101,10 @@ namespace PBL3___Motel_Management_System
         {
             if(checkHopLe())
             {
-                QLBLL qLBLL = new QLBLL();
                 Nguoi nguoi = new Nguoi();
                 if(thuePhong.hopDong.MaNguoi == null)
                 {
-                    nguoi.MaNguoi = qLBLL.TaoIdNguoi();
+                    nguoi.MaNguoi = QLBLL.Instance.TaoIdNguoi();
                     
                 }
                 else
@@ -128,17 +126,17 @@ namespace PBL3___Motel_Management_System
                 if (thuePhong.hopDong.MaHopDong != null)
                 {
                 thuePhong.hopDong.Nguoi = nguoi;
-                qLBLL.openChildForm1(new ThemDVphong(thuePhong, Back), panelKhach);
+                QLBLL.Instance.openChildForm1(new ThemDVphong(thuePhong, Back), panelKhach);
                 }
                 else if (this.thuePhong.hopDong.MaNguoi == null)
                 {
                     ThanhVienTrongPhong tvtp = new ThanhVienTrongPhong();
-                    tvtp.MaThanhVienTrongPhong = qLBLL.TaoIdThanhVienTrongPhong();
+                    tvtp.MaThanhVienTrongPhong = QLBLL.Instance.TaoIdThanhVienTrongPhong();
                     tvtp.MaNguoi = nguoi.MaNguoi;
                     tvtp.MaPhongTro = thuePhong.hopDong.MaPhongTro;
                     tvtp.TonTai = true;
-                    qLBLL.AddNguoiBll(nguoi);
-                    qLBLL.AddThanhVienTrongPhongBll(tvtp);
+                    QLBLL.Instance.AddNguoiBll(nguoi);
+                    QLBLL.Instance.AddThanhVienTrongPhongBll(tvtp);
                     MessageBox.Show("Thêm thành viên vào phòng thành công", "Thông báo", MessageBoxButtons.OK);
                     this.loader(null);
                     this.Close();
@@ -146,7 +144,7 @@ namespace PBL3___Motel_Management_System
                 }
                 else
                 {
-                    qLBLL.UpdateNguoiBLL(nguoi);
+                    QLBLL.Instance.UpdateNguoiBLL(nguoi);
                     MessageBox.Show("Thay đổi thông tin thành công", "Thông báo", MessageBoxButtons.OK);
                     this.loader(null);
                     this.Close();

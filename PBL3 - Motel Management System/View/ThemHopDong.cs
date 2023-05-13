@@ -34,11 +34,10 @@ namespace PBL3___Motel_Management_System
         }
         public void SetGUI()
         {
-            QLBLL qLBLL = new QLBLL();
             if (tp.hopDong.MaHopDong!=null && tp.hopDong.MaPhongTro==null)
             {
                
-                HopDong hopdong = qLBLL.GetHopDongByMaHD(tp.hopDong.MaHopDong);
+                HopDong hopdong = QLBLL.Instance.GetHopDongByMaHD(tp.hopDong.MaHopDong);
                 dtpBatDau.Value = Convert.ToDateTime(hopdong.NgayBatDau);
                 dtpKetThuc.Value = Convert.ToDateTime(hopdong.NgayKetThuc);
                 txtTienCoc.Text =Convert.ToDouble(hopdong.TienCoc).ToString();
@@ -51,8 +50,7 @@ namespace PBL3___Motel_Management_System
         }
         private void btnThemKhach_Click_1(object sender, EventArgs e)
         {
-            QLBLL qLBLL = new QLBLL();
-            qLBLL.openChildForm1(new ThemKhach(null, null), panelThemHD);
+            QLBLL.Instance.openChildForm1(new ThemKhach(null, null), panelThemHD);
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
@@ -83,12 +81,11 @@ namespace PBL3___Motel_Management_System
         }
         private void iconButton4_Click(object sender, EventArgs e)
         {
-            QLBLL qLBLL = new QLBLL();
             if(tp.hopDong.MaHopDong!=null && tp.hopDong.MaPhongTro==null)
             {
                 if (CheckHopLe())
                 {
-                    HopDong hopdong = qLBLL.GetHopDongByMaHD(tp.hopDong.MaHopDong);
+                    HopDong hopdong = QLBLL.Instance.GetHopDongByMaHD(tp.hopDong.MaHopDong);
                     hopdong.MaHopDong = tp.hopDong.MaHopDong;
                     string dateStart = dtpBatDau.Value.ToString("yyyy-MM-dd");
                     string dateEnd = dtpKetThuc.Value.ToString("yyyy-MM-dd");
@@ -96,7 +93,7 @@ namespace PBL3___Motel_Management_System
                     hopdong.NgayKetThuc = dateEnd;
                     hopdong.TienCoc = Convert.ToDouble(txtTienCoc.Text);
                     hopdong.TonTai = true;
-                    qLBLL.UpdateHopDongBLL(hopdong);
+                    QLBLL.Instance.UpdateHopDongBLL(hopdong);
                     MessageBox.Show("Gia hạn hợp đồng thành công");
                     loader(null);
                     this.Close();
@@ -111,7 +108,7 @@ namespace PBL3___Motel_Management_System
                     tp.hopDong.NgayBatDau = dateStart;
                     tp.hopDong.NgayKetThuc = dateEnd;
                     tp.hopDong.TienCoc = Convert.ToDouble(txtTienCoc.Text);
-                    qLBLL.openChildForm1(new ChitietHopDong(tp, Back), panelThemHD);
+                    QLBLL.Instance.openChildForm1(new ChitietHopDong(tp, Back), panelThemHD);
                 }
             }
         }

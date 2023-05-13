@@ -13,6 +13,20 @@ namespace PBL3___Motel_Management_System.DAL
 {
     internal class QLDAL
     {
+        private static QLDAL _instance;
+        public static QLDAL Instance
+        {
+            get
+            {
+                if (_instance == null) _instance = new QLDAL();
+                return _instance;
+            }
+            private set { }
+        }
+        private QLDAL()
+        {
+
+        }
         public List<TaiKhoan> GetAllTaiKhoan()
         {
             using (DataPbl data = new DataPbl())

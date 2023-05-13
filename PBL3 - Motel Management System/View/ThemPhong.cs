@@ -35,8 +35,7 @@ namespace PBL3___Motel_Management_System
 
         public void SetGUI()
         {
-            QLBLL qLBLL = new QLBLL();
-            PhongTro phongTro = qLBLL.GetPhongTroByIdPhong(IdPhong);
+            PhongTro phongTro = QLBLL.Instance.GetPhongTroByIdPhong(IdPhong);
             if (IdPhong != null)
             {
                 txtTenPhong.Text = phongTro.TenPhongTro.ToString();
@@ -118,11 +117,10 @@ namespace PBL3___Motel_Management_System
         {
             if(checkHopLe())
             {
-                QLBLL qLBLL = new QLBLL();
                 if (IdPhong!=null)
                 {
                     PhongTro pt = new PhongTro();
-                    PhongTro pt1  = qLBLL.GetPhongTroByIdPhong(IdPhong);
+                    PhongTro pt1  = QLBLL.Instance.GetPhongTroByIdPhong(IdPhong);
                     pt.MaPhongTro = IdPhong;
                     pt.TenPhongTro = txtTenPhong.Text;
                     pt.TinhTrang = pt1.TinhTrang;
@@ -132,7 +130,7 @@ namespace PBL3___Motel_Management_System
                     pt.TonTai = true;
                     if (pictutePhong.Image != null)
                     { pt.HinhAnh = ChuyenDoiAnh.ImageToBase64(pictutePhong.Image, pictutePhong.Image.RawFormat); }
-                    qLBLL.UpdatePTBLL(pt);
+                    QLBLL.Instance.UpdatePTBLL(pt);
                     MessageBox.Show("Thay đổi thông tin thành công", "Thông báo");
                     loader(null);
                     this.Close();
@@ -140,7 +138,7 @@ namespace PBL3___Motel_Management_System
                 else
                 {
                     PhongTro pt = new PhongTro();
-                    pt.MaPhongTro = qLBLL.TaoIdPhongTro();
+                    pt.MaPhongTro = QLBLL.Instance.TaoIdPhongTro();
                     pt.TenPhongTro = txtTenPhong.Text;
                     pt.GiaTien = Convert.ToDouble(txtGiaTien.Text);
                     pt.DienTich = Convert.ToDouble(txtDienTich.Text);
@@ -152,10 +150,10 @@ namespace PBL3___Motel_Management_System
                     {
                         pt.HinhAnh = ChuyenDoiAnh.ImageToBase64(pictutePhong.Image, pictutePhong.Image.RawFormat);
                     }
-                    qLBLL.AddPhongTroBll(pt);
+                    QLBLL.Instance.AddPhongTroBll(pt);
                     MessageBox.Show("Thêm phòng trọ vào dãy thành công", "Thông báo");
                     Button btn = new Button();
-                    btn.Name = qLBLL.GetIdDayByIdPhong(pt.MaPhongTro);
+                    btn.Name = QLBLL.Instance.GetIdDayByIdPhong(pt.MaPhongTro);
                     sukien(btn, EventArgs.Empty);
                     this.Close();
                 }

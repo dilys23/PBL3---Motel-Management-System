@@ -40,13 +40,12 @@ namespace PBL3___Motel_Management_System.View
                 dgvThanhVien.Rows.Clear();
                 dgvThanhVien.Columns[8].ValueType = typeof(Image);
                 dgvThanhVien.RowCount = 0;
-                QLBLL qLBLL = new QLBLL();
                 int i = 1;
                 //dgvThanhVien.Columns[6].ValueType = typeof(Boolean);
-                foreach (string idNguoi in qLBLL.GetIdNguoiByIdPhong(this.idPhong))
+                foreach (string idNguoi in QLBLL.Instance.GetIdNguoiByIdPhong(this.idPhong))
                 {
                     Nguoi nguoi = new Nguoi();
-                    nguoi = qLBLL.GetNguoiByIdNguoi(idNguoi);
+                    nguoi = QLBLL.Instance.GetNguoiByIdNguoi(idNguoi);
                     Image image = null;
                     if (nguoi.HinhAnh != null)
                     {
@@ -108,8 +107,7 @@ namespace PBL3___Motel_Management_System.View
                    
                     ThuePhong tp = new ThuePhong();
                     tp.hopDong.MaNguoi = dgvThanhVien.CurrentRow.Cells[0].Value.ToString();
-                    QLBLL qLBLL = new QLBLL();
-                    qLBLL.openChildForm1(new ThemKhach(tp, LoadForm), panelThem);
+                    QLBLL.Instance.openChildForm1(new ThemKhach(tp, LoadForm), panelThem);
 
 
                 }
@@ -121,10 +119,9 @@ namespace PBL3___Motel_Management_System.View
                         string id = dgvThanhVien.Rows[e.RowIndex].Cells["MaNguoi"].Value.ToString();
                         if (id != "000" && id != "001")
                         {
-                            QLBLL qLBLL = new QLBLL();
-                            string idThanhVien =qLBLL.GetIdThanhVienByIdNguoi(id); 
-                            qLBLL.DelThanhVienBLL(idThanhVien);
-                            qLBLL.DelNguoiBll(id);
+                            string idThanhVien =QLBLL.Instance.GetIdThanhVienByIdNguoi(id); 
+                            QLBLL.Instance.DelThanhVienBLL(idThanhVien);
+                            QLBLL.Instance.DelNguoiBll(id);
                             MessageBox.Show("Xóa thành viên thành công", "Thông báo");
                             LoadForm(null);
                         }
@@ -140,17 +137,16 @@ namespace PBL3___Motel_Management_System.View
         private void btnThemDichVu_Click(object sender, EventArgs e)
         {
 
-            QLBLL qLBLL = new QLBLL();
-            if (qLBLL.GetPhongTroByIdPhong(idPhong).TinhTrang == true)
+            if (QLBLL.Instance.GetPhongTroByIdPhong(idPhong).TinhTrang == true)
             {
 
-                if (qLBLL.GetIdNguoiByIdPhong(idPhong).Count() < qLBLL.GetPhongTroByIdPhong(idPhong).ToiDa)
+                if (QLBLL.Instance.GetIdNguoiByIdPhong(idPhong).Count() < QLBLL.Instance.GetPhongTroByIdPhong(idPhong).ToiDa)
                 {
                     string IdThanhVien = dgvThanhVien.Rows[0].Cells[0].Value.ToString();
-                    string IdPhong = qLBLL.GetIdPhongByIdNguoi(IdThanhVien);
+                    string IdPhong = QLBLL.Instance.GetIdPhongByIdNguoi(IdThanhVien);
                     ThuePhong tp = new ThuePhong();
                     tp.hopDong.MaPhongTro = idPhong;
-                    qLBLL.openChildForm1(new ThemKhach(tp, LoadForm), panelThem);
+                    QLBLL.Instance.openChildForm1(new ThemKhach(tp, LoadForm), panelThem);
                 }
                 else
                 {
@@ -167,12 +163,11 @@ namespace PBL3___Motel_Management_System.View
         {
             if (dgvThanhVien.CurrentRow.Cells[0].Value != null)
             {
-                QLBLL qLBLL = new QLBLL();
                 ThuePhong tp = new ThuePhong();
                 string id = dgvThanhVien.CurrentRow.Cells[0].Value.ToString();
                 tp.hopDong.MaNguoi = id;
                 ThemKhach tk = new ThemKhach(tp, LoadForm);
-                qLBLL.openChildForm1(tk, panelThem);
+                QLBLL.Instance.openChildForm1(tk, panelThem);
                 tk.btnLuu.Visible= false;
                 tk.btnThemAnh.Visible= false;
                 tk.txtCccd.Enabled = false;

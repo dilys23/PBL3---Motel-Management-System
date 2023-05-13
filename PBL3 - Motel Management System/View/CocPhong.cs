@@ -76,10 +76,9 @@ namespace PBL3___Motel_Management_System.View
         {
             if(CheckHopLe())
             {
-                QLBLL qLBLL = new QLBLL();
                 Nguoi nguoi = new Nguoi
                 {
-                    MaNguoi = qLBLL.TaoIdNguoi(),
+                    MaNguoi = QLBLL.Instance.TaoIdNguoi(),
                     Ten = txtTen.Text,
                     Cccd = txtCccd.Text,
                     Sdt = txtSdt.Text,
@@ -90,7 +89,7 @@ namespace PBL3___Motel_Management_System.View
             };
                 HopDong hd = new HopDong
                 {
-                    MaHopDong = qLBLL.TaoIdHopDong(),
+                    MaHopDong = QLBLL.Instance.TaoIdHopDong(),
                     MaNguoi = nguoi.MaNguoi,
                     MaPhongTro = tp.hopDong.MaPhongTro,
                     NgayBatDau = dtpNgayCoc.Value.ToString("yyyy-MM-dd"),
@@ -100,8 +99,8 @@ namespace PBL3___Motel_Management_System.View
                     TonTai = true
 
             };
-                qLBLL.AddNguoiBll(nguoi);
-                qLBLL.AddHdBll(hd);
+                QLBLL.Instance.AddNguoiBll(nguoi);
+                QLBLL.Instance.AddHdBll(hd);
                 MessageBox.Show("Cọc phòng thành công");
                 this.Close();
                 this.loader(null);
