@@ -988,5 +988,12 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.ChiTietDichVu.Where(p => p.TonTai == true && p.MaPhongTro == idPhong).Select(p => p.DichVu).ToList<DichVu>();
             }
         }
+        public string GetIdPhongByIdChiTietSuDungDichVu(string idct)
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                return data.ChiTietSuDungDichVu.Find(idct).ChiTietDichVu.MaPhongTro.ToString();
+            }
+        }
     }
 }
