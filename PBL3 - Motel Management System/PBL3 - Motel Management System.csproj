@@ -531,12 +531,6 @@
     <Compile Include="View\SuaHopDong.Designer.cs">
       <DependentUpon>SuaHopDong.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\SuaThietBi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\SuaThietBi.Designer.cs">
-      <DependentUpon>SuaThietBi.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\TaiKhoanPhong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -665,12 +659,6 @@
     <Compile Include="View\Dichvu.Designer.cs">
       <DependentUpon>Dichvu.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ThemDV.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ThemDV.Designer.cs">
-      <DependentUpon>ThemDV.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\ChisoNuoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -747,9 +735,6 @@
     <EmbeddedResource Include="View\SuaHopDong.resx">
       <DependentUpon>SuaHopDong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\SuaThietBi.resx">
-      <DependentUpon>SuaThietBi.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\TaiKhoanPhong.resx">
       <DependentUpon>TaiKhoanPhong.cs</DependentUpon>
     </EmbeddedResource>
@@ -791,9 +776,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Dangnhap.resx">
       <DependentUpon>Dangnhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ThemDV.resx">
-      <DependentUpon>ThemDV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ThemPhong.resx">
       <DependentUpon>ThemPhong.cs</DependentUpon>

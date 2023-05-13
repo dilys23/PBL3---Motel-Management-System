@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -39,6 +40,7 @@
             this.TenDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GiaDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnXoa = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panelThem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +77,7 @@
             this.btnThemDichVu.TabIndex = 54;
             this.btnThemDichVu.Text = "Thêm dịch vụ";
             this.btnThemDichVu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnThemDichVu, "Thêm dịch vụ");
             this.btnThemDichVu.UseVisualStyleBackColor = false;
             this.btnThemDichVu.Click += new System.EventHandler(this.btnThemDichVu_Click);
             // 
@@ -189,5 +192,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDichVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaDichVu;
         private System.Windows.Forms.DataGridViewButtonColumn btnXoa;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

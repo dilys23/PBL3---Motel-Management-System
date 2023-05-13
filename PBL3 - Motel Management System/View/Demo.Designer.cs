@@ -71,7 +71,7 @@
             this.btnXoaPhong.IconFont = FontAwesome.Sharp.IconFont.Regular;
             this.btnXoaPhong.IconSize = 25;
             this.btnXoaPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaPhong.Location = new System.Drawing.Point(103, 245);
+            this.btnXoaPhong.Location = new System.Drawing.Point(132, 252);
             this.btnXoaPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoaPhong.Name = "btnXoaPhong";
             this.btnXoaPhong.Size = new System.Drawing.Size(78, 38);
@@ -93,7 +93,7 @@
             this.btnSuaPhong.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSuaPhong.IconSize = 25;
             this.btnSuaPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaPhong.Location = new System.Drawing.Point(20, 245);
+            this.btnSuaPhong.Location = new System.Drawing.Point(49, 252);
             this.btnSuaPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSuaPhong.Name = "btnSuaPhong";
             this.btnSuaPhong.Size = new System.Drawing.Size(77, 39);
@@ -112,7 +112,7 @@
             this.btnCoc.IconColor = System.Drawing.Color.White;
             this.btnCoc.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCoc.IconSize = 30;
-            this.btnCoc.Location = new System.Drawing.Point(20, 173);
+            this.btnCoc.Location = new System.Drawing.Point(49, 180);
             this.btnCoc.Margin = new System.Windows.Forms.Padding(4);
             this.btnCoc.Name = "btnCoc";
             this.btnCoc.Size = new System.Drawing.Size(40, 40);
@@ -130,7 +130,7 @@
             this.btnChiTiet.IconColor = System.Drawing.Color.White;
             this.btnChiTiet.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnChiTiet.IconSize = 25;
-            this.btnChiTiet.Location = new System.Drawing.Point(116, 173);
+            this.btnChiTiet.Location = new System.Drawing.Point(145, 180);
             this.btnChiTiet.Margin = new System.Windows.Forms.Padding(4);
             this.btnChiTiet.Name = "btnChiTiet";
             this.btnChiTiet.Size = new System.Drawing.Size(40, 40);
@@ -148,7 +148,7 @@
             this.btnTra.IconColor = System.Drawing.Color.White;
             this.btnTra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTra.IconSize = 25;
-            this.btnTra.Location = new System.Drawing.Point(164, 173);
+            this.btnTra.Location = new System.Drawing.Point(193, 180);
             this.btnTra.Margin = new System.Windows.Forms.Padding(4);
             this.btnTra.Name = "btnTra";
             this.btnTra.Size = new System.Drawing.Size(40, 40);
@@ -166,7 +166,7 @@
             this.btnChoThue.IconColor = System.Drawing.Color.White;
             this.btnChoThue.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnChoThue.IconSize = 30;
-            this.btnChoThue.Location = new System.Drawing.Point(68, 173);
+            this.btnChoThue.Location = new System.Drawing.Point(97, 180);
             this.btnChoThue.Margin = new System.Windows.Forms.Padding(4);
             this.btnChoThue.Name = "btnChoThue";
             this.btnChoThue.Size = new System.Drawing.Size(40, 40);

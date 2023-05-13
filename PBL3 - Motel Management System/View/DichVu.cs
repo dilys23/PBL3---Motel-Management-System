@@ -44,8 +44,8 @@ namespace PBL3___Motel_Management_System
             {
                 dgvDichVu.Rows.Add(viewDichVu.MaDichVu,++i,viewDichVu.TenDichVu,viewDichVu.GiaDichVu);
             }    
-            var Sua = System.Drawing.Image.FromFile(@"D:\PBLproject\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-create-25.png");
-            var Xoa = System.Drawing.Image.FromFile(@"D:\PBLproject\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
+            var Sua = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-create-25.png");
+            var Xoa = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
             dgvDichVu.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => QLBLL.Instance.dgvIcons_CellPainting1(dgvDichVu, e, Sua, Xoa));
         
         }
@@ -172,13 +172,6 @@ namespace PBL3___Motel_Management_System
                 this.Size = formSize;
             }
         }
-
-        private void btnThemPhong_Click(object sender, EventArgs e)
-        {
-            ThemDV themDV = new ThemDV(LoadForm);
-            themDV.ShowDialog();
-        }
-
         private void iconButton5_Click(object sender, EventArgs e)
         {
             SuaDichVu suaDichVu = new SuaDichVu(null,LoadForm); ;
@@ -188,7 +181,7 @@ namespace PBL3___Motel_Management_System
       
         private void btnThemPhong_Click_1(object sender, EventArgs e)
         {
-            QLBLL.Instance.openChildForm1(new ThemDV(LoadForm), panelDV);
+            QLBLL.Instance.openChildForm1(new SuaDichVu(null,LoadForm), panelDV);
         }
 
         private void btnSuaDV_Click(object sender, EventArgs e)

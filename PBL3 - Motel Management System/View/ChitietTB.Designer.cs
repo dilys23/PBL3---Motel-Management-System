@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -40,6 +41,7 @@
             this.GiaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnXoa = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panelThem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThietBi)).BeginInit();
             this.SuspendLayout();
@@ -53,10 +55,10 @@
             this.panelThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
             this.panelThem.Controls.Add(this.btnThemThietbi);
             this.panelThem.Controls.Add(this.dgvThietBi);
-            this.panelThem.Location = new System.Drawing.Point(20, 27);
-            this.panelThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelThem.Location = new System.Drawing.Point(27, 33);
+            this.panelThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelThem.Name = "panelThem";
-            this.panelThem.Size = new System.Drawing.Size(652, 401);
+            this.panelThem.Size = new System.Drawing.Size(869, 494);
             this.panelThem.TabIndex = 50;
             // 
             // btnThemThietbi
@@ -70,13 +72,14 @@
             this.btnThemThietbi.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnThemThietbi.IconSize = 25;
             this.btnThemThietbi.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnThemThietbi.Location = new System.Drawing.Point(523, 9);
-            this.btnThemThietbi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThemThietbi.Location = new System.Drawing.Point(697, 11);
+            this.btnThemThietbi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThemThietbi.Name = "btnThemThietbi";
-            this.btnThemThietbi.Size = new System.Drawing.Size(109, 32);
+            this.btnThemThietbi.Size = new System.Drawing.Size(145, 39);
             this.btnThemThietbi.TabIndex = 54;
             this.btnThemThietbi.Text = "Thêm thiết bị";
             this.btnThemThietbi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnThemThietbi, "Thêm thiết bị");
             this.btnThemThietbi.UseVisualStyleBackColor = false;
             this.btnThemThietbi.Click += new System.EventHandler(this.btnThemThietbi_Click);
             // 
@@ -113,8 +116,8 @@
             this.dgvThietBi.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvThietBi.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvThietBi.GridColor = System.Drawing.Color.LightCyan;
-            this.dgvThietBi.Location = new System.Drawing.Point(13, 82);
-            this.dgvThietBi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvThietBi.Location = new System.Drawing.Point(17, 101);
+            this.dgvThietBi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvThietBi.Name = "dgvThietBi";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -127,7 +130,7 @@
             this.dgvThietBi.RowHeadersWidth = 60;
             this.dgvThietBi.RowTemplate.Height = 24;
             this.dgvThietBi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvThietBi.Size = new System.Drawing.Size(619, 298);
+            this.dgvThietBi.Size = new System.Drawing.Size(825, 367);
             this.dgvThietBi.TabIndex = 9;
             this.dgvThietBi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThietBi_CellContentClick);
             this.dgvThietBi.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvThietBi_CellFormatting);
@@ -175,12 +178,12 @@
             // 
             // ChitietTB
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(692, 453);
+            this.ClientSize = new System.Drawing.Size(923, 558);
             this.Controls.Add(this.panelThem);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ChitietTB";
             this.Text = "ChitietTB";
             this.panelThem.ResumeLayout(false);
@@ -200,5 +203,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaThietBi;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewButtonColumn btnXoa;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

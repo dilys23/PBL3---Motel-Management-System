@@ -20,20 +20,9 @@ namespace PBL3___Motel_Management_System.View
         {
             InitializeComponent();
             this.idPhong = idPhong;
-            SetFontAndColors();
             LoadForm(null);
         }
-        private void SetFontAndColors()
-        {
-            this.dgvThietBi.DefaultCellStyle.Font = new Font("Tahoma", 10);
-            this.dgvThietBi.DefaultCellStyle.ForeColor = Color.Blue;
-            this.dgvThietBi.DefaultCellStyle.BackColor = Color.Beige;
-            this.dgvThietBi.DefaultCellStyle.SelectionForeColor = Color.AliceBlue;
-            this.dgvThietBi.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
-            DataGridViewRow row = this.dgvThietBi.RowTemplate;
-            row.Height = 35;
-            row.MinimumHeight = 20;
-        }
+       
         public void LoadForm(string txt)
         {
             dgvThietBi.Rows.Clear();
@@ -48,8 +37,9 @@ namespace PBL3___Motel_Management_System.View
                 ThietBi tb = QLBLL.Instance.GetTBByIdTB(cttb.MaThietBi);
                 dgvThietBi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi, cttb.SoLuong);
             }
-            var Xoa = System.Drawing.Image.FromFile(@"D:\PBLproject\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
+            var Xoa = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
             dgvThietBi.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dgvIcons_CellPainting1(dgvThietBi, e, Xoa));
+            QLBLL.Instance.SetFontAndColors(dgvThietBi);
         }
         public void dgvIcons_CellPainting1(DataGridView dgv, DataGridViewCellPaintingEventArgs e, Image btXoa)
         {

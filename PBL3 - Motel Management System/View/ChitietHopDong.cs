@@ -24,7 +24,6 @@ namespace PBL3___Motel_Management_System.View
             this.tp = tp;
             LoadForm();
             this.loader = loader;
-
         }
         public void LoadForm()
         {

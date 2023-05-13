@@ -47,6 +47,7 @@
             this.txtCccd = new System.Windows.Forms.TextBox();
             this.txtTen = new System.Windows.Forms.TextBox();
             this.btnTrove = new FontAwesome.Sharp.IconButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panelKhach.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -138,6 +139,7 @@
             this.btnXacNhan.Size = new System.Drawing.Size(121, 32);
             this.btnXacNhan.TabIndex = 48;
             this.btnXacNhan.Text = "Xác nhận ";
+            this.toolTip1.SetToolTip(this.btnXacNhan, "Xác nhận");
             this.btnXacNhan.UseVisualStyleBackColor = false;
             this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
@@ -251,6 +253,7 @@
             this.btnTrove.Name = "btnTrove";
             this.btnTrove.Size = new System.Drawing.Size(45, 46);
             this.btnTrove.TabIndex = 44;
+            this.toolTip1.SetToolTip(this.btnTrove, "Trở về");
             this.btnTrove.UseVisualStyleBackColor = false;
             this.btnTrove.Click += new System.EventHandler(this.btnTrove_Click);
             // 
@@ -292,5 +295,6 @@
         private System.Windows.Forms.Label label8;
         private FontAwesome.Sharp.IconButton btnTrove;
         private FontAwesome.Sharp.IconButton btnXacNhan;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

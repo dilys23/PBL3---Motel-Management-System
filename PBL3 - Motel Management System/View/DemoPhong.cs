@@ -82,7 +82,7 @@ namespace PBL3___Motel_Management_System.View
             Button btn = sender as Button;
             ClickBtn = btn;
             panelPhong.Controls.Clear();
-            DayTro dt = QLBLL.Instance.GetDayTroById(btn.Name);
+            DayTro dt = QLBLL.Instance.GetDayByIdDay(btn.Name);
             string DiaChi = "    " + dt.TenDuong + " " + dt.TenHuyen + " " + dt.TenThanhPho;
             lblDiaChi.Text = DiaChi;
             foreach(PhongTro pt in QLBLL.Instance.GetPhongTroByIdDay(btn.Name))
@@ -110,7 +110,7 @@ namespace PBL3___Motel_Management_System.View
                     lbl.Name = nguoi.MaNguoi;
                     lbl.Text = "   " + nguoi.Ten;
                     lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    Image image1 = Image.FromFile("D:\\PBLproject\\PBL3_Main\\PBL3 - Motel Management System\\Icons\\icons8-customer-20.png" + "    ");
+                    Image image1 = Image.FromFile("D:\\PBL3\\PBL3_Main\\PBL3 - Motel Management System\\Icons\\icons8-customer-20.png" + "    ");
                     lbl.Image = image1;
                     lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
                     lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -129,11 +129,9 @@ namespace PBL3___Motel_Management_System.View
         {
             if(ClickBtn != null)
             {
-                DayTro dt = QLBLL.Instance.GetDayTroById(ClickBtn.Name);
-                QLBLL.Instance.openChildForm1(new ThemPhong(dt.MaDayTro,null,LoadForm, SuKien), panelChinh);
+                QLBLL.Instance.openChildForm1(new ThemPhong(ClickBtn.Name,null,LoadForm, SuKien), panelChinh);
             }         
         }
-
         private void btnThemday_Click(object sender, EventArgs e)
         {
             QLBLL.Instance.openChildForm1(new ThemDay(null,LoadForm,SuKien), panelChinh);
@@ -141,11 +139,9 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnSuaDay_Click(object sender, EventArgs e)
         {
-            
             if (ClickBtn != null)
             {
-                DayTro dt = QLBLL.Instance.GetDayTroById(ClickBtn.Name);
-                QLBLL.Instance.openChildForm1(new ThemDay(dt.MaDayTro, LoadForm, SuKien), panelChinh);
+                QLBLL.Instance.openChildForm1(new ThemDay(ClickBtn.Name, LoadForm, SuKien), panelChinh);
             }
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -186,7 +182,7 @@ namespace PBL3___Motel_Management_System.View
                     lbl.Name = nguoi.MaNguoi;
                     lbl.Text = "   " + nguoi.Ten;
                     lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                    Image image1 = Image.FromFile("D:\\PBLproject\\PBL3_Main\\PBL3 - Motel Management System\\Icons\\icons8-customer-20.png" + "    ");
+                    Image image1 = Image.FromFile("D:\\PBL3\\PBL3_Main\\PBL3 - Motel Management System\\Icons\\icons8-customer-20.png" + "    ");
                     lbl.Image = image1;
                     lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
                     lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -205,8 +201,7 @@ namespace PBL3___Motel_Management_System.View
         private void btnXoaDay_Click_1(object sender, EventArgs e)
         {
             if (ClickBtn != null)
-            {
-                
+            { 
                 if(QLBLL.Instance.CheckDay(ClickBtn.Name)==false)
                 {
                     DialogResult kq = MessageBox.Show("Bạn có thực sự muốn xóa", "Cảnh báo!!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);

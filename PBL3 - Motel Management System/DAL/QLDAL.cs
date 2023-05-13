@@ -904,37 +904,6 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.ChiTietDichVu.Where(p => p.TonTai == true && p.MaDichVu == idDichVu).Select(p => p.MaChiTietDichVu).ToList<string>();
             }
         }
-       //public Nguoi GetNguoiByMaHD(string MaHD)
-       // {     
-       //         using (DataPbl data = new DataPbl())
-       //         {
-       //             var s = data.HopDong.FirstOrDefault(p => p.MaHopDong == MaHD);
-       //             if (s != null)
-       //                 return s.Nguoi;
-       //             else return null;
-       //         }
-            
-       // }
-       
-        //public PhongTro GetPhongTroByMaHD(string MaHD)
-        //{
-        //    using (DataPbl data = new DataPbl())
-        //    {
-        //        var s = data.HopDong.FirstOrDefault(p => p.MaHopDong == MaHD);
-        //        if (s != null)
-        //            return s.PhongTro;
-        //        else return null;
-        //    }
-
-        //}
-        //public List<object> GetDoanhThu()
-        //{
-        //    using(DataPbl data= new DataPbl())
-        //    {
-        //        var s = data.PhongTro.Where(p=>p.DayTro.MaDayTro==p.MaPhongTro && p.HOa)
-        //            .Select(p => new { p.DayTro.TenDayTro, })
-        //    }
-        //}
         public List<HoaDon> GetHoaDonByNam(string nam)
         {
             List<HoaDon> list = new List<HoaDon>();
@@ -972,6 +941,15 @@ namespace PBL3___Motel_Management_System.DAL
             using(DataPbl data = new DataPbl())
             {
                 return data.ChiTietDichVu.Where(p => p.TonTai == true && p.MaPhongTro == idPhong).Select(p => p.DichVu).ToList<DichVu>();
+            }
+        }
+        public bool CheckDay(string idday)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                var s = data.HopDong.Where(p => p.TonTai == true && p.PhongTro.MaDayTro == idday).FirstOrDefault();
+                if (s != null) return true;
+                else return false;
             }
         }
     }

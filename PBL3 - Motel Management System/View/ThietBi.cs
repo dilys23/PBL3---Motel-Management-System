@@ -40,8 +40,8 @@ namespace PBL3___Motel_Management_System.View
             {
                 dgvThietBi.Rows.Add(viewThietBi.MaThietBi, ++i, viewThietBi.TenThietBi, viewThietBi.GiaThietBi);
             }
-            var Sua = System.Drawing.Image.FromFile(@"D:\PBLproject\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-create-25.png");
-            var Xoa = System.Drawing.Image.FromFile(@"D:\PBLproject\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-create-25.png");
+            var Sua = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-create-25.png");
+            var Xoa = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
             dgvThietBi.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => QLBLL.Instance.dgvIcons_CellPainting1(dgvThietBi, e, Sua, Xoa));
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -193,7 +193,7 @@ namespace PBL3___Motel_Management_System.View
                 {
                     // Lấy mã dịch vụ tương ứng với hàng đã được nhấp
                     string id = dgvThietBi.Rows[e.RowIndex].Cells[0].Value.ToString();
-                    QLBLL.Instance.openChildForm1(new SuaThietBI(id, LoadForm), panelTB);
+                    QLBLL.Instance.openChildForm1(new ThemThietBi(id, LoadForm), panelTB);
                 }
                 else if (columnName == "btnXoa")
                 {

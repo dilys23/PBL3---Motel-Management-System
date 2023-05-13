@@ -156,9 +156,9 @@
             this.label7.ForeColor = System.Drawing.Color.Chocolate;
             this.label7.Location = new System.Drawing.Point(23, 50);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(149, 28);
+            this.label7.Size = new System.Drawing.Size(97, 28);
             this.label7.TabIndex = 58;
-            this.label7.Text = "SỬA DỊCH VỤ";
+            this.label7.Text = "DỊCH VỤ";
             // 
             // errorProvider1
             // 

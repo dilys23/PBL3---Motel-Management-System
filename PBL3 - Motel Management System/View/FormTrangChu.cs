@@ -89,7 +89,7 @@ namespace PBL3___Motel_Management_System.View
             var series = new Series("Tình trạng");
             series.ChartType = SeriesChartType.Pie;
             series["PieLabelStyle"] = "Disabled"; // Tắt hiển thị nhãn trên mỗi phần tử
-
+           
             for (int i = 0; i < tinhTrangList.Count; i++)
             {
                 series.Points.AddXY(tinhTrangList[i], soLuongList[i]);

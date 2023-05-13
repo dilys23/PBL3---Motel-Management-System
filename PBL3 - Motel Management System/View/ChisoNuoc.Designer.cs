@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -59,6 +60,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.panelChisoNuoc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiSoNuoc)).BeginInit();
             this.panel1.SuspendLayout();
@@ -71,6 +74,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelChisoNuoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.panelChisoNuoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelChisoNuoc.Controls.Add(this.toolStrip1);
             this.panelChisoNuoc.Controls.Add(this.btnHuyXacThuc);
             this.panelChisoNuoc.Controls.Add(this.dgvChiSoNuoc);
             this.panelChisoNuoc.Controls.Add(this.btnXacThuc);
@@ -105,6 +109,7 @@
             this.btnHuyXacThuc.TabIndex = 66;
             this.btnHuyXacThuc.Text = "Hủy";
             this.btnHuyXacThuc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnHuyXacThuc, "Hủy xác thực");
             this.btnHuyXacThuc.UseVisualStyleBackColor = false;
             this.btnHuyXacThuc.Click += new System.EventHandler(this.btnHuyXacThuc_Click);
             // 
@@ -246,6 +251,7 @@
             this.btnXacThuc.TabIndex = 63;
             this.btnXacThuc.Text = "Xác Thực";
             this.btnXacThuc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnXacThuc, "Xác thực");
             this.btnXacThuc.UseVisualStyleBackColor = false;
             this.btnXacThuc.Click += new System.EventHandler(this.btnXacThuc_Click);
             // 
@@ -325,6 +331,7 @@
             this.btnThemChiSo.TabIndex = 52;
             this.btnThemChiSo.Text = "Thêm ";
             this.btnThemChiSo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolTip1.SetToolTip(this.btnThemChiSo, "Thêm chỉ số nước");
             this.btnThemChiSo.UseVisualStyleBackColor = false;
             this.btnThemChiSo.Click += new System.EventHandler(this.btnThemHD_Click);
             // 
@@ -395,6 +402,15 @@
             this.label4.TabIndex = 25;
             this.label4.Text = "CHỈ SỐ NƯỚC";
             // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1021, 25);
+            this.toolStrip1.TabIndex = 67;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
             // ChisoNuoc
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -441,5 +457,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrang;
         private System.Windows.Forms.DataGridViewButtonColumn btnSua;
         private System.Windows.Forms.DataGridViewButtonColumn btnXoa;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

@@ -71,9 +71,10 @@ namespace PBL3___Motel_Management_System.View
                     tb.MaThietBi = IdTb;
                     tb.TenThietBi = txtTenTB.Text;
                     tb.GiaThietBi = Convert.ToDouble(txtGia.Text);
-                    tb.TonTai = true;
                     QLBLL.Instance.SuaTBBll(tb);
                     MessageBox.Show("Thay đổi thông tin thành công", "Thông báo");
+                    Loader(null);
+                    this.Close();
                 }
                 else
                 {
@@ -84,9 +85,10 @@ namespace PBL3___Motel_Management_System.View
                     tb.TonTai = true;
                     QLBLL.Instance.ThemTBBll(tb);
                     MessageBox.Show("Thêm dịch vụ thành công", "Thông báo");
+                    Loader(null);
+                    this.Close();
                 }
-                Loader(null);
-                this.Close();
+               
             }
         }
     }

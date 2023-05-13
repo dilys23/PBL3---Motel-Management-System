@@ -104,14 +104,8 @@ namespace PBL3___Motel_Management_System
                     errorProvider1.SetError(txtToiDa, "Vui lòng nhập bằng số");
                 }
             }
-
-
             if (i==0) return true;
             else return false;
-
-
-
-
         }
         private void iconButton4_Click(object sender, EventArgs e)
         {
@@ -153,14 +147,11 @@ namespace PBL3___Motel_Management_System
                     QLBLL.Instance.AddPhongTroBll(pt);
                     MessageBox.Show("Thêm phòng trọ vào dãy thành công", "Thông báo");
                     Button btn = new Button();
-                    btn.Name = QLBLL.Instance.GetIdDayByIdPhong(pt.MaPhongTro);
+                    btn.Name = this.IdDay;
                     sukien(btn, EventArgs.Empty);
                     this.Close();
                 }
-               
-              
             }
-
         }
         string imgLocation = "";
         private void btnThemAnh_Click(object sender, EventArgs e)
