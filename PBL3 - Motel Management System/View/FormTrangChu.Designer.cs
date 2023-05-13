@@ -31,10 +31,14 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.ChartCot = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvSoLuong = new System.Windows.Forms.DataGridView();
             this.TinhTrang1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,8 +50,10 @@
             this.TenDayTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenPhongTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TinhTrang2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnTim = new FontAwesome.Sharp.IconButton();
+            this.dtpThang = new System.Windows.Forms.DateTimePicker();
             this.panelDesktop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartCot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSoLuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TinhTrang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTinhTrang)).BeginInit();
@@ -60,24 +66,46 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDesktop.BackColor = System.Drawing.Color.LightCyan;
-            this.panelDesktop.Controls.Add(this.label1);
+            this.panelDesktop.Controls.Add(this.btnTim);
+            this.panelDesktop.Controls.Add(this.dtpThang);
+            this.panelDesktop.Controls.Add(this.ChartCot);
             this.panelDesktop.Controls.Add(this.label4);
             this.panelDesktop.Controls.Add(this.dgvSoLuong);
             this.panelDesktop.Controls.Add(this.TinhTrang);
             this.panelDesktop.Controls.Add(this.dgvTinhTrang);
-            this.panelDesktop.Location = new System.Drawing.Point(-166, -124);
+            this.panelDesktop.Location = new System.Drawing.Point(5, 4);
+            this.panelDesktop.Margin = new System.Windows.Forms.Padding(4);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1511, 928);
+            this.panelDesktop.Size = new System.Drawing.Size(1150, 631);
             this.panelDesktop.TabIndex = 6;
+            this.panelDesktop.SizeChanged += new System.EventHandler(this.panelDesktop_SizeChanged);
+            // 
+            // ChartCot
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.ChartCot.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.ChartCot.Legends.Add(legend1);
+            this.ChartCot.Location = new System.Drawing.Point(28, 413);
+            this.ChartCot.Name = "ChartCot";
+            series1.ChartArea = "ChartArea1";
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            series1.Legend = "Legend1";
+            series1.Name = "Dãy trọ";
+            this.ChartCot.Series.Add(series1);
+            this.ChartCot.Size = new System.Drawing.Size(427, 191);
+            this.ChartCot.TabIndex = 40;
+            this.ChartCot.Text = "chart1";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label4.Location = new System.Drawing.Point(65, 22);
+            this.label4.Location = new System.Drawing.Point(21, 14);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(164, 17);
+            this.label4.Size = new System.Drawing.Size(194, 20);
             this.label4.TabIndex = 4;
             this.label4.Text = "TÌNH TRẠNG PHÒNG";
             // 
@@ -92,39 +120,43 @@
             this.TinhTrang1,
             this.SoLuongPhong});
             this.dgvSoLuong.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvSoLuong.Location = new System.Drawing.Point(852, 524);
+            this.dgvSoLuong.Location = new System.Drawing.Point(505, 387);
+            this.dgvSoLuong.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSoLuong.Name = "dgvSoLuong";
             this.dgvSoLuong.RowHeadersWidth = 51;
             this.dgvSoLuong.RowTemplate.Height = 24;
             this.dgvSoLuong.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSoLuong.Size = new System.Drawing.Size(513, 250);
+            this.dgvSoLuong.Size = new System.Drawing.Size(573, 217);
             this.dgvSoLuong.TabIndex = 2;
             // 
             // TinhTrang1
             // 
             this.TinhTrang1.HeaderText = "Tình trạng";
+            this.TinhTrang1.MinimumWidth = 6;
             this.TinhTrang1.Name = "TinhTrang1";
             // 
             // SoLuongPhong
             // 
             this.SoLuongPhong.HeaderText = "Số lượng phòng";
+            this.SoLuongPhong.MinimumWidth = 6;
             this.SoLuongPhong.Name = "SoLuongPhong";
             // 
             // TinhTrang
             // 
-            chartArea1.Area3DStyle.Enable3D = true;
-            chartArea1.Name = "ChartArea1";
-            this.TinhTrang.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.TinhTrang.Legends.Add(legend1);
-            this.TinhTrang.Location = new System.Drawing.Point(315, 221);
+            chartArea2.Area3DStyle.Enable3D = true;
+            chartArea2.Name = "ChartArea1";
+            this.TinhTrang.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.TinhTrang.Legends.Add(legend2);
+            this.TinhTrang.Location = new System.Drawing.Point(25, 52);
+            this.TinhTrang.Margin = new System.Windows.Forms.Padding(4);
             this.TinhTrang.Name = "TinhTrang";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "TinhTrang";
-            this.TinhTrang.Series.Add(series1);
-            this.TinhTrang.Size = new System.Drawing.Size(414, 253);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "TinhTrang";
+            this.TinhTrang.Series.Add(series2);
+            this.TinhTrang.Size = new System.Drawing.Size(433, 311);
             this.TinhTrang.TabIndex = 1;
             this.TinhTrang.Text = "Tinhtrang";
             title1.Name = "ConTrong";
@@ -148,61 +180,85 @@
             this.TenPhongTro,
             this.TinhTrang2});
             this.dgvTinhTrang.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvTinhTrang.Location = new System.Drawing.Point(852, 221);
+            this.dgvTinhTrang.Location = new System.Drawing.Point(505, 52);
+            this.dgvTinhTrang.Margin = new System.Windows.Forms.Padding(4);
             this.dgvTinhTrang.Name = "dgvTinhTrang";
             this.dgvTinhTrang.RowHeadersWidth = 51;
             this.dgvTinhTrang.RowTemplate.Height = 24;
             this.dgvTinhTrang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTinhTrang.Size = new System.Drawing.Size(513, 253);
+            this.dgvTinhTrang.Size = new System.Drawing.Size(573, 311);
             this.dgvTinhTrang.TabIndex = 2;
             // 
             // Maphongtro
             // 
             this.Maphongtro.HeaderText = "Maphongtro";
+            this.Maphongtro.MinimumWidth = 6;
             this.Maphongtro.Name = "Maphongtro";
             this.Maphongtro.Visible = false;
             // 
             // Stt
             // 
             this.Stt.HeaderText = "STT";
+            this.Stt.MinimumWidth = 6;
             this.Stt.Name = "Stt";
             // 
             // TenDayTro
             // 
             this.TenDayTro.HeaderText = "Tên dãy trọ";
+            this.TenDayTro.MinimumWidth = 6;
             this.TenDayTro.Name = "TenDayTro";
             // 
             // TenPhongTro
             // 
             this.TenPhongTro.HeaderText = "Tên phòng trọ";
+            this.TenPhongTro.MinimumWidth = 6;
             this.TenPhongTro.Name = "TenPhongTro";
             // 
             // TinhTrang2
             // 
             this.TinhTrang2.HeaderText = "Tình trạng";
+            this.TinhTrang2.MinimumWidth = 6;
             this.TinhTrang2.Name = "TinhTrang2";
             // 
-            // label1
+            // btnTim
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label1.Location = new System.Drawing.Point(256, 164);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 17);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "TÌNH TRẠNG PHÒNG";
+            this.btnTim.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnTim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnTim.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.btnTim.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.btnTim.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnTim.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTim.IconSize = 25;
+            this.btnTim.Location = new System.Drawing.Point(29, 369);
+            this.btnTim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(35, 34);
+            this.btnTim.TabIndex = 42;
+            this.btnTim.UseVisualStyleBackColor = false;
+            // 
+            // dtpThang
+            // 
+            this.dtpThang.CustomFormat = "MM/yyyy";
+            this.dtpThang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpThang.Location = new System.Drawing.Point(70, 373);
+            this.dtpThang.Name = "dtpThang";
+            this.dtpThang.Size = new System.Drawing.Size(124, 22);
+            this.dtpThang.TabIndex = 41;
             // 
             // FormTrangChu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1277, 754);
+            this.ClientSize = new System.Drawing.Size(1161, 660);
             this.Controls.Add(this.panelDesktop);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormTrangChu";
             this.Text = "FormTrangChu";
+            this.Load += new System.EventHandler(this.FormTrangChu_Load);
             this.panelDesktop.ResumeLayout(false);
             this.panelDesktop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ChartCot)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSoLuong)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TinhTrang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTinhTrang)).EndInit();
@@ -224,6 +280,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDayTro;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenPhongTro;
         private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrang2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ChartCot;
+        private FontAwesome.Sharp.IconButton btnTim;
+        private System.Windows.Forms.DateTimePicker dtpThang;
     }
 }

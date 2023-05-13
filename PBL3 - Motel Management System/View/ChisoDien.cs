@@ -26,6 +26,7 @@ namespace PBL3___Motel_Management_System.View
         private void LoadForm(string txt)
         {
             dgvChiSoDien.Rows.Clear();
+          //  dgvChiSoDien.RowCount=0;
             QLBLL.Instance.customDGV(dgvChiSoDien);
             int i = 0;
             if(txt==null)
@@ -106,7 +107,6 @@ namespace PBL3___Motel_Management_System.View
                 cbbPhongTro.SelectedIndex = 0;
             }
         }
-
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             // Lấy tháng và năm được chọn
@@ -127,16 +127,27 @@ namespace PBL3___Motel_Management_System.View
         {
             if(dgvChiSoDien.CurrentRow.Cells[9].Value.ToString() != "Đã xác thực")
             {
-                MessageBox.Show("Dịch vụ hiện tại hiện đang chưa xác thực");
+                MessageBox.Show("Chỉ số điện hiện tại đang chưa xác thực");
             }
             else
             {
                 string id = dgvChiSoDien.CurrentRow.Cells[0].Value.ToString();
-                ChiTietSuDungDichVu dv = QLBLL.Instance.GetChiTietSuDungDichVuByIdBLL(id);
-                dv.TinhTrang = false;
-                QLBLL.Instance.UpdateChiTietSuDungDichVu(dv);
-                MessageBox.Show("Hủy bỏ xác thực thành công", "Thông báo");
-                LoadForm(null);
+                string thangct = dgvChiSoDien.CurrentRow.Cells[8].Value.ToString();
+                string idp = QLBLL.Instance.GetIdPhongByIdChiTietSuDungDichVu(id);
+                if (QLBLL.Instance.TinhTrangThanhToan(idp, thangct))
+                {
+                    
+                    ChiTietSuDungDichVu dv = QLBLL.Instance.GetChiTietSuDungDichVuByIdBLL(id);
+                    dv.TinhTrang = false;
+                    QLBLL.Instance.UpdateChiTietSuDungDichVu(dv);
+                    MessageBox.Show("Hủy bỏ xác thực thành công", "Thông báo");
+                    LoadForm(null);
+                }
+                else
+                {
+                    MessageBox.Show("Chi tiết này đang nằm trong 1 hóa đơn đang xác thực !! không thể hủy");
+                }
+               
 
             }
         }

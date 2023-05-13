@@ -122,12 +122,7 @@ namespace PBL3___Motel_Management_System
             //Keep form size when it is minimized and restored. Since the form is resized because it takes into account the size of the title bar and borders.
             if (m.Msg == WM_SYSCOMMAND)
             {
-                /// <see cref="https://docs.microsoft.com/en-us/windows/win32/menurc/wm-syscommand"/>
-                /// Quote:
-                /// In WM_SYSCOMMAND messages, the four low - order bits of the wParam parameter 
-                /// are used internally by the system.To obtain the correct result when testing 
-                /// the value of wParam, an application must combine the value 0xFFF0 with the 
-                /// wParam value by using the bitwise AND operator.
+               
                 int wParam = (m.WParam.ToInt32() & 0xFFF0);
 
                 if (wParam == SC_MINIMIZE)  //Before
@@ -151,84 +146,7 @@ namespace PBL3___Motel_Management_System
                     break;
             }
         }    
-        //private void LoadForm()
-        //        {
-        //            dgvTinhTrang.RowCount = 0;
-        //            dgvSoLuong.RowCount = 0;
-        //            QLBLL.Instance.customDGV(dgvTinhTrang);
-        //            QLBLL.Instance.customDGV(dgvSoLuong);
-        //            int i = 0;
-        //            foreach (string idp in QLBLL.Instance.DgvPhongTro(null))
-        //            {
-        //                PhongTro pt = QLBLL.Instance.GetPhongTroByIdPhong(idp);
-        //                string TinhTrang;
-        //                HopDong hd = QLBLL.Instance.GetHopDongByIdPhong(pt.MaPhongTro);
-        //                if (hd == null) TinhTrang = "Còn trống";
-        //                else if (hd.TinhTrang == true) TinhTrang = "Đã cho thuê";
-        //                else TinhTrang = "Đã cọc";
-        //                dgvTinhTrang.Rows.Add(pt.MaPhongTro, ++i, QLBLL.Instance.GetDayTroByIdPhong(pt.MaPhongTro).TenDayTro, pt.TenPhongTro, TinhTrang);
-        //            }
-        //            List<string> phongTroList = QLBLL.Instance.DgvPhongTro(null);
-        //            Dictionary<string, int> tinhTrangCounts = new Dictionary<string, int>();
-        //            foreach (string idp in phongTroList)
-        //            {
-        //                PhongTro pt = QLBLL.Instance.GetPhongTroByIdPhong(idp);
-        //                string tinhTrang;
-        //                HopDong hd = QLBLL.Instance.GetHopDongByIdPhong(pt.MaPhongTro);
-        //                if (hd == null) tinhTrang = "Còn trống";
-        //                else if (hd.TinhTrang == true) tinhTrang = "Đã cho thuê";
-        //                else tinhTrang = "Đang cọc";
-
-        //                // Kiểm tra nếu tình trạng đã có trong Dictionary, tăng số lượng phòng lên 1
-        //                if (tinhTrangCounts.ContainsKey(tinhTrang))
-        //                {
-        //                    tinhTrangCounts[tinhTrang]++;
-        //                }
-        //                else
-        //                {
-        //                    // Nếu tình trạng chưa có trong Dictionary, thêm mới và đặt số lượng phòng là 1
-        //                    tinhTrangCounts.Add(tinhTrang, 1);
-        //                }
-
-        //            }
-        //            foreach (var kvp in tinhTrangCounts)
-        //            {
-        //                dgvSoLuong.Rows.Add(kvp.Key, kvp.Value);
-        //            }
-        //            DrawPieChart();
-
-        //}
-        //private void DrawPieChart()
-        //{
-        //    List<string> tinhTrangList = new List<string>();
-        //    List<int> soLuongList = new List<int>();
-
-        //    foreach (DataGridViewRow row in dgvSoLuong.Rows)
-        //    {
-        //        if (row.Cells[0].Value != null)
-        //        {
-        //            string tinhTrang = row.Cells[0].Value.ToString();
-        //            int soLuong = Convert.ToInt32(row.Cells[1].Value.ToString());
-        //            tinhTrangList.Add(tinhTrang);
-        //            soLuongList.Add(soLuong);
-        //        }
-        //    }
-        //    // Xóa các series hiện có trong biểu đồ
-        //    TinhTrang.Series.Clear();
-
-        //    // Tạo series mới và thêm data points
-        //    var series = new Series("Tình trạng");
-        //    series.ChartType = SeriesChartType.Pie;
-        //    series["PieLabelStyle"] = "Disabled"; // Tắt hiển thị nhãn trên mỗi phần tử
-
-        //    for (int i = 0; i < tinhTrangList.Count; i++)
-        //    {
-        //        series.Points.AddXY(tinhTrangList[i], soLuongList[i]);
-        //    }
-
-        //    // Thêm series vào biểu đồ
-        //    TinhTrang.Series.Add(series);
-        //}
+       
         private void CollapseMenu()
         {
             if (this.paneMenu.Width > 200) //Collapse menu
@@ -368,15 +286,14 @@ namespace PBL3___Motel_Management_System
             int dgvSoLuongX = dgvWidth + 15;
             int dgvSoLuongY = dgvHeight + 5;
 
-        //    TinhTrang.Size = new Size(chartWidth, chartHeight);
-        //    TinhTrang.Location = new Point(chartX, chartY);
+            //TinhTrang.Size = new Size(chartWidth, chartHeight);
+            //TinhTrang.Location = new Point(chartX, chartY);
 
-        //    dgvTinhTrang.Size = new Size(dgvTinhTrangWidth, dgvTinhTrangHeight);
-        //    dgvTinhTrang.Location = new Point(dgvTinhTrangX, dgvTinhTrangY);
+            //dgvTinhTrang.Size = new Size(dgvTinhTrangWidth, dgvTinhTrangHeight);
+            //dgvTinhTrang.Location = new Point(dgvTinhTrangX, dgvTinhTrangY);
 
-        //    dgvSoLuong.Size = new Size(dgvSoLuongWidth, dgvSoLuongHeight);
-        //    dgvSoLuong.Location = new Point(dgvSoLuongX, dgvSoLuongY);
-        //
+            //dgvSoLuong.Size = new Size(dgvSoLuongWidth, dgvSoLuongHeight);
+            //dgvSoLuong.Location = new Point(dgvSoLuongX, dgvSoLuongY);
         }
 
 

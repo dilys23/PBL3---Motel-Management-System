@@ -79,8 +79,6 @@ namespace PBL3___Motel_Management_System
             int nam = date.Year;
             LoadForm(thang);
             ThongKe(thang);
-            //BDCot(thang,nam.ToString());
-            //BDDuong(nam.ToString());
 
         }
         public void ThongKe(string thang)

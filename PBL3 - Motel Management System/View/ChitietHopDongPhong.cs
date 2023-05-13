@@ -56,8 +56,7 @@ namespace PBL3___Motel_Management_System.View
                     dtpNgaySinh.Value = ngaysinh;
                     dtpNgayBatDau.Value = batdau;
                     dtpNgayKetThuc.Value = ketthuc;
-                }
-               
+                } 
             }
               
 

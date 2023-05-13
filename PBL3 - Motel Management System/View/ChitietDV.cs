@@ -25,8 +25,6 @@ namespace PBL3___Motel_Management_System.View
         }
         public void LoadForm(string txt)
         {
-            try
-            {
                 dgvDichVu.Rows.Clear();
                 QLBLL.Instance.customDGV(dgvDichVu);
                 int i = 1;
@@ -38,14 +36,6 @@ namespace PBL3___Motel_Management_System.View
                 }
                 var Xoa = System.Drawing.Image.FromFile(@"D:\PBL3\PBL3_Main\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
                 dgvDichVu.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dgvIcons_CellPainting1(dgvDichVu, e, Xoa));
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                Console.WriteLine(ex.StackTrace);
-                Console.WriteLine(ex.InnerException?.Message);
-                Console.WriteLine(ex.InnerException?.StackTrace);
-            }
         }
         public void dgvIcons_CellPainting1(DataGridView dgv, DataGridViewCellPaintingEventArgs e,  Image btXoa)
         {

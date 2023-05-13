@@ -383,7 +383,6 @@
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(1133, 699);
             this.panelDesktop.TabIndex = 5;
-            this.panelDesktop.SizeChanged += new System.EventHandler(this.panelDesktop_SizeChanged);
             // 
             // TrangChu
             // 

@@ -477,22 +477,22 @@
     <Compile Include="View\ChuTro.Designer.cs">
       <DependentUpon>ChuTro.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\CocPhong.cs">
+    <Compile Include="View\Phong\CocPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\CocPhong.Designer.cs">
+    <Compile Include="View\Phong\CocPhong.Designer.cs">
       <DependentUpon>CocPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Demo.cs">
+    <Compile Include="View\Phong\Demo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Demo.Designer.cs">
+    <Compile Include="View\Phong\Demo.Designer.cs">
       <DependentUpon>Demo.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\DemoPhong.cs">
+    <Compile Include="View\Phong\DemoPhong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\DemoPhong.Designer.cs">
+    <Compile Include="View\Phong\DemoPhong.Designer.cs">
       <DependentUpon>DemoPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="View\DoiMK.cs">
@@ -555,10 +555,10 @@
     <Compile Include="View\ThemCSNuoc.Designer.cs">
       <DependentUpon>ThemCSNuoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ThemDVphong.cs">
+    <Compile Include="View\Phong\ThemDVphong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ThemDVphong.Designer.cs">
+    <Compile Include="View\Phong\ThemDVphong.Designer.cs">
       <DependentUpon>ThemDVphong.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ThemHoaDon.cs">
@@ -585,10 +585,10 @@
     <Compile Include="View\SuaDichVu.Designer.cs">
       <DependentUpon>SuaDichVu.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ThemDay.cs">
+    <Compile Include="View\Phong\ThemDay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ThemDay.Designer.cs">
+    <Compile Include="View\Phong\ThemDay.Designer.cs">
       <DependentUpon>ThemDay.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Hoadon.cs">
@@ -707,13 +707,13 @@
     <EmbeddedResource Include="View\ChuTro.resx">
       <DependentUpon>ChuTro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\CocPhong.resx">
+    <EmbeddedResource Include="View\Phong\CocPhong.resx">
       <DependentUpon>CocPhong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\Demo.resx">
+    <EmbeddedResource Include="View\Phong\Demo.resx">
       <DependentUpon>Demo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\DemoPhong.resx">
+    <EmbeddedResource Include="View\Phong\DemoPhong.resx">
       <DependentUpon>DemoPhong.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -747,7 +747,7 @@
     <EmbeddedResource Include="View\ThemCSNuoc.resx">
       <DependentUpon>ThemCSNuoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ThemDVphong.resx">
+    <EmbeddedResource Include="View\Phong\ThemDVphong.resx">
       <DependentUpon>ThemDVphong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ThemHoaDon.resx">
@@ -762,7 +762,7 @@
     <EmbeddedResource Include="View\SuaDichVu.resx">
       <DependentUpon>SuaDichVu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ThemDay.resx">
+    <EmbeddedResource Include="View\Phong\ThemDay.resx">
       <DependentUpon>ThemDay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Hoadon.resx">
@@ -873,6 +873,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.6.5.5\build\Fody.targets" Condition="Exists('..\packages\Fody.6.5.5\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

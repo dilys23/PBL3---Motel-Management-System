@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -67,6 +68,22 @@ namespace PBL3___Motel_Management_System.View
             DrawPieChart();
 
         }
+        public void LoadForm1(string thang)
+        {
+           // dgvDoanhThu.Rows.Clear();
+            int i = 0;
+            foreach (string hd in QLBLL.Instance.GetHoaDonByThangChiTra(thang))
+            {
+                HoaDon hoadon = QLBLL.Instance.GetHoaDonById(hd);
+                if (hoadon.TinhTrang == true)
+                {
+                    PhongTro pt = QLBLL.Instance.GetPhongTroByMaHoaDon(hoadon.MaHoaDon);
+                    DayTro dt = QLBLL.Instance.GetDayTroByIdPhong(pt.MaPhongTro);
+                    //dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hoadon.TongTien);
+                }
+
+            }
+        }
         private void DrawPieChart()
         {
             List<string> tinhTrangList = new List<string>();
@@ -88,15 +105,70 @@ namespace PBL3___Motel_Management_System.View
             // Tạo series mới và thêm data points
             var series = new Series("Tình trạng");
             series.ChartType = SeriesChartType.Pie;
-            series["PieLabelStyle"] = "Disabled"; // Tắt hiển thị nhãn trên mỗi phần tử
-           
             for (int i = 0; i < tinhTrangList.Count; i++)
             {
-                series.Points.AddXY(tinhTrangList[i], soLuongList[i]);
+                series.Points.Add(soLuongList[i]);
+                series.Points[i].LegendText = string.Format("{0} ({1})", tinhTrangList[i], soLuongList[i]);
             }
-
+            foreach (DataPoint dataPoint in series.Points)
+            {
+                dataPoint.Label = string.Format("{0} ({1})", dataPoint.AxisLabel, dataPoint.YValues[0]);
+            }
             // Thêm series vào biểu đồ
             TinhTrang.Series.Add(series);
+        }
+
+        private void panelDesktop_SizeChanged(object sender, EventArgs e)
+        {
+            int panelWidth = panelDesktop.Width;
+            int panelHeight = panelDesktop.Height;
+
+            int dgvWidth = (panelWidth - 40) / 2;
+            int dgvHeight = (panelHeight - 30) / 2;
+
+            int chartWidth = dgvWidth;
+            int chartHeight = dgvHeight;
+            int chartX = 10;
+            int chartY = 10;
+
+            int dgvTinhTrangWidth = dgvWidth - 4;
+            int dgvTinhTrangHeight = dgvHeight - 3;
+            int dgvTinhTrangX = dgvWidth + 15;
+            int dgvTinhTrangY = 5;
+
+            int dgvSoLuongWidth = dgvWidth;
+            int dgvSoLuongHeight = dgvHeight - 25;
+            int dgvSoLuongX = dgvWidth + 15;
+            int dgvSoLuongY = dgvHeight + 5;
+
+            TinhTrang.Size = new Size(chartWidth, chartHeight);
+            TinhTrang.Location = new Point(chartX, chartY);
+
+            dgvTinhTrang.Size = new Size(dgvTinhTrangWidth, dgvTinhTrangHeight);
+            dgvTinhTrang.Location = new Point(dgvTinhTrangX, dgvTinhTrangY);
+
+            dgvSoLuong.Size = new Size(dgvSoLuongWidth, dgvSoLuongHeight);
+            dgvSoLuong.Location = new Point(dgvSoLuongX, dgvSoLuongY);
+        }
+        public void ThongKe(string thang)
+        {
+            ChartCot.Series[0].XValueMember = "TenDayTro";
+            ChartCot.Series[0].YValueMembers = "TongTien";
+            List<object> data = new List<object>();
+            ChartCot.DataSource = QLBLL.Instance.ThongKe(thang);
+            ChartCot.ChartAreas[0].AxisX.Title = "Dãy trọ";
+            ChartCot.ChartAreas[0].AxisY.Title = "Tổng tiền";
+            ChartCot.DataBind();
+
+        }
+
+        private void FormTrangChu_Load(object sender, EventArgs e)
+        {
+            string thang = dtpThang.Value.ToString("MM-yyyy");
+            DateTime date = DateTime.ParseExact(thang, "MM-yyyy", CultureInfo.InvariantCulture);
+            int nam = date.Year;
+            LoadForm1(thang);
+            ThongKe(thang);
         }
     }
 }

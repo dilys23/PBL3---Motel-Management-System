@@ -97,7 +97,7 @@ namespace PBL3___Motel_Management_System.View
                         string id = dgvThietBi.Rows[e.RowIndex].Cells["MaThietBi"].Value.ToString();
                         if (Convert.ToInt32(dgvThietBi.Rows[e.RowIndex].Cells["SoLuong"].Value.ToString()) == 1)
                         {
-                            QLBLL.Instance.DelChiTietThietBiByIdThietBi(id);
+                            QLBLL.Instance.DelMaCTTBByIdPhongvaMaTB(idPhong, id);
                         }
                         else
                         {

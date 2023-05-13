@@ -134,11 +134,21 @@ namespace PBL3___Motel_Management_System
             else
             {
                 string id = dgvChiSoNuoc.CurrentRow.Cells[0].Value.ToString();
-                ChiTietSuDungDichVu dv = QLBLL.Instance.GetChiTietSuDungDichVuByIdBLL(id);
-                dv.TinhTrang = false;
-                QLBLL.Instance.UpdateChiTietSuDungDichVu(dv);
-                MessageBox.Show("Hủy bỏ xác thực thành công", "Thông báo");
-                LoadForm(null);
+                string thangct = dgvChiSoNuoc.CurrentRow.Cells[8].Value.ToString();
+                string idp = QLBLL.Instance.GetIdPhongbyIdChitietsudungDichVu(id);
+                if (QLBLL.Instance.TinhTrangThanhToan(idp, thangct))
+                {
+                    ChiTietSuDungDichVu dv = QLBLL.Instance.GetChiTietSuDungDichVuByIdBLL(id);
+                    dv.TinhTrang = false;
+                    QLBLL.Instance.UpdateChiTietSuDungDichVu(dv);
+                    MessageBox.Show("Hủy bỏ xác thực thành công", "Thông báo");
+                    LoadForm(null);
+                }
+                else
+                {
+                    MessageBox.Show("Chi tiet này đang nằm trong 1 hóa đơn đang xác thực !! không thể hủy");
+                }
+               
 
             }
         }

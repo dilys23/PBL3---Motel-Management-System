@@ -40,24 +40,29 @@ namespace PBL3___Motel_Management_System.View
                 {
                     if (viewDichVu.MaDichVu != "000" && viewDichVu.MaDichVu != "001")
                     {
-                        if(tp.hopDong.MaHopDong != null)
+                    if (tp.hopDong.MaHopDong != null && QLBLL.Instance.GetAllIdDichVuByIdPhong(tp.hopDong.MaPhongTro).Count == 0)
                     {
                         dgvThemDichVu.Rows.Add(viewDichVu.MaDichVu, ++i, viewDichVu.TenDichVu, viewDichVu.GiaDichVu);
-
                     }
-                    else
+                    else if (tp.hopDong.MaHopDong == null)
                     {
+                        bool check = false;
                         foreach (string idDv in QLBLL.Instance.GetAllIdDichVuByIdPhong(tp.hopDong.MaPhongTro))
                         {
-                            if(idDv != "000" && idDv != "001")
+                            if (idDv != "000" && idDv != "001")
                             {
-                                if(idDv != viewDichVu.MaDichVu)
+                                if (idDv == viewDichVu.MaDichVu)
                                 {
-                                    dgvThemDichVu.Rows.Add(viewDichVu.MaDichVu, ++i, viewDichVu.TenDichVu, viewDichVu.GiaDichVu);
+                                    check = true;
+                                    break;
                                 }
                             }
                         }
-                    }
+                        if (!check)
+                          {
+                            dgvThemDichVu.Rows.Add(viewDichVu.MaDichVu, ++i, viewDichVu.TenDichVu, viewDichVu.GiaDichVu);
+                          }
+                       }
                     }
                     else
                     {
