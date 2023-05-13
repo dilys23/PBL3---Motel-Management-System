@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvSoLuong = new System.Windows.Forms.DataGridView();
@@ -55,20 +55,20 @@
             // panelDesktop
             // 
             this.panelDesktop.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.panelDesktop.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelDesktop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDesktop.BackColor = System.Drawing.Color.LightCyan;
             this.panelDesktop.Controls.Add(this.label4);
             this.panelDesktop.Controls.Add(this.dgvSoLuong);
             this.panelDesktop.Controls.Add(this.TinhTrang);
             this.panelDesktop.Controls.Add(this.dgvTinhTrang);
             this.panelDesktop.Location = new System.Drawing.Point(5, 4);
-            this.panelDesktop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelDesktop.Margin = new System.Windows.Forms.Padding(4);
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(1150, 631);
             this.panelDesktop.TabIndex = 6;
             this.panelDesktop.SizeChanged += new System.EventHandler(this.panelDesktop_SizeChanged);
-           
             // 
             // label4
             // 
@@ -94,7 +94,7 @@
             this.SoLuongPhong});
             this.dgvSoLuong.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvSoLuong.Location = new System.Drawing.Point(505, 387);
-            this.dgvSoLuong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvSoLuong.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSoLuong.Name = "dgvSoLuong";
             this.dgvSoLuong.RowHeadersWidth = 51;
             this.dgvSoLuong.RowTemplate.Height = 24;
@@ -116,28 +116,28 @@
             // 
             // TinhTrang
             // 
-            chartArea2.Area3DStyle.Enable3D = true;
-            chartArea2.Name = "ChartArea1";
-            this.TinhTrang.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.TinhTrang.Legends.Add(legend2);
+            chartArea1.Area3DStyle.Enable3D = true;
+            chartArea1.Name = "ChartArea1";
+            this.TinhTrang.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.TinhTrang.Legends.Add(legend1);
             this.TinhTrang.Location = new System.Drawing.Point(25, 52);
-            this.TinhTrang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TinhTrang.Margin = new System.Windows.Forms.Padding(4);
             this.TinhTrang.Name = "TinhTrang";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "TinhTrang";
-            this.TinhTrang.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "TinhTrang";
+            this.TinhTrang.Series.Add(series1);
             this.TinhTrang.Size = new System.Drawing.Size(433, 311);
             this.TinhTrang.TabIndex = 1;
             this.TinhTrang.Text = "Tinhtrang";
-            title4.Name = "ConTrong";
-            title5.Name = "ChoThue";
-            title6.Name = "DangCoc";
-            this.TinhTrang.Titles.Add(title4);
-            this.TinhTrang.Titles.Add(title5);
-            this.TinhTrang.Titles.Add(title6);
+            title1.Name = "ConTrong";
+            title2.Name = "ChoThue";
+            title3.Name = "DangCoc";
+            this.TinhTrang.Titles.Add(title1);
+            this.TinhTrang.Titles.Add(title2);
+            this.TinhTrang.Titles.Add(title3);
             this.TinhTrang.Click += new System.EventHandler(this.TinhTrang_Click);
             // 
             // dgvTinhTrang
@@ -155,7 +155,7 @@
             this.TinhTrang2});
             this.dgvTinhTrang.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvTinhTrang.Location = new System.Drawing.Point(505, 52);
-            this.dgvTinhTrang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvTinhTrang.Margin = new System.Windows.Forms.Padding(4);
             this.dgvTinhTrang.Name = "dgvTinhTrang";
             this.dgvTinhTrang.RowHeadersWidth = 51;
             this.dgvTinhTrang.RowTemplate.Height = 24;
@@ -196,11 +196,12 @@
             // 
             // FormTrangChu
             // 
+            this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1161, 660);
             this.Controls.Add(this.panelDesktop);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormTrangChu";
             this.Text = "FormTrangChu";
             this.panelDesktop.ResumeLayout(false);

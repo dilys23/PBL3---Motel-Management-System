@@ -44,8 +44,8 @@ namespace PBL3___Motel_Management_System
             {
                 dgvDichVu.Rows.Add(viewDichVu.MaDichVu,++i,viewDichVu.TenDichVu,viewDichVu.GiaDichVu);
             }
-            var Sua = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-create-25.png");
-            var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-delete-25.png");
+            var Sua = System.Drawing.Image.FromFile(@"E:\PBL3_MAIN\PBL3---Motel-Management-System\PBL3 - Motel Management System\Icons\icons8-create-25.png");
+            var Xoa = System.Drawing.Image.FromFile(@"E:\PBL3_MAIN\PBL3---Motel-Management-System\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
             dgvDichVu.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => QLBLL.Instance.dgvIcons_CellPainting1(dgvDichVu, e, Sua, Xoa));
         
         }
