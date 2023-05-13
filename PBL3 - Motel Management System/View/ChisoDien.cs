@@ -56,8 +56,8 @@ namespace PBL3___Motel_Management_System.View
                     }
                 }
             }
-            var Sua = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-create-25.png");
-            var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-delete-25.png");
+            var Sua = System.Drawing.Image.FromFile(@"D:\pblproject\pbl3_main\PBL3 - Motel Management System\icons\icons8-create-25.png");
+            var Xoa = System.Drawing.Image.FromFile(@"D:\pblproject\pbl3_main\PBL3 - Motel Management System\icons\icons8-delete-25.png");
             dgvChiSoDien.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => QLBLL.Instance.dgvIcons_CellPainting1(dgvChiSoDien, e, Sua, Xoa));
         }
         public void Setcbb()
@@ -106,7 +106,6 @@ namespace PBL3___Motel_Management_System.View
                 cbbPhongTro.SelectedIndex = 0;
             }
         }
-
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             // Lấy tháng và năm được chọn
@@ -133,15 +132,20 @@ namespace PBL3___Motel_Management_System.View
             {
                 string id = dgvChiSoDien.CurrentRow.Cells[0].Value.ToString();
                 string thangct = dgvChiSoDien.CurrentRow.Cells[8].Value.ToString();
-
-                if (QLBLL.Instance.TinhTrangThanhToan(id, thangct))
+                string idp = QLBLL.Instance.GetIdPhongByIdChiTietSuDungDichVu(id);
+                if (QLBLL.Instance.TinhTrangThanhToan(idp, thangct))
                 {
-                ChiTietSuDungDichVu dv = QLBLL.Instance.GetChiTietSuDungDichVuByIdBLL(id);
-                dv.TinhTrang = false;
-                QLBLL.Instance.UpdateChiTietSuDungDichVu(dv);
-                MessageBox.Show("Hủy bỏ xác thực thành công", "Thông báo");
-                LoadForm(null);
-                }    
+                    
+                    ChiTietSuDungDichVu dv = QLBLL.Instance.GetChiTietSuDungDichVuByIdBLL(id);
+                    dv.TinhTrang = false;
+                    QLBLL.Instance.UpdateChiTietSuDungDichVu(dv);
+                    MessageBox.Show("Hủy bỏ xác thực thành công", "Thông báo");
+                    LoadForm(null);
+                }
+                else
+                {
+                    MessageBox.Show("Chi tiết này đang nằm trong 1 hóa đơn đang xác thực !! không thể hủy");
+                }
                
 
             }

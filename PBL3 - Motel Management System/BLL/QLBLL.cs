@@ -923,6 +923,10 @@ namespace PBL3___Motel_Management_System.BLL
             return true;
 
         }
+        public string GetIdPhongByIdChiTietSuDungDichVu(string idct)
+        {
+            return QLDAL.Instance.GetIdPhongByIdChiTietSuDungDichVu(idct);
+        }
         public string GetIdPhongByIdHoaDon(string idHoaDon)
         {
             return QLDAL.Instance.GetIdPhongByIdHoaDon(idHoaDon);
@@ -1155,6 +1159,33 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return list;
         }
+        public List<ViewCbb>GetViewCbbPhongDaThueByDay(string id)
+        {
+            List<ViewCbb> list = new List<ViewCbb>();
+            list.Add(new ViewCbb { key = "-1", value = "All" });
+            if (id == "-1")
+            {
+                foreach (PhongTro pt in GetAllPhongTro())
+                {
+                    if(TinhTrangPhongById(pt.MaPhongTro))
+                    {
+                    list.Add(new ViewCbb { key = pt.MaPhongTro, value = pt.TenPhongTro });
+                    }
+                }
+            }
+            else
+            {
+                foreach (string idp in GetAllPhongTroByIdDay(id))
+                {
+                    if(TinhTrangPhongById(idp))
+                    {
+                    PhongTro pt = GetPhongTroByIdPhong(idp);
+                    list.Add(new ViewCbb { key = pt.MaPhongTro, value = pt.TenPhongTro });
+                    }
+                }
+            }
+            return list;
+        }
         public List<ViewCbb> GetViewCbbPhongByDayForThemHoaDon(string id)
         {
             List<ViewCbb> list = new List<ViewCbb>();
@@ -1162,15 +1193,21 @@ namespace PBL3___Motel_Management_System.BLL
             {
                 foreach (PhongTro pt in GetAllPhongTro())
                 {
+                    if(TinhTrangPhongById(pt.MaPhongTro))
+                    {
                     list.Add(new ViewCbb { key = pt.MaPhongTro, value = pt.TenPhongTro });
+                    }
                 }
             }
             else
             {
                 foreach (string idp in GetAllPhongTroByIdDay(id))
                 {
-                    PhongTro pt = GetPhongTroByIdPhong(idp);
+                    if (TinhTrangPhongById(idp))
+                    {
+                        PhongTro pt = GetPhongTroByIdPhong(idp);
                     list.Add(new ViewCbb { key = pt.MaPhongTro, value = pt.TenPhongTro });
+                    }
                 }
             }
             return list;

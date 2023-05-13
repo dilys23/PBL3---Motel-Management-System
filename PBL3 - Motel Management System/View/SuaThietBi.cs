@@ -51,11 +51,8 @@ namespace PBL3___Motel_Management_System.View
 
                 }
             }
-
             if (i == 0) return true;
             return false;
-
-
         }
         private void iconButton1_Click(object sender, EventArgs e)
         {

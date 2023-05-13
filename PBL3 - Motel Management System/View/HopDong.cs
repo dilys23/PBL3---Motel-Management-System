@@ -53,8 +53,8 @@ namespace PBL3___Motel_Management_System
                     dgvHD.Rows.Add(hd.MaHopDong, hd.Stt, hd.TenKhachHang, hd.TenPhongTro, hd.TenDayTro, hd.NgayBatDau, hd.NgayKetThuc, hd.TienCoc);
                 }
             }
-            var Sua = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-more-details-20.png");
-            var Xoa = System.Drawing.Image.FromFile(@"C:\Users\HP VICTUS\Downloads\icons8-time-25.png");
+            var Sua = System.Drawing.Image.FromFile(@"D:\pblproject\pbl3_main\PBL3 - Motel Management System\icons\icons8-more-details-20.png");
+            var Xoa = System.Drawing.Image.FromFile(@"D:\pblproject\pbl3_main\PBL3 - Motel Management System\icons\icons8-time-25.png");
             dgvHD.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => QLBLL.Instance.dgvIcons_CellPainting1(dgvHD, e, Sua, Xoa));
         }
         private void SetCbb()
