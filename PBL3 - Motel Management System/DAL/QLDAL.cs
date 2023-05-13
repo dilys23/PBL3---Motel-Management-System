@@ -995,5 +995,12 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.ChiTietSuDungDichVu.Find(idct).ChiTietDichVu.MaPhongTro.ToString();
             }
         }
+        public bool KiemTraTonTaiIdPhongTro(string id)
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                return data.PhongTro.Any(p => p.MaPhongTro == id);
+            }
+        }
     }
 }

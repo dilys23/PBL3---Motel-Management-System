@@ -42,15 +42,15 @@
             this.btnXoaDichVu = new FontAwesome.Sharp.IconButton();
             this.btnThemDichVu = new FontAwesome.Sharp.IconButton();
             this.dgvXoaDichVu = new System.Windows.Forms.DataGridView();
-            this.MaDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvThemDichVu = new System.Windows.Forms.DataGridView();
             this.MaDichVu1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.STT1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDichVu1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GiaDichVu1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelThemDV.SuspendLayout();
             this.panelThem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDVcodinh)).BeginInit();
@@ -70,7 +70,7 @@
             this.panelThemDV.Controls.Add(this.btnLuu);
             this.panelThemDV.Controls.Add(this.panelThem);
             this.panelThemDV.Location = new System.Drawing.Point(-2, 1);
-            this.panelThemDV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelThemDV.Margin = new System.Windows.Forms.Padding(2);
             this.panelThemDV.Name = "panelThemDV";
             this.panelThemDV.Size = new System.Drawing.Size(789, 508);
             this.panelThemDV.TabIndex = 1;
@@ -86,7 +86,7 @@
             this.btnTroVe.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTroVe.IconSize = 30;
             this.btnTroVe.Location = new System.Drawing.Point(701, 3);
-            this.btnTroVe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTroVe.Margin = new System.Windows.Forms.Padding(2);
             this.btnTroVe.Name = "btnTroVe";
             this.btnTroVe.Size = new System.Drawing.Size(32, 30);
             this.btnTroVe.TabIndex = 48;
@@ -116,7 +116,7 @@
             this.btnLuu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLuu.IconSize = 30;
             this.btnLuu.Location = new System.Drawing.Point(738, 2);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(39, 30);
             this.btnLuu.TabIndex = 49;
@@ -136,7 +136,7 @@
             this.panelThem.Controls.Add(this.dgvXoaDichVu);
             this.panelThem.Controls.Add(this.dgvThemDichVu);
             this.panelThem.Location = new System.Drawing.Point(13, 38);
-            this.panelThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelThem.Margin = new System.Windows.Forms.Padding(2);
             this.panelThem.Name = "panelThem";
             this.panelThem.Size = new System.Drawing.Size(767, 455);
             this.panelThem.TabIndex = 46;
@@ -169,7 +169,7 @@
             this.dataGridViewTextBoxColumn8});
             this.dgvDVcodinh.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvDVcodinh.Location = new System.Drawing.Point(78, 307);
-            this.dgvDVcodinh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvDVcodinh.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDVcodinh.Name = "dgvDVcodinh";
             this.dgvDVcodinh.RowHeadersWidth = 51;
             this.dgvDVcodinh.RowTemplate.Height = 24;
@@ -213,7 +213,7 @@
             this.btnXoaDichVu.IconSize = 25;
             this.btnXoaDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoaDichVu.Location = new System.Drawing.Point(6, 159);
-            this.btnXoaDichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoaDichVu.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoaDichVu.Name = "btnXoaDichVu";
             this.btnXoaDichVu.Size = new System.Drawing.Size(58, 31);
             this.btnXoaDichVu.TabIndex = 53;
@@ -233,7 +233,7 @@
             this.btnThemDichVu.IconSize = 25;
             this.btnThemDichVu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThemDichVu.Location = new System.Drawing.Point(6, 10);
-            this.btnThemDichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThemDichVu.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemDichVu.Name = "btnThemDichVu";
             this.btnThemDichVu.Size = new System.Drawing.Size(62, 34);
             this.btnThemDichVu.TabIndex = 54;
@@ -258,37 +258,13 @@
             this.GiaDichVu});
             this.dgvXoaDichVu.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvXoaDichVu.Location = new System.Drawing.Point(78, 159);
-            this.dgvXoaDichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvXoaDichVu.Margin = new System.Windows.Forms.Padding(2);
             this.dgvXoaDichVu.Name = "dgvXoaDichVu";
             this.dgvXoaDichVu.RowHeadersWidth = 51;
             this.dgvXoaDichVu.RowTemplate.Height = 24;
             this.dgvXoaDichVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvXoaDichVu.Size = new System.Drawing.Size(661, 110);
             this.dgvXoaDichVu.TabIndex = 52;
-            // 
-            // MaDichVu
-            // 
-            this.MaDichVu.HeaderText = "Mã dịch vụ";
-            this.MaDichVu.MinimumWidth = 6;
-            this.MaDichVu.Name = "MaDichVu";
-            // 
-            // Stt
-            // 
-            this.Stt.HeaderText = "STT";
-            this.Stt.MinimumWidth = 6;
-            this.Stt.Name = "Stt";
-            // 
-            // TenDichVu
-            // 
-            this.TenDichVu.HeaderText = "Tên dịch vụ";
-            this.TenDichVu.MinimumWidth = 6;
-            this.TenDichVu.Name = "TenDichVu";
-            // 
-            // GiaDichVu
-            // 
-            this.GiaDichVu.HeaderText = "Giá dịch vụ";
-            this.GiaDichVu.MinimumWidth = 6;
-            this.GiaDichVu.Name = "GiaDichVu";
             // 
             // dgvThemDichVu
             // 
@@ -306,7 +282,7 @@
             this.GiaDichVu1});
             this.dgvThemDichVu.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvThemDichVu.Location = new System.Drawing.Point(78, 10);
-            this.dgvThemDichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvThemDichVu.Margin = new System.Windows.Forms.Padding(2);
             this.dgvThemDichVu.Name = "dgvThemDichVu";
             this.dgvThemDichVu.RowHeadersWidth = 51;
             this.dgvThemDichVu.RowTemplate.Height = 24;
@@ -319,6 +295,7 @@
             this.MaDichVu1.HeaderText = "Mã dịch vụ";
             this.MaDichVu1.MinimumWidth = 6;
             this.MaDichVu1.Name = "MaDichVu1";
+            this.MaDichVu1.Visible = false;
             // 
             // STT1
             // 
@@ -338,13 +315,38 @@
             this.GiaDichVu1.MinimumWidth = 6;
             this.GiaDichVu1.Name = "GiaDichVu1";
             // 
+            // MaDichVu
+            // 
+            this.MaDichVu.HeaderText = "Mã dịch vụ";
+            this.MaDichVu.MinimumWidth = 6;
+            this.MaDichVu.Name = "MaDichVu";
+            this.MaDichVu.Visible = false;
+            // 
+            // Stt
+            // 
+            this.Stt.HeaderText = "STT";
+            this.Stt.MinimumWidth = 6;
+            this.Stt.Name = "Stt";
+            // 
+            // TenDichVu
+            // 
+            this.TenDichVu.HeaderText = "Tên dịch vụ";
+            this.TenDichVu.MinimumWidth = 6;
+            this.TenDichVu.Name = "TenDichVu";
+            // 
+            // GiaDichVu
+            // 
+            this.GiaDichVu.HeaderText = "Giá dịch vụ";
+            this.GiaDichVu.MinimumWidth = 6;
+            this.GiaDichVu.Name = "GiaDichVu";
+            // 
             // ThemDVphong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(785, 503);
             this.Controls.Add(this.panelThemDV);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ThemDVphong";
             this.Text = "ThemDVphong";
             this.panelThemDV.ResumeLayout(false);
@@ -369,16 +371,16 @@
         private System.Windows.Forms.DataGridView dgvXoaDichVu;
         private FontAwesome.Sharp.IconButton btnXoaDichVu;
         private FontAwesome.Sharp.IconButton btnThemDichVu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaDichVu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Stt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenDichVu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GiaDichVu;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvDVcodinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaDichVu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Stt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenDichVu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiaDichVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDichVu1;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT1;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDichVu1;

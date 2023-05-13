@@ -433,21 +433,13 @@ namespace PBL3___Motel_Management_System.BLL
             {
                 if (txtTim == null)
                 {
-                    DichVu s = new DichVu();
-                    s.TenDichVu = dv.TenDichVu;
-                    s.MaDichVu = dv.MaDichVu;
-                    s.GiaDichVu = dv.GiaDichVu;
-                    list.Add(s);
+                    list.Add(dv);
                 }
                 else
                 {
                     if (dv.TenDichVu.IndexOf(txtTim, 0, StringComparison.OrdinalIgnoreCase) != -1)
                     {
-                        DichVu s = new DichVu();
-                        s.TenDichVu = dv.TenDichVu;
-                        s.MaDichVu = dv.MaDichVu;
-                        s.GiaDichVu = dv.GiaDichVu;
-                        list.Add(s);
+                        list.Add(dv);
                     }
                 }
             }
@@ -465,21 +457,13 @@ namespace PBL3___Motel_Management_System.BLL
             {
                 if (txtTim == null)
                 {
-                    ThietBi s = new ThietBi();
-                    s.TenThietBi = dv.TenThietBi;
-                    s.MaThietBi = dv.MaThietBi;
-                    s.GiaThietBi = dv.GiaThietBi;
-                    list.Add(s);
+                    list.Add(dv);
                 }
                 else
                 {
                     if (dv.TenThietBi.IndexOf(txtTim, 0, StringComparison.OrdinalIgnoreCase) != -1)
                     {
-                        ThietBi s = new ThietBi();
-                        s.TenThietBi = dv.TenThietBi;
-                        s.MaThietBi = dv.MaThietBi;
-                        s.GiaThietBi = dv.GiaThietBi;
-                        list.Add(s);
+                        list.Add(dv);
                     }
                 }
             }
@@ -1067,7 +1051,7 @@ namespace PBL3___Motel_Management_System.BLL
         public bool ChoPhepXacThucHoaDon(string id)
         {
             HoaDon hd = GetHoaDonById(id);
-            List<HoaDon> list = GetHoaDonTimKiem(hd.ThangChiTra, "0", hd.MaPhongTro, "1");
+            List<HoaDon> list = GetHoaDonTimKiem(hd.ThangChiTra, "-1", hd.MaPhongTro, "1");
             if(list.Count == 0)
             {
                 return true;
