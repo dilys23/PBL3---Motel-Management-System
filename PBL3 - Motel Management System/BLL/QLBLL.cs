@@ -827,6 +827,10 @@ namespace PBL3___Motel_Management_System.BLL
         {
             QLDAL.Instance.DelMaCTTBByIdPhongvaMaTB(MaPhong, MaTB);
         }
+        public void DelMaCTDVByIdPhongvaMaTB(string MaPhong,string MaTB)
+        {
+            QLDAL.Instance.DelMaCTDVByIdPhongvaMaTB(MaPhong, MaTB);
+        }
         public List<string> GetChiTietSuDungDichVuByTinhTrang(string IdTinhTrang)
         {
             if(IdTinhTrang != "-1")

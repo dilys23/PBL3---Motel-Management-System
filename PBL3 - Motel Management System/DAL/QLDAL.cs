@@ -964,5 +964,14 @@ namespace PBL3___Motel_Management_System.DAL
                 UpdateChiTietThietBiDal(s);
             }
         }
+        public void DelMaCTDVByIdPhongvaMaTB(string MaPhong, string MaTB)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                ChiTietDichVu s = data.ChiTietDichVu.Where(p => p.TonTai == true && p.PhongTro.MaPhongTro == MaPhong && p.MaDichVu == MaTB).FirstOrDefault();
+                s.TonTai = false;
+                UpdateChitietdichvu(s);
+            }
+        }
     }
 }

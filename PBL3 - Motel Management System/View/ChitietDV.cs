@@ -72,7 +72,7 @@ namespace PBL3___Motel_Management_System.View
                         string id = dgvDichVu.Rows[e.RowIndex].Cells["MaDichVu"].Value.ToString();
                         if (id != "000" && id != "001")
                         {
-                            QLBLL.Instance.DelChiTietDichVuByIdDichVu(id);
+                            QLBLL.Instance.DelMaCTDVByIdPhongvaMaTB(idPhong,id);
                             MessageBox.Show("Xóa dịch vụ thành công", "Thông báo");
                             LoadForm(null);
                         }

@@ -135,7 +135,7 @@ namespace PBL3___Motel_Management_System.View
                     if (dr.Cells[0].Value != null)
                     {
                         ChiTietDichVu ctdv = new ChiTietDichVu();
-                        ctdv.MaChiTietDichVu= QLBLL.Instance.TaoIdChiTietDichVu();
+                        ctdv.MaChiTietDichVu = QLBLL.Instance.TaoIdChiTietDichVu();
                         ctdv.MaPhongTro = tp.hopDong.MaPhongTro;
                         ctdv.MaDichVu = dr.Cells[0].Value.ToString();
                         ctdv.TonTai = true;

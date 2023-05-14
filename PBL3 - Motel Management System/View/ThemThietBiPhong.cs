@@ -169,6 +169,7 @@ namespace PBL3___Motel_Management_System.View
         private void btnLuu_Click(object sender, EventArgs e)
         {
             QLBLL.Instance.DelCHiTietThietBiByIdPhongBLL(tp.hopDong.MaPhongTro);
+            List<string> dstb= new List<string>();
             foreach (DataGridViewRow dr in dgvTBThem.Rows)
             {
                 if (dr.Cells[0].Value != null)
@@ -180,11 +181,13 @@ namespace PBL3___Motel_Management_System.View
                     cttb.SoLuong = Convert.ToInt32(dr.Cells[4].Value.ToString());
                     cttb.TonTai = true;
                     QLBLL.Instance.AddChiTietThietBiBll(cttb);
+                    dstb.Add(dr.Cells[0].Value.ToString());
                 }
 
             }
             if (tp.hopDong.MaHopDong != null)
             {
+                tp.DsThietBi = dstb;
                 QLBLL.Instance.openChildForm1(new ThemHopDong(tp, Back), panelThemHD);
             }
             else
