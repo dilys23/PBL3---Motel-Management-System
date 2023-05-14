@@ -676,9 +676,9 @@ namespace PBL3___Motel_Management_System.DAL
         {
             using(DataPbl data = new DataPbl())
             {
-                ChiTietThietBi s = data.ChiTietThietBi.Find(Id);
+                var s = data.ChiTietThietBi.Find(Id);
                 s.TonTai = false;
-                UpdateChiTietThietBiDal(s);
+                data.SaveChanges();
             }
         }
         
@@ -698,11 +698,16 @@ namespace PBL3___Motel_Management_System.DAL
         {
             using(DataPbl data = new DataPbl())
             {
-                ChiTietDichVu s = (ChiTietDichVu)data.ChiTietDichVu.Find(id);
+                var s = data.ChiTietDichVu.Find(id);
                 s.TonTai = false;
-                // UpdateChitietdichvu(s);
                 data.SaveChanges();
-              
+            }
+        }
+        public string GetIdChiTietDichVuByIdPhongAndIdDichVu(string idp, string iddv)
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                return data.ChiTietDichVu.Where(p => p.TonTai == true && p.MaPhongTro == idp && p.MaDichVu == iddv).FirstOrDefault().MaChiTietDichVu;
             }
         }
         public void DelChiTietSuDungDichVuDal(string id)
@@ -972,6 +977,14 @@ namespace PBL3___Motel_Management_System.DAL
             using(DataPbl data = new DataPbl())
             {
                 return data.ChiTietSuDungDichVu.Find(idct).ChiTietDichVu.MaPhongTro.ToString();
+            }
+        }
+      
+        public ChiTietThietBi GetChiTietThietBiByIdPhongAndIdThietBi(string idp,string idtb)
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                return data.ChiTietThietBi.Where(p => p.TonTai == true && p.MaThietBi == idtb && p.MaPhongTro == idp).FirstOrDefault();
             }
         }
     }

@@ -22,13 +22,16 @@ namespace PBL3___Motel_Management_System
             InitializeComponent();
             this.IdDv=idDv;
             this.Loader = loader;
-            DichVu dv = QLBLL.Instance.GetDVByIdDV(idDv);
-            if(idDv == "001" || idDv == "000")
+            if (idDv != null )
             {
-                txtTenDichVu.ReadOnly = true;
+                DichVu dv = QLBLL.Instance.GetDVByIdDV(idDv);
+                if (idDv == "001" || idDv == "000")
+                {
+                    txtTenDichVu.ReadOnly = true;
+                }
+                txtGiaDichVu.Text = dv.GiaDichVu.ToString();
+                txtTenDichVu.Text = dv.TenDichVu;
             }
-            txtGiaDichVu.Text = dv.GiaDichVu.ToString();
-            txtTenDichVu.Text = dv.TenDichVu;
 
         }
 
@@ -68,18 +71,39 @@ namespace PBL3___Motel_Management_System
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (checkHopLe())
+            if (IdDv != null )
             {
-                DichVu dv = new DichVu();
-                dv.MaDichVu = IdDv;
-                dv.TenDichVu = txtTenDichVu.Text;
-                dv.GiaDichVu = Convert.ToDouble(txtGiaDichVu.Text);
-                QLBLL.Instance.SuaDVBll(dv);
-                MessageBox.Show("Thay đổi thông tin thành công", "Thông báo");
-                Loader(null);
-                this.Close();
-
+                if (checkHopLe())
+                {
+                    DichVu dv = QLBLL.Instance.GetDVByIdDV(IdDv);
+                    dv.MaDichVu = IdDv;
+                    dv.TenDichVu = txtTenDichVu.Text;
+                    dv.GiaDichVu = Convert.ToDouble(txtGiaDichVu.Text);
+                    dv.TonTai = true; 
+                    QLBLL.Instance.SuaDVBll(dv);
+                    MessageBox.Show("Thay đổi thông tin thành công", "Thông báo");
+                    Loader(null);
+                    this.Close();
+                }
             }
+            else
+            {
+
+                if (checkHopLe())
+                {
+                    DichVu dv = new DichVu();
+                    dv.TenDichVu = txtTenDichVu.Text;
+                    dv.GiaDichVu = Convert.ToDouble(txtGiaDichVu.Text);
+                    dv.MaDichVu = QLBLL.Instance.TaoIdDichVu();
+                    dv.TonTai = true;
+                    QLBLL.Instance.ThemDVBll(dv);
+                    MessageBox.Show("Thêm dịch vụ thành công", "Thông báo");
+                    Loader(null);
+                    this.Close();
+                }
+            } 
+                
+           
         }
     }
 }

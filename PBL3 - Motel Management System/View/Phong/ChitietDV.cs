@@ -97,9 +97,16 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnThemDichVu_Click(object sender, EventArgs e)
         {
-            ThuePhong tp = new ThuePhong();
-            tp.hopDong.MaPhongTro = idPhong;
-            QLBLL.Instance.openChildForm1(new ThemDVphong(tp, LoadForm), panelThem);
+            if(QLBLL.Instance.TinhTrangPhongById(idPhong))
+            {
+                ThuePhong tp = new ThuePhong();
+                tp.hopDong.MaPhongTro = idPhong; 
+                QLBLL.Instance.openChildForm1(new ThemDVphong(tp, LoadForm), panelThem);
+            }
+            else
+            {
+                MessageBox.Show("Phòng chưa được cho thuê!!Không được thêm dịch vụ","Thông báo",MessageBoxButtons.OK);
+            }
         }
 
         private void dgvDichVu_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

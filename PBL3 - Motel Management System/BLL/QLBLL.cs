@@ -1,5 +1,6 @@
 ﻿using PBL3___Motel_Management_System.DAL;
 using PBL3___Motel_Management_System.DTO;
+using PBL3___Motel_Management_System.View;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Metadata.Edm;
@@ -433,21 +434,13 @@ namespace PBL3___Motel_Management_System.BLL
             {
                 if (txtTim == null)
                 {
-                    DichVu s = new DichVu();
-                    s.TenDichVu = dv.TenDichVu;
-                    s.MaDichVu = dv.MaDichVu;
-                    s.GiaDichVu = dv.GiaDichVu;
-                    list.Add(s);
+                    list.Add(dv);
                 }
                 else
                 {
                     if (dv.TenDichVu.IndexOf(txtTim, 0, StringComparison.OrdinalIgnoreCase) != -1)
                     {
-                        DichVu s = new DichVu();
-                        s.TenDichVu = dv.TenDichVu;
-                        s.MaDichVu = dv.MaDichVu;
-                        s.GiaDichVu = dv.GiaDichVu;
-                        list.Add(s);
+                        list.Add(dv);
                     }
                 }
             }
@@ -465,21 +458,13 @@ namespace PBL3___Motel_Management_System.BLL
             {
                 if (txtTim == null)
                 {
-                    ThietBi s = new ThietBi();
-                    s.TenThietBi = dv.TenThietBi;
-                    s.MaThietBi = dv.MaThietBi;
-                    s.GiaThietBi = dv.GiaThietBi;
-                    list.Add(s);
+                    list.Add(dv);
                 }
                 else
                 {
                     if (dv.TenThietBi.IndexOf(txtTim, 0, StringComparison.OrdinalIgnoreCase) != -1)
                     {
-                        ThietBi s = new ThietBi();
-                        s.TenThietBi = dv.TenThietBi;
-                        s.MaThietBi = dv.MaThietBi;
-                        s.GiaThietBi = dv.GiaThietBi;
-                        list.Add(s);
+                        list.Add(dv);
                     }
                 }
             }
@@ -697,7 +682,10 @@ namespace PBL3___Motel_Management_System.BLL
                 QLDAL.Instance.DelCHiTietThietBiById(id);
             }
         }
-       
+        public void DelCHiTietThietBiById(string id)
+        {
+            QLDAL.Instance.DelCHiTietThietBiById(id);
+        }
         public void DelCHiTietDichVuByIdPhong(string IdPhong)
         {
             foreach (string id in GetAllIdChitietDichVuByIdPhong(IdPhong))
@@ -726,6 +714,10 @@ namespace PBL3___Motel_Management_System.BLL
         public void DelChiTietDichVu(string id)
         {
             QLDAL.Instance.DelChiTietDichVuDal(id);
+        }
+        public string GetIdChiTietDichVuByIdPhongAndIdDichVu(string idp, string iddv)
+        {
+            return QLDAL.Instance.GetIdChiTietDichVuByIdPhongAndIdDichVu(idp, iddv);
         }
         public void DelChiTietSuDungDichVu(string id)
         {
@@ -1092,7 +1084,7 @@ namespace PBL3___Motel_Management_System.BLL
         }
         public void openChildForm1(Form childForm, System.Windows.Forms.Panel p)
         {
-            DemoForm.Instance.SetActiveForm(childForm);
+           // DemoForm.Instance.SetActiveForm(childForm);
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
@@ -1211,6 +1203,105 @@ namespace PBL3___Motel_Management_System.BLL
                 }
             }
             return list;
+        }
+        public void ThayDoiDichVuPhong(List<string> dsdv, string idP)
+        {
+            List<string> ListCu = GetAllIdDichVuByIdPhong(idP);
+            foreach (string id in ListCu)
+            {
+                if (!dsdv.Contains(id))
+                {
+                    DelChiTietDichVu(GetIdChiTietDichVuByIdPhongAndIdDichVu(idP,id));
+                }
+            }
+            foreach (string id in dsdv)
+            {
+                if(!ListCu.Contains(id))
+                {
+                    AddChiTietDichVuBll(new ChiTietDichVu()
+                    {
+                        MaChiTietDichVu = TaoIdChiTietDichVu(),
+                        MaDichVu = id,
+                        MaPhongTro = idP,
+                        TonTai = true
+                    });
+                }
+            }
+        }
+        public ChiTietThietBi GetChiTietThietBiByIdPhongAndIdThietBi(string idp, string idtb)
+        {
+            return QLDAL.Instance.GetChiTietThietBiByIdPhongAndIdThietBi(idp,idtb);
+        }
+        public void UpdateChiTietThietBi(ChiTietThietBi cttb)
+        {
+            QLDAL.Instance.UpdateChiTietThietBiDal(cttb);
+        }
+        public void ThayDoiThietBiPhong(List<ChiTietThietBi> listMoi, string idp)
+        {
+            List<ChiTietThietBi> listCu = GetChiTietThietBiByIdPhong(idp);
+            List<string> idphong = new List<string>();
+            List<string> idthietbi = new List<string>();
+            foreach(ChiTietThietBi ct in listMoi)
+            {
+                idphong.Add(ct.MaPhongTro);
+                idthietbi.Add(ct.MaThietBi);
+            }
+            foreach (ChiTietThietBi ct in listCu)
+            {
+                bool status = true;
+                foreach (ChiTietThietBi cttb in listMoi)
+                {
+                    if(cttb.MaThietBi == ct.MaThietBi && cttb.MaPhongTro == ct.MaPhongTro)
+                    {
+                        status = false;
+                    }
+                }
+                if(status)
+                {
+                    DelCHiTietThietBiById(ct.MaChiTietThietBi);
+                }
+            }
+            foreach(ChiTietThietBi ct in listMoi)
+            {
+                ChiTietThietBi cttb = GetChiTietThietBiByIdPhongAndIdThietBi(idp, ct.MaThietBi);
+                if(cttb != null)
+                {
+                    if(cttb.SoLuong != ct.SoLuong)
+                    {
+                        cttb.SoLuong = ct.SoLuong;
+                        UpdateChiTietThietBi(cttb);
+                    }
+                }
+                else
+                {
+                    AddChiTietThietBiBll(new ChiTietThietBi()
+                    {
+                        MaChiTietThietBi = QLBLL.Instance.TaoIdChiTietThietBi(),
+                        MaThietBi = ct.MaThietBi,
+                        MaPhongTro = idp,
+                        SoLuong = ct.SoLuong,
+                        TonTai = true
+                    });
+                }
+            }
+        }
+        public Label GetLabelByNguoi(Nguoi nguoi)
+        {
+            Label lbl = new Label();
+            lbl.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            lbl.AutoSize = true;
+            lbl.Name = nguoi.MaNguoi;
+            lbl.Text = "   " + nguoi.Ten;
+            lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            Image image1 = Image.FromFile("D:\\PBL\\PBL3_MAIN\\PBL3 - Motel Management System\\Icons\\icons8-customer-20.png" + "    ");
+            lbl.Image = image1;
+            lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            lbl.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            lbl.TabIndex = 0;
+            lbl.Size = new System.Drawing.Size(50, 80);
+            lbl.Visible = true;
+            return lbl;
         }
     }
 }

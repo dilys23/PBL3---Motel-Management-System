@@ -98,9 +98,6 @@ namespace PBL3___Motel_Management_System
         {
             LoadForm("");
         }
-
-     
-
         private void btnXacThuc_Click(object sender, EventArgs e)
         {
             if (dgvChiSoNuoc.CurrentRow.Cells[9].Value.ToString() != "Đã xác thực")
@@ -148,8 +145,6 @@ namespace PBL3___Motel_Management_System
                 {
                     MessageBox.Show("Chi tiet này đang nằm trong 1 hóa đơn đang xác thực !! không thể hủy");
                 }
-               
-
             }
         }
         private void dgvChiSoNuoc_CellContentClick_1(object sender, DataGridViewCellEventArgs e)

@@ -193,7 +193,7 @@ namespace PBL3___Motel_Management_System.View
                 {
                     // Lấy mã dịch vụ tương ứng với hàng đã được nhấp
                     string id = dgvThietBi.Rows[e.RowIndex].Cells[0].Value.ToString();
-                    QLBLL.Instance.openChildForm1(new SuaThietBI(id, LoadForm), panelTB);
+                    QLBLL.Instance.openChildForm1(new ThemThietBi(id, LoadForm), panelTB);
                 }
                 else if (columnName == "btnXoa")
                 {

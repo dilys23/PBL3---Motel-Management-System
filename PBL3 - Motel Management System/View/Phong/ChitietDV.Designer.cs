@@ -1,6 +1,6 @@
 ﻿namespace PBL3___Motel_Management_System.View
 {
-    partial class ChitietTB
+    partial class ChitietDV
     {
         /// <summary>
         /// Required designer variable.
@@ -32,16 +32,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelThem = new System.Windows.Forms.Panel();
-            this.btnThemThietbi = new FontAwesome.Sharp.IconButton();
-            this.dgvThietBi = new System.Windows.Forms.DataGridView();
-            this.MaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnThemDichVu = new FontAwesome.Sharp.IconButton();
+            this.dgvDichVu = new System.Windows.Forms.DataGridView();
+            this.MaDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GiaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnXoa = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panelThem.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvThietBi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).BeginInit();
             this.SuspendLayout();
             // 
             // panelThem
@@ -51,42 +50,42 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
-            this.panelThem.Controls.Add(this.btnThemThietbi);
-            this.panelThem.Controls.Add(this.dgvThietBi);
+            this.panelThem.Controls.Add(this.btnThemDichVu);
+            this.panelThem.Controls.Add(this.dgvDichVu);
             this.panelThem.Location = new System.Drawing.Point(20, 27);
             this.panelThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelThem.Name = "panelThem";
             this.panelThem.Size = new System.Drawing.Size(652, 401);
-            this.panelThem.TabIndex = 50;
+            this.panelThem.TabIndex = 49;
             // 
-            // btnThemThietbi
+            // btnThemDichVu
             // 
-            this.btnThemThietbi.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnThemThietbi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThemThietbi.BackColor = System.Drawing.Color.DarkCyan;
-            this.btnThemThietbi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemThietbi.IconChar = FontAwesome.Sharp.IconChar.FileArrowUp;
-            this.btnThemThietbi.IconColor = System.Drawing.Color.White;
-            this.btnThemThietbi.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnThemThietbi.IconSize = 25;
-            this.btnThemThietbi.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnThemThietbi.Location = new System.Drawing.Point(523, 9);
-            this.btnThemThietbi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnThemThietbi.Name = "btnThemThietbi";
-            this.btnThemThietbi.Size = new System.Drawing.Size(109, 32);
-            this.btnThemThietbi.TabIndex = 54;
-            this.btnThemThietbi.Text = "Thêm thiết bị";
-            this.btnThemThietbi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThemThietbi.UseVisualStyleBackColor = false;
-            this.btnThemThietbi.Click += new System.EventHandler(this.btnThemThietbi_Click);
+            this.btnThemDichVu.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnThemDichVu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThemDichVu.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnThemDichVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemDichVu.IconChar = FontAwesome.Sharp.IconChar.FileArrowUp;
+            this.btnThemDichVu.IconColor = System.Drawing.Color.White;
+            this.btnThemDichVu.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnThemDichVu.IconSize = 25;
+            this.btnThemDichVu.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.btnThemDichVu.Location = new System.Drawing.Point(523, 9);
+            this.btnThemDichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThemDichVu.Name = "btnThemDichVu";
+            this.btnThemDichVu.Size = new System.Drawing.Size(109, 32);
+            this.btnThemDichVu.TabIndex = 54;
+            this.btnThemDichVu.Text = "Thêm dịch vụ";
+            this.btnThemDichVu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThemDichVu.UseVisualStyleBackColor = false;
+            this.btnThemDichVu.Click += new System.EventHandler(this.btnThemDichVu_Click);
             // 
-            // dgvThietBi
+            // dgvDichVu
             // 
-            this.dgvThietBi.AllowUserToAddRows = false;
-            this.dgvThietBi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvDichVu.AllowUserToAddRows = false;
+            this.dgvDichVu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvThietBi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvThietBi.BackgroundColor = System.Drawing.Color.Ivory;
+            this.dgvDichVu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDichVu.BackgroundColor = System.Drawing.Color.Ivory;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -94,14 +93,13 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.PaleTurquoise;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvThietBi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvThietBi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvThietBi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaThietBi,
+            this.dgvDichVu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDichVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDichVu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaDichVu,
             this.STT,
-            this.TenThietBi,
-            this.GiaThietBi,
-            this.SoLuong,
+            this.TenDichVu,
+            this.GiaDichVu,
             this.btnXoa});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Turquoise;
@@ -110,12 +108,13 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.MintCream;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvThietBi.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvThietBi.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvThietBi.GridColor = System.Drawing.Color.LightCyan;
-            this.dgvThietBi.Location = new System.Drawing.Point(13, 82);
-            this.dgvThietBi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dgvThietBi.Name = "dgvThietBi";
+            this.dgvDichVu.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDichVu.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvDichVu.GridColor = System.Drawing.Color.LightCyan;
+            this.dgvDichVu.Location = new System.Drawing.Point(13, 82);
+            this.dgvDichVu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvDichVu.MultiSelect = false;
+            this.dgvDichVu.Name = "dgvDichVu";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -123,21 +122,21 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvThietBi.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvThietBi.RowHeadersWidth = 60;
-            this.dgvThietBi.RowTemplate.Height = 24;
-            this.dgvThietBi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvThietBi.Size = new System.Drawing.Size(619, 298);
-            this.dgvThietBi.TabIndex = 9;
-            this.dgvThietBi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThietBi_CellContentClick);
-            this.dgvThietBi.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvThietBi_CellFormatting);
+            this.dgvDichVu.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvDichVu.RowHeadersWidth = 60;
+            this.dgvDichVu.RowTemplate.Height = 24;
+            this.dgvDichVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDichVu.Size = new System.Drawing.Size(619, 298);
+            this.dgvDichVu.TabIndex = 9;
+            this.dgvDichVu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDichVu_CellContentClick);
+            this.dgvDichVu.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDichVu_CellFormatting);
             // 
-            // MaThietBi
+            // MaDichVu
             // 
-            this.MaThietBi.HeaderText = "MaThietBi";
-            this.MaThietBi.MinimumWidth = 6;
-            this.MaThietBi.Name = "MaThietBi";
-            this.MaThietBi.Visible = false;
+            this.MaDichVu.HeaderText = "MaDichVu";
+            this.MaDichVu.MinimumWidth = 6;
+            this.MaDichVu.Name = "MaDichVu";
+            this.MaDichVu.Visible = false;
             // 
             // STT
             // 
@@ -145,23 +144,17 @@
             this.STT.MinimumWidth = 6;
             this.STT.Name = "STT";
             // 
-            // TenThietBi
+            // TenDichVu
             // 
-            this.TenThietBi.HeaderText = "Tên thiết bị";
-            this.TenThietBi.MinimumWidth = 6;
-            this.TenThietBi.Name = "TenThietBi";
+            this.TenDichVu.HeaderText = "Tên dịch vụ";
+            this.TenDichVu.MinimumWidth = 6;
+            this.TenDichVu.Name = "TenDichVu";
             // 
-            // GiaThietBi
+            // GiaDichVu
             // 
-            this.GiaThietBi.HeaderText = "Giá";
-            this.GiaThietBi.MinimumWidth = 6;
-            this.GiaThietBi.Name = "GiaThietBi";
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.HeaderText = "Số lượng";
-            this.SoLuong.MinimumWidth = 6;
-            this.SoLuong.Name = "SoLuong";
+            this.GiaDichVu.HeaderText = "Giá";
+            this.GiaDichVu.MinimumWidth = 6;
+            this.GiaDichVu.Name = "GiaDichVu";
             // 
             // btnXoa
             // 
@@ -173,7 +166,7 @@
             this.btnXoa.Text = "";
             this.btnXoa.UseColumnTextForButtonValue = true;
             // 
-            // ChitietTB
+            // ChitietDV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -181,10 +174,10 @@
             this.ClientSize = new System.Drawing.Size(692, 453);
             this.Controls.Add(this.panelThem);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "ChitietTB";
-            this.Text = "ChitietTB";
+            this.Name = "ChitietDV";
+            this.Text = "ChitietDichVu";
             this.panelThem.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvThietBi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDichVu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -192,13 +185,12 @@
         #endregion
 
         private System.Windows.Forms.Panel panelThem;
-        private FontAwesome.Sharp.IconButton btnThemThietbi;
-        private System.Windows.Forms.DataGridView dgvThietBi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaThietBi;
+        private System.Windows.Forms.DataGridView dgvDichVu;
+        private FontAwesome.Sharp.IconButton btnThemDichVu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaDichVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenThietBi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GiaThietBi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenDichVu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiaDichVu;
         private System.Windows.Forms.DataGridViewButtonColumn btnXoa;
     }
 }

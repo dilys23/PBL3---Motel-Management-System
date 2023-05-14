@@ -37,8 +37,6 @@
             this.panelChisoDien = new System.Windows.Forms.Panel();
             this.btnTimKiem = new FontAwesome.Sharp.IconButton();
             this.dgvChiSoDien = new System.Windows.Forms.DataGridView();
-            this.dtpThangSuDung = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
             this.MaChiTietSuDungDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DayTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +47,8 @@
             this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Thang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TinhTrang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtpThangSuDung = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelChisoDien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiSoDien)).BeginInit();
@@ -61,9 +61,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(-4, -1);
+            this.panel1.Location = new System.Drawing.Point(-3, -1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1047, 49);
+            this.panel1.Size = new System.Drawing.Size(785, 40);
             this.panel1.TabIndex = 27;
             // 
             // label4
@@ -71,9 +72,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Chocolate;
-            this.label4.Location = new System.Drawing.Point(12, 11);
+            this.label4.Location = new System.Drawing.Point(9, 9);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 24);
+            this.label4.Size = new System.Drawing.Size(98, 19);
             this.label4.TabIndex = 25;
             this.label4.Text = "CHỈ SỐ ĐIỆN";
             // 
@@ -88,9 +90,10 @@
             this.panelChisoDien.Controls.Add(this.dgvChiSoDien);
             this.panelChisoDien.Controls.Add(this.dtpThangSuDung);
             this.panelChisoDien.Controls.Add(this.label1);
-            this.panelChisoDien.Location = new System.Drawing.Point(11, 68);
+            this.panelChisoDien.Location = new System.Drawing.Point(8, 55);
+            this.panelChisoDien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelChisoDien.Name = "panelChisoDien";
-            this.panelChisoDien.Size = new System.Drawing.Size(1023, 456);
+            this.panelChisoDien.Size = new System.Drawing.Size(768, 371);
             this.panelChisoDien.TabIndex = 28;
             // 
             // btnTimKiem
@@ -102,15 +105,15 @@
             this.btnTimKiem.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnTimKiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTimKiem.IconSize = 25;
-            this.btnTimKiem.Location = new System.Drawing.Point(17, 36);
+            this.btnTimKiem.Location = new System.Drawing.Point(13, 29);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(35, 35);
+            this.btnTimKiem.Size = new System.Drawing.Size(26, 28);
             this.btnTimKiem.TabIndex = 58;
             this.btnTimKiem.UseVisualStyleBackColor = false;
             // 
             // dgvChiSoDien
             // 
-            this.dgvChiSoDien.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.dgvChiSoDien.AllowUserToAddRows = false;
             this.dgvChiSoDien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -146,7 +149,9 @@
             this.dgvChiSoDien.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvChiSoDien.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvChiSoDien.GridColor = System.Drawing.Color.LightCyan;
-            this.dgvChiSoDien.Location = new System.Drawing.Point(17, 99);
+            this.dgvChiSoDien.Location = new System.Drawing.Point(13, 80);
+            this.dgvChiSoDien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvChiSoDien.MultiSelect = false;
             this.dgvChiSoDien.Name = "dgvChiSoDien";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -161,29 +166,8 @@
             this.dgvChiSoDien.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvChiSoDien.RowTemplate.Height = 24;
             this.dgvChiSoDien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvChiSoDien.Size = new System.Drawing.Size(993, 288);
+            this.dgvChiSoDien.Size = new System.Drawing.Size(745, 234);
             this.dgvChiSoDien.TabIndex = 8;
-            // 
-            // dtpThangSuDung
-            // 
-            this.dtpThangSuDung.CustomFormat = "MM/yyyy";
-            this.dtpThangSuDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpThangSuDung.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpThangSuDung.Location = new System.Drawing.Point(72, 37);
-            this.dtpThangSuDung.Name = "dtpThangSuDung";
-            this.dtpThangSuDung.ShowUpDown = true;
-            this.dtpThangSuDung.Size = new System.Drawing.Size(125, 27);
-            this.dtpThangSuDung.TabIndex = 29;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(68, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 20);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Thời gian:";
             // 
             // MaChiTietSuDungDichVu
             // 
@@ -248,13 +232,37 @@
             this.TinhTrang.MinimumWidth = 6;
             this.TinhTrang.Name = "TinhTrang";
             // 
+            // dtpThangSuDung
+            // 
+            this.dtpThangSuDung.CustomFormat = "MM/yyyy";
+            this.dtpThangSuDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpThangSuDung.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpThangSuDung.Location = new System.Drawing.Point(54, 30);
+            this.dtpThangSuDung.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpThangSuDung.Name = "dtpThangSuDung";
+            this.dtpThangSuDung.ShowUpDown = true;
+            this.dtpThangSuDung.Size = new System.Drawing.Size(95, 23);
+            this.dtpThangSuDung.TabIndex = 29;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(51, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 17);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Thời gian:";
+            // 
             // ChitietDienPhong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1043, 538);
+            this.ClientSize = new System.Drawing.Size(782, 437);
             this.Controls.Add(this.panelChisoDien);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ChitietDienPhong";
             this.Text = "ChitietDienPhong";
             this.panel1.ResumeLayout(false);

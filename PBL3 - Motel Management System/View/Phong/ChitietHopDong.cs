@@ -28,6 +28,8 @@ namespace PBL3___Motel_Management_System.View
         }
         public void LoadForm()
         {
+            QLBLL.Instance.customDGV(dgvDichvu);
+            QLBLL.Instance.customDGV(dgvThietbi);
             DayTro dt = new DayTro();
             PhongTro phongTro = new PhongTro();
             Nguoi nguoi = new Nguoi();
@@ -91,15 +93,13 @@ namespace PBL3___Motel_Management_System.View
                     dv = QLBLL.Instance.GetDichVuByIdDichVu(idDv);
                     dgvDichvu.Rows.Add(dv.MaDichVu, ++i, dv.TenDichVu, dv.GiaDichVu);
                 }
-                foreach (string idTb in tp.DsThietBi)
+                foreach (ChiTietThietBi ct in QLBLL.Instance.GetChiTietThietBiByIdPhong(tp.hopDong.MaPhongTro))
                 {
-                    ThietBi tb = new ThietBi();
-                    tb = QLBLL.Instance.GetTBByIdTB(idTb);
-                    dgvThietbi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi);
+                    ThietBi tb = QLBLL.Instance.GetTBByIdTB(ct.MaThietBi);
+                    dgvThietbi.Rows.Add(tb.MaThietBi, 1, tb.TenThietBi, tb.GiaThietBi, ct.SoLuong);
                 }
             }
         }
-        
         private void iconButton1_Click(object sender, EventArgs e)
         {
             this.Close();

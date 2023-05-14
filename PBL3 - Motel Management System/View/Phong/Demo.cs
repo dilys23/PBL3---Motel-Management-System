@@ -38,7 +38,6 @@ namespace PBL3___Motel_Management_System.View
             this.IdPhong=idPhong;
             this.sk = sk;
             this.panel = panel;
-
         }
         public void LoadForm(string txt)
         {
@@ -61,13 +60,10 @@ namespace PBL3___Motel_Management_System.View
         public void SetPanelKhach(Label lbl)
         {
             panelTenKhach.Controls.Add(lbl);
-            
-
         }
         public void SetPanelTenPhongTro(Label lbl)
         {
             lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
             Image image1 = Image.FromFile("D:\\PBL\\PBL3_MAIN\\PBL3 - Motel Management System\\Icons\\icons8-home-30.png" + "    ");
             lbl.Image = image1;
             lbl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -77,28 +73,13 @@ namespace PBL3___Motel_Management_System.View
             lbl.Size = new System.Drawing.Size(110, 50);
             panelTenPhongTro.Controls.Add(lbl);
         }
-        private Form activeForm = null;
-        public void openChildForm1(Form childForm, System.Windows.Forms.Panel p)
-        {
-            if (activeForm != null)
-                activeForm.Close();
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            p.Controls.Add(childForm);
-            p.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-
-        }
         private void btnCoc_Click_1(object sender, EventArgs e)
         {
             if (QLBLL.Instance.GetHopDongByIdPhong(IdPhong) == null)
             {
                 ThuePhong tp = new ThuePhong();
                 tp.hopDong.MaPhongTro = IdPhong;
-                 openChildForm1(new CocPhong(tp, LoadForm), panel);
+                 QLBLL.Instance.openChildForm1(new CocPhong(tp, LoadForm), panel);
             }
             else
             {
@@ -107,7 +88,7 @@ namespace PBL3___Motel_Management_System.View
         }
         private void btnChiTiet_Click_1(object sender, EventArgs e)
         {
-            openChildForm1(new ChiTietPT(sk,IdPhong), panel);
+            QLBLL.Instance.openChildForm1(new ChiTietPT(sk,IdPhong), panel);
         }
 
         private void btnChoThue_Click(object sender, EventArgs e)
@@ -117,7 +98,7 @@ namespace PBL3___Motel_Management_System.View
                 ThuePhong tp = new ThuePhong();
                 tp.hopDong.MaHopDong = QLBLL.Instance.TaoIdHopDong();
                 tp.hopDong.MaPhongTro = IdPhong;
-                openChildForm1(new ThemKhach(tp, LoadForm), panel);
+                QLBLL.Instance.openChildForm1(new ThemKhach(tp, LoadForm), panel);
             }
             else if(QLBLL.Instance.PhongDaCocByIdPhong(IdPhong))
             {
@@ -175,7 +156,6 @@ namespace PBL3___Motel_Management_System.View
                 {
                     QLBLL.Instance.DelNguoiBll(nguoi.MaNguoi);
                 }
-               
                 MessageBox.Show("Hoàn trả phòng thành công", "Thông báo");
                 this.Close();
                 LoadForm(null);

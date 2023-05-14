@@ -7,29 +7,29 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System.View
 {
-    public partial class ThemCSDien : Form
+    public partial class ThemCSNuoc : Form
     {
         private string IdSudungDV;
         private Loader loader;
-        public ThemCSDien(string IdSudungDV, Loader loader)
+        public ThemCSNuoc(string IdSudungDV, Loader loader)
         {
             InitializeComponent();
             SetCbb();
             this.IdSudungDV = IdSudungDV;
-            this.loader=loader;
-            if(IdSudungDV != null )
+            this.loader = loader;
+            if (IdSudungDV != null)
             {
                 SetGUI();
             }
-            
         }
-       public void SetGUI()
+        public void SetGUI()
         {
             ChiTietSuDungDichVu cs = QLBLL.Instance.GetChiTietSudungDichVuById(IdSudungDV);
             ChiTietDichVu ct = QLBLL.Instance.GetChiTietDichVuById(cs.MaCHiTietDichVu);
@@ -42,7 +42,7 @@ namespace PBL3___Motel_Management_System.View
             dtpNgayLap.Value = DateTime.ParseExact(cs.NgayLap, "dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture);
             dtpThang.Value = DateTime.ParseExact(cs.ThoiGian, "MM-yyyy", System.Globalization.CultureInfo.InvariantCulture);
         }
-        
+
         private void btnTroVe_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -53,12 +53,12 @@ namespace PBL3___Motel_Management_System.View
             cbbPhongTro.Items.Clear();
             cbbDayTro.Items.AddRange(QLBLL.Instance.GetCbbDayTro().ToArray());
             cbbDayTro.SelectedIndex = 0;
-            
         }
 
         private void cbbDayTro_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbbPhongTro.Items.Clear();
+            cbbPhongTro.Text = "";
             string id = ((ViewCbb)cbbDayTro.SelectedItem).key;
             cbbPhongTro.Items.AddRange(QLBLL.Instance.GetViewCbbPhongByDayForThemHoaDon(id).ToArray());
             if (cbbPhongTro.Items.Count != 0)
@@ -72,12 +72,12 @@ namespace PBL3___Motel_Management_System.View
             errorProvider1.SetError(cbbPhongTro, "");
             errorProvider1.SetError(txtChiSoCu, "");
             errorProvider1.SetError(txtChiSoMoi, "");
-            if(cbbPhongTro.SelectedIndex == -1)
+            if (cbbPhongTro.SelectedIndex == -1)
             {
                 errorProvider1.SetError(cbbPhongTro, "Vui lòng chọn phòng trọ");
                 status = false;
             }
-            if(txtChiSoCu.Text == "")
+            if (txtChiSoCu.Text == "")
             {
                 errorProvider1.SetError(txtChiSoCu, "Vui lòng nhập chỉ số cũ");
                 status = false;
@@ -87,9 +87,9 @@ namespace PBL3___Motel_Management_System.View
                 errorProvider1.SetError(txtChiSoMoi, "Vui lòng nhập chỉ số mới");
                 status = false;
             }
-            if(txtChiSoCu.Text != "")
+            if (txtChiSoCu.Text != "")
             {
-                if(!double.TryParse(txtChiSoCu.Text, out double d))
+                if (!double.TryParse(txtChiSoCu.Text, out double d))
                 {
                     errorProvider1.SetError(txtChiSoMoi, "Chỉ số cũ phải là một số");
                     status = false;
@@ -106,6 +106,7 @@ namespace PBL3___Motel_Management_System.View
 
             return status;
         }
+
         private void btnLuu_Click(object sender, EventArgs e)
         {
             if (IdSudungDV != null)
@@ -136,44 +137,52 @@ namespace PBL3___Motel_Management_System.View
             {
                 if (CheckHopLe())
                 {
-                    string idPhong = ((ViewCbb)cbbPhongTro.SelectedItem).key;
-                    ChiTietSuDungDichVu dv = new ChiTietSuDungDichVu
+                    if(cbbPhongTro.SelectedItem != null)
                     {
-                        MaChiTietSuDungDichVu = QLBLL.Instance.TaoIdChiTietSuDungDichVu(),
-                        MaCHiTietDichVu = QLBLL.Instance.GetIdCHiTietDichVuDienByIdPhong(idPhong),
-                        ChiSoCu = Convert.ToDouble(txtChiSoCu.Text),
-                        ChiSoMoi = Convert.ToDouble(txtChiSoMoi.Text),
-                        ThoiGian = dtpThang.Value.ToString("MM-yyyy"),
-                        TinhTrang = false,
-                        TonTai = true,
-                        NgayLap = dtpNgayLap.Value.ToString("dd-MM-yyyy"),
-                    };
-                    if (dv.ChiSoCu > dv.ChiSoMoi)
-                    {
-                        MessageBox.Show("Chỉ số cũ phải bé hơn hoặc bằng chỉ số mới", "Thông báo");
+                        string idPhong = ((ViewCbb)cbbPhongTro.SelectedItem).key;
+                        ChiTietSuDungDichVu dv = new ChiTietSuDungDichVu
+                        {
+                            MaChiTietSuDungDichVu = QLBLL.Instance.TaoIdChiTietSuDungDichVu(),
+                            MaCHiTietDichVu = QLBLL.Instance.GetIdCHiTietDichVuNuocByIdPhong(idPhong),
+                            ChiSoCu = Convert.ToDouble(txtChiSoCu.Text),
+                            ChiSoMoi = Convert.ToDouble(txtChiSoMoi.Text),
+                            ThoiGian = dtpThang.Value.ToString("MM-yyyy"),
+                            TinhTrang = false,
+                            TonTai = true,
+                            NgayLap = dtpNgayLap.Value.ToString("dd-MM-yyyy")
+                        };
+                        if (dv.ChiSoCu > dv.ChiSoMoi)
+                        {
+                            MessageBox.Show("Chỉ số cũ phải bé hơn hoặc bằng chỉ số mới", "Thông báo");
+                        }
+                        else
+                        {
+                            try
+                            {
+                                QLBLL.Instance.AddChiTietSuDungDichVuBLL(dv);
+                                MessageBox.Show("Thêm chỉ số thành công");
+                                this.Close();
+                                this.loader(null);
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("Không hợp lệ");
+                            }
+                        }              
+
                     }
                     else
                     {
-                        try
-                        {
-                            QLBLL.Instance.AddChiTietSuDungDichVuBLL(dv);
-                            MessageBox.Show("thêm chỉ số thành công");
-                            this.Close();
-                            this.loader(null);
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("không hợp lệ");
-                        }
-
+                        MessageBox.Show("Dãy hiện tại không phòng hoặc chưa có phòng nào được cho thuê");
                     }
                 }
+
             }
         }
 
         private void cbbPhongTro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cbbPhongTro.SelectedIndex != 0)
+            if (cbbPhongTro.SelectedIndex != 0)
             {
                 string idPhong = ((ViewCbb)cbbPhongTro.SelectedItem).key;
                 HopDong hd = QLBLL.Instance.GetHopDongByIdPhong(idPhong);
