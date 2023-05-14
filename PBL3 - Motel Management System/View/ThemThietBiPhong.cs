@@ -188,9 +188,9 @@ namespace PBL3___Motel_Management_System.View
                 QLBLL.Instance.openChildForm1(new ThemHopDong(tp, Back), panelThemHD);
             }
             else
-            {   
-                
-                MessageBox.Show("Thay đổi thành công","Thông báo",MessageBoxButtons.OK);
+            {
+
+                MessageBox.Show("Thay đổi thành công", "Thông báo", MessageBoxButtons.OK);
                 this.Close();
                 this.loader(null);
             }

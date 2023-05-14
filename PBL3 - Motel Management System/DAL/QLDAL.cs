@@ -576,7 +576,7 @@ namespace PBL3___Motel_Management_System.DAL
         {
             using(DataPbl data = new DataPbl())
             {
-                return data.HoaDon.Where(p => p.ThangChiTra == ThangCt && p.TonTai == true ).Select(p => p.MaHoaDon).ToList<string>();
+                return data.HoaDon.Where(p => p.ThangChiTra == ThangCt && p.TonTai == true && p.DaThanhToan!=0).Select(p => p.MaHoaDon).ToList<string>();
             }
         }
         public string GetIdPhongByIdHoaDon(string idHoaDon)
@@ -668,7 +668,7 @@ namespace PBL3___Motel_Management_System.DAL
         {
             using(DataPbl data = new DataPbl())
             {
-                ChiTietThietBi s = data.ChiTietThietBi.Find(Id);
+                ChiTietThietBi s = (ChiTietThietBi)data.ChiTietThietBi.Find(Id);
                 s.TonTai = false;
                 UpdateChiTietThietBiDal(s);
             }
@@ -924,9 +924,10 @@ namespace PBL3___Motel_Management_System.DAL
            using(DataPbl data= new DataPbl())
            {
                     var s = data.HoaDon.ToList()
-                        .Where(p =>  p.ThangChiTra == thang && p.TinhTrang ==true)
+                        .Where(p =>  p.ThangChiTra == thang && p.TinhTrang ==true && p.DaThanhToan!=0)
                         .GroupBy(p => p.PhongTro.DayTro.TenDayTro)
-                        .Select(p => new { TenDayTro = p.Key, TongTien = p.Sum(k => k.TongTien) })
+                        .OrderBy(p=>p.Key)
+                        .Select(p => new { TenDayTro = p.Key, TongTien = p.Sum(k => k.DaThanhToan) })
                         .ToList<object>();
                     return s;
                

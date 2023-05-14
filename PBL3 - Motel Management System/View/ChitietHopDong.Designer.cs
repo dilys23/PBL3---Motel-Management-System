@@ -127,6 +127,7 @@
             this.GiaDichVu});
             this.dgvDichvu.Location = new System.Drawing.Point(44, 299);
             this.dgvDichvu.Name = "dgvDichvu";
+            this.dgvDichvu.ReadOnly = true;
             this.dgvDichvu.RowHeadersWidth = 51;
             this.dgvDichvu.RowTemplate.Height = 24;
             this.dgvDichvu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

@@ -23,7 +23,7 @@ namespace PBL3___Motel_Management_System
         {
             InitializeComponent();
             LoadForm(dtpThang.Value.ToString("MM-yyyy"));
-            ResizeColumn();
+            
         }
         public void LoadForm(string thang)
         {
@@ -36,7 +36,7 @@ namespace PBL3___Motel_Management_System
                 {
                     PhongTro pt = QLBLL.Instance.GetPhongTroByMaHoaDon(hoadon.MaHoaDon);
                     DayTro dt = QLBLL.Instance.GetDayTroByIdPhong(pt.MaPhongTro);
-                    dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hoadon.TongTien);
+                    dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro,hoadon.DaThanhToan, hoadon.TongTien-hoadon.DaThanhToan);
                 }
                
             }
@@ -50,27 +50,27 @@ namespace PBL3___Motel_Management_System
             LoadForm(thang);
             ThongKe(thang);
         }
-        public void ResizeColumn()
-        {
-            dgvDoanhThu.Columns["STT"].Width = 50;
-            dgvDoanhThu.Columns["DayTro"].Width = 240;
-            dgvDoanhThu.Columns["PhongTro"].Width = 80;
-            dgvDoanhThu.Columns["TongTien"].Width = 80;
-        }
+        //public void ResizeColumn()
+        //{
+        //    dgvDoanhThu.Columns["STT"].Width = 50;
+        //    dgvDoanhThu.Columns["DayTro"].Width = 240;
+        //    dgvDoanhThu.Columns["PhongTro"].Width = 80;
+        //    dgvDoanhThu.Columns["TongTien"].Width = 80;
+        //}
 
-        private void panel2_SizeChanged(object sender, EventArgs e)
-        {
-           
-            var dgvWidth = panel2.Width / 2 - 10;
-            var dgvHeight = panel2.Height / 2 - 10;
-            dgvDoanhThu.Size = new Size(dgvWidth, dgvHeight);
-            ChartDuong.Size = new Size(dgvWidth, dgvHeight);
-            ChartCot.Size = new Size(dgvWidth, dgvHeight);
-            ChartDuong.Location = new Point(dgvWidth + 10, 5);
-            dgvDoanhThu.Location = new Point(5, dgvHeight + 10);
-            ChartCot.Location = new Point(dgvWidth + 10, dgvHeight + 10);
-        }
-        
+        //private void panel2_SizeChanged(object sender, EventArgs e)
+        //{
+
+        //var dgvWidth = panel2.Width / 2 - 10;
+        //var dgvHeight = panel2.Height / 2 - 10;
+        //dgvDoanhThu.Size = new Size(dgvWidth, dgvHeight);
+        //ChartDuong.Size = new Size(dgvWidth, dgvHeight);
+        //ChartCot.Size = new Size(dgvWidth, dgvHeight);
+        //ChartDuong.Location = new Point(dgvWidth + 10, 5);
+        //dgvDoanhThu.Location = new Point(5, dgvHeight + 10);
+        //ChartCot.Location = new Point(dgvWidth + 10, dgvHeight + 10);
+        //}
+
 
         private void DoanhThu_Load(object sender, EventArgs e)
         {
@@ -98,6 +98,24 @@ namespace PBL3___Motel_Management_System
             ChartDuong.ChartAreas[0].AxisX.Title = "Dãy trọ";
             ChartDuong.ChartAreas[0].AxisY.Title = "Tổng tiền";
             ChartDuong.DataBind();
+        }
+
+        private void dgvDoanhThu_SizeChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_SizeChanged(object sender, EventArgs e)
+        {
+
+            var dgvWidth = panel2.Width / 2 - 10;
+            var dgvHeight = panel2.Height / 2 - 10;
+            dgvDoanhThu.Size = new Size(dgvWidth, dgvHeight);
+            ChartDuong.Size = new Size(dgvWidth, dgvHeight);
+            ChartCot.Size = new Size(dgvWidth, dgvHeight);
+            ChartDuong.Location = new Point(dgvWidth + 10, 5);
+            dgvDoanhThu.Location = new Point(5, dgvHeight + 10);
+            ChartCot.Location = new Point(dgvWidth + 10, dgvHeight + 10);
         }
     }
 }

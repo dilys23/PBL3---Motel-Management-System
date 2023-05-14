@@ -125,7 +125,7 @@ namespace PBL3___Motel_Management_System.View
         }
         private void btnHuyXacThuc_Click(object sender, EventArgs e)
         {
-            if(dgvChiSoDien.CurrentRow.Cells[9].Value.ToString() != "Đã xác thực")
+            if (dgvChiSoDien.CurrentRow.Cells[9].Value.ToString() != "Đã xác thực")
             {
                 MessageBox.Show("Chỉ số điện hiện tại đang chưa xác thực");
             }
@@ -136,7 +136,7 @@ namespace PBL3___Motel_Management_System.View
                 string idp = QLBLL.Instance.GetIdPhongByIdChiTietSuDungDichVu(id);
                 if (QLBLL.Instance.TinhTrangThanhToan(idp, thangct))
                 {
-                    
+
                     ChiTietSuDungDichVu dv = QLBLL.Instance.GetChiTietSuDungDichVuByIdBLL(id);
                     dv.TinhTrang = false;
                     QLBLL.Instance.UpdateChiTietSuDungDichVu(dv);
@@ -147,11 +147,9 @@ namespace PBL3___Motel_Management_System.View
                 {
                     MessageBox.Show("Chi tiết này đang nằm trong 1 hóa đơn đang xác thực !! không thể hủy");
                 }
-               
-
             }
-        }
-        private void dgvChiSoDien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+            }
+            private void dgvChiSoDien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
                 string columnName = dgvChiSoDien.Columns[e.ColumnIndex].Name;
                 if (columnName == "btnSua")

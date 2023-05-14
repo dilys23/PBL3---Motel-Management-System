@@ -148,7 +148,7 @@ namespace PBL3___Motel_Management_System
                 {
                     MessageBox.Show("Chi tiet này đang nằm trong 1 hóa đơn đang xác thực !! không thể hủy");
                 }
-               
+
 
             }
         }

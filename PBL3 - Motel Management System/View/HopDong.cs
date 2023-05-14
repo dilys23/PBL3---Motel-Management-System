@@ -69,6 +69,7 @@ namespace PBL3___Motel_Management_System
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 string columnName = dgvHD.Columns[e.ColumnIndex].Name;
+                //Chitiet
                 if (columnName == "btnSua")
                 {
                     string id = dgvHD.Rows[e.RowIndex].Cells[0].Value.ToString();
@@ -78,6 +79,7 @@ namespace PBL3___Motel_Management_System
                     ct.btnXacNhan.Visible = false;
                     QLBLL.Instance.openChildForm1(ct, panelHopDong);
                 }
+                //Gian hạn
                 else if (columnName == "btnXoa")
                 {
                     string id = dgvHD.Rows[e.RowIndex].Cells[0].Value.ToString();

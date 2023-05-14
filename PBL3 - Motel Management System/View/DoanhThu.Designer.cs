@@ -42,13 +42,14 @@
             this.ChartCot = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.ChartDuong = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dgvDoanhThu = new System.Windows.Forms.DataGridView();
+            this.btnTim = new FontAwesome.Sharp.IconButton();
+            this.dtpThang = new System.Windows.Forms.DateTimePicker();
             this.MaHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DayTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PhongTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DaThanhToan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnTim = new FontAwesome.Sharp.IconButton();
-            this.dtpThang = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ChartCot)).BeginInit();
@@ -121,7 +122,7 @@
             this.ChartDuong.Location = new System.Drawing.Point(523, 17);
             this.ChartDuong.Name = "ChartDuong";
             series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea;
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series2.Color = System.Drawing.Color.Green;
             series2.Legend = "Legend1";
             series2.Name = "Series1";
@@ -152,6 +153,7 @@
             this.Stt,
             this.DayTro,
             this.PhongTro,
+            this.DaThanhToan,
             this.TongTien});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -171,37 +173,7 @@
             this.dgvDoanhThu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDoanhThu.Size = new System.Drawing.Size(487, 191);
             this.dgvDoanhThu.TabIndex = 37;
-            // 
-            // MaHoaDon
-            // 
-            this.MaHoaDon.HeaderText = "MaHoaDon";
-            this.MaHoaDon.MinimumWidth = 6;
-            this.MaHoaDon.Name = "MaHoaDon";
-            this.MaHoaDon.Visible = false;
-            // 
-            // Stt
-            // 
-            this.Stt.HeaderText = "STT";
-            this.Stt.MinimumWidth = 6;
-            this.Stt.Name = "Stt";
-            // 
-            // DayTro
-            // 
-            this.DayTro.HeaderText = "Dãy trọ";
-            this.DayTro.MinimumWidth = 6;
-            this.DayTro.Name = "DayTro";
-            // 
-            // PhongTro
-            // 
-            this.PhongTro.HeaderText = "Phòng trọ";
-            this.PhongTro.MinimumWidth = 6;
-            this.PhongTro.Name = "PhongTro";
-            // 
-            // TongTien
-            // 
-            this.TongTien.HeaderText = "Tổng tiền";
-            this.TongTien.MinimumWidth = 6;
-            this.TongTien.Name = "TongTien";
+            this.dgvDoanhThu.SizeChanged += new System.EventHandler(this.dgvDoanhThu_SizeChanged);
             // 
             // btnTim
             // 
@@ -228,6 +200,43 @@
             this.dtpThang.Name = "dtpThang";
             this.dtpThang.Size = new System.Drawing.Size(124, 22);
             this.dtpThang.TabIndex = 0;
+            // 
+            // MaHoaDon
+            // 
+            this.MaHoaDon.HeaderText = "MaHoaDon";
+            this.MaHoaDon.MinimumWidth = 6;
+            this.MaHoaDon.Name = "MaHoaDon";
+            this.MaHoaDon.Visible = false;
+            // 
+            // Stt
+            // 
+            this.Stt.HeaderText = "STT";
+            this.Stt.MinimumWidth = 6;
+            this.Stt.Name = "Stt";
+            // 
+            // DayTro
+            // 
+            this.DayTro.HeaderText = "Dãy trọ";
+            this.DayTro.MinimumWidth = 6;
+            this.DayTro.Name = "DayTro";
+            // 
+            // PhongTro
+            // 
+            this.PhongTro.HeaderText = "Phòng trọ";
+            this.PhongTro.MinimumWidth = 6;
+            this.PhongTro.Name = "PhongTro";
+            // 
+            // DaThanhToan
+            // 
+            this.DaThanhToan.HeaderText = "Đã thanh toán";
+            this.DaThanhToan.MinimumWidth = 6;
+            this.DaThanhToan.Name = "DaThanhToan";
+            // 
+            // TongTien
+            // 
+            this.TongTien.HeaderText = "Còn nợ";
+            this.TongTien.MinimumWidth = 6;
+            this.TongTien.Name = "TongTien";
             // 
             // DoanhThu
             // 
@@ -257,12 +266,13 @@
         private System.Windows.Forms.DateTimePicker dtpThang;
         private FontAwesome.Sharp.IconButton btnTim;
         private System.Windows.Forms.DataGridView dgvDoanhThu;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ChartDuong;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ChartCot;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHoaDon;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stt;
         private System.Windows.Forms.DataGridViewTextBoxColumn DayTro;
         private System.Windows.Forms.DataGridViewTextBoxColumn PhongTro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DaThanhToan;
         private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
-        private System.Windows.Forms.DataVisualization.Charting.Chart ChartDuong;
-        private System.Windows.Forms.DataVisualization.Charting.Chart ChartCot;
     }
 }
