@@ -236,30 +236,37 @@ namespace PBL3___Motel_Management_System.View
         {
             Hoadon hd = new Hoadon();
             //hd.btnXoa.Visible = false;
-            QLBLL.Instance.openChildForm1(hd, panelMain);
+            QLBLL.Instance.openChildForm1(hd, panelDesktop);
         }
 
         private void btnPhong_Click(object sender, EventArgs e)
         {
-            
+           // ThemPhong tp = new ThemPhong();
+
         }
 
         private void btnDien_Click(object sender, EventArgs e)
         {
             ChitietDienPhong ct = new ChitietDienPhong();
-            QLBLL.Instance.openChildForm1(ct, panelMain);
+            QLBLL.Instance.openChildForm1(ct, panelDesktop);
         }
 
         private void btnNuoc_Click(object sender, EventArgs e)
         {
             ChitietNuocPhong ct = new ChitietNuocPhong();
-            QLBLL.Instance.openChildForm1(ct, panelMain);
+            QLBLL.Instance.openChildForm1(ct, panelDesktop);
         }
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
             HoaDonPhong ct = new HoaDonPhong();
-            QLBLL.Instance.openChildForm1(ct, panelMain);
+            QLBLL.Instance.openChildForm1(ct, panelDesktop);
+        }
+
+        private void btnTrangchu_Click(object sender, EventArgs e)
+        {
+            panelKhach ct = new panelKhach();
+            QLBLL.Instance.openChildForm1(ct, panelDesktop);
         }
     }
 }
