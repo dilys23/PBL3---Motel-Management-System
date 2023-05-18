@@ -425,7 +425,6 @@
     <Compile Include="DAL\VaiTro.cs">
       <DependentUpon>DataPbl.tt</DependentUpon>
     </Compile>
-    <Compile Include="DTO\DemoForm.cs" />
     <Compile Include="DTO\ViewCbb.cs" />
     <Compile Include="DTO\ChuyenDoiAnh.cs" />
     <Compile Include="DTO\DgvHopDong.cs" />

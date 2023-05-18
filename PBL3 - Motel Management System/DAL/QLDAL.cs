@@ -55,6 +55,13 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.PhongTro.Any(p => p.MaPhongTro == id);
             }
         }
+        public bool KiemTraTonTaiHopDongByIdNguoi(string idNguoi)
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                return data.HopDong.Any(p => p.TonTai == true && p.MaNguoi == idNguoi);
+            }
+        }
         public List<string>GetIdNguoiByIdPhongDal(string id)
         {
             using(DataPbl data = new DataPbl())
@@ -954,17 +961,18 @@ namespace PBL3___Motel_Management_System.DAL
         }
         public List<object> ThongKe(string thang)
         {
-           using(DataPbl data= new DataPbl())
-           {
-                    var s = data.HoaDon.ToList()
-                        .Where(p =>  p.ThangChiTra == thang && p.TinhTrang ==true)
-                        .GroupBy(p => p.PhongTro.DayTro.TenDayTro)
-                        .Select(p => new { TenDayTro = p.Key, TongTien = p.Sum(k => k.TongTien) })
-                        .ToList<object>();
-                    return s;
-               
-           }
-        } 
+            using (DataPbl data = new DataPbl())
+            {
+                var s = data.HoaDon.ToList()
+                    .Where(p => p.ThangChiTra == thang && p.TinhTrang == true && p.DaThanhToan != 0)
+                    .GroupBy(p => p.PhongTro.DayTro.TenDayTro)
+                    .OrderBy(p => p.Key)
+                    .Select(p => new { TenDayTro = p.Key, TongTien = p.Sum(k => k.DaThanhToan) })
+                    .ToList<object>();
+                return s;
+
+            }
+        }
         public List<DichVu> getAllDichVuByIdPhong(string idPhong)
         {
             using(DataPbl data = new DataPbl())

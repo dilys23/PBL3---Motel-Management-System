@@ -1204,6 +1204,10 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return list;
         }
+        public bool KiemTraTonTaiHopDongByIdNguoi(string idNguoi)
+        {
+            return QLDAL.Instance.KiemTraTonTaiHopDongByIdNguoi(idNguoi);
+        }
         public void ThayDoiDichVuPhong(List<string> dsdv, string idP)
         {
             List<string> ListCu = GetAllIdDichVuByIdPhong(idP);
