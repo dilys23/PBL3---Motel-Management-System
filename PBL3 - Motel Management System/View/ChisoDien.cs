@@ -146,8 +146,6 @@ namespace PBL3___Motel_Management_System.View
                 {
                     MessageBox.Show("Chi tiết này đang nằm trong 1 hóa đơn đang xác thực !! không thể hủy");
                 }
-               
-
             }
         }
         private void dgvChiSoDien_CellContentClick(object sender, DataGridViewCellEventArgs e)

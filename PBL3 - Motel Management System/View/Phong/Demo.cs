@@ -136,7 +136,6 @@ namespace PBL3___Motel_Management_System.View
             DayTro dt = QLBLL.Instance.GetDayTroByIdPhong(IdPhong);
             QLBLL.Instance.openChildForm1(new ThemPhong(dt.MaDayTro,IdPhong,LoadForm,null), panel);
         }
-
         private void btnTra_Click(object sender, EventArgs e)
         {
             DialogResult kq = MessageBox.Show("Bạn có thực sự muốn hoàn trả phòng ", "Cảnh báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
