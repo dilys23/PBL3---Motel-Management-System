@@ -23,7 +23,7 @@ namespace PBL3___Motel_Management_System.DAL
             this.VaiTro = new HashSet<VaiTro>();
         }
     
-        public string MaNguoi { get; set; }
+        public int MaNguoi { get; set; }
         public string Cccd { get; set; }
         public string Ten { get; set; }
         public string Sdt { get; set; }

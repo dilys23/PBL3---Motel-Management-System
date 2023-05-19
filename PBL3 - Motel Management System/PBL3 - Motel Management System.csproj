@@ -373,6 +373,12 @@
     <Compile Include="DAL\ChiTietSuDungDichVu.cs">
       <DependentUpon>DataPbl.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\ChiTietTaiKhoan.cs">
+      <DependentUpon>DataPbl.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ChiTietThanhToan.cs">
+      <DependentUpon>DataPbl.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\ChiTietThietBi.cs">
       <DependentUpon>DataPbl.tt</DependentUpon>
     </Compile>
@@ -410,9 +416,6 @@
       <DependentUpon>DataPbl.tt</DependentUpon>
     </Compile>
     <Compile Include="DAL\QLDAL.cs" />
-    <Compile Include="DAL\sysdiagrams.cs">
-      <DependentUpon>DataPbl.tt</DependentUpon>
-    </Compile>
     <Compile Include="DAL\TaiKhoan.cs">
       <DependentUpon>DataPbl.tt</DependentUpon>
     </Compile>

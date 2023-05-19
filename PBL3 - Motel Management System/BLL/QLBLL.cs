@@ -82,106 +82,13 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return null;
         }
-        public string TaoIdNguoi()
-        {
-            string id = null;
-            Boolean status = true;
-            Random random = new Random();
-            while (status)
-            {
-                id = random.Next(1, 1000).ToString();
-                status = false;
-                foreach (Nguoi ng in QLDAL.Instance.GetAllNguoi())
-                {
-                    if (ng.MaNguoi == id) status = true;
-                }
-            }
-            return id;
-        }
-        public string TaoIdHoaDon()
-        {
-            string id = null;
-            Boolean status = true;
-            Random random = new Random();
-            while (status)
-            {
-                id = random.Next(1, 1000).ToString();
-                status = false;
-                foreach (HoaDon hd in QLDAL.Instance.GetAllHoaDon())
-                {
-                    if (hd.MaHoaDon == id) status = true;
-                }
-            }
-            return id;
-        }
-        public string TaoIdChiTietSuDungDichVu()
-        {
-            string id = null;
-            Boolean status = true;
-            Random random = new Random();
-            while (status)
-            {
-                id = random.Next(1, 1000).ToString();
-                status = false;
-                foreach (ChiTietSuDungDichVu dv in QLDAL.Instance.GetAllChiTietSuDungDichVu())
-                {
-                    if (dv.MaChiTietSuDungDichVu == id) status = true;
-                }
-            }
-            return id;
-        }
         public List<ChiTietSuDungDichVu> GetAllChiTietSuDungDichVuBll()
         {
             return QLDAL.Instance.GetAllChiTietSuDungDichVu();
         }
-        public string TaoIdChiTietDichVu()
-        {
-            string id = null;
-            Boolean status = true;
-            Random random = new Random();
-            while (status)
-            {
-                id = random.Next(1, 1000).ToString();
-                status = false;
-                foreach (ChiTietDichVu ctdv in QLDAL.Instance.GetAllChiTietDichVu())
-                {
-                    if (ctdv.MaChiTietDichVu == id) status = true;
-                }
-            }
-            return id;
-        }
-        public string TaoIdChiTietThietBi()
-        {
-            string id = null;
-            Boolean status = true;
-            Random random = new Random();
-            while (status)
-            {
-                id = random.Next(1, 1000).ToString();
-                status = false;
-                foreach (ChiTietThietBi cttb in QLDAL.Instance.GetAllChiTietThietBi())
-                {
-                    if (cttb.MaChiTietThietBi == id) status = true;
-                }
-            }
-            return id;
-        }
-        public string TaoIdThanhVienTrongPhong()
-        {
-            string id = null;
-            Boolean status = true;
-            Random random = new Random();
-            while (status)
-            {
-                id = random.Next(1, 1000).ToString();
-                status = false;
-                foreach (ThanhVienTrongPhong tvtp in QLDAL.Instance.GetAllThanhVienTrongPhong())
-                {
-                    if (tvtp.MaThanhVienTrongPhong == id) status = true;
-                }
-            }
-            return id;
-        }
+        
+        
+        
         public string GetIdPhongByIdNguoi(string idNguoi)
         {
             return QLDAL.Instance.GetIdPhongByIdNguoiDal(idNguoi);//ok
@@ -190,22 +97,8 @@ namespace PBL3___Motel_Management_System.BLL
         {
             return QLDAL.Instance.GetIdPhongByIdTbDal(idTB);//ok
         }
-        public string TaoIdPhongTro()
-        {
-            string id = null;
-            Boolean status = true;
-            Random random = new Random();
-            while (status)
-            {
-                id = random.Next(1, 1000).ToString();
-                status = false;
-                if (QLDAL.Instance.KiemTraTonTaiIdPhongTro(id))
-                {
-                    status = true;
-                }
-            }
-            return id;
-        }
+        
+
         public string GetIdCHiTietDichVuDienByIdPhong(string idPhong)
         {
             return QLDAL.Instance.GetIdChiTietDichVuDienByIdPhongDal(idPhong);
@@ -218,71 +111,15 @@ namespace PBL3___Motel_Management_System.BLL
         {  
             return QLDAL.Instance.GetChiTietSuDungDichVuById(id);
         }
-        public string TaoIdDayTro()
-        {
-            string id = null;
-            Boolean status = true;
-            Random random = new Random();
-            while (status)
-            {
-                id = random.Next(1, 1000).ToString();
-                status = false;
-                foreach (DayTro dayTro in QLDAL.Instance.GetAllDayTro())
-                {
-                    if (dayTro.MaDayTro == id) status = true;//ok
-                }
-            }
-            return id;
-        }
-        public string TaoIdHopDong()
-        {
-            string id = null;
-            Boolean status = true;
-            Random random = new Random();
-            while (status)
-            {
-                id = random.Next(1, 1000).ToString();
-                status = false;
-                foreach (HopDong hopDong in QLDAL.Instance.GetAllHopDong())
-                {
-                    if (hopDong.MaHopDong == id) status = true; break;
-                }
-            }
-            return id;
-        }
-        public string TaoIdDichVu()
-        {
-            string id = null;
-            Boolean status = true;
-            Random random = new Random();
-            while (status)
-            {
-                id = random.Next(1, 1000).ToString();
-                status = false;
-                foreach (DichVu dv in QLDAL.Instance.GetAllDichVu())
-                {
-                    if (dv.MaDichVu == id) status = true;
-                }
-            }
-            return id;
-        }
+        
 
-        public string TaoIdThietBi()
-        {
-            string id = null;
-            Boolean status = true;
-            Random random = new Random();
-            while (status)
-            {
-                id = random.Next(1, 1000).ToString();
-                status = false;
-                foreach (ThietBi dv in QLDAL.Instance.GetAllThietBi())
-                {
-                    if (dv.MaThietBi == id) status = true; break;
-                }
-            }
-            return id;
-        }
+        
+
+        
+
+
+        
+
         public void AddDayTroBll(DayTro dt)
         {
             QLDAL.Instance.AddDayTroDal(dt);//ok
@@ -1306,5 +1143,27 @@ namespace PBL3___Motel_Management_System.BLL
             lbl.Visible = true;
             return lbl;
         }
+        public DAL.TaiKhoan TaoTaiKhoanChoPhong(string idPhong)
+        {
+            DAL.TaiKhoan tk = new DAL.TaiKhoan()
+                {   
+                    TenTaiKhoan = idPhong + GetPhongTroByIdPhong(idPhong).TenPhongTro,
+                    MatKhau = idPhong + GetPhongTroByIdPhong(idPhong).TenPhongTro
+                };
+            return tk;
+        }
+        public List<DAL.TaiKhoan> GetAllTaiKhoan()
+        {
+            return QLDAL.Instance.GetAllTaiKhoan();
+        }
+        public List<ChiTietTaiKhoan> GetAllChiTietTaiKhoan()
+        {
+            return QLDAL.Instance.GetAllChiTietTaiKhoan();
+        }
+        public List<VaiTro> GetAllVaiTro()
+        {
+            return QLDAL.Instance.GetAllVaiTro();
+        }
+
     }
 }

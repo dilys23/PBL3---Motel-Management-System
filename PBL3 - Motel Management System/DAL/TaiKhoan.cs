@@ -17,13 +17,17 @@ namespace PBL3___Motel_Management_System.DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TaiKhoan()
         {
+            this.ChiTietTaiKhoan = new HashSet<ChiTietTaiKhoan>();
             this.VaiTro = new HashSet<VaiTro>();
         }
     
+        public int MaTaiKhoan { get; set; }
         public string TenTaiKhoan { get; set; }
         public string MatKhau { get; set; }
-        public string MaTaiKhoan { get; set; }
+        public Nullable<bool> TonTai { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ChiTietTaiKhoan> ChiTietTaiKhoan { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<VaiTro> VaiTro { get; set; }
     }

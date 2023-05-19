@@ -18,24 +18,27 @@ namespace PBL3___Motel_Management_System.DAL
         public PhongTro()
         {
             this.ChiTietDichVu = new HashSet<ChiTietDichVu>();
+            this.ChiTietTaiKhoan = new HashSet<ChiTietTaiKhoan>();
             this.ChiTietThietBi = new HashSet<ChiTietThietBi>();
             this.HoaDon = new HashSet<HoaDon>();
             this.HopDong = new HashSet<HopDong>();
             this.ThanhVienTrongPhong = new HashSet<ThanhVienTrongPhong>();
         }
     
-        public string MaPhongTro { get; set; }
+        public int MaPhongTro { get; set; }
         public string TenPhongTro { get; set; }
         public double GiaTien { get; set; }
         public double DienTich { get; set; }
         public bool TinhTrang { get; set; }
-        public string MaDayTro { get; set; }
+        public int MaDayTro { get; set; }
         public Nullable<int> ToiDa { get; set; }
         public byte[] HinhAnh { get; set; }
         public Nullable<bool> TonTai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietDichVu> ChiTietDichVu { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ChiTietTaiKhoan> ChiTietTaiKhoan { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietThietBi> ChiTietThietBi { get; set; }
         public virtual DayTro DayTro { get; set; }

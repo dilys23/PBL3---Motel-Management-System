@@ -14,9 +14,11 @@ namespace PBL3___Motel_Management_System.DAL
     
     public partial class VaiTro
     {
-        public string MaVaiTro { get; set; }
-        public string MaTaiKhoan { get; set; }
-        public string MaNguoi { get; set; }
+        public int MaVaiTro { get; set; }
+        public int MaTaiKhoan { get; set; }
+        public Nullable<int> MaNguoi { get; set; }
+        public string TenVaiTro { get; set; }
+        public Nullable<bool> TonTai { get; set; }
     
         public virtual Nguoi Nguoi { get; set; }
         public virtual TaiKhoan TaiKhoan { get; set; }

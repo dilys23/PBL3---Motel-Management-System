@@ -20,7 +20,7 @@ namespace PBL3___Motel_Management_System.DAL
             this.ChiTietThietBi = new HashSet<ChiTietThietBi>();
         }
     
-        public string MaThietBi { get; set; }
+        public int MaThietBi { get; set; }
         public string TenThietBi { get; set; }
         public double GiaThietBi { get; set; }
         public Nullable<bool> TonTai { get; set; }

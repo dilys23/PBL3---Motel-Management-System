@@ -20,7 +20,7 @@ namespace PBL3___Motel_Management_System.DAL
             this.ChiTietDichVu = new HashSet<ChiTietDichVu>();
         }
     
-        public string MaDichVu { get; set; }
+        public int MaDichVu { get; set; }
         public string TenDichVu { get; set; }
         public double GiaDichVu { get; set; }
         public Nullable<bool> TonTai { get; set; }

@@ -14,9 +14,9 @@ namespace PBL3___Motel_Management_System.DAL
     
     public partial class HopDong
     {
-        public string MaHopDong { get; set; }
-        public string MaNguoi { get; set; }
-        public string MaPhongTro { get; set; }
+        public int MaHopDong { get; set; }
+        public int MaNguoi { get; set; }
+        public int MaPhongTro { get; set; }
         public string NgayBatDau { get; set; }
         public string NgayKetThuc { get; set; }
         public double TienCoc { get; set; }

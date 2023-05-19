@@ -14,8 +14,8 @@ namespace PBL3___Motel_Management_System.DAL
     
     public partial class ChiTietSuDungDichVu
     {
-        public string MaChiTietSuDungDichVu { get; set; }
-        public string MaCHiTietDichVu { get; set; }
+        public int MaChiTietSuDungDichVu { get; set; }
+        public int MaCHiTietDichVu { get; set; }
         public double ChiSoCu { get; set; }
         public double ChiSoMoi { get; set; }
         public string ThoiGian { get; set; }

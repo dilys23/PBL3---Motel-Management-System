@@ -31,63 +31,77 @@ namespace PBL3___Motel_Management_System.DAL
         {
             using (DataPbl data = new DataPbl())
             {
-                return data.TaiKhoan.Select(p => p).ToList<TaiKhoan>();
+                return data.TaiKhoan.Where(p => p.TonTai == true).Select(p => p).ToList<TaiKhoan>();
             }
         }
-        public string GetIdTkDal(string taikhoan, string matkhau)
+        public int GetIdTkDal(string taikhoan, string matkhau)
         {
             using(DataPbl data = new DataPbl())
             {
-                return data.TaiKhoan.Where(p => p.TenTaiKhoan == taikhoan && p.MatKhau == matkhau).FirstOrDefault().MaTaiKhoan;
+                return data.TaiKhoan.Where(p => p.TenTaiKhoan == taikhoan && p.MatKhau == matkhau && p.TonTai == true).FirstOrDefault().MaTaiKhoan;
             }
         }
         public List<VaiTro> GetAllVaiTro()
         {
             using (DataPbl data = new DataPbl())
             {
-                return data.VaiTro.Select(p => p).ToList<VaiTro>();
+                return data.VaiTro.Where(p => p.TonTai == true).Select(p => p).ToList<VaiTro>();
             }
         }
-        public bool KiemTraTonTaiIdPhongTro(string id)
+        public List<ChiTietTaiKhoan> GetAllChiTietTaiKhoan()
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                return data.ChiTietTaiKhoan.Where(p => p.TonTai == true).Select(p => p).ToList<ChiTietTaiKhoan>();
+            }
+        }
+        public TaiKhoan GetTaiKhoanByIdPhong(int idPhong)
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                return data.ChiTietTaiKhoan.Where(p => p.TonTai == true && p.MaPhongTro == idPhong).FirstOrDefault().TaiKhoan;
+            }
+        }
+        public bool KiemTraTonTaiIdPhongTro(int id)
         {
             using (DataPbl data = new DataPbl())
             {
                 return data.PhongTro.Any(p => p.MaPhongTro == id);
             }
         }
-        public bool KiemTraTonTaiHopDongByIdNguoi(string idNguoi)
+        public bool KiemTraTonTaiHopDongByIdNguoi(int idNguoi)
         {
             using(DataPbl data = new DataPbl())
             {
                 return data.HopDong.Any(p => p.TonTai == true && p.MaNguoi == idNguoi);
             }
         }
-        public List<string>GetIdNguoiByIdPhongDal(string id)
+        public List<int>GetIdNguoiByIdPhongDal(int id)
         {
             using(DataPbl data = new DataPbl())
             {
-                return data.ThanhVienTrongPhong.Where(p => p.MaPhongTro == id && p.TonTai ==true).Select(p => p.MaNguoi).ToList<string>();
+                return data.ThanhVienTrongPhong.Where(p => p.MaPhongTro == id && p.TonTai ==true).Select(p => p.MaNguoi).ToList<int>();
             }
         }
-        public List<PhongTro>GetPhongTroByIdDayDal(string idDay)
+        public List<PhongTro>GetPhongTroByIdDayDal(int idDay)
         {
             using(DataPbl data = new DataPbl())
             {
                 return data.PhongTro.Where(p => p.MaDayTro == idDay && p.TonTai == true).Select(p => p).ToList<PhongTro>();
             }
         }
-        public List<string>GetAllIdPhongTroByIdDayDal(string idDay)
+        public List<int>GetAllIdPhongTroByIdDayDal(int idDay)
         {
             using(DataPbl data = new DataPbl())
             {
-                return data.PhongTro.Where(p => p.MaDayTro == idDay && p.TonTai == true).Select(p => p.MaPhongTro).ToList<string>();
+                return data.PhongTro.Where(p => p.MaDayTro == idDay && p.TonTai == true).Select(p => p.MaPhongTro).ToList<int>();
             }
         }
-        public List<string>GetAllIdPhongTroDal()
+        public List<int>GetAllIdPhongTroDal()
         {
             using(DataPbl data = new DataPbl())
             {
-                return data.PhongTro.Where(p => p.TonTai == true).Select(p => p.MaPhongTro).ToList<string>();
+                return data.PhongTro.Where(p => p.TonTai == true).Select(p => p.MaPhongTro).ToList<int>();
             }
         }
         public Nguoi GetNguoiByIdNguoiDal(string id)
@@ -97,18 +111,18 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.Nguoi.Find(id);
             }
         }
-        public List<Nguoi>GetNguoiByIdPhongDal(string id)
+        public List<Nguoi>GetNguoiByIdPhongDal(int id)
         {
             using (DataPbl data = new DataPbl())
             {
                 return data.ThanhVienTrongPhong.Where(p => p.MaPhongTro == id && p.TonTai==true).Select(p => p.Nguoi).ToList<Nguoi>();
             }
         }
-        public string GetIdNguoiByTaiKhoanDal(string idTaiKhoan)
+        public int GetIdNguoiByTaiKhoanDal(int idTaiKhoan)
         {
             using(DataPbl data = new DataPbl())
             {
-                return data.VaiTro.Where(p => p.MaTaiKhoan == idTaiKhoan).FirstOrDefault().MaNguoi;
+                return (int)data.VaiTro.Where(p => p.MaTaiKhoan == idTaiKhoan && p.TonTai == true).FirstOrDefault().MaNguoi;
             }
         }
         public List<HopDong> GetAllHopDong()
@@ -125,11 +139,11 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.HopDong.Where(p => p.TonTai == true && p.TinhTrang == true).Select(p => p).ToList<HopDong>();
             }
         }
-        public List<string> GetAllIdHoaDon()
+        public List<int> GetAllIdHoaDon()
         {
             using(DataPbl data = new DataPbl())
             {
-                return data.HoaDon.Where(p => p.TonTai == true).Select(p => p.MaHoaDon).ToList<string>();
+                return data.HoaDon.Where(p => p.TonTai == true).Select(p => p.MaHoaDon).ToList<int>();
             }
         }
         public List<HoaDon> GetAllHoaDon()
@@ -139,7 +153,7 @@ namespace PBL3___Motel_Management_System.DAL
                 return  data.HoaDon.Where(p => p.TonTai==true).Select(p => p).ToList<HoaDon>();
             }
         }
-        public List<ChiTietDichVu>GetChiTietDichVuByIdPhongDal(string idPhong)
+        public List<ChiTietDichVu>GetChiTietDichVuByIdPhongDal(int idPhong)
         {
             using(DataPbl data = new DataPbl())
             {
@@ -172,6 +186,31 @@ namespace PBL3___Motel_Management_System.DAL
             using(DataPbl data = new DataPbl())
             {
                 data.DayTro.Add(dt);
+                data.SaveChanges();
+            }
+        }
+        public void AddTaiKhoanDal(TaiKhoan tk)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                data.TaiKhoan.Add(tk);
+                data.SaveChanges();
+            }
+        }
+        public void AddVaiTroDal(VaiTro vt)
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                data.VaiTro.Add(vt);
+                data.SaveChanges();
+            }
+        }
+        
+        public void AddChiTietTaiKhoanDal(ChiTietTaiKhoan cttk)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                data.ChiTietTaiKhoan.Add(cttk);
                 data.SaveChanges();
             }
         }
@@ -253,11 +292,11 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.ChiTietDichVu.Where(p => p.TonTai == true).Select(p => p).ToList<ChiTietDichVu>();
             }
         }
-        public List<string> GetAllMaChitietDichVu()
+        public List<int> GetAllMaChitietDichVu()
         { 
             using (DataPbl data = new DataPbl())
             {
-                return data.ChiTietDichVu.Select(p => p.MaChiTietDichVu).ToList<string>();
+                return data.ChiTietDichVu.Select(p => p.MaChiTietDichVu).ToList<int>();
             }
         }
         public List<ChiTietThietBi> GetAllChiTietThietBi()
@@ -274,7 +313,7 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.ThanhVienTrongPhong.Where(p => p.TonTai == true).Select(p => p).ToList<ThanhVienTrongPhong>();
             }
         }  
-        public List<PhongTro> GetPhongByIdDay(string idDay)
+        public List<PhongTro> GetPhongByIdDay(int idDay)
         {
             using(DataPbl data = new DataPbl())
             {
@@ -304,32 +343,32 @@ namespace PBL3___Motel_Management_System.DAL
 
             }
         }
-        public HopDong GetHopDongByIdPhong(string idphong)
+        public HopDong GetHopDongByIdPhong(int idphong)
         {
             using (DataPbl data = new DataPbl())
             {
                return (HopDong)data.HopDong.Where(p => p.TonTai == true && p.MaPhongTro == idphong).FirstOrDefault();
             }
         }
-        public List<string> GetAllIdHopDongDangThueByIdDay(string idDay)
+        public List<int> GetAllIdHopDongDangThueByIdDay(int idDay)
         {
             using(DataPbl data = new DataPbl())
             {
-                return data.HopDong.Where(p => p.TonTai == true && p.PhongTro.MaDayTro == idDay && p.TinhTrang == true).Select(p => p.MaHopDong).ToList<string>();
+                return data.HopDong.Where(p => p.TonTai == true && p.PhongTro.MaDayTro == idDay && p.TinhTrang == true).Select(p => p.MaHopDong).ToList<int>();
             }
         }
-        public List<string> GetAllIdHopDongDangThue()
+        public List<int> GetAllIdHopDongDangThue()
         {
             using (DataPbl data = new DataPbl())
             {
-                return data.HopDong.Where(p => p.TonTai == true && p.TinhTrang == true).Select(p => p.MaHopDong).ToList<string>();
+                return data.HopDong.Where(p => p.TonTai == true && p.TinhTrang == true).Select(p => p.MaHopDong).ToList<int>();
             }
         }
-        public List<string> GetAllIdHopDongDangThueByIdPhong(string idPhong)
+        public List<int> GetAllIdHopDongDangThueByIdPhong(int idPhong)
         {
             using (DataPbl data = new DataPbl())
             {
-                return data.HopDong.Where(p => p.TonTai == true && p.MaPhongTro == idPhong && p.TinhTrang == true).Select(p => p.MaHopDong).ToList<string>();
+                return data.HopDong.Where(p => p.TonTai == true && p.MaPhongTro == idPhong && p.TinhTrang == true).Select(p => p.MaHopDong).ToList<int>();
             }
         }
         public void ThemTBDal(ThietBi tb)
@@ -396,18 +435,18 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.DayTro.Find(Id);
             }
         }
-        public List<string>GetAllIdDichVuByIdPhongDal(string idPhong)
+        public List<int>GetAllIdDichVuByIdPhongDal(int idPhong)
         {
             using(DataPbl data = new DataPbl())
             {
-                return data.ChiTietDichVu.Where(p => p.MaPhongTro == idPhong && p.TonTai ==true).Select(p => p.MaDichVu).ToList<string>();
+                return data.ChiTietDichVu.Where(p => p.MaPhongTro == idPhong && p.TonTai ==true).Select(p => p.MaDichVu).ToList<int>();
             }
         }
-        public List<String> GetAllIdThietBiByIdPhongDal(string idPhong)
+        public List<int> GetAllIdThietBiByIdPhongDal(int idPhong)
         {
             using (DataPbl data = new DataPbl())
             {
-                return data.ChiTietThietBi.Where(p => p.MaPhongTro == idPhong && p.TonTai == true).Select(p => p.MaThietBi).ToList<string>();
+                return data.ChiTietThietBi.Where(p => p.MaPhongTro == idPhong && p.TonTai == true).Select(p => p.MaThietBi).ToList<int>();
             }
         }
         public DayTro GetDayTroByIdPhongDal(string id)
@@ -483,7 +522,7 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.ChiTietThietBi.Find(id);
             }
         }
-        public List<ChiTietThietBi> GetChiTietThietBiByIdPhongDal(string idPhong)
+        public List<ChiTietThietBi> GetChiTietThietBiByIdPhongDal(int idPhong)
         {
             using(DataPbl data = new DataPbl())
             {
@@ -538,70 +577,70 @@ namespace PBL3___Motel_Management_System.DAL
             }
         }
       
-        public PhongTro GetPhongTroByIdHopDong(string idHd)
+        public PhongTro GetPhongTroByIdHopDong(int idHd)
         {
             using(DataPbl data = new DataPbl())
             {
                 return data.HopDong.Where(p => p.TonTai == true && p.MaHopDong == idHd).FirstOrDefault().PhongTro;
             }
         }
-        public PhongTro GetPhongTroByIdHoaDon(string idHd)
+        public PhongTro GetPhongTroByIdHoaDon(int idHd)
         {
             using (DataPbl data = new DataPbl())
             {
                 return data.HoaDon.Where(p => p.TonTai == true && p.MaHoaDon == idHd).FirstOrDefault().PhongTro;
             }
         }
-        public PhongTro GetPhongTroByMaHopDong(string MaHopDong)
+        public PhongTro GetPhongTroByMaHopDong(int MaHopDong)
         {
             using (DataPbl data = new DataPbl())
             {
                 return data.HopDong.Where(p => p.TonTai == true && p.MaHopDong == MaHopDong).FirstOrDefault().PhongTro;
             }
         }
-        public Nguoi GetNguoiByIdHopDong(string idHopDong)
+        public Nguoi GetNguoiByIdHopDong(int idHopDong)
         {
             using (DataPbl data = new DataPbl())
             {
                 return (Nguoi)data.HopDong.Where(p => p.TonTai == true && p.MaHopDong == idHopDong).FirstOrDefault().Nguoi;
             }
         }
-        public List<string> GetHoaDonByTinhTrang(bool tinhTrang)
+        public List<int> GetHoaDonByTinhTrang(bool tinhTrang)
         {
             using(DataPbl data = new DataPbl())
             {
-                return data.HoaDon.Where(p => p.TinhTrang == tinhTrang && p.TonTai == true).Select(p => p.MaHoaDon).ToList<string>();
+                return data.HoaDon.Where(p => p.TinhTrang == tinhTrang && p.TonTai == true).Select(p => p.MaHoaDon).ToList<int>();
             }
         }
-        public List<string> GetHoaDonByIdPhong(string idPhong)
+        public List<int> GetHoaDonByIdPhong(int idPhong)
         {
             using(DataPbl data = new DataPbl())
             {
-                return data.HoaDon.Where(p => p.MaPhongTro == idPhong && p.TonTai == true).Select(p => p.MaHoaDon).ToList<string>();
+                return data.HoaDon.Where(p => p.MaPhongTro == idPhong && p.TonTai == true).Select(p => p.MaHoaDon).ToList<int>();
             }
         }
-        public List<string>GetHoaDonByIdDay(string idDay)
+        public List<int>GetHoaDonByIdDay(int idDay)
         {
             using(DataPbl data = new DataPbl())
             {
-                return data.HoaDon.Where(p => p.PhongTro.MaDayTro == idDay && p.TonTai == true).Select(p => p.MaHoaDon).ToList<string>();
+                return data.HoaDon.Where(p => p.PhongTro.MaDayTro == idDay && p.TonTai == true).Select(p => p.MaHoaDon).ToList<int>();
             }
         }
-        public List<string> GetIdHoaDonByThangChiTra(string ThangCt)
+        public List<int> GetIdHoaDonByThangChiTra(string ThangCt)
         {
             using(DataPbl data = new DataPbl())
             {
-                return data.HoaDon.Where(p => p.ThangChiTra == ThangCt && p.TonTai == true ).Select(p => p.MaHoaDon).ToList<string>();
+                return data.HoaDon.Where(p => p.ThangChiTra == ThangCt && p.TonTai == true ).Select(p => p.MaHoaDon).ToList<int>();
             }
         }
-        public string GetIdPhongByIdHoaDon(string idHoaDon)
+        public int GetIdPhongByIdHoaDon(int idHoaDon)
         {
             using (DataPbl data = new DataPbl())
             {
                 return data.HoaDon.Find(idHoaDon).MaPhongTro;
             }    
         }
-        public string GetIdPhongbyIdChitietsudungDichVu(string idChitiet)
+        public int GetIdPhongbyIdChitietsudungDichVu(int idChitiet)
         {
             using(DataPbl data = new DataPbl())
             {
@@ -629,22 +668,22 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.ThietBi.Find(id);
             }
         }
-        public List<String> GetIdPhongByIdTbDal(string idTb)
+        public List<int> GetIdPhongByIdTbDal(int idTb)
         {
             using(DataPbl data = new DataPbl())
             {
-                return data.ChiTietThietBi.Where(p => p.TonTai == true && p.MaThietBi == idTb).Select(p => p.MaPhongTro).ToList<string>();
+                return data.ChiTietThietBi.Where(p => p.TonTai == true && p.MaThietBi == idTb).Select(p => p.MaPhongTro).ToList<int>();
             }
         }
-        public string GetIdChiTietDichVuDienByIdPhongDal(string idPhong)
+        public int GetIdChiTietDichVuDienByIdPhongDal(int idPhong)
         {
             using (DataPbl data = new DataPbl())
             {
-                return  data.ChiTietDichVu.Where(p => p.MaPhongTro == idPhong && p.MaDichVu == "001" && p.TonTai == true).FirstOrDefault().MaChiTietDichVu;
+                return  data.ChiTietDichVu.Where(p => p.MaPhongTro == idPhong && p.MaDichVu == 1 && p.TonTai == true).FirstOrDefault().MaChiTietDichVu;
             }
         }
         
-        public List<ChiTietSuDungDichVu> GetAllChiTietSuDungDichVuByIdPhong(string idPhong)
+        public List<ChiTietSuDungDichVu> GetAllChiTietSuDungDichVuByIdPhong(int idPhong)
         {
             using (DataPbl data = new DataPbl())
             {
@@ -658,21 +697,21 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.ChiTietSuDungDichVu.Find(id);
             }
         }
-        public string GetIdChiTietDichVuNuocByIdPhongDal(string idPhong)
+        public int GetIdChiTietDichVuNuocByIdPhongDal(int idPhong)
         {
             using (DataPbl data = new DataPbl())
             {
-                return data.ChiTietDichVu.Where(p => p.MaPhongTro == idPhong && p.MaDichVu == "000").FirstOrDefault().MaChiTietDichVu;
+                return data.ChiTietDichVu.Where(p => p.MaPhongTro == idPhong && p.MaDichVu == 0).FirstOrDefault().MaChiTietDichVu;
             }
         }
-        public string GetIdDayByIdPhong(string IdPhong)
+        public int GetIdDayByIdPhong(int IdPhong)
         {
             using (DataPbl data = new DataPbl())
             {
                 return data.PhongTro.Find(IdPhong).MaDayTro;
             }
         }
-        public string GetIdPhongByIdNguoiDal(string idNguoi)
+        public int GetIdPhongByIdNguoiDal(int idNguoi)
         {
             using(DataPbl data = new DataPbl())
             {
@@ -710,7 +749,7 @@ namespace PBL3___Motel_Management_System.DAL
                 data.SaveChanges();
             }
         }
-        public string GetIdChiTietDichVuByIdPhongAndIdDichVu(string idp, string iddv)
+        public int GetIdChiTietDichVuByIdPhongAndIdDichVu(int idp, int iddv)
         {
             using(DataPbl data = new DataPbl())
             {
@@ -818,21 +857,21 @@ namespace PBL3___Motel_Management_System.DAL
                 UpdateNguoiDAL(s);
             }
         }
-        public string GetIdThanhVienByIdNguoi(string id)
+        public int GetIdThanhVienByIdNguoi(int id)
         {
             using (DataPbl data = new DataPbl())
             {
                 return data.ThanhVienTrongPhong.Where(p => p.MaNguoi == id && p.TonTai == true).FirstOrDefault().MaThanhVienTrongPhong;
             }
         }
-        public List<string> GetIDThanhvienbyIDPhong(string idphong)
+        public List<int> GetIDThanhvienbyIDPhong(int idphong)
         {
             using(DataPbl data = new DataPbl() )
             {
-                return data.ThanhVienTrongPhong.Where(p => p.MaPhongTro == idphong && p.TonTai == true).Select(p => p.MaThanhVienTrongPhong).ToList<string>();
+                return data.ThanhVienTrongPhong.Where(p => p.MaPhongTro == idphong && p.TonTai == true).Select(p => p.MaThanhVienTrongPhong).ToList<int>();
             }
         }
-        public string GetMaChiTietDichVuByIdPhong(string idPhong)
+        public int GetMaChiTietDichVuByIdPhong(int idPhong)
         {
             using(DataPbl data = new DataPbl())
             {
@@ -858,18 +897,18 @@ namespace PBL3___Motel_Management_System.DAL
                 UpdateHopDongDAL(hd);
             }
         }
-        public List<string>GetAllIdChiTietThietBiByIdPhong(string idPhong)
+        public List<int>GetAllIdChiTietThietBiByIdPhong(int idPhong)
         {
             using(DataPbl data = new DataPbl())
             {
-                return data.ChiTietThietBi.Where(p => p.TonTai == true && p.MaPhongTro == idPhong).Select(p => p.MaChiTietThietBi).ToList<string>();
+                return data.ChiTietThietBi.Where(p => p.TonTai == true && p.MaPhongTro == idPhong).Select(p => p.MaChiTietThietBi).ToList<int>();
             }
         }
-        public List<string> GetAllIdChiTietDichVuByIdPhong(string idPhong)
+        public List<int> GetAllIdChiTietDichVuByIdPhong(int idPhong)
         {
             using (DataPbl data = new DataPbl())
             {
-                return data.ChiTietDichVu.Where(p => p.TonTai == true && p.MaPhongTro == idPhong).Select(p => p.MaChiTietDichVu).ToList<string>();
+                return data.ChiTietDichVu.Where(p => p.TonTai == true && p.MaPhongTro == idPhong).Select(p => p.MaChiTietDichVu).ToList<int>();
             }
         }
         public List<ChiTietThietBi>GetAllChiTietThietBiDAL()
@@ -880,63 +919,63 @@ namespace PBL3___Motel_Management_System.DAL
                
             }
         }
-        public List<string>GetChiTietSuDungDichVuByThangSuDungDal(string ThangSd)
+        public List<int>GetChiTietSuDungDichVuByThangSuDungDal(string ThangSd)
         {
             using (DataPbl data = new DataPbl())
             {
-                return data.ChiTietSuDungDichVu.Where(p => p.TonTai == true && p.ThoiGian == ThangSd).Select(p => p.MaChiTietSuDungDichVu).ToList<string>();
+                return data.ChiTietSuDungDichVu.Where(p => p.TonTai == true && p.ThoiGian == ThangSd).Select(p => p.MaChiTietSuDungDichVu).ToList<int>();
             }
         }
-        public List<string>GetChiTietSuDungDichVuByIdDayDal(string IdDay)
+        public List<int>GetChiTietSuDungDichVuByIdDayDal(int IdDay)
         {
             using(DataPbl data = new DataPbl())
             {   
-                return data.ChiTietSuDungDichVu.Where(p => p.ChiTietDichVu.PhongTro.MaDayTro == IdDay && p.TonTai == true).Select(p => p.MaChiTietSuDungDichVu).ToList<string>();
+                return data.ChiTietSuDungDichVu.Where(p => p.ChiTietDichVu.PhongTro.MaDayTro == IdDay && p.TonTai == true).Select(p => p.MaChiTietSuDungDichVu).ToList<int>();
             }
         }
-        public List<string> GetChiTietSuDungDichVuByIdChitiet(string IdChitiet)
+        public List<int> GetChiTietSuDungDichVuByIdChitiet(int IdChitiet)
         {
             using (DataPbl data = new DataPbl())
             {
-                return data.ChiTietSuDungDichVu.Where(p => p.MaChiTietSuDungDichVu == IdChitiet && p.TonTai == true).Select(p => p.MaChiTietSuDungDichVu).ToList<string>();
+                return data.ChiTietSuDungDichVu.Where(p => p.MaChiTietSuDungDichVu == IdChitiet && p.TonTai == true).Select(p => p.MaChiTietSuDungDichVu).ToList<int>();
             }
         }
-        public List<string>GetAllIdChiTietSuDungDichVuDal()
+        public List<int>GetAllIdChiTietSuDungDichVuDal()
         {
             using (DataPbl data = new DataPbl())
             {
-                return data.ChiTietSuDungDichVu.Where(p => p.TonTai == true).Select(p => p.MaChiTietSuDungDichVu).ToList<string>();
+                return data.ChiTietSuDungDichVu.Where(p => p.TonTai == true).Select(p => p.MaChiTietSuDungDichVu).ToList<int>();
             }
 
         }
-        public List<string> GetChiTietSuDungDichVuByIdPhongDal(string IdPhong)
+        public List<int> GetChiTietSuDungDichVuByIdPhongDal(int IdPhong)
         {
             using(DataPbl data = new DataPbl())
             {
-                return data.ChiTietSuDungDichVu.Where(p => p.ChiTietDichVu.PhongTro.MaPhongTro == IdPhong && p.TonTai == true).Select(p => p.MaChiTietSuDungDichVu).ToList<string>();
+                return data.ChiTietSuDungDichVu.Where(p => p.ChiTietDichVu.PhongTro.MaPhongTro == IdPhong && p.TonTai == true).Select(p => p.MaChiTietSuDungDichVu).ToList<int>();
             }
         }
-        public List<string> GetChiTietSuDungDichVuByTinhTrang(bool tinhTrang)
+        public List<int> GetChiTietSuDungDichVuByTinhTrang(bool tinhTrang)
         {
             using(DataPbl data = new DataPbl())
             {
-                return data.ChiTietSuDungDichVu.Where(p => p.TonTai == true && p.TinhTrang == tinhTrang).Select(p => p.MaChiTietSuDungDichVu).ToList<string>();
+                return data.ChiTietSuDungDichVu.Where(p => p.TonTai == true && p.TinhTrang == tinhTrang).Select(p => p.MaChiTietSuDungDichVu).ToList<int>();
             }
         }
 
 
-        public List<string>GetAllIdChiTietThietBiByIdThietBi(string idThietBi)
+        public List<int>GetAllIdChiTietThietBiByIdThietBi(int idThietBi)
         {
             using(DataPbl data = new DataPbl())
             {
-                return data.ChiTietThietBi.Where(p => p.TonTai == true && p.MaThietBi == idThietBi).Select(p => p.MaChiTietThietBi).ToList<string>();
+                return data.ChiTietThietBi.Where(p => p.TonTai == true && p.MaThietBi == idThietBi).Select(p => p.MaChiTietThietBi).ToList<int>();
             }
         }
-        public List<string> GetAllIdChiTietDichVuByIdDichVu(string idDichVu)
+        public List<int> GetAllIdChiTietDichVuByIdDichVu(int idDichVu)
         {
             using (DataPbl data = new DataPbl())
             {
-                return data.ChiTietDichVu.Where(p => p.TonTai == true && p.MaDichVu == idDichVu).Select(p => p.MaChiTietDichVu).ToList<string>();
+                return data.ChiTietDichVu.Where(p => p.TonTai == true && p.MaDichVu == idDichVu).Select(p => p.MaChiTietDichVu).ToList<int>();
             }
         }
       
@@ -973,7 +1012,7 @@ namespace PBL3___Motel_Management_System.DAL
 
             }
         }
-        public List<DichVu> getAllDichVuByIdPhong(string idPhong)
+        public List<DichVu> getAllDichVuByIdPhong(int idPhong)
         {
             using(DataPbl data = new DataPbl())
             {
@@ -988,7 +1027,7 @@ namespace PBL3___Motel_Management_System.DAL
             }
         }
       
-        public ChiTietThietBi GetChiTietThietBiByIdPhongAndIdThietBi(string idp,string idtb)
+        public ChiTietThietBi GetChiTietThietBiByIdPhongAndIdThietBi(int idp,int idtb)
         {
             using(DataPbl data = new DataPbl())
             {

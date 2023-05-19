@@ -14,9 +14,9 @@ namespace PBL3___Motel_Management_System.DAL
     
     public partial class ChiTietThietBi
     {
-        public string MaChiTietThietBi { get; set; }
-        public string MaThietBi { get; set; }
-        public string MaPhongTro { get; set; }
+        public int MaChiTietThietBi { get; set; }
+        public int MaThietBi { get; set; }
+        public int MaPhongTro { get; set; }
         public double SoLuong { get; set; }
         public Nullable<bool> TonTai { get; set; }
     

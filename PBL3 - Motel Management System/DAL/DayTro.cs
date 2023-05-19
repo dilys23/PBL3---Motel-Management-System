@@ -20,12 +20,12 @@ namespace PBL3___Motel_Management_System.DAL
             this.PhongTro = new HashSet<PhongTro>();
         }
     
-        public string MaDayTro { get; set; }
+        public int MaDayTro { get; set; }
         public string TenDayTro { get; set; }
         public string TenDuong { get; set; }
         public string TenHuyen { get; set; }
         public string TenThanhPho { get; set; }
-        public string MaChuTro { get; set; }
+        public int MaChuTro { get; set; }
         public byte[] HinhAnh { get; set; }
         public Nullable<bool> TonTai { get; set; }
     

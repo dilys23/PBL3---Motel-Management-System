@@ -27,6 +27,8 @@ namespace PBL3___Motel_Management_System.DAL
     
         public virtual DbSet<ChiTietDichVu> ChiTietDichVu { get; set; }
         public virtual DbSet<ChiTietSuDungDichVu> ChiTietSuDungDichVu { get; set; }
+        public virtual DbSet<ChiTietTaiKhoan> ChiTietTaiKhoan { get; set; }
+        public virtual DbSet<ChiTietThanhToan> ChiTietThanhToan { get; set; }
         public virtual DbSet<ChiTietThietBi> ChiTietThietBi { get; set; }
         public virtual DbSet<DayTro> DayTro { get; set; }
         public virtual DbSet<DichVu> DichVu { get; set; }
@@ -34,7 +36,6 @@ namespace PBL3___Motel_Management_System.DAL
         public virtual DbSet<HopDong> HopDong { get; set; }
         public virtual DbSet<Nguoi> Nguoi { get; set; }
         public virtual DbSet<PhongTro> PhongTro { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TaiKhoan> TaiKhoan { get; set; }
         public virtual DbSet<ThanhVienTrongPhong> ThanhVienTrongPhong { get; set; }
         public virtual DbSet<ThietBi> ThietBi { get; set; }

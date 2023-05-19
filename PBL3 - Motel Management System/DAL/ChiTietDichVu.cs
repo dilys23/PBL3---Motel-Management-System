@@ -20,9 +20,9 @@ namespace PBL3___Motel_Management_System.DAL
             this.ChiTietSuDungDichVu = new HashSet<ChiTietSuDungDichVu>();
         }
     
-        public string MaChiTietDichVu { get; set; }
-        public string MaDichVu { get; set; }
-        public string MaPhongTro { get; set; }
+        public int MaChiTietDichVu { get; set; }
+        public int MaDichVu { get; set; }
+        public int MaPhongTro { get; set; }
         public Nullable<bool> TonTai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
