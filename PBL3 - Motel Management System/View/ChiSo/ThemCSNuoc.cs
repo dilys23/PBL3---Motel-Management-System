@@ -72,7 +72,7 @@ namespace PBL3___Motel_Management_System.View
             errorProvider1.SetError(cbbPhongTro, "");
             errorProvider1.SetError(txtChiSoCu, "");
             errorProvider1.SetError(txtChiSoMoi, "");
-            if (cbbPhongTro.SelectedIndex == 0)
+            if (cbbPhongTro.SelectedIndex == -1)
             {
                 errorProvider1.SetError(cbbPhongTro, "Vui lòng chọn phòng trọ");
                 status = false;

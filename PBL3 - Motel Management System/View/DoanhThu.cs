@@ -36,7 +36,8 @@ namespace PBL3___Motel_Management_System
                 {
                     PhongTro pt = QLBLL.Instance.GetPhongTroByMaHoaDon(hoadon.MaHoaDon);
                     DayTro dt = QLBLL.Instance.GetDayTroByIdPhong(pt.MaPhongTro);
-                    dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hoadon.TongTien);
+                    //dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hoadon.TongTien);
+                    dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hoadon.DaThanhToan);
                 }
                
             }

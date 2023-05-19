@@ -117,17 +117,25 @@ namespace PBL3___Motel_Management_System.View
                     if (kq == DialogResult.OK)
                     {
                         string id = dgvThanhVien.Rows[e.RowIndex].Cells["MaNguoi"].Value.ToString();
-                        if (id != "000" && id != "001")
+                        int sl = dgvThanhVien.RowCount;
+                        if (sl > 1)
                         {
-                            string idThanhVien =QLBLL.Instance.GetIdThanhVienByIdNguoi(id); 
-                            QLBLL.Instance.DelThanhVienBLL(idThanhVien);
-                            QLBLL.Instance.DelNguoiBll(id);
-                            MessageBox.Show("Xóa thành viên thành công", "Thông báo");
-                            LoadForm(null);
+                            if(!QLBLL.Instance.KiemTraTonTaiHopDongByIdNguoi(id))
+                            {
+                                string idThanhVien =QLBLL.Instance.GetIdThanhVienByIdNguoi(id); 
+                                QLBLL.Instance.DelThanhVienBLL(idThanhVien);
+                                QLBLL.Instance.DelNguoiBll(id);
+                                MessageBox.Show("Xóa thành viên thành công", "Thông báo");
+                                LoadForm(null);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Người này đang đứng tên hợp đồng!! Không thể xóa");
+                            }
                         }
                         else
                         {
-                           
+                            MessageBox.Show("Đây là thành viên duy nhất của phòng, không thể xóa");
                         }
                     }
                 }

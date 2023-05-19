@@ -29,13 +29,7 @@ namespace PBL3___Motel_Management_System
         private void LoadForm(string txtTim)
         {
             dgvHD.Rows.Clear();
-            dgvHD.DefaultCellStyle.Font = new Font("Tahoma", 10);
-            dgvHD.DefaultCellStyle.ForeColor = Color.Blue;
-            dgvHD.DefaultCellStyle.BackColor = Color.Beige;
-            dgvHD.DefaultCellStyle.SelectionForeColor = Color.Black;
-            dgvHD.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
-            dgvHD.RowTemplate.Height = 35;
-            dgvHD.RowTemplate.MinimumHeight = 20;
+            QLBLL.Instance.customDGV(dgvHD);
             if(txtTim == null)
             {
             foreach (DgvHopDong hd in QLBLL.Instance.DgvHopDong())

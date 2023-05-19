@@ -28,6 +28,8 @@ namespace PBL3___Motel_Management_System.View
         }
         public void LoadForm()
         {
+            QLBLL.Instance.customDGV(dgvDichvu);
+            QLBLL.Instance.customDGV(dgvThietbi);
             DayTro dt = new DayTro();
             PhongTro phongTro = new PhongTro();
             Nguoi nguoi = new Nguoi();

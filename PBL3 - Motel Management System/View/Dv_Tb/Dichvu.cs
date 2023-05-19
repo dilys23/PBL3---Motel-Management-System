@@ -173,11 +173,7 @@ namespace PBL3___Motel_Management_System
             }
         }
 
-        private void btnThemPhong_Click(object sender, EventArgs e)
-        {
-            ThemDV themDV = new ThemDV(LoadForm);
-            themDV.ShowDialog();
-        }
+       
 
         private void iconButton5_Click(object sender, EventArgs e)
         {
@@ -188,7 +184,7 @@ namespace PBL3___Motel_Management_System
       
         private void btnThemPhong_Click_1(object sender, EventArgs e)
         {
-            QLBLL.Instance.openChildForm1(new ThemDV(LoadForm), panelDV);
+            QLBLL.Instance.openChildForm1(new SuaDichVu(null, LoadForm), panelDV);
         }
 
         private void btnSuaDV_Click(object sender, EventArgs e)
