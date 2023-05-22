@@ -32,7 +32,6 @@ namespace PBL3___Motel_Management_System
                 SetGUI();
             }
         }
-
         public void SetGUI()
         {
             PhongTro phongTro = QLBLL.Instance.GetPhongTroByIdPhong(IdPhong);
@@ -151,6 +150,24 @@ namespace PBL3___Motel_Management_System
                         pt.HinhAnh = ChuyenDoiAnh.ImageToBase64(pictutePhong.Image, pictutePhong.Image.RawFormat);
                     }
                     QLBLL.Instance.AddPhongTroBll(pt);
+                    DAL.TaiKhoan tk = QLBLL.Instance.TaoTaiKhoanChoPhong(pt.MaPhongTro);
+                    QLBLL.Instance.AddTaiKhoan(tk);
+                    VaiTro vt = new VaiTro
+                    {
+                        MaVaiTro = QLBLL.Instance.TaoIdVaiTro(),
+                        MaTaiKhoan = tk.MaTaiKhoan,
+                        TenVaiTro = "Phòng trọ",
+                        TonTai = true
+                    };
+                    QLBLL.Instance.AddVaiTro(vt);
+                    ChiTietTaiKhoanPhongTro ct = new ChiTietTaiKhoanPhongTro()
+                    {
+                        MaChiTietTaiKhoanPhongTro = QLBLL.Instance.TaoIdChiTietTaiKhoanPhongTro(),
+                        MaTaiKhoan = tk.MaTaiKhoan,
+                        MaPhongTro = pt.MaPhongTro,
+                        TonTai = true
+                    };
+                    QLBLL.Instance.AddChiTietTaiKhoanPhongTro(ct);
                     MessageBox.Show("Thêm phòng trọ vào dãy thành công", "Thông báo");
                     Button btn = new Button();
                     btn.Name = QLBLL.Instance.GetIdDayByIdPhong(pt.MaPhongTro);
