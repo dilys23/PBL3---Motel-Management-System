@@ -1,4 +1,5 @@
 ﻿using PBL3___Motel_Management_System.BLL;
+using PBL3___Motel_Management_System.DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

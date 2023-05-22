@@ -31,7 +31,7 @@ namespace PBL3___Motel_Management_System.DAL
         {
             using (DataPbl data = new DataPbl())
             {
-                return data.TaiKhoan.Select(p => p).ToList<TaiKhoan>();
+                return data.TaiKhoan.Where(p => p.TonTai == true).ToList<TaiKhoan>();
             }
         }
         public string GetIdTkDal(string taikhoan, string matkhau)
@@ -45,7 +45,21 @@ namespace PBL3___Motel_Management_System.DAL
         {
             using (DataPbl data = new DataPbl())
             {
-                return data.VaiTro.Select(p => p).ToList<VaiTro>();
+                return data.VaiTro.Where(p => p.TonTai == true).ToList<VaiTro>();
+            }
+        }
+        public List<ChiTietTaiKhoanChuTro> GetAllTaiKhoanChuTro()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietTaiKhoanChuTro.Where(p => p.TonTai == true).ToList<ChiTietTaiKhoanChuTro>();
+            }
+        }
+        public List<ChiTietTaiKhoanPhongTro> GetAllTaiKhoanPhongTro()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietTaiKhoanPhongTro.Where(p => p.TonTai == true).ToList<ChiTietTaiKhoanPhongTro>();
             }
         }
         public bool KiemTraTonTaiIdPhongTro(string id)
@@ -108,7 +122,7 @@ namespace PBL3___Motel_Management_System.DAL
         {
             using(DataPbl data = new DataPbl())
             {
-                return data.VaiTro.Where(p => p.MaTaiKhoan == idTaiKhoan).FirstOrDefault().MaNguoi;
+                return data.ChiTietTaiKhoanChuTro.Where(p => p.TonTai == true && p.MaTaiKhoan == idTaiKhoan).FirstOrDefault().MaNguoi;
             }
         }
         public List<HopDong> GetAllHopDong()
@@ -172,6 +186,38 @@ namespace PBL3___Motel_Management_System.DAL
             using(DataPbl data = new DataPbl())
             {
                 data.DayTro.Add(dt);
+                data.SaveChanges();
+            }
+        }
+        public void AddTaiKhoanDal(DAL.TaiKhoan tk)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                data.TaiKhoan.Add(tk);
+                data.SaveChanges();
+            }
+        }
+        public void AddVaiTroDal(VaiTro vt)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                data.VaiTro.Add(vt);
+                data.SaveChanges();
+            }
+        }
+        public void AddChiTietTaiKhoanPhongTroDal(ChiTietTaiKhoanPhongTro pt)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                data.ChiTietTaiKhoanPhongTro.Add(pt);
+                data.SaveChanges();
+            }
+        }
+        public void AddChiTietTaiKhoanChuTroDal(ChiTietTaiKhoanChuTro pt)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                data.ChiTietTaiKhoanChuTro.Add(pt);
                 data.SaveChanges();
             }
         }
@@ -993,6 +1039,13 @@ namespace PBL3___Motel_Management_System.DAL
             using(DataPbl data = new DataPbl())
             {
                 return data.ChiTietThietBi.Where(p => p.TonTai == true && p.MaThietBi == idtb && p.MaPhongTro == idp).FirstOrDefault();
+            }
+        }
+        public DAL.TaiKhoan GetTaiKhoanByIdPhong(string idp)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietTaiKhoanPhongTro.Where(p => p.MaPhongTro == idp).FirstOrDefault().TaiKhoan;
             }
         }
     }

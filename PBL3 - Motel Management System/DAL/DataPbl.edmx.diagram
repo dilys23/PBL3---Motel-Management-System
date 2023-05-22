@@ -4,35 +4,41 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3fe978e321b4422e910a9d908c1484c2" Name="Diagram1">
-        <EntityTypeShape EntityType="DataPblModel.ChiTietDichVu" Width="1.5" PointX="7.5" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DataPblModel.ChiTietSuDungDichVu" Width="1.5" PointX="9.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DataPblModel.ChiTietThietBi" Width="1.5" PointX="10.5" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DataPblModel.DayTro" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DataPblModel.DichVu" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DataPblModel.HoaDon" Width="1.5" PointX="7.5" PointY="16.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DataPblModel.HopDong" Width="1.5" PointX="7.5" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DataPblModel.Nguoi" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="DataPblModel.PhongTro" Width="1.5" PointX="5.25" PointY="9.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DataPblModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DataPblModel.TaiKhoan" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DataPblModel.ThanhVienTrongPhong" Width="1.5" PointX="7.5" PointY="13" IsExpanded="true" />
-        <EntityTypeShape EntityType="DataPblModel.ThietBi" Width="1.5" PointX="8.25" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="DataPblModel.VaiTro" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
-        <AssociationConnector Association="DataPblModel.FK__ChiTietSu__MaCHi__5070F446" ManuallyRouted="false" />
+      <Diagram DiagramId="31ca649fbe2b4c5196b94207d2e4c437" Name="Diagram1">
+        <EntityTypeShape EntityType="DataPblModel.ChiTietDichVu" Width="1.5" PointX="7.5" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataPblModel.ChiTietSuDungDichVu" Width="1.5" PointX="9.75" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataPblModel.ChiTietTaiKhoanChuTro" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataPblModel.ChiTietTaiKhoanPhongTro" Width="1.5" PointX="7.5" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataPblModel.ChiTietThanhToanHoaDon" Width="1.5" PointX="9.75" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataPblModel.ChiTietThietBi" Width="1.5" PointX="10.5" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataPblModel.DayTro" Width="1.5" PointX="3" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataPblModel.DichVu" Width="1.5" PointX="5.25" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataPblModel.HoaDon" Width="1.5" PointX="7.5" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataPblModel.HopDong" Width="1.5" PointX="10.5" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataPblModel.Nguoi" Width="1.5" PointX="0.75" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataPblModel.PhongTro" Width="1.5" PointX="5.25" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataPblModel.TaiKhoan" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataPblModel.ThanhVienTrongPhong" Width="1.5" PointX="7.5" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataPblModel.ThietBi" Width="1.5" PointX="8.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataPblModel.VaiTro" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <AssociationConnector Association="DataPblModel.FK__ChiTietSu__MaCHi__3E52440B" ManuallyRouted="false" />
         <AssociationConnector Association="DataPblModel.FK_MaDichVuChiTietDichVu" ManuallyRouted="false" />
         <AssociationConnector Association="DataPblModel.FK_MaPhongTroTietDichVu" ManuallyRouted="false" />
+        <AssociationConnector Association="DataPblModel.FK__ChiTietTa__MaNgu__693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="DataPblModel.FK__ChiTietTa__MaTai__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="DataPblModel.FK__ChiTietTa__MaPho__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="DataPblModel.FK__ChiTietTa__MaTai__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="DataPblModel.FK__ChiTietTh__MaHoa__6C190EBB" ManuallyRouted="false" />
         <AssociationConnector Association="DataPblModel.FK_MaPhongTroChiTietThietBi" ManuallyRouted="false" />
         <AssociationConnector Association="DataPblModel.FK_MaThietBiChiTietThietBi" ManuallyRouted="false" />
-        <AssociationConnector Association="DataPblModel.FK__DayTro__MaChuTro__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="DataPblModel.FK__DayTro__MaChuTro__412EB0B6" ManuallyRouted="false" />
         <AssociationConnector Association="DataPblModel.FK_MaDayTroPhongTro" ManuallyRouted="false" />
-        <AssociationConnector Association="DataPblModel.FK__HoaDon__MaPhongT__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="DataPblModel.FK__HoaDon__MaPhongT__4222D4EF" ManuallyRouted="false" />
         <AssociationConnector Association="DataPblModel.FK_MaNguoiHopDong" ManuallyRouted="false" />
         <AssociationConnector Association="DataPblModel.FK_MaPhongTroHopDong" ManuallyRouted="false" />
         <AssociationConnector Association="DataPblModel.FK_MaNguoiThanhVienTrongPhong" ManuallyRouted="false" />
-        <AssociationConnector Association="DataPblModel.FK_MaNguoiVaiTro" ManuallyRouted="false" />
         <AssociationConnector Association="DataPblModel.FK_MaPhongTroThanhVienTrongPhong" ManuallyRouted="false" />
-        <AssociationConnector Association="DataPblModel.FK_MaTaiKhoanVaiTro" ManuallyRouted="false" />
+        <AssociationConnector Association="DataPblModel.FK__VaiTro__MaTaiKho__60A75C0F" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
