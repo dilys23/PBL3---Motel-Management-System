@@ -47,6 +47,18 @@ namespace PBL3___Motel_Management_System.BLL
         {
             return QLDAL.Instance.GetAllPhongTro();//ok
         }
+        public List<VaiTro> GetAllVaiTro()
+        {
+            return QLDAL.Instance.GetAllVaiTro();
+        }
+        public List<ChiTietTaiKhoanPhongTro>GetAllTaiKhoanPhongTro()
+        {
+            return QLDAL.Instance.GetAllTaiKhoanPhongTro();
+        }
+        public List<ChiTietTaiKhoanChuTro> GetAllTaiKhoanChuTro()
+        {
+            return QLDAL.Instance.GetAllTaiKhoanChuTro();
+        }
         public List<ViewCbb> GetCbbDayTro()
         {
             List<ViewCbb> list = new List<ViewCbb>();
@@ -94,6 +106,70 @@ namespace PBL3___Motel_Management_System.BLL
                 foreach (Nguoi ng in QLDAL.Instance.GetAllNguoi())
                 {
                     if (ng.MaNguoi == id) status = true;
+                }
+            }
+            return id;
+        }
+        public string TaoIdVaiTro()
+        {
+            string id = null;
+            Boolean status = true;
+            Random random = new Random();
+            while (status)
+            {
+                id = random.Next(1, 1000).ToString();
+                status = false;
+                foreach (VaiTro vt in QLDAL.Instance.GetAllVaiTro())
+                {
+                    if (vt.MaVaiTro == id) status = true;
+                }
+            }
+            return id;
+        }
+        public string TaoIdChiTietTaiKhoanChuTro()
+        {
+            string id = null;
+            Boolean status = true;
+            Random random = new Random();
+            while (status)
+            {
+                id = random.Next(1, 1000).ToString();
+                status = false;
+                foreach (ChiTietTaiKhoanChuTro vt in QLDAL.Instance.GetAllTaiKhoanChuTro())
+                {
+                    if (vt.MaChiTietTaiKhoanChuTro == id) status = true;
+                }
+            }
+            return id;
+        }
+        public string TaoIdChiTietTaiKhoanPhongTro()
+        {
+            string id = null;
+            Boolean status = true;
+            Random random = new Random();
+            while (status)
+            {
+                id = random.Next(1, 1000).ToString();
+                status = false;
+                foreach (ChiTietTaiKhoanPhongTro vt in QLDAL.Instance.GetAllTaiKhoanPhongTro())
+                {
+                    if (vt.MaChiTietTaiKhoanPhongTro == id) status = true;
+                }
+            }
+            return id;
+        }
+        public string TaoIdTaiKhoan()
+        {
+            string id = null;
+            Boolean status = true;
+            Random random = new Random();
+            while (status)
+            {
+                id = random.Next(1, 1000).ToString();
+                status = false;
+                foreach (DAL.TaiKhoan vt in QLDAL.Instance.GetAllTaiKhoan())
+                {
+                    if (vt.MaTaiKhoan == id) status = true;
                 }
             }
             return id;
@@ -1306,6 +1382,38 @@ namespace PBL3___Motel_Management_System.BLL
             lbl.Size = new System.Drawing.Size(50, 80);
             lbl.Visible = true;
             return lbl;
+        }
+        public DAL.TaiKhoan TaoTaiKhoanChoPhong(string idp)
+        {
+            PhongTro pt = GetPhongTroByIdPhong(idp);
+            DAL.TaiKhoan tk = new DAL.TaiKhoan()
+            {
+                MaTaiKhoan = TaoIdTaiKhoan(),
+                TenTaiKhoan = "pt" + pt.MaPhongTro,
+                MatKhau = "pt" + pt.MaPhongTro,
+                TonTai = true
+            };
+            return tk;
+        }
+        public void AddTaiKhoan(DAL.TaiKhoan tk)
+        {
+            QLDAL.Instance.AddTaiKhoanDal(tk);
+        }
+        public void AddVaiTro(VaiTro vt)
+        {
+            QLDAL.Instance.AddVaiTroDal(vt);
+        }
+        public void AddChiTietTaiKhoanPhongTro(ChiTietTaiKhoanPhongTro pt)
+        {
+            QLDAL.Instance.AddChiTietTaiKhoanPhongTroDal(pt);
+        }
+        public void AddChiTietTaiKhoanChuTro(ChiTietTaiKhoanChuTro pt)
+        {
+            QLDAL.Instance.AddChiTietTaiKhoanChuTroDal(pt);
+        }
+        public DAL.TaiKhoan GetTaiKhoanByIdPhong(string idp)
+        {
+            return QLDAL.Instance.GetTaiKhoanByIdPhong(idp);
         }
     }
 }
