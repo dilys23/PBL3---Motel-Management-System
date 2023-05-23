@@ -34,7 +34,8 @@ namespace PBL3___Motel_Management_System.View
             PhongTro phongTro = new PhongTro();
             Nguoi nguoi = new Nguoi();
             HopDong hopdong = new HopDong();
-            if (tp.hopDong.MaPhongTro==null)
+            //Ma Hop dong
+            if (tp.hopDong.MaPhongTro==null && tp.hopDong.MaHopDong !=null)
             {
                 hopdong = QLBLL.Instance.GetHopDongByMaHD(tp.hopDong.MaHopDong);
                 phongTro = QLBLL.Instance.GetPhongTroByMaHopDong(tp.hopDong.MaHopDong);
@@ -42,13 +43,25 @@ namespace PBL3___Motel_Management_System.View
                 nguoi = QLBLL.Instance.GetNguoiByMaHopDong(hopdong.MaHopDong);
                 SetGUI(dt, nguoi, phongTro, hopdong);            
             }
-            else
+            //Thue phong
+            if(tp.hopDong.MaHopDong !=null && tp.hopDong.MaPhongTro !=null)
             {    
                 nguoi = tp.hopDong.Nguoi;
                 dt = QLBLL.Instance.GetDayTroByIdPhong(tp.hopDong.MaPhongTro);
                 phongTro = QLBLL.Instance.GetPhongTroByIdPhong(tp.hopDong.MaPhongTro);
                 hopdong = this.tp.hopDong;
                 SetGUI(dt, nguoi, phongTro, hopdong);             
+            }
+            if(tp.hopDong.MaHopDong == null && tp.hopDong.MaPhongTro !=null)
+            {
+                dt = QLBLL.Instance.GetDayTroByIdPhong(tp.hopDong.MaPhongTro);
+                phongTro = QLBLL.Instance.GetPhongTroByIdPhong(tp.hopDong.MaPhongTro);
+                txtTenDay.Text = dt.TenDayTro;
+                txtDienTich.Text = phongTro.DienTich.ToString();
+                txtTenPhong.Text = phongTro.TenPhongTro;
+                string diachi = dt.TenDuong + " " + dt.TenHuyen + " " + dt.TenThanhPho;
+                txtDiaChi.Text = diachi;
+                txtGiaPhong.Text = phongTro.GiaTien.ToString();
             }
         }
         public void SetGUI(DayTro dt, Nguoi nguoi,PhongTro phongTro, HopDong hopdong)

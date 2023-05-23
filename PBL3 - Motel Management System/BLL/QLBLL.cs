@@ -15,7 +15,9 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
+using static System.Net.Mime.MediaTypeNames;
 using Chart =System.Windows.Forms.DataVisualization.Charting.Chart;
+using Image = System.Drawing.Image;
 
 namespace PBL3___Motel_Management_System.BLL
 {
@@ -1414,6 +1416,26 @@ namespace PBL3___Motel_Management_System.BLL
         public DAL.TaiKhoan GetTaiKhoanByIdPhong(string idp)
         {
             return QLDAL.Instance.GetTaiKhoanByIdPhong(idp);
+        }
+        public DAL.TaiKhoan GetTaiKhoanByIdChuTro(string idChutro)
+        {
+            return QLDAL.Instance.GetTaiKhoanByIdChuTro(idChutro);
+        }
+        public void UpdateTaiKhoanPhong(DAL.TaiKhoan tk)
+        {
+            QLDAL.Instance.UpdateTaiKhoanPhong(tk);
+        }
+        public void UpdateTaiKhoanChutro(DAL.TaiKhoan tk)
+        {
+            QLDAL.Instance.UpdateTaiKhoanChutro(tk);
+        }
+        public VaiTro CheckVaiTro(string tentk, string mk)
+        {
+            return QLDAL.Instance.CheckVaiTro(tentk, mk);
+        }
+        public PhongTro GetPhongTroByMaTaiKhoan(string matk)
+        {
+            return QLDAL.Instance.GetPhongTroByMaTaiKhoan(matk);
         }
     }
 }

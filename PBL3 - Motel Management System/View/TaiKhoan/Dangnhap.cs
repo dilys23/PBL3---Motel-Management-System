@@ -1,5 +1,6 @@
 ﻿using PBL3___Motel_Management_System.BLL;
 using PBL3___Motel_Management_System.DAL;
+using PBL3___Motel_Management_System.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,9 +23,24 @@ namespace PBL3___Motel_Management_System
         {
             if(QLBLL.Instance.GetIdTk(txtTaiKhoan.Text,txtMatKhau.Text) != null)
             {
-                TrangChu tc = new TrangChu();
-                tc.ShowDialog();
-                this.Close();
+                //TrangChu tc = new TrangChu();
+                //tc.ShowDialog();
+                //this.Close();
+                VaiTro vaitro = QLBLL.Instance.CheckVaiTro(txtTaiKhoan.Text, txtMatKhau.Text);
+                if(vaitro.TenVaiTro=="Chủ trọ")
+                {
+                    TrangChu tc = new TrangChu();
+                    tc.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    string matk = vaitro.MaTaiKhoan;
+                    TrangChuKhach tc = new TrangChuKhach(matk);
+                    tc.ShowDialog();
+                    this.Close();
+                }
+
             }
             else
             {

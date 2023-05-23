@@ -1,4 +1,5 @@
 ﻿using PBL3___Motel_Management_System.BLL;
+using PBL3___Motel_Management_System.DAL;
 using PBL3___Motel_Management_System.DTO;
 using PBL3___Motel_Management_System.View.KhachHang;
 using System;
@@ -24,19 +25,23 @@ namespace PBL3___Motel_Management_System.View
 #pragma warning restore CS0169 // The field 'TrangChuKhach.loader' is never used
         private int borderSize = 2;
         private Size formSize;
-        public TrangChuKhach()
+        private string matk;
+        private string idPhong;
+        public TrangChuKhach(string matk)
         {
             InitializeComponent();
             this.Padding = new Padding(borderSize);//Border size
             this.BackColor = Color.FromArgb(217, 247, 249);
-
+            this.matk= matk;
+            
         }
-
+        
        
-
+        
         private void TrangChuKhach_Load(object sender, EventArgs e)
         {
             formSize = this.ClientSize;
+            QLBLL.Instance.openChildForm1(new panelKhach(matk), panelDesktop);
         }
 
         //Drag Form
@@ -234,9 +239,24 @@ namespace PBL3___Motel_Management_System.View
         TrangChu tc = new TrangChu();
         private void btnHopDong_Click(object sender, EventArgs e)
         {
-            Hoadon hd = new Hoadon();
-            //hd.btnXoa.Visible = false;
-            QLBLL.Instance.openChildForm1(hd, panelDesktop);
+            idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
+            ThuePhong tp = new ThuePhong();
+            if (QLBLL.Instance.GetHopDongByIdPhong(idPhong)!=null)
+            {
+                HopDong hopDong = QLBLL.Instance.GetHopDongByIdPhong(idPhong);
+                tp.hopDong.MaHopDong = hopDong.MaHopDong;
+                ChitietHopDong ct = new ChitietHopDong(tp, null);
+                ct.btnXacNhan.Visible = false;
+                QLBLL.Instance.openChildForm1(ct, panelDesktop);
+            }
+            else
+            {
+                tp.hopDong.MaPhongTro = idPhong;
+                ChitietHopDong ct = new ChitietHopDong(tp, null);
+                ct.btnXacNhan.Visible = false;
+                QLBLL.Instance.openChildForm1(ct, panelDesktop);
+            }
+            
         }
 
         private void btnPhong_Click(object sender, EventArgs e)
@@ -247,7 +267,8 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnDien_Click(object sender, EventArgs e)
         {
-            ChitietDienPhong ct = new ChitietDienPhong();
+            idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
+            ChitietDienPhong ct = new ChitietDienPhong(idPhong);
             QLBLL.Instance.openChildForm1(ct, panelDesktop);
         }
 
@@ -259,13 +280,14 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
-            HoaDonPhong ct = new HoaDonPhong();
+            idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
+            HoaDonPhong ct = new HoaDonPhong(idPhong);
             QLBLL.Instance.openChildForm1(ct, panelDesktop);
         }
 
         private void btnTrangchu_Click(object sender, EventArgs e)
         {
-            panelKhach ct = new panelKhach();
+            panelKhach ct = new panelKhach(matk);
             QLBLL.Instance.openChildForm1(ct, panelDesktop);
         }
     }

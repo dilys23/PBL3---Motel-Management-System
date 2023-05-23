@@ -34,7 +34,7 @@ namespace PBL3___Motel_Management_System.View
         private void btnDoiMK_Click(object sender, EventArgs e)
         {
             //tc.openChildForm(new DoiMK());
-            using (DoiMK frm = new DoiMK(null,null))
+            using (DoiMK frm = new DoiMK(null,null,null))
             {
                 frm.ShowDialog();
             }

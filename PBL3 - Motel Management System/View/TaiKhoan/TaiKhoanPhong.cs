@@ -29,7 +29,7 @@ namespace PBL3___Motel_Management_System.View
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            QLBLL.Instance.openChildForm1(new DoiMK(idp, null), panel1);
+            QLBLL.Instance.openChildForm1(new DoiMK(idp, null,LoadForm), panel1);
         }
     }
 }

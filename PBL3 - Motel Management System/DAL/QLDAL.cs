@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Markup;
 
 namespace PBL3___Motel_Management_System.DAL
 {
@@ -1046,6 +1047,49 @@ namespace PBL3___Motel_Management_System.DAL
             using (DataPbl data = new DataPbl())
             {
                 return data.ChiTietTaiKhoanPhongTro.Where(p => p.MaPhongTro == idp).FirstOrDefault().TaiKhoan;
+            }
+        }
+        public DAL.TaiKhoan GetTaiKhoanByIdChuTro(string idChutro)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietTaiKhoanChuTro.Where(p => p.MaNguoi == idChutro).FirstOrDefault().TaiKhoan;
+            }
+        }
+        public void UpdateTaiKhoanPhong(DAL.TaiKhoan tk)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                var s = data.TaiKhoan.Where(p => p.TonTai == true && p.MaTaiKhoan == tk.MaTaiKhoan).FirstOrDefault();
+                s.TenTaiKhoan=tk.TenTaiKhoan;
+                s.MatKhau = tk.MatKhau;
+                s.TonTai = tk.TonTai;
+                data.SaveChanges();
+            }
+        }
+        public void UpdateTaiKhoanChutro(DAL.TaiKhoan tk)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                var s = data.TaiKhoan.Where(p => p.TonTai == true && p.MaTaiKhoan == tk.MaTaiKhoan).FirstOrDefault();
+                s.TenTaiKhoan = tk.TenTaiKhoan;
+                s.MatKhau = tk.MatKhau;
+                s.TonTai = tk.TonTai;
+                data.SaveChanges();
+            }
+        }
+        public VaiTro CheckVaiTro(string tentk, string mk)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.VaiTro.Where(p=>p.TaiKhoan.TenTaiKhoan==tentk && p.TaiKhoan.MatKhau==mk &&p.TonTai==true).FirstOrDefault();
+            }
+        }
+        public PhongTro GetPhongTroByMaTaiKhoan(string matk)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietTaiKhoanPhongTro.Where(p=>p.TonTai==true && p.MaTaiKhoan==matk).FirstOrDefault().PhongTro;
             }
         }
     }
