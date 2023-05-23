@@ -17,7 +17,7 @@ namespace PBL3___Motel_Management_System.View.KhachHang
         {
             InitializeComponent();
             RoundPanel(panel1, 10);
-            RoundPanel(panel2, 10);
+           // RoundPanel(panel2, 10);
         }
 
         private void RoundPanel(Panel panel, int cornerRadius)
