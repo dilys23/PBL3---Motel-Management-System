@@ -33,7 +33,7 @@ namespace PBL3___Motel_Management_System.View.KhachHang
             {
                 foreach (ViewChiSo view in QLBLL.Instance.GetAllViewChiSo())
                 {
-                    if (QLBLL.Instance.GetChiTietDichVuById(view.MaChiTietDichVu).MaDichVu == "001" && view.TinhTrang == true )
+                    if (QLBLL.Instance.GetChiTietDichVuById(view.MaChiTietDichVu).MaDichVu == "001" && view.TinhTrang == true)
                     { 
                         dgvChiSoDien.Rows.Add(view.MaChiTietSuDungDichVu, ++i, view.ChiSoCu, view.ChiSoMoi, view.DaDung
                         , view.NgayLap, view.ThangSuDung);

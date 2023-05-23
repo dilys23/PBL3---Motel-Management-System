@@ -37,17 +37,15 @@
             this.panelChisoDien = new System.Windows.Forms.Panel();
             this.btnTimKiem = new FontAwesome.Sharp.IconButton();
             this.dgvChiSoDien = new System.Windows.Forms.DataGridView();
+            this.dtpThangSuDung = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
             this.MaChiTietSuDungDichVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DayTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhongTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChiSoCu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChiSoMoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DaDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayLap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Thang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtpThangSuDung = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelChisoDien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiSoDien)).BeginInit();
@@ -130,8 +128,6 @@
             this.dgvChiSoDien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaChiTietSuDungDichVu,
             this.Stt,
-            this.DayTro,
-            this.PhongTro,
             this.ChiSoCu,
             this.ChiSoMoi,
             this.DaDung,
@@ -167,6 +163,28 @@
             this.dgvChiSoDien.Size = new System.Drawing.Size(993, 288);
             this.dgvChiSoDien.TabIndex = 8;
             // 
+            // dtpThangSuDung
+            // 
+            this.dtpThangSuDung.CustomFormat = "MM/yyyy";
+            this.dtpThangSuDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpThangSuDung.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpThangSuDung.Location = new System.Drawing.Point(72, 37);
+            this.dtpThangSuDung.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpThangSuDung.Name = "dtpThangSuDung";
+            this.dtpThangSuDung.ShowUpDown = true;
+            this.dtpThangSuDung.Size = new System.Drawing.Size(125, 27);
+            this.dtpThangSuDung.TabIndex = 29;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(68, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 20);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Thời gian:";
+            // 
             // MaChiTietSuDungDichVu
             // 
             this.MaChiTietSuDungDichVu.HeaderText = "MaChiTietSuDungDichVu";
@@ -179,20 +197,6 @@
             this.Stt.HeaderText = "STT";
             this.Stt.MinimumWidth = 6;
             this.Stt.Name = "Stt";
-            // 
-            // DayTro
-            // 
-            this.DayTro.HeaderText = "Dãy trọ";
-            this.DayTro.MinimumWidth = 6;
-            this.DayTro.Name = "DayTro";
-            this.DayTro.Visible = false;
-            // 
-            // PhongTro
-            // 
-            this.PhongTro.HeaderText = "Phòng trọ";
-            this.PhongTro.MinimumWidth = 6;
-            this.PhongTro.Name = "PhongTro";
-            this.PhongTro.Visible = false;
             // 
             // ChiSoCu
             // 
@@ -224,28 +228,6 @@
             this.Thang.MinimumWidth = 6;
             this.Thang.Name = "Thang";
             // 
-            // dtpThangSuDung
-            // 
-            this.dtpThangSuDung.CustomFormat = "MM/yyyy";
-            this.dtpThangSuDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpThangSuDung.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpThangSuDung.Location = new System.Drawing.Point(72, 37);
-            this.dtpThangSuDung.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtpThangSuDung.Name = "dtpThangSuDung";
-            this.dtpThangSuDung.ShowUpDown = true;
-            this.dtpThangSuDung.Size = new System.Drawing.Size(125, 27);
-            this.dtpThangSuDung.TabIndex = 29;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(68, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 20);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Thời gian:";
-            // 
             // ChitietDienPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -276,8 +258,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaChiTietSuDungDichVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DayTro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PhongTro;
         private System.Windows.Forms.DataGridViewTextBoxColumn ChiSoCu;
         private System.Windows.Forms.DataGridViewTextBoxColumn ChiSoMoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn DaDung;

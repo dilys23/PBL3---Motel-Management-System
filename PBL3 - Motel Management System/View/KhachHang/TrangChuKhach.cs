@@ -274,7 +274,8 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnNuoc_Click(object sender, EventArgs e)
         {
-            ChitietNuocPhong ct = new ChitietNuocPhong();
+            idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
+            ChitietNuocPhong ct = new ChitietNuocPhong(idPhong);
             QLBLL.Instance.openChildForm1(ct, panelDesktop);
         }
 
