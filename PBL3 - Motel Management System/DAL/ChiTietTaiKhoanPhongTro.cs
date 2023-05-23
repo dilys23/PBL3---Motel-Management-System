@@ -12,13 +12,14 @@ namespace PBL3___Motel_Management_System.DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class VaiTro
+    public partial class ChiTietTaiKhoanPhongTro
     {
-        public string MaVaiTro { get; set; }
+        public string MaChiTietTaiKhoanPhongTro { get; set; }
         public string MaTaiKhoan { get; set; }
-        public string TenVaiTro { get; set; }
+        public string MaPhongTro { get; set; }
         public bool TonTai { get; set; }
     
+        public virtual PhongTro PhongTro { get; set; }
         public virtual TaiKhoan TaiKhoan { get; set; }
     }
 }
