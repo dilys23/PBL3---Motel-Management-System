@@ -33,5 +33,23 @@ namespace PBL3___Motel_Management_System
 
             
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            if(txtMatKhau.PasswordChar=='*')
+            {
+                btnChiTiet.BringToFront();
+                txtMatKhau.PasswordChar = '\0';
+            }
+        }
+
+        private void btnChiTiet_Click(object sender, EventArgs e)
+        {
+            if (txtMatKhau.PasswordChar == '\0')
+            {
+                iconButton1.BringToFront();
+                txtMatKhau.PasswordChar = '*';
+            }
+        }
     }
 }

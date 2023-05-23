@@ -12,7 +12,8 @@ namespace PBL3___Motel_Management_System.View
 {
     public partial class DoiMK : Form
     {
-        public DoiMK()
+        
+        public DoiMK(string idPhong,string idChutro)
         {
             InitializeComponent();
         }
