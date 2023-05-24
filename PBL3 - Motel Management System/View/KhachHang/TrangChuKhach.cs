@@ -261,13 +261,19 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnPhong_Click(object sender, EventArgs e)
         {
-           // ThemPhong tp = new ThemPhong();
-
+            idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
+            ThemPhong tp = new ThemPhong(null,idPhong,null,null);
+            tp.btnLuu.Visible = false;tp.txtDienTich.ReadOnly = true;
+            tp.btnThemAnh.Visible = false;tp.txtGiaTien.ReadOnly = true;
+            tp.iconButton1.Visible = false;tp.txtTenPhong.ReadOnly = true;
+            tp.label9.Visible= false;tp.txtToiDa.ReadOnly= true;
+            QLBLL.Instance.openChildForm1(tp,panelDesktop);
         }
 
         private void btnDien_Click(object sender, EventArgs e)
         {
             idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
+
             ChitietDienPhong ct = new ChitietDienPhong(idPhong);
             QLBLL.Instance.openChildForm1(ct, panelDesktop);
         }
@@ -290,6 +296,11 @@ namespace PBL3___Motel_Management_System.View
         {
             panelKhach ct = new panelKhach(matk);
             QLBLL.Instance.openChildForm1(ct, panelDesktop);
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

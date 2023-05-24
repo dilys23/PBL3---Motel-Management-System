@@ -95,7 +95,7 @@ namespace PBL3___Motel_Management_System.View
                 {
                     ThietBi tb = new ThietBi();
                     tb = QLBLL.Instance.GetTBByIdTB(cttb.MaThietBi);
-                    dgvThietbi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi);
+                    dgvThietbi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi,cttb.SoLuong);
                 }
             }
             else

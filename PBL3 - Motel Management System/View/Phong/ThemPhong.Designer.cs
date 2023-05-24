@@ -249,19 +249,19 @@
         #endregion
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtTenPhong;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private FontAwesome.Sharp.IconButton btnLuu;
         private System.Windows.Forms.Panel panel2;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private System.Windows.Forms.TextBox txtDienTich;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtToiDa;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.TextBox txtGiaTien;
-        private FontAwesome.Sharp.IconButton btnThemAnh;
         private System.Windows.Forms.PictureBox pictutePhong;
+        public System.Windows.Forms.TextBox txtTenPhong;
+        public FontAwesome.Sharp.IconButton btnLuu;
+        public System.Windows.Forms.TextBox txtDienTich;
+        public System.Windows.Forms.TextBox txtToiDa;
+        public System.Windows.Forms.Label label9;
+        public System.Windows.Forms.TextBox txtGiaTien;
+        public FontAwesome.Sharp.IconButton btnThemAnh;
+        public FontAwesome.Sharp.IconButton iconButton1;
     }
 }

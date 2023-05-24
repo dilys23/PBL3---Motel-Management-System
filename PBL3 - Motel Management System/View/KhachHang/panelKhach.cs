@@ -75,7 +75,7 @@ namespace PBL3___Motel_Management_System.View.KhachHang
                     {
                         nguoi = QLBLL.Instance.GetNguoiByIdNguoi(idNguoi);
                         Image image = null;
-                        if(nguoi.Ten.StartsWith(key))
+                        if(nguoi.Ten.StartsWith(key) || nguoi.Ten.ToLower().StartsWith(key.ToLower()))
                         {
                             if (nguoi.HinhAnh != null)
                             {
@@ -93,6 +93,27 @@ namespace PBL3___Motel_Management_System.View.KhachHang
         private void button1_Click(object sender, EventArgs e)
         {
             SetGUI(textBox1.Text);      
+        }
+
+        private void dgvThanhVien_DoubleClick(object sender, EventArgs e)
+        {
+               if (dgvThanhVien.CurrentRow.Cells[0].Value != null)
+            {
+                ThuePhong tp = new ThuePhong();
+                string id = dgvThanhVien.CurrentRow.Cells[0].Value.ToString();
+                tp.hopDong.MaNguoi = id;
+                ThemKhach tk = new ThemKhach(tp, SetGUI);
+                QLBLL.Instance.openChildForm1(tk, panel3);
+                tk.btnLuu.Visible= false;
+                tk.btnThemAnh.Visible= false;
+                tk.txtCccd.Enabled = false;
+                tk.txtDiaChi.Enabled = false;
+                tk.dtpNgaySinh.Enabled = false;
+                tk.txtSdt.Enabled = false;
+                tk.txtTen.Enabled = false;
+                tk.rdbtnNam.Enabled = false;
+                tk.rdbtnNu.Enabled = false;
+            }
         }
     }
 }

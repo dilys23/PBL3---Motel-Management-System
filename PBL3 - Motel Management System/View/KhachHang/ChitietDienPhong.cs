@@ -29,19 +29,6 @@ namespace PBL3___Motel_Management_System.View.KhachHang
             dgvChiSoDien.Rows.Clear();
             QLBLL.Instance.customDGV(dgvChiSoDien);
             int i = 0;
-            if (txt == null)
-            {
-                foreach (ViewChiSo view in QLBLL.Instance.GetAllViewChiSo())
-                {
-                    if (QLBLL.Instance.GetChiTietDichVuById(view.MaChiTietDichVu).MaDichVu == "001" && view.TinhTrang == true)
-                    { 
-                        dgvChiSoDien.Rows.Add(view.MaChiTietSuDungDichVu, ++i, view.ChiSoCu, view.ChiSoMoi, view.DaDung
-                        , view.NgayLap, view.ThangSuDung);
-                    }
-                }
-            }
-            else
-            {
                 string IdDay = QLBLL.Instance.GetDayTroByIdPhong(idPhong).MaDayTro;
                 string ThangSuDung = dtpThangSuDung.Value.ToString("MM-yyyy");
                 foreach (ViewChiSo view in QLBLL.Instance.GetViewChiSoByTimKiem(ThangSuDung, IdDay, idPhong, "1"))
@@ -51,7 +38,6 @@ namespace PBL3___Motel_Management_System.View.KhachHang
                         dgvChiSoDien.Rows.Add(view.MaChiTietSuDungDichVu, ++i, view.ChiSoCu, view.ChiSoMoi, view.DaDung
                         , view.NgayLap, view.ThangSuDung);
                     }
-                }
             }
         }
 

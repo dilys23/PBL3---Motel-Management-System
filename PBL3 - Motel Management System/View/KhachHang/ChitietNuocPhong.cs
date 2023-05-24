@@ -29,28 +29,14 @@ namespace PBL3___Motel_Management_System.View.KhachHang
             dgvChiSoNuoc.Rows.Clear();
             QLBLL.Instance.customDGV(dgvChiSoNuoc);
             int i = 0;
-            if (txt == null)
+            string IdDay = QLBLL.Instance.GetDayTroByIdPhong(idPhong).MaDayTro;
+            string ThangSuDung = dtpThangSuDung.Value.ToString("MM-yyyy");
+            foreach (ViewChiSo view in QLBLL.Instance.GetViewChiSoByTimKiem(ThangSuDung, IdDay, idPhong, "1"))
             {
-                foreach (ViewChiSo view in QLBLL.Instance.GetAllViewChiSo())
+                if (QLBLL.Instance.GetChiTietDichVuById(view.MaChiTietDichVu).MaDichVu == "000" && view.TinhTrang == true)
                 {
-                    if (QLBLL.Instance.GetChiTietDichVuById(view.MaChiTietDichVu).MaDichVu == "000" && view.TinhTrang == true)
-                    {
-                        dgvChiSoNuoc.Rows.Add(view.MaChiTietSuDungDichVu, ++i, view.ChiSoCu, view.ChiSoMoi, view.DaDung
-                        , view.NgayLap, view.ThangSuDung);
-                    }
-                }
-            }
-            else
-            {
-                string IdDay = QLBLL.Instance.GetDayTroByIdPhong(idPhong).MaDayTro;
-                string ThangSuDung = dtpThangSuDung.Value.ToString("MM-yyyy");
-                foreach (ViewChiSo view in QLBLL.Instance.GetViewChiSoByTimKiem(ThangSuDung, IdDay, idPhong, "1"))
-                {
-                    if (QLBLL.Instance.GetChiTietDichVuById(view.MaChiTietDichVu).MaDichVu == "000" && view.TinhTrang == true)
-                    {
-                        dgvChiSoNuoc.Rows.Add(view.MaChiTietSuDungDichVu, ++i, view.ChiSoCu, view.ChiSoMoi, view.DaDung
-                        , view.NgayLap, view.ThangSuDung);
-                    }
+                    dgvChiSoNuoc.Rows.Add(view.MaChiTietSuDungDichVu, ++i, view.ChiSoCu, view.ChiSoMoi, view.DaDung
+                    , view.NgayLap, view.ThangSuDung);
                 }
             }
         }

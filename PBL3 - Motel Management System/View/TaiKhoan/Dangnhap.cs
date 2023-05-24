@@ -30,15 +30,15 @@ namespace PBL3___Motel_Management_System
                 if(vaitro.TenVaiTro=="Chủ trọ")
                 {
                     TrangChu tc = new TrangChu();
-                    tc.ShowDialog();
-                    this.Close();
+                    tc.Show();
+                    this.Hide();
                 }
                 else
                 {
                     string matk = vaitro.MaTaiKhoan;
                     TrangChuKhach tc = new TrangChuKhach(matk);
-                    tc.ShowDialog();
-                    this.Close();
+                    tc.Show();
+                    this.Hide();
                 }
 
             }
