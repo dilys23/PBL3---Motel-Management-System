@@ -152,23 +152,23 @@ namespace PBL3___Motel_Management_System.View
         }
         private void dgvChiSoDien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-                string columnName = dgvChiSoDien.Columns[e.ColumnIndex].Name;
-                if (columnName == "btnSua")
+            string columnName = dgvChiSoDien.Columns[e.ColumnIndex].Name;
+            if (columnName == "btnSua")
+            {
+                if (dgvChiSoDien.Rows[e.RowIndex].Cells[9].Value.ToString() == "Đã xác thực")
                 {
-                    if (dgvChiSoDien.Rows[e.RowIndex].Cells[9].Value.ToString() == "Đã xác thực")
-                    {
-                        MessageBox.Show("Chỉ số hiện tại đã được xác thực nên không thể sửa!!Vui lòng bỏ xác thực trước khi sửa chỉ số", "Thông báo");
-                    }
-                    else
-                    {
-                        string id = dgvChiSoDien.CurrentRow.Cells[0].Value.ToString();
-                        ThemCSDien frm = new ThemCSDien(id, LoadForm);
-                        frm.cbbDayTro.Enabled = false;
-                        frm.cbbPhongTro.Enabled = false;
-                        QLBLL.Instance.openChildForm1(frm, panelChisoDien);
-
-                    }
+                    MessageBox.Show("Chỉ số hiện tại đã được xác thực nên không thể sửa!!Vui lòng bỏ xác thực trước khi sửa chỉ số", "Thông báo");
                 }
+                else
+                {
+                    string id = dgvChiSoDien.CurrentRow.Cells[0].Value.ToString();
+                    ThemCSDien frm = new ThemCSDien(id, LoadForm);
+                    frm.cbbDayTro.Enabled = false;
+                    frm.cbbPhongTro.Enabled = false;
+                    QLBLL.Instance.openChildForm1(frm, panelChisoDien);
+
+                }
+            }
                 else if (columnName == "btnXoa")
                 {
                     if (dgvChiSoDien.CurrentRow.Cells[9].Value.ToString() == "Chưa xác thực")

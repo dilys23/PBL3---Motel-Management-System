@@ -1117,6 +1117,15 @@ namespace PBL3___Motel_Management_System.BLL
         {
             return QLDAL.Instance.ThongKe(thang);
         }
+        public List<object> ThongKeTongTienTheoThang(string nam)
+        {
+            var thongKeData =QLDAL.Instance.ThongKeTongTienTheoThang(nam); 
+            string[] months = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
+
+            var chartData = thongKeData.Select(x => new { Key = months[int.Parse(x.Key.Substring(0, 2)) - 1], Value = x.Value }).ToList<object>();
+
+            return chartData;
+        }
         public bool ChoPhepXacThucChiSo(string id, string MaChiSo)
         {
             ChiTietSuDungDichVu dv = GetChiTietSuDungDichVuByIdBLL(id);

@@ -511,7 +511,7 @@ namespace PBL3___Motel_Management_System.DAL
         }
         public void UpdateChiTietSuDungDichVuDAL(ChiTietSuDungDichVu dv)
         {
-            using(DataPbl data = new DataPbl())
+            using (DataPbl data = new DataPbl())
             {
                 var s = data.ChiTietSuDungDichVu.Where(p => p.TonTai == true).Single(p => p.MaChiTietSuDungDichVu == dv.MaChiTietSuDungDichVu);
                 s.ChiSoCu = dv.ChiSoCu;
@@ -1018,6 +1018,25 @@ namespace PBL3___Motel_Management_System.DAL
                     .ToList<object>();
                 return s;
 
+            }
+        }
+        public Dictionary<string, double> ThongKeTongTienTheoThang(string nam)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                var result = data.HoaDon.ToList()
+                    .Where(p => p.TinhTrang == true && p.DaThanhToan != 0)
+                    .GroupBy(p => p.ThangChiTra)
+                    .OrderBy(p => p.Key)
+                    .Where(p => p.Key.Substring(3) == nam) 
+                    .ToDictionary(
+                     p => p.Key,
+                     p => p.GroupBy(k => k.PhongTro.DayTro.TenDayTro)
+                      .Select(k => k.Sum(x => x.DaThanhToan))
+                      .Sum()
+            );
+
+                return result;
             }
         }
         public List<DichVu> getAllDichVuByIdPhong(string idPhong)
