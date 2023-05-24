@@ -153,6 +153,13 @@ namespace PBL3___Motel_Management_System.DAL
                 return  data.HoaDon.Where(p => p.TonTai==true).Select(p => p).ToList<HoaDon>();
             }
         }
+        public List<ChiTietThanhToanHoaDon> GetAllChiTietThanhToanHoaDon()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietThanhToanHoaDon.Where(p => p.TonTai == true).Select(p => p).ToList<ChiTietThanhToanHoaDon>();
+            }    
+        }
         public List<ChiTietDichVu>GetChiTietDichVuByIdPhongDal(string idPhong)
         {
             using(DataPbl data = new DataPbl())
@@ -228,6 +235,14 @@ namespace PBL3___Motel_Management_System.DAL
                 data.HoaDon.Add(hd);
                 data.SaveChanges();
             }
+        }
+        public void AddChiTietThanhToanHoaDonDal(ChiTietThanhToanHoaDon ct)
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                data.ChiTietThanhToanHoaDon.Add(ct);
+                data.SaveChanges();
+            }    
         }
         public void AddPhongTroDal(PhongTro pt)
         {
@@ -508,6 +523,18 @@ namespace PBL3___Motel_Management_System.DAL
                 data.SaveChanges();
            }
         }
+        public void UpdateChiTietThanhToan(ChiTietThanhToanHoaDon ct)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                var s = data.ChiTietThanhToanHoaDon.Where(p => p.TonTai == true).Single(p => p.MaChiTietThanhToanHoaDon == ct.MaChiTietThanhToanHoaDon);
+                s.TienThanhToan = ct.TienThanhToan;
+                s.NgayThanhToan = ct.NgayThanhToan;
+                s.TonTai = ct.TonTai;
+                data.SaveChanges();
+            }    
+
+        }    
         public void UpdateChiTietSuDungDichVuDAL(ChiTietSuDungDichVu dv)
         {
             using(DataPbl data = new DataPbl())
@@ -660,6 +687,20 @@ namespace PBL3___Motel_Management_System.DAL
             {
                 return data.HoaDon.Find(id);
             }
+        }
+        public ChiTietThanhToanHoaDon GetChiTietThanhToanHoaDonByIdDal(string id)
+        {
+            using(DataPbl data = new DataPbl())
+            {
+                return data.ChiTietThanhToanHoaDon.Find(id);
+            }    
+        }
+        public ChiTietThanhToanHoaDon GetChiTietThanhToanHoaDonByIdHoaDon(string idHd)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietThanhToanHoaDon.Where(p => p.MaHoaDon == idHd && p.TonTai == true).FirstOrDefault();
+            }    
         }
         public DichVu GetDichVuByIdDichVuDal(string id)
         {

@@ -190,6 +190,22 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return id;
         }
+        public string TaoIdChiTietThanhToanHoaDon()
+        {
+            string id = null;
+            Boolean status = true;  
+            Random random = new Random();
+            while (status)
+            {
+                id = random.Next(1, 1000).ToString();
+                status = false;
+                foreach (ChiTietThanhToanHoaDon ct in QLDAL.Instance.GetAllChiTietThanhToanHoaDon())
+                {
+                    if (ct.MaChiTietThanhToanHoaDon == id) status = true;
+                }    
+            }    
+            return id;
+        }
         public string TaoIdChiTietSuDungDichVu()
         {
             string id = null;
@@ -368,6 +384,10 @@ namespace PBL3___Motel_Management_System.BLL
         {
             QLDAL.Instance.AddHoaDonDal(hd);
         }
+        public void AddChiTietThanhToanHoaDonBll (ChiTietThanhToanHoaDon ct)
+        {
+            QLDAL.Instance.AddChiTietThanhToanHoaDonDal(ct);
+        }
         public List<HoaDon> GetAllHoaDonBll()
         {
             return QLDAL.Instance.GetAllHoaDon();
@@ -455,6 +475,10 @@ namespace PBL3___Motel_Management_System.BLL
         public HoaDon GetHoaDonById(string id)
         {
             return QLDAL.Instance.GetHoaDonByIdDal(id);
+        }
+        public ChiTietThanhToanHoaDon GetChiTietThanhToanHoaDonById(string id)
+        {
+            return QLDAL.Instance.GetChiTietThanhToanHoaDonByIdDal(id);
         }
         public void UpdateHopDongBLL(HopDong hd)
         {
@@ -1197,6 +1221,60 @@ namespace PBL3___Motel_Management_System.BLL
                 var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
                 var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
                 e.Graphics.DrawImage(btnXoa, new Rectangle(x, y, w, h));
+                e.Handled = true;
+
+                // Thay đổi màu nền của cell khi được chọn
+                if (e.State == DataGridViewElementStates.Selected)
+                {
+                    e.CellStyle.SelectionBackColor = Color.Tomato;
+                }
+            }
+        }
+        public void dgvIcons_CellPainting2(DataGridView dgv, DataGridViewCellPaintingEventArgs e, Image btSua, Image btXoa, Image btChiTiet)
+        {
+            if (e.ColumnIndex >= 0 && dgv.Columns[e.ColumnIndex].Name == "btnSua" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var btnSua = btSua;
+                var w = btnSua.Width;
+                var h = btnSua.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+                e.Graphics.DrawImage(btnSua, new Rectangle(x, y, w, h));
+                e.Handled = true;
+
+                // Thay đổi màu nền của cell khi được chọn
+                if (e.State == DataGridViewElementStates.Selected)
+                {
+                    e.CellStyle.SelectionBackColor = Color.Tomato;
+                }
+            }
+            if (e.ColumnIndex >= 0 && dgv.Columns[e.ColumnIndex].Name == "btnXoa" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var btnXoa = btXoa;
+                var w = btnXoa.Width;
+                var h = btnXoa.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+                e.Graphics.DrawImage(btnXoa, new Rectangle(x, y, w, h));
+                e.Handled = true;
+
+                // Thay đổi màu nền của cell khi được chọn
+                if (e.State == DataGridViewElementStates.Selected)
+                {
+                    e.CellStyle.SelectionBackColor = Color.Tomato;
+                }
+            }
+            if (e.ColumnIndex >= 0 && dgv.Columns[e.ColumnIndex].Name == "btnChiTiet" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+                var btnChiTiet = btChiTiet;
+                var w = btnChiTiet.Width;
+                var h = btnChiTiet.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+                e.Graphics.DrawImage(btnChiTiet, new Rectangle(x, y, w, h));
                 e.Handled = true;
 
                 // Thay đổi màu nền của cell khi được chọn

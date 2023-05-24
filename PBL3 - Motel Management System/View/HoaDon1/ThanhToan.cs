@@ -59,14 +59,6 @@ namespace PBL3___Motel_Management_System.View
                 double thanhToan = Convert.ToDouble(txtThanhToan.Text);
 
                 HoaDon hd = QLBLL.Instance.GetHoaDonById(this.IdHd);
-                ChiTietThanhToanHoaDon ct = new ChiTietThanhToanHoaDon();
-
-                ct.MaHoaDon = hd.MaHoaDon;
-                ct.MaChiTietThanhToanHoaDon = QLBLL.Instance.TaoIdChiTietThanhToanHoaDon();
-
-                ct.NgayThanhToan = NgayThanhToan.Value.ToString("yyyy-MM-dd");
-                ct.TienThanhToan = Convert.ToDouble(txtThanhToan.Text);
-
 
                 // Cập nhật số tiền đã thanh toán
                 hd.DaThanhToan += thanhToan;
@@ -77,8 +69,6 @@ namespace PBL3___Motel_Management_System.View
 
                 // Cập nhật giá trị cho txtConNo
                 txtConNo.Text = conNoMoi.ToString();
-
-                QLBLL.Instance.AddChiTietThanhToanHoaDonBll(ct);
 
                 if (conNoMoi == 0)
                 {

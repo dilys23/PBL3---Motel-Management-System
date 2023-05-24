@@ -42,7 +42,7 @@
             this.txtTenPhong = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.NgayThanhToan = new System.Windows.Forms.DateTimePicker();
+            this.ngayThanhToan = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -52,7 +52,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.NgayThanhToan);
+            this.panel1.Controls.Add(this.ngayThanhToan);
             this.panel1.Controls.Add(this.btnTroVe);
             this.panel1.Controls.Add(this.txtConNo);
             this.panel1.Controls.Add(this.label5);
@@ -87,7 +87,7 @@
             // txtConNo
             // 
             this.txtConNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConNo.Location = new System.Drawing.Point(393, 262);
+            this.txtConNo.Location = new System.Drawing.Point(393, 268);
             this.txtConNo.Name = "txtConNo";
             this.txtConNo.ReadOnly = true;
             this.txtConNo.Size = new System.Drawing.Size(201, 27);
@@ -97,7 +97,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(226, 270);
+            this.label5.Location = new System.Drawing.Point(236, 271);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 18);
             this.label5.TabIndex = 39;
@@ -109,7 +109,7 @@
             this.btnXacNhan.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnXacNhan.IconColor = System.Drawing.Color.Black;
             this.btnXacNhan.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnXacNhan.Location = new System.Drawing.Point(414, 372);
+            this.btnXacNhan.Location = new System.Drawing.Point(417, 384);
             this.btnXacNhan.Name = "btnXacNhan";
             this.btnXacNhan.Size = new System.Drawing.Size(134, 32);
             this.btnXacNhan.TabIndex = 38;
@@ -120,7 +120,7 @@
             // txtThanhToan
             // 
             this.txtThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtThanhToan.Location = new System.Drawing.Point(393, 213);
+            this.txtThanhToan.Location = new System.Drawing.Point(393, 217);
             this.txtThanhToan.Name = "txtThanhToan";
             this.txtThanhToan.Size = new System.Drawing.Size(201, 27);
             this.txtThanhToan.TabIndex = 6;
@@ -130,7 +130,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(226, 217);
+            this.label4.Location = new System.Drawing.Point(236, 219);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 18);
             this.label4.TabIndex = 5;
@@ -140,7 +140,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(226, 166);
+            this.label3.Location = new System.Drawing.Point(236, 167);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 18);
             this.label3.TabIndex = 4;
@@ -150,7 +150,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(226, 115);
+            this.label2.Location = new System.Drawing.Point(236, 115);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 18);
             this.label2.TabIndex = 3;
@@ -160,7 +160,7 @@
             // 
             this.txtTongTien.Enabled = false;
             this.txtTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTongTien.Location = new System.Drawing.Point(393, 164);
+            this.txtTongTien.Location = new System.Drawing.Point(393, 166);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.Size = new System.Drawing.Size(201, 27);
             this.txtTongTien.TabIndex = 2;
@@ -188,23 +188,24 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // NgayThanhToan
+            // ngayThanhToan
             // 
-            this.NgayThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NgayThanhToan.Location = new System.Drawing.Point(395, 322);
-            this.NgayThanhToan.Name = "NgayThanhToan";
-            this.NgayThanhToan.Size = new System.Drawing.Size(200, 27);
-            this.NgayThanhToan.TabIndex = 54;
+            this.ngayThanhToan.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ngayThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ngayThanhToan.Location = new System.Drawing.Point(393, 319);
+            this.ngayThanhToan.Name = "ngayThanhToan";
+            this.ngayThanhToan.Size = new System.Drawing.Size(201, 27);
+            this.ngayThanhToan.TabIndex = 54;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(226, 328);
+            this.label6.Location = new System.Drawing.Point(236, 323);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(115, 18);
+            this.label6.Size = new System.Drawing.Size(125, 18);
             this.label6.TabIndex = 55;
-            this.label6.Text = "Ngày thanh toán";
+            this.label6.Text = "Ngày Thanh Toán";
             // 
             // ThanhToan
             // 
@@ -239,6 +240,6 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private FontAwesome.Sharp.IconButton btnTroVe;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker NgayThanhToan;
+        private System.Windows.Forms.DateTimePicker ngayThanhToan;
     }
 }

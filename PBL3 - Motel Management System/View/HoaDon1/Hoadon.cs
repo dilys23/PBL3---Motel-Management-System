@@ -37,7 +37,7 @@ namespace PBL3___Motel_Management_System
             {
 
             int i= 0;
-            foreach(HoaDon hd in QLBLL.Instance.GetAllHoaDonBll())
+            foreach(Hoadon hd in QLBLL.Instance.GetAllHoaDonBll())
             {
                 PhongTro pt = QLBLL.Instance.GetPhongTroByIdPhong(hd.MaPhongTro);
                 DayTro dt = QLBLL.Instance.GetDayTroByIdPhong(hd.MaPhongTro);
@@ -52,7 +52,7 @@ namespace PBL3___Motel_Management_System
                 string IdPhong = ((ViewCbb)cbbPhongTro.SelectedItem).key;
                 string IdTinhTrang = ((ViewCbb)cbbTinhTrang.SelectedItem).key;
                 int i = 0;
-                foreach(HoaDon hd in QLBLL.Instance.GetHoaDonTimKiem(ThangSuDung,IdDay,IdPhong,IdTinhTrang))
+                foreach(Hoadon hd in QLBLL.Instance.GetHoaDonTimKiem(ThangSuDung,IdDay,IdPhong,IdTinhTrang))
                 {
                     PhongTro pt = QLBLL.Instance.GetPhongTroByIdPhong(hd.MaPhongTro);
                     DayTro dt = QLBLL.Instance.GetDayTroByIdPhong(hd.MaPhongTro);
@@ -63,7 +63,7 @@ namespace PBL3___Motel_Management_System
             var Sua = System.Drawing.Image.FromFile(@"D:\PBL\PBL3_MAIN\PBL3 - Motel Management System\Icons\icons8-create-25.png");
             var Xoa = System.Drawing.Image.FromFile(@"D:\PBL\PBL3_MAIN\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
             var ChiTiet = System.Drawing.Image.FromFile(@"D:\PBL\PBL3_MAIN\PBL3 - Motel Management System\Icons\icons8-history-20.png");
-            dgvHoaDon.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => QLBLL.Instance.dgvIcons_CellPainting2(dgvHoaDon, e, Sua, Xoa, ChiTiet));
+            dgvHoaDon.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => QLBLL.Instance.dgvIcons_CellPainting2(dgvHoaDon, e,Sua, Xoa,ChiTiet) );
         }
        
 
@@ -122,7 +122,7 @@ namespace PBL3___Motel_Management_System
                 string id = dgvHoaDon.CurrentRow.Cells[0].Value.ToString();
                 if (QLBLL.Instance.ChoPhepXacThucHoaDon(id))
                 {
-                    HoaDon hd = QLBLL.Instance.GetHoaDonById(id);
+                    Hoadon hd = QLBLL.Instance.GetHoaDonById(id);
                     hd.TinhTrang = true;
                     QLBLL.Instance.UpdateHoaDonBLL(hd);
                     MessageBox.Show("Xác thực thành công", "Thông báo");
@@ -149,7 +149,7 @@ namespace PBL3___Motel_Management_System
                 }
                 else
                 {
-                    HoaDon hd = QLBLL.Instance.GetHoaDonById(dgvHoaDon.CurrentRow.Cells[0].Value.ToString());
+                    Hoadon hd = QLBLL.Instance.GetHoaDonById(dgvHoaDon.CurrentRow.Cells[0].Value.ToString());
                     hd.TinhTrang = false;
                     QLBLL.Instance.UpdateHoaDonBLL(hd);
                     MessageBox.Show("Bỏ xác thực thành công");
@@ -211,20 +211,6 @@ namespace PBL3___Motel_Management_System
                         MessageBox.Show("Hóa đơn đã được xác thực!! Không thể xóa", "Thông báo");
                     }
                 }
-                else if (columnName == "btnChiTiet")
-                {
-                    //if (dgvHoaDon.CurrentRow.Cells[7].Value.ToString() == "Chưa xác thực")
-                    //{
-                    //    QLBLL.Instance.DelHoaDonBll(dgvHoaDon.CurrentRow.Cells[0].Value.ToString());
-                    //    MessageBox.Show("Xóa hóa đơn thành công", "Thông báo");
-                    //    LoadForm(null);
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("Hóa đơn đã được xác thực!! Không thể xóa", "Thông báo");
-                    //}
-                    QLBLL.Instance.openChildForm1(new LichSuThanhToan(), panelHD);
-                }
             }
         }
 
@@ -247,59 +233,6 @@ namespace PBL3___Motel_Management_System
                 {
                     string id = dgvHoaDon.CurrentRow.Cells[0].Value.ToString();
                     QLBLL.Instance.openChildForm1(new ThanhToan(id, LoadForm), panelHD);
-                }
-            }
-        }
-
-        private void dgvHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                // Lấy tên cột của ô đã được nhấp
-                string columnName = dgvHoaDon.Columns[e.ColumnIndex].Name;
-
-                // Kiểm tra xem ô đã được nhấp có phải là nút Sửa hay Xóa không
-                if (columnName == "btnSua")
-                {
-                    if (dgvHoaDon.Rows[e.RowIndex].Cells[7].Value.ToString() == "Xác thực")
-                    {
-                        MessageBox.Show("Hóa đơn hiện tại đã được xác thực nên không thể sửa!!Vui lòng bỏ xác thực trước khi sửa hóa đơn", "Thông báo");
-                    }
-                    else
-                    {
-                        string id = dgvHoaDon.CurrentRow.Cells[0].Value.ToString();
-                        QLBLL.Instance.openChildForm1(new ThemHoaDon(LoadForm, id), panelHD);
-
-                    }
-
-                }
-                else if (columnName == "btnXoa")
-                {
-                    if (dgvHoaDon.CurrentRow.Cells[7].Value.ToString() == "Chưa xác thực")
-                    {
-                        QLBLL.Instance.DelHoaDonBll(dgvHoaDon.CurrentRow.Cells[0].Value.ToString());
-                        MessageBox.Show("Xóa hóa đơn thành công", "Thông báo");
-                        LoadForm(null);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Hóa đơn đã được xác thực!! Không thể xóa", "Thông báo");
-                    }
-                }
-                else if (columnName == "btnChiTiet")
-                {
-                    //if (dgvHoaDon.CurrentRow.Cells[7].Value.ToString() == "Chưa xác thực")
-                    //{
-                    //    QLBLL.Instance.DelHoaDonBll(dgvHoaDon.CurrentRow.Cells[0].Value.ToString());
-                    //    MessageBox.Show("Xóa hóa đơn thành công", "Thông báo");
-                    //    LoadForm(null);
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("Hóa đơn đã được xác thực!! Không thể xóa", "Thông báo");
-                    //}
-                    QLBLL.Instance.openChildForm1(new LichSuThanhToan(), panelHD);
                 }
             }
         }

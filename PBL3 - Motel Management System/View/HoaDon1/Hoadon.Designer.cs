@@ -44,8 +44,6 @@
             this.cbbTinhTrang = new System.Windows.Forms.ComboBox();
             this.btnBoXacThuc = new FontAwesome.Sharp.IconButton();
             this.btnXacThuc = new FontAwesome.Sharp.IconButton();
-            this.cbbDayTro = new System.Windows.Forms.ComboBox();
-            this.btnThemHoaDon = new FontAwesome.Sharp.IconButton();
             this.dgvHoaDon = new System.Windows.Forms.DataGridView();
             this.MaHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +58,8 @@
             this.btnChiTiet = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnSua = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnXoa = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cbbDayTro = new System.Windows.Forms.ComboBox();
+            this.btnThemHoaDon = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panelHD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
@@ -142,7 +142,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelHD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.panelHD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelHD.Controls.Add(this.dgvHoaDon);
             this.panelHD.Controls.Add(this.btnThanhToan);
             this.panelHD.Controls.Add(this.dtpThangSuDung);
             this.panelHD.Controls.Add(this.label5);
@@ -150,6 +149,7 @@
             this.panelHD.Controls.Add(this.cbbTinhTrang);
             this.panelHD.Controls.Add(this.btnBoXacThuc);
             this.panelHD.Controls.Add(this.btnXacThuc);
+            this.panelHD.Controls.Add(this.dgvHoaDon);
             this.panelHD.Controls.Add(this.btnTim);
             this.panelHD.Controls.Add(this.cbbDayTro);
             this.panelHD.Controls.Add(this.cbbPhongTro);
@@ -187,7 +187,7 @@
             this.dtpThangSuDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpThangSuDung.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpThangSuDung.Location = new System.Drawing.Point(60, 44);
-            this.dtpThangSuDung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpThangSuDung.Margin = new System.Windows.Forms.Padding(4);
             this.dtpThangSuDung.Name = "dtpThangSuDung";
             this.dtpThangSuDung.ShowUpDown = true;
             this.dtpThangSuDung.Size = new System.Drawing.Size(133, 27);
@@ -263,38 +263,6 @@
             this.btnXacThuc.UseVisualStyleBackColor = false;
             this.btnXacThuc.Click += new System.EventHandler(this.btnXacThuc_Click);
             // 
-            // cbbDayTro
-            // 
-            this.cbbDayTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbDayTro.FormattingEnabled = true;
-            this.cbbDayTro.Location = new System.Drawing.Point(201, 42);
-            this.cbbDayTro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbbDayTro.Name = "cbbDayTro";
-            this.cbbDayTro.Size = new System.Drawing.Size(148, 28);
-            this.cbbDayTro.TabIndex = 42;
-            this.cbbDayTro.SelectedIndexChanged += new System.EventHandler(this.cbbDayTro_SelectedIndexChanged);
-            // 
-            // btnThemHoaDon
-            // 
-            this.btnThemHoaDon.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnThemHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThemHoaDon.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnThemHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemHoaDon.IconChar = FontAwesome.Sharp.IconChar.Calculator;
-            this.btnThemHoaDon.IconColor = System.Drawing.Color.White;
-            this.btnThemHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnThemHoaDon.IconSize = 25;
-            this.btnThemHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemHoaDon.Location = new System.Drawing.Point(1055, 36);
-            this.btnThemHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnThemHoaDon.Name = "btnThemHoaDon";
-            this.btnThemHoaDon.Size = new System.Drawing.Size(92, 38);
-            this.btnThemHoaDon.TabIndex = 21;
-            this.btnThemHoaDon.Text = "Thêm ";
-            this.btnThemHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThemHoaDon.UseVisualStyleBackColor = false;
-            this.btnThemHoaDon.Click += new System.EventHandler(this.btnThemHD_Click);
-            // 
             // dgvHoaDon
             // 
             this.dgvHoaDon.AllowUserToAddRows = false;
@@ -336,16 +304,16 @@
             this.dgvHoaDon.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvHoaDon.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvHoaDon.GridColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgvHoaDon.Location = new System.Drawing.Point(19, 164);
+            this.dgvHoaDon.Location = new System.Drawing.Point(17, 108);
             this.dgvHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvHoaDon.MultiSelect = false;
             this.dgvHoaDon.Name = "dgvHoaDon";
             this.dgvHoaDon.RowHeadersWidth = 51;
             this.dgvHoaDon.RowTemplate.Height = 24;
             this.dgvHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHoaDon.Size = new System.Drawing.Size(1109, 260);
-            this.dgvHoaDon.TabIndex = 71;
-            this.dgvHoaDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDon_CellContentClick);
+            this.dgvHoaDon.Size = new System.Drawing.Size(1117, 223);
+            this.dgvHoaDon.TabIndex = 8;
+            this.dgvHoaDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDon_CellContentClick_1);
             // 
             // MaHoaDon
             // 
@@ -427,6 +395,38 @@
             this.btnXoa.MinimumWidth = 6;
             this.btnXoa.Name = "btnXoa";
             // 
+            // cbbDayTro
+            // 
+            this.cbbDayTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbDayTro.FormattingEnabled = true;
+            this.cbbDayTro.Location = new System.Drawing.Point(201, 42);
+            this.cbbDayTro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbbDayTro.Name = "cbbDayTro";
+            this.cbbDayTro.Size = new System.Drawing.Size(148, 28);
+            this.cbbDayTro.TabIndex = 42;
+            this.cbbDayTro.SelectedIndexChanged += new System.EventHandler(this.cbbDayTro_SelectedIndexChanged);
+            // 
+            // btnThemHoaDon
+            // 
+            this.btnThemHoaDon.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnThemHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThemHoaDon.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnThemHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemHoaDon.IconChar = FontAwesome.Sharp.IconChar.Calculator;
+            this.btnThemHoaDon.IconColor = System.Drawing.Color.White;
+            this.btnThemHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThemHoaDon.IconSize = 25;
+            this.btnThemHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThemHoaDon.Location = new System.Drawing.Point(1055, 36);
+            this.btnThemHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThemHoaDon.Name = "btnThemHoaDon";
+            this.btnThemHoaDon.Size = new System.Drawing.Size(92, 38);
+            this.btnThemHoaDon.TabIndex = 21;
+            this.btnThemHoaDon.Text = "Thêm ";
+            this.btnThemHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThemHoaDon.UseVisualStyleBackColor = false;
+            this.btnThemHoaDon.Click += new System.EventHandler(this.btnThemHD_Click);
+            // 
             // Hoadon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -463,8 +463,8 @@
         private System.Windows.Forms.ComboBox cbbTinhTrang;
         private System.Windows.Forms.DateTimePicker dtpThangSuDung;
         private System.Windows.Forms.Label label5;
-        private FontAwesome.Sharp.IconButton btnThanhToan;
         private System.Windows.Forms.DataGridView dgvHoaDon;
+        private FontAwesome.Sharp.IconButton btnThanhToan;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHoaDon;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stt;
         private System.Windows.Forms.DataGridViewTextBoxColumn DayTro;
