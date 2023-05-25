@@ -15,7 +15,9 @@ using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
+using static System.Net.Mime.MediaTypeNames;
 using Chart =System.Windows.Forms.DataVisualization.Charting.Chart;
+using Image = System.Drawing.Image;
 
 namespace PBL3___Motel_Management_System.BLL
 {
@@ -867,7 +869,7 @@ namespace PBL3___Motel_Management_System.BLL
         }
         public void DelPhongTroBLL(string idphong)
         {
-            QLDAL.Instance.DelPhongTroDAL(idphong);//ok
+            QLDAL.Instance.DelPhongTroDAL(idphong);
         }
         public void DelHoaDonBll(string id)
         {
@@ -1142,6 +1144,15 @@ namespace PBL3___Motel_Management_System.BLL
        public List<object> ThongKe(string thang)
         {
             return QLDAL.Instance.ThongKe(thang);
+        }
+        public List<object> ThongKeTongTienTheoThang(string nam)
+        {
+            var thongKeData =QLDAL.Instance.ThongKeTongTienTheoThang(nam); 
+            string[] months = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
+
+            var chartData = thongKeData.Select(x => new { Key = months[int.Parse(x.Key.Substring(0, 2)) - 1], Value = x.Value }).ToList<object>();
+
+            return chartData;
         }
         public bool ChoPhepXacThucChiSo(string id, string MaChiSo)
         {
@@ -1496,6 +1507,26 @@ namespace PBL3___Motel_Management_System.BLL
         public DAL.TaiKhoan GetTaiKhoanByIdPhong(string idp)
         {
             return QLDAL.Instance.GetTaiKhoanByIdPhong(idp);
+        }
+        public DAL.TaiKhoan GetTaiKhoanByIdChuTro(string idChutro)
+        {
+            return QLDAL.Instance.GetTaiKhoanByIdChuTro(idChutro);
+        }
+        public void UpdateTaiKhoanPhong(DAL.TaiKhoan tk)
+        {
+            QLDAL.Instance.UpdateTaiKhoanPhong(tk);
+        }
+        public void UpdateTaiKhoanChutro(DAL.TaiKhoan tk)
+        {
+            QLDAL.Instance.UpdateTaiKhoanChutro(tk);
+        }
+        public VaiTro CheckVaiTro(string tentk, string mk)
+        {
+            return QLDAL.Instance.CheckVaiTro(tentk, mk);
+        }
+        public PhongTro GetPhongTroByMaTaiKhoan(string matk)
+        {
+            return QLDAL.Instance.GetPhongTroByMaTaiKhoan(matk);
         }
     }
 }

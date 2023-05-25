@@ -46,7 +46,7 @@
             this.Stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DayTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PhongTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DaThanhToan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnTim = new FontAwesome.Sharp.IconButton();
             this.dtpThang = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
@@ -120,9 +120,10 @@
             this.ChartDuong.Legends.Add(legend2);
             this.ChartDuong.Location = new System.Drawing.Point(523, 17);
             this.ChartDuong.Name = "ChartDuong";
+            series2.BorderWidth = 3;
             series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedArea;
-            series2.Color = System.Drawing.Color.Green;
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Color = System.Drawing.Color.DarkGreen;
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.ChartDuong.Series.Add(series2);
@@ -152,7 +153,7 @@
             this.Stt,
             this.DayTro,
             this.PhongTro,
-            this.TongTien});
+            this.DaThanhToan});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -197,11 +198,11 @@
             this.PhongTro.MinimumWidth = 6;
             this.PhongTro.Name = "PhongTro";
             // 
-            // TongTien
+            // DaThanhToan
             // 
-            this.TongTien.HeaderText = "Tổng tiền";
-            this.TongTien.MinimumWidth = 6;
-            this.TongTien.Name = "TongTien";
+            this.DaThanhToan.HeaderText = "Đã thanh toán";
+            this.DaThanhToan.MinimumWidth = 6;
+            this.DaThanhToan.Name = "DaThanhToan";
             // 
             // btnTim
             // 
@@ -257,12 +258,12 @@
         private System.Windows.Forms.DateTimePicker dtpThang;
         private FontAwesome.Sharp.IconButton btnTim;
         private System.Windows.Forms.DataGridView dgvDoanhThu;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ChartDuong;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ChartCot;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaHoaDon;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stt;
         private System.Windows.Forms.DataGridViewTextBoxColumn DayTro;
         private System.Windows.Forms.DataGridViewTextBoxColumn PhongTro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TongTien;
-        private System.Windows.Forms.DataVisualization.Charting.Chart ChartDuong;
-        private System.Windows.Forms.DataVisualization.Charting.Chart ChartCot;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DaThanhToan;
     }
 }

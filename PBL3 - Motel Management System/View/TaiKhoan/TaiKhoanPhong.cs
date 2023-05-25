@@ -26,5 +26,10 @@ namespace PBL3___Motel_Management_System.View
             txtTenTaiKhoan.Text = tk.TenTaiKhoan;
             txtMatKhau.Text = tk.MatKhau;
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            QLBLL.Instance.openChildForm1(new DoiMK(idp, null,LoadForm), panel1);
+        }
     }
 }

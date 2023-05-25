@@ -22,14 +22,14 @@ namespace PBL3___Motel_Management_System.View
             InitializeComponent();
             SetCbb();
             this.IdSudungDV = IdSudungDV;
-            this.loader=loader;
-            if(IdSudungDV != null )
+            this.loader = loader;
+            if (IdSudungDV != null)
             {
                 SetGUI();
             }
-            
+
         }
-       public void SetGUI()
+        public void SetGUI()
         {
             ChiTietSuDungDichVu cs = QLBLL.Instance.GetChiTietSudungDichVuById(IdSudungDV);
             ChiTietDichVu ct = QLBLL.Instance.GetChiTietDichVuById(cs.MaCHiTietDichVu);
@@ -41,7 +41,7 @@ namespace PBL3___Motel_Management_System.View
             txtChiSoMoi.Text = cs.ChiSoMoi.ToString();
             dtpNgayLap.Value = DateTime.ParseExact(cs.NgayLap, "dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture);
             dtpThang.Value = DateTime.ParseExact(cs.ThoiGian, "MM-yyyy", System.Globalization.CultureInfo.InvariantCulture);
-        }
+    }
         
         private void btnTroVe_Click(object sender, EventArgs e)
         {
@@ -137,45 +137,45 @@ namespace PBL3___Motel_Management_System.View
             {
                 if (CheckHopLe())
                 {
-                        if(cbbPhongTro.SelectedItem != null)
+                    if (cbbPhongTro.SelectedItem != null)
+                    {
+                        string idPhong = ((ViewCbb)cbbPhongTro.SelectedItem).key;
+                        ChiTietSuDungDichVu dv = new ChiTietSuDungDichVu
                         {
-                            string idPhong = ((ViewCbb)cbbPhongTro.SelectedItem).key;
-                            ChiTietSuDungDichVu dv = new ChiTietSuDungDichVu
-                            {
-                                MaChiTietSuDungDichVu = QLBLL.Instance.TaoIdChiTietSuDungDichVu(),
-                                MaCHiTietDichVu = QLBLL.Instance.GetIdCHiTietDichVuDienByIdPhong(idPhong),
-                                ChiSoCu = Convert.ToDouble(txtChiSoCu.Text),
-                                ChiSoMoi = Convert.ToDouble(txtChiSoMoi.Text),
-                                ThoiGian = dtpThang.Value.ToString("MM-yyyy"),
-                                TinhTrang = false,
-                                TonTai = true,
-                                NgayLap = dtpNgayLap.Value.ToString("dd-MM-yyyy"),
-                            };
-                            if (dv.ChiSoCu > dv.ChiSoMoi)
-                            {
-                                MessageBox.Show("Chỉ số cũ phải bé hơn hoặc bằng chỉ số mới", "Thông báo");
-                            }
-                            else
-                            {
-                                try
-                                {
-                                    QLBLL.Instance.AddChiTietSuDungDichVuBLL(dv);
-                                    MessageBox.Show("thêm chỉ số thành công");
-                                    this.Close();
-                                    this.loader(null);
-                                }
-                                catch (Exception ex)
-                                {
-                                    MessageBox.Show("không hợp lệ");
-                                }
-
-                            }
+                            MaChiTietSuDungDichVu = QLBLL.Instance.TaoIdChiTietSuDungDichVu(),
+                            MaCHiTietDichVu = QLBLL.Instance.GetIdCHiTietDichVuDienByIdPhong(idPhong),
+                            ChiSoCu = Convert.ToDouble(txtChiSoCu.Text),
+                            ChiSoMoi = Convert.ToDouble(txtChiSoMoi.Text),
+                            ThoiGian = dtpThang.Value.ToString("MM-yyyy"),
+                            TinhTrang = false,
+                            TonTai = true,
+                            NgayLap = dtpNgayLap.Value.ToString("dd-MM-yyyy"),
+                        };
+                        if (dv.ChiSoCu > dv.ChiSoMoi)
+                        {
+                            MessageBox.Show("Chỉ số cũ phải bé hơn hoặc bằng chỉ số mới", "Thông báo");
                         }
+                        else
+                        {
+                            try
+                            {
+                                QLBLL.Instance.AddChiTietSuDungDichVuBLL(dv);
+                                MessageBox.Show("thêm chỉ số thành công");
+                                this.Close();
+                                this.loader(null);
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show("không hợp lệ");
+                            }
+
+                        }
+                    }
                     else
                     {
                         MessageBox.Show("Dãy hiện tại không phòng hoặc chưa có phòng nào được cho thuê");
                     }
-                        
+
                 }
             }
         }

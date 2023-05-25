@@ -23,7 +23,7 @@ namespace PBL3___Motel_Management_System
         {
             InitializeComponent();
             LoadForm(dtpThang.Value.ToString("MM-yyyy"));
-            ResizeColumn();
+            //ResizeColumn();
         }
         public void LoadForm(string thang)
         {
@@ -56,7 +56,7 @@ namespace PBL3___Motel_Management_System
             dgvDoanhThu.Columns["STT"].Width = 50;
             dgvDoanhThu.Columns["DayTro"].Width = 240;
             dgvDoanhThu.Columns["PhongTro"].Width = 80;
-            dgvDoanhThu.Columns["TongTien"].Width = 80;
+            dgvDoanhThu.Columns["DaThanhToan"].Width = 80;
         }
 
         private void panel2_SizeChanged(object sender, EventArgs e)
@@ -80,25 +80,27 @@ namespace PBL3___Motel_Management_System
             int nam = date.Year;
             LoadForm(thang);
             ThongKe(thang);
-            //BDCot(thang,nam.ToString());
-            //BDDuong(nam.ToString());
+            ThongKeTheoThang(nam.ToString());
 
         }
         public void ThongKe(string thang)
         {
             ChartCot.Series[0].XValueMember = "TenDayTro";
             ChartCot.Series[0].YValueMembers = "TongTien";
-            List<object> data = new List<object>(); 
+            //List<object> data = new List<object>(); 
             ChartCot.DataSource = QLBLL.Instance.ThongKe(thang);
             ChartCot.ChartAreas[0].AxisX.Title = "Dãy trọ";
             ChartCot.ChartAreas[0].AxisY.Title = "Tổng tiền";
             ChartCot.DataBind();
 
-            ChartDuong.Series[0].XValueMember = "TenDayTro";
-            ChartDuong.Series[0].YValueMembers = "TongTien";
-            List<object> data1 = new List<object>();
-            ChartDuong.DataSource = QLBLL.Instance.ThongKe(thang);
-            ChartDuong.ChartAreas[0].AxisX.Title = "Dãy trọ";
+        }
+        public void ThongKeTheoThang(string nam)
+        {    
+            var thongke = QLBLL.Instance.ThongKeTongTienTheoThang(nam);
+            ChartDuong.Series[0].XValueMember = "Key";
+            ChartDuong.Series[0].YValueMembers = "Value";
+            ChartDuong.DataSource = thongke;
+            ChartDuong.ChartAreas[0].AxisX.Title = "Tháng";
             ChartDuong.ChartAreas[0].AxisY.Title = "Tổng tiền";
             ChartDuong.DataBind();
         }

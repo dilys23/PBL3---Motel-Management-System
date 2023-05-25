@@ -48,20 +48,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.paneMenu = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panelMain = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btDoiMK = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panelDesktop.SuspendLayout();
             this.panelTitle.SuspendLayout();
             this.paneMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panelMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -85,13 +76,14 @@
             this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Regular;
             this.btnLogout.IconSize = 30;
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(12, 499);
+            this.btnLogout.Location = new System.Drawing.Point(12, 578);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(45, 45);
             this.btnLogout.TabIndex = 17;
             this.btnLogout.Tag = "Logout";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnHoaDon
             // 
@@ -248,11 +240,6 @@
             // panelDesktop
             // 
             this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
-            this.panelDesktop.Controls.Add(this.panelMain);
-            this.panelDesktop.Controls.Add(this.label3);
-            this.panelDesktop.Controls.Add(this.label4);
-            this.panelDesktop.Controls.Add(this.textBox2);
-            this.panelDesktop.Controls.Add(this.textBox1);
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(200, 83);
             this.panelDesktop.Name = "panelDesktop";
@@ -346,6 +333,7 @@
             // paneMenu
             // 
             this.paneMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(229)))), ((int)(((byte)(236)))));
+            this.paneMenu.Controls.Add(this.btDoiMK);
             this.paneMenu.Controls.Add(this.btnLogout);
             this.paneMenu.Controls.Add(this.btnHoaDon);
             this.paneMenu.Controls.Add(this.btnHopDong);
@@ -360,74 +348,24 @@
             this.paneMenu.Size = new System.Drawing.Size(200, 717);
             this.paneMenu.TabIndex = 6;
             // 
-            // textBox1
+            // btDoiMK
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(77, 14);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(147, 34);
-            this.textBox1.TabIndex = 0;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 52);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(918, 220);
-            this.dataGridView1.TabIndex = 8;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label5.Location = new System.Drawing.Point(14, 19);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(171, 22);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Thành viên phòng";
-            // 
-            // panelMain
-            // 
-            this.panelMain.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panelMain.Controls.Add(this.label5);
-            this.panelMain.Controls.Add(this.dataGridView1);
-            this.panelMain.Location = new System.Drawing.Point(24, 74);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(950, 481);
-            this.panelMain.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label4.Location = new System.Drawing.Point(251, 15);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 22);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Phòng";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.label3.Location = new System.Drawing.Point(20, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 22);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Dãy ";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(324, 14);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(147, 34);
-            this.textBox2.TabIndex = 1;
+            this.btDoiMK.FlatAppearance.BorderSize = 0;
+            this.btDoiMK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btDoiMK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDoiMK.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.btDoiMK.IconColor = System.Drawing.Color.SteelBlue;
+            this.btDoiMK.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btDoiMK.IconSize = 35;
+            this.btDoiMK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btDoiMK.Location = new System.Drawing.Point(-1, 497);
+            this.btDoiMK.Name = "btDoiMK";
+            this.btDoiMK.Size = new System.Drawing.Size(197, 41);
+            this.btDoiMK.TabIndex = 18;
+            this.btDoiMK.Tag = "Đổi mật khẩu";
+            this.btDoiMK.Text = "Đổi mật khẩu";
+            this.btDoiMK.UseVisualStyleBackColor = true;
+            this.btDoiMK.Click += new System.EventHandler(this.btDoiMK_Click);
             // 
             // TrangChuKhach
             // 
@@ -443,14 +381,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panelDesktop.ResumeLayout(false);
-            this.panelDesktop.PerformLayout();
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
             this.paneMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panelMain.ResumeLayout(false);
-            this.panelMain.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -475,12 +408,6 @@
         private System.Windows.Forms.Panel paneMenu;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Panel panelMain;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private FontAwesome.Sharp.IconButton btDoiMK;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using PBL3___Motel_Management_System.BLL;
 using PBL3___Motel_Management_System.DAL;
+using PBL3___Motel_Management_System.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,9 +23,24 @@ namespace PBL3___Motel_Management_System
         {
             if(QLBLL.Instance.GetIdTk(txtTaiKhoan.Text,txtMatKhau.Text) != null)
             {
-                TrangChu tc = new TrangChu();
-                tc.ShowDialog();
-                this.Close();
+                //TrangChu tc = new TrangChu();
+                //tc.ShowDialog();
+                //this.Close();
+                VaiTro vaitro = QLBLL.Instance.CheckVaiTro(txtTaiKhoan.Text, txtMatKhau.Text);
+                if(vaitro.TenVaiTro=="Chủ trọ")
+                {
+                    TrangChu tc = new TrangChu();
+                    tc.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    string matk = vaitro.MaTaiKhoan;
+                    TrangChuKhach tc = new TrangChuKhach(matk);
+                    tc.Show();
+                    this.Hide();
+                }
+
             }
             else
             {
@@ -32,6 +48,24 @@ namespace PBL3___Motel_Management_System
             }
 
             
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            if(txtMatKhau.PasswordChar=='*')
+            {
+                btnChiTiet.BringToFront();
+                txtMatKhau.PasswordChar = '\0';
+            }
+        }
+
+        private void btnChiTiet_Click(object sender, EventArgs e)
+        {
+            if (txtMatKhau.PasswordChar == '\0')
+            {
+                iconButton1.BringToFront();
+                txtMatKhau.PasswordChar = '*';
+            }
         }
     }
 }

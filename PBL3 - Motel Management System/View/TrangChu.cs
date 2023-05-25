@@ -198,6 +198,10 @@ namespace PBL3___Motel_Management_System
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+            //this.close();
+
+            //dangnhap dn = new dangnhap();
+            //dn.show();
         }
 
         private void btnMinimized_Click(object sender, EventArgs e)
