@@ -15,6 +15,7 @@ namespace PBL3___Motel_Management_System
 {
     public partial class Dangnhap : Form
     {
+        private string matk;
         public Dangnhap()
         {
             InitializeComponent();
@@ -29,13 +30,14 @@ namespace PBL3___Motel_Management_System
                 VaiTro vaitro = QLBLL.Instance.CheckVaiTro(txtTaiKhoan.Text, txtMatKhau.Text);
                 if(vaitro.TenVaiTro=="Chủ trọ")
                 {
-                    TrangChu tc = new TrangChu();
+                     matk = vaitro.MaTaiKhoan;
+                    TrangChu tc = new TrangChu(matk);
                     tc.Show();
                     this.Hide();
                 }
                 else
                 {
-                    string matk = vaitro.MaTaiKhoan;
+                     matk = vaitro.MaTaiKhoan;
                     TrangChuKhach tc = new TrangChuKhach(matk);
                     tc.Show();
                     this.Hide();

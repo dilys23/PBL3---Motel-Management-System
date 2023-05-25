@@ -49,6 +49,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMenu = new FontAwesome.Sharp.IconButton();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.btnTaiKhoan = new FontAwesome.Sharp.IconButton();
             this.panelTitle.SuspendLayout();
             this.paneMenu.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -148,6 +149,7 @@
             // paneMenu
             // 
             this.paneMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(229)))), ((int)(((byte)(236)))));
+            this.paneMenu.Controls.Add(this.btnTaiKhoan);
             this.paneMenu.Controls.Add(this.btnThietbi);
             this.paneMenu.Controls.Add(this.btnDoanhTHu);
             this.paneMenu.Controls.Add(this.btnHoaDon);
@@ -193,7 +195,7 @@
             this.btnDoanhTHu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDoanhTHu.IconSize = 35;
             this.btnDoanhTHu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDoanhTHu.Location = new System.Drawing.Point(8, 583);
+            this.btnDoanhTHu.Location = new System.Drawing.Point(4, 583);
             this.btnDoanhTHu.Name = "btnDoanhTHu";
             this.btnDoanhTHu.Size = new System.Drawing.Size(186, 41);
             this.btnDoanhTHu.TabIndex = 13;
@@ -374,15 +376,31 @@
             // 
             // panelDesktop
             // 
-            this.panelDesktop.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.panelDesktop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDesktop.BackColor = System.Drawing.Color.LightCyan;
-            this.panelDesktop.Location = new System.Drawing.Point(200, 80);
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop.Location = new System.Drawing.Point(200, 83);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1133, 699);
+            this.panelDesktop.Size = new System.Drawing.Size(1133, 676);
             this.panelDesktop.TabIndex = 5;
+            // 
+            // btnTaiKhoan
+            // 
+            this.btnTaiKhoan.FlatAppearance.BorderSize = 0;
+            this.btnTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaiKhoan.IconChar = FontAwesome.Sharp.IconChar.CircleUser;
+            this.btnTaiKhoan.IconColor = System.Drawing.Color.SteelBlue;
+            this.btnTaiKhoan.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTaiKhoan.IconSize = 35;
+            this.btnTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTaiKhoan.Location = new System.Drawing.Point(3, 639);
+            this.btnTaiKhoan.Name = "btnTaiKhoan";
+            this.btnTaiKhoan.Size = new System.Drawing.Size(186, 41);
+            this.btnTaiKhoan.TabIndex = 20;
+            this.btnTaiKhoan.Tag = "Tài Khoản";
+            this.btnTaiKhoan.Text = "   Tài Khoản";
+            this.btnTaiKhoan.UseVisualStyleBackColor = true;
+            this.btnTaiKhoan.Click += new System.EventHandler(this.btnTaiKhoan_Click);
             // 
             // TrangChu
             // 
@@ -427,5 +445,6 @@
         private FontAwesome.Sharp.IconButton btnThietbi;
         private FontAwesome.Sharp.IconButton btnTK;
         private System.Windows.Forms.Panel panelDesktop;
+        private FontAwesome.Sharp.IconButton btnTaiKhoan;
     }
 }

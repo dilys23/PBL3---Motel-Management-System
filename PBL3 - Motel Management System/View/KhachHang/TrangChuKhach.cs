@@ -236,7 +236,7 @@ namespace PBL3___Motel_Management_System.View
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        TrangChu tc = new TrangChu();
+       // TrangChu tc = new TrangChu();
         private void btnHopDong_Click(object sender, EventArgs e)
         {
             idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
