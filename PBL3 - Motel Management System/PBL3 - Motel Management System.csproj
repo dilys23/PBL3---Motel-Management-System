@@ -440,6 +440,12 @@
     <Compile Include="DTO\ThuePhong.cs" />
     <Compile Include="DTO\TinhTrangPhongTro.cs" />
     <Compile Include="DTO\ViewChiSo.cs" />
+    <Compile Include="View\DemoTv.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\DemoTv.Designer.cs">
+      <DependentUpon>DemoTv.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\HoaDon\LichSuThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -706,6 +712,9 @@
     <Compile Include="View\XuatHoaDon.Designer.cs">
       <DependentUpon>XuatHoaDon.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\DemoTv.resx">
+      <DependentUpon>DemoTv.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\HoaDon\LichSuThanhToan.resx">
       <DependentUpon>LichSuThanhToan.cs</DependentUpon>
     </EmbeddedResource>

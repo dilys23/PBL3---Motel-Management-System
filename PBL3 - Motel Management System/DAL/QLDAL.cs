@@ -35,11 +35,12 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.TaiKhoan.Where(p => p.TonTai == true).ToList<TaiKhoan>();
             }
         }
-        public string GetIdTkDal(string taikhoan, string matkhau)
+        public TaiKhoan GetIdTkDal(string taikhoan, string matkhau)
         {
             using(DataPbl data = new DataPbl())
             {
-                return data.TaiKhoan.Where(p => p.TenTaiKhoan == taikhoan && p.MatKhau == matkhau).FirstOrDefault().MaTaiKhoan;
+                return data.TaiKhoan.Where(p => p.TenTaiKhoan == taikhoan && p.MatKhau == matkhau).FirstOrDefault();
+                
             }
         }
         public List<VaiTro> GetAllVaiTro()

@@ -37,7 +37,7 @@ namespace PBL3___Motel_Management_System.BLL
         {
 
         }
-        public string GetIdTk(string taikhoan, string matkhau)
+        public DAL.TaiKhoan GetIdTk(string taikhoan, string matkhau)
         {  
             return QLDAL.Instance.GetIdTkDal(taikhoan,matkhau);//ok
         }

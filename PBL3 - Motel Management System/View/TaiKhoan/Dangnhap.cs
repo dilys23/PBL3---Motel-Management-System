@@ -23,9 +23,6 @@ namespace PBL3___Motel_Management_System
         {
             if(QLBLL.Instance.GetIdTk(txtTaiKhoan.Text,txtMatKhau.Text) != null)
             {
-                //TrangChu tc = new TrangChu();
-                //tc.ShowDialog();
-                //this.Close();
                 VaiTro vaitro = QLBLL.Instance.CheckVaiTro(txtTaiKhoan.Text, txtMatKhau.Text);
                 if(vaitro.TenVaiTro=="Chủ trọ")
                 {
@@ -40,7 +37,6 @@ namespace PBL3___Motel_Management_System
                     tc.Show();
                     this.Hide();
                 }
-
             }
             else
             {
