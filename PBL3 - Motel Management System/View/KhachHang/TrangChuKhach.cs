@@ -212,7 +212,7 @@ namespace PBL3___Motel_Management_System.View
             }
 
         }
-
+       
         private void btnMinimized_Click_1(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -301,6 +301,14 @@ namespace PBL3___Motel_Management_System.View
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Close();
+            Dangnhap dn =new Dangnhap();
+            dn.ShowDialog();
+        }
+
+        private void btDoiMK_Click(object sender, EventArgs e)
+        {
+            //idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
+           // QLBLL.Instance.openChildForm1(new DoiMK(idPhong, null, null), panelDesktop);
         }
     }
 }

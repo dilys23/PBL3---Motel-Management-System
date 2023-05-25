@@ -841,7 +841,7 @@ namespace PBL3___Motel_Management_System.BLL
         }
         public void DelPhongTroBLL(string idphong)
         {
-            QLDAL.Instance.DelPhongTroDAL(idphong);//ok
+            QLDAL.Instance.DelPhongTroDAL(idphong);
         }
         public void DelHoaDonBll(string id)
         {
@@ -1131,12 +1131,12 @@ namespace PBL3___Motel_Management_System.BLL
             ChiTietSuDungDichVu dv = GetChiTietSuDungDichVuByIdBLL(id);
             ChiTietDichVu ctdv = GetChiTietDichVuById(dv.MaCHiTietDichVu);
             List<ChiTietSuDungDichVu> list = GetChiTietSuDungDichVuTimKiem(dv.ThoiGian, "-1", ctdv.MaPhongTro, "1");
-           // List<ChiTietSuDungDichVu> mylist = new List<ChiTietSuDungDichVu>();
-            //foreach(ChiTietSuDungDichVu ct in list)
-            //{
-            //    if(GetChiTietDichVuById(ct.MaCHiTietDichVu).MaDichVu == MaChiSo) mylist.Add(ct);
-            //}
-            if(list.Count == 0)
+            List<ChiTietSuDungDichVu> mylist = new List<ChiTietSuDungDichVu>();
+            foreach (ChiTietSuDungDichVu ct in list)
+            {
+                if (GetChiTietDichVuById(ct.MaCHiTietDichVu).MaDichVu == MaChiSo) mylist.Add(ct);
+            }
+            if (mylist.Count == 0)
             { 
                 return true;
             }
