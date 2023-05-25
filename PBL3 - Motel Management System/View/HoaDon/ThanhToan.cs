@@ -66,6 +66,7 @@ namespace PBL3___Motel_Management_System.View
 
                 ct.NgayThanhToan = NgayThanhToan.Value.ToString("yyyy-MM-dd");
                 ct.TienThanhToan = Convert.ToDouble(txtThanhToan.Text);
+                ct.TonTai = true;
 
 
                 // Cập nhật số tiền đã thanh toán

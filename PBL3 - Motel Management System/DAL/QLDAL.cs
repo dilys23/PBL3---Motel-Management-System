@@ -160,6 +160,17 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.ChiTietThanhToanHoaDon.Where(p => p.TonTai == true).Select(p => p).ToList<ChiTietThanhToanHoaDon>();
             }    
         }
+        public List<string> GetAllIdLichSuThanhToanByIdHoaDon(string idHd)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietThanhToanHoaDon.Where(p => p.TonTai == true && p.MaHoaDon == idHd).Select(p => p.MaChiTietThanhToanHoaDon).ToList<string>();
+            }
+            //using (DataPbl data = new DataPbl())
+            //{
+            //    return data.ChiTietThietBi.Where(p => p.TonTai == true && p.MaPhongTro == idPhong).Select(p => p.MaChiTietThietBi).ToList<string>();
+            //}
+        }
         public List<ChiTietDichVu>GetChiTietDichVuByIdPhongDal(string idPhong)
         {
             using(DataPbl data = new DataPbl())
