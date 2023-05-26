@@ -43,6 +43,7 @@
             this.txtMKcu = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnTrove = new FontAwesome.Sharp.IconButton();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -54,6 +55,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnTrove);
             this.panel2.Controls.Add(this.BtnHuy);
             this.panel2.Controls.Add(this.btnXacThuc);
             this.panel2.Controls.Add(this.label4);
@@ -213,6 +215,22 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // btnTrove
+            // 
+            this.btnTrove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTrove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnTrove.IconChar = FontAwesome.Sharp.IconChar.MailReply;
+            this.btnTrove.IconColor = System.Drawing.Color.White;
+            this.btnTrove.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTrove.IconSize = 30;
+            this.btnTrove.Location = new System.Drawing.Point(802, 16);
+            this.btnTrove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTrove.Name = "btnTrove";
+            this.btnTrove.Size = new System.Drawing.Size(45, 46);
+            this.btnTrove.TabIndex = 68;
+            this.btnTrove.UseVisualStyleBackColor = false;
+            this.btnTrove.Click += new System.EventHandler(this.btnTrove_Click);
+            // 
             // DoiMK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -244,5 +262,6 @@
         private FontAwesome.Sharp.IconButton BtnHuy;
         private FontAwesome.Sharp.IconButton btnXacThuc;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private FontAwesome.Sharp.IconButton btnTrove;
     }
 }

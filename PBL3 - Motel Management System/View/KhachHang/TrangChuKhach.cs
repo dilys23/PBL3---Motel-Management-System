@@ -307,8 +307,9 @@ namespace PBL3___Motel_Management_System.View
 
         private void btDoiMK_Click(object sender, EventArgs e)
         {
-            //idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
-           // QLBLL.Instance.openChildForm1(new DoiMK(idPhong, null, null), panelDesktop);
+            idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
+            // QLBLL.Instance.openChildForm1(new DoiMK(idPhong, null, null), panelDesktop);
+            QLBLL.Instance.openChildForm1(new TaiKhoanPhong(idPhong), panelDesktop);
         }
     }
 }

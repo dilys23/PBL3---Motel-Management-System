@@ -31,6 +31,7 @@ namespace PBL3___Motel_Management_System.View.KhachHang
             int i = 0;
                 string IdDay = QLBLL.Instance.GetDayTroByIdPhong(idPhong).MaDayTro;
                 string ThangSuDung = dtpThangSuDung.Value.ToString("MM-yyyy");
+
                 foreach (ViewChiSo view in QLBLL.Instance.GetViewChiSoByTimKiem(ThangSuDung, IdDay, idPhong, "1"))
                 {
                     if (QLBLL.Instance.GetChiTietDichVuById(view.MaChiTietDichVu).MaDichVu == "001" && view.TinhTrang==true)

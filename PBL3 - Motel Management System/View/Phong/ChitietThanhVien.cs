@@ -107,7 +107,7 @@ namespace PBL3___Motel_Management_System.View
                    
                     ThuePhong tp = new ThuePhong();
                     tp.hopDong.MaNguoi = dgvThanhVien.CurrentRow.Cells[0].Value.ToString();
-                    QLBLL.Instance.openChildForm1(new ThemKhach(tp, LoadForm), panelThem);
+                    QLBLL.Instance.openChildForm1(new ThemKhach(tp,null, LoadForm), panelThem);
 
 
                 }
@@ -154,7 +154,7 @@ namespace PBL3___Motel_Management_System.View
                     string IdPhong = QLBLL.Instance.GetIdPhongByIdNguoi(IdThanhVien);
                     ThuePhong tp = new ThuePhong();
                     tp.hopDong.MaPhongTro = idPhong;
-                    QLBLL.Instance.openChildForm1(new ThemKhach(tp, LoadForm), panelThem);
+                    QLBLL.Instance.openChildForm1(new ThemKhach(tp,null, LoadForm), panelThem);
                 }
                 else
                 {
@@ -174,7 +174,7 @@ namespace PBL3___Motel_Management_System.View
                 ThuePhong tp = new ThuePhong();
                 string id = dgvThanhVien.CurrentRow.Cells[0].Value.ToString();
                 tp.hopDong.MaNguoi = id;
-                ThemKhach tk = new ThemKhach(tp, LoadForm);
+                ThemKhach tk = new ThemKhach(tp,null, LoadForm);
                 QLBLL.Instance.openChildForm1(tk, panelThem);
                 tk.btnLuu.Visible= false;
                 tk.btnThemAnh.Visible= false;

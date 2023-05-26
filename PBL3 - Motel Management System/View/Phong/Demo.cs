@@ -98,13 +98,13 @@ namespace PBL3___Motel_Management_System.View
                 ThuePhong tp = new ThuePhong();
                 tp.hopDong.MaHopDong = QLBLL.Instance.TaoIdHopDong();
                 tp.hopDong.MaPhongTro = IdPhong;
-                QLBLL.Instance.openChildForm1(new ThemKhach(tp, LoadForm), panel);
+                QLBLL.Instance.openChildForm1(new ThemKhach(tp,null, LoadForm), panel);
             }
             else if(QLBLL.Instance.PhongDaCocByIdPhong(IdPhong))
             {
                 ThuePhong tp = new ThuePhong();
                 tp.hopDong = QLBLL.Instance.GetHopDongByIdPhong(IdPhong);
-                QLBLL.Instance.openChildForm1(new ThemKhach(tp, LoadForm), panel);
+                QLBLL.Instance.openChildForm1(new ThemKhach(tp,null, LoadForm), panel);
             }
             else
             {

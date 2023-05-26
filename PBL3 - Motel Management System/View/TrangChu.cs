@@ -273,5 +273,13 @@ namespace PBL3___Motel_Management_System
         {
             QLBLL.Instance.openChildForm1(new ChuTro(matk), panelDesktop);
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+
+            this.Close();
+            Dangnhap dn = new Dangnhap();
+            dn.ShowDialog();
+        }
     }
 }

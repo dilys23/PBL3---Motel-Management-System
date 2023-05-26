@@ -28,7 +28,7 @@ namespace PBL3___Motel_Management_System
                 //tc.ShowDialog();
                 //this.Close();
                 VaiTro vaitro = QLBLL.Instance.CheckVaiTro(txtTaiKhoan.Text, txtMatKhau.Text);
-                if(vaitro.TenVaiTro=="Chủ trọ")
+                if(vaitro.TenVaiTro=="Chủ trọ" )
                 {
                      matk = vaitro.MaTaiKhoan;
                     TrangChu tc = new TrangChu(matk);

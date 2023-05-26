@@ -15,12 +15,14 @@ namespace PBL3___Motel_Management_System.View
     {
         private string idPhong;
         private string idChutro;
+        private string idTk;
         private Loader loader;
-        public DoiMK(string idPhong,string idChutro, Loader loader)
+        public DoiMK(string idPhong,string idTk, Loader loader)
         {
             InitializeComponent();
             this.idPhong = idPhong;
-            this.idChutro = idChutro;
+           // this.idChutro = idChutro;
+            this.idTk = idTk;
             if (idPhong != null)
             {
                 GUIPhong();
@@ -44,7 +46,7 @@ namespace PBL3___Motel_Management_System.View
         }
         public void GUIChutro()
         {
-            DAL.TaiKhoan tk =QLBLL.Instance.GetTaiKhoanByIdChuTro(idChutro); if (tk != null)
+            DAL.TaiKhoan tk =QLBLL.Instance.GetTaiKhoanByIdTaiKhoan(idTk); if (tk != null)
             {
                 txtTentaikhoan.Text = tk.TenTaiKhoan;
                 txtMKcu.Text = tk.MatKhau;
@@ -95,11 +97,11 @@ namespace PBL3___Motel_Management_System.View
                 else
                 {
                     DAL.TaiKhoan tk = new DAL.TaiKhoan();
-                    tk.MaTaiKhoan = QLBLL.Instance.GetTaiKhoanByIdChuTro(idChutro).MaTaiKhoan;
+                    tk.MaTaiKhoan = QLBLL.Instance.GetTaiKhoanByIdTaiKhoan(idTk).MaTaiKhoan;
                     tk.TenTaiKhoan = txtTentaikhoan.Text;
                     tk.MatKhau = txtMKmoi.Text;
                     tk.TonTai = true;
-                    QLBLL.Instance.UpdateTaiKhoanPhong(tk);
+                    QLBLL.Instance.UpdateTaiKhoanChutro(tk);
                     MessageBox.Show("Thay đổi mật khẩu tài khoản thành công");
                     this.Close();
                     loader(null);
@@ -109,6 +111,11 @@ namespace PBL3___Motel_Management_System.View
         }
 
         private void BtnHuy_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnTrove_Click(object sender, EventArgs e)
         {
             this.Close();
         }
