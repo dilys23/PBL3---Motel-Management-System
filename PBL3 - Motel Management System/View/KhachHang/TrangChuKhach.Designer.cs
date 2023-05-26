@@ -48,7 +48,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.paneMenu = new System.Windows.Forms.Panel();
-            this.btDoiMK = new FontAwesome.Sharp.IconButton();
+            this.btTaikhoan = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelTitle.SuspendLayout();
@@ -333,7 +333,7 @@
             // paneMenu
             // 
             this.paneMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(229)))), ((int)(((byte)(236)))));
-            this.paneMenu.Controls.Add(this.btDoiMK);
+            this.paneMenu.Controls.Add(this.btTaikhoan);
             this.paneMenu.Controls.Add(this.btnLogout);
             this.paneMenu.Controls.Add(this.btnHoaDon);
             this.paneMenu.Controls.Add(this.btnHopDong);
@@ -348,24 +348,24 @@
             this.paneMenu.Size = new System.Drawing.Size(200, 717);
             this.paneMenu.TabIndex = 6;
             // 
-            // btDoiMK
+            // btTaikhoan
             // 
-            this.btDoiMK.FlatAppearance.BorderSize = 0;
-            this.btDoiMK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btDoiMK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDoiMK.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.btDoiMK.IconColor = System.Drawing.Color.SteelBlue;
-            this.btDoiMK.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btDoiMK.IconSize = 35;
-            this.btDoiMK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btDoiMK.Location = new System.Drawing.Point(-1, 497);
-            this.btDoiMK.Name = "btDoiMK";
-            this.btDoiMK.Size = new System.Drawing.Size(197, 41);
-            this.btDoiMK.TabIndex = 18;
-            this.btDoiMK.Tag = "Đổi mật khẩu";
-            this.btDoiMK.Text = "Đổi mật khẩu";
-            this.btDoiMK.UseVisualStyleBackColor = true;
-            this.btDoiMK.Click += new System.EventHandler(this.btDoiMK_Click);
+            this.btTaikhoan.FlatAppearance.BorderSize = 0;
+            this.btTaikhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btTaikhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTaikhoan.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.btTaikhoan.IconColor = System.Drawing.Color.SteelBlue;
+            this.btTaikhoan.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btTaikhoan.IconSize = 35;
+            this.btTaikhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btTaikhoan.Location = new System.Drawing.Point(8, 497);
+            this.btTaikhoan.Name = "btTaikhoan";
+            this.btTaikhoan.Size = new System.Drawing.Size(186, 41);
+            this.btTaikhoan.TabIndex = 18;
+            this.btTaikhoan.Tag = "Tài khoản";
+            this.btTaikhoan.Text = "Tài khoản";
+            this.btTaikhoan.UseVisualStyleBackColor = true;
+            this.btTaikhoan.Click += new System.EventHandler(this.btDoiMK_Click);
             // 
             // TrangChuKhach
             // 
@@ -408,6 +408,6 @@
         private System.Windows.Forms.Panel paneMenu;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private FontAwesome.Sharp.IconButton btDoiMK;
+        private FontAwesome.Sharp.IconButton btTaikhoan;
     }
 }

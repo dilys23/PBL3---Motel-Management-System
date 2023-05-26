@@ -988,6 +988,47 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return list;
         }
+        public List<ViewChiSo> GetViewChiSoByPhong( string IdDay, string IdPhong, string IdTinhTrang)
+        {
+            List<ViewChiSo> list = new List<ViewChiSo>();
+            foreach (ChiTietSuDungDichVu dv in GetChiTietSuDungDichVuTimKiem( IdDay, IdPhong, IdTinhTrang))
+            {
+                ChiTietDichVu ctdv = GetChiTietDichVuById(dv.MaCHiTietDichVu);
+                ViewChiSo view = new ViewChiSo
+                {
+                    MaChiTietSuDungDichVu = dv.MaChiTietSuDungDichVu,
+                    MaChiTietDichVu = ctdv.MaChiTietDichVu,
+                    Stt = 1,
+                    TenDayTro = GetDayTroByIdPhong(ctdv.MaPhongTro).TenDayTro,
+                    TenPhongTro = GetPhongTroByIdPhong(ctdv.MaPhongTro).TenPhongTro,
+                    ChiSoCu = dv.ChiSoCu,
+                    ChiSoMoi = dv.ChiSoMoi,
+                    DaDung = dv.ChiSoMoi - dv.ChiSoCu,
+                    NgayLap = dv.NgayLap,
+                    ThangSuDung = dv.ThoiGian,
+                    TinhTrang = dv.TinhTrang
+                };
+                list.Add(view);
+            }
+            return list;
+        }
+        public List<ChiTietSuDungDichVu> GetChiTietSuDungDichVuTimKiem( string IdDay, string IdPhong, string idTinhTrang)
+        {
+            List<string> Day = GetChiTietSuDungDichVuByIdDay(IdDay);
+            List<string> Phong = GetChiTietSuDungDichVuByIdPhong(IdPhong);
+            List<string> TinhTrang = GetChiTietSuDungDichVuByTinhTrang(idTinhTrang);
+            List<string> Id = new List<string>();
+            List<ChiTietSuDungDichVu> kq = new List<ChiTietSuDungDichVu>();
+            Id =Day.Intersect(Phong).Intersect(TinhTrang).ToList();
+            foreach (ChiTietSuDungDichVu dv in GetAllChiTietSuDungDichVuBll())
+            {
+                foreach (string id in Id)
+                {
+                    if (id == dv.MaChiTietSuDungDichVu) kq.Add(dv);
+                }
+            }
+            return kq;
+        }
 
         public List<ChiTietSuDungDichVu> GetChiTietSuDungDichVuTimKiem(string ThangSd,string IdDay,string IdPhong,string idTinhTrang)
         {
