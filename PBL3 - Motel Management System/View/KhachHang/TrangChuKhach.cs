@@ -311,5 +311,13 @@ namespace PBL3___Motel_Management_System.View
             // QLBLL.Instance.openChildForm1(new DoiMK(idPhong, null, null), panelDesktop);
             QLBLL.Instance.openChildForm1(new TaiKhoanPhong(idPhong), panelDesktop);
         }
+
+        private void btnThietbi_Click(object sender, EventArgs e)
+        {
+            idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
+            ChitietTB ct = new ChitietTB(idPhong);
+            ct.btnThemThietbi.Visible = false;
+            QLBLL.Instance.openChildForm1(ct, panelDesktop);
+        }
     }
 }

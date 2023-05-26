@@ -64,7 +64,9 @@ namespace PBL3___Motel_Management_System.View
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            QLBLL.Instance.openChildForm1(new ChitietTB(idPhong), panelChitietPT);
+            ChitietTB ct = new ChitietTB(idPhong);
+            ct.labelText.Visible = false;
+            QLBLL.Instance.openChildForm1(ct, panelChitietPT);
         }
 
         private void btnTaiKhoan_Click(object sender, EventArgs e)

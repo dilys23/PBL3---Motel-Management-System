@@ -92,7 +92,7 @@ namespace PBL3___Motel_Management_System.View
             this.btnThemAnh.IconColor = System.Drawing.Color.Bisque;
             this.btnThemAnh.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThemAnh.IconSize = 25;
-            this.btnThemAnh.Location = new System.Drawing.Point(235, 279);
+            this.btnThemAnh.Location = new System.Drawing.Point(244, 326);
             this.btnThemAnh.Name = "btnThemAnh";
             this.btnThemAnh.Size = new System.Drawing.Size(35, 35);
             this.btnThemAnh.TabIndex = 30;
