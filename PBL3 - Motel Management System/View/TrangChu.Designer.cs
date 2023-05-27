@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChu));
             this.panelTitle = new System.Windows.Forms.Panel();
-            this.btnTK = new FontAwesome.Sharp.IconButton();
             this.btnMinimized = new FontAwesome.Sharp.IconButton();
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.btnMaximized = new FontAwesome.Sharp.IconButton();
@@ -60,7 +59,6 @@
             // panelTitle
             // 
             this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(229)))), ((int)(((byte)(236)))));
-            this.panelTitle.Controls.Add(this.btnTK);
             this.panelTitle.Controls.Add(this.btnMinimized);
             this.panelTitle.Controls.Add(this.btnExit);
             this.panelTitle.Controls.Add(this.btnMaximized);
@@ -70,20 +68,6 @@
             this.panelTitle.Size = new System.Drawing.Size(1133, 83);
             this.panelTitle.TabIndex = 4;
             this.panelTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitle_MouseDown);
-            // 
-            // btnTK
-            // 
-            this.btnTK.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnTK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTK.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.btnTK.IconColor = System.Drawing.Color.DarkCyan;
-            this.btnTK.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTK.IconSize = 25;
-            this.btnTK.Location = new System.Drawing.Point(1076, 39);
-            this.btnTK.Name = "btnTK";
-            this.btnTK.Size = new System.Drawing.Size(45, 39);
-            this.btnTK.TabIndex = 4;
-            this.btnTK.UseVisualStyleBackColor = true;
             // 
             // btnMinimized
             // 
@@ -464,7 +448,6 @@
         private FontAwesome.Sharp.IconButton btnDoanhTHu;
         private FontAwesome.Sharp.IconButton btnHoaDon;
         private FontAwesome.Sharp.IconButton btnThietbi;
-        private FontAwesome.Sharp.IconButton btnTK;
         private System.Windows.Forms.Panel panelDesktop;
         private FontAwesome.Sharp.IconButton btnTaiKhoan;
         private FontAwesome.Sharp.IconButton iconButton1;

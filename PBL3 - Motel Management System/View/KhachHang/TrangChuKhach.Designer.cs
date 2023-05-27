@@ -46,10 +46,9 @@
             this.btnMaximized = new FontAwesome.Sharp.IconButton();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.paneMenu = new System.Windows.Forms.Panel();
-            this.btTaikhoan = new FontAwesome.Sharp.IconButton();
             this.btnThietbi = new FontAwesome.Sharp.IconButton();
+            this.btTaikhoan = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelTitle.SuspendLayout();
@@ -302,7 +301,6 @@
             // 
             this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(229)))), ((int)(((byte)(236)))));
             this.panelTitle.Controls.Add(this.label2);
-            this.panelTitle.Controls.Add(this.flowLayoutPanel1);
             this.panelTitle.Controls.Add(this.btnMinimized);
             this.panelTitle.Controls.Add(this.btnExit);
             this.panelTitle.Controls.Add(this.btnMaximized);
@@ -318,18 +316,11 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label2.Location = new System.Drawing.Point(6, 19);
+            this.label2.Location = new System.Drawing.Point(2, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(148, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "Xin chào Bạn!";
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 44);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1003, 38);
-            this.flowLayoutPanel1.TabIndex = 4;
             // 
             // paneMenu
             // 
@@ -350,25 +341,6 @@
             this.paneMenu.Size = new System.Drawing.Size(200, 717);
             this.paneMenu.TabIndex = 6;
             // 
-            // btTaikhoan
-            // 
-            this.btTaikhoan.FlatAppearance.BorderSize = 0;
-            this.btTaikhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btTaikhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btTaikhoan.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.btTaikhoan.IconColor = System.Drawing.Color.SteelBlue;
-            this.btTaikhoan.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btTaikhoan.IconSize = 35;
-            this.btTaikhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btTaikhoan.Location = new System.Drawing.Point(5, 564);
-            this.btTaikhoan.Name = "btTaikhoan";
-            this.btTaikhoan.Size = new System.Drawing.Size(186, 41);
-            this.btTaikhoan.TabIndex = 18;
-            this.btTaikhoan.Tag = "Tài khoản";
-            this.btTaikhoan.Text = "Tài khoản";
-            this.btTaikhoan.UseVisualStyleBackColor = true;
-            this.btTaikhoan.Click += new System.EventHandler(this.btDoiMK_Click);
-            // 
             // btnThietbi
             // 
             this.btnThietbi.FlatAppearance.BorderSize = 0;
@@ -387,6 +359,25 @@
             this.btnThietbi.Text = "Thiết bị ";
             this.btnThietbi.UseVisualStyleBackColor = true;
             this.btnThietbi.Click += new System.EventHandler(this.btnThietbi_Click);
+            // 
+            // btTaikhoan
+            // 
+            this.btTaikhoan.FlatAppearance.BorderSize = 0;
+            this.btTaikhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btTaikhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTaikhoan.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.btTaikhoan.IconColor = System.Drawing.Color.SteelBlue;
+            this.btTaikhoan.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btTaikhoan.IconSize = 35;
+            this.btTaikhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btTaikhoan.Location = new System.Drawing.Point(5, 564);
+            this.btTaikhoan.Name = "btTaikhoan";
+            this.btTaikhoan.Size = new System.Drawing.Size(186, 41);
+            this.btTaikhoan.TabIndex = 18;
+            this.btTaikhoan.Tag = "Tài khoản";
+            this.btTaikhoan.Text = "Tài khoản";
+            this.btTaikhoan.UseVisualStyleBackColor = true;
+            this.btTaikhoan.Click += new System.EventHandler(this.btDoiMK_Click);
             // 
             // TrangChuKhach
             // 
@@ -428,7 +419,6 @@
         private System.Windows.Forms.Panel panelTitle;
         private System.Windows.Forms.Panel paneMenu;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private FontAwesome.Sharp.IconButton btTaikhoan;
         private FontAwesome.Sharp.IconButton btnThietbi;
     }
