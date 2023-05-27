@@ -26,13 +26,7 @@ namespace PBL3___Motel_Management_System
         private void LoadForm(string txt)
         {
             dgvHoaDon.Rows.Clear();
-            this.dgvHoaDon.DefaultCellStyle.Font = new Font("Tahoma", 10);
-            this.dgvHoaDon.DefaultCellStyle.ForeColor = Color.Blue;
-            this.dgvHoaDon.DefaultCellStyle.BackColor = Color.Beige;
-            this.dgvHoaDon.DefaultCellStyle.SelectionForeColor = Color.AliceBlue;
-            this.dgvHoaDon.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
-            this.dgvHoaDon.RowTemplate.Height = 35;
-            this.dgvHoaDon.RowTemplate.MinimumHeight = 20;
+            QLBLL.Instance.customDGV(dgvHoaDon);
             if(txt == null)
             {
 
