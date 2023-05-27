@@ -1,5 +1,4 @@
-﻿using PBL3___Motel_Management_System.BLL;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,15 +10,11 @@ using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System.View
 {
-    public partial class SuaHopDong : Form
+    public partial class DemoTv : UserControl
     {
-        public SuaHopDong()
+        public DemoTv()
         {
             InitializeComponent();
-        }
-        private void btnThemKhach_Click(object sender, EventArgs e)
-        {
-            QLBLL.Instance.openChildForm1(new ThemKhach(null, null), panelThemHD);
         }
     }
 }

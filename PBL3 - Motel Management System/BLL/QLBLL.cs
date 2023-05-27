@@ -227,7 +227,6 @@ namespace PBL3___Motel_Management_System.BLL
         public List<ChiTietSuDungDichVu> GetAllChiTietSuDungDichVuBll()
         {
             return QLDAL.Instance.GetAllChiTietSuDungDichVu();
-
         }
         public string TaoIdChiTietDichVu()
         {

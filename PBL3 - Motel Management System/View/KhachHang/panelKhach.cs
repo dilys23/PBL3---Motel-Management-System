@@ -102,7 +102,7 @@ namespace PBL3___Motel_Management_System.View.KhachHang
                 ThuePhong tp = new ThuePhong();
                 string id = dgvThanhVien.CurrentRow.Cells[0].Value.ToString();
                 tp.hopDong.MaNguoi = id;
-                ThemKhach tk = new ThemKhach(tp,null, SetGUI);
+                ThemKhach tk = new ThemKhach(tp, SetGUI);
                 QLBLL.Instance.openChildForm1(tk, panel3);
                 tk.btnLuu.Visible= false;
                 tk.btnThemAnh.Visible= false;

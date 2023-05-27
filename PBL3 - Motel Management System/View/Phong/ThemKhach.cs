@@ -17,13 +17,11 @@ namespace PBL3___Motel_Management_System
 {
     public partial class ThemKhach : Form
     {   private ThuePhong thuePhong;
-        private Nguoi idng;
         private Loader loader;
-        public ThemKhach(ThuePhong tp, Nguoi id, Loader loader)
+        public ThemKhach(ThuePhong tp, Loader loader)
         {
             InitializeComponent();
             this.thuePhong = tp;
-            this.idng = id;
             this.loader=loader;
             LoadForm();
         }
@@ -34,25 +32,9 @@ namespace PBL3___Motel_Management_System
         }
         private void LoadForm()
         {
-            if (this.thuePhong != null && this.thuePhong.hopDong != null && this.thuePhong.hopDong.MaNguoi != null)
+            if (thuePhong.hopDong.MaNguoi != null)
             {
                 Nguoi nguoi = QLBLL.Instance.GetNguoiByIdNguoi(thuePhong.hopDong.MaNguoi);
-                txtTen.Text = nguoi.Ten;
-                txtCccd.Text = nguoi.Cccd;
-                txtSdt.Text = nguoi.Sdt;
-                txtDiaChi.Text = nguoi.Diachi;
-                if (nguoi.GioiTinh == true)
-                    rdbtnNam.Checked = true;
-                else
-                    rdbtnNu.Checked = true;
-                if (nguoi.HinhAnh != null)
-                {
-                    pctKhach.Image = ChuyenDoiAnh.Base64ToImage(nguoi.HinhAnh);
-                }
-            }
-            else if (this.idng != null && this.idng.MaNguoi != null)
-            {
-                Nguoi nguoi = QLBLL.Instance.GetNguoiByIdNguoi(idng.MaNguoi);
                 txtTen.Text = nguoi.Ten;
                 txtCccd.Text = nguoi.Cccd;
                 txtSdt.Text = nguoi.Sdt;
@@ -119,11 +101,7 @@ namespace PBL3___Motel_Management_System
             if (checkHopLe())
             {
                 Nguoi nguoi = new Nguoi();
-                if (this.idng != null && this.idng.MaNguoi != null)
-                {
-                    nguoi.MaNguoi = this.idng.MaNguoi;
-                }
-                else if (this.thuePhong == null && this.thuePhong.hopDong == null && this.thuePhong.hopDong.MaNguoi == null)
+                if (thuePhong.hopDong.MaNguoi == null)
                 {
                     nguoi.MaNguoi = QLBLL.Instance.TaoIdNguoi();
                 }
@@ -137,48 +115,39 @@ namespace PBL3___Motel_Management_System
                 nguoi.Ten = txtTen.Text;
                 nguoi.Sdt = txtSdt.Text;
                 nguoi.Diachi = txtDiaChi.Text;
-                nguoi.GioiTinh = rdbtnNam.Checked;
+                nguoi.GioiTinh = (rdbtnNam.Checked);
                 nguoi.NgaySinh = dtpNgaySinh.Value.ToString("yyyy-MM-dd");
                 if (pctKhach.Image != null)
                 {
                     nguoi.HinhAnh = ChuyenDoiAnh.ImageToBase64(pctKhach.Image, pctKhach.Image.RawFormat);
                 }
-
-                if (this.idng != null && this.idng.MaNguoi != null)
+                if (thuePhong.hopDong.MaHopDong != null)
                 {
-                    QLBLL.Instance.UpdateNguoiBLL(nguoi);
-                    MessageBox.Show("Thay đổi thông tin chủ trọ thành công", "Thông báo", MessageBoxButtons.OK);
+                    thuePhong.hopDong.Nguoi = nguoi;
+                    QLBLL.Instance.openChildForm1(new ThemDVphong(thuePhong, Back), panelKhach);
+                }
+                else if (this.thuePhong.hopDong.MaNguoi == null)
+                {
+                    ThanhVienTrongPhong tvtp = new ThanhVienTrongPhong();
+                    tvtp.MaThanhVienTrongPhong = QLBLL.Instance.TaoIdThanhVienTrongPhong();
+                    tvtp.MaNguoi = nguoi.MaNguoi;
+                    tvtp.MaPhongTro = thuePhong.hopDong.MaPhongTro;
+                    tvtp.TonTai = true;
+                    QLBLL.Instance.AddNguoiBll(nguoi);
+                    QLBLL.Instance.AddThanhVienTrongPhongBll(tvtp);
+                    MessageBox.Show("Thêm thành viên vào phòng thành công", "Thông báo", MessageBoxButtons.OK);
+                    this.loader(null);
+                    this.Close();
+
                 }
                 else
                 {
-                    //  xử lý lưu thông tin khách thuê
-                    if (thuePhong.hopDong.MaHopDong != null)
-                    {
-                        thuePhong.hopDong.Nguoi = nguoi;
-                        QLBLL.Instance.openChildForm1(new ThemDVphong(thuePhong, Back), panelKhach);
-                    }
-                    else if (this.thuePhong.hopDong.MaNguoi == null)
-                    {
-                        ThanhVienTrongPhong tvtp = new ThanhVienTrongPhong();
-                        tvtp.MaThanhVienTrongPhong = QLBLL.Instance.TaoIdThanhVienTrongPhong();
-                        tvtp.MaNguoi = nguoi.MaNguoi;
-                        tvtp.MaPhongTro = thuePhong.hopDong.MaPhongTro;
-                        tvtp.TonTai = true;
-                        QLBLL.Instance.AddNguoiBll(nguoi);
-                        QLBLL.Instance.AddThanhVienTrongPhongBll(tvtp);
-                        MessageBox.Show("Thêm thành viên vào phòng thành công", "Thông báo", MessageBoxButtons.OK);
-                    }
-                    else if (this.thuePhong.hopDong.MaNguoi != null)
-                    {
-                        QLBLL.Instance.UpdateNguoiBLL(nguoi);
-                        MessageBox.Show("Thay đổi thông tin thành công", "Thông báo", MessageBoxButtons.OK);
-                        this.loader(null);
-                        this.Close();
-                    }
+                    QLBLL.Instance.UpdateNguoiBLL(nguoi);
+                    MessageBox.Show("Thay đổi thông tin thành công", "Thông báo", MessageBoxButtons.OK);
+                    this.loader(null);
+                    this.Close();
                 }
-
-                this.loader(null);
-                this.Close();
+                
             }
         }
      

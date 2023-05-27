@@ -62,15 +62,15 @@ namespace PBL3___Motel_Management_System.View
            // Nguoi ng = new Nguoi();
             Nguoi ng = QLBLL.Instance.GetNguoiByMaTaiKhoan(this.matk);
            // this.idng = ng.MaNguoi;
-            QLBLL.Instance.openChildForm1(new ThemKhach(null,ng, LoadForm), panel1);
+            QLBLL.Instance.openChildForm1(new ThemKhach(null, LoadForm), panel1);
         }
 
         private void btnSua_Click_1(object sender, EventArgs e)
         {
-            // Nguoi ng = new Nguoi();
             Nguoi ng = QLBLL.Instance.GetNguoiByMaTaiKhoan(this.matk);
-            // this.idng = ng.MaNguoi;
-            QLBLL.Instance.openChildForm1(new ThemKhach(null, ng, LoadForm), panel1);
+            ThuePhong tp = new ThuePhong();
+            tp.hopDong.MaNguoi = ng.MaNguoi;
+            QLBLL.Instance.openChildForm1(new ThemKhach(tp, LoadForm), panel1);
         }
     }
 }
