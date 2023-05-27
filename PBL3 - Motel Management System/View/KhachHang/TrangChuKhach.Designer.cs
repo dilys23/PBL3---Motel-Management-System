@@ -46,9 +46,9 @@
             this.btnMaximized = new FontAwesome.Sharp.IconButton();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.paneMenu = new System.Windows.Forms.Panel();
-            this.btDoiMK = new FontAwesome.Sharp.IconButton();
+            this.btnThietbi = new FontAwesome.Sharp.IconButton();
+            this.btTaikhoan = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panelTitle.SuspendLayout();
@@ -76,9 +76,9 @@
             this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Regular;
             this.btnLogout.IconSize = 30;
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(12, 578);
+            this.btnLogout.Location = new System.Drawing.Point(22, 646);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(45, 45);
+            this.btnLogout.Size = new System.Drawing.Size(47, 45);
             this.btnLogout.TabIndex = 17;
             this.btnLogout.Tag = "Logout";
             this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -95,7 +95,7 @@
             this.btnHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHoaDon.IconSize = 35;
             this.btnHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHoaDon.Location = new System.Drawing.Point(8, 434);
+            this.btnHoaDon.Location = new System.Drawing.Point(3, 500);
             this.btnHoaDon.Name = "btnHoaDon";
             this.btnHoaDon.Size = new System.Drawing.Size(186, 41);
             this.btnHoaDon.TabIndex = 12;
@@ -114,7 +114,7 @@
             this.btnHopDong.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHopDong.IconSize = 35;
             this.btnHopDong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHopDong.Location = new System.Drawing.Point(8, 367);
+            this.btnHopDong.Location = new System.Drawing.Point(3, 437);
             this.btnHopDong.Name = "btnHopDong";
             this.btnHopDong.Size = new System.Drawing.Size(186, 41);
             this.btnHopDong.TabIndex = 11;
@@ -301,7 +301,6 @@
             // 
             this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(229)))), ((int)(((byte)(236)))));
             this.panelTitle.Controls.Add(this.label2);
-            this.panelTitle.Controls.Add(this.flowLayoutPanel1);
             this.panelTitle.Controls.Add(this.btnMinimized);
             this.panelTitle.Controls.Add(this.btnExit);
             this.panelTitle.Controls.Add(this.btnMaximized);
@@ -317,23 +316,17 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label2.Location = new System.Drawing.Point(6, 19);
+            this.label2.Location = new System.Drawing.Point(2, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(148, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "Xin chào Bạn!";
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 44);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1003, 38);
-            this.flowLayoutPanel1.TabIndex = 4;
-            // 
             // paneMenu
             // 
             this.paneMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(229)))), ((int)(((byte)(236)))));
-            this.paneMenu.Controls.Add(this.btDoiMK);
+            this.paneMenu.Controls.Add(this.btnThietbi);
+            this.paneMenu.Controls.Add(this.btTaikhoan);
             this.paneMenu.Controls.Add(this.btnLogout);
             this.paneMenu.Controls.Add(this.btnHoaDon);
             this.paneMenu.Controls.Add(this.btnHopDong);
@@ -348,24 +341,43 @@
             this.paneMenu.Size = new System.Drawing.Size(200, 717);
             this.paneMenu.TabIndex = 6;
             // 
-            // btDoiMK
+            // btnThietbi
             // 
-            this.btDoiMK.FlatAppearance.BorderSize = 0;
-            this.btDoiMK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btDoiMK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDoiMK.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.btDoiMK.IconColor = System.Drawing.Color.SteelBlue;
-            this.btDoiMK.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btDoiMK.IconSize = 35;
-            this.btDoiMK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btDoiMK.Location = new System.Drawing.Point(-1, 497);
-            this.btDoiMK.Name = "btDoiMK";
-            this.btDoiMK.Size = new System.Drawing.Size(197, 41);
-            this.btDoiMK.TabIndex = 18;
-            this.btDoiMK.Tag = "Đổi mật khẩu";
-            this.btDoiMK.Text = "Đổi mật khẩu";
-            this.btDoiMK.UseVisualStyleBackColor = true;
-            this.btDoiMK.Click += new System.EventHandler(this.btDoiMK_Click);
+            this.btnThietbi.FlatAppearance.BorderSize = 0;
+            this.btnThietbi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThietbi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThietbi.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
+            this.btnThietbi.IconColor = System.Drawing.Color.SteelBlue;
+            this.btnThietbi.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThietbi.IconSize = 35;
+            this.btnThietbi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThietbi.Location = new System.Drawing.Point(6, 364);
+            this.btnThietbi.Name = "btnThietbi";
+            this.btnThietbi.Size = new System.Drawing.Size(186, 41);
+            this.btnThietbi.TabIndex = 20;
+            this.btnThietbi.Tag = "Thiết bị ";
+            this.btnThietbi.Text = "Thiết bị ";
+            this.btnThietbi.UseVisualStyleBackColor = true;
+            this.btnThietbi.Click += new System.EventHandler(this.btnThietbi_Click);
+            // 
+            // btTaikhoan
+            // 
+            this.btTaikhoan.FlatAppearance.BorderSize = 0;
+            this.btTaikhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btTaikhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTaikhoan.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.btTaikhoan.IconColor = System.Drawing.Color.SteelBlue;
+            this.btTaikhoan.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btTaikhoan.IconSize = 35;
+            this.btTaikhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btTaikhoan.Location = new System.Drawing.Point(5, 564);
+            this.btTaikhoan.Name = "btTaikhoan";
+            this.btTaikhoan.Size = new System.Drawing.Size(186, 41);
+            this.btTaikhoan.TabIndex = 18;
+            this.btTaikhoan.Tag = "Tài khoản";
+            this.btTaikhoan.Text = "Tài khoản";
+            this.btTaikhoan.UseVisualStyleBackColor = true;
+            this.btTaikhoan.Click += new System.EventHandler(this.btDoiMK_Click);
             // 
             // TrangChuKhach
             // 
@@ -407,7 +419,7 @@
         private System.Windows.Forms.Panel panelTitle;
         private System.Windows.Forms.Panel paneMenu;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private FontAwesome.Sharp.IconButton btDoiMK;
+        private FontAwesome.Sharp.IconButton btTaikhoan;
+        private FontAwesome.Sharp.IconButton btnThietbi;
     }
 }

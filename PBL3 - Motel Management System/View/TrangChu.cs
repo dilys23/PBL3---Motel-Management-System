@@ -21,9 +21,10 @@ namespace PBL3___Motel_Management_System
     {
         private int borderSize = 2;
         private Size formSize; //Keep form size when it is minimized and restored.Since the form is resized because it takes into account the size of the title bar and borders.
-        
-        public TrangChu()
+        private string matk;
+        public TrangChu(string matk)
         {
+            this.matk = matk;
             InitializeComponent();
             CollapseMenu();
             this.Padding = new Padding(borderSize);//Border size
@@ -267,6 +268,18 @@ namespace PBL3___Motel_Management_System
         {
             QLBLL.Instance.openChildForm1(new Thietbi(), panelDesktop);
         }
-      
+
+        private void btnTaiKhoan_Click(object sender, EventArgs e)
+        {
+            QLBLL.Instance.openChildForm1(new ChuTro(matk), panelDesktop);
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+
+            this.Close();
+            Dangnhap dn = new Dangnhap();
+            dn.ShowDialog();
+        }
     }
 }

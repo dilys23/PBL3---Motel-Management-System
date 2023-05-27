@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelThem = new System.Windows.Forms.Panel();
             this.btnThemThietbi = new FontAwesome.Sharp.IconButton();
             this.dgvThietBi = new System.Windows.Forms.DataGridView();
@@ -39,6 +39,7 @@
             this.TenThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GiaThietBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelText = new System.Windows.Forms.Label();
             this.panelThem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThietBi)).BeginInit();
             this.SuspendLayout();
@@ -50,12 +51,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelThem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
+            this.panelThem.Controls.Add(this.labelText);
             this.panelThem.Controls.Add(this.btnThemThietbi);
             this.panelThem.Controls.Add(this.dgvThietBi);
-            this.panelThem.Location = new System.Drawing.Point(20, 27);
-            this.panelThem.Margin = new System.Windows.Forms.Padding(2);
+            this.panelThem.Location = new System.Drawing.Point(27, 33);
+            this.panelThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelThem.Name = "panelThem";
-            this.panelThem.Size = new System.Drawing.Size(652, 401);
+            this.panelThem.Size = new System.Drawing.Size(869, 494);
             this.panelThem.TabIndex = 50;
             // 
             // btnThemThietbi
@@ -69,10 +71,10 @@
             this.btnThemThietbi.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnThemThietbi.IconSize = 25;
             this.btnThemThietbi.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.btnThemThietbi.Location = new System.Drawing.Point(523, 9);
-            this.btnThemThietbi.Margin = new System.Windows.Forms.Padding(2);
+            this.btnThemThietbi.Location = new System.Drawing.Point(697, 11);
+            this.btnThemThietbi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThemThietbi.Name = "btnThemThietbi";
-            this.btnThemThietbi.Size = new System.Drawing.Size(109, 32);
+            this.btnThemThietbi.Size = new System.Drawing.Size(145, 39);
             this.btnThemThietbi.TabIndex = 54;
             this.btnThemThietbi.Text = "Thêm thiết bị";
             this.btnThemThietbi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -86,14 +88,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvThietBi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvThietBi.BackgroundColor = System.Drawing.Color.Ivory;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.PaleTurquoise;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvThietBi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.PaleTurquoise;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvThietBi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvThietBi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvThietBi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaThietBi,
@@ -101,32 +103,32 @@
             this.TenThietBi,
             this.GiaThietBi,
             this.SoLuong});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Turquoise;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.MintCream;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvThietBi.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Turquoise;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.MintCream;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvThietBi.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvThietBi.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvThietBi.GridColor = System.Drawing.Color.LightCyan;
-            this.dgvThietBi.Location = new System.Drawing.Point(13, 82);
-            this.dgvThietBi.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvThietBi.Location = new System.Drawing.Point(17, 101);
+            this.dgvThietBi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvThietBi.MultiSelect = false;
             this.dgvThietBi.Name = "dgvThietBi";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.MenuText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvThietBi.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.MenuText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvThietBi.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvThietBi.RowHeadersWidth = 60;
             this.dgvThietBi.RowTemplate.Height = 24;
             this.dgvThietBi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvThietBi.Size = new System.Drawing.Size(619, 298);
+            this.dgvThietBi.Size = new System.Drawing.Size(825, 367);
             this.dgvThietBi.TabIndex = 9;
             // 
             // MaThietBi
@@ -160,17 +162,29 @@
             this.SoLuong.MinimumWidth = 6;
             this.SoLuong.Name = "SoLuong";
             // 
+            // labelText
+            // 
+            this.labelText.AutoSize = true;
+            this.labelText.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelText.ForeColor = System.Drawing.Color.Chocolate;
+            this.labelText.Location = new System.Drawing.Point(13, 26);
+            this.labelText.Name = "labelText";
+            this.labelText.Size = new System.Drawing.Size(168, 24);
+            this.labelText.TabIndex = 55;
+            this.labelText.Text = "CHI TIẾT THIẾT BỊ";
+            // 
             // ChitietTB
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(692, 453);
+            this.ClientSize = new System.Drawing.Size(923, 558);
             this.Controls.Add(this.panelThem);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ChitietTB";
             this.Text = "ChitietTB";
             this.panelThem.ResumeLayout(false);
+            this.panelThem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvThietBi)).EndInit();
             this.ResumeLayout(false);
 
@@ -179,12 +193,13 @@
         #endregion
 
         private System.Windows.Forms.Panel panelThem;
-        private FontAwesome.Sharp.IconButton btnThemThietbi;
         private System.Windows.Forms.DataGridView dgvThietBi;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaThietBi;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenThietBi;
         private System.Windows.Forms.DataGridViewTextBoxColumn GiaThietBi;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        public FontAwesome.Sharp.IconButton btnThemThietbi;
+        public System.Windows.Forms.Label labelText;
     }
 }

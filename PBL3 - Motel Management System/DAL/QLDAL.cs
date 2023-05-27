@@ -1128,6 +1128,13 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.ChiTietTaiKhoanChuTro.Where(p => p.MaNguoi == idChutro).FirstOrDefault().TaiKhoan;
             }
         }
+        public DAL.TaiKhoan GetTaiKhoanByIdTaiKhoan(string matk)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.TaiKhoan.Find(matk);
+            }    
+        }
         public void UpdateTaiKhoanPhong(DAL.TaiKhoan tk)
         {
             using (DataPbl data = new DataPbl())
@@ -1163,6 +1170,13 @@ namespace PBL3___Motel_Management_System.DAL
             {
                 return data.ChiTietTaiKhoanPhongTro.Where(p=>p.TonTai==true && p.MaTaiKhoan==matk).FirstOrDefault().PhongTro;
             }
+        }
+        public Nguoi GetNguoiByMaTaiKhoan (string matk)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietTaiKhoanChuTro.Where(p => p.TonTai==true && p.MaTaiKhoan == matk).FirstOrDefault().Nguoi;
+            }    
         }
     }
 }

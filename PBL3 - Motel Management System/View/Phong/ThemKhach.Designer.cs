@@ -297,9 +297,9 @@
             this.label8.ForeColor = System.Drawing.Color.Chocolate;
             this.label8.Location = new System.Drawing.Point(11, 16);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(206, 28);
+            this.label8.Size = new System.Drawing.Size(130, 28);
             this.label8.TabIndex = 47;
-            this.label8.Text = "THÔNG TIN KHÁCH";
+            this.label8.Text = "THÔNG TIN ";
             // 
             // errorProvider1
             // 

@@ -236,7 +236,7 @@ namespace PBL3___Motel_Management_System.View
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        TrangChu tc = new TrangChu();
+       // TrangChu tc = new TrangChu();
         private void btnHopDong_Click(object sender, EventArgs e)
         {
             idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
@@ -307,8 +307,17 @@ namespace PBL3___Motel_Management_System.View
 
         private void btDoiMK_Click(object sender, EventArgs e)
         {
-            //idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
-           // QLBLL.Instance.openChildForm1(new DoiMK(idPhong, null, null), panelDesktop);
+            idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
+            // QLBLL.Instance.openChildForm1(new DoiMK(idPhong, null, null), panelDesktop);
+            QLBLL.Instance.openChildForm1(new TaiKhoanPhong(idPhong), panelDesktop);
+        }
+
+        private void btnThietbi_Click(object sender, EventArgs e)
+        {
+            idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
+            ChitietTB ct = new ChitietTB(idPhong);
+            ct.btnThemThietbi.Visible = false;
+            QLBLL.Instance.openChildForm1(ct, panelDesktop);
         }
     }
 }

@@ -32,25 +32,24 @@ namespace PBL3___Motel_Management_System
         }
         private void LoadForm()
         {
-
-            if(this.thuePhong.hopDong.MaNguoi != null)
+            if (thuePhong.hopDong.MaNguoi != null)
             {
-                Nguoi nguoi = new Nguoi();
-                nguoi = QLBLL.Instance.GetNguoiByIdNguoi(thuePhong.hopDong.MaNguoi);
+                Nguoi nguoi = QLBLL.Instance.GetNguoiByIdNguoi(thuePhong.hopDong.MaNguoi);
                 txtTen.Text = nguoi.Ten;
                 txtCccd.Text = nguoi.Cccd;
                 txtSdt.Text = nguoi.Sdt;
-                txtDiaChi.Text = nguoi.Diachi;             
-            if(nguoi.GioiTinh == true)rdbtnNam.Checked = true;
-                else rdbtnNu.Checked = true;
-            if (nguoi.HinhAnh != null )
+                txtDiaChi.Text = nguoi.Diachi;
+                if (nguoi.GioiTinh == true)
+                    rdbtnNam.Checked = true;
+                else
+                    rdbtnNu.Checked = true;
+                if (nguoi.HinhAnh != null)
                 {
                     pctKhach.Image = ChuyenDoiAnh.Base64ToImage(nguoi.HinhAnh);
                 }
-            
             }
-            
         }
+
         private void iconButton2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -96,20 +95,20 @@ namespace PBL3___Motel_Management_System
             else return false;
 
         }
-        
+
         private void btnLuu_Click_1(object sender, EventArgs e)
         {
-            if(checkHopLe())
+            if (checkHopLe())
             {
                 Nguoi nguoi = new Nguoi();
-                if(thuePhong.hopDong.MaNguoi == null)
+                if (thuePhong.hopDong.MaNguoi == null)
                 {
                     nguoi.MaNguoi = QLBLL.Instance.TaoIdNguoi();
                 }
                 else
                 {
 
-                nguoi.MaNguoi = thuePhong.hopDong.MaNguoi;
+                    nguoi.MaNguoi = thuePhong.hopDong.MaNguoi;
                 }
                 nguoi.TonTai = true;
                 nguoi.Cccd = txtCccd.Text;
@@ -118,14 +117,14 @@ namespace PBL3___Motel_Management_System
                 nguoi.Diachi = txtDiaChi.Text;
                 nguoi.GioiTinh = (rdbtnNam.Checked);
                 nguoi.NgaySinh = dtpNgaySinh.Value.ToString("yyyy-MM-dd");
-                if(pctKhach.Image != null)
+                if (pctKhach.Image != null)
                 {
                     nguoi.HinhAnh = ChuyenDoiAnh.ImageToBase64(pctKhach.Image, pctKhach.Image.RawFormat);
                 }
                 if (thuePhong.hopDong.MaHopDong != null)
                 {
-                thuePhong.hopDong.Nguoi = nguoi;
-                QLBLL.Instance.openChildForm1(new ThemDVphong(thuePhong, Back), panelKhach);
+                    thuePhong.hopDong.Nguoi = nguoi;
+                    QLBLL.Instance.openChildForm1(new ThemDVphong(thuePhong, Back), panelKhach);
                 }
                 else if (this.thuePhong.hopDong.MaNguoi == null)
                 {
@@ -148,9 +147,10 @@ namespace PBL3___Motel_Management_System
                     this.loader(null);
                     this.Close();
                 }
+                
             }
-            
         }
+     
         string imgLocation = "";
         private void btnThemAnh_Click(object sender, EventArgs e)
         {
