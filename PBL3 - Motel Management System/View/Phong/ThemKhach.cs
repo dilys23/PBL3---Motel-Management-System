@@ -105,7 +105,6 @@ namespace PBL3___Motel_Management_System
                 if(thuePhong.hopDong.MaNguoi == null)
                 {
                     nguoi.MaNguoi = QLBLL.Instance.TaoIdNguoi();
-                    
                 }
                 else
                 {

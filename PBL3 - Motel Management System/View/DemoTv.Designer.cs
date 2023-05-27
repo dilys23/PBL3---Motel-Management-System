@@ -135,7 +135,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "DemoTv";
             this.Size = new System.Drawing.Size(772, 117);
-            this.Load += new System.EventHandler(this.DemoTv_Load);
+           // this.Load += new System.EventHandler(this.DemoTv_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

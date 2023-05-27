@@ -23,7 +23,7 @@ namespace PBL3___Motel_Management_System
             this.tp=tp;
             this.loader=loader;
             
-            if(tp.hopDong.MaHopDong!=null)
+            if(tp.hopDong.MaNguoi==null)
             {
                 SetGUI();
             }
