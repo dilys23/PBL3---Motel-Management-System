@@ -48,10 +48,11 @@ namespace PBL3___Motel_Management_System.View.KhachHang
             label5.Text = daytro.TenDayTro;
             string diachi = daytro.TenDuong + "," + daytro.TenHuyen + "," + daytro.TenThanhPho;
             label6.Text = diachi;
-            //if (pt.HinhAnh != null)
-            //{
-            //    pictureBox1.Image = ChuyenDoiAnh.Base64ToImage(pt.HinhAnh);
-            //}
+
+            if (pt.HinhAnh != null)
+            {
+                pictureBox1.Image = ChuyenDoiAnh.Base64ToImage(pt.HinhAnh);
+            }
             if (QLBLL.Instance.GetHopDongByIdPhong(pt.MaPhongTro) != null)
             {
                 dgvThanhVien.Rows.Clear();

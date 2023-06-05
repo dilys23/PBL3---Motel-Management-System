@@ -263,10 +263,10 @@ namespace PBL3___Motel_Management_System.View
         {
             idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
             ThemPhong tp = new ThemPhong(null,idPhong,null,null);
-            tp.btnLuu.Visible = false;tp.txtDienTich.ReadOnly = true;
-            tp.btnThemAnh.Visible = false;tp.txtGiaTien.ReadOnly = true;
-            tp.iconButton1.Visible = false;tp.txtTenPhong.ReadOnly = true;
-            tp.label9.Visible= false;tp.txtToiDa.ReadOnly= true;
+            tp.btnLuu.Visible = false;tp.txtDienTich.Enabled = false;
+            tp.btnThemAnh.Visible = false;tp.txtGiaTien.Enabled = false;
+            tp.iconButton1.Visible = false;tp.txtTenPhong.Enabled = false;
+            tp.label9.Visible= false;tp.txtToiDa.Enabled= false;
             QLBLL.Instance.openChildForm1(tp,panelDesktop);
         }
 

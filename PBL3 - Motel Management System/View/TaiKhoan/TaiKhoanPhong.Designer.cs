@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnTrove = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTenTaiKhoan = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnTrove = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,8 +54,24 @@
             this.panel1.Location = new System.Drawing.Point(72, 48);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(771, 428);
+            this.panel1.Size = new System.Drawing.Size(793, 470);
             this.panel1.TabIndex = 1;
+            // 
+            // btnTrove
+            // 
+            this.btnTrove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTrove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnTrove.IconChar = FontAwesome.Sharp.IconChar.MailReply;
+            this.btnTrove.IconColor = System.Drawing.Color.White;
+            this.btnTrove.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTrove.IconSize = 30;
+            this.btnTrove.Location = new System.Drawing.Point(735, 12);
+            this.btnTrove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTrove.Name = "btnTrove";
+            this.btnTrove.Size = new System.Drawing.Size(45, 46);
+            this.btnTrove.TabIndex = 69;
+            this.btnTrove.UseVisualStyleBackColor = false;
+            this.btnTrove.Click += new System.EventHandler(this.btnTrove_Click);
             // 
             // iconButton1
             // 
@@ -66,10 +82,10 @@
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(316, 260);
+            this.iconButton1.Location = new System.Drawing.Point(292, 267);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(115, 32);
+            this.iconButton1.Size = new System.Drawing.Size(137, 32);
             this.iconButton1.TabIndex = 41;
             this.iconButton1.Text = "Đổi mật khẩu";
             this.iconButton1.UseVisualStyleBackColor = false;
@@ -127,22 +143,6 @@
             this.label1.Size = new System.Drawing.Size(136, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "TÀI KHOẢN ";
-            // 
-            // btnTrove
-            // 
-            this.btnTrove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTrove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnTrove.IconChar = FontAwesome.Sharp.IconChar.MailReply;
-            this.btnTrove.IconColor = System.Drawing.Color.White;
-            this.btnTrove.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTrove.IconSize = 30;
-            this.btnTrove.Location = new System.Drawing.Point(713, 12);
-            this.btnTrove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnTrove.Name = "btnTrove";
-            this.btnTrove.Size = new System.Drawing.Size(45, 46);
-            this.btnTrove.TabIndex = 69;
-            this.btnTrove.UseVisualStyleBackColor = false;
-            this.btnTrove.Click += new System.EventHandler(this.btnTrove_Click);
             // 
             // TaiKhoanPhong
             // 

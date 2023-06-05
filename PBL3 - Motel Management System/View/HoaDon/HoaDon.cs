@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,7 +37,8 @@ namespace PBL3___Motel_Management_System
                 PhongTro pt = QLBLL.Instance.GetPhongTroByIdPhong(hd.MaPhongTro);
                 DayTro dt = QLBLL.Instance.GetDayTroByIdPhong(hd.MaPhongTro);
                 string TinhTrang = (hd.TinhTrang) ? "Xác thực" : "Chưa xác thực";
-                dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hd.NgayTao, hd.ThangChiTra, hd.TongTien, TinhTrang, hd.DaThanhToan, hd.TongTien - hd.DaThanhToan);
+                    CultureInfo vietnamCulture = new CultureInfo("vi-VN");
+                    dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hd.NgayTao, hd.ThangChiTra, hd.TongTien.ToString("C0", vietnamCulture), TinhTrang, hd.DaThanhToan.ToString("C0", vietnamCulture), (hd.TongTien - hd.DaThanhToan).ToString("C0", vietnamCulture));
             }
             }
             else

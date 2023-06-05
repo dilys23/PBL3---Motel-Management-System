@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,8 +27,12 @@ namespace PBL3___Motel_Management_System.View
             HoaDon hd = QLBLL.Instance.GetHoaDonById(idHd);
             PhongTro pt = QLBLL.Instance.GetPhongTroByMaHoaDon(idHd);
             txtTenPhong.Text = pt.TenPhongTro;
-            txtTongTien.Text = hd.TongTien.ToString();
-            txtConNo.Text = (Convert.ToDouble(txtTongTien.Text) - hd.DaThanhToan).ToString();
+
+            // Định dạng số tiền theo tiền tệ VND
+            CultureInfo vietnamCulture = new CultureInfo("vi-VN");
+            txtTongTien.Text = hd.TongTien.ToString("C0", vietnamCulture);
+            txtConNo.Text = (Convert.ToDouble(txtTongTien.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")) - hd.DaThanhToan).ToString("C0", vietnamCulture);
+
 
         }
         private Boolean checkHopLe()
@@ -56,72 +61,44 @@ namespace PBL3___Motel_Management_System.View
         {
             if (checkHopLe())
             {
-                double thanhToan = Convert.ToDouble(txtThanhToan.Text);
+                double thanhToan;
 
-                HoaDon hd = QLBLL.Instance.GetHoaDonById(this.IdHd);
-                ChiTietThanhToanHoaDon ct = new ChiTietThanhToanHoaDon();
-
-                ct.MaHoaDon = hd.MaHoaDon;
-                ct.MaChiTietThanhToanHoaDon = QLBLL.Instance.TaoIdChiTietThanhToanHoaDon();
-
-                ct.NgayThanhToan = NgayThanhToan.Value.ToString("yyyy-MM-dd");
-                ct.TienThanhToan = Convert.ToDouble(txtThanhToan.Text);
-                ct.TonTai = true;
-
-
-                // Cập nhật số tiền đã thanh toán
-                hd.DaThanhToan += thanhToan;
-                QLBLL.Instance.UpdateHoaDonBLL(hd);
-
-                // Tính số tiền còn nợ mới
-                double conNoMoi = Convert.ToDouble(txtTongTien.Text) - hd.DaThanhToan;
-
-                // Cập nhật giá trị cho txtConNo
-                txtConNo.Text = conNoMoi.ToString();
-
-                QLBLL.Instance.AddChiTietThanhToanHoaDonBll(ct);
-
-                if (conNoMoi == 0)
+                // Định dạng giá trị nhập vào từ txtThanhToan.Text
+                if (double.TryParse(txtThanhToan.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out thanhToan))
                 {
-                    MessageBox.Show("Đã trả đủ tiền", "Thông báo");
-                }
-                if (conNoMoi < 0)
-                {
-                    MessageBox.Show("Bạn đã nhập thừa tiền", "Thông báo");
-                }
+                    HoaDon hd = QLBLL.Instance.GetHoaDonById(this.IdHd);
+                    ChiTietThanhToanHoaDon ct = new ChiTietThanhToanHoaDon();
 
-                loader(null);
-                this.Close();
-            }
-        }
-        private bool isMouseDown = false;
-        private void txtThanhToan_MouseLeave_1(object sender, EventArgs e)
-        {
+                    ct.MaHoaDon = hd.MaHoaDon;
+                    ct.MaChiTietThanhToanHoaDon = QLBLL.Instance.TaoIdChiTietThanhToanHoaDon();
 
-            if (!isMouseDown)
-            {
-                isMouseDown = true;
+                    ct.NgayThanhToan = NgayThanhToan.Value.ToString("yyyy-MM-dd");
+                    ct.TienThanhToan = thanhToan;
+                    ct.TonTai = true;
 
-                if (double.TryParse(txtThanhToan.Text, out double thanhToan))
-                {
-                    // Lấy số tiền còn nợ từ txtConNo
-                    double conNoTruoc = Convert.ToDouble(txtConNo.Text);
-
-                    // Tính số tiền còn lại (số tiền nợ mới)
-                    double conNoMoi = conNoTruoc - thanhToan;
-
+                    // Cập nhật số tiền đã thanh toán
+                    hd.DaThanhToan += thanhToan;
+                    QLBLL.Instance.UpdateHoaDonBLL(hd);
+                    CultureInfo vietnamCulture = new CultureInfo("vi-VN");
+                    // Tính số tiền còn nợ mới
+                   
+                    double conNoMoi1 = (Convert.ToDouble(txtTongTien.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")) - hd.DaThanhToan);
                     // Cập nhật giá trị cho txtConNo
-                    txtConNo.Text = conNoMoi.ToString();
+                    txtConNo.Text = conNoMoi1.ToString("C", CultureInfo.CurrentCulture);
 
-                    // Kiểm tra nếu số tiền còn lại là 0, hiển thị thông báo hoặc thực hiện các xử lý khác
-                    if (conNoMoi == 0)
+                    QLBLL.Instance.AddChiTietThanhToanHoaDonBll(ct);
+
+                    if (conNoMoi1 == 0)
                     {
                         MessageBox.Show("Đã trả đủ tiền", "Thông báo");
                     }
-                    if (conNoMoi < 0)
+                    if (conNoMoi1 < 0)
                     {
                         MessageBox.Show("Bạn đã nhập thừa tiền", "Thông báo");
                     }
+
+                    loader(null);
+                    this.Close();
                 }
                 else
                 {
@@ -129,7 +106,7 @@ namespace PBL3___Motel_Management_System.View
                 }
             }
         }
-
+   
         private void btnTroVe_Click(object sender, EventArgs e)
         {
             this.Close();

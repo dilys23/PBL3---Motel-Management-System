@@ -81,7 +81,7 @@
             this.label7.ForeColor = System.Drawing.Color.Chocolate;
             this.label7.Location = new System.Drawing.Point(13, 29);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(156, 23);
+            this.label7.Size = new System.Drawing.Size(190, 28);
             this.label7.TabIndex = 47;
             this.label7.Text = "THÊM HỢP ĐỒNG";
             // 
@@ -124,7 +124,7 @@
             this.txtTienCoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTienCoc.Location = new System.Drawing.Point(412, 130);
             this.txtTienCoc.Name = "txtTienCoc";
-            this.txtTienCoc.Size = new System.Drawing.Size(178, 23);
+            this.txtTienCoc.Size = new System.Drawing.Size(178, 27);
             this.txtTienCoc.TabIndex = 28;
             // 
             // label6
@@ -133,7 +133,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(246, 129);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 17);
+            this.label6.Size = new System.Drawing.Size(73, 20);
             this.label6.TabIndex = 27;
             this.label6.Text = "Tiền cọc";
             // 
@@ -143,16 +143,17 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(246, 82);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(95, 17);
+            this.label3.Size = new System.Drawing.Size(111, 20);
             this.label3.TabIndex = 21;
             this.label3.Text = "Ngày kết thúc";
             // 
             // dtpKetThuc
             // 
             this.dtpKetThuc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpKetThuc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpKetThuc.Location = new System.Drawing.Point(412, 80);
             this.dtpKetThuc.Name = "dtpKetThuc";
-            this.dtpKetThuc.Size = new System.Drawing.Size(178, 23);
+            this.dtpKetThuc.Size = new System.Drawing.Size(178, 27);
             this.dtpKetThuc.TabIndex = 20;
             // 
             // label2
@@ -161,16 +162,17 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(246, 35);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 17);
+            this.label2.Size = new System.Drawing.Size(107, 20);
             this.label2.TabIndex = 19;
             this.label2.Text = "Ngày bắt đầu";
             // 
             // dtpBatDau
             // 
             this.dtpBatDau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBatDau.Location = new System.Drawing.Point(412, 30);
+            this.dtpBatDau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBatDau.Location = new System.Drawing.Point(412, 28);
             this.dtpBatDau.Name = "dtpBatDau";
-            this.dtpBatDau.Size = new System.Drawing.Size(178, 23);
+            this.dtpBatDau.Size = new System.Drawing.Size(178, 27);
             this.dtpBatDau.TabIndex = 18;
             // 
             // ThemHopDong

@@ -66,10 +66,10 @@
             this.panelThemHD.Controls.Add(this.label7);
             this.panelThemHD.Controls.Add(this.btnLuu);
             this.panelThemHD.Controls.Add(this.panelThem);
-            this.panelThemHD.Location = new System.Drawing.Point(-2, 4);
-            this.panelThemHD.Margin = new System.Windows.Forms.Padding(2);
+            this.panelThemHD.Location = new System.Drawing.Point(-3, 5);
+            this.panelThemHD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelThemHD.Name = "panelThemHD";
-            this.panelThemHD.Size = new System.Drawing.Size(690, 361);
+            this.panelThemHD.Size = new System.Drawing.Size(971, 444);
             this.panelThemHD.TabIndex = 2;
             // 
             // btnTrove
@@ -81,10 +81,10 @@
             this.btnTrove.IconColor = System.Drawing.Color.White;
             this.btnTrove.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTrove.IconSize = 30;
-            this.btnTrove.Location = new System.Drawing.Point(588, 18);
-            this.btnTrove.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTrove.Location = new System.Drawing.Point(835, 22);
+            this.btnTrove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTrove.Name = "btnTrove";
-            this.btnTrove.Size = new System.Drawing.Size(32, 30);
+            this.btnTrove.Size = new System.Drawing.Size(43, 37);
             this.btnTrove.TabIndex = 48;
             this.btnTrove.UseVisualStyleBackColor = false;
             this.btnTrove.Click += new System.EventHandler(this.btnTrove_Click);
@@ -94,10 +94,9 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Bahnschrift SemiBold", 13.8F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.Chocolate;
-            this.label7.Location = new System.Drawing.Point(10, 24);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(13, 30);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(140, 23);
+            this.label7.Size = new System.Drawing.Size(171, 28);
             this.label7.TabIndex = 47;
             this.label7.Text = "CHỌN THIẾT BỊ ";
             // 
@@ -111,10 +110,10 @@
             this.btnLuu.IconColor = System.Drawing.Color.White;
             this.btnLuu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLuu.IconSize = 30;
-            this.btnLuu.Location = new System.Drawing.Point(625, 17);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLuu.Location = new System.Drawing.Point(884, 21);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(39, 30);
+            this.btnLuu.Size = new System.Drawing.Size(52, 37);
             this.btnLuu.TabIndex = 49;
             this.btnLuu.UseVisualStyleBackColor = false;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -129,10 +128,10 @@
             this.panelThem.Controls.Add(this.btnThemTB);
             this.panelThem.Controls.Add(this.dgvTBThem);
             this.panelThem.Controls.Add(this.dgvThietBi);
-            this.panelThem.Location = new System.Drawing.Point(13, 54);
-            this.panelThem.Margin = new System.Windows.Forms.Padding(2);
+            this.panelThem.Location = new System.Drawing.Point(17, 66);
+            this.panelThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelThem.Name = "panelThem";
-            this.panelThem.Size = new System.Drawing.Size(668, 288);
+            this.panelThem.Size = new System.Drawing.Size(942, 354);
             this.panelThem.TabIndex = 46;
             // 
             // btnXoaTB
@@ -145,10 +144,10 @@
             this.btnXoaTB.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXoaTB.IconSize = 25;
             this.btnXoaTB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaTB.Location = new System.Drawing.Point(16, 154);
-            this.btnXoaTB.Margin = new System.Windows.Forms.Padding(2);
+            this.btnXoaTB.Location = new System.Drawing.Point(21, 190);
+            this.btnXoaTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoaTB.Name = "btnXoaTB";
-            this.btnXoaTB.Size = new System.Drawing.Size(58, 31);
+            this.btnXoaTB.Size = new System.Drawing.Size(77, 38);
             this.btnXoaTB.TabIndex = 56;
             this.btnXoaTB.Text = "Xóa";
             this.btnXoaTB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -165,10 +164,10 @@
             this.btnThemTB.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThemTB.IconSize = 25;
             this.btnThemTB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemTB.Location = new System.Drawing.Point(16, 21);
-            this.btnThemTB.Margin = new System.Windows.Forms.Padding(2);
+            this.btnThemTB.Location = new System.Drawing.Point(21, 26);
+            this.btnThemTB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThemTB.Name = "btnThemTB";
-            this.btnThemTB.Size = new System.Drawing.Size(62, 34);
+            this.btnThemTB.Size = new System.Drawing.Size(83, 42);
             this.btnThemTB.TabIndex = 55;
             this.btnThemTB.Text = "Thêm ";
             this.btnThemTB.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -191,40 +190,45 @@
             this.GiaThietBi,
             this.SoLuong});
             this.dgvTBThem.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvTBThem.Location = new System.Drawing.Point(98, 154);
-            this.dgvTBThem.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvTBThem.Location = new System.Drawing.Point(131, 190);
+            this.dgvTBThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvTBThem.MultiSelect = false;
             this.dgvTBThem.Name = "dgvTBThem";
             this.dgvTBThem.RowHeadersWidth = 51;
             this.dgvTBThem.RowTemplate.Height = 24;
             this.dgvTBThem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTBThem.Size = new System.Drawing.Size(564, 107);
+            this.dgvTBThem.Size = new System.Drawing.Size(803, 132);
             this.dgvTBThem.TabIndex = 52;
             // 
             // MaThietBi
             // 
             this.MaThietBi.HeaderText = "MaThietBi";
+            this.MaThietBi.MinimumWidth = 6;
             this.MaThietBi.Name = "MaThietBi";
             this.MaThietBi.Visible = false;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "STT";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // TenThietBi
             // 
             this.TenThietBi.HeaderText = "Tên thiết bị";
+            this.TenThietBi.MinimumWidth = 6;
             this.TenThietBi.Name = "TenThietBi";
             // 
             // GiaThietBi
             // 
             this.GiaThietBi.HeaderText = "Giá thiết bị";
+            this.GiaThietBi.MinimumWidth = 6;
             this.GiaThietBi.Name = "GiaThietBi";
             // 
             // SoLuong
             // 
             this.SoLuong.HeaderText = "Số lượng";
+            this.SoLuong.MinimumWidth = 6;
             this.SoLuong.Name = "SoLuong";
             // 
             // dgvThietBi
@@ -242,35 +246,39 @@
             this.TenThietBi1,
             this.gia});
             this.dgvThietBi.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvThietBi.Location = new System.Drawing.Point(98, 21);
-            this.dgvThietBi.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvThietBi.Location = new System.Drawing.Point(131, 26);
+            this.dgvThietBi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvThietBi.MultiSelect = false;
             this.dgvThietBi.Name = "dgvThietBi";
             this.dgvThietBi.RowHeadersWidth = 51;
             this.dgvThietBi.RowTemplate.Height = 24;
             this.dgvThietBi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvThietBi.Size = new System.Drawing.Size(564, 115);
+            this.dgvThietBi.Size = new System.Drawing.Size(803, 142);
             this.dgvThietBi.TabIndex = 51;
             // 
             // MaThietBi1
             // 
             this.MaThietBi1.HeaderText = "MaThietBi1";
+            this.MaThietBi1.MinimumWidth = 6;
             this.MaThietBi1.Name = "MaThietBi1";
             this.MaThietBi1.Visible = false;
             // 
             // Stt
             // 
             this.Stt.HeaderText = "STT";
+            this.Stt.MinimumWidth = 6;
             this.Stt.Name = "Stt";
             // 
             // TenThietBi1
             // 
             this.TenThietBi1.HeaderText = "Tên thiết bị";
+            this.TenThietBi1.MinimumWidth = 6;
             this.TenThietBi1.Name = "TenThietBi1";
             // 
             // gia
             // 
             this.gia.HeaderText = "Giá thiết bị";
+            this.gia.MinimumWidth = 6;
             this.gia.Name = "gia";
             // 
             // errorProvider1
@@ -279,11 +287,11 @@
             // 
             // ThemThietBiPhong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 370);
+            this.ClientSize = new System.Drawing.Size(966, 455);
             this.Controls.Add(this.panelThemHD);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ThemThietBiPhong";
             this.Text = "ThemThietBiPhong";
             this.panelThemHD.ResumeLayout(false);
