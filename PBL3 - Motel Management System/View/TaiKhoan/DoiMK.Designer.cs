@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnTrove = new FontAwesome.Sharp.IconButton();
             this.BtnHuy = new FontAwesome.Sharp.IconButton();
             this.btnXacThuc = new FontAwesome.Sharp.IconButton();
             this.label4 = new System.Windows.Forms.Label();
@@ -38,12 +39,9 @@
             this.txtMKmoi = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.TenTK = new System.Windows.Forms.Label();
-            this.txtTentaikhoan = new System.Windows.Forms.TextBox();
             this.txtMKcu = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnTrove = new FontAwesome.Sharp.IconButton();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -64,14 +62,28 @@
             this.panel2.Controls.Add(this.txtMKmoi);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.TenTK);
-            this.panel2.Controls.Add(this.txtTentaikhoan);
             this.panel2.Controls.Add(this.txtMKcu);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(24, 31);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(871, 515);
             this.panel2.TabIndex = 56;
+            // 
+            // btnTrove
+            // 
+            this.btnTrove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTrove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnTrove.IconChar = FontAwesome.Sharp.IconChar.MailReply;
+            this.btnTrove.IconColor = System.Drawing.Color.White;
+            this.btnTrove.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTrove.IconSize = 30;
+            this.btnTrove.Location = new System.Drawing.Point(802, 16);
+            this.btnTrove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTrove.Name = "btnTrove";
+            this.btnTrove.Size = new System.Drawing.Size(45, 46);
+            this.btnTrove.TabIndex = 68;
+            this.btnTrove.UseVisualStyleBackColor = false;
+            this.btnTrove.Click += new System.EventHandler(this.btnTrove_Click);
             // 
             // BtnHuy
             // 
@@ -129,7 +141,7 @@
             // txtXacthucMK
             // 
             this.txtXacthucMK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtXacthucMK.Location = new System.Drawing.Point(395, 255);
+            this.txtXacthucMK.Location = new System.Drawing.Point(397, 239);
             this.txtXacthucMK.Name = "txtXacthucMK";
             this.txtXacthucMK.Size = new System.Drawing.Size(241, 27);
             this.txtXacthucMK.TabIndex = 59;
@@ -138,16 +150,16 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(194, 255);
+            this.label2.Location = new System.Drawing.Point(196, 246);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 20);
+            this.label2.Size = new System.Drawing.Size(164, 20);
             this.label2.TabIndex = 58;
-            this.label2.Text = "Xác thực mật khẩu *";
+            this.label2.Text = "Xác thực mật khẩu *:";
             // 
             // txtMKmoi
             // 
             this.txtMKmoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMKmoi.Location = new System.Drawing.Point(395, 207);
+            this.txtMKmoi.Location = new System.Drawing.Point(397, 175);
             this.txtMKmoi.Name = "txtMKmoi";
             this.txtMKmoi.Size = new System.Drawing.Size(241, 27);
             this.txtMKmoi.TabIndex = 57;
@@ -156,11 +168,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(194, 201);
+            this.label1.Location = new System.Drawing.Point(196, 182);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 20);
+            this.label1.Size = new System.Drawing.Size(164, 20);
             this.label1.TabIndex = 56;
-            this.label1.Text = "Mật khẩu mới *";
+            this.label1.Text = "Nhập mật khẩu mới:*";
             // 
             // label9
             // 
@@ -173,31 +185,11 @@
             this.label9.TabIndex = 55;
             this.label9.Text = "(*) Thông tin bắt buộc";
             // 
-            // TenTK
-            // 
-            this.TenTK.AutoSize = true;
-            this.TenTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TenTK.Location = new System.Drawing.Point(194, 93);
-            this.TenTK.Name = "TenTK";
-            this.TenTK.Size = new System.Drawing.Size(115, 20);
-            this.TenTK.TabIndex = 49;
-            this.TenTK.Text = "Tên tài khoản*";
-            // 
-            // txtTentaikhoan
-            // 
-            this.txtTentaikhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTentaikhoan.Location = new System.Drawing.Point(395, 86);
-            this.txtTentaikhoan.Name = "txtTentaikhoan";
-            this.txtTentaikhoan.ReadOnly = true;
-            this.txtTentaikhoan.Size = new System.Drawing.Size(241, 27);
-            this.txtTentaikhoan.TabIndex = 50;
-            // 
             // txtMKcu
             // 
             this.txtMKcu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMKcu.Location = new System.Drawing.Point(395, 148);
+            this.txtMKcu.Location = new System.Drawing.Point(397, 108);
             this.txtMKcu.Name = "txtMKcu";
-            this.txtMKcu.ReadOnly = true;
             this.txtMKcu.Size = new System.Drawing.Size(241, 27);
             this.txtMKcu.TabIndex = 52;
             // 
@@ -205,31 +197,15 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(194, 147);
+            this.label3.Location = new System.Drawing.Point(196, 115);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 20);
+            this.label3.Size = new System.Drawing.Size(155, 20);
             this.label3.TabIndex = 51;
-            this.label3.Text = "Mật khẩu ban đầu*";
+            this.label3.Text = "Nhập mật khẩu cũ:*";
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // btnTrove
-            // 
-            this.btnTrove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTrove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnTrove.IconChar = FontAwesome.Sharp.IconChar.MailReply;
-            this.btnTrove.IconColor = System.Drawing.Color.White;
-            this.btnTrove.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTrove.IconSize = 30;
-            this.btnTrove.Location = new System.Drawing.Point(802, 16);
-            this.btnTrove.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnTrove.Name = "btnTrove";
-            this.btnTrove.Size = new System.Drawing.Size(45, 46);
-            this.btnTrove.TabIndex = 68;
-            this.btnTrove.UseVisualStyleBackColor = false;
-            this.btnTrove.Click += new System.EventHandler(this.btnTrove_Click);
             // 
             // DoiMK
             // 
@@ -254,8 +230,6 @@
         private System.Windows.Forms.TextBox txtMKmoi;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label TenTK;
-        private System.Windows.Forms.TextBox txtTentaikhoan;
         private System.Windows.Forms.TextBox txtMKcu;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

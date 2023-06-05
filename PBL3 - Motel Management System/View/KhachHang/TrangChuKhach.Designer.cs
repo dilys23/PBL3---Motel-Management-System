@@ -375,7 +375,7 @@
             this.btTaikhoan.Size = new System.Drawing.Size(186, 41);
             this.btTaikhoan.TabIndex = 18;
             this.btTaikhoan.Tag = "Tài khoản";
-            this.btTaikhoan.Text = "Tài khoản";
+            this.btTaikhoan.Text = "Đổi mật khẩu";
             this.btTaikhoan.UseVisualStyleBackColor = true;
             this.btTaikhoan.Click += new System.EventHandler(this.btDoiMK_Click);
             // 

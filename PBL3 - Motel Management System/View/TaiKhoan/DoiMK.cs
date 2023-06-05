@@ -23,35 +23,35 @@ namespace PBL3___Motel_Management_System.View
             this.idPhong = idPhong;
            // this.idChutro = idChutro;
             this.idTk = idTk;
-            if (idPhong != null)
-            {
-                GUIPhong();
-            }
-            else
-            {
-                GUIChutro();
-            }
+            //if (idPhong != null)
+            //{
+            //    GUIPhong();
+            //}
+            //else
+            //{
+            //    GUIChutro();
+            //}
 
             this.loader = loader;
         }
-        public void GUIPhong()
-        {
+        //public void GUIPhong()
+        //{
             
-            DAL.TaiKhoan tk = QLBLL.Instance.GetTaiKhoanByIdPhong(idPhong);
-            if (tk != null)
-            {
-                txtTentaikhoan.Text = tk.TenTaiKhoan;
-                txtMKcu.Text = tk.MatKhau;
-            }
-        }
-        public void GUIChutro()
-        {
-            DAL.TaiKhoan tk =QLBLL.Instance.GetTaiKhoanByIdTaiKhoan(idTk); if (tk != null)
-            {
-                txtTentaikhoan.Text = tk.TenTaiKhoan;
-                txtMKcu.Text = tk.MatKhau;
-            }
-        }
+        //    DAL.TaiKhoan tk = QLBLL.Instance.GetTaiKhoanByIdPhong(idPhong);
+        //    if (tk != null)
+        //    {
+        //        txtTentaikhoan.Text = tk.TenTaiKhoan;
+        //        txtMKcu.Text = tk.MatKhau;
+        //    }
+        //}
+        //public void GUIChutro()
+        //{
+        //    DAL.TaiKhoan tk =QLBLL.Instance.GetTaiKhoanByIdTaiKhoan(idTk); if (tk != null)
+        //    {
+        //        txtTentaikhoan.Text = tk.TenTaiKhoan;
+        //        txtMKcu.Text = tk.MatKhau;
+        //    }
+        //}
        
         private Boolean checkMatKhau()
         {
@@ -85,26 +85,42 @@ namespace PBL3___Motel_Management_System.View
                 if (idPhong != null)
                 {
                     DAL.TaiKhoan tk = new DAL.TaiKhoan();
-                    tk.MaTaiKhoan = QLBLL.Instance.GetTaiKhoanByIdPhong(idPhong).MaTaiKhoan;
-                    tk.TenTaiKhoan = txtTentaikhoan.Text;
+                    DAL.TaiKhoan taikhoancu = QLBLL.Instance.GetTaiKhoanByIdPhong(idPhong);
+                    tk.MaTaiKhoan = taikhoancu.MaTaiKhoan;
+                    tk.TenTaiKhoan = taikhoancu.TenTaiKhoan;
                     tk.MatKhau = txtMKmoi.Text;
                     tk.TonTai = true;
-                    QLBLL.Instance.UpdateTaiKhoanPhong(tk);
-                    MessageBox.Show("Thay đổi mật khẩu phòng thành công");
-                    this.Close();
-                    loader(null);
+                    if(taikhoancu.MatKhau!= txtMKcu.Text)
+                    {
+                        MessageBox.Show("Nhập mật khẩu không đúng, vui lòng nhập lại");
+                    }
+                    else
+                    {
+                        QLBLL.Instance.UpdateTaiKhoanPhong(tk);
+                        MessageBox.Show("Thay đổi mật khẩu phòng thành công");
+                        this.Close();
+                        loader(null);
+                    }        
                 }
                 else
                 {
                     DAL.TaiKhoan tk = new DAL.TaiKhoan();
-                    tk.MaTaiKhoan = QLBLL.Instance.GetTaiKhoanByIdTaiKhoan(idTk).MaTaiKhoan;
-                    tk.TenTaiKhoan = txtTentaikhoan.Text;
+                    DAL.TaiKhoan taikhoancu = QLBLL.Instance.GetTaiKhoanByIdTaiKhoan(idTk);
+                    tk.MaTaiKhoan = taikhoancu.MaTaiKhoan;
+                    tk.TenTaiKhoan = taikhoancu.TenTaiKhoan;
                     tk.MatKhau = txtMKmoi.Text;
                     tk.TonTai = true;
-                    QLBLL.Instance.UpdateTaiKhoanChutro(tk);
-                    MessageBox.Show("Thay đổi mật khẩu tài khoản thành công");
-                    this.Close();
-                    loader(null);
+                    if (taikhoancu.MatKhau != txtMKcu.Text)
+                    {
+                        MessageBox.Show("Nhập mật khẩu không đúng, vui lòng nhập lại");
+                    }
+                    else
+                    {
+                        QLBLL.Instance.UpdateTaiKhoanChutro(tk);
+                        MessageBox.Show("Thay đổi mật khẩu tài khoản thành công");
+                        this.Close();
+                        loader(null);
+                    }
                 }
             }
             

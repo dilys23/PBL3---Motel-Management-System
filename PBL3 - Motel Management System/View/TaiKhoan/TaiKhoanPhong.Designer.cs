@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btReset = new FontAwesome.Sharp.IconButton();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,7 +43,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
-            this.panel1.Controls.Add(this.iconButton1);
+            this.panel1.Controls.Add(this.btReset);
             this.panel1.Controls.Add(this.txtMatKhau);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -55,22 +55,22 @@
             this.panel1.Size = new System.Drawing.Size(838, 468);
             this.panel1.TabIndex = 1;
             // 
-            // iconButton1
+            // btReset
             // 
-            this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton1.BackColor = System.Drawing.Color.Teal;
-            this.iconButton1.ForeColor = System.Drawing.Color.AliceBlue;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(673, 15);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(144, 32);
-            this.iconButton1.TabIndex = 41;
-            this.iconButton1.Text = "Đổi mật khẩu";
-            this.iconButton1.UseVisualStyleBackColor = false;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
+            this.btReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btReset.BackColor = System.Drawing.Color.Teal;
+            this.btReset.ForeColor = System.Drawing.Color.AliceBlue;
+            this.btReset.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btReset.IconColor = System.Drawing.Color.Black;
+            this.btReset.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btReset.Location = new System.Drawing.Point(673, 15);
+            this.btReset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btReset.Name = "btReset";
+            this.btReset.Size = new System.Drawing.Size(144, 32);
+            this.btReset.TabIndex = 41;
+            this.btReset.Text = "Reset mật khẩu";
+            this.btReset.UseVisualStyleBackColor = false;
+            this.btReset.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // txtMatKhau
             // 
@@ -150,6 +150,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTenTaiKhoan;
         private System.Windows.Forms.Label label1;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btReset;
     }
 }
