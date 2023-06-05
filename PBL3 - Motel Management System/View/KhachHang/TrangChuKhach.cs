@@ -309,7 +309,7 @@ namespace PBL3___Motel_Management_System.View
         {
             idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
             //QLBLL.Instance.openChildForm1(new TaiKhoanPhong(idPhong), panelDesktop);
-            QLBLL.Instance.openChildForm1(new DoiMK(idPhong,matk,LoadForm), panelDesktop);
+            QLBLL.Instance.openChildForm1(new DoiMK(idPhong,null,LoadForm), panelDesktop);
         }
         public void LoadForm(string t)
         {
@@ -320,6 +320,15 @@ namespace PBL3___Motel_Management_System.View
             idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
             ChitietTB ct = new ChitietTB(idPhong);
             ct.btnThemThietbi.Visible = false;
+            QLBLL.Instance.openChildForm1(ct, panelDesktop);
+        }
+
+        private void btnDichVu_Click(object sender, EventArgs e)
+        {
+            idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
+            ChitietDV ct = new ChitietDV(idPhong);
+            ct.btnThemDichVu.Visible = false;
+            ct.dgvDichVu.Columns[4].Visible = false;
             QLBLL.Instance.openChildForm1(ct, panelDesktop);
         }
     }

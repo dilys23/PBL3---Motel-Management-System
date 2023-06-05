@@ -21,37 +21,10 @@ namespace PBL3___Motel_Management_System.View
         {
             InitializeComponent();
             this.idPhong = idPhong;
-           // this.idChutro = idChutro;
             this.idTk = idTk;
-            //if (idPhong != null)
-            //{
-            //    GUIPhong();
-            //}
-            //else
-            //{
-            //    GUIChutro();
-            //}
-
             this.loader = loader;
         }
-        //public void GUIPhong()
-        //{
-            
-        //    DAL.TaiKhoan tk = QLBLL.Instance.GetTaiKhoanByIdPhong(idPhong);
-        //    if (tk != null)
-        //    {
-        //        txtTentaikhoan.Text = tk.TenTaiKhoan;
-        //        txtMKcu.Text = tk.MatKhau;
-        //    }
-        //}
-        //public void GUIChutro()
-        //{
-        //    DAL.TaiKhoan tk =QLBLL.Instance.GetTaiKhoanByIdTaiKhoan(idTk); if (tk != null)
-        //    {
-        //        txtTentaikhoan.Text = tk.TenTaiKhoan;
-        //        txtMKcu.Text = tk.MatKhau;
-        //    }
-        //}
+        
        
         private Boolean checkMatKhau()
         {

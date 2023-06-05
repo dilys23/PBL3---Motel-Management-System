@@ -19,6 +19,10 @@ namespace PBL3___Motel_Management_System
         public Dangnhap()
         {
             InitializeComponent();
+            System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
+            gp.AddEllipse(0, 0, pictureBox3.Width - 3, pictureBox3.Height - 3);
+            Region rg = new Region(gp);
+            pictureBox3.Region = rg;
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -65,5 +69,7 @@ namespace PBL3___Motel_Management_System
                 txtMatKhau.PasswordChar = '*';
             }
         }
+
+     
     }
 }
