@@ -22,6 +22,10 @@ namespace PBL3___Motel_Management_System.View
         public ChuTro(string matk)
         {
             InitializeComponent();
+            System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
+            gp.AddEllipse(0, 0, ptAnh.Width - 3, ptAnh.Height - 3);
+            Region rg = new Region(gp);
+            ptAnh.Region = rg;
             this.matk = matk;
             LoadForm(null);  
         }
@@ -37,8 +41,6 @@ namespace PBL3___Motel_Management_System.View
                 txtCccd.Text = ng.Cccd;
                 if (ng.GioiTinh == true) rdbtnNam.Checked = true;
                 else rdbtnNu.Checked = true;
-                txtTenTK.Text = tk.TenTaiKhoan;
-                txtMatKhau.Text = tk.MatKhau;
                 TenTK.Text = tk.TenTaiKhoan;
                 if (ng.HinhAnh != null)
                 {
@@ -71,6 +73,12 @@ namespace PBL3___Motel_Management_System.View
             ThuePhong tp = new ThuePhong();
             tp.hopDong.MaNguoi = ng.MaNguoi;
             QLBLL.Instance.openChildForm1(new ThemKhach(tp, LoadForm), panel1);
+        }
+
+       
+        private void btnThemAnh_Click(object sender, EventArgs e)
+        {
+            QLBLL.Instance.openChildForm1(new TaiKhoanPhong(null, matk), panel1);
         }
     }
 }

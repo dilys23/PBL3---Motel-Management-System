@@ -14,22 +14,44 @@ namespace PBL3___Motel_Management_System.View
     public partial class TaiKhoanPhong : Form
     {
         private string idp;
-        public TaiKhoanPhong(string idp)
+        private string idct;
+        public TaiKhoanPhong(string idp, string idct)
         {
             InitializeComponent();
-            this.idp=idp;
+            this.idp = idp;
+            this.idct = idct;
             LoadForm(null);
+            
         }
         private void LoadForm(string txt)
         {
-            DAL.TaiKhoan tk = QLBLL.Instance.GetTaiKhoanByIdPhong(idp);
-            txtTenTaiKhoan.Text = tk.TenTaiKhoan;
-            txtMatKhau.Text = tk.MatKhau;
+            txtTenTaiKhoan.Clear();
+            txtMatKhau.Clear();
+            if (idp != null && idct == null)
+            {
+                DAL.TaiKhoan tk = QLBLL.Instance.GetTaiKhoanByIdPhong(idp);
+                txtTenTaiKhoan.Text = tk.TenTaiKhoan;
+                txtMatKhau.Text = tk.MatKhau;
+            }
+            else if (idp == null && idct != null) 
+            {
+                DAL.TaiKhoan tk = QLBLL.Instance.GetTaiKhoanByIdTaiKhoan(this.idct);
+                txtTenTaiKhoan.Text += tk.TenTaiKhoan;
+                txtMatKhau .Text += tk.MatKhau;
+            } 
+                
+            
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            QLBLL.Instance.openChildForm1(new DoiMK(idp, null,LoadForm), panel1);
+            
+            QLBLL.Instance.openChildForm1(new DoiMK(idp, idct,LoadForm), panel1);
+        }
+
+        private void btnTrove_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
