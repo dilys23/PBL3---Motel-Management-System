@@ -1,4 +1,5 @@
 ﻿using PBL3___Motel_Management_System.BLL;
+using PBL3___Motel_Management_System.DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,14 +45,15 @@ namespace PBL3___Motel_Management_System.View
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
-        {
-            
-            QLBLL.Instance.openChildForm1(new DoiMK(idp, idct,LoadForm), panel1);
-        }
-
-        private void btnTrove_Click(object sender, EventArgs e)
-        {
-            this.Close();
+        { 
+            DAL.TaiKhoan tk = new DAL.TaiKhoan();
+            PhongTro pt = QLBLL.Instance.GetPhongTroByIdPhong(idp);
+            tk.MaTaiKhoan = QLBLL.Instance.GetTaiKhoanByIdPhong(idp).MaTaiKhoan;
+            tk.TenTaiKhoan = "pt" + pt.MaPhongTro;
+            tk.MatKhau = "pt" + pt.MaPhongTro;
+            tk.TonTai = true;
+            QLBLL.Instance.UpdateTaiKhoanPhong(tk);
+            LoadForm(null);
         }
     }
 }

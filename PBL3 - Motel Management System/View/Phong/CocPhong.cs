@@ -24,6 +24,7 @@ namespace PBL3___Motel_Management_System.View
             InitializeComponent();
             this.loader=loader;
             this.tp = tp;
+           
         }
 
         private void btnTrove_Click(object sender, EventArgs e)

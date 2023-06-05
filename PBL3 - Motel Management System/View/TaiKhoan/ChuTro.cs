@@ -78,7 +78,8 @@ namespace PBL3___Motel_Management_System.View
        
         private void btnThemAnh_Click(object sender, EventArgs e)
         {
-            QLBLL.Instance.openChildForm1(new TaiKhoanPhong(null, matk), panel1);
+            //QLBLL.Instance.openChildForm1(new TaiKhoanPhong(null, matk), panel1);
+            QLBLL.Instance.openChildForm1(new DoiMK(null, matk,LoadForm), panel1);
         }
     }
 }
