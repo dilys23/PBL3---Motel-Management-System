@@ -37,15 +37,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cbbPhongTro = new System.Windows.Forms.ComboBox();
             this.panelHD = new System.Windows.Forms.Panel();
-            this.btnThanhToan = new FontAwesome.Sharp.IconButton();
-            this.dtpThangSuDung = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cbbTinhTrang = new System.Windows.Forms.ComboBox();
-            this.btnBoXacThuc = new FontAwesome.Sharp.IconButton();
-            this.btnXacThuc = new FontAwesome.Sharp.IconButton();
-            this.cbbDayTro = new System.Windows.Forms.ComboBox();
-            this.btnThemHoaDon = new FontAwesome.Sharp.IconButton();
             this.dgvHoaDon = new System.Windows.Forms.DataGridView();
             this.MaHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +51,15 @@
             this.btnChiTiet = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnSua = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnXoa = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnThanhToan = new FontAwesome.Sharp.IconButton();
+            this.dtpThangSuDung = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbbTinhTrang = new System.Windows.Forms.ComboBox();
+            this.btnBoXacThuc = new FontAwesome.Sharp.IconButton();
+            this.btnXacThuc = new FontAwesome.Sharp.IconButton();
+            this.cbbDayTro = new System.Windows.Forms.ComboBox();
+            this.btnThemHoaDon = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panelHD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
@@ -73,7 +73,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1176, 49);
+            this.panel1.Size = new System.Drawing.Size(1218, 49);
             this.panel1.TabIndex = 41;
             // 
             // label4
@@ -159,141 +159,8 @@
             this.panelHD.Location = new System.Drawing.Point(12, 65);
             this.panelHD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelHD.Name = "panelHD";
-            this.panelHD.Size = new System.Drawing.Size(1151, 551);
+            this.panelHD.Size = new System.Drawing.Size(1193, 551);
             this.panelHD.TabIndex = 43;
-            // 
-            // btnThanhToan
-            // 
-            this.btnThanhToan.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnThanhToan.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnThanhToan.IconChar = FontAwesome.Sharp.IconChar.CreditCardAlt;
-            this.btnThanhToan.IconColor = System.Drawing.Color.White;
-            this.btnThanhToan.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnThanhToan.IconSize = 25;
-            this.btnThanhToan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThanhToan.Location = new System.Drawing.Point(697, 37);
-            this.btnThanhToan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnThanhToan.Name = "btnThanhToan";
-            this.btnThanhToan.Size = new System.Drawing.Size(112, 38);
-            this.btnThanhToan.TabIndex = 70;
-            this.btnThanhToan.Text = "Thanh Toán";
-            this.btnThanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThanhToan.UseVisualStyleBackColor = false;
-            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
-            // 
-            // dtpThangSuDung
-            // 
-            this.dtpThangSuDung.CustomFormat = "MM/yyyy";
-            this.dtpThangSuDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpThangSuDung.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpThangSuDung.Location = new System.Drawing.Point(60, 44);
-            this.dtpThangSuDung.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dtpThangSuDung.Name = "dtpThangSuDung";
-            this.dtpThangSuDung.ShowUpDown = true;
-            this.dtpThangSuDung.Size = new System.Drawing.Size(133, 27);
-            this.dtpThangSuDung.TabIndex = 69;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(55, 11);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 20);
-            this.label5.TabIndex = 68;
-            this.label5.Text = "Thời gian:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(507, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 20);
-            this.label3.TabIndex = 67;
-            this.label3.Text = "Tình trạng";
-            // 
-            // cbbTinhTrang
-            // 
-            this.cbbTinhTrang.DisplayMember = "Tình trạng";
-            this.cbbTinhTrang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbTinhTrang.FormattingEnabled = true;
-            this.cbbTinhTrang.Location = new System.Drawing.Point(511, 43);
-            this.cbbTinhTrang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbbTinhTrang.Name = "cbbTinhTrang";
-            this.cbbTinhTrang.Size = new System.Drawing.Size(148, 28);
-            this.cbbTinhTrang.TabIndex = 66;
-            // 
-            // btnBoXacThuc
-            // 
-            this.btnBoXacThuc.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnBoXacThuc.BackColor = System.Drawing.Color.OrangeRed;
-            this.btnBoXacThuc.IconChar = FontAwesome.Sharp.IconChar.FileCircleXmark;
-            this.btnBoXacThuc.IconColor = System.Drawing.Color.White;
-            this.btnBoXacThuc.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBoXacThuc.IconSize = 25;
-            this.btnBoXacThuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBoXacThuc.Location = new System.Drawing.Point(931, 36);
-            this.btnBoXacThuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnBoXacThuc.Name = "btnBoXacThuc";
-            this.btnBoXacThuc.Size = new System.Drawing.Size(113, 38);
-            this.btnBoXacThuc.TabIndex = 65;
-            this.btnBoXacThuc.Text = "Bỏ xác thực";
-            this.btnBoXacThuc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBoXacThuc.UseVisualStyleBackColor = false;
-            this.btnBoXacThuc.Click += new System.EventHandler(this.btnBoXacThuc_Click);
-            // 
-            // btnXacThuc
-            // 
-            this.btnXacThuc.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnXacThuc.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnXacThuc.IconChar = FontAwesome.Sharp.IconChar.FileCircleCheck;
-            this.btnXacThuc.IconColor = System.Drawing.Color.White;
-            this.btnXacThuc.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnXacThuc.IconSize = 25;
-            this.btnXacThuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXacThuc.Location = new System.Drawing.Point(824, 36);
-            this.btnXacThuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnXacThuc.Name = "btnXacThuc";
-            this.btnXacThuc.Size = new System.Drawing.Size(99, 38);
-            this.btnXacThuc.TabIndex = 64;
-            this.btnXacThuc.Text = "Xác Thực";
-            this.btnXacThuc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXacThuc.UseVisualStyleBackColor = false;
-            this.btnXacThuc.Click += new System.EventHandler(this.btnXacThuc_Click);
-            // 
-            // cbbDayTro
-            // 
-            this.cbbDayTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbbDayTro.FormattingEnabled = true;
-            this.cbbDayTro.Location = new System.Drawing.Point(201, 42);
-            this.cbbDayTro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbbDayTro.Name = "cbbDayTro";
-            this.cbbDayTro.Size = new System.Drawing.Size(148, 28);
-            this.cbbDayTro.TabIndex = 42;
-            this.cbbDayTro.SelectedIndexChanged += new System.EventHandler(this.cbbDayTro_SelectedIndexChanged);
-            // 
-            // btnThemHoaDon
-            // 
-            this.btnThemHoaDon.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnThemHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThemHoaDon.BackColor = System.Drawing.Color.DarkOrange;
-            this.btnThemHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemHoaDon.IconChar = FontAwesome.Sharp.IconChar.Calculator;
-            this.btnThemHoaDon.IconColor = System.Drawing.Color.White;
-            this.btnThemHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnThemHoaDon.IconSize = 25;
-            this.btnThemHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemHoaDon.Location = new System.Drawing.Point(1055, 36);
-            this.btnThemHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnThemHoaDon.Name = "btnThemHoaDon";
-            this.btnThemHoaDon.Size = new System.Drawing.Size(92, 38);
-            this.btnThemHoaDon.TabIndex = 21;
-            this.btnThemHoaDon.Text = "Thêm ";
-            this.btnThemHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThemHoaDon.UseVisualStyleBackColor = false;
-            this.btnThemHoaDon.Click += new System.EventHandler(this.btnThemHD_Click);
             // 
             // dgvHoaDon
             // 
@@ -343,7 +210,7 @@
             this.dgvHoaDon.RowHeadersWidth = 51;
             this.dgvHoaDon.RowTemplate.Height = 24;
             this.dgvHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHoaDon.Size = new System.Drawing.Size(1109, 260);
+            this.dgvHoaDon.Size = new System.Drawing.Size(1151, 260);
             this.dgvHoaDon.TabIndex = 71;
             this.dgvHoaDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDon_CellContentClick);
             // 
@@ -427,11 +294,144 @@
             this.btnXoa.MinimumWidth = 6;
             this.btnXoa.Name = "btnXoa";
             // 
+            // btnThanhToan
+            // 
+            this.btnThanhToan.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnThanhToan.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnThanhToan.IconChar = FontAwesome.Sharp.IconChar.CreditCardAlt;
+            this.btnThanhToan.IconColor = System.Drawing.Color.White;
+            this.btnThanhToan.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThanhToan.IconSize = 25;
+            this.btnThanhToan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThanhToan.Location = new System.Drawing.Point(693, 37);
+            this.btnThanhToan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.Size = new System.Drawing.Size(124, 38);
+            this.btnThanhToan.TabIndex = 70;
+            this.btnThanhToan.Text = "Thanh Toán";
+            this.btnThanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThanhToan.UseVisualStyleBackColor = false;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
+            // 
+            // dtpThangSuDung
+            // 
+            this.dtpThangSuDung.CustomFormat = "MM/yyyy";
+            this.dtpThangSuDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpThangSuDung.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpThangSuDung.Location = new System.Drawing.Point(60, 44);
+            this.dtpThangSuDung.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpThangSuDung.Name = "dtpThangSuDung";
+            this.dtpThangSuDung.ShowUpDown = true;
+            this.dtpThangSuDung.Size = new System.Drawing.Size(133, 27);
+            this.dtpThangSuDung.TabIndex = 69;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(55, 11);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(82, 20);
+            this.label5.TabIndex = 68;
+            this.label5.Text = "Thời gian:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(507, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(84, 20);
+            this.label3.TabIndex = 67;
+            this.label3.Text = "Tình trạng";
+            // 
+            // cbbTinhTrang
+            // 
+            this.cbbTinhTrang.DisplayMember = "Tình trạng";
+            this.cbbTinhTrang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbTinhTrang.FormattingEnabled = true;
+            this.cbbTinhTrang.Location = new System.Drawing.Point(511, 43);
+            this.cbbTinhTrang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbbTinhTrang.Name = "cbbTinhTrang";
+            this.cbbTinhTrang.Size = new System.Drawing.Size(148, 28);
+            this.cbbTinhTrang.TabIndex = 66;
+            // 
+            // btnBoXacThuc
+            // 
+            this.btnBoXacThuc.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnBoXacThuc.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnBoXacThuc.IconChar = FontAwesome.Sharp.IconChar.FileCircleXmark;
+            this.btnBoXacThuc.IconColor = System.Drawing.Color.White;
+            this.btnBoXacThuc.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBoXacThuc.IconSize = 25;
+            this.btnBoXacThuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBoXacThuc.Location = new System.Drawing.Point(946, 36);
+            this.btnBoXacThuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBoXacThuc.Name = "btnBoXacThuc";
+            this.btnBoXacThuc.Size = new System.Drawing.Size(123, 38);
+            this.btnBoXacThuc.TabIndex = 65;
+            this.btnBoXacThuc.Text = "Bỏ xác thực";
+            this.btnBoXacThuc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBoXacThuc.UseVisualStyleBackColor = false;
+            this.btnBoXacThuc.Click += new System.EventHandler(this.btnBoXacThuc_Click);
+            // 
+            // btnXacThuc
+            // 
+            this.btnXacThuc.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnXacThuc.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnXacThuc.IconChar = FontAwesome.Sharp.IconChar.FileCircleCheck;
+            this.btnXacThuc.IconColor = System.Drawing.Color.White;
+            this.btnXacThuc.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnXacThuc.IconSize = 25;
+            this.btnXacThuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXacThuc.Location = new System.Drawing.Point(827, 36);
+            this.btnXacThuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXacThuc.Name = "btnXacThuc";
+            this.btnXacThuc.Size = new System.Drawing.Size(109, 38);
+            this.btnXacThuc.TabIndex = 64;
+            this.btnXacThuc.Text = "Xác Thực";
+            this.btnXacThuc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXacThuc.UseVisualStyleBackColor = false;
+            this.btnXacThuc.Click += new System.EventHandler(this.btnXacThuc_Click);
+            // 
+            // cbbDayTro
+            // 
+            this.cbbDayTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbDayTro.FormattingEnabled = true;
+            this.cbbDayTro.Location = new System.Drawing.Point(201, 42);
+            this.cbbDayTro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbbDayTro.Name = "cbbDayTro";
+            this.cbbDayTro.Size = new System.Drawing.Size(148, 28);
+            this.cbbDayTro.TabIndex = 42;
+            this.cbbDayTro.SelectedIndexChanged += new System.EventHandler(this.cbbDayTro_SelectedIndexChanged);
+            // 
+            // btnThemHoaDon
+            // 
+            this.btnThemHoaDon.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnThemHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThemHoaDon.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnThemHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemHoaDon.IconChar = FontAwesome.Sharp.IconChar.Calculator;
+            this.btnThemHoaDon.IconColor = System.Drawing.Color.White;
+            this.btnThemHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThemHoaDon.IconSize = 25;
+            this.btnThemHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThemHoaDon.Location = new System.Drawing.Point(1079, 36);
+            this.btnThemHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThemHoaDon.Name = "btnThemHoaDon";
+            this.btnThemHoaDon.Size = new System.Drawing.Size(108, 38);
+            this.btnThemHoaDon.TabIndex = 21;
+            this.btnThemHoaDon.Text = "Thêm ";
+            this.btnThemHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThemHoaDon.UseVisualStyleBackColor = false;
+            this.btnThemHoaDon.Click += new System.EventHandler(this.btnThemHD_Click);
+            // 
             // Hoadon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1176, 640);
+            this.ClientSize = new System.Drawing.Size(1218, 640);
             this.Controls.Add(this.panelHD);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.NgayThanhToan = new System.Windows.Forms.DateTimePicker();
             this.btnTroVe = new FontAwesome.Sharp.IconButton();
             this.txtConNo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,8 +44,6 @@
             this.txtTenPhong = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.NgayThanhToan = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -68,6 +68,25 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(936, 475);
             this.panel1.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(226, 328);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(115, 18);
+            this.label6.TabIndex = 55;
+            this.label6.Text = "Ngày thanh toán";
+            // 
+            // NgayThanhToan
+            // 
+            this.NgayThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NgayThanhToan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.NgayThanhToan.Location = new System.Drawing.Point(395, 322);
+            this.NgayThanhToan.Name = "NgayThanhToan";
+            this.NgayThanhToan.Size = new System.Drawing.Size(200, 27);
+            this.NgayThanhToan.TabIndex = 54;
             // 
             // btnTroVe
             // 
@@ -124,7 +143,7 @@
             this.txtThanhToan.Name = "txtThanhToan";
             this.txtThanhToan.Size = new System.Drawing.Size(201, 27);
             this.txtThanhToan.TabIndex = 6;
-            this.txtThanhToan.MouseLeave += new System.EventHandler(this.txtThanhToan_MouseLeave_1);
+           // this.txtThanhToan.MouseLeave += new System.EventHandler(this.txtThanhToan_MouseLeave_1);
             // 
             // label4
             // 
@@ -187,24 +206,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // NgayThanhToan
-            // 
-            this.NgayThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NgayThanhToan.Location = new System.Drawing.Point(395, 322);
-            this.NgayThanhToan.Name = "NgayThanhToan";
-            this.NgayThanhToan.Size = new System.Drawing.Size(200, 27);
-            this.NgayThanhToan.TabIndex = 54;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(226, 328);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(115, 18);
-            this.label6.TabIndex = 55;
-            this.label6.Text = "Ngày thanh toán";
             // 
             // ThanhToan
             // 

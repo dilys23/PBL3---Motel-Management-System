@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace PBL3___Motel_Management_System
 {
@@ -42,7 +43,8 @@ namespace PBL3___Motel_Management_System
                     //double conNoMoi = Convert.ToDouble(txtTongTien.Text) - hd.DaThanhToan;
                     ChiTietThanhToanHoaDon cttt = QLBLL.Instance.GetChiTietThanhToanHoaDonById(idLs);
                     double tienThanhToan = cttt.TienThanhToan;
-                    dgvLichSu.Rows.Add(cttt.MaHoaDon, cttt.MaChiTietThanhToanHoaDon, ++i, cttt.NgayThanhToan, cttt.TienThanhToan,conNoMoi );
+                    CultureInfo vietnamCulture = new CultureInfo("vi-VN");
+                    dgvLichSu.Rows.Add(cttt.MaHoaDon, cttt.MaChiTietThanhToanHoaDon, ++i, cttt.NgayThanhToan, cttt.TienThanhToan.ToString("C0", vietnamCulture), conNoMoi );
                     conNoMoi -= tienThanhToan;
 
                 }    
