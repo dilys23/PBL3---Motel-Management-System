@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,7 +43,8 @@ namespace PBL3___Motel_Management_System.View
             {
                 ChiTietThietBi cttb = QLBLL.Instance.GetChiTietThietBiById(idCttb);
                 ThietBi tb = QLBLL.Instance.GetTBByIdTB(cttb.MaThietBi);
-                dgvThietBi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi, cttb.SoLuong);
+                CultureInfo vietnamCulture = new CultureInfo("vi-VN");
+                dgvThietBi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi.ToString("C0", vietnamCulture), cttb.SoLuong);
             }
         }
         private void btnThemThietbi_Click(object sender, EventArgs e)

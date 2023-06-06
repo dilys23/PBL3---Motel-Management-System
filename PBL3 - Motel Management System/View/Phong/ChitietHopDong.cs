@@ -93,14 +93,14 @@ namespace PBL3___Motel_Management_System.View
                     
                     DichVu dv = new DichVu();
                     dv = QLBLL.Instance.GetDichVuByIdDichVu(ctdv.MaDichVu);
-                    dgvDichvu.Rows.Add(dv.MaDichVu, ++i, dv.TenDichVu, dv.GiaDichVu);
+                    dgvDichvu.Rows.Add(dv.MaDichVu, ++i, dv.TenDichVu, dv.GiaDichVu.ToString("C0", vietnamCulture));
                 }
                 foreach (ChiTietThietBi cttb in QLBLL.Instance.GetChiTietThietBiByIdPhong(phongTro.MaPhongTro))
                 {
                     
                     ThietBi tb = new ThietBi();
                     tb = QLBLL.Instance.GetTBByIdTB(cttb.MaThietBi);
-                    dgvThietbi.Rows.Add(tb.MaThietBi, ++j, tb.TenThietBi, tb.GiaThietBi,cttb.SoLuong);
+                    dgvThietbi.Rows.Add(tb.MaThietBi, ++j, tb.TenThietBi, tb.GiaThietBi.ToString("C0", vietnamCulture),cttb.SoLuong);
                 }
             }
             else
@@ -109,12 +109,12 @@ namespace PBL3___Motel_Management_System.View
                 {
                     DichVu dv = new DichVu();
                     dv = QLBLL.Instance.GetDichVuByIdDichVu(idDv);
-                    dgvDichvu.Rows.Add(dv.MaDichVu, ++i, dv.TenDichVu, dv.GiaDichVu);
+                    dgvDichvu.Rows.Add(dv.MaDichVu, ++i, dv.TenDichVu, dv.GiaDichVu.ToString("C0", vietnamCulture));
                 }
                 foreach (ChiTietThietBi ct in QLBLL.Instance.GetChiTietThietBiByIdPhong(tp.hopDong.MaPhongTro))
                 {
                     ThietBi tb = QLBLL.Instance.GetTBByIdTB(ct.MaThietBi);
-                    dgvThietbi.Rows.Add(tb.MaThietBi, ++j, tb.TenThietBi, tb.GiaThietBi, ct.SoLuong);
+                    dgvThietbi.Rows.Add(tb.MaThietBi, ++j, tb.TenThietBi, tb.GiaThietBi.ToString("C0", vietnamCulture), ct.SoLuong);
                 }
             }
         }
