@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Markup;
+using System.Xml.XPath;
 
 namespace PBL3___Motel_Management_System.DAL
 {
@@ -1090,6 +1091,39 @@ namespace PBL3___Motel_Management_System.DAL
             );
 
                 return result;
+            }
+        }
+      
+        public Dictionary<string, int> ThongKeTinhTrangPhongTro()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                var result = data.PhongTro
+                    .GroupJoin(data.HopDong, pt => pt.MaPhongTro, hd => hd.MaPhongTro,
+                    (pt, hds) => new { PhongTro = pt, HopDong = hds })
+                    .SelectMany(p=>p.HopDong.DefaultIfEmpty(),(p,hd)=>new {PhongTro =p.PhongTro,HopDong = hd})
+                    .GroupBy(p =>
+                (p.HopDong == null) ? "Còn trống" :
+                (p.HopDong.TinhTrang == true) ? "Đã cho thuê" :
+                "Đã cọc")
+                    .OrderBy(p => p.Key)
+                    .ToDictionary(p => p.Key, p => p.Count());
+                return result;
+            }
+        }
+        public Dictionary<string,int> ThongKeThanhVien()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                var result = data.ThanhVienTrongPhong.ToList()
+                    .Where(p => p.TonTai == true)
+                    .GroupBy(p => p.PhongTro.DayTro.TenDayTro)
+                    .OrderBy(p => p.Key)
+                    .ToDictionary
+                    (p => p.Key,
+                     p => p.Count()
+                     );
+            return result;
             }
         }
         public List<DichVu> getAllDichVuByIdPhong(string idPhong)

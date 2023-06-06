@@ -1198,6 +1198,19 @@ namespace PBL3___Motel_Management_System.BLL
 
             return chartData;
         }
+        public List<object> ThongKeTinhTrangPhongTro()
+        {
+
+            var thongke = QLDAL.Instance.ThongKeTinhTrangPhongTro();
+            var data = thongke.Select(x => new { Key = x.Key.ToString(), Value = x.Value }).ToList<object>();
+            return data;
+        }
+        
+        public List<object> ThongKeThanhVien()
+        {
+            var thongke = QLDAL.Instance.ThongKeThanhVien();
+            var data= thongke.Select(x => new { Key = x.Key.ToString(), Value = x.Value }).ToList<object>(); return data;
+        }
         public bool ChoPhepXacThucChiSo(string id, string MaChiSo)
         {
             ChiTietSuDungDichVu dv = GetChiTietSuDungDichVuByIdBLL(id);
