@@ -13,6 +13,7 @@ using PBL3___Motel_Management_System.View;
 using System.Runtime.InteropServices;
 using System.Windows.Controls;
 using PBL3___Motel_Management_System.DAL;
+using System.Globalization;
 
 namespace PBL3___Motel_Management_System.View
 {
@@ -20,6 +21,7 @@ namespace PBL3___Motel_Management_System.View
     {
         private int borderSize = 2;
         private Size formSize;
+        CultureInfo vietnamCulture = new CultureInfo("vi-VN");
         public Thietbi()
         {
             InitializeComponent();
@@ -38,7 +40,7 @@ namespace PBL3___Motel_Management_System.View
             int i = 0;
             foreach (ThietBi viewThietBi in QLBLL.Instance.DgvThietBi(txtTim))
             {
-                dgvThietBi.Rows.Add(viewThietBi.MaThietBi, ++i, viewThietBi.TenThietBi, viewThietBi.GiaThietBi);
+                dgvThietBi.Rows.Add(viewThietBi.MaThietBi, ++i, viewThietBi.TenThietBi, viewThietBi.GiaThietBi.ToString("#,##0") + "₫");
             }
             var Sua = System.Drawing.Image.FromFile(@"D:\PBL\PBL3_MAIN\PBL3 - Motel Management System\Icons\icons8-create-25.png");
             var Xoa = System.Drawing.Image.FromFile(@"D:\PBL\PBL3_MAIN\PBL3 - Motel Management System\Icons\icons8-delete-25.png");

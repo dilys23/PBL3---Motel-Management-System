@@ -65,7 +65,7 @@
             this.panelChisoDien.Location = new System.Drawing.Point(13, 86);
             this.panelChisoDien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelChisoDien.Name = "panelChisoDien";
-            this.panelChisoDien.Size = new System.Drawing.Size(1091, 456);
+            this.panelChisoDien.Size = new System.Drawing.Size(1146, 456);
             this.panelChisoDien.TabIndex = 29;
             // 
             // btnTimKiem
@@ -136,7 +136,7 @@
             this.dgvChiSoNuoc.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvChiSoNuoc.RowTemplate.Height = 24;
             this.dgvChiSoNuoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvChiSoNuoc.Size = new System.Drawing.Size(1061, 288);
+            this.dgvChiSoNuoc.Size = new System.Drawing.Size(1116, 288);
             this.dgvChiSoNuoc.TabIndex = 8;
             // 
             // MaChiTietSuDungDichVu
@@ -214,7 +214,7 @@
             this.panel1.Location = new System.Drawing.Point(3, -1);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1120, 49);
+            this.panel1.Size = new System.Drawing.Size(1175, 49);
             this.panel1.TabIndex = 30;
             // 
             // label4
@@ -232,7 +232,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1121, 554);
+            this.ClientSize = new System.Drawing.Size(1176, 554);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelChisoDien);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

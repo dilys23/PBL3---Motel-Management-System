@@ -59,7 +59,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1043, 63);
+            this.panel1.Size = new System.Drawing.Size(1142, 63);
             this.panel1.TabIndex = 70;
             // 
             // label4
@@ -87,7 +87,7 @@
             this.panelHD.Location = new System.Drawing.Point(12, 82);
             this.panelHD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelHD.Name = "panelHD";
-            this.panelHD.Size = new System.Drawing.Size(1005, 433);
+            this.panelHD.Size = new System.Drawing.Size(1104, 433);
             this.panelHD.TabIndex = 71;
             // 
             // btnTimKiem
@@ -172,7 +172,7 @@
             this.dgvHoaDon.RowHeadersWidth = 51;
             this.dgvHoaDon.RowTemplate.Height = 24;
             this.dgvHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHoaDon.Size = new System.Drawing.Size(932, 275);
+            this.dgvHoaDon.Size = new System.Drawing.Size(1031, 275);
             this.dgvHoaDon.TabIndex = 8;
             this.dgvHoaDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDon_CellContentClick);
             this.dgvHoaDon.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvHoaDon_CellPainting);
@@ -231,7 +231,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1043, 538);
+            this.ClientSize = new System.Drawing.Size(1142, 538);
             this.Controls.Add(this.panelHD);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

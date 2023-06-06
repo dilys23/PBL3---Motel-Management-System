@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ namespace PBL3___Motel_Management_System.View
     {
         private ThuePhong tp;
         private Loader loader;
-
+        CultureInfo vietnamCulture = new CultureInfo("vi-VN");
         public ThemThietBiPhong(ThuePhong tp, Loader loader)
         {
             InitializeComponent();
@@ -33,14 +34,14 @@ namespace PBL3___Motel_Management_System.View
             dgvThietBi.RowCount = 0;
             foreach (ThietBi viewThietBi in QLBLL.Instance.DgvThietBi(null))
             {
-                dgvThietBi.Rows.Add(viewThietBi.MaThietBi, 1, viewThietBi.TenThietBi, viewThietBi.GiaThietBi);
+                dgvThietBi.Rows.Add(viewThietBi.MaThietBi, 1, viewThietBi.TenThietBi, viewThietBi.GiaThietBi.ToString("#,##0") + "₫");
             }
             if (tp.hopDong.MaHopDong == null)
             {
                 foreach(ChiTietThietBi ct in QLBLL.Instance.GetChiTietThietBiByIdPhong(tp.hopDong.MaPhongTro))
                 {
                     ThietBi tb = QLBLL.Instance.GetTBByIdTB(ct.MaThietBi);
-                    dgvTBThem.Rows.Add(tb.MaThietBi,1,tb.TenThietBi,tb.GiaThietBi,ct.SoLuong);
+                    dgvTBThem.Rows.Add(tb.MaThietBi,1,tb.TenThietBi,tb.GiaThietBi.ToString("#,##0") + "₫", ct.SoLuong);
                 }
             }
             else
@@ -50,7 +51,7 @@ namespace PBL3___Motel_Management_System.View
                 {
                     ChiTietThietBi cttb = QLBLL.Instance.GetChiTietThietBiById(idCttb);
                     ThietBi tb = QLBLL.Instance.GetTBByIdTB(cttb.MaThietBi);
-                    dgvTBThem.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi, cttb.SoLuong);
+                    dgvTBThem.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi.ToString("#,##0") + "₫", cttb.SoLuong);
                 }
             }
             for (int i = 0; i < dgvTBThem.Rows.Count; i++)
@@ -83,8 +84,8 @@ namespace PBL3___Motel_Management_System.View
                 bool Status = false;
                 v.MaThietBi = row.Cells[0].Value.ToString();
                 v.TenThietBi = row.Cells[2].Value.ToString();
-                v.GiaThietBi = Convert.ToDouble(row.Cells[3].Value.ToString());
-                for(int i=0;i<dgvTBThem.Rows.Count;i++)
+                v.GiaThietBi = (Convert.ToDouble(row.Cells[3].Value.ToString().Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
+                for (int i=0;i<dgvTBThem.Rows.Count;i++)
                 {
                     if(dgvTBThem.Rows[i].Cells[0].Value != null)
                     {
@@ -100,7 +101,7 @@ namespace PBL3___Motel_Management_System.View
                 }
                 if(!Status)
                 {
-                        dgvTBThem.Rows.Add(v.MaThietBi, 0, v.TenThietBi, v.GiaThietBi, 1);
+                        dgvTBThem.Rows.Add(v.MaThietBi, 0, v.TenThietBi, v.GiaThietBi.ToString("C0") + "₫", 1);
                 }
                 for (int i = 0; i < dgvTBThem.Rows.Count; i++)
                 {
@@ -122,7 +123,7 @@ namespace PBL3___Motel_Management_System.View
                 {
                     v.MaThietBi = row.Cells[0].Value.ToString();
                     v.TenThietBi = row.Cells[2].Value.ToString();
-                    v.GiaThietBi = Convert.ToDouble(row.Cells[3].Value.ToString());
+                    v.GiaThietBi = (Convert.ToDouble(row.Cells[3].Value.ToString().Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
                     if(dgvTBThem.CurrentRow.Cells[4].Value != null)
                     {
 

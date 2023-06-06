@@ -73,7 +73,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1246, 49);
+            this.panel1.Size = new System.Drawing.Size(1275, 49);
             this.panel1.TabIndex = 41;
             // 
             // label4
@@ -108,7 +108,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(352, 20);
+            this.label2.Location = new System.Drawing.Point(301, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 20);
             this.label2.TabIndex = 46;
@@ -118,7 +118,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(197, 20);
+            this.label1.Location = new System.Drawing.Point(166, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(39, 20);
             this.label1.TabIndex = 45;
@@ -129,10 +129,10 @@
             this.cbbPhongTro.DisplayMember = "Tình trạng";
             this.cbbPhongTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbPhongTro.FormattingEnabled = true;
-            this.cbbPhongTro.Location = new System.Drawing.Point(356, 43);
+            this.cbbPhongTro.Location = new System.Drawing.Point(305, 43);
             this.cbbPhongTro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbPhongTro.Name = "cbbPhongTro";
-            this.cbbPhongTro.Size = new System.Drawing.Size(148, 28);
+            this.cbbPhongTro.Size = new System.Drawing.Size(120, 28);
             this.cbbPhongTro.TabIndex = 44;
             // 
             // panelHD
@@ -159,7 +159,7 @@
             this.panelHD.Location = new System.Drawing.Point(12, 65);
             this.panelHD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelHD.Name = "panelHD";
-            this.panelHD.Size = new System.Drawing.Size(1221, 551);
+            this.panelHD.Size = new System.Drawing.Size(1250, 551);
             this.panelHD.TabIndex = 43;
             // 
             // dgvHoaDon
@@ -210,7 +210,7 @@
             this.dgvHoaDon.RowHeadersWidth = 51;
             this.dgvHoaDon.RowTemplate.Height = 24;
             this.dgvHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHoaDon.Size = new System.Drawing.Size(1179, 260);
+            this.dgvHoaDon.Size = new System.Drawing.Size(1208, 260);
             this.dgvHoaDon.TabIndex = 71;
             this.dgvHoaDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDon_CellContentClick);
             // 
@@ -303,7 +303,7 @@
             this.btnThanhToan.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThanhToan.IconSize = 25;
             this.btnThanhToan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThanhToan.Location = new System.Drawing.Point(693, 37);
+            this.btnThanhToan.Location = new System.Drawing.Point(635, 38);
             this.btnThanhToan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThanhToan.Name = "btnThanhToan";
             this.btnThanhToan.Size = new System.Drawing.Size(124, 38);
@@ -322,7 +322,7 @@
             this.dtpThangSuDung.Margin = new System.Windows.Forms.Padding(4);
             this.dtpThangSuDung.Name = "dtpThangSuDung";
             this.dtpThangSuDung.ShowUpDown = true;
-            this.dtpThangSuDung.Size = new System.Drawing.Size(133, 27);
+            this.dtpThangSuDung.Size = new System.Drawing.Size(102, 27);
             this.dtpThangSuDung.TabIndex = 69;
             // 
             // label5
@@ -340,7 +340,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(507, 20);
+            this.label3.Location = new System.Drawing.Point(432, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 20);
             this.label3.TabIndex = 67;
@@ -351,7 +351,7 @@
             this.cbbTinhTrang.DisplayMember = "Tình trạng";
             this.cbbTinhTrang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbTinhTrang.FormattingEnabled = true;
-            this.cbbTinhTrang.Location = new System.Drawing.Point(511, 43);
+            this.cbbTinhTrang.Location = new System.Drawing.Point(436, 43);
             this.cbbTinhTrang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbTinhTrang.Name = "cbbTinhTrang";
             this.cbbTinhTrang.Size = new System.Drawing.Size(148, 28);
@@ -366,7 +366,7 @@
             this.btnBoXacThuc.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBoXacThuc.IconSize = 25;
             this.btnBoXacThuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBoXacThuc.Location = new System.Drawing.Point(946, 36);
+            this.btnBoXacThuc.Location = new System.Drawing.Point(888, 37);
             this.btnBoXacThuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBoXacThuc.Name = "btnBoXacThuc";
             this.btnBoXacThuc.Size = new System.Drawing.Size(123, 38);
@@ -385,7 +385,7 @@
             this.btnXacThuc.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXacThuc.IconSize = 25;
             this.btnXacThuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXacThuc.Location = new System.Drawing.Point(827, 36);
+            this.btnXacThuc.Location = new System.Drawing.Point(769, 37);
             this.btnXacThuc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXacThuc.Name = "btnXacThuc";
             this.btnXacThuc.Size = new System.Drawing.Size(109, 38);
@@ -399,10 +399,10 @@
             // 
             this.cbbDayTro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbDayTro.FormattingEnabled = true;
-            this.cbbDayTro.Location = new System.Drawing.Point(201, 42);
+            this.cbbDayTro.Location = new System.Drawing.Point(170, 42);
             this.cbbDayTro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbDayTro.Name = "cbbDayTro";
-            this.cbbDayTro.Size = new System.Drawing.Size(148, 28);
+            this.cbbDayTro.Size = new System.Drawing.Size(121, 28);
             this.cbbDayTro.TabIndex = 42;
             this.cbbDayTro.SelectedIndexChanged += new System.EventHandler(this.cbbDayTro_SelectedIndexChanged);
             // 
@@ -417,7 +417,7 @@
             this.btnThemHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThemHoaDon.IconSize = 25;
             this.btnThemHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemHoaDon.Location = new System.Drawing.Point(1107, 36);
+            this.btnThemHoaDon.Location = new System.Drawing.Point(1119, 38);
             this.btnThemHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThemHoaDon.Name = "btnThemHoaDon";
             this.btnThemHoaDon.Size = new System.Drawing.Size(108, 38);
@@ -431,7 +431,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1246, 640);
+            this.ClientSize = new System.Drawing.Size(1275, 640);
             this.Controls.Add(this.panelHD);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemKhach));
             this.btnLuu = new FontAwesome.Sharp.IconButton();
             this.btnTrove = new FontAwesome.Sharp.IconButton();
             this.panelKhach = new System.Windows.Forms.Panel();
@@ -150,6 +151,7 @@
             // pctKhach
             // 
             this.pctKhach.BackColor = System.Drawing.Color.White;
+            this.pctKhach.Image = ((System.Drawing.Image)(resources.GetObject("pctKhach.Image")));
             this.pctKhach.Location = new System.Drawing.Point(33, 40);
             this.pctKhach.Name = "pctKhach";
             this.pctKhach.Size = new System.Drawing.Size(176, 185);

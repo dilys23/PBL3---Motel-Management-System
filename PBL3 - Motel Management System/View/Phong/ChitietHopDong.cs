@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -61,7 +62,8 @@ namespace PBL3___Motel_Management_System.View
                 txtTenPhong.Text = phongTro.TenPhongTro;
                 string diachi = dt.TenDuong + " " + dt.TenHuyen + " " + dt.TenThanhPho;
                 txtDiaChi.Text = diachi;
-                txtGiaPhong.Text = phongTro.GiaTien.ToString();
+                txtGiaPhong.Text = phongTro.GiaTien.ToString("#,##0") + "₫";
+
             }
         }
         public void SetGUI(DayTro dt, Nguoi nguoi,PhongTro phongTro, HopDong hopdong)
@@ -71,10 +73,10 @@ namespace PBL3___Motel_Management_System.View
             txtTenPhong.Text = phongTro.TenPhongTro;
             string diachi = dt.TenDuong + " " + dt.TenHuyen + " " + dt.TenThanhPho;
             txtDiaChi.Text = diachi;
-            txtGiaPhong.Text = phongTro.GiaTien.ToString();
+            txtGiaPhong.Text = phongTro.GiaTien.ToString("#,##0") + "₫";
             txtHoVaTen.Text = nguoi.Ten;
             txtSdt.Text = nguoi.Sdt;
-            txtTienCoc.Text = hopdong.TienCoc.ToString();
+            txtTienCoc.Text = hopdong.TienCoc.ToString("#,##0") + "₫";
             txtCccd.Text = nguoi.Cccd;
             DateTime ngaysinh = DateTime.ParseExact(nguoi.NgaySinh, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
             DateTime batdau = DateTime.ParseExact(hopdong.NgayBatDau, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
@@ -91,14 +93,14 @@ namespace PBL3___Motel_Management_System.View
                     
                     DichVu dv = new DichVu();
                     dv = QLBLL.Instance.GetDichVuByIdDichVu(ctdv.MaDichVu);
-                    dgvDichvu.Rows.Add(dv.MaDichVu, ++i, dv.TenDichVu, dv.GiaDichVu);
+                    dgvDichvu.Rows.Add(dv.MaDichVu, ++i, dv.TenDichVu, dv.GiaDichVu.ToString("#,##0") + "₫");
                 }
                 foreach (ChiTietThietBi cttb in QLBLL.Instance.GetChiTietThietBiByIdPhong(phongTro.MaPhongTro))
                 {
                     
                     ThietBi tb = new ThietBi();
                     tb = QLBLL.Instance.GetTBByIdTB(cttb.MaThietBi);
-                    dgvThietbi.Rows.Add(tb.MaThietBi, ++j, tb.TenThietBi, tb.GiaThietBi,cttb.SoLuong);
+                    dgvThietbi.Rows.Add(tb.MaThietBi, ++j, tb.TenThietBi, tb.GiaThietBi.ToString("#,##0") + "₫", cttb.SoLuong);
                 }
             }
             else
@@ -107,12 +109,12 @@ namespace PBL3___Motel_Management_System.View
                 {
                     DichVu dv = new DichVu();
                     dv = QLBLL.Instance.GetDichVuByIdDichVu(idDv);
-                    dgvDichvu.Rows.Add(dv.MaDichVu, ++i, dv.TenDichVu, dv.GiaDichVu);
+                    dgvDichvu.Rows.Add(dv.MaDichVu, ++i, dv.TenDichVu, dv.GiaDichVu.ToString("#,##0") + "₫");
                 }
                 foreach (ChiTietThietBi ct in QLBLL.Instance.GetChiTietThietBiByIdPhong(tp.hopDong.MaPhongTro))
                 {
                     ThietBi tb = QLBLL.Instance.GetTBByIdTB(ct.MaThietBi);
-                    dgvThietbi.Rows.Add(tb.MaThietBi, ++j, tb.TenThietBi, tb.GiaThietBi, ct.SoLuong);
+                    dgvThietbi.Rows.Add(tb.MaThietBi, ++j, tb.TenThietBi, tb.GiaThietBi.ToString("#,##0") + "₫", ct.SoLuong);
                 }
             }
         }

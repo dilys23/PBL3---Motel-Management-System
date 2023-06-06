@@ -42,7 +42,7 @@ namespace PBL3___Motel_Management_System.View
             {
                 ChiTietThietBi cttb = QLBLL.Instance.GetChiTietThietBiById(idCttb);
                 ThietBi tb = QLBLL.Instance.GetTBByIdTB(cttb.MaThietBi);
-                dgvThietBi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi, cttb.SoLuong);
+                dgvThietBi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi.ToString("#,##0") + "₫", cttb.SoLuong);
             }
         }
         private void btnThemThietbi_Click(object sender, EventArgs e)

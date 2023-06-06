@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace PBL3___Motel_Management_System
     {
         private ThuePhong tp;
         private Loader loader;
+        CultureInfo vietnamCulture = new CultureInfo("vi-VN");
         public ThemHopDong(ThuePhong tp, Loader loader)
         {
             InitializeComponent();
@@ -40,7 +42,7 @@ namespace PBL3___Motel_Management_System
                 HopDong hopdong = QLBLL.Instance.GetHopDongByMaHD(tp.hopDong.MaHopDong);
                 dtpBatDau.Value = Convert.ToDateTime(hopdong.NgayBatDau);
                 dtpKetThuc.Value = Convert.ToDateTime(hopdong.NgayKetThuc);
-                txtTienCoc.Text =Convert.ToDouble(hopdong.TienCoc).ToString();
+                txtTienCoc.Text =Convert.ToDouble(hopdong.TienCoc).ToString("#,##0") + "₫";
             }
         }
         private void Back(string txt)
@@ -91,7 +93,7 @@ namespace PBL3___Motel_Management_System
                     string dateEnd = dtpKetThuc.Value.ToString("yyyy-MM-dd");
                     hopdong.NgayBatDau = dateStart;
                     hopdong.NgayKetThuc = dateEnd;
-                    hopdong.TienCoc = Convert.ToDouble(txtTienCoc.Text);
+                    hopdong.TienCoc = (Convert.ToDouble(txtTienCoc.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")) );
                     hopdong.TonTai = true;
                     QLBLL.Instance.UpdateHopDongBLL(hopdong);
                     MessageBox.Show("Gia hạn hợp đồng thành công");
@@ -107,7 +109,7 @@ namespace PBL3___Motel_Management_System
                     string dateEnd = dtpKetThuc.Value.ToString("yyyy-MM-dd");
                     tp.hopDong.NgayBatDau = dateStart;
                     tp.hopDong.NgayKetThuc = dateEnd;
-                    tp.hopDong.TienCoc = Convert.ToDouble(txtTienCoc.Text);
+                    tp.hopDong.TienCoc = (Convert.ToDouble(txtTienCoc.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", ""))); 
                     QLBLL.Instance.openChildForm1(new ChitietHopDong(tp, Back), panelThemHD);
                 }
             }

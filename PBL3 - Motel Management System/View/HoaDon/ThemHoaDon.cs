@@ -20,7 +20,7 @@ namespace PBL3___Motel_Management_System.View
     {
         private Loader loader;
         private string IdHd;
-
+        CultureInfo vietnamCulture = new CultureInfo("vi-VN");
         public ThemHoaDon(Loader loader,string idHd)
         {
             InitializeComponent();
@@ -70,8 +70,8 @@ namespace PBL3___Motel_Management_System.View
                 dtpThangThanhToan.MinDate = dtStart;
                 dtpThangThanhToan.MaxDate = dtEnd;
                 PhongTro pt = QLBLL.Instance.GetPhongTroByIdPhong(idPhong);
-                CultureInfo vietnamCulture = new CultureInfo("vi-VN");
-                txtTienPhong.Text = pt.GiaTien.ToString("C0", vietnamCulture);
+                
+                txtTienPhong.Text = pt.GiaTien.ToString("#,##0") + "₫";
                 int i = 0;
                 bool status = false;
                 foreach(ChiTietDichVu ctdv in QLBLL.Instance.GetChiTietDichVuByIdPhong(idPhong))
@@ -79,7 +79,7 @@ namespace PBL3___Motel_Management_System.View
                     if(ctdv.MaDichVu != "001" && ctdv.MaDichVu != "000")
                     {
                         DichVu dv = QLBLL.Instance.GetDichVuByIdDichVu(ctdv.MaDichVu);
-                        dgvDichVu.Rows.Add(++i, dv.TenDichVu, dv.GiaDichVu, 0, 0, dv.GiaDichVu, "Chọn");
+                        dgvDichVu.Rows.Add(++i, dv.TenDichVu, dv.GiaDichVu.ToString("#,##0") + "₫", 0, 0, dv.GiaDichVu.ToString("#,##0") + "₫", "Chọn");
                     }
                     else if(!status)
                     {
@@ -89,7 +89,7 @@ namespace PBL3___Motel_Management_System.View
                         {
                             ChiTietDichVu ct = QLBLL.Instance.GetChiTietDichVuById(dv.MaCHiTietDichVu);
                             DichVu dv1 = QLBLL.Instance.GetDichVuByIdDichVu(ct.MaDichVu);
-                            dgvDichVu.Rows.Add(++i, dv1.TenDichVu, dv1.GiaDichVu, dv.ChiSoCu, dv.ChiSoMoi, (dv.ChiSoMoi-dv.ChiSoCu)*dv1.GiaDichVu, "Chọn");
+                            dgvDichVu.Rows.Add(++i, dv1.TenDichVu, dv1.GiaDichVu.ToString("#,##0") + "₫", dv.ChiSoCu, dv.ChiSoMoi, (dv.ChiSoMoi-dv.ChiSoCu)*dv1.GiaDichVu, "Chọn");
                         }
                     }
                 }
@@ -177,12 +177,13 @@ namespace PBL3___Motel_Management_System.View
                 {
                     if (dr.Cells[6].Value.ToString()=="Chọn")
                     {
-                        double tien = Convert.ToDouble(dr.Cells[5].Value.ToString());
+                        double tien = (Convert.ToDouble(dr.Cells[5].Value.ToString().Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
+                        //double tien1 = Convert.ToDouble(dr.Cells[5].Value.ToString());
                         TienDichVu += tien;
                     }
                 }
             }
-            txtTienDichVu.Text = TienDichVu.ToString();    
+            txtTienDichVu.Text = TienDichVu.ToString("#,##0") + "₫";    
         }
         private void btnBoChon_Click(object sender, EventArgs e)
         {
@@ -209,14 +210,15 @@ namespace PBL3___Motel_Management_System.View
             {
                 if(cbbPhongTro.SelectedItem != null)
                 {
+                    CultureInfo vietnamCulture = new CultureInfo("vi-VN");
 
-                    double tienPhong = Convert.ToDouble(txtTienPhong.Text);
-                    double tienDv = Convert.ToDouble(txtTienDichVu.Text);
-                    double giamGia = Convert.ToDouble(txtGiamGia.Text);
+                    double tienPhong = (Convert.ToDouble(txtTienPhong.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
+                    double tienDv = (Convert.ToDouble(txtTienDichVu.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
+                    double giamGia = (Convert.ToDouble(txtGiamGia.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
                     double tienGiamGia = tienPhong*giamGia/100;
                     double conLai = tienPhong - tienGiamGia;
                     double tongCong = conLai + tienDv;
-                    string tt = "Tiền phòng: " + tienPhong + "\nGiảm giá: " + tienGiamGia + "\nCòn lại: " + conLai + "\nTiền dịch vu: " + tienDv + "\nTổng cộng: " + tongCong;
+                    string tt = "Tiền phòng: " + tienPhong.ToString("#,##0") + "₫" + "\nGiảm giá: " + tienGiamGia.ToString("#,##0") + "₫" + "\nCòn lại: " + conLai.ToString("#,##0") + "₫" + "\nTiền dịch vu: " + tienDv.ToString("#,##0") + "₫" + "\nTổng cộng: " + tongCong.ToString("#,##0") + "₫";
                     DialogResult xacNhan  = MessageBox.Show(tt,"Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
                     if(xacNhan  == System.Windows.Forms.DialogResult.No)
                     {

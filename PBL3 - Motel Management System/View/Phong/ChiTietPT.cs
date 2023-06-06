@@ -32,7 +32,7 @@ namespace PBL3___Motel_Management_System.View
             panelChitietPT.Controls.Clear();
             if (QLBLL.Instance.TinhTrangPhongById(idPhong) == false)
             {
-                string b = "Phòng này chưa được thuê, chưa có hợp đồng";
+                string b = "Phòng này đang còn trống";
                 QLBLL.Instance.TaoPanel(b, panelChitietPT);
             }
             else
@@ -50,7 +50,7 @@ namespace PBL3___Motel_Management_System.View
            panelChitietPT.Controls.Clear();
             if (QLBLL.Instance.TinhTrangPhongById(idPhong) == false)
             {
-                string b = "Phòng này chưa được thuê, chưa có hợp đồng";
+                string b = "Phòng chưa có hợp đồng, đang còn trống";
                 QLBLL.Instance.TaoPanel(b, panelChitietPT);
             }
             else
@@ -102,12 +102,12 @@ namespace PBL3___Motel_Management_System.View
 
             if (QLBLL.Instance.PhongDaCocByIdPhong(idPhong) == false && QLBLL.Instance.TinhTrangPhongById(idPhong) == true)
             {
-                string b = "Phòng đã được thuê, không có chi tiết cọc";
+                string b = "Phòng đã được thuê";
                 QLBLL.Instance.TaoPanel(b, panelChitietPT);
             }
             else if (QLBLL.Instance.PhongDaCocByIdPhong(idPhong) == false && QLBLL.Instance.TinhTrangPhongById(idPhong) == false)
             {
-                string b = "Phòng chưa được cọc và còn trống";
+                string b = "Phòng chưa được cọc, đang còn trống";
                 QLBLL.Instance.TaoPanel(b, panelChitietPT);
             }    
             else

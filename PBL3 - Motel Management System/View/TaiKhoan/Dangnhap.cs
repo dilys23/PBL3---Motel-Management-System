@@ -20,10 +20,6 @@ namespace PBL3___Motel_Management_System
         public Dangnhap()
         {
             InitializeComponent();
-            System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
-            gp.AddEllipse(0, 0, pictureBox3.Width - 3, pictureBox3.Height - 3);
-            Region rg = new Region(gp);
-            pictureBox3.Region = rg;
             SetTextBox(txtMatKhau);
             SetTextBox(txtTaiKhoan);
             SetButton(btnDangNhap);
@@ -82,52 +78,9 @@ namespace PBL3___Motel_Management_System
             pathBtn.Dispose();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            string mk = QLBLL.Instance.MaHoaMatKhau(txtMatKhau.Text);
-            if (QLBLL.Instance.GetIdTk(txtTaiKhoan.Text, mk) != null)
-            {
-                VaiTro vaitro = QLBLL.Instance.CheckVaiTro(txtTaiKhoan.Text, mk);
-                if (vaitro.TenVaiTro == "Chủ trọ")
-                {
-                    matk = vaitro.MaTaiKhoan;
-                    TrangChu tc = new TrangChu(matk);
-                    tc.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    matk = vaitro.MaTaiKhoan;
-                    TrangChuKhach tc = new TrangChuKhach(matk);
-                    tc.Show();
-                    this.Hide();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác", "Thông Báo", MessageBoxButtons.OK);
-            }
+        
 
-
-        }
-
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-            if(txtMatKhau.PasswordChar=='*')
-            {
-                btnChiTiet.BringToFront();
-                txtMatKhau.PasswordChar = '\0';
-            }
-        }
-
-        private void btnChiTiet_Click(object sender, EventArgs e)
-        {
-            if (txtMatKhau.PasswordChar == '\0')
-            {
-                iconButton1.BringToFront();
-                txtMatKhau.PasswordChar = '*';
-            }
-        }
+       
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -163,6 +116,53 @@ namespace PBL3___Motel_Management_System
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+            string mk = QLBLL.Instance.MaHoaMatKhau(txtMatKhau.Text);
+            if (QLBLL.Instance.GetIdTk(txtTaiKhoan.Text, mk) != null)
+            {
+                VaiTro vaitro = QLBLL.Instance.CheckVaiTro(txtTaiKhoan.Text, mk);
+                if (vaitro.TenVaiTro == "Chủ trọ")
+                {
+                    matk = vaitro.MaTaiKhoan;
+                    TrangChu tc = new TrangChu(matk);
+                    tc.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    matk = vaitro.MaTaiKhoan;
+                    TrangChuKhach tc = new TrangChuKhach(matk);
+                    tc.Show();
+                    this.Hide();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác", "Thông Báo", MessageBoxButtons.OK);
+            }
+
+
+        }
+
+        private void iconButton1_Click_1(object sender, EventArgs e)
+        {
+            if (txtMatKhau.PasswordChar == '*')
+            {
+                btnChiTiet.BringToFront();
+                txtMatKhau.PasswordChar = '\0';
+            }
+        }
+
+        private void btnChiTiet_Click_1(object sender, EventArgs e)
+        {
+            if (txtMatKhau.PasswordChar == '\0')
+            {
+                iconButton1.BringToFront();
+                txtMatKhau.PasswordChar = '*';
+            }
         }
     }
 }
