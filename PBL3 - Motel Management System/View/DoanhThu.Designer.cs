@@ -39,6 +39,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.ChartCot = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.ChartDuong = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dgvDoanhThu = new System.Windows.Forms.DataGridView();
@@ -49,7 +50,6 @@
             this.DaThanhToan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnTim = new FontAwesome.Sharp.IconButton();
             this.dtpThang = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ChartCot)).BeginInit();
@@ -97,6 +97,17 @@
             this.panel2.TabIndex = 42;
             this.panel2.SizeChanged += new System.EventHandler(this.panel2_SizeChanged);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Tháng",
+            "Năm"});
+            this.comboBox1.Location = new System.Drawing.Point(269, 34);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 40;
+            // 
             // ChartCot
             // 
             chartArea1.Name = "ChartArea1";
@@ -124,6 +135,7 @@
             this.ChartDuong.Name = "ChartDuong";
             series2.BorderWidth = 3;
             series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
             series2.Color = System.Drawing.Color.DarkGreen;
             series2.Legend = "Legend1";
             series2.Name = "Tổng tiền";
@@ -230,17 +242,6 @@
             this.dtpThang.Name = "dtpThang";
             this.dtpThang.Size = new System.Drawing.Size(124, 22);
             this.dtpThang.TabIndex = 0;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Tháng",
-            "Năm"});
-            this.comboBox1.Location = new System.Drawing.Point(269, 34);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 40;
             // 
             // DoanhThu
             // 
