@@ -57,18 +57,15 @@ namespace PBL3___Motel_Management_System.View
             {
                 if (idPhong != null)
                 {
-                    DAL.TaiKhoan tk = new DAL.TaiKhoan();
-                    DAL.TaiKhoan taikhoancu = QLBLL.Instance.GetTaiKhoanByIdPhong(idPhong);
-                    tk.MaTaiKhoan = taikhoancu.MaTaiKhoan;
-                    tk.TenTaiKhoan = taikhoancu.TenTaiKhoan;
-                    tk.MatKhau = txtMKmoi.Text;
-                    tk.TonTai = true;
-                    if(taikhoancu.MatKhau!= txtMKcu.Text)
+                    DAL.TaiKhoan tk = QLBLL.Instance.GetTaiKhoanByIdPhong(idPhong);
+                    string mkcu = QLBLL.Instance.MaHoaMatKhau(txtMKcu.Text);
+                    if(tk.MatKhau!= mkcu)
                     {
                         MessageBox.Show("Nhập mật khẩu không đúng, vui lòng nhập lại");
                     }
                     else
                     {
+                        tk.MatKhau = QLBLL.Instance.MaHoaMatKhau(txtXacthucMK.Text);
                         QLBLL.Instance.UpdateTaiKhoanPhong(tk);
                         MessageBox.Show("Thay đổi mật khẩu phòng thành công");
                         this.Close();
@@ -77,18 +74,15 @@ namespace PBL3___Motel_Management_System.View
                 }
                 else
                 {
-                    DAL.TaiKhoan tk = new DAL.TaiKhoan();
-                    DAL.TaiKhoan taikhoancu = QLBLL.Instance.GetTaiKhoanByIdTaiKhoan(idTk);
-                    tk.MaTaiKhoan = taikhoancu.MaTaiKhoan;
-                    tk.TenTaiKhoan = taikhoancu.TenTaiKhoan;
-                    tk.MatKhau = txtMKmoi.Text;
-                    tk.TonTai = true;
-                    if (taikhoancu.MatKhau != txtMKcu.Text)
+                    DAL.TaiKhoan tk = QLBLL.Instance.GetTaiKhoanByIdTaiKhoan(idTk);
+                    string mkcu = QLBLL.Instance.MaHoaMatKhau(txtMKcu.Text);
+                    if (tk.MatKhau != mkcu)
                     {
                         MessageBox.Show("Nhập mật khẩu không đúng, vui lòng nhập lại");
                     }
                     else
                     {
+                        tk.MatKhau = QLBLL.Instance.MaHoaMatKhau(txtXacthucMK.Text);
                         QLBLL.Instance.UpdateTaiKhoanChutro(tk);
                         MessageBox.Show("Thay đổi mật khẩu tài khoản thành công");
                         this.Close();

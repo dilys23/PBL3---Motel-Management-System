@@ -182,8 +182,12 @@ namespace PBL3___Motel_Management_System
                 }
               else
                   {
-                double tongTien = Convert.ToDouble(dgvHoaDon.CurrentRow.Cells[6].Value.ToString());
-                double daThanhToan = Convert.ToDouble(dgvHoaDon.CurrentRow.Cells[8].Value.ToString());
+                decimal tongTien;
+                decimal daThanhToan;
+                bool flag = decimal.TryParse(dgvHoaDon.CurrentRow.Cells[6].Value.ToString(), NumberStyles.Currency, CultureInfo.CurrentCulture.NumberFormat, out tongTien);
+                flag = decimal.TryParse(dgvHoaDon.CurrentRow.Cells[8].Value.ToString(), NumberStyles.Currency, CultureInfo.CurrentCulture.NumberFormat, out daThanhToan);
+                // double tongTien = Convert.ToDouble(dgvHoaDon.CurrentRow.Cells[6].Value.ToString());
+                //double daThanhToan = Convert.ToDouble(dgvHoaDon.CurrentRow.Cells[8].Value.ToString());
 
                 if (daThanhToan >= tongTien)
                 {
