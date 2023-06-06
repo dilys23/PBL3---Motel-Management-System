@@ -44,7 +44,7 @@ namespace PBL3___Motel_Management_System
                     ChiTietThanhToanHoaDon cttt = QLBLL.Instance.GetChiTietThanhToanHoaDonById(idLs);
                     double tienThanhToan = cttt.TienThanhToan;
                     CultureInfo vietnamCulture = new CultureInfo("vi-VN");
-                    dgvLichSu.Rows.Add(cttt.MaHoaDon, cttt.MaChiTietThanhToanHoaDon, ++i, cttt.NgayThanhToan, cttt.TienThanhToan.ToString("C0", vietnamCulture), conNoMoi );
+                    dgvLichSu.Rows.Add(cttt.MaHoaDon, cttt.MaChiTietThanhToanHoaDon, ++i, cttt.NgayThanhToan, cttt.TienThanhToan.ToString("C0", vietnamCulture), conNoMoi.ToString("C0", vietnamCulture));
                     conNoMoi -= tienThanhToan;
 
                 }    
