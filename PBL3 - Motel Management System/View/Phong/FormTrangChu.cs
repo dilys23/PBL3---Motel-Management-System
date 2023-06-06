@@ -141,8 +141,19 @@ namespace PBL3___Motel_Management_System.View
             int dgvSoLuongX = dgvWidth + 15;
             int dgvSoLuongY = dgvHeight + 5;
 
-            TinhTrang.Size = new Size(chartWidth, chartHeight);
+            int chartWidth1 = (int)(panelWidth * 0.48);
+            int chartHeight1 = (int)(panelHeight * 0.48);
+            int chartX1 = 1;
+            int chartY1 = panelHeight - chartHeight1;
+
+            ChartCot.Size = new Size(chartWidth1, chartHeight1);
+            ChartCot.Location = new Point(chartX1, chartY1);
+
+
+            TinhTrang.Size = new Size(Math.Max(0, chartWidth), Math.Max(0, chartHeight));
             TinhTrang.Location = new Point(chartX, chartY);
+            //ChartCot.Size = new Size(chartX, chartY);  
+            //ChartCot.Location = new Point(chartX, chartY);
 
             dgvTinhTrang.Size = new Size(dgvTinhTrangWidth, dgvTinhTrangHeight);
             dgvTinhTrang.Location = new Point(dgvTinhTrangX, dgvTinhTrangY);
@@ -169,6 +180,11 @@ namespace PBL3___Motel_Management_System.View
             int nam = date.Year;
             LoadForm1(thang);
             ThongKe(thang);
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
