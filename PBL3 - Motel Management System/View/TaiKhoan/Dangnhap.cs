@@ -27,6 +27,11 @@ namespace PBL3___Motel_Management_System
             SetTextBox(txtMatKhau);
             SetTextBox(txtTaiKhoan);
             SetButton(btnDangNhap);
+            //foreach (DAL.TaiKhoan tk in QLBLL.Instance.GetAllTaiKhoan())
+            //{
+            //    tk.MatKhau = QLBLL.Instance.GiaiMaMatKhau(tk.MatKhau);
+            //    QLBLL.Instance.UpdateTaiKhoanPhong(tk);
+            //}
 
         }
         private int borderSize = 2;
@@ -80,19 +85,19 @@ namespace PBL3___Motel_Management_System
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string mk = QLBLL.Instance.MaHoaMatKhau(txtMatKhau.Text);
-            if(QLBLL.Instance.GetIdTk(txtTaiKhoan.Text, mk) != null)
+            if (QLBLL.Instance.GetIdTk(txtTaiKhoan.Text, mk) != null)
             {
                 VaiTro vaitro = QLBLL.Instance.CheckVaiTro(txtTaiKhoan.Text, mk);
-                if(vaitro.TenVaiTro=="Chủ trọ" )
+                if (vaitro.TenVaiTro == "Chủ trọ")
                 {
-                     matk = vaitro.MaTaiKhoan;
+                    matk = vaitro.MaTaiKhoan;
                     TrangChu tc = new TrangChu(matk);
                     tc.Show();
                     this.Hide();
                 }
                 else
                 {
-                     matk = vaitro.MaTaiKhoan;
+                    matk = vaitro.MaTaiKhoan;
                     TrangChuKhach tc = new TrangChuKhach(matk);
                     tc.Show();
                     this.Hide();
@@ -103,7 +108,7 @@ namespace PBL3___Motel_Management_System
                 MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác", "Thông Báo", MessageBoxButtons.OK);
             }
 
-            
+
         }
 
         private void iconButton1_Click(object sender, EventArgs e)

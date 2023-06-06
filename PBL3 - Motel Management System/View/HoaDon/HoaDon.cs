@@ -182,13 +182,9 @@ namespace PBL3___Motel_Management_System
                 }
               else
                   {
-                decimal tongTien;
-                decimal daThanhToan;
-                bool flag = decimal.TryParse(dgvHoaDon.CurrentRow.Cells[6].Value.ToString(), NumberStyles.Currency, CultureInfo.CurrentCulture.NumberFormat, out tongTien);
-                flag = decimal.TryParse(dgvHoaDon.CurrentRow.Cells[8].Value.ToString(), NumberStyles.Currency, CultureInfo.CurrentCulture.NumberFormat, out daThanhToan);
-                // double tongTien = Convert.ToDouble(dgvHoaDon.CurrentRow.Cells[6].Value.ToString());
-                //double daThanhToan = Convert.ToDouble(dgvHoaDon.CurrentRow.Cells[8].Value.ToString());
-
+                CultureInfo vietnamCulture = new CultureInfo("vi-VN");
+                double tongTien = (Convert.ToDouble(dgvHoaDon.CurrentRow.Cells[6].Value.ToString().Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
+                double daThanhToan = (Convert.ToDouble(dgvHoaDon.CurrentRow.Cells[8].Value.ToString().Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
                 if (daThanhToan >= tongTien)
                 {
                     MessageBox.Show("Đã thanh toán đủ tiền cho hóa đơn này", "Thông báo");

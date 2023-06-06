@@ -156,6 +156,10 @@ namespace PBL3___Motel_Management_System.View
                 {
                     QLBLL.Instance.DelNguoiBll(nguoi.MaNguoi);
                 }
+                foreach(string hoadon in QLBLL.Instance.GetHoaDonByIdPhong(IdPhong))
+                {
+                    QLBLL.Instance.DelHoaDonBll(hoadon);
+                }
                 MessageBox.Show("Hoàn trả phòng thành công", "Thông báo");
                 this.Close();
                 LoadForm(null);
