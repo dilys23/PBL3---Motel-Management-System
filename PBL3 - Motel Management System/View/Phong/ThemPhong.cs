@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,9 +38,10 @@ namespace PBL3___Motel_Management_System
             PhongTro phongTro = QLBLL.Instance.GetPhongTroByIdPhong(IdPhong);
             if (IdPhong != null)
             {
+                CultureInfo vietnamCulture = new CultureInfo("vi-VN");
                 txtTenPhong.Text = phongTro.TenPhongTro.ToString();
                 txtDienTich.Text = phongTro.DienTich.ToString();
-                txtGiaTien.Text = phongTro.GiaTien.ToString();
+                txtGiaTien.Text = phongTro.GiaTien.ToString("C0", vietnamCulture);
                 txtToiDa.Text = phongTro.ToiDa.ToString();
                 if (phongTro.HinhAnh != null)
                 {

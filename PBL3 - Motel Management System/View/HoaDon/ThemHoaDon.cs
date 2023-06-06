@@ -55,7 +55,7 @@ namespace PBL3___Motel_Management_System.View
             cbbDayTro.Items.AddRange(QLBLL.Instance.GetCbbDayTro().ToArray());
             cbbDayTro.SelectedIndex = 0;
         }
-        
+        CultureInfo vietnamCulture = new CultureInfo("vi-VN");
         private void LoadDgv(string idPhong, string thang)
         {
             if(idPhong != null)
@@ -70,7 +70,7 @@ namespace PBL3___Motel_Management_System.View
                 dtpThangThanhToan.MinDate = dtStart;
                 dtpThangThanhToan.MaxDate = dtEnd;
                 PhongTro pt = QLBLL.Instance.GetPhongTroByIdPhong(idPhong);
-                CultureInfo vietnamCulture = new CultureInfo("vi-VN");
+                
                 txtTienPhong.Text = pt.GiaTien.ToString("C0", vietnamCulture);
                 int i = 0;
                 bool status = false;
@@ -182,7 +182,7 @@ namespace PBL3___Motel_Management_System.View
                     }
                 }
             }
-            txtTienDichVu.Text = TienDichVu.ToString();    
+            txtTienDichVu.Text = TienDichVu.ToString("C0", vietnamCulture);    
         }
         private void btnBoChon_Click(object sender, EventArgs e)
         {
@@ -209,9 +209,9 @@ namespace PBL3___Motel_Management_System.View
             {
                 if(cbbPhongTro.SelectedItem != null)
                 {
-
-                    double tienPhong = Convert.ToDouble(txtTienPhong.Text);
-                    double tienDv = Convert.ToDouble(txtTienDichVu.Text);
+                    CultureInfo vietnamCulture = new CultureInfo("vi-VN");
+                    double tienPhong = Convert.ToDouble(txtTienPhong.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", ""));
+                    double tienDv = Convert.ToDouble(txtTienDichVu.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", ""));
                     double giamGia = Convert.ToDouble(txtGiamGia.Text);
                     double tienGiamGia = tienPhong*giamGia/100;
                     double conLai = tienPhong - tienGiamGia;

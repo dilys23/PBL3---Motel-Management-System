@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,7 @@ namespace PBL3___Motel_Management_System.View
             this.loader = loader;
             LoadForm();
         }
+        CultureInfo vietnamCulture = new CultureInfo("vi-VN");
         public void LoadForm()
         {
             DayTro dt = new DayTro();
@@ -36,7 +38,7 @@ namespace PBL3___Motel_Management_System.View
             txtTenPhong.Text = phongTro.TenPhongTro;
             string diachi = dt.TenDuong + " " + dt.TenHuyen + " " + dt.TenThanhPho;
             txtDiaChi.Text = diachi;
-            txtGiaPhong.Text = phongTro.GiaTien.ToString();
+            txtGiaPhong.Text = phongTro.GiaTien.ToString("C0", vietnamCulture);
             txtSonguoitoida.Text = phongTro.ToiDa.ToString();
             Nguoi nguoi = new Nguoi();
             HopDong hd = new HopDong();

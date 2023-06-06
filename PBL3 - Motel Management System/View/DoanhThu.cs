@@ -25,6 +25,7 @@ namespace PBL3___Motel_Management_System
             LoadForm(dtpThang.Value.ToString("MM-yyyy"));
             //ResizeColumn();
         }
+        CultureInfo vietnamCulture = new CultureInfo("vi-VN");
         public void LoadForm(string thang)
         {
             dgvDoanhThu.Rows.Clear();
@@ -39,7 +40,7 @@ namespace PBL3___Motel_Management_System
                         PhongTro pt = QLBLL.Instance.GetPhongTroByMaHoaDon(hoadon.MaHoaDon);
                         DayTro dt = QLBLL.Instance.GetDayTroByIdPhong(pt.MaPhongTro);
                         if (hoadon.DaThanhToan != 0)
-                        { dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hoadon.DaThanhToan); }
+                        { dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hoadon.DaThanhToan.ToString("C0", vietnamCulture)); }
                     }
 
                 }
@@ -54,7 +55,7 @@ namespace PBL3___Motel_Management_System
                         PhongTro pt = QLBLL.Instance.GetPhongTroByMaHoaDon(hoadon.MaHoaDon);
                         DayTro dt = QLBLL.Instance.GetDayTroByIdPhong(pt.MaPhongTro);
                         if (hoadon.DaThanhToan != 0)
-                        { dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hoadon.DaThanhToan); }
+                        { dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hoadon.DaThanhToan.ToString("C0", vietnamCulture)); }
                     }
                 }
             }

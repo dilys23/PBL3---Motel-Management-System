@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,7 @@ namespace PBL3___Motel_Management_System
 
 
         }
+        CultureInfo vietnamCulture = new CultureInfo("vi-VN");
         private void LoadForm(string txtTim)
         {
             dgvHD.Rows.Clear();
@@ -34,7 +36,7 @@ namespace PBL3___Motel_Management_System
             {
             foreach (DgvHopDong hd in QLBLL.Instance.DgvHopDong())
             {
-                dgvHD.Rows.Add(hd.MaHopDong, hd.Stt, hd.TenKhachHang, hd.TenPhongTro, hd.TenDayTro, hd.NgayBatDau, hd.NgayKetThuc, hd.TienCoc);
+                dgvHD.Rows.Add(hd.MaHopDong, hd.Stt, hd.TenKhachHang, hd.TenPhongTro, hd.TenDayTro, hd.NgayBatDau, hd.NgayKetThuc, hd.TienCoc.ToString("C0", vietnamCulture));
 
             }
             }
@@ -44,7 +46,7 @@ namespace PBL3___Motel_Management_System
                 string idPhong = ((ViewCbb)(cbbPhongTro.SelectedItem)).key;
                 foreach(DgvHopDong hd in QLBLL.Instance.GetAllHopDongTimKiem(idDay,idPhong))
                 {
-                    dgvHD.Rows.Add(hd.MaHopDong, hd.Stt, hd.TenKhachHang, hd.TenPhongTro, hd.TenDayTro, hd.NgayBatDau, hd.NgayKetThuc, hd.TienCoc);
+                    dgvHD.Rows.Add(hd.MaHopDong, hd.Stt, hd.TenKhachHang, hd.TenPhongTro, hd.TenDayTro, hd.NgayBatDau, hd.NgayKetThuc, hd.TienCoc.ToString("C0", vietnamCulture));
                 }
             }
             var Sua = System.Drawing.Image.FromFile(@"D:\PBL\PBL3_MAIN\PBL3 - Motel Management System\Icons\icons8-more-details-20.png");

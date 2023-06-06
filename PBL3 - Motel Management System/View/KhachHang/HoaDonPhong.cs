@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +32,7 @@ namespace PBL3___Motel_Management_System.View.KhachHang
         {
             dgvHoaDon.Rows.Clear();
             QLBLL.Instance.customDGV(dgvHoaDon);
+            CultureInfo vietnamCulture = new CultureInfo("vi-VN");
             if (txt == null)
             {
                 int i = 0;
@@ -38,7 +40,7 @@ namespace PBL3___Motel_Management_System.View.KhachHang
                 {
                     if (hd.MaPhongTro == idPhong && hd.TinhTrang == true)
                     {
-                        dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, hd.NgayTao, hd.ThangChiTra, hd.TongTien, hd.DaThanhToan, hd.TongTien - hd.DaThanhToan);
+                        dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, hd.NgayTao, hd.ThangChiTra, hd.TongTien.ToString("C0", vietnamCulture), hd.DaThanhToan.ToString("C0", vietnamCulture), (hd.TongTien - hd.DaThanhToan).ToString("C0", vietnamCulture));
                     }
 
                 }
@@ -52,7 +54,7 @@ namespace PBL3___Motel_Management_System.View.KhachHang
                 {
                     PhongTro pt = QLBLL.Instance.GetPhongTroByIdPhong(hd.MaPhongTro);
                     DayTro dt = QLBLL.Instance.GetDayTroByIdPhong(hd.MaPhongTro);
-                    dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, hd.NgayTao, hd.ThangChiTra, hd.TongTien, hd.DaThanhToan, hd.TongTien - hd.DaThanhToan);
+                    dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, hd.NgayTao, hd.ThangChiTra, hd.TongTien.ToString("C0", vietnamCulture), hd.DaThanhToan.ToString("C0", vietnamCulture), (hd.TongTien - hd.DaThanhToan).ToString("C0", vietnamCulture));
                 }
             }
             }
