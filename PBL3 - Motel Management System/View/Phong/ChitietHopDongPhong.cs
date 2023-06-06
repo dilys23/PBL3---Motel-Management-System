@@ -19,6 +19,7 @@ namespace PBL3___Motel_Management_System.View
     {
         private ThuePhong tp;
         private Loader loader;
+        CultureInfo vietnamCulture = new CultureInfo("vi-VN");
         public ChitietHopDongPhong(ThuePhong tp,Loader loader)
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace PBL3___Motel_Management_System.View
             this.loader = loader;
             LoadForm();
         }
-        CultureInfo vietnamCulture = new CultureInfo("vi-VN");
+      
         public void LoadForm()
         {
             DayTro dt = new DayTro();
@@ -38,7 +39,7 @@ namespace PBL3___Motel_Management_System.View
             txtTenPhong.Text = phongTro.TenPhongTro;
             string diachi = dt.TenDuong + " " + dt.TenHuyen + " " + dt.TenThanhPho;
             txtDiaChi.Text = diachi;
-            txtGiaPhong.Text = phongTro.GiaTien.ToString("C0", vietnamCulture);
+            txtGiaPhong.Text = phongTro.GiaTien.ToString("#,##0") + "₫";
             txtSonguoitoida.Text = phongTro.ToiDa.ToString();
             Nguoi nguoi = new Nguoi();
             HopDong hd = new HopDong();
@@ -50,7 +51,7 @@ namespace PBL3___Motel_Management_System.View
                     nguoi = QLBLL.Instance.GetNguoiByMaHopDong(hd.MaHopDong);
                     txtHoVaTen.Text = nguoi.Ten;
                     txtSdt.Text = nguoi.Sdt;
-                    txtTienCoc.Text = hd.TienCoc.ToString();
+                    txtTienCoc.Text = hd.TienCoc.ToString("#,##0") + "₫";
                     txtCccd.Text = nguoi.Cccd;
                     DateTime ngaysinh = DateTime.ParseExact(nguoi.NgaySinh, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
                     DateTime batdau = DateTime.ParseExact(hd.NgayBatDau, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);

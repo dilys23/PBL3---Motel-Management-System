@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace PBL3___Motel_Management_System
     {
         private string IdDv;
         private Loader Loader;
+        CultureInfo vietnamCulture = new CultureInfo("vi-VN");
         public SuaDichVu(string idDv,Loader loader)
         {
             InitializeComponent();
@@ -29,7 +31,7 @@ namespace PBL3___Motel_Management_System
                 {
                     txtTenDichVu.ReadOnly = true;
                 }
-                txtGiaDichVu.Text = dv.GiaDichVu.ToString();
+                txtGiaDichVu.Text = dv.GiaDichVu.ToString("#,##0") + "₫"; 
                 txtTenDichVu.Text = dv.TenDichVu;
             }
 
@@ -78,7 +80,7 @@ namespace PBL3___Motel_Management_System
                     DichVu dv = QLBLL.Instance.GetDVByIdDV(IdDv);
                     dv.MaDichVu = IdDv;
                     dv.TenDichVu = txtTenDichVu.Text;
-                    dv.GiaDichVu = Convert.ToDouble(txtGiaDichVu.Text);
+                    dv.GiaDichVu = (Convert.ToDouble(txtGiaDichVu.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
                     dv.TonTai = true; 
                     QLBLL.Instance.SuaDVBll(dv);
                     MessageBox.Show("Thay đổi thông tin thành công", "Thông báo");
@@ -93,7 +95,7 @@ namespace PBL3___Motel_Management_System
                 {
                     DichVu dv = new DichVu();
                     dv.TenDichVu = txtTenDichVu.Text;
-                    dv.GiaDichVu = Convert.ToDouble(txtGiaDichVu.Text);
+                    dv.GiaDichVu = (Convert.ToDouble(txtGiaDichVu.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", ""))); 
                     dv.MaDichVu = QLBLL.Instance.TaoIdDichVu();
                     dv.TonTai = true;
                     QLBLL.Instance.ThemDVBll(dv);

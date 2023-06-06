@@ -30,7 +30,7 @@ namespace PBL3___Motel_Management_System.View
 
             // Định dạng số tiền theo tiền tệ VND
             CultureInfo vietnamCulture = new CultureInfo("vi-VN");
-            txtTongTien.Text = hd.TongTien.ToString("C0", vietnamCulture);
+            txtTongTien.Text = hd.TongTien.ToString("#,##0") + "₫";
             txtConNo.Text = (Convert.ToDouble(txtTongTien.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")) - hd.DaThanhToan).ToString("C0", vietnamCulture);
 
 
@@ -84,7 +84,7 @@ namespace PBL3___Motel_Management_System.View
                    
                     double conNoMoi1 = (Convert.ToDouble(txtTongTien.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")) - hd.DaThanhToan);
                     // Cập nhật giá trị cho txtConNo
-                    txtConNo.Text = conNoMoi1.ToString("C", CultureInfo.CurrentCulture);
+                    txtConNo.Text = conNoMoi1.ToString("#,##0") + "₫";
 
                     QLBLL.Instance.AddChiTietThanhToanHoaDonBll(ct);
 

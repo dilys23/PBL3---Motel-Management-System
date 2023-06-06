@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -19,6 +20,7 @@ namespace PBL3___Motel_Management_System.View
     {
         private ThuePhong tp;
         private Loader loader;
+        CultureInfo vietnamCulture = new CultureInfo("vi-VN");
         public ThemDVphong(ThuePhong tp, Loader loader)
         {
             InitializeComponent();
@@ -43,7 +45,7 @@ namespace PBL3___Motel_Management_System.View
                 {
                     if(dv.MaDichVu != "000" && dv.MaDichVu != "001")
                     {
-                        dgvThemDichVu.Rows.Add(dv.MaDichVu, 1, dv.TenDichVu, dv.GiaDichVu);
+                        dgvThemDichVu.Rows.Add(dv.MaDichVu, 1, dv.TenDichVu, dv.GiaDichVu.ToString("#,##0") + "₫");
                     }
                     else
                     {
@@ -60,16 +62,16 @@ namespace PBL3___Motel_Management_System.View
                     {
                         if(ListId.Contains(dv.MaDichVu))
                         {
-                            dgvXoaDichVu.Rows.Add(dv.MaDichVu, 1, dv.TenDichVu, dv.GiaDichVu);
+                            dgvXoaDichVu.Rows.Add(dv.MaDichVu, 1, dv.TenDichVu, dv.GiaDichVu.ToString("#,##0") + "₫");
                         }
                         else
                         {
-                            dgvThemDichVu.Rows.Add(dv.MaDichVu, 1, dv.TenDichVu, dv.GiaDichVu);
+                            dgvThemDichVu.Rows.Add(dv.MaDichVu, 1, dv.TenDichVu, dv.GiaDichVu.ToString("#,##0") + "₫");
                         }
                     }
                     else
                     {
-                        dgvDVcodinh.Rows.Add(dv.MaDichVu, 1, dv.TenDichVu, dv.GiaDichVu);
+                        dgvDVcodinh.Rows.Add(dv.MaDichVu, 1, dv.TenDichVu, dv.GiaDichVu.ToString("#,##0") + "₫");
                     }
                 }
             }
@@ -144,7 +146,7 @@ namespace PBL3___Motel_Management_System.View
                 {
                     v.MaDichVu = row.Cells[0].Value.ToString();
                     v.TenDichVu = row.Cells[2].Value.ToString();
-                    v.GiaDichVu = Convert.ToDouble(row.Cells[3].Value.ToString());
+                    v.GiaDichVu = (Convert.ToDouble(row.Cells[3].Value.ToString().Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", ""))); 
                     dgvThemDichVu.Rows.RemoveAt(dgvThemDichVu.CurrentRow.Index);
                     dgvXoaDichVu.Rows.Add(v.MaDichVu, 0, v.TenDichVu, v.GiaDichVu);
                     for (int i = 0; i<dgvXoaDichVu.Rows.Count; i++)
@@ -175,7 +177,7 @@ namespace PBL3___Motel_Management_System.View
                 {
                     v.MaDichVu = row.Cells[0].Value.ToString();
                     v.TenDichVu = row.Cells[2].Value.ToString();
-                    v.GiaDichVu = Convert.ToDouble(row.Cells[3].Value.ToString());
+                    v.GiaDichVu = (Convert.ToDouble(row.Cells[3].Value.ToString().Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
                     dgvXoaDichVu.Rows.RemoveAt(dgvXoaDichVu.CurrentRow.Index);
                     dgvThemDichVu.Rows.Add(v.MaDichVu, 0, v.TenDichVu, v.GiaDichVu);
                     for (int i = 0; i<dgvXoaDichVu.Rows.Count; i++)

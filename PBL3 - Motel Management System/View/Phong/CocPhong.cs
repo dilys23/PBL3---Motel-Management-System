@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Entity.ModelConfiguration.Configuration;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
@@ -19,6 +20,7 @@ namespace PBL3___Motel_Management_System.View
     {
         private Loader loader;
         private ThuePhong tp;
+        CultureInfo vietnamCulture = new CultureInfo("vi-VN");
         public CocPhong(ThuePhong tp,Loader loader)
         {
             InitializeComponent();
@@ -42,7 +44,7 @@ namespace PBL3___Motel_Management_System.View
                     txtTen.Enabled = false;
                     txtSdt.Text = nguoi.Sdt;
                     txtSdt.Enabled  = false;
-                    txtTienCoc.Text = hd.TienCoc.ToString();
+                    txtTienCoc.Text = hd.TienCoc.ToString("#,##0") + "₫";
                     txtTienCoc.Enabled = false;
                     txtCccd.Text = nguoi.Cccd;
                     txtCccd.Enabled = false;
@@ -126,7 +128,7 @@ namespace PBL3___Motel_Management_System.View
                     MaPhongTro = tp.hopDong.MaPhongTro,
                     NgayBatDau = dtpNgayCoc.Value.ToString("yyyy-MM-dd"),
                     NgayKetThuc = dtpNgayNhanPhong.Value.ToString("yyyy-MM-dd"),
-                    TienCoc = Convert.ToDouble(txtTienCoc.Text),
+                    TienCoc = (Convert.ToDouble(txtTienCoc.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", ""))),
                     TinhTrang = false,
                     TonTai = true
 

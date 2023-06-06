@@ -38,7 +38,7 @@ namespace PBL3___Motel_Management_System
                 DayTro dt = QLBLL.Instance.GetDayTroByIdPhong(hd.MaPhongTro);
                 string TinhTrang = (hd.TinhTrang) ? "Xác thực" : "Chưa xác thực";
                     CultureInfo vietnamCulture = new CultureInfo("vi-VN");
-                    dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hd.NgayTao, hd.ThangChiTra, hd.TongTien.ToString("C0", vietnamCulture), TinhTrang, hd.DaThanhToan.ToString("C0", vietnamCulture), (hd.TongTien - hd.DaThanhToan).ToString("C0", vietnamCulture));
+                    dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hd.NgayTao, hd.ThangChiTra, hd.TongTien.ToString("#,##0") + "₫", TinhTrang, hd.DaThanhToan.ToString("#,##0") + "₫", (hd.TongTien - hd.DaThanhToan).ToString("#,##0") + "₫");
             }
             }
             else
@@ -53,7 +53,7 @@ namespace PBL3___Motel_Management_System
                     PhongTro pt = QLBLL.Instance.GetPhongTroByIdPhong(hd.MaPhongTro);
                     DayTro dt = QLBLL.Instance.GetDayTroByIdPhong(hd.MaPhongTro);
                     string TinhTrang = (hd.TinhTrang) ? "Xác thực" : "Chưa xác thực";
-                    dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hd.NgayTao, hd.ThangChiTra, hd.TongTien, TinhTrang, hd.DaThanhToan, hd.TongTien - hd.DaThanhToan);
+                    dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hd.NgayTao, hd.ThangChiTra, hd.TongTien.ToString("#,##0") + "₫", TinhTrang, hd.DaThanhToan.ToString("#,##0") + "₫", (hd.TongTien - hd.DaThanhToan).ToString("#,##0") + "₫");
                 }
             }
             var Sua = System.Drawing.Image.FromFile(@"D:\PBL\PBL3_MAIN\PBL3 - Motel Management System\Icons\icons8-create-25.png");

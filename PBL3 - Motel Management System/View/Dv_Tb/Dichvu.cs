@@ -24,13 +24,14 @@ namespace PBL3___Motel_Management_System
     {
         private int borderSize = 2;
         private Size formSize;
+        CultureInfo vietnamCulture = new CultureInfo("vi-VN");
         public Dichvu()
         {
             InitializeComponent();
             LoadForm(null);
-         
+   
         }
-        CultureInfo vietnamCulture = new CultureInfo("vi-VN");
+     
         private void LoadForm(string txtTim)
         {
             dgvDichVu.Rows.Clear();
@@ -38,7 +39,8 @@ namespace PBL3___Motel_Management_System
             int i = 0;
             foreach(DichVu viewDichVu in QLBLL.Instance.DgvDichVu(txtTim))
             {
-                dgvDichVu.Rows.Add(viewDichVu.MaDichVu,++i,viewDichVu.TenDichVu,viewDichVu.GiaDichVu.ToString("C0", vietnamCulture));
+
+                dgvDichVu.Rows.Add(viewDichVu.MaDichVu,++i,viewDichVu.TenDichVu,viewDichVu.GiaDichVu.ToString("#,##0") + "₫");
             }
             var Sua = System.Drawing.Image.FromFile(@"D:\PBL\PBL3_MAIN\PBL3 - Motel Management System\Icons\icons8-create-25.png");
             var Xoa = System.Drawing.Image.FromFile(@"D:\PBL\PBL3_MAIN\PBL3 - Motel Management System\Icons\icons8-delete-25.png");

@@ -37,6 +37,7 @@ namespace PBL3___Motel_Management_System.BLL
         {
 
         }
+        
         public DAL.TaiKhoan GetIdTk(string taikhoan, string matkhau)
         {  
             return QLDAL.Instance.GetIdTkDal(taikhoan,matkhau);//ok
@@ -1622,7 +1623,7 @@ namespace PBL3___Motel_Management_System.BLL
         {
             Panel pn = new Panel();
             pn.Size = new Size(p.Width, p.Height);
-            pn.BackColor =Color.AliceBlue ;
+            pn.BackColor = Color.FromArgb(226, 247, 249);
             pn.Anchor = (AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom);
             Label lb = new Label();
             lb.Text = a;
@@ -1630,7 +1631,7 @@ namespace PBL3___Motel_Management_System.BLL
             lb.Font = new Font("arial", 12, FontStyle.Regular);
             lb.ForeColor = Color.Red;
             lb.TextAlign = ContentAlignment.TopLeft;
-            lb.Location = new Point((pn.Width - lb.Width) / 2, (pn.Height - lb.Height) / 2);
+            lb.Location = new Point((pn.Width - lb.Width) / 3, (pn.Height - lb.Height) / 2);
             pn.Controls.Add(lb);
             p.Controls.Add(pn);
 

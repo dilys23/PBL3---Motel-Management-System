@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemPhong));
             this.label6 = new System.Windows.Forms.Label();
             this.btnLuu = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
@@ -70,7 +71,7 @@
             this.btnLuu.IconColor = System.Drawing.Color.White;
             this.btnLuu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLuu.IconSize = 30;
-            this.btnLuu.Location = new System.Drawing.Point(1083, 31);
+            this.btnLuu.Location = new System.Drawing.Point(1142, 31);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(45, 45);
             this.btnLuu.TabIndex = 45;
@@ -85,7 +86,7 @@
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 30;
-            this.iconButton1.Location = new System.Drawing.Point(1031, 31);
+            this.iconButton1.Location = new System.Drawing.Point(1090, 31);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(45, 45);
             this.iconButton1.TabIndex = 44;
@@ -149,7 +150,7 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(19, 80);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1109, 287);
+            this.panel2.Size = new System.Drawing.Size(1168, 287);
             this.panel2.TabIndex = 46;
             // 
             // btnThemAnh
@@ -169,6 +170,7 @@
             // pictutePhong
             // 
             this.pictutePhong.BackColor = System.Drawing.Color.White;
+            this.pictutePhong.Image = ((System.Drawing.Image)(resources.GetObject("pictutePhong.Image")));
             this.pictutePhong.Location = new System.Drawing.Point(42, 33);
             this.pictutePhong.Name = "pictutePhong";
             this.pictutePhong.Size = new System.Drawing.Size(176, 185);
@@ -229,7 +231,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(1145, 438);
+            this.ClientSize = new System.Drawing.Size(1204, 438);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.iconButton1);

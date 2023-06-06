@@ -21,6 +21,7 @@ namespace PBL3___Motel_Management_System
         private Loader loader;
         private string IdPhong;
         private string IdDay;
+        CultureInfo vietnamCulture = new CultureInfo("vi-VN");
         public ThemPhong(string IdDay,string IdPhong, Loader loader,_SuKien sukien)
         {
             InitializeComponent();
@@ -41,7 +42,7 @@ namespace PBL3___Motel_Management_System
                 CultureInfo vietnamCulture = new CultureInfo("vi-VN");
                 txtTenPhong.Text = phongTro.TenPhongTro.ToString();
                 txtDienTich.Text = phongTro.DienTich.ToString();
-                txtGiaTien.Text = phongTro.GiaTien.ToString("C0", vietnamCulture);
+                txtGiaTien.Text = phongTro.GiaTien.ToString("#,##0") + "₫";
                 txtToiDa.Text = phongTro.ToiDa.ToString();
                 if (phongTro.HinhAnh != null)
                 {
@@ -126,7 +127,7 @@ namespace PBL3___Motel_Management_System
                     pt.TenPhongTro = txtTenPhong.Text;
                     pt.TinhTrang = pt1.TinhTrang;
                     pt.DienTich = Convert.ToDouble(txtDienTich.Text);
-                    pt.GiaTien = Convert.ToDouble(txtGiaTien.Text);
+                    pt.GiaTien = (Convert.ToDouble(txtGiaTien.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
                     pt.ToiDa = Convert.ToInt32(txtToiDa.Text);
                     pt.TonTai = true;
                     if (pictutePhong.Image != null)

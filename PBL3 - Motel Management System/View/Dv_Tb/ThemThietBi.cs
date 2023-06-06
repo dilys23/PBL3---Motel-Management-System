@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace PBL3___Motel_Management_System.View
     {
         private string IdTb;
         private Loader Loader;
-        
+        CultureInfo vietnamCulture = new CultureInfo("vi-VN");
         public ThemThietBi(string IdTb, Loader loader)
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace PBL3___Motel_Management_System.View
             {
                 ThietBi tb = QLBLL.Instance.GetTBByIdTB(IdTb);
                 txtTenTB.Text = tb.TenThietBi;
-                txtGia.Text = tb.GiaThietBi.ToString();
+                txtGia.Text = tb.GiaThietBi.ToString("#,##0") + "₫"; 
             }
         }
         private Boolean checkHopLe()
@@ -70,7 +71,7 @@ namespace PBL3___Motel_Management_System.View
                     ThietBi tb = QLBLL.Instance.GetTBByIdTB(IdTb);
                     tb.MaThietBi = IdTb;
                     tb.TenThietBi = txtTenTB.Text;
-                    tb.GiaThietBi = Convert.ToDouble(txtGia.Text);
+                    tb.GiaThietBi = (Convert.ToDouble(txtGia.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
                     tb.TonTai = true;
                     QLBLL.Instance.SuaTBBll(tb);
                     MessageBox.Show("Thay đổi thông tin thành công", "Thông báo");
@@ -80,7 +81,7 @@ namespace PBL3___Motel_Management_System.View
                     ThietBi tb = new ThietBi();
                     tb.MaThietBi = QLBLL.Instance.TaoIdThietBi();
                     tb.TenThietBi = txtTenTB.Text;
-                    tb.GiaThietBi = Convert.ToDouble(txtGia.Text);        
+                    tb.GiaThietBi = (Convert.ToDouble(txtGia.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));        
                     tb.TonTai = true;
                     QLBLL.Instance.ThemTBBll(tb);
                     MessageBox.Show("Thêm dịch vụ thành công", "Thông báo");

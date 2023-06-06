@@ -30,7 +30,6 @@
         {
             this.panelThemHD = new System.Windows.Forms.Panel();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.label7 = new System.Windows.Forms.Label();
             this.btnLuu = new FontAwesome.Sharp.IconButton();
             this.panelThem = new System.Windows.Forms.Panel();
             this.txtTienCoc = new System.Windows.Forms.TextBox();
@@ -50,7 +49,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelThemHD.Controls.Add(this.iconButton2);
-            this.panelThemHD.Controls.Add(this.label7);
             this.panelThemHD.Controls.Add(this.btnLuu);
             this.panelThemHD.Controls.Add(this.panelThem);
             this.panelThemHD.Location = new System.Drawing.Point(-5, 0);
@@ -73,17 +71,6 @@
             this.iconButton2.TabIndex = 48;
             this.iconButton2.UseVisualStyleBackColor = false;
             this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Bahnschrift SemiBold", 13.8F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.Color.Chocolate;
-            this.label7.Location = new System.Drawing.Point(13, 29);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(190, 28);
-            this.label7.TabIndex = 47;
-            this.label7.Text = "THÊM HỢP ĐỒNG";
             // 
             // btnLuu
             // 
@@ -184,7 +171,6 @@
             this.Name = "ThemHopDong";
             this.Text = "ThemHD";
             this.panelThemHD.ResumeLayout(false);
-            this.panelThemHD.PerformLayout();
             this.panelThem.ResumeLayout(false);
             this.panelThem.PerformLayout();
             this.ResumeLayout(false);
@@ -195,7 +181,6 @@
 
         private System.Windows.Forms.Panel panelThemHD;
         private FontAwesome.Sharp.IconButton iconButton2;
-        private System.Windows.Forms.Label label7;
         private FontAwesome.Sharp.IconButton btnLuu;
         private System.Windows.Forms.Panel panelThem;
         private System.Windows.Forms.TextBox txtTienCoc;

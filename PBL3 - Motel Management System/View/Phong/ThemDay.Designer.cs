@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemDay));
             this.btnThemDay = new FontAwesome.Sharp.IconButton();
             this.label6 = new System.Windows.Forms.Label();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
@@ -189,6 +190,7 @@
             // pictureDayTro
             // 
             this.pictureDayTro.BackColor = System.Drawing.Color.White;
+            this.pictureDayTro.Image = ((System.Drawing.Image)(resources.GetObject("pictureDayTro.Image")));
             this.pictureDayTro.Location = new System.Drawing.Point(53, 18);
             this.pictureDayTro.Name = "pictureDayTro";
             this.pictureDayTro.Size = new System.Drawing.Size(176, 185);
