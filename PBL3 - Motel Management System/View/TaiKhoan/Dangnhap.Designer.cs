@@ -44,9 +44,11 @@
             this.create = new System.Windows.Forms.Label();
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelLogin
@@ -56,19 +58,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelLogin.BackColor = System.Drawing.Color.White;
+            this.panelLogin.Controls.Add(this.panel1);
             this.panelLogin.Controls.Add(this.btnMinimized);
             this.panelLogin.Controls.Add(this.btnExit);
             this.panelLogin.Controls.Add(this.btnMaximized);
-            this.panelLogin.Controls.Add(this.label3);
-            this.panelLogin.Controls.Add(this.pictureBox3);
-            this.panelLogin.Controls.Add(this.iconButton1);
-            this.panelLogin.Controls.Add(this.btnChiTiet);
-            this.panelLogin.Controls.Add(this.txtMatKhau);
-            this.panelLogin.Controls.Add(this.txtTaiKhoan);
-            this.panelLogin.Controls.Add(this.label1);
-            this.panelLogin.Controls.Add(this.label2);
-            this.panelLogin.Controls.Add(this.create);
-            this.panelLogin.Controls.Add(this.btnDangNhap);
             this.panelLogin.Controls.Add(this.pictureBox1);
             this.panelLogin.Location = new System.Drawing.Point(3, 1);
             this.panelLogin.Name = "panelLogin";
@@ -131,16 +124,17 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Teal;
-            this.label3.Location = new System.Drawing.Point(752, 228);
+            this.label3.Location = new System.Drawing.Point(124, 202);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(246, 32);
             this.label3.TabIndex = 44;
             this.label3.Text = "DREAM HOUSE";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(822, 69);
+            this.pictureBox3.Location = new System.Drawing.Point(167, 39);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(142, 135);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -155,10 +149,10 @@
             this.iconButton1.IconColor = System.Drawing.Color.DarkCyan;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 25;
-            this.iconButton1.Location = new System.Drawing.Point(1048, 452);
+            this.iconButton1.Location = new System.Drawing.Point(400, 391);
             this.iconButton1.Margin = new System.Windows.Forms.Padding(4);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(33, 23);
+            this.iconButton1.Size = new System.Drawing.Size(33, 32);
             this.iconButton1.TabIndex = 42;
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButton1.UseVisualStyleBackColor = false;
@@ -172,7 +166,7 @@
             this.btnChiTiet.IconColor = System.Drawing.Color.Teal;
             this.btnChiTiet.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnChiTiet.IconSize = 25;
-            this.btnChiTiet.Location = new System.Drawing.Point(1048, 442);
+            this.btnChiTiet.Location = new System.Drawing.Point(400, 391);
             this.btnChiTiet.Margin = new System.Windows.Forms.Padding(4);
             this.btnChiTiet.Name = "btnChiTiet";
             this.btnChiTiet.Size = new System.Drawing.Size(33, 23);
@@ -185,21 +179,21 @@
             // 
             this.txtMatKhau.BackColor = System.Drawing.Color.PaleTurquoise;
             this.txtMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatKhau.Location = new System.Drawing.Point(758, 442);
+            this.txtMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMatKhau.Location = new System.Drawing.Point(130, 391);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.PasswordChar = '*';
-            this.txtMatKhau.Size = new System.Drawing.Size(254, 46);
+            this.txtMatKhau.Size = new System.Drawing.Size(254, 34);
             this.txtMatKhau.TabIndex = 19;
             // 
             // txtTaiKhoan
             // 
             this.txtTaiKhoan.BackColor = System.Drawing.Color.PaleTurquoise;
             this.txtTaiKhoan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTaiKhoan.Location = new System.Drawing.Point(758, 358);
+            this.txtTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTaiKhoan.Location = new System.Drawing.Point(130, 316);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
-            this.txtTaiKhoan.Size = new System.Drawing.Size(254, 46);
+            this.txtTaiKhoan.Size = new System.Drawing.Size(254, 34);
             this.txtTaiKhoan.TabIndex = 18;
             // 
             // label1
@@ -212,7 +206,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label1.Location = new System.Drawing.Point(652, 432);
+            this.label1.Location = new System.Drawing.Point(24, 390);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 20);
             this.label1.TabIndex = 17;
@@ -224,7 +218,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label2.Location = new System.Drawing.Point(643, 358);
+            this.label2.Location = new System.Drawing.Point(15, 316);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 20);
             this.label2.TabIndex = 16;
@@ -235,7 +229,7 @@
             this.create.AutoSize = true;
             this.create.Font = new System.Drawing.Font("Cambria", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.create.ForeColor = System.Drawing.Color.Teal;
-            this.create.Location = new System.Drawing.Point(781, 277);
+            this.create.Location = new System.Drawing.Point(153, 251);
             this.create.Name = "create";
             this.create.Size = new System.Drawing.Size(183, 27);
             this.create.TabIndex = 15;
@@ -248,9 +242,9 @@
             this.btnDangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangNhap.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnDangNhap.Location = new System.Drawing.Point(746, 528);
+            this.btnDangNhap.Location = new System.Drawing.Point(130, 461);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(266, 42);
+            this.btnDangNhap.Size = new System.Drawing.Size(254, 42);
             this.btnDangNhap.TabIndex = 14;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.UseVisualStyleBackColor = false;
@@ -258,15 +252,32 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(9, 25);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(910, 669);
+            this.pictureBox1.Size = new System.Drawing.Size(1231, 775);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.btnDangNhap);
+            this.panel1.Controls.Add(this.create);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.iconButton1);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.txtTaiKhoan);
+            this.panel1.Controls.Add(this.txtMatKhau);
+            this.panel1.Controls.Add(this.btnChiTiet);
+            this.panel1.Location = new System.Drawing.Point(22, 49);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(446, 578);
+            this.panel1.TabIndex = 48;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Dangnhap
             // 
@@ -279,9 +290,10 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panelLogin.ResumeLayout(false);
-            this.panelLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -303,6 +315,7 @@
         private FontAwesome.Sharp.IconButton btnMinimized;
         private FontAwesome.Sharp.IconButton btnExit;
         private FontAwesome.Sharp.IconButton btnMaximized;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

@@ -149,5 +149,15 @@ namespace PBL3___Motel_Management_System
             //formSize = this.ClientSize;
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
