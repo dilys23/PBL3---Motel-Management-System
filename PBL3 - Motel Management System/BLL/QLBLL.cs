@@ -1605,5 +1605,22 @@ namespace PBL3___Motel_Management_System.BLL
             string result = new String(decoded_char);
             return result;
         }
+        public void TaoPanel(string a, Panel p)
+        {
+            Panel pn = new Panel();
+            pn.Size = new Size(p.Width, p.Height);
+            pn.BackColor =Color.AliceBlue ;
+            pn.Anchor = (AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom);
+            Label lb = new Label();
+            lb.Text = a;
+            lb.AutoSize = true;
+            lb.Font = new Font("arial", 12, FontStyle.Regular);
+            lb.ForeColor = Color.Red;
+            lb.TextAlign = ContentAlignment.TopLeft;
+            lb.Location = new Point((pn.Width - lb.Width) / 2, (pn.Height - lb.Height) / 2);
+            pn.Controls.Add(lb);
+            p.Controls.Add(pn);
+
+        }
     }
 }

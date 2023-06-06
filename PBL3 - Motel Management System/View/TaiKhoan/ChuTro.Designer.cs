@@ -32,6 +32,7 @@ namespace PBL3___Motel_Management_System.View
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChuTro));
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label8 = new System.Windows.Forms.Label();
             this.btnThemAnh = new FontAwesome.Sharp.IconButton();
@@ -42,7 +43,6 @@ namespace PBL3___Motel_Management_System.View
             this.txtSdt = new System.Windows.Forms.TextBox();
             this.panelKhach = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.TenTK = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSua = new FontAwesome.Sharp.IconButton();
@@ -55,6 +55,7 @@ namespace PBL3___Motel_Management_System.View
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.ptAnh = new System.Windows.Forms.PictureBox();
+            this.Username = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panelKhach.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -171,7 +172,7 @@ namespace PBL3___Motel_Management_System.View
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
-            this.panel1.Controls.Add(this.TenTK);
+            this.panel1.Controls.Add(this.Username);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btnThemAnh);
@@ -181,16 +182,6 @@ namespace PBL3___Motel_Management_System.View
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1114, 531);
             this.panel1.TabIndex = 46;
-            // 
-            // TenTK
-            // 
-            this.TenTK.Enabled = false;
-            this.TenTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TenTK.Location = new System.Drawing.Point(60, 336);
-            this.TenTK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TenTK.Name = "TenTK";
-            this.TenTK.Size = new System.Drawing.Size(180, 27);
-            this.TenTK.TabIndex = 29;
             // 
             // label7
             // 
@@ -320,12 +311,22 @@ namespace PBL3___Motel_Management_System.View
             // 
             // ptAnh
             // 
+            this.ptAnh.Image = ((System.Drawing.Image)(resources.GetObject("ptAnh.Image")));
             this.ptAnh.Location = new System.Drawing.Point(34, 71);
             this.ptAnh.Name = "ptAnh";
             this.ptAnh.Size = new System.Drawing.Size(245, 240);
             this.ptAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptAnh.TabIndex = 31;
             this.ptAnh.TabStop = false;
+            // 
+            // Username
+            // 
+            this.Username.AutoSize = true;
+            this.Username.Location = new System.Drawing.Point(57, 348);
+            this.Username.Name = "Username";
+            this.Username.Size = new System.Drawing.Size(70, 16);
+            this.Username.TabIndex = 33;
+            this.Username.Text = "Username";
             // 
             // ChuTro
             // 
@@ -369,8 +370,8 @@ namespace PBL3___Motel_Management_System.View
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox ptAnh;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox TenTK;
         private System.Windows.Forms.Label label7;
         private FontAwesome.Sharp.IconButton btnSua;
+        private System.Windows.Forms.Label Username;
     }
 }

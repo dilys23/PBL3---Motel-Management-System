@@ -190,10 +190,6 @@ namespace PBL3___Motel_Management_System.View
         
 
         
-        
-
-
-        
 #pragma warning disable CS0414 // The field 'TrangChuKhach.activeForm' is assigned but its value is never used
         private Form activeForm = null;
 #pragma warning restore CS0414 // The field 'TrangChuKhach.activeForm' is assigned but its value is never used
@@ -240,20 +236,28 @@ namespace PBL3___Motel_Management_System.View
         {
             idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
             ThuePhong tp = new ThuePhong();
-            if (QLBLL.Instance.GetHopDongByIdPhong(idPhong)!=null)
+            panelDesktop.Controls.Clear();
+            if (QLBLL.Instance.PhongDaCocByIdPhong(idPhong) == false && QLBLL.Instance.TinhTrangPhongById(idPhong) == false)
+            {
+               
+                string b = "Phòng còn trống ";
+                QLBLL.Instance.TaoPanel(b, panelDesktop);
+            }
+            else if (QLBLL.Instance.PhongDaCocByIdPhong(idPhong) == true && QLBLL.Instance.TinhTrangPhongById(idPhong) == false)
+            {
+               
+                tp.hopDong.MaPhongTro = idPhong;
+                CocPhong cp = new CocPhong(tp, LoadForm);
+                QLBLL.Instance.openChildForm1(cp, panelDesktop);
+            }
+            else
             {
                 HopDong hopDong = QLBLL.Instance.GetHopDongByIdPhong(idPhong);
                 tp.hopDong.MaHopDong = hopDong.MaHopDong;
                 ChitietHopDong ct = new ChitietHopDong(tp, null);
                 ct.btnXacNhan.Visible = false;
                 QLBLL.Instance.openChildForm1(ct, panelDesktop);
-            }
-            else
-            {
-                tp.hopDong.MaPhongTro = idPhong;
-                ChitietHopDong ct = new ChitietHopDong(tp, null);
-                ct.btnXacNhan.Visible = false;
-                QLBLL.Instance.openChildForm1(ct, panelDesktop);
+                
             }
             
         }
@@ -309,6 +313,8 @@ namespace PBL3___Motel_Management_System.View
             idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
             //QLBLL.Instance.openChildForm1(new TaiKhoanPhong(idPhong), panelDesktop);
             QLBLL.Instance.openChildForm1(new DoiMK(idPhong,null,LoadForm), panelDesktop);
+             
+
         }
         public void LoadForm(string t)
         {
@@ -329,6 +335,13 @@ namespace PBL3___Motel_Management_System.View
             ct.btnThemDichVu.Visible = false;
             ct.dgvDichVu.Columns[4].Visible = false;
             QLBLL.Instance.openChildForm1(ct, panelDesktop);
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Dangnhap dn = new Dangnhap();
+            dn.ShowDialog();
         }
     }
 }
