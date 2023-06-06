@@ -49,6 +49,7 @@
             this.DaThanhToan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnTim = new FontAwesome.Sharp.IconButton();
             this.dtpThang = new System.Windows.Forms.DateTimePicker();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ChartCot)).BeginInit();
@@ -84,6 +85,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.ChartCot);
             this.panel2.Controls.Add(this.ChartDuong);
             this.panel2.Controls.Add(this.dgvDoanhThu);
@@ -122,10 +124,9 @@
             this.ChartDuong.Name = "ChartDuong";
             series2.BorderWidth = 3;
             series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series2.Color = System.Drawing.Color.DarkGreen;
             series2.Legend = "Legend1";
-            series2.Name = "Series1";
+            series2.Name = "Tổng tiền";
             this.ChartDuong.Series.Add(series2);
             this.ChartDuong.Size = new System.Drawing.Size(408, 207);
             this.ChartDuong.TabIndex = 38;
@@ -230,6 +231,17 @@
             this.dtpThang.Size = new System.Drawing.Size(124, 22);
             this.dtpThang.TabIndex = 0;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Tháng",
+            "Năm"});
+            this.comboBox1.Location = new System.Drawing.Point(269, 34);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 40;
+            // 
             // DoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -265,5 +277,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DayTro;
         private System.Windows.Forms.DataGridViewTextBoxColumn PhongTro;
         private System.Windows.Forms.DataGridViewTextBoxColumn DaThanhToan;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

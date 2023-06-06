@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,7 +70,8 @@ namespace PBL3___Motel_Management_System.View
                 dtpThangThanhToan.MinDate = dtStart;
                 dtpThangThanhToan.MaxDate = dtEnd;
                 PhongTro pt = QLBLL.Instance.GetPhongTroByIdPhong(idPhong);
-                txtTienPhong.Text = pt.GiaTien.ToString();
+                CultureInfo vietnamCulture = new CultureInfo("vi-VN");
+                txtTienPhong.Text = pt.GiaTien.ToString("C0", vietnamCulture);
                 int i = 0;
                 bool status = false;
                 foreach(ChiTietDichVu ctdv in QLBLL.Instance.GetChiTietDichVuByIdPhong(idPhong))

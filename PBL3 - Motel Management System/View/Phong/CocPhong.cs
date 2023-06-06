@@ -24,9 +24,40 @@ namespace PBL3___Motel_Management_System.View
             InitializeComponent();
             this.loader=loader;
             this.tp = tp;
+            LoadForm();
            
         }
-
+        public void LoadForm()
+        {
+           
+            Nguoi nguoi = new Nguoi();
+            HopDong hd = new HopDong();
+            hd = QLBLL.Instance.GetHopDongByIdPhong(tp.hopDong.MaPhongTro);
+            if (tp != null)
+            {
+                if (QLBLL.Instance.PhongDaCocByIdPhong(tp.hopDong.MaPhongTro) == true)
+                {
+                    nguoi = QLBLL.Instance.GetNguoiByMaHopDong(hd.MaHopDong);
+                    txtTen.Text = nguoi.Ten;
+                    txtTen.Enabled = false;
+                    txtSdt.Text = nguoi.Sdt;
+                    txtSdt.Enabled  = false;
+                    txtTienCoc.Text = hd.TienCoc.ToString();
+                    txtTienCoc.Enabled = false;
+                    txtCccd.Text = nguoi.Cccd;
+                    txtCccd.Enabled = false;
+                    DateTime batdau = DateTime.ParseExact(hd.NgayBatDau, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
+                    DateTime ketthuc = DateTime.ParseExact(hd.NgayKetThuc, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
+                  
+                    dtpNgayCoc.Value = batdau;
+                    dtpNgayCoc.Enabled = false;
+                    dtpNgayNhanPhong.Value = ketthuc;
+                    dtpNgayNhanPhong.Enabled = false;
+                    btnXacNhan.Visible = false;
+                    btnTrove.Visible = false;
+                }
+            }            
+        }
         private void btnTrove_Click(object sender, EventArgs e)
         {
             this.Close();

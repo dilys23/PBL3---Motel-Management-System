@@ -73,7 +73,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1218, 49);
+            this.panel1.Size = new System.Drawing.Size(1246, 49);
             this.panel1.TabIndex = 41;
             // 
             // label4
@@ -159,7 +159,7 @@
             this.panelHD.Location = new System.Drawing.Point(12, 65);
             this.panelHD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelHD.Name = "panelHD";
-            this.panelHD.Size = new System.Drawing.Size(1193, 551);
+            this.panelHD.Size = new System.Drawing.Size(1221, 551);
             this.panelHD.TabIndex = 43;
             // 
             // dgvHoaDon
@@ -210,7 +210,7 @@
             this.dgvHoaDon.RowHeadersWidth = 51;
             this.dgvHoaDon.RowTemplate.Height = 24;
             this.dgvHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHoaDon.Size = new System.Drawing.Size(1151, 260);
+            this.dgvHoaDon.Size = new System.Drawing.Size(1179, 260);
             this.dgvHoaDon.TabIndex = 71;
             this.dgvHoaDon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDon_CellContentClick);
             // 
@@ -417,7 +417,7 @@
             this.btnThemHoaDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThemHoaDon.IconSize = 25;
             this.btnThemHoaDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemHoaDon.Location = new System.Drawing.Point(1079, 36);
+            this.btnThemHoaDon.Location = new System.Drawing.Point(1107, 36);
             this.btnThemHoaDon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThemHoaDon.Name = "btnThemHoaDon";
             this.btnThemHoaDon.Size = new System.Drawing.Size(108, 38);
@@ -431,7 +431,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1218, 640);
+            this.ClientSize = new System.Drawing.Size(1246, 640);
             this.Controls.Add(this.panelHD);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

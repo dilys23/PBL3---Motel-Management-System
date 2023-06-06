@@ -41,7 +41,7 @@ namespace PBL3___Motel_Management_System.View
                 txtCccd.Text = ng.Cccd;
                 if (ng.GioiTinh == true) rdbtnNam.Checked = true;
                 else rdbtnNu.Checked = true;
-                TenTK.Text = tk.TenTaiKhoan;
+                Username.Text = tk.TenTaiKhoan;
                 if (ng.HinhAnh != null)
                 {
                     ptAnh.Image = ChuyenDoiAnh.Base64ToImage(ng.HinhAnh);

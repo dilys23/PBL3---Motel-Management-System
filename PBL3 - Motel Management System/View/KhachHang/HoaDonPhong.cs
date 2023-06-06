@@ -55,9 +55,7 @@ namespace PBL3___Motel_Management_System.View.KhachHang
                     dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, hd.NgayTao, hd.ThangChiTra, hd.TongTien, hd.DaThanhToan, hd.TongTien - hd.DaThanhToan);
                 }
             }
-            // var ChiTiet = System.Drawing.Image.FromFile(@"D:\PBL\PBL3_MAIN\PBL3 - Motel Management System\Icons\icons8-history-20.png");
-            //dgvHoaDon.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => QLBLL.Instance.dgvIcons_CellPainting2(dgvHoaDon, e, null, null, ChiTiet));
-        }
+            }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {

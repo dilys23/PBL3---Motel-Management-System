@@ -29,17 +29,34 @@ namespace PBL3___Motel_Management_System
         {
             dgvDoanhThu.Rows.Clear();
             int i = 0;
-            foreach (string hd in QLBLL.Instance.GetHoaDonByThangChiTra(thang))
+            if(thang==null)
             {
-                HoaDon hoadon = QLBLL.Instance.GetHoaDonById(hd);
-                if(hoadon.TinhTrang == true)
+                foreach (HoaDon hoadon in QLBLL.Instance.GetAllHoaDonBll())
                 {
-                    PhongTro pt = QLBLL.Instance.GetPhongTroByMaHoaDon(hoadon.MaHoaDon);
-                    DayTro dt = QLBLL.Instance.GetDayTroByIdPhong(pt.MaPhongTro);
-                    //dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hoadon.TongTien);
-                    dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hoadon.DaThanhToan);
+                    //HoaDon hoadon = QLBLL.Instance.GetHoaDonById(hd);
+                    if (hoadon.TinhTrang == true)
+                    {
+                        PhongTro pt = QLBLL.Instance.GetPhongTroByMaHoaDon(hoadon.MaHoaDon);
+                        DayTro dt = QLBLL.Instance.GetDayTroByIdPhong(pt.MaPhongTro);
+                        if (hoadon.DaThanhToan != 0)
+                        { dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hoadon.DaThanhToan); }
+                    }
+
                 }
-               
+            }
+            else
+            {
+                foreach (string hd in QLBLL.Instance.GetHoaDonByThangChiTra(thang))
+                {
+                    HoaDon hoadon = QLBLL.Instance.GetHoaDonById(hd);
+                    if (hoadon.TinhTrang == true)
+                    {
+                        PhongTro pt = QLBLL.Instance.GetPhongTroByMaHoaDon(hoadon.MaHoaDon);
+                        DayTro dt = QLBLL.Instance.GetDayTroByIdPhong(pt.MaPhongTro);
+                        if (hoadon.DaThanhToan != 0)
+                        { dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hoadon.DaThanhToan); }
+                    }
+                }
             }
         }
         private void btnTim_Click(object sender, EventArgs e)
@@ -50,6 +67,7 @@ namespace PBL3___Motel_Management_System
             int nam = date.Year;
             LoadForm(thang);
             ThongKe(thang);
+            ThongKeTheoThang(nam.ToString());
         }
         public void ResizeColumn()
         {
@@ -78,7 +96,7 @@ namespace PBL3___Motel_Management_System
             string thang = dtpThang.Value.ToString("MM-yyyy");
             DateTime date = DateTime.ParseExact(thang, "MM-yyyy", CultureInfo.InvariantCulture);
             int nam = date.Year;
-            LoadForm(thang);
+            LoadForm(null);
             ThongKe(thang);
             ThongKeTheoThang(nam.ToString());
 

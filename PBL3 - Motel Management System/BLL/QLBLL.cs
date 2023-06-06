@@ -57,6 +57,10 @@ namespace PBL3___Motel_Management_System.BLL
         {
             return QLDAL.Instance.GetAllTaiKhoanPhongTro();
         }
+        public List<DAL.TaiKhoan>GetAllTaiKhoan()
+        {
+            return QLDAL.Instance.GetAllTaiKhoan();
+        }
         public List<ChiTietTaiKhoanChuTro> GetAllTaiKhoanChuTro()
         {
             return QLDAL.Instance.GetAllTaiKhoanChuTro();
@@ -1575,6 +1579,48 @@ namespace PBL3___Motel_Management_System.BLL
         public DAL.TaiKhoan GetTaiKhoanByIdTaiKhoan(string matk)
         {
             return QLDAL.Instance.GetTaiKhoanByIdTaiKhoan(matk);
+        }
+        public string MaHoaMatKhau(string matKhau)
+        {
+            try
+            {
+                byte[] encData_byte = new byte[matKhau.Length];
+                encData_byte = System.Text.Encoding.UTF8.GetBytes(matKhau);
+                string encodedData = Convert.ToBase64String(encData_byte);
+                return encodedData;
+            }
+            catch(Exception e)
+            {
+                throw new Exception("Error in base64Encode" + e.Message);
+            }
+        }
+        public string GiaiMaMatKhau(string MatKhauMaHoa)
+        {
+            System.Text.UTF8Encoding encoder = new System.Text.UTF8Encoding();
+            System.Text.Decoder utf8Decode = encoder.GetDecoder();
+            byte[] todecode_byte = Convert.FromBase64String(MatKhauMaHoa);
+            int charCount = utf8Decode.GetCharCount(todecode_byte, 0, todecode_byte.Length);
+            char[] decoded_char = new char[charCount];
+            utf8Decode.GetChars(todecode_byte, 0, todecode_byte.Length, decoded_char, 0);
+            string result = new String(decoded_char);
+            return result;
+        }
+        public void TaoPanel(string a, Panel p)
+        {
+            Panel pn = new Panel();
+            pn.Size = new Size(p.Width, p.Height);
+            pn.BackColor =Color.AliceBlue ;
+            pn.Anchor = (AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom);
+            Label lb = new Label();
+            lb.Text = a;
+            lb.AutoSize = true;
+            lb.Font = new Font("arial", 12, FontStyle.Regular);
+            lb.ForeColor = Color.Red;
+            lb.TextAlign = ContentAlignment.TopLeft;
+            lb.Location = new Point((pn.Width - lb.Width) / 2, (pn.Height - lb.Height) / 2);
+            pn.Controls.Add(lb);
+            p.Controls.Add(pn);
+
         }
     }
 }

@@ -32,13 +32,13 @@ namespace PBL3___Motel_Management_System.View
             {
                 DAL.TaiKhoan tk = QLBLL.Instance.GetTaiKhoanByIdPhong(idp);
                 txtTenTaiKhoan.Text = tk.TenTaiKhoan;
-                txtMatKhau.Text = tk.MatKhau;
+                txtMatKhau.Text = QLBLL.Instance.GiaiMaMatKhau(tk.MatKhau);
             }
             else if (idp == null && idct != null) 
             {
                 DAL.TaiKhoan tk = QLBLL.Instance.GetTaiKhoanByIdTaiKhoan(this.idct);
                 txtTenTaiKhoan.Text += tk.TenTaiKhoan;
-                txtMatKhau .Text += tk.MatKhau;
+                txtMatKhau .Text += QLBLL.Instance.GiaiMaMatKhau(tk.MatKhau);
             } 
                 
             
@@ -48,11 +48,10 @@ namespace PBL3___Motel_Management_System.View
         { 
             DAL.TaiKhoan tk = new DAL.TaiKhoan();
             PhongTro pt = QLBLL.Instance.GetPhongTroByIdPhong(idp);
-            tk.MaTaiKhoan = QLBLL.Instance.GetTaiKhoanByIdPhong(idp).MaTaiKhoan;
-            tk.TenTaiKhoan = "pt" + pt.MaPhongTro;
-            tk.MatKhau = "pt" + pt.MaPhongTro;
-            tk.TonTai = true;
+            tk = QLBLL.Instance.GetTaiKhoanByIdPhong(idp);
+            tk.MatKhau = QLBLL.Instance.MaHoaMatKhau("pt" + pt.MaPhongTro);
             QLBLL.Instance.UpdateTaiKhoanPhong(tk);
+            MessageBox.Show("Thiết lập lại mật khẩu thành công", "Thông báo");
             LoadForm(null);
         }
     }
