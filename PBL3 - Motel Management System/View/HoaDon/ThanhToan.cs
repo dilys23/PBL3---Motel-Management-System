@@ -111,5 +111,10 @@ namespace PBL3___Motel_Management_System.View
         {
             this.Close();
         }
+
+        private void txtThanhToan_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -26,9 +26,10 @@ namespace PBL3___Motel_Management_System
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(QLBLL.Instance.GetIdTk(txtTaiKhoan.Text,txtMatKhau.Text) != null)
+            string mk = QLBLL.Instance.MaHoaMatKhau(txtMatKhau.Text);
+            if(QLBLL.Instance.GetIdTk(txtTaiKhoan.Text, mk) != null)
             {
-                VaiTro vaitro = QLBLL.Instance.CheckVaiTro(txtTaiKhoan.Text, txtMatKhau.Text);
+                VaiTro vaitro = QLBLL.Instance.CheckVaiTro(txtTaiKhoan.Text, mk);
                 if(vaitro.TenVaiTro=="Chủ trọ" )
                 {
                      matk = vaitro.MaTaiKhoan;
