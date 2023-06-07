@@ -102,5 +102,59 @@ namespace PBL3___Motel_Management_System.View
         {
             this.Close();
         }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            if (txtMKcu.PasswordChar == '*')
+            {
+                iconButton4.BringToFront();
+                txtMKcu.PasswordChar = '\0';
+            }
+        }
+
+        private void iconButton4_Click(object sender, EventArgs e)
+        {
+            if (txtMKcu.PasswordChar == '\0')
+            {
+                iconButton1.BringToFront();
+                txtMKcu.PasswordChar = '*';
+            }
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            if (txtMKmoi.PasswordChar == '*')
+            {
+                iconButton5.BringToFront();
+                txtMKmoi.PasswordChar = '\0';
+            }
+        }
+
+        private void iconButton5_Click(object sender, EventArgs e)
+        {
+            if (txtMKmoi.PasswordChar == '\0')
+            {
+                iconButton2.BringToFront();
+                txtMKmoi.PasswordChar = '*';
+            }
+        }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            if (txtXacthucMK.PasswordChar == '*')
+            {
+                iconButton6.BringToFront();
+                txtXacthucMK.PasswordChar = '\0';
+            }
+        }
+
+        private void iconButton6_Click(object sender, EventArgs e)
+        {
+            if (txtXacthucMK.PasswordChar == '\0')
+            {
+                iconButton3.BringToFront();
+                txtXacthucMK.PasswordChar = '*';
+            }
+        }
     }
 }

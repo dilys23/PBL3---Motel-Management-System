@@ -32,7 +32,10 @@ namespace PBL3___Motel_Management_System.View
             {
                 DAL.TaiKhoan tk = QLBLL.Instance.GetTaiKhoanByIdPhong(idp);
                 txtTenTaiKhoan.Text = tk.TenTaiKhoan;
-                txtMatKhau.Text = QLBLL.Instance.GiaiMaMatKhau(tk.MatKhau);
+                string mk = QLBLL.Instance.MaHoaMatKhau(tk.MatKhau);
+                mk = QLBLL.Instance.GiaiMaMatKhau(tk.MatKhau);
+                QLBLL.Instance.UpdateTaiKhoanPhong(tk);
+                txtMatKhau.Text = tk.MatKhau;
             }
             else if (idp == null && idct != null) 
             {
