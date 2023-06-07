@@ -80,23 +80,35 @@ namespace PBL3___Motel_Management_System.View
                     hd.DaThanhToan += thanhToan;
                     QLBLL.Instance.UpdateHoaDonBLL(hd);
                     CultureInfo vietnamCulture = new CultureInfo("vi-VN");
+                    double TongTien = (Convert.ToDouble(txtTongTien.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
+                    double conNoMoi1 = (Convert.ToDouble(txtConNo.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", ""))) ;
                     // Tính số tiền còn nợ mới
-                   
-                    double conNoMoi1 = (Convert.ToDouble(txtTongTien.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")) - hd.DaThanhToan);
-                    // Cập nhật giá trị cho txtConNo
-                    txtConNo.Text = conNoMoi1.ToString("#,##0") + "₫";
-
-                    QLBLL.Instance.AddChiTietThanhToanHoaDonBll(ct);
-
-                    if (conNoMoi1 == 0)
+                    if (thanhToan < conNoMoi1)
                     {
-                        MessageBox.Show("Đã trả đủ tiền", "Thông báo");
-                    }
-                    if (conNoMoi1 < 0)
-                    {
-                        MessageBox.Show("Bạn đã nhập thừa tiền", "Thông báo");
-                    }
+                        conNoMoi1 = (Convert.ToDouble(txtTongTien.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")) - hd.DaThanhToan);
+                        // Cập nhật giá trị cho txtConNo
 
+                        txtConNo.Text = conNoMoi1.ToString("#,##0") + "₫";
+
+                        QLBLL.Instance.AddChiTietThanhToanHoaDonBll(ct);
+
+                        if (conNoMoi1 == 0)
+                        {
+                            MessageBox.Show("Đã trả đủ tiền", "Thông báo");
+                        }
+                    }
+                    else 
+                    {
+                        ct.TienThanhToan = conNoMoi1;
+                        double tiendu = thanhToan - conNoMoi1 ;
+                        string tienthua = "Tiền phòng còn dư của bạn là : " + tiendu.ToString("#,##0") + "₫";                       
+                        MessageBox.Show(tienthua, "Thông báo");
+                        conNoMoi1 = 0;
+                        txtConNo.Text = conNoMoi1.ToString("#,##0") + "₫";
+                        QLBLL.Instance.AddChiTietThanhToanHoaDonBll(ct);
+                        
+                    }
+                    
                     loader(null);
                     this.Close();
                 }

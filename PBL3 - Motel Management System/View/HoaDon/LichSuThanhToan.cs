@@ -30,23 +30,24 @@ namespace PBL3___Motel_Management_System
             {
                 dtpThangThanhToan.Enabled = false;
                 HoaDon hd = QLBLL.Instance.GetHoaDonById(this.IdHd);
-                int index = -1;
+              
                 DateTime dt = DateTime.ParseExact(hd.ThangChiTra, "MM-yyyy", System.Globalization.CultureInfo.InvariantCulture);
                 dtpThangThanhToan.Value = dt;
+                double TongThanhToan = 0;
                 txtTongTien.Text = hd.TongTien.ToString("#,##0") + "₫";
                 PhongTro pt = QLBLL.Instance.GetPhongTroByMaHoaDon(this.IdHd);
                 txtTenPhong.Text = pt.TenPhongTro.ToString();
                 int i = 0;
-                double conNoMoi = (Convert.ToDouble(txtTongTien.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")) - hd.DaThanhToan); ;
                 foreach (string idLs in QLBLL.Instance.GetAllIdLichSuThanhToanByIdHoaDon(idHd))
                 {
-                    //double conNoMoi = Convert.ToDouble(txtTongTien.Text) - hd.DaThanhToan;
+                    
                     ChiTietThanhToanHoaDon cttt = QLBLL.Instance.GetChiTietThanhToanHoaDonById(idLs);
                     double tienThanhToan = cttt.TienThanhToan;
-                   
-                    dgvLichSu.Rows.Add(cttt.MaHoaDon, cttt.MaChiTietThanhToanHoaDon, ++i, cttt.NgayThanhToan, cttt.TienThanhToan.ToString("#,##0") + "₫", conNoMoi.ToString("#,##0") + "₫");
-                    conNoMoi -= tienThanhToan;
-
+                    double tongtien = hd.TongTien;
+                    TongThanhToan += cttt.TienThanhToan;
+                    double ConNo = hd.TongTien - TongThanhToan;
+                    dgvLichSu.Rows.Add( ++i, cttt.NgayThanhToan, cttt.TienThanhToan.ToString("#,##0") + "₫", ConNo.ToString("#,##0") + "₫");
+          
                 }    
                
 

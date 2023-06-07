@@ -142,7 +142,7 @@ namespace PBL3___Motel_Management_System
                     PhongTro pt = new PhongTro();
                     pt.MaPhongTro = QLBLL.Instance.TaoIdPhongTro();
                     pt.TenPhongTro = txtTenPhong.Text;
-                    pt.GiaTien = Convert.ToDouble(txtGiaTien.Text);
+                    pt.GiaTien = (Convert.ToDouble(txtGiaTien.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
                     pt.DienTich = Convert.ToDouble(txtDienTich.Text);
                     pt.TinhTrang = false;
                     pt.ToiDa = Convert.ToInt32(txtToiDa.Text);

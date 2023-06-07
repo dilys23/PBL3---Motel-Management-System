@@ -39,8 +39,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnTroVe = new FontAwesome.Sharp.IconButton();
             this.dgvLichSu = new System.Windows.Forms.DataGridView();
-            this.MaHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaChiTietThanhToan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayTao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DaThanhToan = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -155,8 +153,6 @@
             this.dgvLichSu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvLichSu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLichSu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaHoaDon,
-            this.MaChiTietThanhToan,
             this.Stt,
             this.NgayTao,
             this.DaThanhToan,
@@ -180,20 +176,6 @@
             this.dgvLichSu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLichSu.Size = new System.Drawing.Size(893, 258);
             this.dgvLichSu.TabIndex = 93;
-            // 
-            // MaHoaDon
-            // 
-            this.MaHoaDon.HeaderText = "MaHoaDon";
-            this.MaHoaDon.MinimumWidth = 6;
-            this.MaHoaDon.Name = "MaHoaDon";
-            this.MaHoaDon.Visible = false;
-            // 
-            // MaChiTietThanhToan
-            // 
-            this.MaChiTietThanhToan.HeaderText = "MaChiTietThanhToan";
-            this.MaChiTietThanhToan.MinimumWidth = 6;
-            this.MaChiTietThanhToan.Name = "MaChiTietThanhToan";
-            this.MaChiTietThanhToan.Visible = false;
             // 
             // Stt
             // 
@@ -254,8 +236,6 @@
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnTroVe;
         private System.Windows.Forms.DataGridView dgvLichSu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaHoaDon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaChiTietThanhToan;
         private System.Windows.Forms.DataGridViewTextBoxColumn Stt;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayTao;
         private System.Windows.Forms.DataGridViewTextBoxColumn DaThanhToan;

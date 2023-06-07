@@ -1541,7 +1541,7 @@ namespace PBL3___Motel_Management_System.BLL
             {
                 MaTaiKhoan = TaoIdTaiKhoan(),
                 TenTaiKhoan = "pt" + pt.MaPhongTro,
-                MatKhau = "pt" + pt.MaPhongTro,
+                MatKhau = QLBLL.Instance.MaHoaMatKhau(("pt" + pt.MaPhongTro)),
                 TonTai = true
             };
             return tk;
