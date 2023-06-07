@@ -36,10 +36,12 @@ namespace PBL3___Motel_Management_System
             {
                 PhongTro pt = QLBLL.Instance.GetPhongTroByIdPhong(hd.MaPhongTro);
                 DayTro dt = QLBLL.Instance.GetDayTroByIdPhong(hd.MaPhongTro);
-                string TinhTrang = (hd.TinhTrang) ? "Xác thực" : "Chưa xác thực";
-                    CultureInfo vietnamCulture = new CultureInfo("vi-VN");
-                    dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hd.NgayTao, hd.ThangChiTra, hd.TongTien.ToString("#,##0") + "₫", TinhTrang, hd.DaThanhToan.ToString("#,##0") + "₫", (hd.TongTien - hd.DaThanhToan).ToString("#,##0") + "₫");
-            }
+                    string TinhTrang = (hd.TinhTrang) ? "Xác thực" : "Chưa xác thực";
+                    double conNo = hd.TongTien - hd.DaThanhToan;
+                    string conNoFormatted = (conNo >= 0) ? conNo.ToString("#,##0") + "₫" : "0₫";
+                    dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hd.NgayTao, hd.ThangChiTra, hd.TongTien.ToString("#,##0") + "₫", TinhTrang, hd.DaThanhToan.ToString("#,##0") + "₫", conNoFormatted);
+
+                }
             }
             else
             {
