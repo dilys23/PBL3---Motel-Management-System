@@ -31,10 +31,10 @@ namespace PBL3___Motel_Management_System
         private void LoadForm(string txtTim)
         {
             dgvHD.Rows.Clear();
-            QLBLL.Instance.customDGV(dgvHD);
+            QLBLLChung.Instance.customDGV(dgvHD);
             if(txtTim == null)
             {
-            foreach (DgvHopDong hd in QLBLL.Instance.DgvHopDong())
+            foreach (DgvHopDong hd in QLBLLHopDong.Instance.DgvHopDong())
             {
                 dgvHD.Rows.Add(hd.MaHopDong, hd.Stt, hd.TenKhachHang, hd.TenPhongTro, hd.TenDayTro, hd.NgayBatDau, hd.NgayKetThuc, hd.TienCoc.ToString("#,##0") + "₫");
 
@@ -44,7 +44,7 @@ namespace PBL3___Motel_Management_System
             {
                 string idDay = ((ViewCbb)(cbbDayTro.SelectedItem)).key;
                 string idPhong = ((ViewCbb)(cbbPhongTro.SelectedItem)).key;
-                foreach(DgvHopDong hd in QLBLL.Instance.GetAllHopDongTimKiem(idDay,idPhong))
+                foreach(DgvHopDong hd in QLBLLHopDong.Instance.GetAllHopDongTimKiem(idDay,idPhong))
                 {
                     dgvHD.Rows.Add(hd.MaHopDong, hd.Stt, hd.TenKhachHang, hd.TenPhongTro, hd.TenDayTro, hd.NgayBatDau, hd.NgayKetThuc, hd.TienCoc.ToString("#,##0") + "₫");
 
@@ -52,13 +52,13 @@ namespace PBL3___Motel_Management_System
             }
             var Sua = System.Drawing.Image.FromFile(@"D:\PBL\PBL3_MAIN\PBL3 - Motel Management System\Icons\icons8-more-details-20.png");
             var Xoa = System.Drawing.Image.FromFile(@"D:\PBL\PBL3_MAIN\PBL3 - Motel Management System\Icons\icons8-time-25.png");
-            dgvHD.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => QLBLL.Instance.dgvIcons_CellPainting1(dgvHD, e, Sua, Xoa));
+            dgvHD.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => QLBLLChung.Instance.dgvIcons_CellPainting1(dgvHD, e, Sua, Xoa));
         }
         private void SetCbb()
         {
             cbbDayTro.Items.Clear();
             cbbPhongTro.Items.Clear();
-            cbbDayTro.Items.AddRange(QLBLL.Instance.GetCbbDayTro().ToArray());
+            cbbDayTro.Items.AddRange(QLBLLChung.Instance.GetCbbDayTro().ToArray());
             cbbDayTro.SelectedIndex = 0;
         }
         private void dgvHD_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -73,14 +73,14 @@ namespace PBL3___Motel_Management_System
                     tp.hopDong.MaHopDong = id;
                     ChitietHopDong ct = new ChitietHopDong(tp, LoadForm);
                     ct.btnXacNhan.Visible = false;
-                    QLBLL.Instance.openChildForm1(ct, panelHopDong);
+                    QLBLLChung.Instance.openChildForm1(ct, panelHopDong);
                 }
                 else if (columnName == "btnXoa")
                 {
                     string id = dgvHD.Rows[e.RowIndex].Cells[0].Value.ToString();
                     ThuePhong tp = new ThuePhong();
                     tp.hopDong.MaHopDong = id;
-                    QLBLL.Instance.openChildForm1(new ThemHopDong(tp,LoadForm), panelHopDong);
+                    QLBLLChung.Instance.openChildForm1(new ThemHopDong(tp,LoadForm), panelHopDong);
                 }
             }
 
@@ -120,7 +120,7 @@ namespace PBL3___Motel_Management_System
         {
             cbbPhongTro.Items.Clear();
             string id = ((ViewCbb)cbbDayTro.SelectedItem).key;
-            cbbPhongTro.Items.AddRange(QLBLL.Instance.GetViewCbbPhongByDay(id).ToArray());
+            cbbPhongTro.Items.AddRange(QLBLLPhongTro.Instance.GetViewCbbPhongByDay(id).ToArray());
             if (cbbPhongTro.Items.Count != 0)
             {
                 cbbPhongTro.SelectedIndex = 0;

@@ -57,16 +57,16 @@ namespace PBL3___Motel_Management_System.View
             {
                 if (idPhong != null)
                 {
-                    DAL.TaiKhoan tk = QLBLL.Instance.GetTaiKhoanByIdPhong(idPhong);
-                    string mkcu = QLBLL.Instance.MaHoaMatKhau(txtMKcu.Text);
+                    DAL.TaiKhoan tk = QLBLLTaiKhoan.Instance.GetTaiKhoanByIdPhong(idPhong);
+                    string mkcu = QLBLLTaiKhoan.Instance.MaHoaMatKhau(txtMKcu.Text);
                     if(tk.MatKhau!= mkcu)
                     {
                         MessageBox.Show("Nhập mật khẩu không đúng, vui lòng nhập lại");
                     }
                     else
                     {
-                        tk.MatKhau = QLBLL.Instance.MaHoaMatKhau(txtXacthucMK.Text);
-                        QLBLL.Instance.UpdateTaiKhoanPhong(tk);
+                        tk.MatKhau = QLBLLTaiKhoan.Instance.MaHoaMatKhau(txtXacthucMK.Text);
+                        QLBLLTaiKhoan.Instance.UpdateTaiKhoanPhong(tk);
                         MessageBox.Show("Thay đổi mật khẩu phòng thành công");
                         this.Close();
                         loader(null);
@@ -74,16 +74,16 @@ namespace PBL3___Motel_Management_System.View
                 }
                 else
                 {
-                    DAL.TaiKhoan tk = QLBLL.Instance.GetTaiKhoanByIdTaiKhoan(idTk);
-                    string mkcu = QLBLL.Instance.MaHoaMatKhau(txtMKcu.Text);
+                    DAL.TaiKhoan tk = QLBLLTaiKhoan.Instance.GetTaiKhoanByIdTaiKhoan(idTk);
+                    string mkcu = QLBLLTaiKhoan.Instance.MaHoaMatKhau(txtMKcu.Text);
                     if (tk.MatKhau != mkcu)
                     {
                         MessageBox.Show("Nhập mật khẩu không đúng, vui lòng nhập lại");
                     }
                     else
                     {
-                        tk.MatKhau = QLBLL.Instance.MaHoaMatKhau(txtXacthucMK.Text);
-                        QLBLL.Instance.UpdateTaiKhoanChutro(tk);
+                        tk.MatKhau = QLBLLTaiKhoan.Instance.MaHoaMatKhau(txtXacthucMK.Text);
+                        QLBLLTaiKhoan.Instance.UpdateTaiKhoanChutro(tk);
                         MessageBox.Show("Thay đổi mật khẩu tài khoản thành công");
                         this.Close();
                         loader(null);

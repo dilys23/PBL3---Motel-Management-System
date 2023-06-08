@@ -29,16 +29,16 @@ namespace PBL3___Motel_Management_System.View
             try
             {
                 dgvDichVu.Rows.Clear();
-                QLBLL.Instance.customDGV(dgvDichVu);
+                QLBLLChung.Instance.customDGV(dgvDichVu);
                 int i = 1;
-                foreach (string idDv in QLBLL.Instance.GetAllIdDichVuByIdPhong(this.idPhong))
+                foreach (string idDv in QLBLLDichvu.Instance.GetAllIdDichVuByIdPhong(this.idPhong))
                 {
                     DichVu dv = new DichVu();
-                    dv = QLBLL.Instance.GetDVByIdDV(idDv);
+                    dv = QLBLLDichvu.Instance.GetDVByIdDV(idDv);
                     dgvDichVu.Rows.Add(dv.MaDichVu, i++, dv.TenDichVu, dv.GiaDichVu.ToString("#,##0") + "₫");
                 }
                 var Xoa = System.Drawing.Image.FromFile(@"D:\PBL\PBL3_MAIN\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
-                dgvDichVu.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dgvIcons_CellPainting1(dgvDichVu, e, Xoa));
+                dgvDichVu.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => QLBLLChung.Instance.dgvIcons_CellPainting3(dgvDichVu, e, Xoa));
             }
             catch (Exception ex)
             {
@@ -47,28 +47,7 @@ namespace PBL3___Motel_Management_System.View
                 Console.WriteLine(ex.InnerException?.Message);
                 Console.WriteLine(ex.InnerException?.StackTrace);
             }
-        }
-        public void dgvIcons_CellPainting1(DataGridView dgv, DataGridViewCellPaintingEventArgs e,  Image btXoa)
-        {
-          
-            if (e.ColumnIndex >= 0 && dgv.Columns[e.ColumnIndex].Name == "btnXoa" && e.RowIndex >= 0)
-            {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-                var btnXoa = btXoa;
-                var w = btnXoa.Width;
-                var h = btnXoa.Height;
-                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
-                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
-                e.Graphics.DrawImage(btnXoa, new Rectangle(x, y, w, h));
-                e.Handled = true;
-
-                // Thay đổi màu nền của cell khi được chọn
-                if (e.State == DataGridViewElementStates.Selected)
-                {
-                    e.CellStyle.SelectionBackColor = Color.Tomato;
-                }
-            }
-        }     
+        }    
         private void dgvDichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -83,7 +62,7 @@ namespace PBL3___Motel_Management_System.View
                         string id = dgvDichVu.Rows[e.RowIndex].Cells["MaDichVu"].Value.ToString();
                         if (id != "000" && id != "001")
                         {
-                            QLBLL.Instance.DelChiTietDichVuByIdDichVu(id);
+                            QLBLLChiTietDichVu.Instance.DelChiTietDichVuByIdDichVu(id);
                             MessageBox.Show("Xóa dịch vụ thành công", "Thông báo");
                             LoadForm(null);
                         }
@@ -98,11 +77,11 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnThemDichVu_Click(object sender, EventArgs e)
         {
-            if(QLBLL.Instance.TinhTrangPhongById(idPhong))
+            if(QLBLLPhongTro.Instance.TinhTrangPhongById(idPhong))
             {
                 ThuePhong tp = new ThuePhong();
                 tp.hopDong.MaPhongTro = idPhong; 
-                QLBLL.Instance.openChildForm1(new ThemDVphong(tp, LoadForm), panelThem);
+                QLBLLChung.Instance.openChildForm1(new ThemDVphong(tp, LoadForm), panelThem);
             }
             else
             {

@@ -26,7 +26,7 @@ namespace PBL3___Motel_Management_System.View
             this.IdTb = IdTb;
             if(IdTb != null )
             {
-                ThietBi tb = QLBLL.Instance.GetTBByIdTB(IdTb);
+                ThietBi tb = QLBLLThietbi.Instance.GetTBByIdTB(IdTb);
                 txtTenTB.Text = tb.TenThietBi;
                 txtGia.Text = tb.GiaThietBi.ToString("#,##0") + "₫"; 
             }
@@ -68,22 +68,22 @@ namespace PBL3___Motel_Management_System.View
             {
                 if (IdTb != null)
                 {
-                    ThietBi tb = QLBLL.Instance.GetTBByIdTB(IdTb);
+                    ThietBi tb = QLBLLThietbi.Instance.GetTBByIdTB(IdTb);
                     tb.MaThietBi = IdTb;
                     tb.TenThietBi = txtTenTB.Text;
                     tb.GiaThietBi = (Convert.ToDouble(txtGia.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
                     tb.TonTai = true;
-                    QLBLL.Instance.SuaTBBll(tb);
+                    QLBLLThietbi.Instance.SuaTBBll(tb);
                     MessageBox.Show("Thay đổi thông tin thành công", "Thông báo");
                 }
                 else
                 {
                     ThietBi tb = new ThietBi();
-                    tb.MaThietBi = QLBLL.Instance.TaoIdThietBi();
+                    tb.MaThietBi = QLBLLThietbi.Instance.TaoIdThietBi();
                     tb.TenThietBi = txtTenTB.Text;
                     tb.GiaThietBi = (Convert.ToDouble(txtGia.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));        
                     tb.TonTai = true;
-                    QLBLL.Instance.ThemTBBll(tb);
+                    QLBLLThietbi.Instance.ThemTBBll(tb);
                     MessageBox.Show("Thêm dịch vụ thành công", "Thông báo");
                 }
                 Loader(null);

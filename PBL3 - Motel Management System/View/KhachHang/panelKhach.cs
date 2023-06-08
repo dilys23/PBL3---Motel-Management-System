@@ -41,10 +41,10 @@ namespace PBL3___Motel_Management_System.View.KhachHang
         }
         public void SetGUI(string key)
         {
-            QLBLL.Instance.customDGV(dgvThanhVien);
-            PhongTro pt = QLBLL.Instance.GetPhongTroByMaTaiKhoan(this.matk);
+            QLBLLChung.Instance.customDGV(dgvThanhVien);
+            PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByMaTaiKhoan(this.matk);
             label4.Text = pt.TenPhongTro;
-            DayTro daytro = QLBLL.Instance.GetDayTroByIdPhong(pt.MaPhongTro);
+            DayTro daytro = QLBLLDayTro.Instance.GetDayTroByIdPhong(pt.MaPhongTro);
             label5.Text = daytro.TenDayTro;
             string diachi = daytro.TenDuong + "," + daytro.TenHuyen + "," + daytro.TenThanhPho;
             label6.Text = diachi;
@@ -53,18 +53,18 @@ namespace PBL3___Motel_Management_System.View.KhachHang
             {
                 pictureBox1.Image = ChuyenDoiAnh.Base64ToImage(pt.HinhAnh);
             }
-            if (QLBLL.Instance.GetHopDongByIdPhong(pt.MaPhongTro) != null)
+            if (QLBLLHopDong.Instance.GetHopDongByIdPhong(pt.MaPhongTro) != null)
             {
                 dgvThanhVien.Rows.Clear();
                 dgvThanhVien.Columns[8].ValueType = typeof(Image);
                 dgvThanhVien.RowCount = 0;
                 int i = 1;
-                foreach (string idNguoi in QLBLL.Instance.GetIdNguoiByIdPhong(pt.MaPhongTro))
+                foreach (string idNguoi in QLBLLNguoi.Instance.GetIdNguoiByIdPhong(pt.MaPhongTro))
                 {
                     Nguoi nguoi = new Nguoi();
                     if (key == null)
                     { 
-                        nguoi = QLBLL.Instance.GetNguoiByIdNguoi(idNguoi);
+                        nguoi = QLBLLNguoi.Instance.GetNguoiByIdNguoi(idNguoi);
                         Image image = null;
                         if (nguoi.HinhAnh != null)
                         {
@@ -74,7 +74,7 @@ namespace PBL3___Motel_Management_System.View.KhachHang
                     }
                     else
                     {
-                        nguoi = QLBLL.Instance.GetNguoiByIdNguoi(idNguoi);
+                        nguoi = QLBLLNguoi.Instance.GetNguoiByIdNguoi(idNguoi);
                         Image image = null;
                         if(nguoi.Ten.StartsWith(key) || nguoi.Ten.ToLower().StartsWith(key.ToLower()))
                         {
@@ -104,7 +104,7 @@ namespace PBL3___Motel_Management_System.View.KhachHang
                 string id = dgvThanhVien.CurrentRow.Cells[0].Value.ToString();
                 tp.hopDong.MaNguoi = id;
                 ThemKhach tk = new ThemKhach(tp, SetGUI);
-                QLBLL.Instance.openChildForm1(tk, panel3);
+                QLBLLChung.Instance.openChildForm1(tk, panel3);
                 tk.btnLuu.Visible= false;
                 tk.btnThemAnh.Visible= false;
                 tk.txtCccd.Enabled = false;

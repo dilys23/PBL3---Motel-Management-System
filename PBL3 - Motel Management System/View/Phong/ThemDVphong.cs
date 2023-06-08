@@ -41,7 +41,7 @@ namespace PBL3___Motel_Management_System.View
             dgvXoaDichVu.RowCount = 0;
             if(tp.hopDong.MaHopDong != null)
             {
-                foreach(DichVu dv in QLBLL.Instance.DgvDichVu(null))
+                foreach(DichVu dv in QLBLLDichvu.Instance.DgvDichVu(null))
                 {
                     if(dv.MaDichVu != "000" && dv.MaDichVu != "001")
                     {
@@ -55,8 +55,8 @@ namespace PBL3___Motel_Management_System.View
             }
             else
             {
-                List<string> ListId = QLBLL.Instance.GetAllIdDichVuByIdPhong(tp.hopDong.MaPhongTro);
-                foreach (DichVu dv in QLBLL.Instance.DgvDichVu(null))
+                List<string> ListId = QLBLLDichvu.Instance.GetAllIdDichVuByIdPhong(tp.hopDong.MaPhongTro);
+                foreach (DichVu dv in QLBLLDichvu.Instance.DgvDichVu(null))
                 {
                     if(dv.MaDichVu != "000" && dv.MaDichVu != "001")
                     {
@@ -104,12 +104,12 @@ namespace PBL3___Motel_Management_System.View
                     if (dr.Cells[0].Value != null) dsdv.Add(dr.Cells[0].Value.ToString());
                 }
                 tp.DsDichVu = dsdv;
-                QLBLL.Instance.openChildForm1(new ThemHopDong(tp, Back), panelThemDV);
+                QLBLLChung.Instance.openChildForm1(new ThemHopDong(tp, Back), panelThemDV);
             }
             else
             {
                 List<string> dsdv = new List<string>();
-                List<string> ListId = QLBLL.Instance.GetAllIdDichVuByIdPhong(tp.hopDong.MaPhongTro);
+                List<string> ListId = QLBLLDichvu.Instance.GetAllIdDichVuByIdPhong(tp.hopDong.MaPhongTro);
                 foreach (DataGridViewRow dr in dgvXoaDichVu.Rows)
                 {
                     if (dr.Cells[0].Value != null)
@@ -124,7 +124,7 @@ namespace PBL3___Motel_Management_System.View
                         dsdv.Add(dr.Cells[0].Value.ToString());
                     }
                 }
-                QLBLL.Instance.ThayDoiDichVuPhong(dsdv, tp.hopDong.MaPhongTro);
+                QLBLLChiTietDichVu.Instance.ThayDoiDichVuPhong(dsdv, tp.hopDong.MaPhongTro);
                 MessageBox.Show("Thay đổi thành công", "Thông báo", MessageBoxButtons.OK);
                 this.Close();
                 this.loader(null);

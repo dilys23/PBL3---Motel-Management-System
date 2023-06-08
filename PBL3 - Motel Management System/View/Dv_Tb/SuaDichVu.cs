@@ -26,7 +26,7 @@ namespace PBL3___Motel_Management_System
             this.Loader = loader;
             if (idDv != null )
             {
-                DichVu dv = QLBLL.Instance.GetDVByIdDV(idDv);
+                DichVu dv = QLBLLDichvu.Instance.GetDVByIdDV(idDv);
                 if (idDv == "001" || idDv == "000")
                 {
                     txtTenDichVu.ReadOnly = true;
@@ -77,12 +77,12 @@ namespace PBL3___Motel_Management_System
             {
                 if (checkHopLe())
                 {
-                    DichVu dv = QLBLL.Instance.GetDVByIdDV(IdDv);
+                    DichVu dv = QLBLLDichvu.Instance.GetDVByIdDV(IdDv);
                     dv.MaDichVu = IdDv;
                     dv.TenDichVu = txtTenDichVu.Text;
                     dv.GiaDichVu = (Convert.ToDouble(txtGiaDichVu.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
                     dv.TonTai = true; 
-                    QLBLL.Instance.SuaDVBll(dv);
+                    QLBLLDichvu.Instance.SuaDVBll(dv);
                     MessageBox.Show("Thay đổi thông tin thành công", "Thông báo");
                     Loader(null);
                     this.Close();
@@ -96,9 +96,9 @@ namespace PBL3___Motel_Management_System
                     DichVu dv = new DichVu();
                     dv.TenDichVu = txtTenDichVu.Text;
                     dv.GiaDichVu = (Convert.ToDouble(txtGiaDichVu.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", ""))); 
-                    dv.MaDichVu = QLBLL.Instance.TaoIdDichVu();
+                    dv.MaDichVu = QLBLLDichvu.Instance.TaoIdDichVu();
                     dv.TonTai = true;
-                    QLBLL.Instance.ThemDVBll(dv);
+                    QLBLLDichvu.Instance.ThemDVBll(dv);
                     MessageBox.Show("Thêm dịch vụ thành công", "Thông báo");
                     Loader(null);
                     this.Close();

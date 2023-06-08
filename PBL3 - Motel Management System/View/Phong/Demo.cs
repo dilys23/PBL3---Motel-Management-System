@@ -42,7 +42,7 @@ namespace PBL3___Motel_Management_System.View
         public void LoadForm(string txt)
         {
             Button btn = new Button();
-            DayTro dt = QLBLL.Instance.GetDayTroByIdPhong(IdPhong);
+            DayTro dt = QLBLLDayTro.Instance.GetDayTroByIdPhong(IdPhong);
             btn.Name = dt.MaDayTro;
             this.sk(btn, EventArgs.Empty);
         }
@@ -75,11 +75,11 @@ namespace PBL3___Motel_Management_System.View
         }
         private void btnCoc_Click_1(object sender, EventArgs e)
         {
-            if (QLBLL.Instance.GetHopDongByIdPhong(IdPhong) == null)
+            if (QLBLLHopDong.Instance.GetHopDongByIdPhong(IdPhong) == null)
             {
                 ThuePhong tp = new ThuePhong();
                 tp.hopDong.MaPhongTro = IdPhong;
-                 QLBLL.Instance.openChildForm1(new CocPhong(tp, LoadForm), panel);
+                 QLBLLChung.Instance.openChildForm1(new CocPhong(tp, LoadForm), panel);
             }
             else
             {
@@ -88,23 +88,23 @@ namespace PBL3___Motel_Management_System.View
         }
         private void btnChiTiet_Click_1(object sender, EventArgs e)
         {
-            QLBLL.Instance.openChildForm1(new ChiTietPT(sk,IdPhong), panel);
+            QLBLLChung.Instance.openChildForm1(new ChiTietPT(sk,IdPhong), panel);
         }
 
         private void btnChoThue_Click(object sender, EventArgs e)
         {
-            if (QLBLL.Instance.GetHopDongByIdPhong(IdPhong) == null)
+            if (QLBLLHopDong.Instance.GetHopDongByIdPhong(IdPhong) == null)
             {
                 ThuePhong tp = new ThuePhong();
-                tp.hopDong.MaHopDong = QLBLL.Instance.TaoIdHopDong();
+                tp.hopDong.MaHopDong = QLBLLHopDong.Instance.TaoIdHopDong();
                 tp.hopDong.MaPhongTro = IdPhong;
-                QLBLL.Instance.openChildForm1(new ThemKhach(tp, LoadForm), panel);
+                QLBLLChung.Instance.openChildForm1(new ThemKhach(tp, LoadForm), panel);
             }
-            else if(QLBLL.Instance.PhongDaCocByIdPhong(IdPhong))
+            else if(QLBLLPhongTro.Instance.PhongDaCocByIdPhong(IdPhong))
             {
                 ThuePhong tp = new ThuePhong();
-                tp.hopDong = QLBLL.Instance.GetHopDongByIdPhong(IdPhong);
-                QLBLL.Instance.openChildForm1(new ThemKhach(tp, LoadForm), panel);
+                tp.hopDong = QLBLLHopDong.Instance.GetHopDongByIdPhong(IdPhong);
+                QLBLLChung.Instance.openChildForm1(new ThemKhach(tp, LoadForm), panel);
             }
             else
             {
@@ -113,7 +113,7 @@ namespace PBL3___Motel_Management_System.View
         }
         private void btnXoaPhong_Click(object sender, EventArgs e)
         {
-            if(QLBLL.Instance.TinhTrangPhongById(IdPhong)==true || QLBLL.Instance.PhongDaCocByIdPhong(IdPhong)==true)
+            if(QLBLLPhongTro.Instance.TinhTrangPhongById(IdPhong)==true || QLBLLPhongTro.Instance.PhongDaCocByIdPhong(IdPhong)==true)
             {
                 MessageBox.Show("Phòng hiện không thể xóa", "Thông báo");
             }
@@ -123,7 +123,7 @@ namespace PBL3___Motel_Management_System.View
                 if(kq == DialogResult.OK)
                 {
                     //qLBLL.DelCHiTietThietBiByIdPhongBLL(IdPhong);
-                    QLBLL.Instance.DelPhongTroBLL(IdPhong);
+                    QLBLLPhongTro.Instance.DelPhongTroBLL(IdPhong);
                     MessageBox.Show("Xóa phòng trọ thành công", "Thông báo");
                     this.Close();
                     // LoadForm(null);
@@ -133,8 +133,8 @@ namespace PBL3___Motel_Management_System.View
         }
         private void btnSuaPhong_Click(object sender, EventArgs e)
         {
-            DayTro dt = QLBLL.Instance.GetDayTroByIdPhong(IdPhong);
-            QLBLL.Instance.openChildForm1(new ThemPhong(dt.MaDayTro,IdPhong,LoadForm,null), panel);
+            DayTro dt = QLBLLDayTro.Instance.GetDayTroByIdPhong(IdPhong);
+            QLBLLChung.Instance.openChildForm1(new ThemPhong(dt.MaDayTro,IdPhong,LoadForm,null), panel);
         }
 
         private void btnTra_Click(object sender, EventArgs e)
@@ -142,23 +142,23 @@ namespace PBL3___Motel_Management_System.View
             DialogResult kq = MessageBox.Show("Bạn có thực sự muốn hoàn trả phòng ", "Cảnh báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (kq == DialogResult.OK)
             {
-                HopDong hd = QLBLL.Instance.GetHopDongByIdPhong(IdPhong);
-                QLBLL.Instance.DelHopDong(hd.MaHopDong);
-                foreach (ChiTietDichVu ct in QLBLL.Instance.GetChiTietDichVuByIdPhong(IdPhong))
+                HopDong hd = QLBLLHopDong.Instance.GetHopDongByIdPhong(IdPhong);
+                QLBLLHopDong.Instance.DelHopDong(hd.MaHopDong);
+                foreach (ChiTietDichVu ct in QLBLLChiTietDichVu.Instance.GetChiTietDichVuByIdPhong(IdPhong))
                 {
-                    QLBLL.Instance.DelChiTietDichVu(ct.MaChiTietDichVu);
+                    QLBLLChiTietDichVu.Instance.DelChiTietDichVu(ct.MaChiTietDichVu);
                 }
-                foreach (string tv in QLBLL.Instance.GetIDThanhvienbyIDPhong(IdPhong))
+                foreach (string tv in QLBLLThanhVienTrongPhong.Instance.GetIDThanhvienbyIDPhong(IdPhong))
                 {
-                    QLBLL.Instance.DelThanhVienBLL(tv);
+                    QLBLLThanhVienTrongPhong.Instance.DelThanhVienBLL(tv);
                 }
-                foreach(Nguoi nguoi in QLBLL.Instance.GetNguoiByIdPhong(IdPhong))
+                foreach(Nguoi nguoi in QLBLLNguoi.Instance.GetNguoiByIdPhong(IdPhong))
                 {
-                    QLBLL.Instance.DelNguoiBll(nguoi.MaNguoi);
+                    QLBLLNguoi.Instance.DelNguoiBll(nguoi.MaNguoi);
                 }
-                foreach(string hoadon in QLBLL.Instance.GetHoaDonByIdPhong(IdPhong))
+                foreach(string hoadon in QLBLLHoadon.Instance.GetHoaDonByIdPhong(IdPhong))
                 {
-                    QLBLL.Instance.DelHoaDonBll(hoadon);
+                    QLBLLHoadon.Instance.DelHoaDonBll(hoadon);
                 }
                 MessageBox.Show("Hoàn trả phòng thành công", "Thông báo");
                 this.Close();

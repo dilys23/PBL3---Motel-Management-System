@@ -36,7 +36,7 @@ namespace PBL3___Motel_Management_System
         }
         public void SetGUI()
         {
-            PhongTro phongTro = QLBLL.Instance.GetPhongTroByIdPhong(IdPhong);
+            PhongTro phongTro = QLBLLPhongTro.Instance.GetPhongTroByIdPhong(IdPhong);
             if (IdPhong != null)
             {
                 CultureInfo vietnamCulture = new CultureInfo("vi-VN");
@@ -122,7 +122,7 @@ namespace PBL3___Motel_Management_System
                 if (IdPhong!=null)
                 {
                     PhongTro pt = new PhongTro();
-                    PhongTro pt1  = QLBLL.Instance.GetPhongTroByIdPhong(IdPhong);
+                    PhongTro pt1  = QLBLLPhongTro.Instance.GetPhongTroByIdPhong(IdPhong);
                     pt.MaPhongTro = IdPhong;
                     pt.TenPhongTro = txtTenPhong.Text;
                     pt.TinhTrang = pt1.TinhTrang;
@@ -132,7 +132,7 @@ namespace PBL3___Motel_Management_System
                     pt.TonTai = true;
                     if (pictutePhong.Image != null)
                     { pt.HinhAnh = ChuyenDoiAnh.ImageToBase64(pictutePhong.Image, pictutePhong.Image.RawFormat); }
-                    QLBLL.Instance.UpdatePTBLL(pt);
+                    QLBLLPhongTro.Instance.UpdatePTBLL(pt);
                     MessageBox.Show("Thay đổi thông tin thành công", "Thông báo");
                     loader(null);
                     this.Close();
@@ -140,7 +140,7 @@ namespace PBL3___Motel_Management_System
                 else
                 {
                     PhongTro pt = new PhongTro();
-                    pt.MaPhongTro = QLBLL.Instance.TaoIdPhongTro();
+                    pt.MaPhongTro = QLBLLPhongTro.Instance.TaoIdPhongTro();
                     pt.TenPhongTro = txtTenPhong.Text;
                     pt.GiaTien = (Convert.ToDouble(txtGiaTien.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
                     pt.DienTich = Convert.ToDouble(txtDienTich.Text);
@@ -152,28 +152,28 @@ namespace PBL3___Motel_Management_System
                     {
                         pt.HinhAnh = ChuyenDoiAnh.ImageToBase64(pictutePhong.Image, pictutePhong.Image.RawFormat);
                     }
-                    QLBLL.Instance.AddPhongTroBll(pt);
-                    DAL.TaiKhoan tk = QLBLL.Instance.TaoTaiKhoanChoPhong(pt.MaPhongTro);
-                    QLBLL.Instance.AddTaiKhoan(tk);
+                    QLBLLPhongTro.Instance.AddPhongTroBll(pt);
+                    DAL.TaiKhoan tk = QLBLLTaiKhoan.Instance.TaoTaiKhoanChoPhong(pt.MaPhongTro);
+                    QLBLLTaiKhoan.Instance.AddTaiKhoan(tk);
                     VaiTro vt = new VaiTro
                     {
-                        MaVaiTro = QLBLL.Instance.TaoIdVaiTro(),
+                        MaVaiTro = QLBLLVaiTro.Instance.TaoIdVaiTro(),
                         MaTaiKhoan = tk.MaTaiKhoan,
                         TenVaiTro = "Phòng trọ",
                         TonTai = true
                     };
-                    QLBLL.Instance.AddVaiTro(vt);
+                    QLBLLVaiTro.Instance.AddVaiTro(vt);
                     ChiTietTaiKhoanPhongTro ct = new ChiTietTaiKhoanPhongTro()
                     {
-                        MaChiTietTaiKhoanPhongTro = QLBLL.Instance.TaoIdChiTietTaiKhoanPhongTro(),
+                        MaChiTietTaiKhoanPhongTro = QLBLLChiTietTaiKhoanPhongTro.Instance.TaoIdChiTietTaiKhoanPhongTro(),
                         MaTaiKhoan = tk.MaTaiKhoan,
                         MaPhongTro = pt.MaPhongTro,
                         TonTai = true
                     };
-                    QLBLL.Instance.AddChiTietTaiKhoanPhongTro(ct);
+                    QLBLLChiTietTaiKhoanPhongTro.Instance.AddChiTietTaiKhoanPhongTro(ct);
                     MessageBox.Show("Thêm phòng trọ vào dãy thành công", "Thông báo");
                     Button btn = new Button();
-                    btn.Name = QLBLL.Instance.GetIdDayByIdPhong(pt.MaPhongTro);
+                    btn.Name = QLBLLDayTro.Instance.GetIdDayByIdPhong(pt.MaPhongTro);
                     sukien(btn, EventArgs.Empty);
                     this.Close();
                 }

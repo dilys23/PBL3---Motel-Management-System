@@ -369,7 +369,23 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\QLBLL.cs" />
+    <Compile Include="BLL\QLBLLChiTietDichVu.cs" />
+    <Compile Include="BLL\QLBLLChiTietSuDungDichVu.cs" />
+    <Compile Include="BLL\QLBLLChiTietTaiKhoanChuTro.cs" />
+    <Compile Include="BLL\QLBLLChiTietTaiKhoanPhongTro.cs" />
+    <Compile Include="BLL\QLBLLChiTietThanhToanHoaDon.cs" />
+    <Compile Include="BLL\QLBLLChiTietThietBi.cs" />
+    <Compile Include="BLL\QLBLLChung.cs" />
+    <Compile Include="BLL\QLBLLDayTro.cs" />
+    <Compile Include="BLL\QLBLLDichvu.cs" />
+    <Compile Include="BLL\QLBLLHoadon.cs" />
+    <Compile Include="BLL\QLBLLHopDong.cs" />
+    <Compile Include="BLL\QLBLLNguoi.cs" />
+    <Compile Include="BLL\QLBLLPhongTro.cs" />
+    <Compile Include="BLL\QLBLLTaiKhoan.cs" />
+    <Compile Include="BLL\QLBLLThanhVienTrongPhong.cs" />
+    <Compile Include="BLL\QLBLLThietbi.cs" />
+    <Compile Include="BLL\QLBLLVaiTro.cs" />
     <Compile Include="DAL\ChiTietDichVu.cs">
       <DependentUpon>DataPbl.tt</DependentUpon>
     </Compile>

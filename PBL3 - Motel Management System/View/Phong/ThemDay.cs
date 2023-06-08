@@ -34,7 +34,7 @@ namespace PBL3___Motel_Management_System
         }
         public void SetGUI()
         {
-            DayTro day = QLBLL.Instance.GetDayByIdDay(IdDay);
+            DayTro day = QLBLLDayTro.Instance.GetDayByIdDay(IdDay);
             txtTenDay.Text = day.TenDayTro.ToString();
             txtTenHuyen.Text = day.TenHuyen.ToString();
             txtTenDuong.Text = day.TenDuong.ToString();
@@ -90,7 +90,7 @@ namespace PBL3___Motel_Management_System
                 
                 if (IdDay!=null)
                 {
-                    DayTro day = QLBLL.Instance.GetDayByIdDay(IdDay);
+                    DayTro day = QLBLLDayTro.Instance.GetDayByIdDay(IdDay);
                     day.MaDayTro = IdDay;
                     day.TenDayTro = txtTenDay.Text;
                     day.TenDuong = txtTenDuong.Text;
@@ -101,7 +101,7 @@ namespace PBL3___Motel_Management_System
                         day.HinhAnh = ChuyenDoiAnh.ImageToBase64(pictureDayTro.Image, pictureDayTro.Image.RawFormat);
                     }
                     day.TonTai = true;
-                    QLBLL.Instance.SuaDayBll(day);
+                    QLBLLDayTro.Instance.SuaDayBll(day);
                     MessageBox.Show("Thay đổi thông tin thành công", "Thông báo");
                     Button btn = new Button();
                     btn.Name = IdDay;
@@ -112,7 +112,7 @@ namespace PBL3___Motel_Management_System
                 else
                 {
                     DayTro dt = new DayTro();
-                    dt.MaDayTro = QLBLL.Instance.TaoIdDayTro();
+                    dt.MaDayTro = QLBLLDayTro.Instance.TaoIdDayTro();
                     dt.TenDayTro = txtTenDay.Text;
                     dt.TenDuong = txtTenDuong.Text;
                     dt.TenHuyen = txtTenHuyen.Text;
@@ -123,7 +123,7 @@ namespace PBL3___Motel_Management_System
                         dt.HinhAnh = ChuyenDoiAnh.ImageToBase64(pictureDayTro.Image, pictureDayTro.Image.RawFormat);
                     }
                     dt.TonTai = true;
-                    QLBLL.Instance.AddDayTroBll(dt);
+                    QLBLLDayTro.Instance.AddDayTroBll(dt);
                     MessageBox.Show("Bạn đã thêm dãy thành công", "Thông báo");
                     Button btn = new Button();
                     btn.Name = dt.MaDayTro;

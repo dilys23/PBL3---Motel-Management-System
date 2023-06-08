@@ -34,12 +34,12 @@ namespace PBL3___Motel_Management_System.View
            
             Nguoi nguoi = new Nguoi();
             HopDong hd = new HopDong();
-            hd = QLBLL.Instance.GetHopDongByIdPhong(tp.hopDong.MaPhongTro);
+            hd = QLBLLHopDong.Instance.GetHopDongByIdPhong(tp.hopDong.MaPhongTro);
             if (tp != null)
             {
-                if (QLBLL.Instance.PhongDaCocByIdPhong(tp.hopDong.MaPhongTro) == true)
+                if (QLBLLPhongTro.Instance.PhongDaCocByIdPhong(tp.hopDong.MaPhongTro) == true)
                 {
-                    nguoi = QLBLL.Instance.GetNguoiByMaHopDong(hd.MaHopDong);
+                    nguoi = QLBLLNguoi.Instance.GetNguoiByMaHopDong(hd.MaHopDong);
                     txtTen.Text = nguoi.Ten;
                     txtTen.Enabled = false;
                     txtSdt.Text = nguoi.Sdt;
@@ -112,7 +112,7 @@ namespace PBL3___Motel_Management_System.View
             {
                 Nguoi nguoi = new Nguoi
                 {
-                    MaNguoi = QLBLL.Instance.TaoIdNguoi(),
+                    MaNguoi = QLBLLNguoi.Instance.TaoIdNguoi(),
                     Ten = txtTen.Text,
                     Cccd = txtCccd.Text,
                     Sdt = txtSdt.Text,
@@ -123,7 +123,7 @@ namespace PBL3___Motel_Management_System.View
             };
                 HopDong hd = new HopDong
                 {
-                    MaHopDong = QLBLL.Instance.TaoIdHopDong(),
+                    MaHopDong = QLBLLHopDong.Instance.TaoIdHopDong(),
                     MaNguoi = nguoi.MaNguoi,
                     MaPhongTro = tp.hopDong.MaPhongTro,
                     NgayBatDau = dtpNgayCoc.Value.ToString("yyyy-MM-dd"),
@@ -133,8 +133,8 @@ namespace PBL3___Motel_Management_System.View
                     TonTai = true
 
             };
-                QLBLL.Instance.AddNguoiBll(nguoi);
-                QLBLL.Instance.AddHdBll(hd);
+                QLBLLNguoi.Instance.AddNguoiBll(nguoi);
+                QLBLLHopDong.Instance.AddHdBll(hd);
                 MessageBox.Show("Cọc phòng thành công");
                 this.Close();
                 this.loader(null);

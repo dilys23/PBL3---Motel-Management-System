@@ -33,8 +33,8 @@ namespace PBL3___Motel_Management_System.View
         {
             if (this.matk != null)
             {
-                DAL.TaiKhoan tk = QLBLL.Instance.GetTaiKhoanByIdTaiKhoan(this.matk);
-                Nguoi ng = QLBLL.Instance.GetNguoiByMaTaiKhoan(this.matk);
+                DAL.TaiKhoan tk = QLBLLTaiKhoan.Instance.GetTaiKhoanByIdTaiKhoan(this.matk);
+                Nguoi ng = QLBLLNguoi.Instance.GetNguoiByMaTaiKhoan(this.matk);
                 txtTen.Text = ng.Ten;
                 txtSdt.Text = ng.Sdt;
                 txtDiaChi.Text = ng.Diachi;
@@ -56,30 +56,30 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnDoiMK_Click(object sender, EventArgs e)
         {
-            QLBLL.Instance.openChildForm1(new DoiMK(null, matk, LoadForm), panel1);
+            QLBLLChung.Instance.openChildForm1(new DoiMK(null, matk, LoadForm), panel1);
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
            // Nguoi ng = new Nguoi();
-            Nguoi ng = QLBLL.Instance.GetNguoiByMaTaiKhoan(this.matk);
+            Nguoi ng = QLBLLNguoi.Instance.GetNguoiByMaTaiKhoan(this.matk);
            // this.idng = ng.MaNguoi;
-            QLBLL.Instance.openChildForm1(new ThemKhach(null, LoadForm), panel1);
+            QLBLLChung.Instance.openChildForm1(new ThemKhach(null, LoadForm), panel1);
         }
 
         private void btnSua_Click_1(object sender, EventArgs e)
         {
-            Nguoi ng = QLBLL.Instance.GetNguoiByMaTaiKhoan(this.matk);
+            Nguoi ng = QLBLLNguoi.Instance.GetNguoiByMaTaiKhoan(this.matk);
             ThuePhong tp = new ThuePhong();
             tp.hopDong.MaNguoi = ng.MaNguoi;
-            QLBLL.Instance.openChildForm1(new ThemKhach(tp, LoadForm), panel1);
+            QLBLLChung.Instance.openChildForm1(new ThemKhach(tp, LoadForm), panel1);
         }
 
        
         private void btnThemAnh_Click(object sender, EventArgs e)
         {
             //QLBLL.Instance.openChildForm1(new TaiKhoanPhong(null, matk), panel1);
-            QLBLL.Instance.openChildForm1(new DoiMK(null, matk,LoadForm), panel1);
+            QLBLLChung.Instance.openChildForm1(new DoiMK(null, matk,LoadForm), panel1);
         }
     }
 }

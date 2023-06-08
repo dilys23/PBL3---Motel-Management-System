@@ -25,26 +25,26 @@ namespace PBL3___Motel_Management_System.View
         {
             dgvTinhTrang.RowCount = 0;
             dgvSoLuong.RowCount = 0;
-            QLBLL.Instance.customDGV(dgvTinhTrang);
-            QLBLL.Instance.customDGV(dgvSoLuong);
+            QLBLLChung.Instance.customDGV(dgvTinhTrang);
+            QLBLLChung.Instance.customDGV(dgvSoLuong);
             int i = 0;
-            foreach (string idp in QLBLL.Instance.DgvPhongTro(null))
+            foreach (string idp in QLBLLPhongTro.Instance.DgvPhongTro(null))
             {
-                PhongTro pt = QLBLL.Instance.GetPhongTroByIdPhong(idp);
+                PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByIdPhong(idp);
                 string TinhTrang;
-                HopDong hd = QLBLL.Instance.GetHopDongByIdPhong(pt.MaPhongTro);
+                HopDong hd = QLBLLHopDong.Instance.GetHopDongByIdPhong(pt.MaPhongTro);
                 if (hd == null) TinhTrang = "Còn trống";
                 else if (hd.TinhTrang == true) TinhTrang = "Đã cho thuê";
                 else TinhTrang = "Đã cọc";
-                dgvTinhTrang.Rows.Add(pt.MaPhongTro, ++i, QLBLL.Instance.GetDayTroByIdPhong(pt.MaPhongTro).TenDayTro, pt.TenPhongTro, TinhTrang);
+                dgvTinhTrang.Rows.Add(pt.MaPhongTro, ++i, QLBLLDayTro.Instance.GetDayTroByIdPhong(pt.MaPhongTro).TenDayTro, pt.TenPhongTro, TinhTrang);
             }
-            List<string> phongTroList = QLBLL.Instance.DgvPhongTro(null);
+            List<string> phongTroList = QLBLLPhongTro.Instance.DgvPhongTro(null);
             Dictionary<string, int> tinhTrangCounts = new Dictionary<string, int>();
             foreach (string idp in phongTroList)
             {
-                PhongTro pt = QLBLL.Instance.GetPhongTroByIdPhong(idp);
+                PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByIdPhong(idp);
                 string tinhTrang;
-                HopDong hd = QLBLL.Instance.GetHopDongByIdPhong(pt.MaPhongTro);
+                HopDong hd = QLBLLHopDong.Instance.GetHopDongByIdPhong(pt.MaPhongTro);
                 if (hd == null) tinhTrang = "Còn trống";
                 else if (hd.TinhTrang == true) tinhTrang = "Đã cho thuê";
                 else tinhTrang = "Đang cọc";
@@ -72,13 +72,13 @@ namespace PBL3___Motel_Management_System.View
         {
            // dgvDoanhThu.Rows.Clear();
             int i = 0;
-            foreach (string hd in QLBLL.Instance.GetHoaDonByThangChiTra(thang))
+            foreach (string hd in QLBLLHoadon.Instance.GetHoaDonByThangChiTra(thang))
             {
-                HoaDon hoadon = QLBLL.Instance.GetHoaDonById(hd);
+                HoaDon hoadon = QLBLLHoadon.Instance.GetHoaDonById(hd);
                 if (hoadon.TinhTrang == true)
                 {
-                    PhongTro pt = QLBLL.Instance.GetPhongTroByMaHoaDon(hoadon.MaHoaDon);
-                    DayTro dt = QLBLL.Instance.GetDayTroByIdPhong(pt.MaPhongTro);
+                    PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByMaHoaDon(hoadon.MaHoaDon);
+                    DayTro dt = QLBLLDayTro.Instance.GetDayTroByIdPhong(pt.MaPhongTro);
                     //dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hoadon.TongTien);
                 }
 
@@ -166,7 +166,7 @@ namespace PBL3___Motel_Management_System.View
             ChartCot.Series[0].XValueMember = "TenDayTro";
             ChartCot.Series[0].YValueMembers = "TongTien";
             List<object> data = new List<object>();
-            ChartCot.DataSource = QLBLL.Instance.ThongKe(thang);
+            ChartCot.DataSource = QLBLLChung.Instance.ThongKe(thang);
             ChartCot.ChartAreas[0].AxisX.Title = "Dãy trọ";
             ChartCot.ChartAreas[0].AxisY.Title = "Tổng tiền";
             ChartCot.DataBind();

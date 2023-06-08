@@ -23,25 +23,25 @@ namespace PBL3___Motel_Management_System
         public LichSuThanhToan(Loader loader, string idHd)
         {
             InitializeComponent();
-            QLBLL.Instance.customDGV(dgvLichSu);
+            QLBLLChung.Instance.customDGV(dgvLichSu);
             this.loader = loader;
             this.IdHd =idHd;
             if(this.IdHd != null)
             {
                 dtpThangThanhToan.Enabled = false;
-                HoaDon hd = QLBLL.Instance.GetHoaDonById(this.IdHd);
+                HoaDon hd = QLBLLHoadon.Instance.GetHoaDonById(this.IdHd);
               
                 DateTime dt = DateTime.ParseExact(hd.ThangChiTra, "MM-yyyy", System.Globalization.CultureInfo.InvariantCulture);
                 dtpThangThanhToan.Value = dt;
                 double TongThanhToan = 0;
                 txtTongTien.Text = hd.TongTien.ToString("#,##0") + "₫";
-                PhongTro pt = QLBLL.Instance.GetPhongTroByMaHoaDon(this.IdHd);
+                PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByMaHoaDon(this.IdHd);
                 txtTenPhong.Text = pt.TenPhongTro.ToString();
                 int i = 0;
-                foreach (string idLs in QLBLL.Instance.GetAllIdLichSuThanhToanByIdHoaDon(idHd))
+                foreach (string idLs in QLBLLChiTietThanhToanHoaDon.Instance.GetAllIdLichSuThanhToanByIdHoaDon(idHd))
                 {
                     
-                    ChiTietThanhToanHoaDon cttt = QLBLL.Instance.GetChiTietThanhToanHoaDonById(idLs);
+                    ChiTietThanhToanHoaDon cttt = QLBLLChiTietThanhToanHoaDon.Instance.GetChiTietThanhToanHoaDonById(idLs);
                     double tienThanhToan = cttt.TienThanhToan;
                     double tongtien = hd.TongTien;
                     TongThanhToan += cttt.TienThanhToan;

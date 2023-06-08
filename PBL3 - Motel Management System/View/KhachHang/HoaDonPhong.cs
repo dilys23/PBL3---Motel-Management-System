@@ -28,15 +28,16 @@ namespace PBL3___Motel_Management_System.View.KhachHang
                 SetGUI(null);
             }
         }
+        CultureInfo vietnamCulture = new CultureInfo("vi-VN");
+
         public void SetGUI(string txt)
         {
             dgvHoaDon.Rows.Clear();
-            QLBLL.Instance.customDGV(dgvHoaDon);
-            CultureInfo vietnamCulture = new CultureInfo("vi-VN");
+            QLBLLChung.Instance.customDGV(dgvHoaDon);
             if (txt == null)
             {
                 int i = 0;
-                foreach (HoaDon hd in QLBLL.Instance.GetAllHoaDonBll())
+                foreach (HoaDon hd in QLBLLHoadon.Instance.GetAllHoaDonBll())
                 {
                     if (hd.MaPhongTro == idPhong && hd.TinhTrang == true)
                     {
@@ -49,12 +50,12 @@ namespace PBL3___Motel_Management_System.View.KhachHang
             {
                 string ThangSuDung = dtpThangSuDung.Value.ToString("MM-yyyy");
                 int i = 0;
-                string IdDay = QLBLL.Instance.GetDayTroByIdPhong(idPhong).MaDayTro;
-                foreach (HoaDon hd in QLBLL.Instance.GetHoaDonTimKiem(ThangSuDung, IdDay, idPhong, "1"))
+                string IdDay = QLBLLDayTro.Instance.GetDayTroByIdPhong(idPhong).MaDayTro;
+                foreach (HoaDon hd in QLBLLHoadon.Instance.GetHoaDonTimKiem(ThangSuDung, IdDay, idPhong, "1"))
                 {
-                    PhongTro pt = QLBLL.Instance.GetPhongTroByIdPhong(hd.MaPhongTro);
-                    DayTro dt = QLBLL.Instance.GetDayTroByIdPhong(hd.MaPhongTro);
-                    dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, hd.NgayTao, hd.ThangChiTra, hd.TongTien.ToString("C0", vietnamCulture), hd.DaThanhToan.ToString("C0", vietnamCulture), (hd.TongTien - hd.DaThanhToan).ToString("C0", vietnamCulture));
+                    PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByIdPhong(hd.MaPhongTro);
+                    DayTro dt = QLBLLDayTro.Instance.GetDayTroByIdPhong(hd.MaPhongTro);
+                    dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, hd.NgayTao, hd.ThangChiTra, hd.TongTien, hd.DaThanhToan, hd.TongTien - hd.DaThanhToan);
                 }
             }
             }
@@ -73,7 +74,7 @@ namespace PBL3___Motel_Management_System.View.KhachHang
                 if (columnName == "btnChiTiet")
                 {
                     string id = dgvHoaDon.CurrentRow.Cells[0].Value.ToString();
-                    QLBLL.Instance.openChildForm1(new LichSuThanhToan(SetGUI, id), panelHD);
+                    QLBLLChung.Instance.openChildForm1(new LichSuThanhToan(SetGUI, id), panelHD);
                 }    
             }    
         }

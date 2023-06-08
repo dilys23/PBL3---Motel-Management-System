@@ -25,7 +25,7 @@ namespace PBL3___Motel_Management_System.View
         {
             InitializeComponent();
             SetCBB();
-            QLBLL.Instance.customDGV(dgvDichVu);
+            QLBLLChung.Instance.customDGV(dgvDichVu);
             this.loader=loader;
             this.IdHd=idHd;
             if(this.IdHd != null )
@@ -33,7 +33,7 @@ namespace PBL3___Motel_Management_System.View
                 lbl.Text = "Sửa hóa đơn";
                 cbbDayTro.Enabled = false;
                 cbbPhongTro.Enabled = false;
-                HoaDon hd = QLBLL.Instance.GetHoaDonById(idHd);
+                HoaDon hd = QLBLLHoadon.Instance.GetHoaDonById(idHd);
                 int index = -1;
                 for(int i=0;i<cbbPhongTro.Items.Count;i++)
                 {
@@ -52,7 +52,7 @@ namespace PBL3___Motel_Management_System.View
         {
             cbbDayTro.Items.Clear();
             cbbPhongTro.Items.Clear();
-            cbbDayTro.Items.AddRange(QLBLL.Instance.GetCbbDayTro().ToArray());
+            cbbDayTro.Items.AddRange(QLBLLChung.Instance.GetCbbDayTro().ToArray());
             cbbDayTro.SelectedIndex = 0;
         }
        
@@ -62,33 +62,33 @@ namespace PBL3___Motel_Management_System.View
             {
                 dgvDichVu.Rows.Clear();
                 txtGiamGia.Text = "0";
-                HopDong hd = QLBLL.Instance.GetHopDongByIdPhong(idPhong);
+                HopDong hd = QLBLLHopDong.Instance.GetHopDongByIdPhong(idPhong);
                 DateTime dt1 = DateTime.ParseExact(hd.NgayBatDau, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
                 DateTime dt2 = DateTime.ParseExact(hd.NgayKetThuc, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
                 DateTime dtStart = new DateTime(dt1.Year, dt1.Month, 1);
                 DateTime dtEnd = new DateTime(dt2.Year, dt2.Month, 1);
                 dtpThangThanhToan.MinDate = dtStart;
                 dtpThangThanhToan.MaxDate = dtEnd;
-                PhongTro pt = QLBLL.Instance.GetPhongTroByIdPhong(idPhong);
-
+                PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByIdPhong(idPhong);
+                
                 txtTienPhong.Text = pt.GiaTien.ToString("#,##0") + "₫";
                 int i = 0;
                 bool status = false;
-                foreach(ChiTietDichVu ctdv in QLBLL.Instance.GetChiTietDichVuByIdPhong(idPhong))
+                foreach(ChiTietDichVu ctdv in QLBLLChiTietDichVu.Instance.GetChiTietDichVuByIdPhong(idPhong))
                 {
                     if(ctdv.MaDichVu != "001" && ctdv.MaDichVu != "000")
                     {
-                        DichVu dv = QLBLL.Instance.GetDichVuByIdDichVu(ctdv.MaDichVu);
+                        DichVu dv = QLBLLDichvu.Instance.GetDichVuByIdDichVu(ctdv.MaDichVu);
                         dgvDichVu.Rows.Add(++i, dv.TenDichVu, dv.GiaDichVu.ToString("#,##0") + "₫", 0, 0, dv.GiaDichVu.ToString("#,##0") + "₫", "Chọn");
                     }
                     else if(!status)
                     {
                         status = true;
-                        List<ChiTietSuDungDichVu> list = QLBLL.Instance.GetChiTietSuDungDichVuTimKiem(thang, "-1", idPhong, "1");
+                        List<ChiTietSuDungDichVu> list = QLBLLChiTietSuDungDichVu.Instance.GetChiTietSuDungDichVuTimKiem(thang, "-1", idPhong, "1");
                         foreach(ChiTietSuDungDichVu dv in list)
                         {
-                            ChiTietDichVu ct = QLBLL.Instance.GetChiTietDichVuById(dv.MaCHiTietDichVu);
-                            DichVu dv1 = QLBLL.Instance.GetDichVuByIdDichVu(ct.MaDichVu);
+                            ChiTietDichVu ct = QLBLLChiTietDichVu.Instance.GetChiTietDichVuById(dv.MaCHiTietDichVu);
+                            DichVu dv1 = QLBLLDichvu.Instance.GetDichVuByIdDichVu(ct.MaDichVu);
                             dgvDichVu.Rows.Add(++i, dv1.TenDichVu, dv1.GiaDichVu.ToString("#,##0") + "₫", dv.ChiSoCu, dv.ChiSoMoi, (dv.ChiSoMoi-dv.ChiSoCu)*dv1.GiaDichVu, "Chọn");
                         }
                     }
@@ -139,7 +139,7 @@ namespace PBL3___Motel_Management_System.View
             cbbPhongTro.Items.Clear();
             cbbPhongTro.Text = "";
             string id = ((ViewCbb)cbbDayTro.SelectedItem).key;
-            cbbPhongTro.Items.AddRange(QLBLL.Instance.GetViewCbbPhongByDayForThemHoaDon(id).ToArray());
+            cbbPhongTro.Items.AddRange(QLBLLPhongTro.Instance.GetViewCbbPhongByDayForThemHoaDon(id).ToArray());
             if (cbbPhongTro.Items.Count != 0)
             {
                 cbbPhongTro.SelectedIndex = 0;
@@ -230,7 +230,7 @@ namespace PBL3___Motel_Management_System.View
                         if (this.IdHd == null)
                         {
                         HoaDon hd = new HoaDon
-                        { MaHoaDon = QLBLL.Instance.TaoIdHoaDon(),
+                        { MaHoaDon = QLBLLHoadon.Instance.TaoIdHoaDon(),
                             MaPhongTro = ((ViewCbb)cbbPhongTro.SelectedItem).key,
                             NgayTao = dtpNgayLap.Value.ToString("dd-MM-yyyy"),
                             ThangChiTra = dtpThangThanhToan.Value.ToString("MM-yyyy"),
@@ -239,20 +239,20 @@ namespace PBL3___Motel_Management_System.View
                             TonTai = true,
                             DaThanhToan = 0
                         };
-                        QLBLL.Instance.AddHoaDonBll(hd);
+                        QLBLLHoadon.Instance.AddHoaDonBll(hd);
                         MessageBox.Show("Thêm hóa đơn thành công", "Thông báo");
                         this.Close();
                         this.loader(null);
                         }
                         else
                         {
-                            HoaDon hd = QLBLL.Instance.GetHoaDonById(this.IdHd);
+                            HoaDon hd = QLBLLHoadon.Instance.GetHoaDonById(this.IdHd);
                             hd.NgayTao = dtpNgayLap.Value.ToString("dd-MM-yyyy");
                             hd.ThangChiTra = dtpThangThanhToan.Value.ToString("MM-yyyy");
                             hd.TinhTrang = false;
                             hd.TongTien = tongCong;
                             hd.DaThanhToan = 0;
-                            QLBLL.Instance.UpdateHoaDonBLL(hd);
+                            QLBLLHoadon.Instance.UpdateHoaDonBLL(hd);
                             MessageBox.Show("Thay đổi hóa đơn thành công", "Thông báo");
                             this.Close();
                             this.loader(null);

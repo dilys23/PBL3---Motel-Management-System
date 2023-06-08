@@ -31,10 +31,10 @@ namespace PBL3___Motel_Management_System.View
         public void LoadForm()
         {
             DayTro dt = new DayTro();
-            dt = QLBLL.Instance.GetDayTroByIdPhong(tp.hopDong.MaPhongTro);
+            dt = QLBLLDayTro.Instance.GetDayTroByIdPhong(tp.hopDong.MaPhongTro);
             txtTenDay.Text= dt.TenDayTro;
             PhongTro phongTro = new PhongTro();
-            phongTro = QLBLL.Instance.GetPhongTroByIdPhong(tp.hopDong.MaPhongTro);
+            phongTro = QLBLLPhongTro.Instance.GetPhongTroByIdPhong(tp.hopDong.MaPhongTro);
             txtDienTich.Text = phongTro.DienTich.ToString();
             txtTenPhong.Text = phongTro.TenPhongTro;
             string diachi = dt.TenDuong + " " + dt.TenHuyen + " " + dt.TenThanhPho;
@@ -43,12 +43,12 @@ namespace PBL3___Motel_Management_System.View
             txtSonguoitoida.Text = phongTro.ToiDa.ToString();
             Nguoi nguoi = new Nguoi();
             HopDong hd = new HopDong();
-            hd = QLBLL.Instance.GetHopDongByIdPhong(tp.hopDong.MaPhongTro);
+            hd = QLBLLHopDong.Instance.GetHopDongByIdPhong(tp.hopDong.MaPhongTro);
             if(hd != null)
             {
-                if(QLBLL.Instance.PhongDaCocByIdPhong(tp.hopDong.MaPhongTro)==false)
+                if(QLBLLPhongTro.Instance.PhongDaCocByIdPhong(tp.hopDong.MaPhongTro)==false)
                 {
-                    nguoi = QLBLL.Instance.GetNguoiByMaHopDong(hd.MaHopDong);
+                    nguoi = QLBLLNguoi.Instance.GetNguoiByMaHopDong(hd.MaHopDong);
                     txtHoVaTen.Text = nguoi.Ten;
                     txtSdt.Text = nguoi.Sdt;
                     txtTienCoc.Text = hd.TienCoc.ToString("#,##0") + "₫";
