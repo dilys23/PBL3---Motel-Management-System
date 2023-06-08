@@ -44,7 +44,7 @@ namespace PBL3___Motel_Management_System.View
                 Username.Text = tk.TenTaiKhoan;
                 if (ng.HinhAnh != null)
                 {
-                    ptAnh.Image = ChuyenDoiAnh.Base64ToImage(ng.HinhAnh);
+                    ptAnh.Image = QLBLLChung.Instance.Base64ToImage(ng.HinhAnh);
                 }
 
             }

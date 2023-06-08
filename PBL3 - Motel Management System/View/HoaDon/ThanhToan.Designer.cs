@@ -65,7 +65,7 @@
             this.panel1.Controls.Add(this.txtTenPhong);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(29, 33);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(702, 386);
             this.panel1.TabIndex = 0;
@@ -86,7 +86,7 @@
             this.NgayThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NgayThanhToan.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.NgayThanhToan.Location = new System.Drawing.Point(296, 262);
-            this.NgayThanhToan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NgayThanhToan.Margin = new System.Windows.Forms.Padding(2);
             this.NgayThanhToan.Name = "NgayThanhToan";
             this.NgayThanhToan.Size = new System.Drawing.Size(151, 23);
             this.NgayThanhToan.TabIndex = 54;
@@ -100,7 +100,7 @@
             this.btnTroVe.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTroVe.IconSize = 30;
             this.btnTroVe.Location = new System.Drawing.Point(645, 14);
-            this.btnTroVe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTroVe.Margin = new System.Windows.Forms.Padding(2);
             this.btnTroVe.Name = "btnTroVe";
             this.btnTroVe.Size = new System.Drawing.Size(32, 30);
             this.btnTroVe.TabIndex = 53;
@@ -111,7 +111,7 @@
             // 
             this.txtConNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConNo.Location = new System.Drawing.Point(295, 213);
-            this.txtConNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtConNo.Margin = new System.Windows.Forms.Padding(2);
             this.txtConNo.Name = "txtConNo";
             this.txtConNo.ReadOnly = true;
             this.txtConNo.Size = new System.Drawing.Size(152, 23);
@@ -135,7 +135,7 @@
             this.btnXacNhan.IconColor = System.Drawing.Color.Black;
             this.btnXacNhan.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXacNhan.Location = new System.Drawing.Point(310, 302);
-            this.btnXacNhan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXacNhan.Margin = new System.Windows.Forms.Padding(2);
             this.btnXacNhan.Name = "btnXacNhan";
             this.btnXacNhan.Size = new System.Drawing.Size(100, 26);
             this.btnXacNhan.TabIndex = 38;
@@ -147,11 +147,11 @@
             // 
             this.txtThanhToan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtThanhToan.Location = new System.Drawing.Point(295, 173);
-            this.txtThanhToan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtThanhToan.Margin = new System.Windows.Forms.Padding(2);
             this.txtThanhToan.Name = "txtThanhToan";
             this.txtThanhToan.Size = new System.Drawing.Size(152, 23);
             this.txtThanhToan.TabIndex = 6;
-            this.txtThanhToan.TextChanged += new System.EventHandler(this.txtThanhToan_TextChanged);
+            this.txtThanhToan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtThanhToan_KeyPress);
             // 
             // label4
             // 
@@ -191,7 +191,7 @@
             this.txtTongTien.Enabled = false;
             this.txtTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTongTien.Location = new System.Drawing.Point(295, 133);
-            this.txtTongTien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTongTien.Margin = new System.Windows.Forms.Padding(2);
             this.txtTongTien.Name = "txtTongTien";
             this.txtTongTien.Size = new System.Drawing.Size(152, 23);
             this.txtTongTien.TabIndex = 2;
@@ -201,7 +201,7 @@
             this.txtTenPhong.Enabled = false;
             this.txtTenPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenPhong.Location = new System.Drawing.Point(295, 93);
-            this.txtTenPhong.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTenPhong.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenPhong.Name = "txtTenPhong";
             this.txtTenPhong.Size = new System.Drawing.Size(152, 23);
             this.txtTenPhong.TabIndex = 1;
@@ -229,7 +229,7 @@
             this.ClientSize = new System.Drawing.Size(762, 455);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.DarkBlue;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ThanhToan";
             this.Text = "ThanhToan";
             this.panel1.ResumeLayout(false);

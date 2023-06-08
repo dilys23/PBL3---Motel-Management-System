@@ -30,31 +30,24 @@ namespace PBL3___Motel_Management_System
             {
                 dtpThangThanhToan.Enabled = false;
                 HoaDon hd = QLBLLHoadon.Instance.GetHoaDonById(this.IdHd);
-              
                 DateTime dt = DateTime.ParseExact(hd.ThangChiTra, "MM-yyyy", System.Globalization.CultureInfo.InvariantCulture);
                 dtpThangThanhToan.Value = dt;
                 double TongThanhToan = 0;
-                txtTongTien.Text = hd.TongTien.ToString("#,##0") + "₫";
+                txtTongTien.Text = QLBLLChung.Instance.ChuyenDoiSangKieuTien(hd.TongTien);
                 PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByMaHoaDon(this.IdHd);
                 txtTenPhong.Text = pt.TenPhongTro.ToString();
                 int i = 0;
                 foreach (string idLs in QLBLLChiTietThanhToanHoaDon.Instance.GetAllIdLichSuThanhToanByIdHoaDon(idHd))
                 {
-                    
                     ChiTietThanhToanHoaDon cttt = QLBLLChiTietThanhToanHoaDon.Instance.GetChiTietThanhToanHoaDonById(idLs);
                     double tienThanhToan = cttt.TienThanhToan;
                     double tongtien = hd.TongTien;
                     TongThanhToan += cttt.TienThanhToan;
                     double ConNo = hd.TongTien - TongThanhToan;
-                    dgvLichSu.Rows.Add( ++i, cttt.NgayThanhToan, cttt.TienThanhToan.ToString("#,##0") + "₫", ConNo.ToString("#,##0") + "₫");
-          
-                }    
-               
-
-            }  
-                
+                    dgvLichSu.Rows.Add( ++i, cttt.NgayThanhToan, QLBLLChung.Instance.ChuyenDoiSangKieuTien(cttt.TienThanhToan), QLBLLChung.Instance.ChuyenDoiSangKieuTien(ConNo));
+                }
+            }     
         }
-
         private void btnTroVe_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -61,7 +61,6 @@ namespace PBL3___Motel_Management_System.View
         {
             this.Close();
         }
-
         private void btnLuu_Click(object sender, EventArgs e)
         {
             if (checkHopLe())
@@ -69,20 +68,20 @@ namespace PBL3___Motel_Management_System.View
                 if (IdTb != null)
                 {
                     ThietBi tb = QLBLLThietbi.Instance.GetTBByIdTB(IdTb);
-                    tb.MaThietBi = IdTb;
                     tb.TenThietBi = txtTenTB.Text;
                     tb.GiaThietBi = (Convert.ToDouble(txtGia.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
-                    tb.TonTai = true;
                     QLBLLThietbi.Instance.SuaTBBll(tb);
                     MessageBox.Show("Thay đổi thông tin thành công", "Thông báo");
                 }
                 else
                 {
-                    ThietBi tb = new ThietBi();
-                    tb.MaThietBi = QLBLLThietbi.Instance.TaoIdThietBi();
-                    tb.TenThietBi = txtTenTB.Text;
-                    tb.GiaThietBi = (Convert.ToDouble(txtGia.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));        
-                    tb.TonTai = true;
+                    ThietBi tb = new ThietBi()
+                    {
+                        MaThietBi = QLBLLThietbi.Instance.TaoIdThietBi(),
+                        TenThietBi = txtTenTB.Text,
+                        GiaThietBi = (Convert.ToDouble(txtGia.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", ""))),
+                        TonTai = true
+                    };      
                     QLBLLThietbi.Instance.ThemTBBll(tb);
                     MessageBox.Show("Thêm dịch vụ thành công", "Thông báo");
                 }

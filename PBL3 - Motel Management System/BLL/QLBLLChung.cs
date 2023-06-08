@@ -3,6 +3,8 @@ using PBL3___Motel_Management_System.DTO;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -229,6 +231,49 @@ namespace PBL3___Motel_Management_System.BLL
                     e.CellStyle.SelectionBackColor = Color.Tomato;
                 }
             }
+        }
+        public void ChiChoPhepNhapSo(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+        public DateTime ConvertStringToDateTimeyyyyMMdd(string s)
+        {
+            return DateTime.ParseExact(s, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
+        }
+        public string ChuyenDoiSangKieuTien(double s)
+        {
+            return s.ToString("#,##0") + "₫";
+        }
+        public double ChuyenDoiTienSangDouble(string s)
+        {
+            CultureInfo vietnamCulture = new CultureInfo("vi-VN");
+            return Convert.ToDouble(s.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", ""));
+        }
+        public byte[] ImageToBase64(Image image, System.Drawing.Imaging.ImageFormat format)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, format);
+                byte[] imageBytes = ms.ToArray();
+                return imageBytes;
+            }
+        }
+        public Image Base64ToImage(byte[] imageBytes)
+        {
+            MemoryStream ms = new MemoryStream(imageBytes, 0, imageBytes.Length);
+            ms.Write(imageBytes, 0, imageBytes.Length);
+            Image image = Image.FromStream(ms, true);
+            return image;
+
         }
 
     }

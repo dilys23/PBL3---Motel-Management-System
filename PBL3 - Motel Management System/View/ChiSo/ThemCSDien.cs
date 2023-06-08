@@ -41,8 +41,7 @@ namespace PBL3___Motel_Management_System.View
             txtChiSoMoi.Text = cs.ChiSoMoi.ToString();
             dtpNgayLap.Value = DateTime.ParseExact(cs.NgayLap, "dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture);
             dtpThang.Value = DateTime.ParseExact(cs.ThoiGian, "MM-yyyy", System.Globalization.CultureInfo.InvariantCulture);
-    }
-        
+        }
         private void btnTroVe_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -52,10 +51,8 @@ namespace PBL3___Motel_Management_System.View
             cbbDayTro.Items.Clear();
             cbbPhongTro.Items.Clear();
             cbbDayTro.Items.AddRange(QLBLLChung.Instance.GetCbbDayTro().ToArray());
-            cbbDayTro.SelectedIndex = 0;
-            
+            cbbDayTro.SelectedIndex = 0;      
         }
-
         private void cbbDayTro_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbbPhongTro.Items.Clear();
@@ -104,7 +101,6 @@ namespace PBL3___Motel_Management_System.View
                     status = false;
                 }
             }
-
             return status;
         }
         private void btnLuu_Click(object sender, EventArgs e)

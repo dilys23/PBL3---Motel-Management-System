@@ -454,7 +454,6 @@
       <DependentUpon>DataPbl.tt</DependentUpon>
     </Compile>
     <Compile Include="DTO\ViewCbb.cs" />
-    <Compile Include="DTO\ChuyenDoiAnh.cs" />
     <Compile Include="DTO\DgvHopDong.cs" />
     <Compile Include="DTO\ThuePhong.cs" />
     <Compile Include="DTO\TinhTrangPhongTro.cs" />

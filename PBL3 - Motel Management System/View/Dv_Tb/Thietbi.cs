@@ -27,7 +27,6 @@ namespace PBL3___Motel_Management_System.View
             InitializeComponent();
             LoadForm(null);
         }
-        
         private void LoadForm(string txtTim)
         {
             dgvThietBi.RowCount = 0;
@@ -46,7 +45,6 @@ namespace PBL3___Motel_Management_System.View
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
         protected override void WndProc(ref Message m)
         {
             const int WM_NCCALCSIZE = 0x0083;//Standar Title Bar - Snap Window
@@ -153,13 +151,11 @@ namespace PBL3___Motel_Management_System.View
         {
             string id = dgvThietBi.CurrentRow.Cells[0].Value.ToString();
             QLBLLChung.Instance.openChildForm1(new ThemThietBi(id, LoadForm), panelTB);
-            
         }
         private void btnThemThietBi_Click(object sender, EventArgs e)
         {
             QLBLLChung.Instance.openChildForm1(new ThemThietBi(null,LoadForm), panelTB);
         }
-
         private void btnTim_Click(object sender, EventArgs e)
         {
             LoadForm(txtTim.Text);
@@ -173,12 +169,6 @@ namespace PBL3___Motel_Management_System.View
             MessageBox.Show("Xóa thiết bị thành công", "Thông báo");
             LoadForm(null);
         }
-
-        private void btnBaoHong_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dgvThietBi_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)

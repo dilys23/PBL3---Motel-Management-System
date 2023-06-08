@@ -142,7 +142,7 @@
             this.dgvThanhVien.TabIndex = 9;
             this.dgvThanhVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvThanhVien_CellContentClick);
             this.dgvThanhVien.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvThanhVien_CellFormatting);
-            this.dgvThanhVien.DoubleClick += new System.EventHandler(this.dgvThanhVien_DoubleClick);
+           // this.dgvThanhVien.DoubleClick += new System.EventHandler(this.dgvThanhVien_DoubleClick);
             // 
             // MaNguoi
             // 

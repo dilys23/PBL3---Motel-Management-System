@@ -19,7 +19,6 @@ using System.Windows.Forms;
 
 namespace PBL3___Motel_Management_System
 {
-    
     public partial class Dichvu : Form
     {
         private int borderSize = 2;
@@ -29,9 +28,7 @@ namespace PBL3___Motel_Management_System
         {
             InitializeComponent();
             LoadForm(null);
-   
         }
-     
         private void LoadForm(string txtTim)
         {
             dgvDichVu.Rows.Clear();
@@ -39,13 +36,11 @@ namespace PBL3___Motel_Management_System
             int i = 0;
             foreach(DichVu viewDichVu in QLBLLDichvu.Instance.DgvDichVu(txtTim))
             {
-
                 dgvDichVu.Rows.Add(viewDichVu.MaDichVu,++i,viewDichVu.TenDichVu,viewDichVu.GiaDichVu.ToString("#,##0") + "₫");
             }
             var Sua = System.Drawing.Image.FromFile(@"D:\PBL\PBL3_MAIN\PBL3 - Motel Management System\Icons\icons8-create-25.png");
             var Xoa = System.Drawing.Image.FromFile(@"D:\PBL\PBL3_MAIN\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
             dgvDichVu.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => QLBLLChung.Instance.dgvIcons_CellPainting1(dgvDichVu, e, Sua, Xoa));
-        
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -154,7 +149,6 @@ namespace PBL3___Motel_Management_System
                     break;
             }
         }
-
         private void Service_Load(object sender, EventArgs e)
         {
             formSize = this.ClientSize;
@@ -170,32 +164,24 @@ namespace PBL3___Motel_Management_System
                 this.Size = formSize;
             }
         }
-
-       
-
         private void iconButton5_Click(object sender, EventArgs e)
         {
             SuaDichVu suaDichVu = new SuaDichVu(null,LoadForm); ;
             suaDichVu.ShowDialog();
         }
-
-      
         private void btnThemPhong_Click_1(object sender, EventArgs e)
         {
             QLBLLChung.Instance.openChildForm1(new SuaDichVu(null, LoadForm), panelDV);
         }
-
         private void btnSuaDV_Click(object sender, EventArgs e)
         {
             string id = dgvDichVu.CurrentRow.Cells[0].Value.ToString();
             QLBLLChung.Instance.openChildForm1(new SuaDichVu(id,LoadForm), panelDV);
         }
-
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             LoadForm(txtTim.Text);
         }
-
         private void btnXoaPhong_Click(object sender, EventArgs e)
         {
             string id = dgvDichVu.CurrentRow.Cells[0].Value.ToString();
@@ -211,7 +197,6 @@ namespace PBL3___Motel_Management_System
                 MessageBox.Show("Đây là dịch vụ cố định!! Không thể xóa");
             }
         }
-
         private void dgvDichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvDichVu.Columns[e.ColumnIndex].Name == "btnSua")
@@ -219,7 +204,7 @@ namespace PBL3___Motel_Management_System
                 string id = dgvDichVu.Rows[e.RowIndex].Cells[0].Value.ToString();
                 QLBLLChung.Instance.openChildForm1(new SuaDichVu(id, LoadForm), panelDV);
             }
-            else
+            else if (dgvDichVu.Columns[e.ColumnIndex].Name == "btnXoa")
             {
                 string id = dgvDichVu.Rows[e.RowIndex].Cells[0].Value.ToString();
                 if (id != "000" && id != "001")
@@ -236,7 +221,6 @@ namespace PBL3___Motel_Management_System
                 }
             }
         }
-
         private void dgvDichVu_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
 
