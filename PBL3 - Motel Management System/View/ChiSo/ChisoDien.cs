@@ -26,15 +26,15 @@ namespace PBL3___Motel_Management_System.View
         private void LoadForm(string txt)
         {
             dgvChiSoDien.Rows.Clear();
-            QLBLL.Instance.customDGV(dgvChiSoDien);
+            QLBLLChisoDien.Instance.customDGV(dgvChiSoDien);
             int i = 0;
             if(txt==null)
             {
-            foreach(ViewChiSo view in QLBLL.Instance.GetAllViewChiSo())
+            foreach(ViewChiSo view in QLBLLChisoDien.Instance.GetAllViewChiSo())
                 {
-                    if(QLBLL.Instance.GetChiTietDichVuById(view.MaChiTietDichVu).MaDichVu == "001")
+                    if(QLBLLChisoDien.Instance.GetChiTietDichVuById(view.MaChiTietDichVu).MaDichVu == QLBLLChisoDien.Instance.TextMaDichVuDien())
                     {
-                        string tinhTrang = (view.TinhTrang) ? "Đã xác thực" : "Chưa xác thực";
+                        string tinhTrang = (view.TinhTrang) ? QLBLLChisoDien.Instance.TextDaXacThuc() : QLBLLChisoDien.Instance.TextChuaXacThuc();
                         dgvChiSoDien.Rows.Add(view.MaChiTietSuDungDichVu, ++i, view.TenDayTro, view.TenPhongTro, view.ChiSoCu, view.ChiSoMoi, view.DaDung
                         ,view.NgayLap, view.ThangSuDung, tinhTrang);
                     }
@@ -42,65 +42,65 @@ namespace PBL3___Motel_Management_System.View
             }
             else
             {
-                string ThangSuDung = dtpThangSuDung.Value.ToString("MM-yyyy");
+                string ThangSuDung = dtpThangSuDung.Value.ToString(QLBLLChisoDien.Instance.TextKieuThoiGian());
                 string IdDay = ((ViewCbb)cbbDayTro.SelectedItem).key;
                 string IdPhong = ((ViewCbb)cbbPhongTro.SelectedItem).key;
                 string IdTinhTrang = ((ViewCbb)cbbTinhTrang.SelectedItem).key;
-                foreach(ViewChiSo view in QLBLL.Instance.GetViewChiSoByTimKiem(ThangSuDung, IdDay, IdPhong, IdTinhTrang))
+                foreach(ViewChiSo view in QLBLLChisoDien.Instance.GetViewChiSoByTimKiem(ThangSuDung, IdDay, IdPhong, IdTinhTrang))
                 {
-                    if (QLBLL.Instance.GetChiTietDichVuById(view.MaChiTietDichVu).MaDichVu == "001")
+                    if (QLBLLChisoDien.Instance.GetChiTietDichVuById(view.MaChiTietDichVu).MaDichVu == QLBLLChisoDien.Instance.TextMaDichVuDien())
                     {
-                        string tinhTrang = (view.TinhTrang) ? "Đã xác thực" : "Chưa xác thực";
+                        string tinhTrang = (view.TinhTrang) ? QLBLLChisoDien.Instance.TextDaXacThuc() : QLBLLChisoDien.Instance.TextChuaXacThuc();
                         dgvChiSoDien.Rows.Add(view.MaChiTietSuDungDichVu, ++i, view.TenDayTro, view.TenPhongTro, view.ChiSoCu, view.ChiSoMoi, view.DaDung
                         , view.NgayLap, view.ThangSuDung, tinhTrang);
                     }
                 }
             }
-            var Sua = System.Drawing.Image.FromFile(@"D:\PBL\PBL3_MAIN\PBL3 - Motel Management System\Icons\icons8-create-25.png");
-            var Xoa = System.Drawing.Image.FromFile(@"D:\PBL\PBL3_MAIN\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
-            dgvChiSoDien.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => QLBLL.Instance.dgvIcons_CellPainting1(dgvChiSoDien, e, Sua, Xoa));
+            var Sua = System.Drawing.Image.FromFile(QLBLLChisoDien.Instance.TextDiaChiNutSua());
+            var Xoa = System.Drawing.Image.FromFile(QLBLLChisoDien.Instance.TextDiaChiNutXoa());
+            dgvChiSoDien.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => QLBLLChisoDien.Instance.dgvIcons_CellPainting1(dgvChiSoDien, e, Sua, Xoa));
         }
         public void Setcbb()
         {
             cbbDayTro.Items.Clear();
             cbbPhongTro.Items.Clear();
-            cbbDayTro.Items.AddRange(QLBLL.Instance.GetCbbDayTro().ToArray());
-            cbbTinhTrang.Items.AddRange(QLBLL.Instance.GetCbbTinhTrang().ToArray());
+            cbbDayTro.Items.AddRange(QLBLLChisoDien.Instance.GetCbbDayTro().ToArray());
+            cbbTinhTrang.Items.AddRange(QLBLLChisoDien.Instance.GetCbbTinhTrang().ToArray());
             cbbDayTro.SelectedIndex = 0;
             cbbTinhTrang.SelectedIndex = 0;
         }
         private void iconButton2_Click(object sender, EventArgs e)
         {
-            QLBLL.Instance.openChildForm1(new ThemCSDien(null, LoadForm), panelChisoDien);
+            QLBLLChisoDien.Instance.openChildForm1(new ThemCSDien(null, LoadForm), panelChisoDien);
         }
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            if (dgvChiSoDien.CurrentRow.Cells[9].Value.ToString() != "Đã xác thực")
+            if (dgvChiSoDien.CurrentRow.Cells[9].Value.ToString() != QLBLLChisoDien.Instance.TextDaXacThuc())
             {
                 string id = dgvChiSoDien.CurrentRow.Cells[0].Value.ToString();
-                if (QLBLL.Instance.ChoPhepXacThucChiSo(id, "001"))
+                if (QLBLLChisoDien.Instance.ChoPhepXacThucChiSo(id, QLBLLChisoDien.Instance.TextMaDichVuDien()))
                 {
-                    ChiTietSuDungDichVu dv = QLBLL.Instance.GetChiTietSuDungDichVuByIdBLL(id);
+                    ChiTietSuDungDichVu dv = QLBLLChisoDien.Instance.GetChiTietSuDungDichVuByIdBLL(id);
                     dv.TinhTrang = true;
-                    QLBLL.Instance.UpdateChiTietSuDungDichVu(dv);
-                    MessageBox.Show("Xác thực thành công", "Thông báo");
+                    QLBLLChisoDien.Instance.UpdateChiTietSuDungDichVu(dv);
+                    MessageBox.Show(QLBLLChisoDien.Instance.TextThongBaoXacThucThanhCong(), QLBLLChisoDien.Instance.TextThongBao());
                     LoadForm(null);
                 }
                 else
                 {
-                    MessageBox.Show("Phòng hiện tại của bạn đã có một chi tiết được xác nhận!!!", "Thông báo");
+                    MessageBox.Show(QLBLLChisoDien.Instance.TextThongBaoCoChiTietDaDuocXacThuc(), QLBLLChisoDien.Instance.TextThongBao());
                 }
             } 
             else
             {
-                MessageBox.Show("Dịch vụ hiện tại đã được xác thực", "Thông báo");
+                MessageBox.Show(QLBLLChisoDien.Instance.TextDichVuDaDuocXacThuc(), QLBLLChisoDien.Instance.TextThongBao());
             }
         }
         private void cbbDayTro_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbbPhongTro.Items.Clear();
             string id = ((ViewCbb)cbbDayTro.SelectedItem).key;
-            cbbPhongTro.Items.AddRange(QLBLL.Instance.GetViewCbbPhongByDay(id).ToArray());
+            cbbPhongTro.Items.AddRange(QLBLLChisoDien.Instance.GetViewCbbPhongByDay(id).ToArray());
             if (cbbPhongTro.Items.Count != 0)
             {
                 cbbPhongTro.SelectedIndex = 0;
@@ -124,40 +124,38 @@ namespace PBL3___Motel_Management_System.View
         }
         private void btnHuyXacThuc_Click(object sender, EventArgs e)
         {
-            if(dgvChiSoDien.CurrentRow.Cells[9].Value.ToString() != "Đã xác thực")
+            if(dgvChiSoDien.CurrentRow.Cells[9].Value.ToString() != QLBLLChisoDien.Instance.TextDaXacThuc())
             {
-                MessageBox.Show("Chỉ số điện hiện tại đang chưa xác thực");
+                MessageBox.Show(QLBLLChisoDien.Instance.TextChiSoDienChuaXacThuc());
             }
             else
             {
                 string id = dgvChiSoDien.CurrentRow.Cells[0].Value.ToString();
                 string thangct = dgvChiSoDien.CurrentRow.Cells[8].Value.ToString();
-                string idp = QLBLL.Instance.GetIdPhongByIdChiTietSuDungDichVu(id);
-                if (QLBLL.Instance.TinhTrangThanhToan(idp, thangct))
+                string idp = QLBLLChisoDien.Instance.GetIdPhongByIdChiTietSuDungDichVu(id);
+                if (QLBLLChisoDien.Instance.TinhTrangThanhToan(idp, thangct))
                 {
                     
-                    ChiTietSuDungDichVu dv = QLBLL.Instance.GetChiTietSuDungDichVuByIdBLL(id);
+                    ChiTietSuDungDichVu dv = QLBLLChisoDien.Instance.GetChiTietSuDungDichVuByIdBLL(id);
                     dv.TinhTrang = false;
-                    QLBLL.Instance.UpdateChiTietSuDungDichVu(dv);
-                    MessageBox.Show("Hủy bỏ xác thực thành công", "Thông báo");
+                    QLBLLChisoDien.Instance.UpdateChiTietSuDungDichVu(dv);
+                    MessageBox.Show(QLBLLChisoDien.Instance.TextHuyXacThuc(), QLBLLChisoDien.Instance.TextThongBao());
                     LoadForm(null);
                 }
                 else
                 {
-                    MessageBox.Show("Chi tiết này đang nằm trong 1 hóa đơn đang xác thực !! không thể hủy");
+                    MessageBox.Show(QLBLLChisoDien.Instance.TextChiTietDaNamTrongHoaDon());
                 }
-               
-
             }
         }
         private void dgvChiSoDien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string columnName = dgvChiSoDien.Columns[e.ColumnIndex].Name;
-            if (columnName == "btnSua")
+            if (columnName == QLBLLChisoDien.Instance.TextBtnSua())
             {
-                if (dgvChiSoDien.Rows[e.RowIndex].Cells[9].Value.ToString() == "Đã xác thực")
+                if (dgvChiSoDien.Rows[e.RowIndex].Cells[9].Value.ToString() == QLBLLChisoDien.Instance.TextDaXacThuc())
                 {
-                    MessageBox.Show("Chỉ số hiện tại đã được xác thực nên không thể sửa!!Vui lòng bỏ xác thực trước khi sửa chỉ số", "Thông báo");
+                    MessageBox.Show(QLBLLChisoDien.Instance.TextChiSoDaXacThucKhongTheSua(), QLBLLChisoDien.Instance.TextThongBao());
                 }
                 else
                 {
@@ -165,26 +163,24 @@ namespace PBL3___Motel_Management_System.View
                     ThemCSDien frm = new ThemCSDien(id, LoadForm);
                     frm.cbbDayTro.Enabled = false;
                     frm.cbbPhongTro.Enabled = false;
-                    QLBLL.Instance.openChildForm1(frm, panelChisoDien);
-
+                    QLBLLChisoDien.Instance.openChildForm1(frm, panelChisoDien);
                 }
             }
-                else if (columnName == "btnXoa")
+                else
                 {
-                    if (dgvChiSoDien.CurrentRow.Cells[9].Value.ToString() == "Chưa xác thực")
+                    if (dgvChiSoDien.CurrentRow.Cells[9].Value.ToString() == QLBLLChisoDien.Instance.TextChuaXacThuc())
                     {
                         string id = dgvChiSoDien.CurrentRow.Cells[0].Value.ToString();
-                        QLBLL.Instance.DelChiTietSuDungDichVu(id);
+                        QLBLLChisoDien.Instance.DelChiTietSuDungDichVu(id);
                         dgvChiSoDien.Rows.RemoveAt(e.RowIndex);
-                        MessageBox.Show("Xóa chỉ số điện thành công", "Thông báo");
+                        MessageBox.Show(QLBLLChisoDien.Instance.TextXoaThanhCong(), QLBLLChisoDien.Instance.TextThongBao());
                         LoadForm(null);
                     }
                     else
                     {
-                        MessageBox.Show("Hóa đơn đã được xác thực!! Không thể xóa", "Thông báo");
+                        MessageBox.Show(QLBLLChisoDien.Instance.TextHoaDonDaXacThuc(), QLBLLChisoDien.Instance.TextThongBao());
                     }
                 }
-            
         }
     }
 }

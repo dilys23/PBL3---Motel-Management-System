@@ -370,6 +370,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\QLBLL.cs" />
+    <Compile Include="BLL\QLBLLChisoDien.cs" />
+    <Compile Include="BLL\QLBLLChisoNuoc.cs" />
+    <Compile Include="BLL\QLBLLThemCSDien.cs" />
     <Compile Include="DAL\ChiTietDichVu.cs">
       <DependentUpon>DataPbl.tt</DependentUpon>
     </Compile>
