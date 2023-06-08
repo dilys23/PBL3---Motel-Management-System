@@ -33,8 +33,8 @@ namespace PBL3___Motel_Management_System.View
         {
             cbbDayTro.Items.Clear();
             cbbTinhTrang.Items.Clear();
-            cbbDayTro.Items.AddRange(QLBLL.Instance.GetCbbDayTro().ToArray());
-            cbbTinhTrang.Items.AddRange(QLBLL.Instance.GetCbbTinhTrangPhong().ToArray());
+            cbbDayTro.Items.AddRange(QLBLLChung.Instance.GetCbbDayTro().ToArray());
+            cbbTinhTrang.Items.AddRange(QLBLLChung.Instance.GetCbbTinhTrangPhong().ToArray());
             cbbDayTro.SelectedIndex = 0;
             cbbTinhTrang.SelectedIndex = 0;
         }
@@ -46,7 +46,7 @@ namespace PBL3___Motel_Management_System.View
             panelPhong.HorizontalScroll.Maximum = 0;
             panelPhong.AutoScroll = true;
             Button defaultBtn = null;
-            foreach(DayTro dt in QLBLL.Instance.GetAllDayTroBll())
+            foreach(DayTro dt in QLBLLDayTro.Instance.GetAllDayTroBll())
             {
                 ToolTip tp = new ToolTip();
                 Button btn = new Button();
@@ -82,10 +82,10 @@ namespace PBL3___Motel_Management_System.View
             Button btn = sender as Button;
             ClickBtn = btn;
             panelPhong.Controls.Clear();
-            DayTro dt = QLBLL.Instance.GetDayTroById(btn.Name);
+            DayTro dt = QLBLLDayTro.Instance.GetDayTroById(btn.Name);
             string DiaChi = "    " + dt.TenDuong + " " + dt.TenHuyen + " " + dt.TenThanhPho;
             lblDiaChi.Text = DiaChi;
-            foreach(PhongTro pt in QLBLL.Instance.GetPhongTroByIdDay(btn.Name))
+            foreach(PhongTro pt in QLBLLPhongTro.Instance.GetPhongTroByIdDay(btn.Name))
             {
                 Demo p = new Demo(SuKien,pt.MaPhongTro,panelChinh); 
                 p.TopLevel = false;
@@ -94,17 +94,17 @@ namespace PBL3___Motel_Management_System.View
                 Label lbl1 = new Label();
                 lbl1.Text  = pt.TenPhongTro;
                 p.SetPanelTenPhongTro(lbl1);
-                if (QLBLL.Instance.TinhTrangPhongById(pt.MaPhongTro)) //54, 179, 205
+                if (QLBLLPhongTro.Instance.TinhTrangPhongById(pt.MaPhongTro)) //54, 179, 205
                 {
                     p.SetColorPanel2(Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(179)))), ((int)(((byte)(205))))));
                 }
-                if(QLBLL.Instance.PhongDaCocByIdPhong(pt.MaPhongTro))
+                if(QLBLLPhongTro.Instance.PhongDaCocByIdPhong(pt.MaPhongTro))
                 {
                     p.SetColorPanel2(Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234))))));
                 }
-                foreach (Nguoi nguoi in QLBLL.Instance.GetNguoiByIdPhong(pt.MaPhongTro))
+                foreach (Nguoi nguoi in QLBLLNguoi.Instance.GetNguoiByIdPhong(pt.MaPhongTro))
                 {
-                    p.SetPanelKhach(QLBLL.Instance.GetLabelByNguoi(nguoi));
+                    p.SetPanelKhach(QLBLLNguoi.Instance.GetLabelByNguoi(nguoi));
                 }
                 p.SetBtnName(pt.MaPhongTro);
                  panelPhong.Controls.Add(p);
@@ -115,14 +115,14 @@ namespace PBL3___Motel_Management_System.View
         {
             if(ClickBtn != null)
             {
-                DayTro dt = QLBLL.Instance.GetDayTroById(ClickBtn.Name);
-                QLBLL.Instance.openChildForm1(new ThemPhong(dt.MaDayTro,null,LoadForm, SuKien), panelChinh);
+                DayTro dt = QLBLLDayTro.Instance.GetDayTroById(ClickBtn.Name);
+                QLBLLChung.Instance.openChildForm1(new ThemPhong(dt.MaDayTro,null,LoadForm, SuKien), panelChinh);
             }         
         }
 
         private void btnThemday_Click(object sender, EventArgs e)
         {
-            QLBLL.Instance.openChildForm1(new ThemDay(null,LoadForm,SuKien), panelChinh);
+            QLBLLChung.Instance.openChildForm1(new ThemDay(null,LoadForm,SuKien), panelChinh);
         }
 
         private void btnSuaDay_Click(object sender, EventArgs e)
@@ -130,8 +130,8 @@ namespace PBL3___Motel_Management_System.View
             
             if (ClickBtn != null)
             {
-                DayTro dt = QLBLL.Instance.GetDayTroById(ClickBtn.Name);
-                QLBLL.Instance.openChildForm1(new ThemDay(dt.MaDayTro, LoadForm, SuKien), panelChinh);
+                DayTro dt = QLBLLDayTro.Instance.GetDayTroById(ClickBtn.Name);
+                QLBLLChung.Instance.openChildForm1(new ThemDay(dt.MaDayTro, LoadForm, SuKien), panelChinh);
             }
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -141,13 +141,13 @@ namespace PBL3___Motel_Management_System.View
             panelPhong.Controls.Clear();
             if(idDay != "-1")
             {
-                lblDiaChi.Text = QLBLL.Instance.GetDiaChiByIdDay(idDay);
+                lblDiaChi.Text = QLBLLDayTro.Instance.GetDiaChiByIdDay(idDay);
             }
             else
             {
                 lblDiaChi.Text = "";
             }
-            foreach (PhongTro pt in QLBLL.Instance.PhongTroTimKiem(idDay,idTinhTrang,txtTimKiem.Text))
+            foreach (PhongTro pt in QLBLLPhongTro.Instance.PhongTroTimKiem(idDay,idTinhTrang,txtTimKiem.Text))
             {
                 Demo p = new Demo(SuKien, pt.MaPhongTro, panelChinh);
                 p.TopLevel = false;
@@ -156,17 +156,17 @@ namespace PBL3___Motel_Management_System.View
                 Label lbl1 = new Label();
                 lbl1.Text  = pt.TenPhongTro;
                 p.SetPanelTenPhongTro(lbl1);
-                if (QLBLL.Instance.TinhTrangPhongById(pt.MaPhongTro)) //54, 179, 205
+                if (QLBLLPhongTro.Instance.TinhTrangPhongById(pt.MaPhongTro)) //54, 179, 205
                 {
                     p.SetColorPanel2(Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(179)))), ((int)(((byte)(205))))));
                 }
-                if (QLBLL.Instance.PhongDaCocByIdPhong(pt.MaPhongTro))
+                if (QLBLLPhongTro.Instance.PhongDaCocByIdPhong(pt.MaPhongTro))
                 {
                     p.SetColorPanel2(Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234))))));
                 }
-                foreach (Nguoi nguoi in QLBLL.Instance.GetNguoiByIdPhong(pt.MaPhongTro))
+                foreach (Nguoi nguoi in QLBLLNguoi.Instance.GetNguoiByIdPhong(pt.MaPhongTro))
                 {
-                    p.SetPanelKhach(QLBLL.Instance.GetLabelByNguoi(nguoi));
+                    p.SetPanelKhach(QLBLLNguoi.Instance.GetLabelByNguoi(nguoi));
                 }
                 p.SetBtnName(pt.MaPhongTro);
                 panelPhong.Controls.Add(p);
@@ -179,12 +179,12 @@ namespace PBL3___Motel_Management_System.View
             if (ClickBtn != null)
             {
                 
-                if(QLBLL.Instance.CheckDay(ClickBtn.Name)==false)
+                if(QLBLLDayTro.Instance.CheckDay(ClickBtn.Name)==false)
                 {
                     DialogResult kq = MessageBox.Show("Bạn có thực sự muốn xóa", "Cảnh báo!!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     if (kq == DialogResult.OK)
                     {
-                        QLBLL.Instance.DelDayTroBll(ClickBtn.Name);
+                        QLBLLDayTro.Instance.DelDayTroBll(ClickBtn.Name);
                         LoadForm(null);
                     }              
                 }

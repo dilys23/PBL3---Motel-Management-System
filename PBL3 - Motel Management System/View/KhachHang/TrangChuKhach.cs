@@ -41,7 +41,7 @@ namespace PBL3___Motel_Management_System.View
         private void TrangChuKhach_Load(object sender, EventArgs e)
         {
             formSize = this.ClientSize;
-            QLBLL.Instance.openChildForm1(new panelKhach(matk), panelDesktop);
+            QLBLLChung.Instance.openChildForm1(new panelKhach(matk), panelDesktop);
         }
 
         //Drag Form
@@ -234,29 +234,29 @@ namespace PBL3___Motel_Management_System.View
         }
         private void btnHopDong_Click(object sender, EventArgs e)
         {
-            idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
+            idPhong = QLBLLPhongTro.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
             ThuePhong tp = new ThuePhong();
             panelDesktop.Controls.Clear();
-            if (QLBLL.Instance.PhongDaCocByIdPhong(idPhong) == false && QLBLL.Instance.TinhTrangPhongById(idPhong) == false)
+            if (QLBLLPhongTro.Instance.PhongDaCocByIdPhong(idPhong) == false && QLBLLPhongTro.Instance.TinhTrangPhongById(idPhong) == false)
             {
                
                 string b = "Phòng còn trống ";
-                QLBLL.Instance.TaoPanel(b, panelDesktop);
+                QLBLLChung.Instance.TaoPanel(b, panelDesktop);
             }
-            else if (QLBLL.Instance.PhongDaCocByIdPhong(idPhong) == true && QLBLL.Instance.TinhTrangPhongById(idPhong) == false)
+            else if (QLBLLPhongTro.Instance.PhongDaCocByIdPhong(idPhong) == true && QLBLLPhongTro.Instance.TinhTrangPhongById(idPhong) == false)
             {
                
                 tp.hopDong.MaPhongTro = idPhong;
                 CocPhong cp = new CocPhong(tp, LoadForm);
-                QLBLL.Instance.openChildForm1(cp, panelDesktop);
+                QLBLLChung.Instance.openChildForm1(cp, panelDesktop);
             }
             else
             {
-                HopDong hopDong = QLBLL.Instance.GetHopDongByIdPhong(idPhong);
+                HopDong hopDong = QLBLLHopDong.Instance.GetHopDongByIdPhong(idPhong);
                 tp.hopDong.MaHopDong = hopDong.MaHopDong;
                 ChitietHopDong ct = new ChitietHopDong(tp, null);
                 ct.btnXacNhan.Visible = false;
-                QLBLL.Instance.openChildForm1(ct, panelDesktop);
+                QLBLLChung.Instance.openChildForm1(ct, panelDesktop);
                 
             }
             
@@ -264,41 +264,41 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnPhong_Click(object sender, EventArgs e)
         {
-            idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
+            idPhong = QLBLLPhongTro.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
             ThemPhong tp = new ThemPhong(null,idPhong,null,null);
             tp.btnLuu.Visible = false;tp.txtDienTich.Enabled = false;
             tp.btnThemAnh.Visible = false;tp.txtGiaTien.Enabled = false;
             tp.iconButton1.Visible = false;tp.txtTenPhong.Enabled = false;
             tp.label9.Visible= false;tp.txtToiDa.Enabled= false;
-            QLBLL.Instance.openChildForm1(tp,panelDesktop);
+            QLBLLChung.Instance.openChildForm1(tp,panelDesktop);
         }
 
         private void btnDien_Click(object sender, EventArgs e)
         {
-            idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
+            idPhong = QLBLLPhongTro.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
 
             ChitietDienPhong ct = new ChitietDienPhong(idPhong);
-            QLBLL.Instance.openChildForm1(ct, panelDesktop);
+            QLBLLChung.Instance.openChildForm1(ct, panelDesktop);
         }
 
         private void btnNuoc_Click(object sender, EventArgs e)
         {
-            idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
+            idPhong = QLBLLPhongTro.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
             ChitietNuocPhong ct = new ChitietNuocPhong(idPhong);
-            QLBLL.Instance.openChildForm1(ct, panelDesktop);
+            QLBLLChung.Instance.openChildForm1(ct, panelDesktop);
         }
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
-            idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
+            idPhong = QLBLLPhongTro.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
             HoaDonPhong ct = new HoaDonPhong(idPhong);
-            QLBLL.Instance.openChildForm1(ct, panelDesktop);
+            QLBLLChung.Instance.openChildForm1(ct, panelDesktop);
         }
 
         private void btnTrangchu_Click(object sender, EventArgs e)
         {
             panelKhach ct = new panelKhach(matk);
-            QLBLL.Instance.openChildForm1(ct, panelDesktop);
+            QLBLLChung.Instance.openChildForm1(ct, panelDesktop);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -310,31 +310,31 @@ namespace PBL3___Motel_Management_System.View
 
         private void btDoiMK_Click(object sender, EventArgs e)
         {
-            idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
+            idPhong = QLBLLPhongTro.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
             //QLBLL.Instance.openChildForm1(new TaiKhoanPhong(idPhong), panelDesktop);
-            QLBLL.Instance.openChildForm1(new DoiMK(idPhong,null,LoadForm), panelDesktop);
+            QLBLLChung.Instance.openChildForm1(new DoiMK(idPhong,null,LoadForm), panelDesktop);
              
 
         }
         public void LoadForm(string t)
         {
-            QLBLL.Instance.openChildForm1(new panelKhach(matk), panelDesktop);
+            QLBLLChung.Instance.openChildForm1(new panelKhach(matk), panelDesktop);
         }
         private void btnThietbi_Click(object sender, EventArgs e)
         {
-            idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
+            idPhong = QLBLLPhongTro.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
             ChitietTB ct = new ChitietTB(idPhong);
             ct.btnThemThietbi.Visible = false;
-            QLBLL.Instance.openChildForm1(ct, panelDesktop);
+            QLBLLChung.Instance.openChildForm1(ct, panelDesktop);
         }
 
         private void btnDichVu_Click(object sender, EventArgs e)
         {
-            idPhong = QLBLL.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
+            idPhong = QLBLLPhongTro.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
             ChitietDV ct = new ChitietDV(idPhong);
             ct.btnThemDichVu.Visible = false;
             ct.dgvDichVu.Columns[4].Visible = false;
-            QLBLL.Instance.openChildForm1(ct, panelDesktop);
+            QLBLLChung.Instance.openChildForm1(ct, panelDesktop);
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)

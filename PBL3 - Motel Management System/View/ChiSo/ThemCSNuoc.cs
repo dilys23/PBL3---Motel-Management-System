@@ -31,10 +31,10 @@ namespace PBL3___Motel_Management_System.View
         }
         public void SetGUI()
         {
-            ChiTietSuDungDichVu cs = QLBLL.Instance.GetChiTietSudungDichVuById(IdSudungDV);
-            ChiTietDichVu ct = QLBLL.Instance.GetChiTietDichVuById(cs.MaCHiTietDichVu);
-            PhongTro pt = QLBLL.Instance.GetPhongTroByIdPhong(ct.MaPhongTro);
-            DayTro dt = QLBLL.Instance.GetDayByIdDay(pt.MaDayTro);
+            ChiTietSuDungDichVu cs = QLBLLChiTietSuDungDichVu.Instance.GetChiTietSudungDichVuById(IdSudungDV);
+            ChiTietDichVu ct = QLBLLChiTietDichVu.Instance.GetChiTietDichVuById(cs.MaCHiTietDichVu);
+            PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByIdPhong(ct.MaPhongTro);
+            DayTro dt = QLBLLDayTro.Instance.GetDayByIdDay(pt.MaDayTro);
             cbbDayTro.Text = dt.TenDayTro;
             cbbPhongTro.Text = pt.TenPhongTro;
             txtChiSoCu.Text = cs.ChiSoCu.ToString();
@@ -51,7 +51,7 @@ namespace PBL3___Motel_Management_System.View
         {
             cbbDayTro.Items.Clear();
             cbbPhongTro.Items.Clear();
-            cbbDayTro.Items.AddRange(QLBLL.Instance.GetCbbDayTro().ToArray());
+            cbbDayTro.Items.AddRange(QLBLLChung.Instance.GetCbbDayTro().ToArray());
             cbbDayTro.SelectedIndex = 0;
         }
 
@@ -60,7 +60,7 @@ namespace PBL3___Motel_Management_System.View
             cbbPhongTro.Items.Clear();
             cbbPhongTro.Text = "";
             string id = ((ViewCbb)cbbDayTro.SelectedItem).key;
-            cbbPhongTro.Items.AddRange(QLBLL.Instance.GetViewCbbPhongByDayForThemHoaDon(id).ToArray());
+            cbbPhongTro.Items.AddRange(QLBLLPhongTro.Instance.GetViewCbbPhongByDayForThemHoaDon(id).ToArray());
             if (cbbPhongTro.Items.Count != 0)
             {
                 cbbPhongTro.SelectedIndex = 0;
@@ -122,11 +122,11 @@ namespace PBL3___Motel_Management_System.View
                     }
                     else
                     {
-                        ChiTietSuDungDichVu cs = QLBLL.Instance.GetChiTietSudungDichVuById(this.IdSudungDV);
+                        ChiTietSuDungDichVu cs = QLBLLChiTietSuDungDichVu.Instance.GetChiTietSudungDichVuById(this.IdSudungDV);
                         cs.ChiSoCu = Convert.ToDouble(txtChiSoCu.Text);
                         cs.ChiSoMoi = Convert.ToDouble(txtChiSoMoi.Text);
                         cs.TonTai = true;
-                        QLBLL.Instance.UpdateChiTietSuDungDichVu(cs);
+                        QLBLLChiTietSuDungDichVu.Instance.UpdateChiTietSuDungDichVu(cs);
                         MessageBox.Show("Thay đổi thông tin thành công", "Thông báo");
                         loader(null);
                         this.Close();
@@ -142,8 +142,8 @@ namespace PBL3___Motel_Management_System.View
                         string idPhong = ((ViewCbb)cbbPhongTro.SelectedItem).key;
                         ChiTietSuDungDichVu dv = new ChiTietSuDungDichVu
                         {
-                            MaChiTietSuDungDichVu = QLBLL.Instance.TaoIdChiTietSuDungDichVu(),
-                            MaCHiTietDichVu = QLBLL.Instance.GetIdCHiTietDichVuNuocByIdPhong(idPhong),
+                            MaChiTietSuDungDichVu = QLBLLChiTietSuDungDichVu.Instance.TaoIdChiTietSuDungDichVu(),
+                            MaCHiTietDichVu = QLBLLChiTietDichVu.Instance.GetIdCHiTietDichVuNuocByIdPhong(idPhong),
                             ChiSoCu = Convert.ToDouble(txtChiSoCu.Text),
                             ChiSoMoi = Convert.ToDouble(txtChiSoMoi.Text),
                             ThoiGian = dtpThang.Value.ToString("MM-yyyy"),
@@ -159,7 +159,7 @@ namespace PBL3___Motel_Management_System.View
                         {
                             try
                             {
-                                QLBLL.Instance.AddChiTietSuDungDichVuBLL(dv);
+                                QLBLLChiTietSuDungDichVu.Instance.AddChiTietSuDungDichVuBLL(dv);
                                 MessageBox.Show("Thêm chỉ số thành công");
                                 this.Close();
                                 this.loader(null);
@@ -185,7 +185,7 @@ namespace PBL3___Motel_Management_System.View
             if (cbbPhongTro.SelectedIndex != 0)
             {
                 string idPhong = ((ViewCbb)cbbPhongTro.SelectedItem).key;
-                HopDong hd = QLBLL.Instance.GetHopDongByIdPhong(idPhong);
+                HopDong hd = QLBLLHopDong.Instance.GetHopDongByIdPhong(idPhong);
                 DateTime dt1 = DateTime.ParseExact(hd.NgayBatDau, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
                 DateTime dt2 = DateTime.ParseExact(hd.NgayKetThuc, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
                 DateTime dtStart = new DateTime(dt1.Year, dt1.Month, 1);

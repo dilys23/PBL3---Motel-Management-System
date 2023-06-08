@@ -24,8 +24,8 @@ namespace PBL3___Motel_Management_System.View
             InitializeComponent();
             this.loader = loader;
             this.IdHd = idHd;
-            HoaDon hd = QLBLL.Instance.GetHoaDonById(idHd);
-            PhongTro pt = QLBLL.Instance.GetPhongTroByMaHoaDon(idHd);
+            HoaDon hd = QLBLLHoadon.Instance.GetHoaDonById(idHd);
+            PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByMaHoaDon(idHd);
             txtTenPhong.Text = pt.TenPhongTro;
 
             // Định dạng số tiền theo tiền tệ VND
@@ -66,11 +66,11 @@ namespace PBL3___Motel_Management_System.View
                 // Định dạng giá trị nhập vào từ txtThanhToan.Text
                 if (double.TryParse(txtThanhToan.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out thanhToan))
                 {
-                    HoaDon hd = QLBLL.Instance.GetHoaDonById(this.IdHd);
+                    HoaDon hd = QLBLLHoadon.Instance.GetHoaDonById(this.IdHd);
                     ChiTietThanhToanHoaDon ct = new ChiTietThanhToanHoaDon();
 
                     ct.MaHoaDon = hd.MaHoaDon;
-                    ct.MaChiTietThanhToanHoaDon = QLBLL.Instance.TaoIdChiTietThanhToanHoaDon();
+                    ct.MaChiTietThanhToanHoaDon = QLBLLChiTietThanhToanHoaDon.Instance.TaoIdChiTietThanhToanHoaDon();
 
                     ct.NgayThanhToan = NgayThanhToan.Value.ToString("yyyy-MM-dd");
                     ct.TienThanhToan = thanhToan;
@@ -78,7 +78,7 @@ namespace PBL3___Motel_Management_System.View
 
                     // Cập nhật số tiền đã thanh toán
                     hd.DaThanhToan += thanhToan;
-                    QLBLL.Instance.UpdateHoaDonBLL(hd);
+                    QLBLLHoadon.Instance.UpdateHoaDonBLL(hd);
                     CultureInfo vietnamCulture = new CultureInfo("vi-VN");
                     double TongTien = (Convert.ToDouble(txtTongTien.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
                     double conNoMoi1 = (Convert.ToDouble(txtConNo.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", ""))) ;
@@ -90,7 +90,7 @@ namespace PBL3___Motel_Management_System.View
 
                         txtConNo.Text = conNoMoi1.ToString("#,##0") + "₫";
 
-                        QLBLL.Instance.AddChiTietThanhToanHoaDonBll(ct);
+                        QLBLLChiTietThanhToanHoaDon.Instance.AddChiTietThanhToanHoaDonBll(ct);
 
                         if (conNoMoi1 == 0)
                         {
@@ -105,7 +105,7 @@ namespace PBL3___Motel_Management_System.View
                         MessageBox.Show(tienthua, "Thông báo");
                         conNoMoi1 = 0;
                         txtConNo.Text = conNoMoi1.ToString("#,##0") + "₫";
-                        QLBLL.Instance.AddChiTietThanhToanHoaDonBll(ct);
+                        QLBLLChiTietThanhToanHoaDon.Instance.AddChiTietThanhToanHoaDonBll(ct);
                         
                     }
                     

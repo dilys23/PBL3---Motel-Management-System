@@ -31,13 +31,13 @@ namespace PBL3___Motel_Management_System
             int i = 0;
             if(thang==null)
             {
-                foreach (HoaDon hoadon in QLBLL.Instance.GetAllHoaDonBll())
+                foreach (HoaDon hoadon in QLBLLHoadon.Instance.GetAllHoaDonBll())
                 {
                     //HoaDon hoadon = QLBLL.Instance.GetHoaDonById(hd);
                     if (hoadon.TinhTrang == true)
                     {
-                        PhongTro pt = QLBLL.Instance.GetPhongTroByMaHoaDon(hoadon.MaHoaDon);
-                        DayTro dt = QLBLL.Instance.GetDayTroByIdPhong(pt.MaPhongTro);
+                        PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByMaHoaDon(hoadon.MaHoaDon);
+                        DayTro dt = QLBLLDayTro.Instance.GetDayTroByIdPhong(pt.MaPhongTro);
                         if (hoadon.DaThanhToan != 0)
                         { dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hoadon.DaThanhToan); }
                     }
@@ -46,13 +46,13 @@ namespace PBL3___Motel_Management_System
             }
             else
             {
-                foreach (string hd in QLBLL.Instance.GetHoaDonByThangChiTra(thang))
+                foreach (string hd in QLBLLHoadon.Instance.GetHoaDonByThangChiTra(thang))
                 {
-                    HoaDon hoadon = QLBLL.Instance.GetHoaDonById(hd);
+                    HoaDon hoadon = QLBLLHoadon.Instance.GetHoaDonById(hd);
                     if (hoadon.TinhTrang == true)
                     {
-                        PhongTro pt = QLBLL.Instance.GetPhongTroByMaHoaDon(hoadon.MaHoaDon);
-                        DayTro dt = QLBLL.Instance.GetDayTroByIdPhong(pt.MaPhongTro);
+                        PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByMaHoaDon(hoadon.MaHoaDon);
+                        DayTro dt = QLBLLDayTro.Instance.GetDayTroByIdPhong(pt.MaPhongTro);
                         if (hoadon.DaThanhToan != 0)
                         { dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hoadon.DaThanhToan); }
                     }
@@ -106,7 +106,7 @@ namespace PBL3___Motel_Management_System
             ChartCot.Series[0].XValueMember = "TenDayTro";
             ChartCot.Series[0].YValueMembers = "TongTien";
             //List<object> data = new List<object>(); 
-            ChartCot.DataSource = QLBLL.Instance.ThongKe(thang);
+            ChartCot.DataSource = QLBLLChung.Instance.ThongKe(thang);
             ChartCot.ChartAreas[0].AxisX.Title = "Dãy trọ";
             ChartCot.ChartAreas[0].AxisY.Title = "Tổng tiền";
             ChartCot.DataBind();
@@ -114,7 +114,7 @@ namespace PBL3___Motel_Management_System
         }
         public void ThongKeTheoThang(string nam)
         {    
-            var thongke = QLBLL.Instance.ThongKeTongTienTheoThang(nam);
+            var thongke = QLBLLChung.Instance.ThongKeTongTienTheoThang(nam);
             ChartDuong.Series[0].XValueMember = "Key";
             ChartDuong.Series[0].YValueMembers = "Value";
             ChartDuong.DataSource = thongke;

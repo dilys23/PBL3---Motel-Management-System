@@ -32,25 +32,25 @@ namespace PBL3___Motel_Management_System.View
         {   
             dgvTBThem.RowCount = 0;
             dgvThietBi.RowCount = 0;
-            foreach (ThietBi viewThietBi in QLBLL.Instance.DgvThietBi(null))
+            foreach (ThietBi viewThietBi in QLBLLThietbi.Instance.DgvThietBi(null))
             {
                 dgvThietBi.Rows.Add(viewThietBi.MaThietBi, 1, viewThietBi.TenThietBi, viewThietBi.GiaThietBi.ToString("#,##0") + "₫");
             }
             if (tp.hopDong.MaHopDong == null)
             {
-                foreach(ChiTietThietBi ct in QLBLL.Instance.GetChiTietThietBiByIdPhong(tp.hopDong.MaPhongTro))
+                foreach(ChiTietThietBi ct in QLBLLChiTietThietBi.Instance.GetChiTietThietBiByIdPhong(tp.hopDong.MaPhongTro))
                 {
-                    ThietBi tb = QLBLL.Instance.GetTBByIdTB(ct.MaThietBi);
+                    ThietBi tb = QLBLLThietbi.Instance.GetTBByIdTB(ct.MaThietBi);
                     dgvTBThem.Rows.Add(tb.MaThietBi,1,tb.TenThietBi,tb.GiaThietBi.ToString("#,##0") + "₫", ct.SoLuong);
                 }
             }
             else
             {    
                 int i = 0;
-                foreach (string idCttb in QLBLL.Instance.GetAllIdCHiTietThietBiByIdPhong(tp.hopDong.MaPhongTro))
+                foreach (string idCttb in QLBLLChiTietThietBi.Instance.GetAllIdCHiTietThietBiByIdPhong(tp.hopDong.MaPhongTro))
                 {
-                    ChiTietThietBi cttb = QLBLL.Instance.GetChiTietThietBiById(idCttb);
-                    ThietBi tb = QLBLL.Instance.GetTBByIdTB(cttb.MaThietBi);
+                    ChiTietThietBi cttb = QLBLLChiTietThietBi.Instance.GetChiTietThietBiById(idCttb);
+                    ThietBi tb = QLBLLThietbi.Instance.GetTBByIdTB(cttb.MaThietBi);
                     dgvTBThem.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi.ToString("#,##0") + "₫", cttb.SoLuong);
                 }
             }
@@ -168,7 +168,7 @@ namespace PBL3___Motel_Management_System.View
                     });
                 }
             }
-            QLBLL.Instance.ThayDoiThietBiPhong(list, tp.hopDong.MaPhongTro);
+            QLBLLChiTietThietBi.Instance.ThayDoiThietBiPhong(list, tp.hopDong.MaPhongTro);
             MessageBox.Show("Thay đổi thành công", "Thông báo", MessageBoxButtons.OK);
             this.Close();
             this.loader(null);

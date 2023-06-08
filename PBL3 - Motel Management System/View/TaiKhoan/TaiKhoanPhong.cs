@@ -30,15 +30,15 @@ namespace PBL3___Motel_Management_System.View
             txtMatKhau.Clear();
             if (idp != null && idct == null)
             {
-                DAL.TaiKhoan tk = QLBLL.Instance.GetTaiKhoanByIdPhong(idp);
+                DAL.TaiKhoan tk = QLBLLTaiKhoan.Instance.GetTaiKhoanByIdPhong(idp);
                 txtTenTaiKhoan.Text = tk.TenTaiKhoan;
-                txtMatKhau.Text = QLBLL.Instance.GiaiMaMatKhau(tk.MatKhau);
+                txtMatKhau.Text = QLBLLTaiKhoan.Instance.GiaiMaMatKhau(tk.MatKhau);
             }
             else if (idp == null && idct != null) 
             {
-                DAL.TaiKhoan tk = QLBLL.Instance.GetTaiKhoanByIdTaiKhoan(this.idct);
+                DAL.TaiKhoan tk = QLBLLTaiKhoan.Instance.GetTaiKhoanByIdTaiKhoan(this.idct);
                 txtTenTaiKhoan.Text += tk.TenTaiKhoan;
-                txtMatKhau .Text += QLBLL.Instance.GiaiMaMatKhau(tk.MatKhau);
+                txtMatKhau .Text += QLBLLTaiKhoan.Instance.GiaiMaMatKhau(tk.MatKhau);
             } 
                 
             
@@ -47,10 +47,10 @@ namespace PBL3___Motel_Management_System.View
         private void iconButton1_Click(object sender, EventArgs e)
         { 
             DAL.TaiKhoan tk = new DAL.TaiKhoan();
-            PhongTro pt = QLBLL.Instance.GetPhongTroByIdPhong(idp);
-            tk = QLBLL.Instance.GetTaiKhoanByIdPhong(idp);
-            tk.MatKhau = QLBLL.Instance.MaHoaMatKhau("pt" + pt.MaPhongTro);
-            QLBLL.Instance.UpdateTaiKhoanPhong(tk);
+            PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByIdPhong(idp);
+            tk = QLBLLTaiKhoan.Instance.GetTaiKhoanByIdPhong(idp);
+            tk.MatKhau = QLBLLTaiKhoan.Instance.MaHoaMatKhau("pt" + pt.MaPhongTro);
+            QLBLLTaiKhoan.Instance.UpdateTaiKhoanPhong(tk);
             MessageBox.Show("Thiết lập lại mật khẩu thành công", "Thông báo");
             LoadForm(null);
         }

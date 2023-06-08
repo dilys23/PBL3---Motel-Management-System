@@ -29,7 +29,7 @@ namespace PBL3___Motel_Management_System
             CollapseMenu();
             this.Padding = new Padding(borderSize);//Border size
             this.BackColor = Color.FromArgb(217, 247, 249);
-            QLBLL.Instance.openChildForm1(new FormTrangChu(), panelDesktop);
+            QLBLLChung.Instance.openChildForm1(new FormTrangChu(), panelDesktop);
 
         }
 
@@ -220,43 +220,43 @@ namespace PBL3___Motel_Management_System
         }
         private void iconButton10_Click(object sender, EventArgs e)
         {
-            QLBLL.Instance.openChildForm1(new DemoPhong(), panelDesktop);
+            QLBLLChung.Instance.openChildForm1(new DemoPhong(), panelDesktop);
         }
 
         private void btnDichVu_Click(object sender, EventArgs e)
         {
-            QLBLL.Instance.openChildForm1(new Dichvu(), panelDesktop);
+            QLBLLChung.Instance.openChildForm1(new Dichvu(), panelDesktop);
 
         }
 
         private void btnDien_Click(object sender, EventArgs e)
         {
-            QLBLL.Instance.openChildForm1(new ChisoDien(), panelDesktop);
+            QLBLLChung.Instance.openChildForm1(new ChisoDien(), panelDesktop);
         }
 
         private void btnNuoc_Click(object sender, EventArgs e)
         {
-            QLBLL.Instance.openChildForm1(new ChisoNuoc(), panelDesktop);
+            QLBLLChung.Instance.openChildForm1(new ChisoNuoc(), panelDesktop);
         }
 
         private void btnHopDong_Click(object sender, EventArgs e)
         {
-            QLBLL.Instance.openChildForm1(new Hopdong(), panelDesktop);
+            QLBLLChung.Instance.openChildForm1(new Hopdong(), panelDesktop);
         }
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
-            QLBLL.Instance.openChildForm1(new Hoadon(), panelDesktop);
+            QLBLLChung.Instance.openChildForm1(new Hoadon(), panelDesktop);
         }
 
         private void btnDoanhTHu_Click(object sender, EventArgs e)
         {
-            QLBLL.Instance.openChildForm1(new DoanhThu(), panelDesktop);
+            QLBLLChung.Instance.openChildForm1(new DoanhThu(), panelDesktop);
         }
 
         private void btnTrangchu_Click(object sender, EventArgs e)
         {
-            QLBLL.Instance.openChildForm1(new FormTrangChu(), panelDesktop);
+            QLBLLChung.Instance.openChildForm1(new FormTrangChu(), panelDesktop);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -266,12 +266,12 @@ namespace PBL3___Motel_Management_System
 
         private void btnThietbi_Click(object sender, EventArgs e)
         {
-            QLBLL.Instance.openChildForm1(new Thietbi(), panelDesktop);
+            QLBLLChung.Instance.openChildForm1(new Thietbi(), panelDesktop);
         }
 
         private void btnTaiKhoan_Click(object sender, EventArgs e)
         {
-            QLBLL.Instance.openChildForm1(new ChuTro(matk), panelDesktop);
+            QLBLLChung.Instance.openChildForm1(new ChuTro(matk), panelDesktop);
         }
 
         private void iconButton1_Click(object sender, EventArgs e)

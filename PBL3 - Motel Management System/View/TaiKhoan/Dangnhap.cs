@@ -120,10 +120,10 @@ namespace PBL3___Motel_Management_System
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            string mk = QLBLL.Instance.MaHoaMatKhau(txtMatKhau.Text);
-            if (QLBLL.Instance.GetIdTk(txtTaiKhoan.Text, mk) != null)
+            string mk = QLBLLTaiKhoan.Instance.MaHoaMatKhau(txtMatKhau.Text);
+            if (QLBLLTaiKhoan.Instance.GetIdTk(txtTaiKhoan.Text, mk) != null)
             {
-                VaiTro vaitro = QLBLL.Instance.CheckVaiTro(txtTaiKhoan.Text, mk);
+                VaiTro vaitro = QLBLLVaiTro.Instance.CheckVaiTro(txtTaiKhoan.Text, mk);
                 if (vaitro.TenVaiTro == "Chủ trọ")
                 {
                     matk = vaitro.MaTaiKhoan;

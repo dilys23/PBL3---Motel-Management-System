@@ -29,8 +29,8 @@ namespace PBL3___Motel_Management_System.View
         }
         public void LoadForm()
         {
-            QLBLL.Instance.customDGV(dgvDichvu);
-            QLBLL.Instance.customDGV(dgvThietbi);
+            QLBLLChung.Instance.customDGV(dgvDichvu);
+            QLBLLChung.Instance.customDGV(dgvThietbi);
             DayTro dt = new DayTro();
             PhongTro phongTro = new PhongTro();
             Nguoi nguoi = new Nguoi();
@@ -38,25 +38,25 @@ namespace PBL3___Motel_Management_System.View
             //Ma Hop dong
             if (tp.hopDong.MaPhongTro==null && tp.hopDong.MaHopDong !=null)
             {
-                hopdong = QLBLL.Instance.GetHopDongByMaHD(tp.hopDong.MaHopDong);
-                phongTro = QLBLL.Instance.GetPhongTroByMaHopDong(tp.hopDong.MaHopDong);
-                dt = QLBLL.Instance.GetDayTroByIdPhong(phongTro.MaPhongTro);  
-                nguoi = QLBLL.Instance.GetNguoiByMaHopDong(hopdong.MaHopDong);
+                hopdong = QLBLLHopDong.Instance.GetHopDongByMaHD(tp.hopDong.MaHopDong);
+                phongTro = QLBLLPhongTro.Instance.GetPhongTroByMaHopDong(tp.hopDong.MaHopDong);
+                dt = QLBLLDayTro.Instance.GetDayTroByIdPhong(phongTro.MaPhongTro);  
+                nguoi = QLBLLNguoi.Instance.GetNguoiByMaHopDong(hopdong.MaHopDong);
                 SetGUI(dt, nguoi, phongTro, hopdong);            
             }
             //Thue phong
             if(tp.hopDong.MaHopDong !=null && tp.hopDong.MaPhongTro !=null)
             {    
                 nguoi = tp.hopDong.Nguoi;
-                dt = QLBLL.Instance.GetDayTroByIdPhong(tp.hopDong.MaPhongTro);
-                phongTro = QLBLL.Instance.GetPhongTroByIdPhong(tp.hopDong.MaPhongTro);
+                dt = QLBLLDayTro.Instance.GetDayTroByIdPhong(tp.hopDong.MaPhongTro);
+                phongTro = QLBLLPhongTro.Instance.GetPhongTroByIdPhong(tp.hopDong.MaPhongTro);
                 hopdong = this.tp.hopDong;
                 SetGUI(dt, nguoi, phongTro, hopdong);             
             }
             if(tp.hopDong.MaHopDong == null && tp.hopDong.MaPhongTro !=null)
             {
-                dt = QLBLL.Instance.GetDayTroByIdPhong(tp.hopDong.MaPhongTro);
-                phongTro = QLBLL.Instance.GetPhongTroByIdPhong(tp.hopDong.MaPhongTro);
+                dt = QLBLLDayTro.Instance.GetDayTroByIdPhong(tp.hopDong.MaPhongTro);
+                phongTro = QLBLLPhongTro.Instance.GetPhongTroByIdPhong(tp.hopDong.MaPhongTro);
                 txtTenDay.Text = dt.TenDayTro;
                 txtDienTich.Text = phongTro.DienTich.ToString();
                 txtTenPhong.Text = phongTro.TenPhongTro;
@@ -88,18 +88,18 @@ namespace PBL3___Motel_Management_System.View
             int j = 0;
             if (tp.hopDong.MaPhongTro == null)
             {          
-                foreach (ChiTietDichVu ctdv in QLBLL.Instance.GetChiTietDichVuByIdPhong(phongTro.MaPhongTro))
+                foreach (ChiTietDichVu ctdv in QLBLLChiTietDichVu.Instance.GetChiTietDichVuByIdPhong(phongTro.MaPhongTro))
                 {
                     
                     DichVu dv = new DichVu();
-                    dv = QLBLL.Instance.GetDichVuByIdDichVu(ctdv.MaDichVu);
+                    dv = QLBLLDichvu.Instance.GetDichVuByIdDichVu(ctdv.MaDichVu);
                     dgvDichvu.Rows.Add(dv.MaDichVu, ++i, dv.TenDichVu, dv.GiaDichVu.ToString("#,##0") + "₫");
                 }
-                foreach (ChiTietThietBi cttb in QLBLL.Instance.GetChiTietThietBiByIdPhong(phongTro.MaPhongTro))
+                foreach (ChiTietThietBi cttb in QLBLLChiTietThietBi.Instance.GetChiTietThietBiByIdPhong(phongTro.MaPhongTro))
                 {
                     
                     ThietBi tb = new ThietBi();
-                    tb = QLBLL.Instance.GetTBByIdTB(cttb.MaThietBi);
+                    tb = QLBLLThietbi.Instance.GetTBByIdTB(cttb.MaThietBi);
                     dgvThietbi.Rows.Add(tb.MaThietBi, ++j, tb.TenThietBi, tb.GiaThietBi.ToString("#,##0") + "₫", cttb.SoLuong);
                 }
             }
@@ -108,12 +108,12 @@ namespace PBL3___Motel_Management_System.View
                 foreach (string idDv in tp.DsDichVu)
                 {
                     DichVu dv = new DichVu();
-                    dv = QLBLL.Instance.GetDichVuByIdDichVu(idDv);
+                    dv = QLBLLDichvu.Instance.GetDichVuByIdDichVu(idDv);
                     dgvDichvu.Rows.Add(dv.MaDichVu, ++i, dv.TenDichVu, dv.GiaDichVu.ToString("#,##0") + "₫");
                 }
-                foreach (ChiTietThietBi ct in QLBLL.Instance.GetChiTietThietBiByIdPhong(tp.hopDong.MaPhongTro))
+                foreach (ChiTietThietBi ct in QLBLLChiTietThietBi.Instance.GetChiTietThietBiByIdPhong(tp.hopDong.MaPhongTro))
                 {
-                    ThietBi tb = QLBLL.Instance.GetTBByIdTB(ct.MaThietBi);
+                    ThietBi tb = QLBLLThietbi.Instance.GetTBByIdTB(ct.MaThietBi);
                     dgvThietbi.Rows.Add(tb.MaThietBi, ++j, tb.TenThietBi, tb.GiaThietBi.ToString("#,##0") + "₫", ct.SoLuong);
                 }
             }
@@ -135,29 +135,29 @@ namespace PBL3___Motel_Management_System.View
             nguoi.TonTai = true;
             try
             {
-            QLBLL.Instance.AddNguoiBll(nguoi);
+            QLBLLNguoi.Instance.AddNguoiBll(nguoi);
             }
             catch{
-                QLBLL.Instance.UpdateNguoiBLL(nguoi);
+                QLBLLNguoi.Instance.UpdateNguoiBLL(nguoi);
             }
             PhongTro pt = new PhongTro();
-            pt = QLBLL.Instance.GetPhongTroByIdPhong(tp.hopDong.MaPhongTro);
+            pt = QLBLLPhongTro.Instance.GetPhongTroByIdPhong(tp.hopDong.MaPhongTro);
             pt.TinhTrang = true;
-            QLBLL.Instance.UpdatePTBLL(pt);
+            QLBLLPhongTro.Instance.UpdatePTBLL(pt);
             ThanhVienTrongPhong tvtp = new ThanhVienTrongPhong();
-            tvtp.MaThanhVienTrongPhong = QLBLL.Instance.TaoIdThanhVienTrongPhong();
+            tvtp.MaThanhVienTrongPhong = QLBLLThanhVienTrongPhong.Instance.TaoIdThanhVienTrongPhong();
             tvtp.MaPhongTro = pt.MaPhongTro;
             tvtp.MaNguoi = nguoi.MaNguoi;
             tvtp.TonTai = true;
-            QLBLL.Instance.AddThanhVienTrongPhongBll(tvtp);
+            QLBLLThanhVienTrongPhong.Instance.AddThanhVienTrongPhongBll(tvtp);
             foreach (string iddv in tp.DsDichVu)
             {
                 ChiTietDichVu ctdv = new ChiTietDichVu();
-                ctdv.MaChiTietDichVu = QLBLL.Instance.TaoIdChiTietDichVu();
+                ctdv.MaChiTietDichVu = QLBLLChiTietDichVu.Instance.TaoIdChiTietDichVu();
                 ctdv.MaDichVu = iddv;
                 ctdv.MaPhongTro = tp.hopDong.MaPhongTro;
                 ctdv.TonTai = true;
-                QLBLL.Instance.AddChiTietDichVuBll(ctdv);
+                QLBLLChiTietDichVu.Instance.AddChiTietDichVuBll(ctdv);
             }
             HopDong hd = new HopDong();
             hd.MaHopDong = tp.hopDong.MaHopDong;
@@ -171,11 +171,11 @@ namespace PBL3___Motel_Management_System.View
 #pragma warning disable CS0168 // Variable is declared but never used
             try
             {
-                QLBLL.Instance.AddHdBll(hd);
+                QLBLLHopDong.Instance.AddHdBll(hd);
             }
             catch (Exception ex)
             {
-                QLBLL.Instance.UpdateHopDongBLL(hd);
+                QLBLLHopDong.Instance.UpdateHopDongBLL(hd);
             }
 #pragma warning restore CS0168 // Variable is declared but never used
             MessageBox.Show("Xác nhận thuê phòng thành công", "Thông báo", MessageBoxButtons.OK);

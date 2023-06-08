@@ -27,15 +27,15 @@ namespace PBL3___Motel_Management_System.View.KhachHang
         public void SetGUI(string txt)
         {
             dgvChiSoDien.Rows.Clear();
-            QLBLL.Instance.customDGV(dgvChiSoDien);
+            QLBLLChung.Instance.customDGV(dgvChiSoDien);
             int i = 0;
-            string IdDay = QLBLL.Instance.GetDayTroByIdPhong(idPhong).MaDayTro;
+            string IdDay = QLBLLDayTro.Instance.GetDayTroByIdPhong(idPhong).MaDayTro;
 
             if (txt == null)
             {
-                foreach (ViewChiSo view in QLBLL.Instance.GetViewChiSoByPhong(IdDay, idPhong, "1"))
+                foreach (ViewChiSo view in QLBLLChiTietSuDungDichVu.Instance.GetViewChiSoByPhong(IdDay, idPhong, "1"))
                 {
-                    if (QLBLL.Instance.GetChiTietDichVuById(view.MaChiTietDichVu).MaDichVu == "001" && view.TinhTrang == true)
+                    if (QLBLLChiTietDichVu.Instance.GetChiTietDichVuById(view.MaChiTietDichVu).MaDichVu == "001" && view.TinhTrang == true)
                     {
                         dgvChiSoDien.Rows.Add(view.MaChiTietSuDungDichVu, ++i, view.ChiSoCu, view.ChiSoMoi, view.DaDung
                         , view.NgayLap, view.ThangSuDung);
@@ -46,9 +46,9 @@ namespace PBL3___Motel_Management_System.View.KhachHang
             {
                 string ThangSuDung = dtpThangSuDung.Value.ToString("MM-yyyy");
 
-                foreach (ViewChiSo view in QLBLL.Instance.GetViewChiSoByTimKiem(ThangSuDung, IdDay, idPhong, "1"))
+                foreach (ViewChiSo view in QLBLLChiTietSuDungDichVu.Instance.GetViewChiSoByTimKiem(ThangSuDung, IdDay, idPhong, "1"))
                 {
-                    if (QLBLL.Instance.GetChiTietDichVuById(view.MaChiTietDichVu).MaDichVu == "001" && view.TinhTrang == true)
+                    if (QLBLLChiTietDichVu.Instance.GetChiTietDichVuById(view.MaChiTietDichVu).MaDichVu == "001" && view.TinhTrang == true)
                     {
                         dgvChiSoDien.Rows.Add(view.MaChiTietSuDungDichVu, ++i, view.ChiSoCu, view.ChiSoMoi, view.DaDung
                         , view.NgayLap, view.ThangSuDung);

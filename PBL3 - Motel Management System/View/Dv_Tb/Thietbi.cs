@@ -30,21 +30,15 @@ namespace PBL3___Motel_Management_System.View
         private void LoadForm(string txtTim)
         {
             dgvThietBi.RowCount = 0;
-            this.dgvThietBi.DefaultCellStyle.Font = new Font("Tahoma", 10);
-            this.dgvThietBi.DefaultCellStyle.ForeColor = Color.Blue;
-            this.dgvThietBi.DefaultCellStyle.BackColor = Color.Beige;
-            this.dgvThietBi.DefaultCellStyle.SelectionForeColor = Color.Black;
-            this.dgvThietBi.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
-            this.dgvThietBi.RowTemplate.Height = 35;
-            this.dgvThietBi.RowTemplate.MinimumHeight = 20;
+            QLBLLChung.Instance.customDGV(dgvThietBi);
             int i = 0;
-            foreach (ThietBi viewThietBi in QLBLL.Instance.DgvThietBi(txtTim))
+            foreach (ThietBi viewThietBi in QLBLLThietbi.Instance.DgvThietBi(txtTim))
             {
                 dgvThietBi.Rows.Add(viewThietBi.MaThietBi, ++i, viewThietBi.TenThietBi, viewThietBi.GiaThietBi.ToString("#,##0") + "₫");
             }
             var Sua = System.Drawing.Image.FromFile(@"D:\PBL\PBL3_MAIN\PBL3 - Motel Management System\Icons\icons8-create-25.png");
             var Xoa = System.Drawing.Image.FromFile(@"D:\PBL\PBL3_MAIN\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
-            dgvThietBi.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => QLBLL.Instance.dgvIcons_CellPainting1(dgvThietBi, e, Sua, Xoa));
+            dgvThietBi.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => QLBLLChung.Instance.dgvIcons_CellPainting1(dgvThietBi, e, Sua, Xoa));
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -156,12 +150,12 @@ namespace PBL3___Motel_Management_System.View
         private void btnSuaDV_Click(object sender, EventArgs e)
         {
             string id = dgvThietBi.CurrentRow.Cells[0].Value.ToString();
-            QLBLL.Instance.openChildForm1(new ThemThietBi(id, LoadForm), panelTB);
+            QLBLLChung.Instance.openChildForm1(new ThemThietBi(id, LoadForm), panelTB);
             
         }
         private void btnThemThietBi_Click(object sender, EventArgs e)
         {
-            QLBLL.Instance.openChildForm1(new ThemThietBi(null,LoadForm), panelTB);
+            QLBLLChung.Instance.openChildForm1(new ThemThietBi(null,LoadForm), panelTB);
         }
 
         private void btnTim_Click(object sender, EventArgs e)
@@ -172,8 +166,8 @@ namespace PBL3___Motel_Management_System.View
         private void btnXoaPhong_Click(object sender, EventArgs e)
         {
             string idThietBi = dgvThietBi.CurrentRow.Cells[0].Value.ToString();
-            QLBLL.Instance.DelChiTietThietBiByIdThietBi(idThietBi);
-            QLBLL.Instance.DelThietBiBll(idThietBi);
+            QLBLLChiTietThietBi.Instance.DelChiTietThietBiByIdThietBi(idThietBi);
+            QLBLLThietbi.Instance.DelThietBiBll(idThietBi);
             MessageBox.Show("Xóa thiết bị thành công", "Thông báo");
             LoadForm(null);
         }
@@ -195,13 +189,13 @@ namespace PBL3___Motel_Management_System.View
                 {
                     // Lấy mã dịch vụ tương ứng với hàng đã được nhấp
                     string id = dgvThietBi.Rows[e.RowIndex].Cells[0].Value.ToString();
-                    QLBLL.Instance.openChildForm1(new ThemThietBi(id, LoadForm), panelTB);
+                    QLBLLChung.Instance.openChildForm1(new ThemThietBi(id, LoadForm), panelTB);
                 }
                 else if (columnName == "btnXoa")
                 {
                     string idThietBi = dgvThietBi.Rows[e.RowIndex].Cells[0].Value.ToString();
-                    QLBLL.Instance.DelChiTietThietBiByIdThietBi(idThietBi);
-                    QLBLL.Instance.DelThietBiBll(idThietBi);
+                    QLBLLChiTietThietBi.Instance.DelChiTietThietBiByIdThietBi(idThietBi);
+                    QLBLLThietbi.Instance.DelThietBiBll(idThietBi);
                     MessageBox.Show("Xóa thiết bị thành công", "Thông báo");
                     LoadForm(null);
                 }

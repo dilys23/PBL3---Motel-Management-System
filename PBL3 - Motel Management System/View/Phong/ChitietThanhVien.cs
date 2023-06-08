@@ -21,31 +21,18 @@ namespace PBL3___Motel_Management_System.View
             InitializeComponent();
             this.idPhong = idPhong;
             LoadForm(null);
-            SetFontAndColors();
-        }
-        private void SetFontAndColors()
-        {
-            this.dgvThanhVien.DefaultCellStyle.Font = new Font("Tahoma", 10);
-            this.dgvThanhVien.DefaultCellStyle.ForeColor = Color.Blue;
-            this.dgvThanhVien.DefaultCellStyle.BackColor = Color.Beige;
-            this.dgvThanhVien.DefaultCellStyle.SelectionForeColor = Color.AliceBlue;
-            this.dgvThanhVien.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
-
-            DataGridViewRow row = this.dgvThanhVien.RowTemplate;
-            row.Height = 35;
-            row.MinimumHeight = 20;
         }
         public void LoadForm(string txt)
         {
+                QLBLLChung.Instance.customDGV(dgvThanhVien);
                 dgvThanhVien.Rows.Clear();
                 dgvThanhVien.Columns[8].ValueType = typeof(Image);
                 dgvThanhVien.RowCount = 0;
                 int i = 1;
-                //dgvThanhVien.Columns[6].ValueType = typeof(Boolean);
-                foreach (string idNguoi in QLBLL.Instance.GetIdNguoiByIdPhong(this.idPhong))
+                foreach (string idNguoi in QLBLLNguoi.Instance.GetIdNguoiByIdPhong(this.idPhong))
                 {
                     Nguoi nguoi = new Nguoi();
-                    nguoi = QLBLL.Instance.GetNguoiByIdNguoi(idNguoi);
+                    nguoi = QLBLLNguoi.Instance.GetNguoiByIdNguoi(idNguoi);
                     Image image = null;
                     if (nguoi.HinhAnh != null)
                     {
@@ -55,44 +42,7 @@ namespace PBL3___Motel_Management_System.View
                 }
             var Sua = System.Drawing.Image.FromFile(@"D:\PBL\PBL3_MAIN\PBL3 - Motel Management System\Icons\icons8-create-25.png");
             var Xoa = System.Drawing.Image.FromFile(@"D:\PBL\PBL3_MAIN\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
-            dgvThanhVien.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => dgvIcons_CellPainting1(dgvThanhVien, e, Sua, Xoa));
-        }
-        public void dgvIcons_CellPainting1(DataGridView dgv, DataGridViewCellPaintingEventArgs e, Image btSua, Image btXoa)
-        {
-            if (e.ColumnIndex >= 0 && dgv.Columns[e.ColumnIndex].Name == "btnSua" && e.RowIndex >= 0)
-            {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-                var btnSua = btSua;
-                var w = btnSua.Width;
-                var h = btnSua.Height;
-                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
-                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
-                e.Graphics.DrawImage(btnSua, new Rectangle(x, y, w, h));
-                e.Handled = true;
-
-                // Thay đổi màu nền của cell khi được chọn
-                if (e.State == DataGridViewElementStates.Selected)
-                {
-                    e.CellStyle.SelectionBackColor = Color.Tomato;
-                }
-            }
-            if (e.ColumnIndex >= 0 && dgv.Columns[e.ColumnIndex].Name == "btnXoa" && e.RowIndex >= 0)
-            {
-                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
-                var btnXoa = btXoa;
-                var w = btnXoa.Width;
-                var h = btnXoa.Height;
-                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
-                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
-                e.Graphics.DrawImage(btnXoa, new Rectangle(x, y, w, h));
-                e.Handled = true;
-
-                // Thay đổi màu nền của cell khi được chọn
-                if (e.State == DataGridViewElementStates.Selected)
-                {
-                    e.CellStyle.SelectionBackColor = Color.Tomato;
-                }
-            }
+            dgvThanhVien.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => QLBLLChung.Instance.dgvIcons_CellPainting1(dgvThanhVien, e, Sua, Xoa));
         }
         private void dgvThanhVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -104,14 +54,11 @@ namespace PBL3___Motel_Management_System.View
                 // Kiểm tra xem ô đã được nhấp có phải là nút Sửa hay Xóa không
                 if (columnName == "btnSua")
                 {
-                   
                     ThuePhong tp = new ThuePhong();
                     tp.hopDong.MaNguoi = dgvThanhVien.CurrentRow.Cells[0].Value.ToString();
-                    QLBLL.Instance.openChildForm1(new ThemKhach(tp, LoadForm), panelThem);
-
-
+                    QLBLLChung.Instance.openChildForm1(new ThemKhach(tp, LoadForm), panelThem);
                 }
-                else if (columnName == "btnXoa")
+                else 
                 {
                     DialogResult kq = MessageBox.Show("Bạn có thực sự muốn xóa", "Cảnh báo!!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     if (kq == DialogResult.OK)
@@ -120,11 +67,11 @@ namespace PBL3___Motel_Management_System.View
                         int sl = dgvThanhVien.RowCount;
                         if (sl > 1)
                         {
-                            if(!QLBLL.Instance.KiemTraTonTaiHopDongByIdNguoi(id))
+                            if(!QLBLLHopDong.Instance.KiemTraTonTaiHopDongByIdNguoi(id))
                             {
-                                string idThanhVien =QLBLL.Instance.GetIdThanhVienByIdNguoi(id); 
-                                QLBLL.Instance.DelThanhVienBLL(idThanhVien);
-                                QLBLL.Instance.DelNguoiBll(id);
+                                string idThanhVien =QLBLLThanhVienTrongPhong.Instance.GetIdThanhVienByIdNguoi(id); 
+                                QLBLLThanhVienTrongPhong.Instance.DelThanhVienBLL(idThanhVien);
+                                QLBLLNguoi.Instance.DelNguoiBll(id);
                                 MessageBox.Show("Xóa thành viên thành công", "Thông báo");
                                 LoadForm(null);
                             }
@@ -145,16 +92,16 @@ namespace PBL3___Motel_Management_System.View
         private void btnThemDichVu_Click(object sender, EventArgs e)
         {
 
-            if (QLBLL.Instance.GetPhongTroByIdPhong(idPhong).TinhTrang == true)
+            if (QLBLLPhongTro.Instance.GetPhongTroByIdPhong(idPhong).TinhTrang == true)
             {
 
-                if (QLBLL.Instance.GetIdNguoiByIdPhong(idPhong).Count() < QLBLL.Instance.GetPhongTroByIdPhong(idPhong).ToiDa)
+                if (QLBLLNguoi.Instance.GetIdNguoiByIdPhong(idPhong).Count() < QLBLLPhongTro.Instance.GetPhongTroByIdPhong(idPhong).ToiDa)
                 {
                     string IdThanhVien = dgvThanhVien.Rows[0].Cells[0].Value.ToString();
-                    string IdPhong = QLBLL.Instance.GetIdPhongByIdNguoi(IdThanhVien);
+                    string IdPhong = QLBLLPhongTro.Instance.GetIdPhongByIdNguoi(IdThanhVien);
                     ThuePhong tp = new ThuePhong();
                     tp.hopDong.MaPhongTro = idPhong;
-                    QLBLL.Instance.openChildForm1(new ThemKhach(tp, LoadForm), panelThem);
+                    QLBLLChung.Instance.openChildForm1(new ThemKhach(tp, LoadForm), panelThem);
                 }
                 else
                 {
@@ -175,7 +122,7 @@ namespace PBL3___Motel_Management_System.View
                 string id = dgvThanhVien.CurrentRow.Cells[0].Value.ToString();
                 tp.hopDong.MaNguoi = id;
                 ThemKhach tk = new ThemKhach(tp, LoadForm);
-                QLBLL.Instance.openChildForm1(tk, panelThem);
+                QLBLLChung.Instance.openChildForm1(tk, panelThem);
                 tk.btnLuu.Visible= false;
                 tk.btnThemAnh.Visible= false;
                 tk.txtCccd.Enabled = false;
@@ -205,7 +152,7 @@ namespace PBL3___Motel_Management_System.View
                     }
                 }
             }
-            if (dgvThanhVien.Columns[e.ColumnIndex].Name == "btnXoa")
+            else
             {
                 if (e.Value != null)
                 {

@@ -20,28 +20,17 @@ namespace PBL3___Motel_Management_System.View
         {
             InitializeComponent();
             this.idPhong = idPhong;
-            SetFontAndColors();
             LoadForm(null);
-        }
-        private void SetFontAndColors()
-        {
-            this.dgvThietBi.DefaultCellStyle.Font = new Font("Tahoma", 10);
-            this.dgvThietBi.DefaultCellStyle.ForeColor = Color.Blue;
-            this.dgvThietBi.DefaultCellStyle.BackColor = Color.Beige;
-            this.dgvThietBi.DefaultCellStyle.SelectionForeColor = Color.AliceBlue;
-            this.dgvThietBi.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
-            DataGridViewRow row = this.dgvThietBi.RowTemplate;
-            row.Height = 35;
-            row.MinimumHeight = 20;
         }
         public void LoadForm(string txt)
         {
+            QLBLLChung.Instance.customDGV(dgvThietBi);
             dgvThietBi.RowCount = 0;
             int i = 0;
-            foreach (string idCttb in QLBLL.Instance.GetAllIdCHiTietThietBiByIdPhong(idPhong))
+            foreach (string idCttb in QLBLLChiTietThietBi.Instance.GetAllIdCHiTietThietBiByIdPhong(idPhong))
             {
-                ChiTietThietBi cttb = QLBLL.Instance.GetChiTietThietBiById(idCttb);
-                ThietBi tb = QLBLL.Instance.GetTBByIdTB(cttb.MaThietBi);
+                ChiTietThietBi cttb = QLBLLChiTietThietBi.Instance.GetChiTietThietBiById(idCttb);
+                ThietBi tb = QLBLLThietbi.Instance.GetTBByIdTB(cttb.MaThietBi);
                 dgvThietBi.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi.ToString("#,##0") + "₫", cttb.SoLuong);
             }
         }
@@ -49,7 +38,7 @@ namespace PBL3___Motel_Management_System.View
         {
             ThuePhong tp= new ThuePhong();
             tp.hopDong.MaPhongTro = idPhong;
-            QLBLL.Instance.openChildForm1(new ThemThietBiPhong(tp, LoadForm), panelThem);
+            QLBLLChung.Instance.openChildForm1(new ThemThietBiPhong(tp, LoadForm), panelThem);
         }
     }
 }
