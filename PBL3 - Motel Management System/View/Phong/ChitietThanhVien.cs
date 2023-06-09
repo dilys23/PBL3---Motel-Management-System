@@ -36,7 +36,7 @@ namespace PBL3___Motel_Management_System.View
                     Image image = null;
                     if (nguoi.HinhAnh != null)
                     {
-                        image = ChuyenDoiAnh.Base64ToImage(nguoi.HinhAnh);
+                        image = QLBLLChung.Instance.Base64ToImage(nguoi.HinhAnh);
                     }
                     dgvThanhVien.Rows.Add(nguoi.MaNguoi, i++, nguoi.Ten, nguoi.Cccd, nguoi.Sdt, nguoi.Diachi, nguoi.NgaySinh, (nguoi.GioiTinh) ? "Nam" : "Nữ", image);
                 }
@@ -58,7 +58,7 @@ namespace PBL3___Motel_Management_System.View
                     tp.hopDong.MaNguoi = dgvThanhVien.CurrentRow.Cells[0].Value.ToString();
                     QLBLLChung.Instance.openChildForm1(new ThemKhach(tp, LoadForm), panelThem);
                 }
-                else 
+                else if(columnName == "btnXoa")
                 {
                     DialogResult kq = MessageBox.Show("Bạn có thực sự muốn xóa", "Cảnh báo!!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     if (kq == DialogResult.OK)
@@ -114,26 +114,26 @@ namespace PBL3___Motel_Management_System.View
             }
         }
 
-        private void dgvThanhVien_DoubleClick(object sender, EventArgs e)
-        {
-            if (dgvThanhVien.CurrentRow.Cells[0].Value != null)
-            {
-                ThuePhong tp = new ThuePhong();
-                string id = dgvThanhVien.CurrentRow.Cells[0].Value.ToString();
-                tp.hopDong.MaNguoi = id;
-                ThemKhach tk = new ThemKhach(tp, LoadForm);
-                QLBLLChung.Instance.openChildForm1(tk, panelThem);
-                tk.btnLuu.Visible= false;
-                tk.btnThemAnh.Visible= false;
-                tk.txtCccd.Enabled = false;
-                tk.txtDiaChi.Enabled = false;
-                tk.dtpNgaySinh.Enabled = false;
-                tk.txtSdt.Enabled = false;
-                tk.txtTen.Enabled = false;
-                tk.rdbtnNam.Enabled = false;
-                tk.rdbtnNu.Enabled = false;
-            }
-        }
+        //private void dgvThanhVien_DoubleClick(object sender, EventArgs e)
+        //{
+        //    if (dgvThanhVien.CurrentRow.Cells[0].Value != null)
+        //    {
+        //        ThuePhong tp = new ThuePhong();
+        //        string id = dgvThanhVien.CurrentRow.Cells[0].Value.ToString();
+        //        tp.hopDong.MaNguoi = id;
+        //        ThemKhach tk = new ThemKhach(tp, LoadForm);
+        //        QLBLLChung.Instance.openChildForm1(tk, panelThem);
+        //        tk.btnLuu.Visible= false;
+        //        tk.btnThemAnh.Visible= false;
+        //        tk.txtCccd.Enabled = false;
+        //        tk.txtDiaChi.Enabled = false;
+        //        tk.dtpNgaySinh.Enabled = false;
+        //        tk.txtSdt.Enabled = false;
+        //        tk.txtTen.Enabled = false;
+        //        tk.rdbtnNam.Enabled = false;
+        //        tk.rdbtnNu.Enabled = false;
+        //    }
+        //}
 
      
 
@@ -152,7 +152,7 @@ namespace PBL3___Motel_Management_System.View
                     }
                 }
             }
-            else
+            else if (dgvThanhVien.Columns[e.ColumnIndex].Name == "btnXoa")
             {
                 if (e.Value != null)
                 {

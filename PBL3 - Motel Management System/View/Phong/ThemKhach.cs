@@ -45,7 +45,7 @@ namespace PBL3___Motel_Management_System
                     rdbtnNu.Checked = true;
                 if (nguoi.HinhAnh != null)
                 {
-                    pctKhach.Image = ChuyenDoiAnh.Base64ToImage(nguoi.HinhAnh);
+                    pctKhach.Image = QLBLLChung.Instance.Base64ToImage(nguoi.HinhAnh);
                 }
             }
         }
@@ -118,7 +118,7 @@ namespace PBL3___Motel_Management_System
                 nguoi.NgaySinh = dtpNgaySinh.Value.ToString("yyyy-MM-dd");
                 if (pctKhach.Image != null)
                 {
-                    nguoi.HinhAnh = ChuyenDoiAnh.ImageToBase64(pctKhach.Image, pctKhach.Image.RawFormat);
+                    nguoi.HinhAnh = QLBLLChung.Instance.ImageToBase64(pctKhach.Image, pctKhach.Image.RawFormat);
                 }
                 if (thuePhong.hopDong.MaHopDong != null)
                 {

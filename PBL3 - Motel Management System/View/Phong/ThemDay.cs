@@ -41,7 +41,7 @@ namespace PBL3___Motel_Management_System
             txtTenThanhPho.Text = day.TenThanhPho.ToString();
             if (day.HinhAnh != null)
             {
-                pictureDayTro.Image = ChuyenDoiAnh.Base64ToImage(day.HinhAnh);
+                pictureDayTro.Image = QLBLLChung.Instance.Base64ToImage(day.HinhAnh);
             }
         }
         private void iconButton1_Click(object sender, EventArgs e)
@@ -98,7 +98,7 @@ namespace PBL3___Motel_Management_System
                     day.TenThanhPho = txtTenThanhPho.Text;
                     if (pictureDayTro.Image != null)
                     {
-                        day.HinhAnh = ChuyenDoiAnh.ImageToBase64(pictureDayTro.Image, pictureDayTro.Image.RawFormat);
+                        day.HinhAnh = QLBLLChung.Instance.ImageToBase64(pictureDayTro.Image, pictureDayTro.Image.RawFormat);
                     }
                     day.TonTai = true;
                     QLBLLDayTro.Instance.SuaDayBll(day);
@@ -120,7 +120,7 @@ namespace PBL3___Motel_Management_System
                     dt.MaChuTro = "1";
                     if (pictureDayTro.Image != null)
                     {
-                        dt.HinhAnh = ChuyenDoiAnh.ImageToBase64(pictureDayTro.Image, pictureDayTro.Image.RawFormat);
+                        dt.HinhAnh = QLBLLChung.Instance.ImageToBase64(pictureDayTro.Image, pictureDayTro.Image.RawFormat);
                     }
                     dt.TonTai = true;
                     QLBLLDayTro.Instance.AddDayTroBll(dt);

@@ -35,11 +35,12 @@
             this.panelChitietPT = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnHopDong = new FontAwesome.Sharp.IconButton();
+            this.btnCocPhong = new FontAwesome.Sharp.IconButton();
             this.btnThanhVien = new FontAwesome.Sharp.IconButton();
             this.btnDichVu = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.btnTaiKhoan = new FontAwesome.Sharp.IconButton();
-            this.btnCocPhong = new FontAwesome.Sharp.IconButton();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panelPhong.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -111,6 +112,7 @@
             this.flowLayoutPanel1.Controls.Add(this.btnDichVu);
             this.flowLayoutPanel1.Controls.Add(this.iconButton1);
             this.flowLayoutPanel1.Controls.Add(this.btnTaiKhoan);
+            this.flowLayoutPanel1.Controls.Add(this.iconButton2);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -136,6 +138,26 @@
             this.btnHopDong.Text = "   Hợp đồng";
             this.btnHopDong.UseVisualStyleBackColor = false;
             this.btnHopDong.Click += new System.EventHandler(this.btnHopDong_Click_1);
+            // 
+            // btnCocPhong
+            // 
+            this.btnCocPhong.BackColor = System.Drawing.Color.LightCyan;
+            this.btnCocPhong.FlatAppearance.BorderSize = 0;
+            this.btnCocPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCocPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCocPhong.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
+            this.btnCocPhong.IconColor = System.Drawing.Color.DarkCyan;
+            this.btnCocPhong.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCocPhong.IconSize = 35;
+            this.btnCocPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCocPhong.Location = new System.Drawing.Point(177, 3);
+            this.btnCocPhong.Name = "btnCocPhong";
+            this.btnCocPhong.Size = new System.Drawing.Size(168, 41);
+            this.btnCocPhong.TabIndex = 54;
+            this.btnCocPhong.Tag = "Cọc Phòng";
+            this.btnCocPhong.Text = "   Cọc Phòng";
+            this.btnCocPhong.UseVisualStyleBackColor = false;
+            this.btnCocPhong.Click += new System.EventHandler(this.btnCocPhong_Click);
             // 
             // btnThanhVien
             // 
@@ -217,25 +239,24 @@
             this.btnTaiKhoan.UseVisualStyleBackColor = false;
             this.btnTaiKhoan.Click += new System.EventHandler(this.btnTaiKhoan_Click);
             // 
-            // btnCocPhong
+            // iconButton2
             // 
-            this.btnCocPhong.BackColor = System.Drawing.Color.LightCyan;
-            this.btnCocPhong.FlatAppearance.BorderSize = 0;
-            this.btnCocPhong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCocPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCocPhong.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
-            this.btnCocPhong.IconColor = System.Drawing.Color.DarkCyan;
-            this.btnCocPhong.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCocPhong.IconSize = 35;
-            this.btnCocPhong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCocPhong.Location = new System.Drawing.Point(177, 3);
-            this.btnCocPhong.Name = "btnCocPhong";
-            this.btnCocPhong.Size = new System.Drawing.Size(168, 41);
-            this.btnCocPhong.TabIndex = 54;
-            this.btnCocPhong.Tag = "Cọc Phòng";
-            this.btnCocPhong.Text = "   Cọc Phòng";
-            this.btnCocPhong.UseVisualStyleBackColor = false;
-            this.btnCocPhong.Click += new System.EventHandler(this.btnCocPhong_Click);
+            this.iconButton2.BackColor = System.Drawing.Color.LightCyan;
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.PhotoFilm;
+            this.iconButton2.IconColor = System.Drawing.Color.DarkCyan;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.IconSize = 35;
+            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton2.Location = new System.Drawing.Point(1099, 3);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(171, 41);
+            this.iconButton2.TabIndex = 55;
+            this.iconButton2.Tag = "Ảnh";
+            this.iconButton2.Text = "Ảnh ";
+            this.iconButton2.UseVisualStyleBackColor = false;
             // 
             // ChiTietPT
             // 
@@ -268,5 +289,6 @@
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton btnTaiKhoan;
         private FontAwesome.Sharp.IconButton btnCocPhong;
+        private FontAwesome.Sharp.IconButton iconButton2;
     }
 }

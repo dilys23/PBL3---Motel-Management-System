@@ -25,7 +25,6 @@ namespace PBL3___Motel_Management_System
         {
             QLBLLChung.Instance.openChildForm1(new ThemCSNuoc(null, LoadForm), panelChisoNuoc);
         }
-
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             // Lấy tháng và năm được chọn
@@ -166,7 +165,7 @@ namespace PBL3___Motel_Management_System
                 }
 
             }
-            else
+            else if (columnName == "btnXoa")
             {
                 if (dgvChiSoNuoc.CurrentRow.Cells[9].Value.ToString() == "Chưa xác thực")
                 {

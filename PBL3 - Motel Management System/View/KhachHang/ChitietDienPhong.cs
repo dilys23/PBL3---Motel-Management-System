@@ -55,7 +55,6 @@ namespace PBL3___Motel_Management_System.View.KhachHang
                     }
                 }
             }
-
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)

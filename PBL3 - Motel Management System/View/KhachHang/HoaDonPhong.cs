@@ -43,7 +43,6 @@ namespace PBL3___Motel_Management_System.View.KhachHang
                     {
                         dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, hd.NgayTao, hd.ThangChiTra, hd.TongTien.ToString("C0", vietnamCulture), hd.DaThanhToan.ToString("C0", vietnamCulture), (hd.TongTien - hd.DaThanhToan).ToString("C0", vietnamCulture));
                     }
-
                 }
             }
             else

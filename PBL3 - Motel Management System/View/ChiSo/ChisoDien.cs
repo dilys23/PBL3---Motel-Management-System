@@ -166,7 +166,7 @@ namespace PBL3___Motel_Management_System.View
                     QLBLLChung.Instance.openChildForm1(frm, panelChisoDien);
                 }
             }
-                else
+                else if (columnName == "btnXoa")
                 {
                     if (dgvChiSoDien.CurrentRow.Cells[9].Value.ToString() == "Chưa xác thực")
                     {

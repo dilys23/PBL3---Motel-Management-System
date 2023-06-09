@@ -28,7 +28,6 @@ namespace PBL3___Motel_Management_System.View.KhachHang
                 SetGUI(null);
             }
         }
-
         private void RoundPanel(Panel panel, int cornerRadius)
         {
             RectangleF rect = new RectangleF(0, 0, panel.Width, panel.Height);
@@ -46,12 +45,14 @@ namespace PBL3___Motel_Management_System.View.KhachHang
             label4.Text = pt.TenPhongTro;
             DayTro daytro = QLBLLDayTro.Instance.GetDayTroByIdPhong(pt.MaPhongTro);
             label5.Text = daytro.TenDayTro;
-            string diachi = daytro.TenDuong + "," + daytro.TenHuyen + "," + daytro.TenThanhPho;
+            string diachi = daytro.TenDuong + ", " + daytro.TenHuyen + ", " + daytro.TenThanhPho;
             label6.Text = diachi;
-
+            label7.Text = "Diện tích: " + pt.DienTich.ToString();
+            label8.Text = "Giá tiền: " + pt.GiaTien.ToString();
+            label9.Text ="Số người tối đa: " +  pt.ToiDa.ToString();
             if (pt.HinhAnh != null)
             {
-                pictureBox1.Image = ChuyenDoiAnh.Base64ToImage(pt.HinhAnh);
+                pictureBox1.Image = QLBLLChung.Instance.Base64ToImage(pt.HinhAnh);
             }
             if (QLBLLHopDong.Instance.GetHopDongByIdPhong(pt.MaPhongTro) != null)
             {
@@ -68,7 +69,7 @@ namespace PBL3___Motel_Management_System.View.KhachHang
                         Image image = null;
                         if (nguoi.HinhAnh != null)
                         {
-                            image = ChuyenDoiAnh.Base64ToImage(nguoi.HinhAnh);
+                            image = QLBLLChung.Instance.Base64ToImage(nguoi.HinhAnh);
                         }
                         dgvThanhVien.Rows.Add(nguoi.MaNguoi, i++, nguoi.Ten, nguoi.Cccd, nguoi.Sdt, nguoi.Diachi, nguoi.NgaySinh, (nguoi.GioiTinh) ? "Nam" : "Nữ", image);
                     }
@@ -80,7 +81,7 @@ namespace PBL3___Motel_Management_System.View.KhachHang
                         {
                             if (nguoi.HinhAnh != null)
                             {
-                                image = ChuyenDoiAnh.Base64ToImage(nguoi.HinhAnh);
+                                image = QLBLLChung.Instance.Base64ToImage(nguoi.HinhAnh);
                             }
                             dgvThanhVien.Rows.Add(nguoi.MaNguoi, i++, nguoi.Ten, nguoi.Cccd, nguoi.Sdt, nguoi.Diachi, nguoi.NgaySinh, (nguoi.GioiTinh) ? "Nam" : "Nữ", image);
                         }
