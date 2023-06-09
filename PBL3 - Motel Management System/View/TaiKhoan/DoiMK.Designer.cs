@@ -256,7 +256,6 @@
             // 
             // iconButton4
             // 
-            this.iconButton4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButton4.BackColor = System.Drawing.Color.PaleTurquoise;
             this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
             this.iconButton4.IconColor = System.Drawing.Color.DarkCyan;
