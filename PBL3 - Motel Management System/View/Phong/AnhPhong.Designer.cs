@@ -41,7 +41,7 @@
             this.btnThemAnh.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThemAnh.IconSize = 20;
             this.btnThemAnh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemAnh.Location = new System.Drawing.Point(378, 487);
+            this.btnThemAnh.Location = new System.Drawing.Point(387, 515);
             this.btnThemAnh.Name = "btnThemAnh";
             this.btnThemAnh.Size = new System.Drawing.Size(104, 34);
             this.btnThemAnh.TabIndex = 1;
@@ -58,7 +58,7 @@
             this.btnXoaAnh.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXoaAnh.IconSize = 20;
             this.btnXoaAnh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaAnh.Location = new System.Drawing.Point(513, 487);
+            this.btnXoaAnh.Location = new System.Drawing.Point(497, 515);
             this.btnXoaAnh.Name = "btnXoaAnh";
             this.btnXoaAnh.Size = new System.Drawing.Size(95, 34);
             this.btnXoaAnh.TabIndex = 2;
@@ -69,9 +69,12 @@
             // 
             // panelAnh
             // 
+            this.panelAnh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelAnh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
             this.panelAnh.Location = new System.Drawing.Point(3, 12);
             this.panelAnh.Name = "panelAnh";
-            this.panelAnh.Size = new System.Drawing.Size(1071, 362);
+            this.panelAnh.Size = new System.Drawing.Size(1071, 476);
             this.panelAnh.TabIndex = 3;
             // 
             // AnhPhong
@@ -90,8 +93,8 @@
         }
 
         #endregion
-        private FontAwesome.Sharp.IconButton btnThemAnh;
-        private FontAwesome.Sharp.IconButton btnXoaAnh;
         private System.Windows.Forms.FlowLayoutPanel panelAnh;
+        public FontAwesome.Sharp.IconButton btnThemAnh;
+        public FontAwesome.Sharp.IconButton btnXoaAnh;
     }
 }
