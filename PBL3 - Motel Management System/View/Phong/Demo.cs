@@ -38,7 +38,21 @@ namespace PBL3___Motel_Management_System.View
             this.IdPhong=idPhong;
             this.sk = sk;
             this.panel = panel;
+            //DateTime ngayHienTai = DateTime.Now;
+            //HopDong hd = QLBLLHopDong.Instance.GetHopDongByIdPhong(IdPhong);
+            //if (hd != null)
+            //{
+            //    DateTime ngayketthuc = DateTime.Parse(hd.NgayKetThuc);
+            //    TimeSpan khoangthoigian = ngayketthuc - ngayHienTai;
+            //    if (khoangthoigian.TotalDays < 0)
+            //    {
+            //        btnTra_Click(btnTra, EventArgs.Empty);
+            //        LoadForm(null);
+            //    }
+            //}
+            
         }
+      
         public void LoadForm(string txt)
         {
             Button btn = new Button();
