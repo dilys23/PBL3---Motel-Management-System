@@ -1239,5 +1239,16 @@ namespace PBL3___Motel_Management_System.DAL
                 data.SaveChanges() ;
             }
         }
+        public double GetAllTienCoc()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return  data.HopDong.Select(p=>p.TienCoc).Sum();
+            }
+        }
+        public void SetTienCoc(double tiencoc)
+        {
+
+        }
     }
 }

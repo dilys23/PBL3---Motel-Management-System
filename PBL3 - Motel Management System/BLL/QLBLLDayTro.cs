@@ -25,13 +25,13 @@ namespace PBL3___Motel_Management_System.BLL
         }
         public List<DayTro> GetAllDayTroBll()
         {
-            return QLDAL.Instance.GetAllDayTro();//ok
+            return QLDAL.Instance.GetAllDayTro();
         }
         public DayTro GetDayTroById(string id)
         {
             foreach (DayTro dt in GetAllDayTroBll())
             {
-                if (dt.MaDayTro == id) return dt;//ok
+                if (dt.MaDayTro == id) return dt;
             }
             return null;
         }
@@ -46,26 +46,26 @@ namespace PBL3___Motel_Management_System.BLL
                 status = false;
                 foreach (DayTro dayTro in QLDAL.Instance.GetAllDayTro())
                 {
-                    if (dayTro.MaDayTro == id) status = true;//ok
+                    if (dayTro.MaDayTro == id) status = true;
                 }
             }
             return id;
         }
         public void AddDayTroBll(DayTro dt)
         {
-            QLDAL.Instance.AddDayTroDal(dt);//ok
+            QLDAL.Instance.AddDayTroDal(dt);
         }
         public string GetIdDayByIdPhong(string IdPhong)
         {
-            return QLDAL.Instance.GetIdDayByIdPhong(IdPhong);//ok
+            return QLDAL.Instance.GetIdDayByIdPhong(IdPhong);
         }
         public DayTro GetDayTroByIdPhong(string idPhong)
         {
-            return QLDAL.Instance.GetDayTroByIdPhongDal(idPhong);//ok
+            return QLDAL.Instance.GetDayTroByIdPhongDal(idPhong);
         }
         public DayTro GetDayByIdDay(string id)
         {
-            return QLDAL.Instance.GetDayByIdDay(id);//ok
+            return QLDAL.Instance.GetDayByIdDay(id);
         }
         public void SuaDayBll(DayTro day)
         {
@@ -73,14 +73,14 @@ namespace PBL3___Motel_Management_System.BLL
         }
         public void DelDayTroBll(string MaDay)
         {
-            QLDAL.Instance.DelDayTroDal(MaDay);//ok
+            QLDAL.Instance.DelDayTroDal(MaDay);
         }
         public bool CheckDay(string idday)
         {
             int check = 0;
             foreach (PhongTro pt in QLBLLPhongTro.Instance.GetPhongTroByIdDay(idday))
             {
-                if (QLBLLHopDong.Instance.GetHopDongByIdPhong(pt.MaPhongTro) != null && pt.TonTai ==true) check++;  //ok
+                if (QLBLLHopDong.Instance.GetHopDongByIdPhong(pt.MaPhongTro) != null && pt.TonTai ==true) check++; 
             }
             if (check == 0) return false;
             else return true;

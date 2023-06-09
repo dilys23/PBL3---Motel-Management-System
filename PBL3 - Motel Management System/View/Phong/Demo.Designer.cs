@@ -215,12 +215,12 @@
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btnCoc;
         private FontAwesome.Sharp.IconButton btnChiTiet;
-        private FontAwesome.Sharp.IconButton btnTra;
         private FontAwesome.Sharp.IconButton btnChoThue;
         private System.Windows.Forms.FlowLayoutPanel panelTenKhach;
         private System.Windows.Forms.Panel panelTenPhongTro;
         private FontAwesome.Sharp.IconButton btnXoaPhong;
         private FontAwesome.Sharp.IconButton btnSuaPhong;
         private System.Windows.Forms.ToolTip toolTip1;
+        public FontAwesome.Sharp.IconButton btnTra;
     }
 }

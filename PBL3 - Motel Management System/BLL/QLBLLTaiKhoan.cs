@@ -25,7 +25,7 @@ namespace PBL3___Motel_Management_System.BLL
         }
         public DAL.TaiKhoan GetIdTk(string taikhoan, string matkhau)
         {
-            return QLDAL.Instance.GetIdTkDal(taikhoan, matkhau);//ok
+            return QLDAL.Instance.GetIdTkDal(taikhoan, matkhau);
         }
         public List<DAL.TaiKhoan> GetAllTaiKhoan()
         {
@@ -66,10 +66,6 @@ namespace PBL3___Motel_Management_System.BLL
         public DAL.TaiKhoan GetTaiKhoanByIdPhong(string idp)
         {
             return QLDAL.Instance.GetTaiKhoanByIdPhong(idp);
-        }
-        public DAL.TaiKhoan GetTaiKhoanByIdChuTro(string idChutro)
-        {
-            return QLDAL.Instance.GetTaiKhoanByIdChuTro(idChutro);
         }
         public void UpdateTaiKhoanPhong(DAL.TaiKhoan tk)
         {
