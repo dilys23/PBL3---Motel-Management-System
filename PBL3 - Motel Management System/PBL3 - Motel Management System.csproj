@@ -75,9 +75,6 @@
     <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
-    <Reference Include="FontAwesome.Sharp.Pro, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
-      <HintPath>..\packages\FontAwesome.Sharp.Pro.6.3.0\lib\net472\FontAwesome.Sharp.Pro.dll</HintPath>
-    </Reference>
     <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
       <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
     </Reference>
@@ -369,6 +366,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\QLBLLChiTietAnhPhong.cs" />
     <Compile Include="BLL\QLBLLChiTietDichVu.cs" />
     <Compile Include="BLL\QLBLLChiTietSuDungDichVu.cs" />
     <Compile Include="BLL\QLBLLChiTietTaiKhoanChuTro.cs" />
@@ -386,6 +384,9 @@
     <Compile Include="BLL\QLBLLThanhVienTrongPhong.cs" />
     <Compile Include="BLL\QLBLLThietbi.cs" />
     <Compile Include="BLL\QLBLLVaiTro.cs" />
+    <Compile Include="DAL\ChiTietAnhPhong.cs">
+      <DependentUpon>DataPbl.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\ChiTietDichVu.cs">
       <DependentUpon>DataPbl.tt</DependentUpon>
     </Compile>

@@ -1,6 +1,7 @@
 ﻿using PBL3___Motel_Management_System.BLL;
 using PBL3___Motel_Management_System.DAL;
 using PBL3___Motel_Management_System.DTO;
+using PBL3___Motel_Management_System.View.Phong;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -118,6 +119,12 @@ namespace PBL3___Motel_Management_System.View
                 QLBLLChung.Instance.openChildForm1(cp, panelChitietPT);
                
             }
+        }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            AnhPhong ap = new AnhPhong(idPhong);
+            QLBLLChung.Instance.openChildForm1(ap, panelChitietPT);
         }
     }
 }

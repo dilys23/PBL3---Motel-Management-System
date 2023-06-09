@@ -28,17 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelAnh = new System.Windows.Forms.Panel();
             this.btnThemAnh = new FontAwesome.Sharp.IconButton();
             this.btnXoaAnh = new FontAwesome.Sharp.IconButton();
+            this.panelAnh = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
-            // 
-            // panelAnh
-            // 
-            this.panelAnh.Location = new System.Drawing.Point(3, 0);
-            this.panelAnh.Name = "panelAnh";
-            this.panelAnh.Size = new System.Drawing.Size(1071, 464);
-            this.panelAnh.TabIndex = 0;
             // 
             // btnThemAnh
             // 
@@ -55,6 +48,7 @@
             this.btnThemAnh.Text = "Thêm Ảnh ";
             this.btnThemAnh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemAnh.UseVisualStyleBackColor = false;
+            this.btnThemAnh.Click += new System.EventHandler(this.btnThemAnh_Click);
             // 
             // btnXoaAnh
             // 
@@ -71,6 +65,14 @@
             this.btnXoaAnh.Text = "Xóa Ảnh";
             this.btnXoaAnh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoaAnh.UseVisualStyleBackColor = false;
+            this.btnXoaAnh.Click += new System.EventHandler(this.btnXoaAnh_Click);
+            // 
+            // panelAnh
+            // 
+            this.panelAnh.Location = new System.Drawing.Point(3, 12);
+            this.panelAnh.Name = "panelAnh";
+            this.panelAnh.Size = new System.Drawing.Size(1071, 362);
+            this.panelAnh.TabIndex = 3;
             // 
             // AnhPhong
             // 
@@ -78,9 +80,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(1075, 561);
+            this.Controls.Add(this.panelAnh);
             this.Controls.Add(this.btnXoaAnh);
             this.Controls.Add(this.btnThemAnh);
-            this.Controls.Add(this.panelAnh);
             this.Name = "AnhPhong";
             this.Text = "AnhPhong";
             this.ResumeLayout(false);
@@ -88,9 +90,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelAnh;
         private FontAwesome.Sharp.IconButton btnThemAnh;
         private FontAwesome.Sharp.IconButton btnXoaAnh;
+        private System.Windows.Forms.FlowLayoutPanel panelAnh;
     }
 }

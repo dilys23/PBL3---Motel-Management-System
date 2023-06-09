@@ -5,6 +5,15 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="DataPblModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ChiTietAnhPhong">
+          <Key>
+            <PropertyRef Name="MaChiTietAnhPhong" />
+          </Key>
+          <Property Name="MaChiTietAnhPhong" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="Anh" Type="varbinary(max)" Nullable="false" />
+          <Property Name="MaPhongTro" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="TonTai" Type="bit" Nullable="false" />
+        </EntityType>
         <EntityType Name="ChiTietDichVu">
           <Key>
             <PropertyRef Name="MaChiTietDichVu" />
@@ -187,6 +196,18 @@
           <Property Name="TenVaiTro" Type="nvarchar" MaxLength="64" Nullable="false" />
           <Property Name="TonTai" Type="bit" Nullable="false" />
         </EntityType>
+        <Association Name="FK__ChiTietAn__MaPho__02FC7413">
+          <End Role="PhongTro" Type="Self.PhongTro" Multiplicity="1" />
+          <End Role="ChiTietAnhPhong" Type="Self.ChiTietAnhPhong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhongTro">
+              <PropertyRef Name="MaPhongTro" />
+            </Principal>
+            <Dependent Role="ChiTietAnhPhong">
+              <PropertyRef Name="MaPhongTro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__ChiTietSu__MaCHi__5629CD9C">
           <End Role="ChiTietDichVu" Type="Self.ChiTietDichVu" Multiplicity="1" />
           <End Role="ChiTietSuDungDichVu" Type="Self.ChiTietSuDungDichVu" Multiplicity="*" />
@@ -404,6 +425,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="DataPblModelStoreContainer">
+          <EntitySet Name="ChiTietAnhPhong" EntityType="Self.ChiTietAnhPhong" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChiTietDichVu" EntityType="Self.ChiTietDichVu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChiTietSuDungDichVu" EntityType="Self.ChiTietSuDungDichVu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChiTietTaiKhoanChuTro" EntityType="Self.ChiTietTaiKhoanChuTro" Schema="dbo" store:Type="Tables" />
@@ -421,6 +443,10 @@
           <EntitySet Name="ThanhVienTrongPhong" EntityType="Self.ThanhVienTrongPhong" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ThietBi" EntityType="Self.ThietBi" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VaiTro" EntityType="Self.VaiTro" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__ChiTietAn__MaPho__02FC7413" Association="Self.FK__ChiTietAn__MaPho__02FC7413">
+            <End Role="PhongTro" EntitySet="PhongTro" />
+            <End Role="ChiTietAnhPhong" EntitySet="ChiTietAnhPhong" />
+          </AssociationSet>
           <AssociationSet Name="FK__ChiTietSu__MaCHi__5629CD9C" Association="Self.FK__ChiTietSu__MaCHi__5629CD9C">
             <End Role="ChiTietDichVu" EntitySet="ChiTietDichVu" />
             <End Role="ChiTietSuDungDichVu" EntitySet="ChiTietSuDungDichVu" />
@@ -499,6 +525,16 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DataPblModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ChiTietAnhPhong">
+          <Key>
+            <PropertyRef Name="MaChiTietAnhPhong" />
+          </Key>
+          <Property Name="MaChiTietAnhPhong" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Anh" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="MaPhongTro" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TonTai" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="PhongTro" Relationship="Self.FK__ChiTietAn__MaPho__02FC7413" FromRole="ChiTietAnhPhong" ToRole="PhongTro" />
+        </EntityType>
         <EntityType Name="ChiTietDichVu">
           <Key>
             <PropertyRef Name="MaChiTietDichVu" />
@@ -656,6 +692,7 @@
           <Property Name="ToiDa" Type="Int32" />
           <Property Name="HinhAnh" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="TonTai" Type="Boolean" />
+          <NavigationProperty Name="ChiTietAnhPhong" Relationship="Self.FK__ChiTietAn__MaPho__02FC7413" FromRole="PhongTro" ToRole="ChiTietAnhPhong" />
           <NavigationProperty Name="ChiTietDichVu" Relationship="Self.FK_MaPhongTroTietDichVu" FromRole="PhongTro" ToRole="ChiTietDichVu" />
           <NavigationProperty Name="ChiTietTaiKhoanPhongTro" Relationship="Self.FK__ChiTietTa__MaPho__59063A47" FromRole="PhongTro" ToRole="ChiTietTaiKhoanPhongTro" />
           <NavigationProperty Name="ChiTietThietBi" Relationship="Self.FK_MaPhongTroChiTietThietBi" FromRole="PhongTro" ToRole="ChiTietThietBi" />
@@ -717,6 +754,18 @@
           <Property Name="TonTai" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="TaiKhoan" Relationship="Self.FK__VaiTro__MaTaiKho__6477ECF3" FromRole="VaiTro" ToRole="TaiKhoan" />
         </EntityType>
+        <Association Name="FK__ChiTietAn__MaPho__02FC7413">
+          <End Role="PhongTro" Type="Self.PhongTro" Multiplicity="1" />
+          <End Role="ChiTietAnhPhong" Type="Self.ChiTietAnhPhong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhongTro">
+              <PropertyRef Name="MaPhongTro" />
+            </Principal>
+            <Dependent Role="ChiTietAnhPhong">
+              <PropertyRef Name="MaPhongTro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__ChiTietSu__MaCHi__5629CD9C">
           <End Role="ChiTietDichVu" Type="Self.ChiTietDichVu" Multiplicity="1" />
           <End Role="ChiTietSuDungDichVu" Type="Self.ChiTietSuDungDichVu" Multiplicity="*" />
@@ -934,6 +983,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="DataPbl" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ChiTietAnhPhong" EntityType="Self.ChiTietAnhPhong" />
           <EntitySet Name="ChiTietDichVu" EntityType="Self.ChiTietDichVu" />
           <EntitySet Name="ChiTietSuDungDichVu" EntityType="Self.ChiTietSuDungDichVu" />
           <EntitySet Name="ChiTietTaiKhoanChuTro" EntityType="Self.ChiTietTaiKhoanChuTro" />
@@ -951,6 +1001,10 @@
           <EntitySet Name="ThanhVienTrongPhong" EntityType="Self.ThanhVienTrongPhong" />
           <EntitySet Name="ThietBi" EntityType="Self.ThietBi" />
           <EntitySet Name="VaiTro" EntityType="Self.VaiTro" />
+          <AssociationSet Name="FK__ChiTietAn__MaPho__02FC7413" Association="Self.FK__ChiTietAn__MaPho__02FC7413">
+            <End Role="PhongTro" EntitySet="PhongTro" />
+            <End Role="ChiTietAnhPhong" EntitySet="ChiTietAnhPhong" />
+          </AssociationSet>
           <AssociationSet Name="FK__ChiTietSu__MaCHi__5629CD9C" Association="Self.FK__ChiTietSu__MaCHi__5629CD9C">
             <End Role="ChiTietDichVu" EntitySet="ChiTietDichVu" />
             <End Role="ChiTietSuDungDichVu" EntitySet="ChiTietSuDungDichVu" />
@@ -1030,6 +1084,16 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="DataPblModelStoreContainer" CdmEntityContainer="DataPbl">
+          <EntitySetMapping Name="ChiTietAnhPhong">
+            <EntityTypeMapping TypeName="DataPblModel.ChiTietAnhPhong">
+              <MappingFragment StoreEntitySet="ChiTietAnhPhong">
+                <ScalarProperty Name="MaChiTietAnhPhong" ColumnName="MaChiTietAnhPhong" />
+                <ScalarProperty Name="Anh" ColumnName="Anh" />
+                <ScalarProperty Name="MaPhongTro" ColumnName="MaPhongTro" />
+                <ScalarProperty Name="TonTai" ColumnName="TonTai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ChiTietDichVu">
             <EntityTypeMapping TypeName="DataPblModel.ChiTietDichVu">
               <MappingFragment StoreEntitySet="ChiTietDichVu">

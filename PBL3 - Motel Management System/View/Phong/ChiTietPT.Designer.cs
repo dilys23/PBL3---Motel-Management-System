@@ -257,6 +257,7 @@
             this.iconButton2.Tag = "Ảnh";
             this.iconButton2.Text = "Ảnh ";
             this.iconButton2.UseVisualStyleBackColor = false;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
             // ChiTietPT
             // 

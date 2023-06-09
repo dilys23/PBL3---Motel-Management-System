@@ -17,6 +17,7 @@ namespace PBL3___Motel_Management_System.DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PhongTro()
         {
+            this.ChiTietAnhPhong = new HashSet<ChiTietAnhPhong>();
             this.ChiTietDichVu = new HashSet<ChiTietDichVu>();
             this.ChiTietTaiKhoanPhongTro = new HashSet<ChiTietTaiKhoanPhongTro>();
             this.ChiTietThietBi = new HashSet<ChiTietThietBi>();
@@ -35,6 +36,8 @@ namespace PBL3___Motel_Management_System.DAL
         public byte[] HinhAnh { get; set; }
         public Nullable<bool> TonTai { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ChiTietAnhPhong> ChiTietAnhPhong { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietDichVu> ChiTietDichVu { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

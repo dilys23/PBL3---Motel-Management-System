@@ -1208,5 +1208,36 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.ChiTietTaiKhoanChuTro.Where(p => p.TonTai==true && p.MaTaiKhoan == matk).FirstOrDefault().Nguoi;
             }    
         }
+        public List<ChiTietAnhPhong> GetAllChiTietAnhPhong()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietAnhPhong.Where (p => p.TonTai==true).ToList<ChiTietAnhPhong>();
+            }
+        }
+        public List<ChiTietAnhPhong> GetChiTietAnhPhongByIdPhong(string idPhong)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietAnhPhong.Where(p=> p.TonTai == true && p.MaPhongTro == idPhong).ToList<ChiTietAnhPhong>();
+            }
+        }
+        public void AddChiTietAnhPhong(ChiTietAnhPhong ct)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                data.ChiTietAnhPhong.Add(ct);
+                data.SaveChanges();
+            }
+        }
+        public void DelChiTietAnhPhong (string id)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                ChiTietAnhPhong ct = data.ChiTietAnhPhong.Find(id);
+                ct.TonTai = false;
+                data.SaveChanges() ;
+            }
+        }
     }
 }

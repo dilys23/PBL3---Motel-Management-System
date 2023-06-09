@@ -25,6 +25,7 @@ namespace PBL3___Motel_Management_System.DAL
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<ChiTietAnhPhong> ChiTietAnhPhong { get; set; }
         public virtual DbSet<ChiTietDichVu> ChiTietDichVu { get; set; }
         public virtual DbSet<ChiTietSuDungDichVu> ChiTietSuDungDichVu { get; set; }
         public virtual DbSet<ChiTietTaiKhoanChuTro> ChiTietTaiKhoanChuTro { get; set; }
