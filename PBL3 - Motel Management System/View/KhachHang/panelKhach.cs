@@ -28,7 +28,6 @@ namespace PBL3___Motel_Management_System.View.KhachHang
                 SetGUI(null);
             }
         }
-
         private void RoundPanel(Panel panel, int cornerRadius)
         {
             RectangleF rect = new RectangleF(0, 0, panel.Width, panel.Height);
@@ -51,7 +50,7 @@ namespace PBL3___Motel_Management_System.View.KhachHang
 
             if (pt.HinhAnh != null)
             {
-                pictureBox1.Image = ChuyenDoiAnh.Base64ToImage(pt.HinhAnh);
+                pictureBox1.Image = QLBLLChung.Instance.Base64ToImage(pt.HinhAnh);
             }
             if (QLBLLHopDong.Instance.GetHopDongByIdPhong(pt.MaPhongTro) != null)
             {
@@ -68,7 +67,7 @@ namespace PBL3___Motel_Management_System.View.KhachHang
                         Image image = null;
                         if (nguoi.HinhAnh != null)
                         {
-                            image = ChuyenDoiAnh.Base64ToImage(nguoi.HinhAnh);
+                            image = QLBLLChung.Instance.Base64ToImage(nguoi.HinhAnh);
                         }
                         dgvThanhVien.Rows.Add(nguoi.MaNguoi, i++, nguoi.Ten, nguoi.Cccd, nguoi.Sdt, nguoi.Diachi, nguoi.NgaySinh, (nguoi.GioiTinh) ? "Nam" : "Nữ", image);
                     }
@@ -80,7 +79,7 @@ namespace PBL3___Motel_Management_System.View.KhachHang
                         {
                             if (nguoi.HinhAnh != null)
                             {
-                                image = ChuyenDoiAnh.Base64ToImage(nguoi.HinhAnh);
+                                image = QLBLLChung.Instance.Base64ToImage(nguoi.HinhAnh);
                             }
                             dgvThanhVien.Rows.Add(nguoi.MaNguoi, i++, nguoi.Ten, nguoi.Cccd, nguoi.Sdt, nguoi.Diachi, nguoi.NgaySinh, (nguoi.GioiTinh) ? "Nam" : "Nữ", image);
                         }

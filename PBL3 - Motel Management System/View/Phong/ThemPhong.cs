@@ -46,7 +46,7 @@ namespace PBL3___Motel_Management_System
                 txtToiDa.Text = phongTro.ToiDa.ToString();
                 if (phongTro.HinhAnh != null)
                 {
-                    pictutePhong.Image = ChuyenDoiAnh.Base64ToImage(phongTro.HinhAnh);
+                    pictutePhong.Image = QLBLLChung.Instance.Base64ToImage(phongTro.HinhAnh);
                 }
 
             }
@@ -131,7 +131,7 @@ namespace PBL3___Motel_Management_System
                     pt.ToiDa = Convert.ToInt32(txtToiDa.Text);
                     pt.TonTai = true;
                     if (pictutePhong.Image != null)
-                    { pt.HinhAnh = ChuyenDoiAnh.ImageToBase64(pictutePhong.Image, pictutePhong.Image.RawFormat); }
+                    { pt.HinhAnh = QLBLLChung.Instance.ImageToBase64(pictutePhong.Image, pictutePhong.Image.RawFormat); }
                     QLBLLPhongTro.Instance.UpdatePTBLL(pt);
                     MessageBox.Show("Thay đổi thông tin thành công", "Thông báo");
                     loader(null);
@@ -150,7 +150,7 @@ namespace PBL3___Motel_Management_System
                     pt.TonTai = true;
                     if (pictutePhong.Image != null)
                     {
-                        pt.HinhAnh = ChuyenDoiAnh.ImageToBase64(pictutePhong.Image, pictutePhong.Image.RawFormat);
+                        pt.HinhAnh = QLBLLChung.Instance.ImageToBase64(pictutePhong.Image, pictutePhong.Image.RawFormat);
                     }
                     QLBLLPhongTro.Instance.AddPhongTroBll(pt);
                     DAL.TaiKhoan tk = QLBLLTaiKhoan.Instance.TaoTaiKhoanChoPhong(pt.MaPhongTro);
@@ -177,8 +177,6 @@ namespace PBL3___Motel_Management_System
                     sukien(btn, EventArgs.Empty);
                     this.Close();
                 }
-               
-              
             }
 
         }

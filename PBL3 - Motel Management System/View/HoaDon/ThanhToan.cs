@@ -14,11 +14,11 @@ using System.Windows.Media.Media3D;
 
 namespace PBL3___Motel_Management_System.View
 {
-
     public partial class ThanhToan : Form
     {
         private Loader loader;
         private string IdHd;
+        private CultureInfo vietnamCulture = new CultureInfo("vi-VN");
         public ThanhToan(string idHd, Loader loader)
         {
             InitializeComponent();
@@ -27,13 +27,9 @@ namespace PBL3___Motel_Management_System.View
             HoaDon hd = QLBLLHoadon.Instance.GetHoaDonById(idHd);
             PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByMaHoaDon(idHd);
             txtTenPhong.Text = pt.TenPhongTro;
-
             // Định dạng số tiền theo tiền tệ VND
-            CultureInfo vietnamCulture = new CultureInfo("vi-VN");
-            txtTongTien.Text = hd.TongTien.ToString("#,##0") + "₫";
-            txtConNo.Text = (Convert.ToDouble(txtTongTien.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")) - hd.DaThanhToan).ToString("C0", vietnamCulture);
-
-
+            txtTongTien.Text = QLBLLChung.Instance.ChuyenDoiSangKieuTien(hd.TongTien);
+            txtConNo.Text = (QLBLLChung.Instance.ChuyenDoiTienSangDouble(txtTongTien.Text) - hd.DaThanhToan).ToString("C0", vietnamCulture);
         }
         private Boolean checkHopLe()
         {
@@ -67,31 +63,26 @@ namespace PBL3___Motel_Management_System.View
                 if (double.TryParse(txtThanhToan.Text, NumberStyles.Currency, CultureInfo.CurrentCulture, out thanhToan))
                 {
                     HoaDon hd = QLBLLHoadon.Instance.GetHoaDonById(this.IdHd);
-                    ChiTietThanhToanHoaDon ct = new ChiTietThanhToanHoaDon();
-
-                    ct.MaHoaDon = hd.MaHoaDon;
-                    ct.MaChiTietThanhToanHoaDon = QLBLLChiTietThanhToanHoaDon.Instance.TaoIdChiTietThanhToanHoaDon();
-
-                    ct.NgayThanhToan = NgayThanhToan.Value.ToString("yyyy-MM-dd");
-                    ct.TienThanhToan = thanhToan;
-                    ct.TonTai = true;
-
+                    ChiTietThanhToanHoaDon ct = new ChiTietThanhToanHoaDon()
+                    {
+                        MaHoaDon = hd.MaHoaDon,
+                        MaChiTietThanhToanHoaDon = QLBLLChiTietThanhToanHoaDon.Instance.TaoIdChiTietThanhToanHoaDon(),
+                        NgayThanhToan = NgayThanhToan.Value.ToString("yyyy-MM-dd"),
+                        TienThanhToan = thanhToan,
+                        TonTai = true
+                    };
                     // Cập nhật số tiền đã thanh toán
                     hd.DaThanhToan += thanhToan;
                     QLBLLHoadon.Instance.UpdateHoaDonBLL(hd);
-                    CultureInfo vietnamCulture = new CultureInfo("vi-VN");
-                    double TongTien = (Convert.ToDouble(txtTongTien.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
-                    double conNoMoi1 = (Convert.ToDouble(txtConNo.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", ""))) ;
+                    double TongTien = QLBLLChung.Instance.ChuyenDoiTienSangDouble(txtTongTien.Text);
+                    double conNoMoi1 = QLBLLChung.Instance.ChuyenDoiTienSangDouble(txtConNo.Text);
                     // Tính số tiền còn nợ mới
                     if (thanhToan < conNoMoi1)
                     {
-                        conNoMoi1 = (Convert.ToDouble(txtTongTien.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")) - hd.DaThanhToan);
+                        conNoMoi1 = QLBLLChung.Instance.ChuyenDoiTienSangDouble(txtTongTien.Text) - hd.DaThanhToan;
                         // Cập nhật giá trị cho txtConNo
-
-                        txtConNo.Text = conNoMoi1.ToString("#,##0") + "₫";
-
+                        txtConNo.Text = QLBLLChung.Instance.ChuyenDoiSangKieuTien(conNoMoi1);
                         QLBLLChiTietThanhToanHoaDon.Instance.AddChiTietThanhToanHoaDonBll(ct);
-
                         if (conNoMoi1 == 0)
                         {
                             MessageBox.Show("Đã trả đủ tiền", "Thông báo");
@@ -101,14 +92,12 @@ namespace PBL3___Motel_Management_System.View
                     {
                         ct.TienThanhToan = conNoMoi1;
                         double tiendu = thanhToan - conNoMoi1 ;
-                        string tienthua = "Tiền phòng còn dư của bạn là : " + tiendu.ToString("#,##0") + "₫";                       
+                        string tienthua = "Tiền phòng còn dư của bạn là : " + QLBLLChung.Instance.ChuyenDoiSangKieuTien(tiendu);                       
                         MessageBox.Show(tienthua, "Thông báo");
                         conNoMoi1 = 0;
-                        txtConNo.Text = conNoMoi1.ToString("#,##0") + "₫";
+                        txtConNo.Text = QLBLLChung.Instance.ChuyenDoiSangKieuTien(conNoMoi1);
                         QLBLLChiTietThanhToanHoaDon.Instance.AddChiTietThanhToanHoaDonBll(ct);
-                        
-                    }
-                    
+                    }  
                     loader(null);
                     this.Close();
                 }
@@ -118,15 +107,13 @@ namespace PBL3___Motel_Management_System.View
                 }
             }
         }
-   
         private void btnTroVe_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void txtThanhToan_TextChanged(object sender, EventArgs e)
+        private void txtThanhToan_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            QLBLLChung.Instance.ChiChoPhepNhapSo(sender, e);
         }
     }
 }

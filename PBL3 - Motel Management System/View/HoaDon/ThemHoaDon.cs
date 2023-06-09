@@ -42,7 +42,6 @@ namespace PBL3___Motel_Management_System.View
                 cbbPhongTro.SelectedIndex = index;
                 DateTime dt = DateTime.ParseExact(hd.ThangChiTra, "MM-yyyy", System.Globalization.CultureInfo.InvariantCulture);
                 DateTime dt1 = DateTime.ParseExact(hd.NgayTao, "dd-MM-yyyy", System.Globalization.CultureInfo.InvariantCulture);
-
                 dtpThangThanhToan.Value = dt;
                 dtpNgayLap.Value = dt1;
             }
@@ -55,7 +54,6 @@ namespace PBL3___Motel_Management_System.View
             cbbDayTro.Items.AddRange(QLBLLChung.Instance.GetCbbDayTro().ToArray());
             cbbDayTro.SelectedIndex = 0;
         }
-       
         private void LoadDgv(string idPhong, string thang)
         {
             if(idPhong != null)
@@ -63,15 +61,14 @@ namespace PBL3___Motel_Management_System.View
                 dgvDichVu.Rows.Clear();
                 txtGiamGia.Text = "0";
                 HopDong hd = QLBLLHopDong.Instance.GetHopDongByIdPhong(idPhong);
-                DateTime dt1 = DateTime.ParseExact(hd.NgayBatDau, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
-                DateTime dt2 = DateTime.ParseExact(hd.NgayKetThuc, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
+                DateTime dt1 = QLBLLChung.Instance.ConvertStringToDateTimeyyyyMMdd(hd.NgayBatDau);
+                DateTime dt2 = QLBLLChung.Instance.ConvertStringToDateTimeyyyyMMdd(hd.NgayKetThuc);
                 DateTime dtStart = new DateTime(dt1.Year, dt1.Month, 1);
                 DateTime dtEnd = new DateTime(dt2.Year, dt2.Month, 1);
                 dtpThangThanhToan.MinDate = dtStart;
                 dtpThangThanhToan.MaxDate = dtEnd;
                 PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByIdPhong(idPhong);
-                
-                txtTienPhong.Text = pt.GiaTien.ToString("#,##0") + "₫";
+                txtTienPhong.Text = QLBLLChung.Instance.ChuyenDoiSangKieuTien(pt.GiaTien);
                 int i = 0;
                 bool status = false;
                 foreach(ChiTietDichVu ctdv in QLBLLChiTietDichVu.Instance.GetChiTietDichVuByIdPhong(idPhong))
@@ -79,7 +76,7 @@ namespace PBL3___Motel_Management_System.View
                     if(ctdv.MaDichVu != "001" && ctdv.MaDichVu != "000")
                     {
                         DichVu dv = QLBLLDichvu.Instance.GetDichVuByIdDichVu(ctdv.MaDichVu);
-                        dgvDichVu.Rows.Add(++i, dv.TenDichVu, dv.GiaDichVu.ToString("#,##0") + "₫", 0, 0, dv.GiaDichVu.ToString("#,##0") + "₫", "Chọn");
+                        dgvDichVu.Rows.Add(++i, dv.TenDichVu, QLBLLChung.Instance.ChuyenDoiSangKieuTien(dv.GiaDichVu), 0, 0, QLBLLChung.Instance.ChuyenDoiSangKieuTien(dv.GiaDichVu), "Chọn");
                     }
                     else if(!status)
                     {
@@ -89,7 +86,7 @@ namespace PBL3___Motel_Management_System.View
                         {
                             ChiTietDichVu ct = QLBLLChiTietDichVu.Instance.GetChiTietDichVuById(dv.MaCHiTietDichVu);
                             DichVu dv1 = QLBLLDichvu.Instance.GetDichVuByIdDichVu(ct.MaDichVu);
-                            dgvDichVu.Rows.Add(++i, dv1.TenDichVu, dv1.GiaDichVu.ToString("#,##0") + "₫", dv.ChiSoCu, dv.ChiSoMoi, (dv.ChiSoMoi-dv.ChiSoCu)*dv1.GiaDichVu, "Chọn");
+                            dgvDichVu.Rows.Add(++i, dv1.TenDichVu, QLBLLChung.Instance.ChuyenDoiSangKieuTien(dv1.GiaDichVu), dv.ChiSoCu, dv.ChiSoMoi, (dv.ChiSoMoi-dv.ChiSoCu)*dv1.GiaDichVu, "Chọn");
                         }
                     }
                 }
@@ -177,13 +174,12 @@ namespace PBL3___Motel_Management_System.View
                 {
                     if (dr.Cells[6].Value.ToString()=="Chọn")
                     {
-                        double tien = (Convert.ToDouble(dr.Cells[5].Value.ToString().Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
-                        //double tien1 = Convert.ToDouble(dr.Cells[5].Value.ToString());
+                        double tien = QLBLLChung.Instance.ChuyenDoiTienSangDouble(dr.Cells[5].Value.ToString());
                         TienDichVu += tien;
                     }
                 }
             }
-            txtTienDichVu.Text = TienDichVu.ToString("#,##0") + "₫";   
+            txtTienDichVu.Text = QLBLLChung.Instance.ChuyenDoiSangKieuTien(TienDichVu);   
         }
         private void btnBoChon_Click(object sender, EventArgs e)
         {
@@ -211,15 +207,13 @@ namespace PBL3___Motel_Management_System.View
                 if(cbbPhongTro.SelectedItem != null)
                 {
                     CultureInfo vietnamCulture = new CultureInfo("vi-VN");
-
-
-                    double tienPhong = (Convert.ToDouble(txtTienPhong.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
-                    double tienDv = (Convert.ToDouble(txtTienDichVu.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
-                    double giamGia = (Convert.ToDouble(txtGiamGia.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
+                    double tienPhong = QLBLLChung.Instance.ChuyenDoiTienSangDouble(txtTienPhong.Text);
+                    double tienDv = QLBLLChung.Instance.ChuyenDoiTienSangDouble(txtTienDichVu.Text);
+                    double giamGia = QLBLLChung.Instance.ChuyenDoiTienSangDouble(txtGiamGia.Text);
                     double tienGiamGia = tienPhong*giamGia/100;
                     double conLai = tienPhong - tienGiamGia;
                     double tongCong = conLai + tienDv;
-                    string tt = "Tiền phòng: " + tienPhong.ToString("#,##0") + "₫" + "\nGiảm giá: " + tienGiamGia.ToString("#,##0") + "₫" + "\nCòn lại: " + conLai.ToString("#,##0") + "₫" + "\nTiền dịch vu: " + tienDv.ToString("#,##0") + "₫" + "\nTổng cộng: " + tongCong.ToString("#,##0") + "₫";
+                    string tt = "Tiền phòng: " + QLBLLChung.Instance.ChuyenDoiSangKieuTien(tienPhong) + "\nGiảm giá: " + QLBLLChung.Instance.ChuyenDoiSangKieuTien(tienGiamGia) + "\nCòn lại: " + QLBLLChung.Instance.ChuyenDoiSangKieuTien(conLai) + "\nTiền dịch vu: " + QLBLLChung.Instance.ChuyenDoiSangKieuTien(tienDv) + "\nTổng cộng: " + QLBLLChung.Instance.ChuyenDoiSangKieuTien(tongCong);
                     DialogResult xacNhan  = MessageBox.Show(tt,"Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
                     if(xacNhan  == System.Windows.Forms.DialogResult.No)
                     {

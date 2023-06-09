@@ -36,7 +36,6 @@ namespace PBL3___Motel_Management_System
             }
 
         }
-
         private void iconButton1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -68,8 +67,6 @@ namespace PBL3___Motel_Management_System
 
             if (i==0) return true;
             return false;
-
-
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
@@ -90,7 +87,6 @@ namespace PBL3___Motel_Management_System
             }
             else
             {
-
                 if (checkHopLe())
                 {
                     DichVu dv = new DichVu();
@@ -103,9 +99,7 @@ namespace PBL3___Motel_Management_System
                     Loader(null);
                     this.Close();
                 }
-            } 
-                
-           
+            }
         }
     }
 }

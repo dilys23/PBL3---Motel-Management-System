@@ -22,7 +22,6 @@ namespace PBL3___Motel_Management_System
             InitializeComponent();
             SetCbb();
             LoadForm(null);
-
         }
         private void LoadForm(string txt)
         {
@@ -30,18 +29,17 @@ namespace PBL3___Motel_Management_System
             QLBLLChung.Instance.customDGV(dgvHoaDon);
             if(txt == null)
             {
-
-            int i= 0;
-            foreach(HoaDon hd in QLBLLHoadon.Instance.GetAllHoaDonBll())
-            {
-                PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByIdPhong(hd.MaPhongTro);
-                DayTro dt = QLBLLDayTro.Instance.GetDayTroByIdPhong(hd.MaPhongTro);
+                int i= 0;
+                foreach(HoaDon hd in QLBLLHoadon.Instance.GetAllHoaDonBll())
+                {
+                    PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByIdPhong(hd.MaPhongTro);
+                    DayTro dt = QLBLLDayTro.Instance.GetDayTroByIdPhong(hd.MaPhongTro);
                     string TinhTrang = (hd.TinhTrang) ? "Xác thực" : "Chưa xác thực";
                     double conNo = hd.TongTien - hd.DaThanhToan;
                     string conNoFormatted = (conNo >= 0) ? conNo.ToString("#,##0") + "₫" : "0₫";
                     dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hd.NgayTao, hd.ThangChiTra, hd.TongTien.ToString("#,##0") + "₫", TinhTrang, hd.DaThanhToan.ToString("#,##0") + "₫", conNoFormatted);
-
                 }
+            
             }
             else
             {
@@ -63,8 +61,6 @@ namespace PBL3___Motel_Management_System
             var ChiTiet = System.Drawing.Image.FromFile(@"D:\PBL\PBL3_MAIN\PBL3 - Motel Management System\Icons\icons8-history-20.png");
             dgvHoaDon.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => QLBLLChung.Instance.dgvIcons_CellPainting2(dgvHoaDon, e, Sua, Xoa, ChiTiet));
         }
-       
-
         private void SetCbb()
         {
             cbbDayTro.Items.Clear();
@@ -75,15 +71,13 @@ namespace PBL3___Motel_Management_System
             cbbTinhTrang.SelectedIndex = 0;
         }
         private void btnIn_Click(object sender, EventArgs e)
-        {;
+        {
             QLBLLChung.Instance.openChildForm1(new XuatHoaDon(), panelHD);
         }
-
         private void btnThemHD_Click(object sender, EventArgs e)
         {
             QLBLLChung.Instance.openChildForm1(new ThemHoaDon(LoadForm,null), panelHD);
         }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
             if (dgvHoaDon.CurrentRow.Cells[7].Value.ToString() == "Xác thực")
@@ -94,10 +88,8 @@ namespace PBL3___Motel_Management_System
             {
                 string id = dgvHoaDon.CurrentRow.Cells[0].Value.ToString();
                 QLBLLChung.Instance.openChildForm1(new ThemHoaDon(LoadForm, id), panelHD);
-
             }
         }
-
         private void cbbDayTro_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbbPhongTro.Items.Clear();
@@ -135,7 +127,6 @@ namespace PBL3___Motel_Management_System
                 MessageBox.Show("Hóa đơn hiện tại đã được xác thực", "Thông báo");
             
             }
-
         }
         private void btnBoXacThuc_Click(object sender, EventArgs e)
         {
@@ -174,8 +165,6 @@ namespace PBL3___Motel_Management_System
             }
 
         }
-        
-
         private void btnThanhToan_Click(object sender, EventArgs e)
         {           
               if (dgvHoaDon.CurrentRow.Cells[7].Value.ToString() == "Chưa xác thực")
@@ -198,7 +187,6 @@ namespace PBL3___Motel_Management_System
                 }
             }
         }
-
         private void dgvHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 

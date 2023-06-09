@@ -167,12 +167,8 @@ namespace PBL3___Motel_Management_System.DAL
         {
             using (DataPbl data = new DataPbl())
             {
-                return data.ChiTietThanhToanHoaDon.Where(p => p.TonTai == true && p.MaHoaDon == idHd).Select(p => p.MaChiTietThanhToanHoaDon).ToList<string>();
+                return data.ChiTietThanhToanHoaDon.Where(p => p.TonTai == true && p.MaHoaDon == idHd).OrderBy(p => p.NgayThanhToan).Select(p => p.MaChiTietThanhToanHoaDon).ToList<string>();
             }
-            //using (DataPbl data = new DataPbl())
-            //{
-            //    return data.ChiTietThietBi.Where(p => p.TonTai == true && p.MaPhongTro == idPhong).Select(p => p.MaChiTietThietBi).ToList<string>();
-            //}
         }
         public List<ChiTietDichVu>GetChiTietDichVuByIdPhongDal(string idPhong)
         {
