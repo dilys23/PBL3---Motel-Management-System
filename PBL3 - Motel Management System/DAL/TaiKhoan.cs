@@ -17,9 +17,9 @@ namespace PBL3___Motel_Management_System.DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TaiKhoan()
         {
-            this.ChiTietTaiKhoanChuTro = new HashSet<ChiTietTaiKhoanChuTro>();
-            this.ChiTietTaiKhoanPhongTro = new HashSet<ChiTietTaiKhoanPhongTro>();
-            this.VaiTro = new HashSet<VaiTro>();
+            this.ChiTietTaiKhoanChuTroes = new HashSet<ChiTietTaiKhoanChuTro>();
+            this.ChiTietTaiKhoanPhongTroes = new HashSet<ChiTietTaiKhoanPhongTro>();
+            this.VaiTroes = new HashSet<VaiTro>();
         }
     
         public string TenTaiKhoan { get; set; }
@@ -28,10 +28,10 @@ namespace PBL3___Motel_Management_System.DAL
         public Nullable<bool> TonTai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietTaiKhoanChuTro> ChiTietTaiKhoanChuTro { get; set; }
+        public virtual ICollection<ChiTietTaiKhoanChuTro> ChiTietTaiKhoanChuTroes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietTaiKhoanPhongTro> ChiTietTaiKhoanPhongTro { get; set; }
+        public virtual ICollection<ChiTietTaiKhoanPhongTro> ChiTietTaiKhoanPhongTroes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<VaiTro> VaiTro { get; set; }
+        public virtual ICollection<VaiTro> VaiTroes { get; set; }
     }
 }

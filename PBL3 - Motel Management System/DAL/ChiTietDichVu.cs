@@ -17,7 +17,7 @@ namespace PBL3___Motel_Management_System.DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ChiTietDichVu()
         {
-            this.ChiTietSuDungDichVu = new HashSet<ChiTietSuDungDichVu>();
+            this.ChiTietSuDungDichVus = new HashSet<ChiTietSuDungDichVu>();
         }
     
         public string MaChiTietDichVu { get; set; }
@@ -26,7 +26,7 @@ namespace PBL3___Motel_Management_System.DAL
         public Nullable<bool> TonTai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietSuDungDichVu> ChiTietSuDungDichVu { get; set; }
+        public virtual ICollection<ChiTietSuDungDichVu> ChiTietSuDungDichVus { get; set; }
         public virtual DichVu DichVu { get; set; }
         public virtual PhongTro PhongTro { get; set; }
     }
