@@ -74,7 +74,7 @@
             this.btnLuu.Location = new System.Drawing.Point(1142, 31);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(45, 45);
-            this.btnLuu.TabIndex = 45;
+            this.btnLuu.TabIndex = 0;
             this.btnLuu.UseVisualStyleBackColor = false;
             this.btnLuu.Click += new System.EventHandler(this.iconButton4_Click);
             // 
@@ -89,7 +89,7 @@
             this.iconButton1.Location = new System.Drawing.Point(1090, 31);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(45, 45);
-            this.iconButton1.TabIndex = 44;
+            this.iconButton1.TabIndex = 1;
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
@@ -109,7 +109,7 @@
             this.txtTenPhong.Location = new System.Drawing.Point(428, 69);
             this.txtTenPhong.Name = "txtTenPhong";
             this.txtTenPhong.Size = new System.Drawing.Size(225, 27);
-            this.txtTenPhong.TabIndex = 29;
+            this.txtTenPhong.TabIndex = 0;
             // 
             // label2
             // 
@@ -163,7 +163,7 @@
             this.btnThemAnh.Location = new System.Drawing.Point(94, 231);
             this.btnThemAnh.Name = "btnThemAnh";
             this.btnThemAnh.Size = new System.Drawing.Size(67, 37);
-            this.btnThemAnh.TabIndex = 52;
+            this.btnThemAnh.TabIndex = 4;
             this.btnThemAnh.UseVisualStyleBackColor = false;
             this.btnThemAnh.Click += new System.EventHandler(this.btnThemAnh_Click);
             // 
@@ -184,7 +184,7 @@
             this.txtGiaTien.Location = new System.Drawing.Point(852, 68);
             this.txtGiaTien.Name = "txtGiaTien";
             this.txtGiaTien.Size = new System.Drawing.Size(225, 27);
-            this.txtGiaTien.TabIndex = 48;
+            this.txtGiaTien.TabIndex = 2;
             // 
             // label9
             // 
@@ -203,7 +203,7 @@
             this.txtDienTich.Location = new System.Drawing.Point(428, 121);
             this.txtDienTich.Name = "txtDienTich";
             this.txtDienTich.Size = new System.Drawing.Size(225, 27);
-            this.txtDienTich.TabIndex = 42;
+            this.txtDienTich.TabIndex = 1;
             // 
             // label8
             // 
@@ -221,7 +221,7 @@
             this.txtToiDa.Location = new System.Drawing.Point(852, 120);
             this.txtToiDa.Name = "txtToiDa";
             this.txtToiDa.Size = new System.Drawing.Size(225, 27);
-            this.txtToiDa.TabIndex = 41;
+            this.txtToiDa.TabIndex = 3;
             // 
             // errorProvider1
             // 

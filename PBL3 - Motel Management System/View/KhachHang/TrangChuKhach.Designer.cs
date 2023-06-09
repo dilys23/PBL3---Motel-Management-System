@@ -175,8 +175,8 @@
             this.btnPhong.Name = "btnPhong";
             this.btnPhong.Size = new System.Drawing.Size(186, 41);
             this.btnPhong.TabIndex = 6;
-            this.btnPhong.Tag = "Phòng";
-            this.btnPhong.Text = "Phòng";
+            this.btnPhong.Tag = "Ảnh Phòng";
+            this.btnPhong.Text = "Ảnh Phòng";
             this.btnPhong.UseVisualStyleBackColor = true;
             this.btnPhong.Click += new System.EventHandler(this.btnPhong_Click);
             // 
