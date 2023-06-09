@@ -67,10 +67,6 @@ namespace PBL3___Motel_Management_System.BLL
         {
             return QLDAL.Instance.GetTaiKhoanByIdPhong(idp);
         }
-        public DAL.TaiKhoan GetTaiKhoanByIdChuTro(string idChutro)
-        {
-            return QLDAL.Instance.GetTaiKhoanByIdChuTro(idChutro);
-        }
         public void UpdateTaiKhoanPhong(DAL.TaiKhoan tk)
         {
             QLDAL.Instance.UpdateTaiKhoanPhong(tk);

@@ -142,7 +142,16 @@ namespace PBL3___Motel_Management_System.View
             DialogResult kq = MessageBox.Show("Bạn có thực sự muốn hoàn trả phòng ", "Cảnh báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (kq == DialogResult.OK)
             {
+                DateTime ngayHienTai = DateTime.Now;
                 HopDong hd = QLBLLHopDong.Instance.GetHopDongByIdPhong(IdPhong);
+                DateTime ngayketthuc = DateTime.Parse(hd.NgayKetThuc);
+                TimeSpan khoangthoigian = ngayketthuc - ngayHienTai;
+                if (khoangthoigian.TotalDays < 5)
+                {
+                    MessageBox.Show("Hoàn trả phòng đúng với thời gian hợp đồng, trả lại tiền cọc cho khách thuê :" + hd.TienCoc.ToString("#,##0") + "₫");
+                    hd.TienCoc = 0;
+                    QLBLLHopDong.Instance.UpdateHopDongBLL(hd);
+                }
                 QLBLLHopDong.Instance.DelHopDong(hd.MaHopDong);
                 foreach (ChiTietDichVu ct in QLBLLChiTietDichVu.Instance.GetChiTietDichVuByIdPhong(IdPhong))
                 {
