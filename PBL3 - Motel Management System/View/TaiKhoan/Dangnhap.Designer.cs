@@ -122,7 +122,7 @@
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(254, 31);
-            this.txtMatKhau.TabIndex = 45;
+            this.txtMatKhau.TabIndex = 7;
             // 
             // txtTaiKhoan
             // 
@@ -132,7 +132,7 @@
             this.txtTaiKhoan.Location = new System.Drawing.Point(104, 360);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(254, 31);
-            this.txtTaiKhoan.TabIndex = 49;
+            this.txtTaiKhoan.TabIndex = 6;
             // 
             // btnMinimized
             // 

@@ -164,5 +164,10 @@ namespace PBL3___Motel_Management_System
                 txtMatKhau.PasswordChar = '*';
             }
         }
+
+        private void btnDangNhap_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -38,6 +38,8 @@
             System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.btnTim = new FontAwesome.Sharp.IconButton();
+            this.dtpThang = new System.Windows.Forms.DateTimePicker();
             this.ChartCot = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvSoLuong = new System.Windows.Forms.DataGridView();
@@ -50,8 +52,6 @@
             this.TenDayTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenPhongTro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TinhTrang2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnTim = new FontAwesome.Sharp.IconButton();
-            this.dtpThang = new System.Windows.Forms.DateTimePicker();
             this.panelDesktop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ChartCot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSoLuong)).BeginInit();
@@ -79,6 +79,32 @@
             this.panelDesktop.Size = new System.Drawing.Size(1150, 631);
             this.panelDesktop.TabIndex = 6;
             this.panelDesktop.SizeChanged += new System.EventHandler(this.panelDesktop_SizeChanged);
+            // 
+            // btnTim
+            // 
+            this.btnTim.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.btnTim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnTim.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.btnTim.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.btnTim.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnTim.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTim.IconSize = 25;
+            this.btnTim.Location = new System.Drawing.Point(28, 353);
+            this.btnTim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(35, 34);
+            this.btnTim.TabIndex = 42;
+            this.btnTim.UseVisualStyleBackColor = false;
+            // 
+            // dtpThang
+            // 
+            this.dtpThang.CustomFormat = "MM/yyyy";
+            this.dtpThang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpThang.Location = new System.Drawing.Point(69, 357);
+            this.dtpThang.Name = "dtpThang";
+            this.dtpThang.Size = new System.Drawing.Size(124, 22);
+            this.dtpThang.TabIndex = 41;
+            this.dtpThang.ValueChanged += new System.EventHandler(this.dtpThang_ValueChanged);
             // 
             // ChartCot
             // 
@@ -219,31 +245,6 @@
             this.TinhTrang2.HeaderText = "Tình trạng";
             this.TinhTrang2.MinimumWidth = 6;
             this.TinhTrang2.Name = "TinhTrang2";
-            // 
-            // btnTim
-            // 
-            this.btnTim.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnTim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnTim.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.btnTim.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnTim.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnTim.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTim.IconSize = 25;
-            this.btnTim.Location = new System.Drawing.Point(29, 369);
-            this.btnTim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(35, 34);
-            this.btnTim.TabIndex = 42;
-            this.btnTim.UseVisualStyleBackColor = false;
-            // 
-            // dtpThang
-            // 
-            this.dtpThang.CustomFormat = "MM/yyyy";
-            this.dtpThang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpThang.Location = new System.Drawing.Point(70, 373);
-            this.dtpThang.Name = "dtpThang";
-            this.dtpThang.Size = new System.Drawing.Size(124, 22);
-            this.dtpThang.TabIndex = 41;
             // 
             // FormTrangChu
             // 
