@@ -17,7 +17,7 @@ namespace PBL3___Motel_Management_System.DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public HoaDon()
         {
-            this.ChiTietThanhToanHoaDons = new HashSet<ChiTietThanhToanHoaDon>();
+            this.ChiTietThanhToanHoaDon = new HashSet<ChiTietThanhToanHoaDon>();
         }
     
         public string MaHoaDon { get; set; }
@@ -30,7 +30,7 @@ namespace PBL3___Motel_Management_System.DAL
         public Nullable<bool> TonTai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietThanhToanHoaDon> ChiTietThanhToanHoaDons { get; set; }
+        public virtual ICollection<ChiTietThanhToanHoaDon> ChiTietThanhToanHoaDon { get; set; }
         public virtual PhongTro PhongTro { get; set; }
     }
 }

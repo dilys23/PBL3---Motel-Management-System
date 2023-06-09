@@ -17,10 +17,10 @@ namespace PBL3___Motel_Management_System.DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Nguoi()
         {
-            this.ChiTietTaiKhoanChuTroes = new HashSet<ChiTietTaiKhoanChuTro>();
-            this.DayTroes = new HashSet<DayTro>();
-            this.HopDongs = new HashSet<HopDong>();
-            this.ThanhVienTrongPhongs = new HashSet<ThanhVienTrongPhong>();
+            this.ChiTietTaiKhoanChuTro = new HashSet<ChiTietTaiKhoanChuTro>();
+            this.DayTro = new HashSet<DayTro>();
+            this.HopDong = new HashSet<HopDong>();
+            this.ThanhVienTrongPhong = new HashSet<ThanhVienTrongPhong>();
         }
     
         public string MaNguoi { get; set; }
@@ -34,12 +34,12 @@ namespace PBL3___Motel_Management_System.DAL
         public Nullable<bool> TonTai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ChiTietTaiKhoanChuTro> ChiTietTaiKhoanChuTroes { get; set; }
+        public virtual ICollection<ChiTietTaiKhoanChuTro> ChiTietTaiKhoanChuTro { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DayTro> DayTroes { get; set; }
+        public virtual ICollection<DayTro> DayTro { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HopDong> HopDongs { get; set; }
+        public virtual ICollection<HopDong> HopDong { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ThanhVienTrongPhong> ThanhVienTrongPhongs { get; set; }
+        public virtual ICollection<ThanhVienTrongPhong> ThanhVienTrongPhong { get; set; }
     }
 }
