@@ -32,7 +32,6 @@ namespace PBL3___Motel_Management_System.View
         {
             this.loader(null);
             this.Close();
-
         }
         public void LoadForm()
         {

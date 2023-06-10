@@ -164,17 +164,12 @@ namespace PBL3___Motel_Management_System.View
                 DialogResult kq1 = MessageBox.Show("Phòng có được trả đúng kì hạn không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if((kq1 == DialogResult.Yes))
                 {
-<<<<<<< HEAD
-                    MessageBox.Show("Hoàn trả phòng đúng với thời gian hợp đồng, trả lại tiền cọc cho khách thuê : " + hd.TienCoc.ToString("#,##0") + "₫");
-                    hd.TienCoc = 0;
-                    QLBLLHopDong.Instance.UpdateHopDongBLL(hd);
-=======
+
                     MessageBox.Show("Vui lòng hoàn lại tiền cọc cho khách hàng: "+ QLBLLChung.Instance.ChuyenDoiSangKieuTien(hd.TienCoc),"Thông báo");
                 }
                 else
                 {
                     MessageBox.Show("Đã thu tiền cọc của khách hàng: "+ QLBLLChung.Instance.ChuyenDoiSangKieuTien(hd.TienCoc), "Thông báo");
->>>>>>> 8551cb7d5e930f3d211e9e0bd340661d1f4d9f4b
                 }
                 QLBLLHopDong.Instance.DelHopDong(hd.MaHopDong);
                 QLBLLChiTietSuDungDichVu.Instance.DelChiTietSuDungDichVuByIdPhong(IdPhong);
