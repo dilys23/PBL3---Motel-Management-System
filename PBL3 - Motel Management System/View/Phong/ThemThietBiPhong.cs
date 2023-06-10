@@ -76,7 +76,7 @@ namespace PBL3___Motel_Management_System.View
                 bool Status = false;
                 v.MaThietBi = row.Cells[0].Value.ToString();
                 v.TenThietBi = row.Cells[2].Value.ToString();
-                v.GiaThietBi = QLBLLChung.Instance.ChuyenDoiTienSangDouble(dgvTBThem.CurrentRow.Cells[3].Value.ToString());
+                v.GiaThietBi = (Convert.ToDouble(row.Cells[3].Value.ToString().Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
                 for (int i=0;i<dgvTBThem.Rows.Count;i++)
                 {
                     if(dgvTBThem.Rows[i].Cells[0].Value != null)

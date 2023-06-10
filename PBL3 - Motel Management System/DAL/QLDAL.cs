@@ -1206,12 +1206,10 @@ namespace PBL3___Motel_Management_System.DAL
                     .Where(p => p.TinhTrang == true && p.DaThanhToan != 0)
                     .GroupBy(p => p.ThangChiTra)
                     .OrderBy(p => p.Key)
-                    .Where(p => p.Key.Substring(3) == nam) 
+                    .Where(p => p.Key.Substring(3) == nam)
                     .ToDictionary(
-                     p => p.Key,
-                     p => p.GroupBy(k => k.PhongTro.DayTro.TenDayTro)
-                      .Select(k => k.Sum(x => x.DaThanhToan))
-                      .Sum()
+                     p => p.Key, p => p.Sum(x => x.DaThanhToan)
+
             );
 
                 return result;

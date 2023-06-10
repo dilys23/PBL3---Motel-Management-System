@@ -92,6 +92,12 @@ namespace PBL3___Motel_Management_System.BLL
             var thongke = QLDAL.Instance.ThongKeThanhVien();
             var data = thongke.Select(x => new { Key = x.Key.ToString(), Value = x.Value }).ToList<object>(); return data;
         }
+        public int TinhTongThanhVien()
+        {
+            var thongke = QLDAL.Instance.ThongKeThanhVien();
+            int tongThanhVien = thongke.Sum(x => x.Value);
+            return tongThanhVien;
+        }
         public void openChildForm1(Form childForm, System.Windows.Forms.Panel p)
         {
             // DemoForm.Instance.SetActiveForm(childForm);

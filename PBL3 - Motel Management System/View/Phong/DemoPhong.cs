@@ -197,6 +197,10 @@ namespace PBL3___Motel_Management_System.View
                     DialogResult kq = MessageBox.Show("Bạn có thực sự muốn xóa", "Cảnh báo!!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     if (kq == DialogResult.OK)
                     {
+                        foreach(PhongTro idPhong in QLBLLPhongTro.Instance.GetPhongTroByIdDay(ClickBtn.Name))
+                        {
+                            QLBLLPhongTro.Instance.DelPhongTroBLL(idPhong.MaPhongTro);
+                        }
                         QLBLLDayTro.Instance.DelDayTroBll(ClickBtn.Name);
                         LoadForm(null);
                     }              
