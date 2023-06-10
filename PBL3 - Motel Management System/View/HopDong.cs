@@ -81,6 +81,7 @@ namespace PBL3___Motel_Management_System
                     ThuePhong tp = new ThuePhong();
                     tp.hopDong.MaHopDong = id;
                     QLBLLChung.Instance.openChildForm1(new ThemHopDong(tp,LoadForm), panelHopDong);
+                    
                 }
             }
 

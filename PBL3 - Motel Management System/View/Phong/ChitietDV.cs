@@ -48,33 +48,7 @@ namespace PBL3___Motel_Management_System.View
                 Console.WriteLine(ex.InnerException?.StackTrace);
             }
         }    
-        private void dgvDichVu_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            { 
-                string columnName = dgvDichVu.Columns[e.ColumnIndex].Name;
-
-               if (columnName == "btnXoa")
-                {
-                    DialogResult kq = MessageBox.Show("Bạn có thực sự muốn xóa", "Cảnh báo!!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                    if (kq == DialogResult.OK)
-                    {
-                        string id = dgvDichVu.Rows[e.RowIndex].Cells["MaDichVu"].Value.ToString();
-                        if (id != "000" && id != "001")
-                        {
-                            QLBLLChiTietDichVu.Instance.DelChiTietDichVuByIdDichVu(id);
-                            MessageBox.Show("Xóa dịch vụ thành công", "Thông báo");
-                            LoadForm(null);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Đây là dịch vụ cố định!! Không thể xóa");
-                        }
-                    }
-                }
-            }
-        }
-
+    
         private void btnThemDichVu_Click(object sender, EventArgs e)
         {
             if(QLBLLPhongTro.Instance.TinhTrangPhongById(idPhong) && !QLBLLChung.Instance.PhongDaHetHan(idPhong))
