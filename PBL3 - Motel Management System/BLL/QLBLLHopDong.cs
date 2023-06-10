@@ -130,13 +130,6 @@ namespace PBL3___Motel_Management_System.BLL
         {
             return QLDAL.Instance.KiemTraTonTaiHopDongByIdNguoi(idNguoi);
         }
-        public double GetAllTienCoc()
-        {
-            return QLDAL.Instance.GetAllTienCoc();
-        }
-        public void SetTienCoc(double tiencoc)
-        {
-            QLDAL.Instance.SetTienCoc(tiencoc);
-        }
+      
     }
 }

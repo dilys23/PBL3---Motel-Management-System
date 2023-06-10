@@ -20,6 +20,10 @@ namespace PBL3___Motel_Management_System.View
         {
             InitializeComponent();
             LoadForm();
+            string thang = dtpThang.Value.ToString("MM-yyyy");
+            DateTime date = DateTime.ParseExact(thang, "MM-yyyy", CultureInfo.InvariantCulture);
+            string nam = date.Year.ToString();
+            ThongKe(nam);
         }
         private void LoadForm()
         {
@@ -70,7 +74,6 @@ namespace PBL3___Motel_Management_System.View
         }
         public void LoadForm1(string thang)
         {
-           // dgvDoanhThu.Rows.Clear();
             int i = 0;
             foreach (string hd in QLBLLHoadon.Instance.GetHoaDonByThangChiTra(thang))
             {
@@ -79,7 +82,7 @@ namespace PBL3___Motel_Management_System.View
                 {
                     PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByMaHoaDon(hoadon.MaHoaDon);
                     DayTro dt = QLBLLDayTro.Instance.GetDayTroByIdPhong(pt.MaPhongTro);
-                    //dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hoadon.TongTien);
+
                 }
 
             }
@@ -152,8 +155,6 @@ namespace PBL3___Motel_Management_System.View
 
             TinhTrang.Size = new Size(Math.Max(0, chartWidth), Math.Max(0, chartHeight));
             TinhTrang.Location = new Point(chartX, chartY);
-            //ChartCot.Size = new Size(chartX, chartY);  
-            //ChartCot.Location = new Point(chartX, chartY);
 
             dgvTinhTrang.Size = new Size(dgvTinhTrangWidth, dgvTinhTrangHeight);
             dgvTinhTrang.Location = new Point(dgvTinhTrangX, dgvTinhTrangY);
@@ -161,35 +162,18 @@ namespace PBL3___Motel_Management_System.View
             dgvSoLuong.Size = new Size(dgvSoLuongWidth, dgvSoLuongHeight);
             dgvSoLuong.Location = new Point(dgvSoLuongX, dgvSoLuongY);
         }
-        public void ThongKe(string thang)
+        public void ThongKe(string nam)
         {
-            ChartCot.Series[0].XValueMember = "TenDayTro";
-            ChartCot.Series[0].YValueMembers = "TongTien";
-            List<object> data = new List<object>();
-            ChartCot.DataSource = QLBLLChung.Instance.ThongKe(thang);
-            ChartCot.ChartAreas[0].AxisX.Title = "Dãy trọ";
+            var thongke = QLBLLChung.Instance.ThongKeTongTienTheoThang(nam);
+            ChartCot.Series[0].XValueMember = "Key";
+            ChartCot.Series[0].YValueMembers = "Value";
+            ChartCot.DataSource = thongke;
+            ChartCot.Series[0].Name = "Tháng";
+            ChartCot.ChartAreas[0].AxisX.Title = "Tháng";
             ChartCot.ChartAreas[0].AxisY.Title = "Tổng tiền";
             ChartCot.DataBind();
-
         }
 
-        private void FormTrangChu_Load(object sender, EventArgs e)
-        {
-            string thang = dtpThang.Value.ToString("MM-yyyy");
-            DateTime date = DateTime.ParseExact(thang, "MM-yyyy", CultureInfo.InvariantCulture);
-            int nam = date.Year;
-            LoadForm1(thang);
-            ThongKe(thang);
-        }
 
-        private void btnTim_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtpThang_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

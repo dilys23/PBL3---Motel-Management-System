@@ -37,8 +37,8 @@ namespace PBL3___Motel_Management_System.View
         }
         private void btnThemThietbi_Click(object sender, EventArgs e)
         {
-            ThuePhong tp= new ThuePhong();
-            tp.hopDong.MaPhongTro = idPhong;
+            //ThuePhong tp= new ThuePhong();
+            //tp.hopDong.MaPhongTro = idPhong;
             QLBLLChung.Instance.openChildForm1(new ThemThietBiPhong(idPhong, LoadForm), panelThem);
         }
     }

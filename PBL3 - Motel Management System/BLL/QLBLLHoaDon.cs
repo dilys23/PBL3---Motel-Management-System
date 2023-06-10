@@ -76,6 +76,14 @@ namespace PBL3___Motel_Management_System.BLL
             return true;
 
         }
+        public List<string> GetHoaDonByThangChiTraBLL(string ThangCt)
+        {
+            return QLDAL.Instance.GetIdHoaDonByThangChiTraDAL(ThangCt);
+        }
+        public List<HoaDon> GetAllHoaDon()
+        {
+            return QLDAL.Instance.GetAllHoaDonDAL();
+        }
         public List<string> GetHoaDonByThangChiTra(string ThangCt)
         {
             return QLDAL.Instance.GetIdHoaDonByThangChiTra(ThangCt);
