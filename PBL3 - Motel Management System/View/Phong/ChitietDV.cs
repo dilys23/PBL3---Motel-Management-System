@@ -77,15 +77,19 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnThemDichVu_Click(object sender, EventArgs e)
         {
-            if(QLBLLPhongTro.Instance.TinhTrangPhongById(idPhong))
+            if(QLBLLPhongTro.Instance.TinhTrangPhongById(idPhong) && !QLBLLChung.Instance.PhongDaHetHan(idPhong))
             {
                 ThuePhong tp = new ThuePhong();
                 tp.hopDong.MaPhongTro = idPhong; 
                 QLBLLChung.Instance.openChildForm1(new ThemDVphong(tp, LoadForm), panelThem);
             }
-            else
+            else if (!QLBLLPhongTro.Instance.TinhTrangPhongById(idPhong) && !QLBLLChung.Instance.PhongDaHetHan(idPhong))
             {
                 MessageBox.Show("Phòng chưa được cho thuê!!Không được thêm dịch vụ","Thông báo",MessageBoxButtons.OK);
+            }
+            else if (QLBLLPhongTro.Instance.TinhTrangPhongById(idPhong) && QLBLLChung.Instance.PhongDaHetHan(idPhong))
+            {
+                MessageBox.Show("Phòng đã quá hạn hợp đồng. Không được thêm dịch vụ", "Thông báo", MessageBoxButtons.OK);
             }
         }
 

@@ -113,6 +113,13 @@ namespace PBL3___Motel_Management_System.BLL
                 return QLDAL.Instance.GetAllIdChiTietSuDungDichVuDal();
             }
         }
+        public void DelChiTietSuDungDichVuByIdPhong(string idp)
+        {
+            foreach(string id in GetChiTietSuDungDichVuByIdPhong(idp))
+            {
+                DelChiTietSuDungDichVu(id);
+            }
+        }
         public List<ViewChiSo> GetAllViewChiSo()
         {
             List<ViewChiSo> list = new List<ViewChiSo>();

@@ -275,6 +275,36 @@ namespace PBL3___Motel_Management_System.BLL
             return image;
 
         }
+        public bool CanhBaoTraPhong(string idp)
+        {
+            HopDong hd = QLBLLHopDong.Instance.GetHopDongByIdPhong(idp);
+            if(hd != null && hd.TinhTrang == true)
+            {
+                DateTime ngayKetThuc = DateTime.Parse(hd.NgayKetThuc);
+                DateTime ngayHienTai = DateTime.Now;
+                TimeSpan khoangThoiGian = ngayKetThuc - ngayHienTai;
+                if(khoangThoiGian.TotalDays < 4) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public bool PhongDaHetHan(string idp)
+        {
+            HopDong hd = QLBLLHopDong.Instance.GetHopDongByIdPhong(idp);
+            if (hd != null && hd.TinhTrang == true)
+            {
+                DateTime ngayKetThuc = DateTime.Parse(hd.NgayKetThuc);
+                DateTime ngayHienTai = DateTime.Now;
+                TimeSpan khoangThoiGian = ngayHienTai - ngayKetThuc;
+                if (khoangThoiGian.TotalDays >= 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
 
     }
 }

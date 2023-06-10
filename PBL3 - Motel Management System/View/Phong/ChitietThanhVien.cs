@@ -92,7 +92,7 @@ namespace PBL3___Motel_Management_System.View
         private void btnThemDichVu_Click(object sender, EventArgs e)
         {
 
-            if (QLBLLPhongTro.Instance.GetPhongTroByIdPhong(idPhong).TinhTrang == true)
+            if (QLBLLPhongTro.Instance.TinhTrangPhongById(idPhong) && !QLBLLChung.Instance.PhongDaHetHan(idPhong))
             {
 
                 if (QLBLLNguoi.Instance.GetIdNguoiByIdPhong(idPhong).Count() < QLBLLPhongTro.Instance.GetPhongTroByIdPhong(idPhong).ToiDa)
@@ -108,9 +108,13 @@ namespace PBL3___Motel_Management_System.View
                     MessageBox.Show("Số lượng người đã tối đa");
                 }
             }
-            else
+            else if (!QLBLLPhongTro.Instance.TinhTrangPhongById(idPhong) && !QLBLLChung.Instance.PhongDaHetHan(idPhong))
             {
-                MessageBox.Show("Phòng chưa được cho thuê, không được thêm khách hàng", "Thông báo", MessageBoxButtons.OK); ;
+                MessageBox.Show("Phòng chưa được cho thuê, không được thêm khách hàng", "Thông báo", MessageBoxButtons.OK); 
+            }
+            else if (QLBLLPhongTro.Instance.TinhTrangPhongById(idPhong) && QLBLLChung.Instance.PhongDaHetHan(idPhong))
+            {
+                MessageBox.Show("Phòng đã quá hạn hợp đồng, không được thêm khách hàng", "Thông báo", MessageBoxButtons.OK);
             }
         }
 

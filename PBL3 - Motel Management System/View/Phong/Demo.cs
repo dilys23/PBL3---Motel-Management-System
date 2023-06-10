@@ -102,6 +102,10 @@ namespace PBL3___Motel_Management_System.View
         }
         private void btnChiTiet_Click_1(object sender, EventArgs e)
         {
+            if(QLBLLChung.Instance.PhongDaHetHan(IdPhong))
+            {
+                MessageBox.Show("Phòng này đã quá hạn hợp đồng. Vui lòng gia hạn hoặc trả phòng", "Thông báo", MessageBoxButtons.OK);
+            }
             QLBLLChung.Instance.openChildForm1(new ChiTietPT(sk,IdPhong), panel);
         }
 
@@ -156,17 +160,24 @@ namespace PBL3___Motel_Management_System.View
             DialogResult kq = MessageBox.Show("Bạn có thực sự muốn hoàn trả phòng ", "Cảnh báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (kq == DialogResult.OK)
             {
-                DateTime ngayHienTai = DateTime.Now;
                 HopDong hd = QLBLLHopDong.Instance.GetHopDongByIdPhong(IdPhong);
-                DateTime ngayketthuc = DateTime.Parse(hd.NgayKetThuc);
-                TimeSpan khoangthoigian = ngayketthuc - ngayHienTai;
-                if (khoangthoigian.TotalDays < 5)
+                DialogResult kq1 = MessageBox.Show("Phòng có được trả đúng kì hạn không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if((kq1 == DialogResult.Yes))
                 {
+<<<<<<< HEAD
                     MessageBox.Show("Hoàn trả phòng đúng với thời gian hợp đồng, trả lại tiền cọc cho khách thuê : " + hd.TienCoc.ToString("#,##0") + "₫");
                     hd.TienCoc = 0;
                     QLBLLHopDong.Instance.UpdateHopDongBLL(hd);
+=======
+                    MessageBox.Show("Vui lòng hoàn lại tiền cọc cho khách hàng: "+ QLBLLChung.Instance.ChuyenDoiSangKieuTien(hd.TienCoc),"Thông báo");
+                }
+                else
+                {
+                    MessageBox.Show("Đã thu tiền cọc của khách hàng: "+ QLBLLChung.Instance.ChuyenDoiSangKieuTien(hd.TienCoc), "Thông báo");
+>>>>>>> 8551cb7d5e930f3d211e9e0bd340661d1f4d9f4b
                 }
                 QLBLLHopDong.Instance.DelHopDong(hd.MaHopDong);
+                QLBLLChiTietSuDungDichVu.Instance.DelChiTietSuDungDichVuByIdPhong(IdPhong);
                 foreach (ChiTietDichVu ct in QLBLLChiTietDichVu.Instance.GetChiTietDichVuByIdPhong(IdPhong))
                 {
                     QLBLLChiTietDichVu.Instance.DelChiTietDichVu(ct.MaChiTietDichVu);
@@ -183,6 +194,7 @@ namespace PBL3___Motel_Management_System.View
                 {
                     QLBLLHoadon.Instance.DelHoaDonBll(hoadon);
                 }
+                
                 MessageBox.Show("Hoàn trả phòng thành công", "Thông báo");
                 this.Close();
                 LoadForm(null);

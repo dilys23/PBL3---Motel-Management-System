@@ -106,16 +106,19 @@ namespace PBL3___Motel_Management_System.View
                 {
                     p.SetPanelKhach(QLBLLNguoi.Instance.GetLabelByNguoi(nguoi));
                 }
+<<<<<<< HEAD
                 DateTime ngayHienTai = DateTime.Now;
                 HopDong hd = QLBLLHopDong.Instance.GetHopDongByIdPhong(pt.MaPhongTro);
                 if (hd != null && hd.TinhTrang  ==true)
+=======
+                if (QLBLLChung.Instance.CanhBaoTraPhong(pt.MaPhongTro))
+>>>>>>> 8551cb7d5e930f3d211e9e0bd340661d1f4d9f4b
                 {
-                    DateTime ngayketthuc = DateTime.Parse(hd.NgayKetThuc);
-                    TimeSpan khoangthoigian = ngayketthuc - ngayHienTai;
-                    if (khoangthoigian.TotalDays < 4)
-                    {
-                        p.SetColorPanel2(Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(234)))), ((int)(((byte)(87))))));
-                    } 
+                    p.SetColorPanel2(Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(234)))), ((int)(((byte)(87))))));
+                }
+                if(QLBLLChung.Instance.PhongDaHetHan(pt.MaPhongTro))
+                {
+                    p.SetColorPanel2(Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(21)))), ((int)(((byte)(84))))));
                 }
                 p.SetBtnName(pt.MaPhongTro);
                  panelPhong.Controls.Add(p);

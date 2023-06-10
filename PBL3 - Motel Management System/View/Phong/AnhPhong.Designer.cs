@@ -44,7 +44,7 @@
             this.btnThemAnh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThemAnh.Location = new System.Drawing.Point(347, 538);
             this.btnThemAnh.Name = "btnThemAnh";
-            this.btnThemAnh.Size = new System.Drawing.Size(104, 34);
+            this.btnThemAnh.Size = new System.Drawing.Size(78, 28);
             this.btnThemAnh.TabIndex = 1;
             this.btnThemAnh.Text = "Thêm Ảnh ";
             this.btnThemAnh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -61,7 +61,7 @@
             this.btnXoaAnh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoaAnh.Location = new System.Drawing.Point(496, 538);
             this.btnXoaAnh.Name = "btnXoaAnh";
-            this.btnXoaAnh.Size = new System.Drawing.Size(95, 34);
+            this.btnXoaAnh.Size = new System.Drawing.Size(71, 28);
             this.btnXoaAnh.TabIndex = 2;
             this.btnXoaAnh.Text = "Xóa Ảnh";
             this.btnXoaAnh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -91,7 +91,7 @@
             // 
             // AnhPhong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(1075, 596);
@@ -99,8 +99,10 @@
             this.Controls.Add(this.panelAnh);
             this.Controls.Add(this.btnXoaAnh);
             this.Controls.Add(this.btnThemAnh);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AnhPhong";
             this.Text = "AnhPhong";
+            this.panelAnh.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

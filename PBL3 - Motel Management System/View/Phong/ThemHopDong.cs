@@ -37,12 +37,13 @@ namespace PBL3___Motel_Management_System
         public void SetGUI()
         {
             if (tp.hopDong.MaHopDong!=null && tp.hopDong.MaPhongTro==null)
-            {
-               
+            {   
                 HopDong hopdong = QLBLLHopDong.Instance.GetHopDongByMaHD(tp.hopDong.MaHopDong);
                 dtpBatDau.Value = Convert.ToDateTime(hopdong.NgayBatDau);
                 dtpKetThuc.Value = Convert.ToDateTime(hopdong.NgayKetThuc);
-                txtTienCoc.Text =Convert.ToDouble(hopdong.TienCoc).ToString("#,##0") + "₫";
+                txtTienCoc.Text = Convert.ToDouble(hopdong.TienCoc).ToString("#,##0") + "₫";
+                txtTienCoc.Enabled = false;
+                dtpBatDau.Enabled = false;
             }
         }
         private void Back(string txt)
@@ -61,11 +62,12 @@ namespace PBL3___Motel_Management_System
         }
         private bool CheckHopLe()
         {
-            var dateStart = dtpBatDau.Value;
-            var dateEnd = dtpKetThuc.Value;
-            var distance = dateEnd - dateStart;
-            
-            if(distance.Days < 30)
+            if (tp.hopDong.MaNguoi!=null)
+            {
+                var dateStart = dtpBatDau.Value;
+                var dateEnd = dtpKetThuc.Value;
+                var distance = dateEnd - dateStart;
+                if (distance.Days < 30)
             {
                 MessageBox.Show("Thời gian thuê phòng phải tối thiểu 30 ngày", "Thông báo");
                 return false;
@@ -80,6 +82,21 @@ namespace PBL3___Motel_Management_System
             }
 
             return true;
+
+            }
+            else
+            {
+                HopDong hopdong = QLBLLHopDong.Instance.GetHopDongByMaHD(tp.hopDong.MaHopDong);
+                var NgayKetThucMoi = dtpKetThuc.Value;
+                var NgayKetThucCu = Convert.ToDateTime(hopdong.NgayKetThuc);
+                var KhoangCach = NgayKetThucMoi - NgayKetThucCu;
+                if (KhoangCach.Days < 30)
+                {
+                    MessageBox.Show("Thời gian gia hạn phải tối thiểu 30 ngày", "Thông báo");
+                    return false;
+                }
+                return true;
+            }
         }
         private void iconButton4_Click(object sender, EventArgs e)
         {
