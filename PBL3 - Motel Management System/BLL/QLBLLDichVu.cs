@@ -34,7 +34,7 @@ namespace PBL3___Motel_Management_System.BLL
             {
                 id = random.Next(1, 1000).ToString();
                 status = false;
-                foreach (DichVu dv in QLDAL.Instance.GetAllDichVu())
+                foreach (DichVu dv in QLDAL.Instance.GetAllDichVuTaoID())
                 {
                     if (dv.MaDichVu == id) status = true;
                 }

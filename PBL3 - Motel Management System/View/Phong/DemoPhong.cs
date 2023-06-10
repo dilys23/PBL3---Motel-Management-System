@@ -107,7 +107,8 @@ namespace PBL3___Motel_Management_System.View
                 {
                     p.SetPanelKhach(QLBLLNguoi.Instance.GetLabelByNguoi(nguoi));
                 }
-                if (QLBLLChung.Instance.CanhBaoTraPhong(pt.MaPhongTro))// 251,243,112
+
+                if (QLBLLChung.Instance.CanhBaoTraPhong(pt.MaPhongTro))
                 {
                     p.SetColorPanel2(Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(244)))), ((int)(((byte)(153))))));
                    

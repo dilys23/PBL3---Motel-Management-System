@@ -36,7 +36,7 @@ namespace PBL3___Motel_Management_System.BLL
             {
                 id = random.Next(1, 1000).ToString();
                 status = false;
-                foreach (VaiTro vt in QLDAL.Instance.GetAllVaiTro())
+                foreach (VaiTro vt in QLDAL.Instance.GetAllVaiTroTaoID())
                 {
                     if (vt.MaVaiTro == id) status = true;
                 }

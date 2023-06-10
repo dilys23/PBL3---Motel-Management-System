@@ -187,6 +187,29 @@ namespace PBL3___Motel_Management_System.BLL
             else if (QLBLLHopDong.Instance.GetHopDongByIdPhong(IdPhong).TinhTrang == true) return false;
             return true;
         }
+        public Dictionary<string,int> ThongKeTinhTrangPhongTro()
+        {
+            Dictionary<string,int> list= new Dictionary<string, int>(3);
+            int slphongtrong = 0, slchothue = 0, slphongcoc = 0;
+            foreach(string idp in DgvPhongTro(null))
+            {
+                if(PhongDaCocByIdPhong(idp))
+                {
+                    slphongcoc++;
+                }
+                else if(TinhTrangPhongById(idp))
+                {
+                    slchothue++;
+                }else
+                {
+                    slphongtrong++;
+                }
+            }
+            list.Add("Đã cọc", slphongcoc);
+            list.Add("Cho thuê", slchothue);
+            list.Add("Còn trống", slphongtrong);
+            return list;
+        }
         public List<TinhTrangPhongTro> GetAllTinhTrangPhongTro()
         {
             List<TinhTrangPhongTro> list = new List<TinhTrangPhongTro>();

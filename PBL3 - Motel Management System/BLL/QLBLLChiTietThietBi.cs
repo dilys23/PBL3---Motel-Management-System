@@ -90,15 +90,15 @@ namespace PBL3___Motel_Management_System.BLL
             List<ChiTietThietBi> listCu = GetChiTietThietBiByIdPhong(idp);
             foreach (ChiTietThietBi ct in listCu)
             {
-                bool status = true;
+                bool status = false;
                 foreach (ChiTietThietBi cttb in listMoi)
                 {
                     if (cttb.MaThietBi == ct.MaThietBi && cttb.MaPhongTro == ct.MaPhongTro)
                     {
-                        status = false;
+                        status = true;
                     }
                 }
-                if (status)
+                if (!status)
                 {
                     DelCHiTietThietBiById(ct.MaChiTietThietBi);
                 }

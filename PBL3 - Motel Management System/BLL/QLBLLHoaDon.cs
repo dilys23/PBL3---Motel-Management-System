@@ -35,7 +35,7 @@ namespace PBL3___Motel_Management_System.BLL
             {
                 id = random.Next(1, 1000).ToString();
                 status = false;
-                foreach (HoaDon hd in QLDAL.Instance.GetAllHoaDon())
+                foreach (HoaDon hd in QLDAL.Instance.GetAllHoaDonTaoID())
                 {
                     if (hd.MaHoaDon == id) status = true;
                 }
@@ -50,6 +50,7 @@ namespace PBL3___Motel_Management_System.BLL
         {
             return QLDAL.Instance.GetAllHoaDon();
         }
+       
         public HoaDon GetHoaDonById(string id)
         {
             return QLDAL.Instance.GetHoaDonByIdDal(id);

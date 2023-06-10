@@ -78,11 +78,11 @@ namespace PBL3___Motel_Management_System.BLL
 
             return chartData;
         }
-       
+
         public List<object> ThongKeTinhTrangPhongTro()
         {
 
-            var thongke = QLDAL.Instance.ThongKeTinhTrangPhongTro();
+            var thongke = QLBLLPhongTro.Instance.ThongKeTinhTrangPhongTro();
             var data = thongke.Select(x => new { Key = x.Key.ToString(), Value = x.Value }).ToList<object>();
             return data;
         }
