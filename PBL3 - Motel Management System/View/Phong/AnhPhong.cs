@@ -99,5 +99,10 @@ namespace PBL3___Motel_Management_System.View.Phong
             
 
         }
+
+        private void btnTroVe_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
