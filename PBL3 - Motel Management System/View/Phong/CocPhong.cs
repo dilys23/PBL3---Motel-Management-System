@@ -29,9 +29,19 @@ namespace PBL3___Motel_Management_System.View
             LoadForm();
            
         }
+        private void SetGui()
+        {
+            txtTen.Enabled = false;
+            txtSdt.Enabled  = false;
+            txtTienCoc.Enabled = false;
+            txtCccd.Enabled = false;
+            dtpNgayCoc.Enabled = false;
+            dtpNgayNhanPhong.Enabled = false;
+            btnXacNhan.Visible = false;
+            btnTrove.Visible = false;
+        }
         public void LoadForm()
         {
-           
             Nguoi nguoi = new Nguoi();
             HopDong hd = new HopDong();
             hd = QLBLLHopDong.Instance.GetHopDongByIdPhong(tp.hopDong.MaPhongTro);
@@ -41,22 +51,14 @@ namespace PBL3___Motel_Management_System.View
                 {
                     nguoi = QLBLLNguoi.Instance.GetNguoiByMaHopDong(hd.MaHopDong);
                     txtTen.Text = nguoi.Ten;
-                    txtTen.Enabled = false;
                     txtSdt.Text = nguoi.Sdt;
-                    txtSdt.Enabled  = false;
                     txtTienCoc.Text = hd.TienCoc.ToString("#,##0") + "₫";
-                    txtTienCoc.Enabled = false;
                     txtCccd.Text = nguoi.Cccd;
-                    txtCccd.Enabled = false;
                     DateTime batdau = DateTime.ParseExact(hd.NgayBatDau, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
                     DateTime ketthuc = DateTime.ParseExact(hd.NgayKetThuc, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
-                  
                     dtpNgayCoc.Value = batdau;
-                    dtpNgayCoc.Enabled = false;
                     dtpNgayNhanPhong.Value = ketthuc;
-                    dtpNgayNhanPhong.Enabled = false;
-                    btnXacNhan.Visible = false;
-                    btnTrove.Visible = false;
+                    SetGui();
                 }
             }            
         }
