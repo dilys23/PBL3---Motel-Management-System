@@ -2,6 +2,7 @@
 using PBL3___Motel_Management_System.DAL;
 using PBL3___Motel_Management_System.DTO;
 using PBL3___Motel_Management_System.View.KhachHang;
+using PBL3___Motel_Management_System.View.Phong;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -265,12 +266,16 @@ namespace PBL3___Motel_Management_System.View
         private void btnPhong_Click(object sender, EventArgs e)
         {
             idPhong = QLBLLPhongTro.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
-            ThemPhong tp = new ThemPhong(null,idPhong,null,null);
-            tp.btnLuu.Visible = false;tp.txtDienTich.Enabled = false;
-            tp.btnThemAnh.Visible = false;tp.txtGiaTien.Enabled = false;
-            tp.iconButton1.Visible = false;tp.txtTenPhong.Enabled = false;
-            tp.label9.Visible= false;tp.txtToiDa.Enabled= false;
-            QLBLLChung.Instance.openChildForm1(tp,panelDesktop);
+            //ThemPhong tp = new ThemPhong(null,idPhong,null,null);
+            //tp.btnLuu.Visible = false;tp.txtDienTich.Enabled = false;
+            //tp.btnThemAnh.Visible = false;tp.txtGiaTien.Enabled = false;
+            //tp.iconButton1.Visible = false;tp.txtTenPhong.Enabled = false;
+            //tp.label9.Visible= false;tp.txtToiDa.Enabled= false;
+            AnhPhong ap = new AnhPhong(idPhong);
+            QLBLLChung.Instance.openChildForm1(ap ,panelDesktop);
+            ap.btnThemAnh.Visible = false;
+            ap.btnXoaAnh.Visible = false;
+            
         }
 
         private void btnDien_Click(object sender, EventArgs e)

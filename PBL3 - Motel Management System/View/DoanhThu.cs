@@ -183,7 +183,7 @@ namespace PBL3___Motel_Management_System
             ChartCot.Series[0].XValueMember = "Key";
             ChartCot.Series[0].YValueMembers = "Value";
             ChartCot.DataSource = thongke;
-            ChartCot.Series[0].Name = "Tổng tiền";
+            ChartCot.Series[0].Name = "Tháng";
             ChartCot.ChartAreas[0].AxisX.Title = "Tháng";
             ChartCot.ChartAreas[0].AxisY.Title = "Tổng tiền";
             ChartCot.DataBind();

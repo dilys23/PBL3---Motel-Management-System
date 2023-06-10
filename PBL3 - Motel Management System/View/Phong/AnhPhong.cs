@@ -10,6 +10,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using System.Windows.Forms;
 using System.Windows.Media.Media3D;
 
@@ -18,16 +19,21 @@ namespace PBL3___Motel_Management_System.View.Phong
     public partial class AnhPhong : Form
     {
         private string idPhong;
-        private string idChiTietAnh;
+        private List<string> idChiTietAnh = new List<string>();
+        
         public AnhPhong(string idPhong)
         {
             InitializeComponent();
             this.idPhong = idPhong;
-            
+            LoadForm(null);
         }
-        public void LoadForm()
+        public void LoadForm(string txt)
         {
-            pctdemo.Visible = false;
+            panelAnh.Controls.Clear();
+            panelAnh.AutoScroll = false;
+            panelAnh.HorizontalScroll.Visible = false;
+            panelAnh.HorizontalScroll.Maximum = 0;
+            panelAnh.AutoScroll = true;
             foreach (ChiTietAnhPhong ct in QLBLLChiTietAnhPhong.Instance.GetChiTietAnhPhongByIdPhong(idPhong))
             {
                 PictureBox pct = new PictureBox();
@@ -45,14 +51,18 @@ namespace PBL3___Motel_Management_System.View.Phong
         }
         private void event1(object sender, MouseEventArgs e)
         {
-            PictureBox pct = sender as PictureBox;
-            if ((Color)pct.Tag == Color.Red) { pct.Tag = Color.Blue; }
-            else { pct.Tag = Color.Red; }
-            pct.Refresh();
-            if (idChiTietAnh != null )
+            PictureBox pct = (PictureBox)sender;
+            if ((Color)pct.Tag == Color.Red)
             {
-                idChiTietAnh = pct.Name;
+                pct.Tag = Color.Blue;
+                idChiTietAnh.Add(pct.Name);
             }
+            else
+            {
+                pct.Tag = Color.Red;
+                idChiTietAnh.Remove(pct.Name);
+            }
+            pct.Refresh();
         }
         private void paint (object sender, PaintEventArgs e)
         {
@@ -62,33 +72,39 @@ namespace PBL3___Motel_Management_System.View.Phong
         }
         private void btnThemAnh_Click(object sender, EventArgs e)
         {
-            PictureBox pctKhach = new PictureBox();
-            pctKhach.Name = QLBLLChiTietAnhPhong.Instance.TaoIdChiTietAnhPhong();
             ChiTietAnhPhong ct = new ChiTietAnhPhong();
-            ct.MaChiTietAnhPhong = pctKhach.Name;
-            ct.MaPhongTro = this.idPhong;
+            ct.MaChiTietAnhPhong = QLBLLChiTietAnhPhong.Instance.TaoIdChiTietAnhPhong();
+            ct.MaPhongTro = idPhong;
             ct.TonTai = true;
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = " ipg files(*.jpg)|*.jpg|jpg files(*.jpg)|*.jpg|All files(*.*)|*.*";
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-               string  imgLocation = dialog.FileName.ToString();
-               pctKhach.ImageLocation = imgLocation;
-                pctdemo.ImageLocation = imgLocation;
-            }
-           
-            panelAnh.Controls.Add(pctKhach);
-            pctKhach.MouseClick += event1;
-            pctKhach.Paint += paint;
-           // ct.Anh = QLBLLChung.Instance.ImageToBase64(pctdemo.Image, pctdemo.Image.RawFormat);
-            //QLBLLChiTietAnhPhong.Instance.AddChiTietAnhPhong(ct);
+            ThemAnh ta = new ThemAnh(LoadForm, ct);
+            ta.ShowDialog();
         }
 
         private void btnXoaAnh_Click(object sender, EventArgs e)
         {
-            ChiTietAnhPhong ct = new ChiTietAnhPhong();
-            ct.Anh = QLBLLChung.Instance.ImageToBase64(pctdemo.Image, pctdemo.Image.RawFormat);
+            if (idChiTietAnh.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn Ảnh cần xóa", "Thông báo");
+            }
+            else
+            {
+                foreach (string id in idChiTietAnh )
+            {
+                QLBLLChiTietAnhPhong.Instance.DelChiTietAnhPhong(id);
+                
+            }
+                MessageBox.Show("Xóa thành công", "Thông báo");
+                LoadForm(null);
+            }
+           
+                
+            
+
         }
 
+        private void btnTroVe_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

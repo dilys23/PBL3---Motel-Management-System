@@ -106,6 +106,14 @@ namespace PBL3___Motel_Management_System.View
                 {
                     p.SetPanelKhach(QLBLLNguoi.Instance.GetLabelByNguoi(nguoi));
                 }
+                if (QLBLLChung.Instance.CanhBaoTraPhong(pt.MaPhongTro))
+                {
+                    p.SetColorPanel2(Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(234)))), ((int)(((byte)(87))))));
+                }
+                if(QLBLLChung.Instance.PhongDaHetHan(pt.MaPhongTro))
+                {
+                    p.SetColorPanel2(Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(21)))), ((int)(((byte)(84))))));
+                }
                 p.SetBtnName(pt.MaPhongTro);
                  panelPhong.Controls.Add(p);
             }

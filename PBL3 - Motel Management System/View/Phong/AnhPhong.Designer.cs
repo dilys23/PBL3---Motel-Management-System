@@ -31,9 +31,7 @@
             this.btnThemAnh = new FontAwesome.Sharp.IconButton();
             this.btnXoaAnh = new FontAwesome.Sharp.IconButton();
             this.panelAnh = new System.Windows.Forms.FlowLayoutPanel();
-            this.pctdemo = new System.Windows.Forms.PictureBox();
-            this.panelAnh.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctdemo)).BeginInit();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnThemAnh
@@ -44,8 +42,7 @@
             this.btnThemAnh.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThemAnh.IconSize = 20;
             this.btnThemAnh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemAnh.Location = new System.Drawing.Point(284, 396);
-            this.btnThemAnh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThemAnh.Location = new System.Drawing.Point(347, 538);
             this.btnThemAnh.Name = "btnThemAnh";
             this.btnThemAnh.Size = new System.Drawing.Size(78, 28);
             this.btnThemAnh.TabIndex = 1;
@@ -62,8 +59,7 @@
             this.btnXoaAnh.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXoaAnh.IconSize = 20;
             this.btnXoaAnh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaAnh.Location = new System.Drawing.Point(385, 396);
-            this.btnXoaAnh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoaAnh.Location = new System.Drawing.Point(496, 538);
             this.btnXoaAnh.Name = "btnXoaAnh";
             this.btnXoaAnh.Size = new System.Drawing.Size(71, 28);
             this.btnXoaAnh.TabIndex = 2;
@@ -74,27 +70,32 @@
             // 
             // panelAnh
             // 
-            this.panelAnh.Controls.Add(this.pctdemo);
-            this.panelAnh.Location = new System.Drawing.Point(2, 10);
-            this.panelAnh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelAnh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelAnh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(230)))), ((int)(((byte)(234)))));
+            this.panelAnh.Location = new System.Drawing.Point(12, 49);
             this.panelAnh.Name = "panelAnh";
-            this.panelAnh.Size = new System.Drawing.Size(803, 294);
+            this.panelAnh.Size = new System.Drawing.Size(1051, 476);
             this.panelAnh.TabIndex = 3;
             // 
-            // pctdemo
+            // label4
             // 
-            this.pctdemo.Location = new System.Drawing.Point(3, 3);
-            this.pctdemo.Name = "pctdemo";
-            this.pctdemo.Size = new System.Drawing.Size(100, 50);
-            this.pctdemo.TabIndex = 0;
-            this.pctdemo.TabStop = false;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Chocolate;
+            this.label4.Location = new System.Drawing.Point(8, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(122, 24);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "ẢNH PHÒNG";
             // 
             // AnhPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(247)))), ((int)(((byte)(249)))));
-            this.ClientSize = new System.Drawing.Size(806, 456);
+            this.ClientSize = new System.Drawing.Size(1075, 596);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.panelAnh);
             this.Controls.Add(this.btnXoaAnh);
             this.Controls.Add(this.btnThemAnh);
@@ -102,15 +103,15 @@
             this.Name = "AnhPhong";
             this.Text = "AnhPhong";
             this.panelAnh.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pctdemo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private FontAwesome.Sharp.IconButton btnThemAnh;
-        private FontAwesome.Sharp.IconButton btnXoaAnh;
         private System.Windows.Forms.FlowLayoutPanel panelAnh;
-        private System.Windows.Forms.PictureBox pctdemo;
+        public FontAwesome.Sharp.IconButton btnThemAnh;
+        public FontAwesome.Sharp.IconButton btnXoaAnh;
+        private System.Windows.Forms.Label label4;
     }
 }

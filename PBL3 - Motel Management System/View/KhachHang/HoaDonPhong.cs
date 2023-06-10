@@ -41,7 +41,11 @@ namespace PBL3___Motel_Management_System.View.KhachHang
                 {
                     if (hd.MaPhongTro == idPhong && hd.TinhTrang == true)
                     {
-                        dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, hd.NgayTao, hd.ThangChiTra, hd.TongTien.ToString("C0", vietnamCulture), hd.DaThanhToan.ToString("C0", vietnamCulture), (hd.TongTien - hd.DaThanhToan).ToString("C0", vietnamCulture));
+                        //dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, hd.NgayTao, hd.ThangChiTra, hd.TongTien.ToString("C0", vietnamCulture), hd.DaThanhToan.ToString("C0", vietnamCulture), (hd.TongTien - hd.DaThanhToan).ToString("C0", vietnamCulture));
+                        double conNo = hd.TongTien - hd.DaThanhToan;
+                        string conNoFormatted = (conNo >= 0) ? conNo.ToString("#,##0") + "₫" : "0₫";
+                        dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, hd.NgayTao, hd.ThangChiTra, hd.TongTien.ToString("#,##0") + "₫",  hd.DaThanhToan.ToString("#,##0") + "₫", conNoFormatted);
+
                     }
                 }
             }
@@ -52,9 +56,13 @@ namespace PBL3___Motel_Management_System.View.KhachHang
                 string IdDay = QLBLLDayTro.Instance.GetDayTroByIdPhong(idPhong).MaDayTro;
                 foreach (HoaDon hd in QLBLLHoadon.Instance.GetHoaDonTimKiem(ThangSuDung, IdDay, idPhong, "1"))
                 {
-                    PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByIdPhong(hd.MaPhongTro);
-                    DayTro dt = QLBLLDayTro.Instance.GetDayTroByIdPhong(hd.MaPhongTro);
-                    dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, hd.NgayTao, hd.ThangChiTra, hd.TongTien, hd.DaThanhToan, hd.TongTien - hd.DaThanhToan);
+                    //{
+                    //    PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByIdPhong(hd.MaPhongTro);
+                    //    DayTro dt = QLBLLDayTro.Instance.GetDayTroByIdPhong(hd.MaPhongTro);
+                    double conNo = hd.TongTien - hd.DaThanhToan;
+                    string conNoFormatted = (conNo >= 0) ? conNo.ToString("#,##0") + "₫" : "0₫";
+                    dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, hd.NgayTao, hd.ThangChiTra, hd.TongTien.ToString("#,##0") + "₫", hd.DaThanhToan.ToString("#,##0") + "₫", conNoFormatted);
+                    //dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, hd.NgayTao, hd.ThangChiTra, hd.TongTien, hd.DaThanhToan, hd.TongTien - hd.DaThanhToan);
                 }
             }
             }

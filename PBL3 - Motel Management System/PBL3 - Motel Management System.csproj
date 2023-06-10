@@ -525,6 +525,12 @@
     <Compile Include="View\Phong\ChitietThanhVien.Designer.cs">
       <DependentUpon>ChitietThanhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Phong\ThemAnh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Phong\ThemAnh.Designer.cs">
+      <DependentUpon>ThemAnh.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\TaiKhoan\ChuTro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -770,6 +776,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Phong\ChitietThanhVien.resx">
       <DependentUpon>ChitietThanhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Phong\ThemAnh.resx">
+      <DependentUpon>ThemAnh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\TaiKhoan\ChuTro.resx">
       <DependentUpon>ChuTro.cs</DependentUpon>

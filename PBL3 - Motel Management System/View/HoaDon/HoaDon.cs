@@ -36,8 +36,8 @@ namespace PBL3___Motel_Management_System
                     DayTro dt = QLBLLDayTro.Instance.GetDayTroByIdPhong(hd.MaPhongTro);
                     string TinhTrang = (hd.TinhTrang) ? "Xác thực" : "Chưa xác thực";
                     double conNo = hd.TongTien - hd.DaThanhToan;
-                    string conNoFormatted = (conNo >= 0) ? conNo.ToString("#,##0") + "₫" : "0₫";
-                    dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hd.NgayTao, hd.ThangChiTra, hd.TongTien.ToString("#,##0") + "₫", TinhTrang, hd.DaThanhToan.ToString("#,##0") + "₫", conNoFormatted);
+                    string conNo1= (conNo >= 0) ? conNo.ToString("#,##0") + "₫" : "0₫";
+                    dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hd.NgayTao, hd.ThangChiTra, hd.TongTien.ToString("#,##0") + "₫", TinhTrang, hd.DaThanhToan.ToString("#,##0") + "₫", conNo1);
                 }
             
             }
@@ -53,7 +53,11 @@ namespace PBL3___Motel_Management_System
                     PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByIdPhong(hd.MaPhongTro);
                     DayTro dt = QLBLLDayTro.Instance.GetDayTroByIdPhong(hd.MaPhongTro);
                     string TinhTrang = (hd.TinhTrang) ? "Xác thực" : "Chưa xác thực";
-                    dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hd.NgayTao, hd.ThangChiTra, hd.TongTien.ToString("#,##0") + "₫", TinhTrang, hd.DaThanhToan.ToString("#,##0") + "₫", (hd.TongTien - hd.DaThanhToan).ToString("#,##0") + "₫");
+                    double conNo = hd.TongTien - hd.DaThanhToan;
+                    string conNo1 = (conNo >= 0) ? conNo.ToString("#,##0") + "₫" : "0₫";
+                    dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hd.NgayTao, hd.ThangChiTra, hd.TongTien.ToString("#,##0") + "₫", TinhTrang, hd.DaThanhToan.ToString("#,##0") + "₫", conNo1);
+
+                    // dgvHoaDon.Rows.Add(hd.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hd.NgayTao, hd.ThangChiTra, hd.TongTien.ToString("#,##0") + "₫", TinhTrang, hd.DaThanhToan.ToString("#,##0") + "₫", (hd.TongTien - hd.DaThanhToan).ToString("#,##0") + "₫");
                 }
             }
             var Sua = System.Drawing.Image.FromFile(@"D:\PBL\PBL3_MAIN\PBL3 - Motel Management System\Icons\icons8-create-25.png");
