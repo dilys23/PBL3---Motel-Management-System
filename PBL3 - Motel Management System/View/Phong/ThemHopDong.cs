@@ -62,29 +62,7 @@ namespace PBL3___Motel_Management_System
         }
         private bool CheckHopLe()
         {
-            if (tp.hopDong.MaNguoi!=null)
-            {
-                var dateStart = dtpBatDau.Value;
-                var dateEnd = dtpKetThuc.Value;
-                var distance = dateEnd - dateStart;
-                if (distance.Days < 30)
-            {
-                MessageBox.Show("Thời gian thuê phòng phải tối thiểu 30 ngày", "Thông báo");
-                return false;
-            }
-            else
-            {
-                if(!double.TryParse(txtTienCoc.Text,out double i))
-                {
-                    MessageBox.Show("Vui lòng nhập số tại tiền cọc", "Thông báo");
-                    return false;
-                }
-            }
-
-            return true;
-
-            }
-            else
+            if (tp.hopDong.MaHopDong!=null && tp.hopDong.MaPhongTro==null)
             {
                 HopDong hopdong = QLBLLHopDong.Instance.GetHopDongByMaHD(tp.hopDong.MaHopDong);
                 var NgayKetThucMoi = dtpKetThuc.Value;
@@ -95,6 +73,27 @@ namespace PBL3___Motel_Management_System
                     MessageBox.Show("Thời gian gia hạn phải tối thiểu 30 ngày", "Thông báo");
                     return false;
                 }
+                return true;
+            }
+            else
+            {
+                var dateStart = dtpBatDau.Value;
+                var dateEnd = dtpKetThuc.Value;
+                var distance = dateEnd - dateStart;
+                if (distance.Days < 30)
+                {
+                    MessageBox.Show("Thời gian thuê phòng phải tối thiểu 30 ngày", "Thông báo");
+                    return false;
+                }
+                else
+                {
+                    if (!double.TryParse(txtTienCoc.Text, out double i))
+                    {
+                        MessageBox.Show("Vui lòng nhập số tại tiền cọc", "Thông báo");
+                        return false;
+                    }
+                }
+
                 return true;
             }
         }
