@@ -89,6 +89,7 @@
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.pctAnh);
             this.Name = "ThemAnh";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThemAnh";
             ((System.ComponentModel.ISupportInitialize)(this.pctAnh)).EndInit();
             this.ResumeLayout(false);

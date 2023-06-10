@@ -26,6 +26,8 @@ namespace PBL3___Motel_Management_System.View
             this.idPhong = idPhong;
             LoadForm();
             this.loader  = loader;
+            QLBLLChung.Instance.customDGV(dgvThietBi);
+            QLBLLChung.Instance.customDGV(dgvTBThem);
 
         }
         public void LoadForm()
@@ -43,6 +45,7 @@ namespace PBL3___Motel_Management_System.View
                     ThietBi tb = QLBLLThietbi.Instance.GetTBByIdTB(cttb.MaThietBi);
                     dgvTBThem.Rows.Add(tb.MaThietBi, ++j, tb.TenThietBi, tb.GiaThietBi.ToString("#,##0") + "₫", cttb.SoLuong);
                 }
+            
             for (int i = 0; i < dgvTBThem.Rows.Count; i++)
             {
                 dgvTBThem.Rows[i].Cells[1].Value = i + 1;
@@ -153,11 +156,11 @@ namespace PBL3___Motel_Management_System.View
                     {
                         MaThietBi = dr.Cells[0].Value.ToString(),
                         SoLuong = Convert.ToInt32(dr.Cells[4].Value.ToString()),
-                        MaPhongTro =idPhong
+                        MaPhongTro = idPhong
                     });
                 }
             }
-            QLBLLChiTietThietBi.Instance.ThayDoiThietBiPhong(list,idPhong);
+            QLBLLChiTietThietBi.Instance.ThayDoiThietBiPhong(list, idPhong);
             MessageBox.Show("Thay đổi thành công", "Thông báo", MessageBoxButtons.OK);
             this.Close();
             this.loader(null);

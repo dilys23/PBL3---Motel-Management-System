@@ -164,6 +164,27 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.ChiTietThanhToanHoaDon.Where(p => p.TonTai == true).Select(p => p).ToList<ChiTietThanhToanHoaDon>();
             }    
         }
+        public List<string> GetIdHoaDonByThangChiTraDAL(string ThangCt)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.HoaDon.Where(p => p.ThangChiTra == ThangCt).Select(p => p.MaHoaDon).ToList<string>();
+            }
+        }
+        public PhongTro GetPhongTroByIdHoaDonDAL(string idHd)
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.HoaDon.Where(p => p.MaHoaDon == idHd).FirstOrDefault().PhongTro;
+            }
+        }
+        public List<HoaDon> GetAllHoaDonDAL()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.HoaDon.Select(p => p).ToList<HoaDon>();
+            }
+        }
         public List<string> GetAllIdLichSuThanhToanByIdHoaDon(string idHd)
         {
             using (DataPbl data = new DataPbl())
@@ -1240,16 +1261,6 @@ namespace PBL3___Motel_Management_System.DAL
                 data.SaveChanges() ;
             }
         }
-        public double GetAllTienCoc()
-        {
-            using (DataPbl data = new DataPbl())
-            {
-                return  data.HopDong.Select(p=>p.TienCoc).Sum();
-            }
-        }
-        public void SetTienCoc(double tiencoc)
-        {
-
-        }
+       
     }
 }

@@ -40,7 +40,7 @@ namespace PBL3___Motel_Management_System.View.Phong
                 pct.Name = ct.MaChiTietAnhPhong;
                 pct.Image = QLBLLChung.Instance.Base64ToImage(ct.Anh);
                 pct.SizeMode = PictureBoxSizeMode.StretchImage;
-                pct.Size = new Size(300,400);
+                pct.Size = new Size(300,300);
                 pct.MouseClick += event1;
                 pct.Paint += paint;
                 panelAnh.Controls.Add(pct);

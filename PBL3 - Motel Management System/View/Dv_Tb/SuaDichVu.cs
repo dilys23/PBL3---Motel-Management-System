@@ -55,14 +55,15 @@ namespace PBL3___Motel_Management_System
                 i++;
                 errorProvider1.SetError(txtGiaDichVu, "Vui lòng điền giá dịch vụ");
             }
-            if(txtGiaDichVu.Text != "")
+            string giaTienText = QLBLLChung.Instance.ChuyenDoiTienSangDouble(txtGiaDichVu.Text).ToString();
+            if (txtGiaDichVu.Text != "")
             {
-                if(!double.TryParse(txtGiaDichVu.Text,out double d))
+                if (!double.TryParse(giaTienText, out double giaTien))
                 {
                     i++;
-                    errorProvider1.SetError(txtGiaDichVu, "Giá dịch vụ phải bằng số");
-
+                    errorProvider1.SetError(txtGiaDichVu, "Vui lòng nhập giá tiền hợp lệ");
                 }
+
             }
 
             if (i==0) return true;

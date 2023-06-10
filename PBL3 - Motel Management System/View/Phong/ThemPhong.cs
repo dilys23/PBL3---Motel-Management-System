@@ -82,14 +82,18 @@ namespace PBL3___Motel_Management_System
                 i++;
                 errorProvider1.SetError(txtToiDa, "Vui lòng nhập số người tối đa");
             }
-            if(txtGiaTien.Text != "")
+            
+            string giaTienText = QLBLLChung.Instance.ChuyenDoiTienSangDouble(txtGiaTien.Text).ToString();
+            if (txtGiaTien.Text != "")
             {
-                if(!Int32.TryParse(txtGiaTien.Text, out int demo))
+                if (!double.TryParse(giaTienText, out double giaTien))
                 {
                     i++;
-                    errorProvider1.SetError(txtGiaTien, "Vui lòng nhập giá tiền bằng số");
+                    errorProvider1.SetError(txtGiaTien, "Vui lòng nhập giá tiền hợp lệ");
                 }
+
             }
+
             if (txtDienTich.Text != "")
             {
                 if (!Int32.TryParse(txtDienTich.Text, out int demo))
@@ -127,7 +131,8 @@ namespace PBL3___Motel_Management_System
                     pt.TenPhongTro = txtTenPhong.Text;
                     pt.TinhTrang = pt1.TinhTrang;
                     pt.DienTich = Convert.ToDouble(txtDienTich.Text);
-                    pt.GiaTien = (Convert.ToDouble(txtGiaTien.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
+                  //  pt.GiaTien = (Convert.ToDouble(txtGiaTien.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
+                    pt.GiaTien = QLBLLChung.Instance.ChuyenDoiTienSangDouble(txtGiaTien.Text);
                     pt.ToiDa = Convert.ToInt32(txtToiDa.Text);
                     pt.TonTai = true;
                     if (pictutePhong.Image != null)

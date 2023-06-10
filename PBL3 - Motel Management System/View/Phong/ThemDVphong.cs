@@ -27,6 +27,9 @@ namespace PBL3___Motel_Management_System.View
             this.tp = tp;
             LoadForm();
             this.loader=loader;
+            QLBLLChung.Instance.customDGV(dgvThemDichVu);
+            QLBLLChung.Instance.customDGV(dgvXoaDichVu);
+            QLBLLChung.Instance.customDGV(dgvDVcodinh);
         }
         private void Back(string txt)
         {

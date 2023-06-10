@@ -40,6 +40,7 @@ namespace PBL3___Motel_Management_System.BLL
             }
             return id;
         }
+
         public List<PhongTro> GetAllPhongTro()
         {
             return QLDAL.Instance.GetAllPhongTro();
@@ -51,6 +52,10 @@ namespace PBL3___Motel_Management_System.BLL
         public List<String> GetIdPhongByIdTB(string idTB)
         {
             return QLDAL.Instance.GetIdPhongByIdTbDal(idTB);
+        }
+        public PhongTro GetPhongTroByMaHoaDonBLL(string idHD)
+        {
+            return QLDAL.Instance.GetPhongTroByIdHoaDonDAL(idHD);
         }
         public void AddPhongTroBll(PhongTro phongTro)
         {

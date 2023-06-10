@@ -39,7 +39,7 @@ namespace PBL3___Motel_Management_System
                     //HoaDon hoadon = QLBLL.Instance.GetHoaDonById(hd);
                     if (hoadon.TinhTrang == true)
                     {
-                        PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByMaHoaDon(hoadon.MaHoaDon);
+                        PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByMaHoaDonBLL(hoadon.MaHoaDon);
                         DayTro dt = QLBLLDayTro.Instance.GetDayTroByIdPhong(pt.MaPhongTro);
                         if (hoadon.DaThanhToan != 0)
                         { dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hoadon.DaThanhToan.ToString("C0", vietnamCulture)); }
@@ -49,12 +49,12 @@ namespace PBL3___Motel_Management_System
             }
             else
             {
-                foreach (string hd in QLBLLHoadon.Instance.GetHoaDonByThangChiTra(thang))
+                foreach (string hd in QLBLLHoadon.Instance.GetHoaDonByThangChiTraBLL(thang))
                 {
                     HoaDon hoadon = QLBLLHoadon.Instance.GetHoaDonById(hd);
                     if (hoadon.TinhTrang == true)
                     {
-                        PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByMaHoaDon(hoadon.MaHoaDon);
+                        PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByMaHoaDonBLL(hoadon.MaHoaDon);
                         DayTro dt = QLBLLDayTro.Instance.GetDayTroByIdPhong(pt.MaPhongTro);
                         if (hoadon.DaThanhToan != 0)
                         { dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hoadon.DaThanhToan.ToString("C0", vietnamCulture)); }
@@ -218,9 +218,6 @@ namespace PBL3___Motel_Management_System
             ChartDuong.ChartAreas[0].AxisY.Title = "Số lượng thành viên";
             ChartDuong.DataBind();
         }
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+    
     }
 }
