@@ -551,6 +551,7 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.PhongTro.Find(id).DayTro;
             }
         }
+      
         public PhongTro GetPhongTroByIdPhong(string idPhong)
         {
             using (DataPbl data = new DataPbl())

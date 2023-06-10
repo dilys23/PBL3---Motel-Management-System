@@ -66,11 +66,11 @@ namespace PBL3___Motel_Management_System.BLL
             List<string> list = new List<string>();
             foreach (PhongTro pt in QLDAL.Instance.GetAllPhongTro())
             {
-                if (txtTim == null)
+                if (txtTim == null && pt.TonTai == true)
                 {
                     list.Add(pt.MaPhongTro);
                 }
-                else
+                else 
                 {
                     if (pt.TenPhongTro.IndexOf(txtTim, 0, StringComparison.OrdinalIgnoreCase) != -1)
                     {
