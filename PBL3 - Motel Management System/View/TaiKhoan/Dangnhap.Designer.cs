@@ -30,7 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dangnhap));
             this.panelLogin = new System.Windows.Forms.Panel();
-           this.btnChiTiet = new FontAwesome.Sharp.IconButton();
+            this.btnXemMK = new FontAwesome.Sharp.IconButton();
+            this.btnChiTiet = new FontAwesome.Sharp.IconButton();
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
@@ -38,7 +39,6 @@
             this.btnExit = new FontAwesome.Sharp.IconButton();
             this.btnMaximized = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnXemMK = new FontAwesome.Sharp.IconButton();
             this.panelLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +63,23 @@
             this.panelLogin.Name = "panelLogin";
             this.panelLogin.Size = new System.Drawing.Size(1231, 775);
             this.panelLogin.TabIndex = 0;
+            // 
+            // btnXemMK
+            // 
+            this.btnXemMK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXemMK.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnXemMK.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.btnXemMK.IconColor = System.Drawing.Color.DarkCyan;
+            this.btnXemMK.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnXemMK.IconSize = 25;
+            this.btnXemMK.Location = new System.Drawing.Point(378, 476);
+            this.btnXemMK.Margin = new System.Windows.Forms.Padding(4);
+            this.btnXemMK.Name = "btnXemMK";
+            this.btnXemMK.Size = new System.Drawing.Size(33, 35);
+            this.btnXemMK.TabIndex = 48;
+            this.btnXemMK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXemMK.UseVisualStyleBackColor = false;
+            this.btnXemMK.Click += new System.EventHandler(this.btnXemMK_Click);
             // 
             // btnChiTiet
             // 
@@ -178,23 +195,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnXemMK
-            // 
-            this.btnXemMK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXemMK.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.btnXemMK.IconChar = FontAwesome.Sharp.IconChar.Eye;
-            this.btnXemMK.IconColor = System.Drawing.Color.DarkCyan;
-            this.btnXemMK.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnXemMK.IconSize = 25;
-            this.btnXemMK.Location = new System.Drawing.Point(378, 473);
-            this.btnXemMK.Margin = new System.Windows.Forms.Padding(4);
-            this.btnXemMK.Name = "btnXemMK";
-            this.btnXemMK.Size = new System.Drawing.Size(33, 35);
-            this.btnXemMK.TabIndex = 48;
-            this.btnXemMK.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXemMK.UseVisualStyleBackColor = false;
-            this.btnXemMK.Click += new System.EventHandler(this.btnXemMK_Click);
             // 
             // Dangnhap
             // 

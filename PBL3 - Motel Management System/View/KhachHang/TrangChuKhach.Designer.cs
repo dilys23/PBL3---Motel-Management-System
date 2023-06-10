@@ -408,6 +408,7 @@
             this.Controls.Add(this.panelTitle);
             this.Controls.Add(this.paneMenu);
             this.Name = "TrangChuKhach";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TrangChuKhach";
             this.Load += new System.EventHandler(this.TrangChuKhach_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -27,6 +27,9 @@ namespace PBL3___Motel_Management_System.View
             this.tp = tp;
             LoadForm();
             this.loader=loader;
+            QLBLLChung.Instance.customDGV(dgvThemDichVu);
+            QLBLLChung.Instance.customDGV(dgvXoaDichVu);
+            QLBLLChung.Instance.customDGV(dgvDVcodinh);
         }
         private void Back(string txt)
         {
@@ -109,7 +112,7 @@ namespace PBL3___Motel_Management_System.View
             else
             {
                 List<string> dsdv = new List<string>();
-                List<string> ListId = QLBLLDichvu.Instance.GetAllIdDichVuByIdPhong(tp.hopDong.MaPhongTro);
+              
                 foreach (DataGridViewRow dr in dgvXoaDichVu.Rows)
                 {
                     if (dr.Cells[0].Value != null)

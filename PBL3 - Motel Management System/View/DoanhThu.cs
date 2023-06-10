@@ -79,7 +79,7 @@ namespace PBL3___Motel_Management_System
             else
             {
                 List<object> data = QLBLLChung.Instance.ThongKeThanhVien();
-                string labelValue = "Dãy trọ hiện tại có: ";
+                string labelValue = "    Dãy trọ hiện tại có: ";
                 int sum = 0;
                 foreach (var item in data)
                 {
@@ -92,14 +92,14 @@ namespace PBL3___Motel_Management_System
             if(index1==0)
             {
                 LoadForm(thang);
-                label1.Text = "Doanh thu của dãy trọ tháng "+thang.ToString()+ " là: ";
+                label1.Text = "     Doanh thu của tháng "+thang.ToString()+ " là: ";
                 textBox1.Text = Doanhthu().ToString("C0", vietnamCulture);
                 ThongKe(thang);
             }    
             else
             {
                 LoadForm(null);
-                label1.Text = "Doanh thu của dãy trọ năm " + nam.ToString() + " là: ";
+                label1.Text = "     Doanh thu của năm " + nam.ToString() + " là: ";
                 textBox1.Text = Doanhthu().ToString("C0", vietnamCulture);
                 ThongKeTheoThang(nam.ToString());
             } 
@@ -120,27 +120,35 @@ namespace PBL3___Motel_Management_System
             var dgvWidth = panel2.Width / 2 - 10;
             var dgvHeight = panel2.Height / 2 - 10;
             dgvDoanhThu.Size = new Size(dgvWidth, dgvHeight);
-            ChartDuong.Size = new Size(dgvWidth, dgvHeight);
-            ChartCot.Size = new Size(dgvWidth, dgvHeight);
+            ChartDuong.Size = new Size(Math.Max(0, dgvWidth),Math.Max(0, dgvHeight));
+            ChartCot.Size = new Size(Math.Max(0, dgvWidth), Math.Max(0, dgvHeight));
             ChartDuong.Location = new Point(dgvWidth + 10, 5);
             dgvDoanhThu.Location = new Point(5, dgvHeight + 10);
             ChartCot.Location = new Point(dgvWidth + 10, dgvHeight + 10);
         }
+       
         public void SetPhong()
         {
             List<object> data = QLBLLChung.Instance.ThongKeTinhTrangPhongTro();
-            string labelValue = "Dãy trọ hiện tại có:\n ";
-            foreach (var item in data)
+            string labelValue = "    Dãy trọ hiện tại có:\n";
+            List<string> icons = new List<string>() { "✔", "✖", "▲", "●" }; // Danh sách các icon tương ứng với từng dòng
+            for (int i = 0; i < data.Count; i++)
             {
-                string key = item.GetType().GetProperty("Key").GetValue(item).ToString();
-                int value = (int)item.GetType().GetProperty("Value").GetValue(item);
-                labelValue += value + " phòng " + key.ToLower() + ", ";
+                string key = data[i].GetType().GetProperty("Key").GetValue(data[i]).ToString();
+                int value = (int)data[i].GetType().GetProperty("Value").GetValue(data[i]);
+                string icon = icons[i % icons.Count]; // Lấy icon tương ứng từ danh sách theo thứ tự
+                int iconWidth = icon.Length; // Độ rộng của icon (số ký tự)
+                int columnWidth = 20; // Độ rộng của cột (số ký tự)
+                int numSpaces = columnWidth - iconWidth; // Số ký tự khoảng trắng cần thêm
+                string spaces = new string(' ', numSpaces);
+                labelValue += "\n    " + spaces + icon + "  " + value + " phòng " + key.ToLower() + "  ";
             }
 
-            labelValue = labelValue.TrimEnd(',', ' '); // Xóa dấu ',' cuối cùng và khoảng trắng cuối chuỗi
+            labelValue = labelValue.TrimEnd('\n'); // Xóa dòng trống cuối cùng
             label2.Text = labelValue;
         }
-        
+
+
         public double Doanhthu()
         {
             double sum=0;
@@ -158,7 +166,7 @@ namespace PBL3___Motel_Management_System
             int nam = date.Year;
             LoadForm(null);
             ThongKeTheoThang(nam.ToString());
-            label1.Text = "Doanh thu của dãy trọ năm " + nam.ToString() + " là: ";
+            label1.Text = "     Doanh thu năm " + nam.ToString() + " là: ";
             textBox1.Text = Doanhthu().ToString("C0", vietnamCulture);
             ThongKeTheoPhong();SetPhong();
             comboBox1.SelectedIndex = 0;
