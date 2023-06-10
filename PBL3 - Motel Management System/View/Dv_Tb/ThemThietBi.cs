@@ -46,13 +46,15 @@ namespace PBL3___Motel_Management_System.View
                 i++;
                 errorProvider1.SetError(txtGia, "Vui lòng nhập giá thiết bị");
             }
+            string giaTienText = QLBLLChung.Instance.ChuyenDoiTienSangDouble(txtGia.Text).ToString();
             if (txtGia.Text != "")
             {
-                if (!double.TryParse(txtGia.Text, out double d))
+                if (!double.TryParse(giaTienText, out double giaTien))
                 {
                     i++;
-                    errorProvider1.SetError(txtGia, "Giá thiết bị phải bằng số");
+                    errorProvider1.SetError(txtGia, "Vui lòng nhập giá tiền hợp lệ");
                 }
+
             }
             if (i == 0) return true;
             return false;

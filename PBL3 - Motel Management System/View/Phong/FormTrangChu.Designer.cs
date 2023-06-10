@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.btnTim = new FontAwesome.Sharp.IconButton();
             this.dtpThang = new System.Windows.Forms.DateTimePicker();
@@ -76,7 +76,7 @@
             this.panelDesktop.Location = new System.Drawing.Point(5, 4);
             this.panelDesktop.Margin = new System.Windows.Forms.Padding(4);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1150, 631);
+            this.panelDesktop.Size = new System.Drawing.Size(1150, 656);
             this.panelDesktop.TabIndex = 6;
             this.panelDesktop.SizeChanged += new System.EventHandler(this.panelDesktop_SizeChanged);
             // 
@@ -108,17 +108,17 @@
             // 
             // ChartCot
             // 
-            chartArea3.Name = "ChartArea1";
-            this.ChartCot.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.ChartCot.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.ChartCot.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.ChartCot.Legends.Add(legend1);
             this.ChartCot.Location = new System.Drawing.Point(28, 413);
             this.ChartCot.Name = "ChartCot";
-            series3.ChartArea = "ChartArea1";
-            series3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            series3.Legend = "Legend1";
-            series3.Name = "Dãy trọ";
-            this.ChartCot.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            series1.Legend = "Legend1";
+            series1.Name = "Dãy trọ";
+            this.ChartCot.Series.Add(series1);
             this.ChartCot.Size = new System.Drawing.Size(402, 191);
             this.ChartCot.TabIndex = 40;
             this.ChartCot.Text = "chart1";
@@ -169,28 +169,28 @@
             // 
             // TinhTrang
             // 
-            chartArea4.Area3DStyle.Enable3D = true;
-            chartArea4.Name = "ChartArea1";
-            this.TinhTrang.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.TinhTrang.Legends.Add(legend4);
+            chartArea2.Area3DStyle.Enable3D = true;
+            chartArea2.Name = "ChartArea1";
+            this.TinhTrang.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.TinhTrang.Legends.Add(legend2);
             this.TinhTrang.Location = new System.Drawing.Point(25, 52);
             this.TinhTrang.Margin = new System.Windows.Forms.Padding(4);
             this.TinhTrang.Name = "TinhTrang";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series4.Legend = "Legend1";
-            series4.Name = "TinhTrang";
-            this.TinhTrang.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "TinhTrang";
+            this.TinhTrang.Series.Add(series2);
             this.TinhTrang.Size = new System.Drawing.Size(433, 311);
             this.TinhTrang.TabIndex = 1;
             this.TinhTrang.Text = "Tinhtrang";
-            title4.Name = "ConTrong";
-            title5.Name = "ChoThue";
-            title6.Name = "DangCoc";
-            this.TinhTrang.Titles.Add(title4);
-            this.TinhTrang.Titles.Add(title5);
-            this.TinhTrang.Titles.Add(title6);
+            title1.Name = "ConTrong";
+            title2.Name = "ChoThue";
+            title3.Name = "DangCoc";
+            this.TinhTrang.Titles.Add(title1);
+            this.TinhTrang.Titles.Add(title2);
+            this.TinhTrang.Titles.Add(title3);
             // 
             // dgvTinhTrang
             // 
