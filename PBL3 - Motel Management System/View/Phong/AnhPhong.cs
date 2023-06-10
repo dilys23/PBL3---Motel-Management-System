@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -25,6 +27,7 @@ namespace PBL3___Motel_Management_System.View.Phong
         }
         public void LoadForm()
         {
+            pctdemo.Visible = false;
             foreach (ChiTietAnhPhong ct in QLBLLChiTietAnhPhong.Instance.GetChiTietAnhPhongByIdPhong(idPhong))
             {
                 PictureBox pct = new PictureBox();
@@ -67,24 +70,25 @@ namespace PBL3___Motel_Management_System.View.Phong
             ct.TonTai = true;
             OpenFileDialog dialog = new OpenFileDialog();
             dialog.Filter = " ipg files(*.jpg)|*.jpg|jpg files(*.jpg)|*.jpg|All files(*.*)|*.*";
-
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                string  imgLocation = dialog.FileName.ToString();
-                pctKhach.ImageLocation = imgLocation;
-                
+               pctKhach.ImageLocation = imgLocation;
+                pctdemo.ImageLocation = imgLocation;
             }
            
             panelAnh.Controls.Add(pctKhach);
             pctKhach.MouseClick += event1;
             pctKhach.Paint += paint;
-            ct.Anh = QLBLLChung.Instance.ImageToBase64(pctKhach.Image, pctKhach.Image.RawFormat);
-            QLBLLChiTietAnhPhong.Instance.AddChiTietAnhPhong(ct);
+           // ct.Anh = QLBLLChung.Instance.ImageToBase64(pctdemo.Image, pctdemo.Image.RawFormat);
+            //QLBLLChiTietAnhPhong.Instance.AddChiTietAnhPhong(ct);
         }
 
         private void btnXoaAnh_Click(object sender, EventArgs e)
         {
-
+            ChiTietAnhPhong ct = new ChiTietAnhPhong();
+            ct.Anh = QLBLLChung.Instance.ImageToBase64(pctdemo.Image, pctdemo.Image.RawFormat);
         }
+
     }
 }
