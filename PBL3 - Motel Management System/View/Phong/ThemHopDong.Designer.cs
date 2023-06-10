@@ -38,6 +38,7 @@
             this.dtpKetThuc = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpBatDau = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
             this.panelThemHD.SuspendLayout();
             this.panelThem.SuspendLayout();
             this.SuspendLayout();
@@ -48,6 +49,7 @@
             this.panelThemHD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelThemHD.Controls.Add(this.label4);
             this.panelThemHD.Controls.Add(this.iconButton2);
             this.panelThemHD.Controls.Add(this.btnLuu);
             this.panelThemHD.Controls.Add(this.panelThem);
@@ -162,6 +164,17 @@
             this.dtpBatDau.Size = new System.Drawing.Size(178, 27);
             this.dtpBatDau.TabIndex = 18;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Bahnschrift SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Chocolate;
+            this.label4.Location = new System.Drawing.Point(17, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(237, 28);
+            this.label4.TabIndex = 50;
+            this.label4.Text = "THỜI GIAN HỢP ĐỒNG";
+            // 
             // ThemHopDong
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -171,6 +184,7 @@
             this.Name = "ThemHopDong";
             this.Text = "ThemHD";
             this.panelThemHD.ResumeLayout(false);
+            this.panelThemHD.PerformLayout();
             this.panelThem.ResumeLayout(false);
             this.panelThem.PerformLayout();
             this.ResumeLayout(false);
@@ -183,11 +197,12 @@
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton btnLuu;
         private System.Windows.Forms.Panel panelThem;
-        private System.Windows.Forms.TextBox txtTienCoc;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpKetThuc;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpBatDau;
+        public System.Windows.Forms.TextBox txtTienCoc;
+        private System.Windows.Forms.Label label4;
     }
 }

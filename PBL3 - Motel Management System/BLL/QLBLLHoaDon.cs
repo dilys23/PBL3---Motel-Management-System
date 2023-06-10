@@ -50,6 +50,7 @@ namespace PBL3___Motel_Management_System.BLL
         {
             return QLDAL.Instance.GetAllHoaDon();
         }
+       
         public HoaDon GetHoaDonById(string id)
         {
             return QLDAL.Instance.GetHoaDonByIdDal(id);

@@ -109,11 +109,13 @@ namespace PBL3___Motel_Management_System.View
 
                 if (QLBLLChung.Instance.CanhBaoTraPhong(pt.MaPhongTro))
                 {
-                    p.SetColorPanel2(Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(234)))), ((int)(((byte)(87))))));
+                    p.SetColorPanel2(Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(244)))), ((int)(((byte)(153))))));
+                   
                 }
-                if(QLBLLChung.Instance.PhongDaHetHan(pt.MaPhongTro))
+                if(QLBLLChung.Instance.PhongDaHetHan(pt.MaPhongTro)) // 
                 {
-                    p.SetColorPanel2(Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(21)))), ((int)(((byte)(84))))));
+                    
+                    p.SetColorPanel2(Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(99)))), ((int)(((byte)(88))))));
                 }
                 p.SetBtnName(pt.MaPhongTro);
                  panelPhong.Controls.Add(p);

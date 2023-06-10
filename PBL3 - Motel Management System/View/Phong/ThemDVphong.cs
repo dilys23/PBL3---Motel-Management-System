@@ -108,7 +108,6 @@ namespace PBL3___Motel_Management_System.View
             else
             {
                 List<string> dsdv = new List<string>();
-                List<string> ListId = QLBLLDichvu.Instance.GetAllIdDichVuByIdPhong(tp.hopDong.MaPhongTro);
                 foreach (DataGridViewRow dr in dgvXoaDichVu.Rows)
                 {
                     if (dr.Cells[0].Value != null)

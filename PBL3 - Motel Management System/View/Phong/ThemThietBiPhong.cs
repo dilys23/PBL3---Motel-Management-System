@@ -17,13 +17,13 @@ namespace PBL3___Motel_Management_System.View
 {
     public partial class ThemThietBiPhong : Form
     {
-        private ThuePhong tp;
+        private string idPhong;
         private Loader loader;
         CultureInfo vietnamCulture = new CultureInfo("vi-VN");
-        public ThemThietBiPhong(ThuePhong tp, Loader loader)
+        public ThemThietBiPhong(string idPhong, Loader loader)
         {
             InitializeComponent();
-            this.tp = tp;
+            this.idPhong = idPhong;
             LoadForm();
             this.loader  = loader;
 
@@ -36,24 +36,13 @@ namespace PBL3___Motel_Management_System.View
             {
                 dgvThietBi.Rows.Add(viewThietBi.MaThietBi, 1, viewThietBi.TenThietBi, viewThietBi.GiaThietBi.ToString("#,##0") + "₫");
             }
-            if (tp.hopDong.MaHopDong == null)
-            {
-                foreach(ChiTietThietBi ct in QLBLLChiTietThietBi.Instance.GetChiTietThietBiByIdPhong(tp.hopDong.MaPhongTro))
-                {
-                    ThietBi tb = QLBLLThietbi.Instance.GetTBByIdTB(ct.MaThietBi);
-                    dgvTBThem.Rows.Add(tb.MaThietBi,1,tb.TenThietBi,tb.GiaThietBi.ToString("#,##0") + "₫", ct.SoLuong);
-                }
-            }
-            else
-            {    
-                int i = 0;
-                foreach (string idCttb in QLBLLChiTietThietBi.Instance.GetAllIdCHiTietThietBiByIdPhong(tp.hopDong.MaPhongTro))
+                int j = 0;
+                foreach (string idCttb in QLBLLChiTietThietBi.Instance.GetAllIdCHiTietThietBiByIdPhong(idPhong))
                 {
                     ChiTietThietBi cttb = QLBLLChiTietThietBi.Instance.GetChiTietThietBiById(idCttb);
                     ThietBi tb = QLBLLThietbi.Instance.GetTBByIdTB(cttb.MaThietBi);
-                    dgvTBThem.Rows.Add(tb.MaThietBi, ++i, tb.TenThietBi, tb.GiaThietBi.ToString("#,##0") + "₫", cttb.SoLuong);
+                    dgvTBThem.Rows.Add(tb.MaThietBi, ++j, tb.TenThietBi, tb.GiaThietBi.ToString("#,##0") + "₫", cttb.SoLuong);
                 }
-            }
             for (int i = 0; i < dgvTBThem.Rows.Count; i++)
             {
                 dgvTBThem.Rows[i].Cells[1].Value = i + 1;
@@ -164,11 +153,11 @@ namespace PBL3___Motel_Management_System.View
                     {
                         MaThietBi = dr.Cells[0].Value.ToString(),
                         SoLuong = Convert.ToInt32(dr.Cells[4].Value.ToString()),
-                        MaPhongTro = tp.hopDong.MaPhongTro
+                        MaPhongTro =idPhong
                     });
                 }
             }
-            QLBLLChiTietThietBi.Instance.ThayDoiThietBiPhong(list, tp.hopDong.MaPhongTro);
+            QLBLLChiTietThietBi.Instance.ThayDoiThietBiPhong(list,idPhong);
             MessageBox.Show("Thay đổi thành công", "Thông báo", MessageBoxButtons.OK);
             this.Close();
             this.loader(null);

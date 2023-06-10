@@ -156,6 +156,7 @@ namespace PBL3___Motel_Management_System.DAL
                 return  data.HoaDon.Where(p => p.TonTai==true).Select(p => p).ToList<HoaDon>();
             }
         }
+        
         public List<ChiTietThanhToanHoaDon> GetAllChiTietThanhToanHoaDon()
         {
             using (DataPbl data = new DataPbl())
