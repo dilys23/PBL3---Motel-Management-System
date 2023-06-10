@@ -118,28 +118,6 @@ namespace PBL3___Motel_Management_System.View
             }
         }
 
-        //private void dgvThanhVien_DoubleClick(object sender, EventArgs e)
-        //{
-        //    if (dgvThanhVien.CurrentRow.Cells[0].Value != null)
-        //    {
-        //        ThuePhong tp = new ThuePhong();
-        //        string id = dgvThanhVien.CurrentRow.Cells[0].Value.ToString();
-        //        tp.hopDong.MaNguoi = id;
-        //        ThemKhach tk = new ThemKhach(tp, LoadForm);
-        //        QLBLLChung.Instance.openChildForm1(tk, panelThem);
-        //        tk.btnLuu.Visible= false;
-        //        tk.btnThemAnh.Visible= false;
-        //        tk.txtCccd.Enabled = false;
-        //        tk.txtDiaChi.Enabled = false;
-        //        tk.dtpNgaySinh.Enabled = false;
-        //        tk.txtSdt.Enabled = false;
-        //        tk.txtTen.Enabled = false;
-        //        tk.rdbtnNam.Enabled = false;
-        //        tk.rdbtnNu.Enabled = false;
-        //    }
-        //}
-
-     
 
         private void dgvThanhVien_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {

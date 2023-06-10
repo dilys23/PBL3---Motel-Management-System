@@ -72,8 +72,7 @@ namespace PBL3___Motel_Management_System.View
                         TonTai = true
                     };
                     // Cập nhật số tiền đã thanh toán
-                    hd.DaThanhToan += thanhToan;
-                    QLBLLHoadon.Instance.UpdateHoaDonBLL(hd);
+                   
                     double TongTien = QLBLLChung.Instance.ChuyenDoiTienSangDouble(txtTongTien.Text);
                     double conNoMoi1 = QLBLLChung.Instance.ChuyenDoiTienSangDouble(txtConNo.Text);
                     // Tính số tiền còn nợ mới
@@ -87,9 +86,14 @@ namespace PBL3___Motel_Management_System.View
                         {
                             MessageBox.Show("Đã trả đủ tiền", "Thông báo");
                         }
+                        hd.DaThanhToan += thanhToan;
+                        QLBLLHoadon.Instance.UpdateHoaDonBLL(hd);
+
                     }
                     else 
                     {
+                        hd.DaThanhToan += conNoMoi1;
+                        QLBLLHoadon.Instance.UpdateHoaDonBLL(hd);
                         ct.TienThanhToan = conNoMoi1;
                         double tiendu = thanhToan - conNoMoi1 ;
                         string tienthua = "Tiền phòng còn dư của bạn là : " + QLBLLChung.Instance.ChuyenDoiSangKieuTien(tiendu);                       
@@ -97,7 +101,9 @@ namespace PBL3___Motel_Management_System.View
                         conNoMoi1 = 0;
                         txtConNo.Text = QLBLLChung.Instance.ChuyenDoiSangKieuTien(conNoMoi1);
                         QLBLLChiTietThanhToanHoaDon.Instance.AddChiTietThanhToanHoaDonBll(ct);
-                    }  
+                      
+                    }
+                    MessageBox.Show("Thanh toán Hóa Đơn thành công", "Thông báo");
                     loader(null);
                     this.Close();
                 }

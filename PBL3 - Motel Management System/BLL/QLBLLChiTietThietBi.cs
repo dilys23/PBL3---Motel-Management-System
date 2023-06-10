@@ -32,7 +32,7 @@ namespace PBL3___Motel_Management_System.BLL
             {
                 id = random.Next(1, 1000).ToString();
                 status = false;
-                foreach (ChiTietThietBi cttb in QLDAL.Instance.GetAllChiTietThietBi())
+                foreach (ChiTietThietBi cttb in QLDAL.Instance.GetAllChiTietThietBiTaoId())
                 {
                     if (cttb.MaChiTietThietBi == id) status = true;
                 }
@@ -88,24 +88,17 @@ namespace PBL3___Motel_Management_System.BLL
         public void ThayDoiThietBiPhong(List<ChiTietThietBi> listMoi, string idp)
         {
             List<ChiTietThietBi> listCu = GetChiTietThietBiByIdPhong(idp);
-            List<string> idphong = new List<string>();
-            List<string> idthietbi = new List<string>();
-            foreach (ChiTietThietBi ct in listMoi)
-            {
-                idphong.Add(ct.MaPhongTro);
-                idthietbi.Add(ct.MaThietBi);
-            }
             foreach (ChiTietThietBi ct in listCu)
             {
-                bool status = true;
+                bool status = false;
                 foreach (ChiTietThietBi cttb in listMoi)
                 {
                     if (cttb.MaThietBi == ct.MaThietBi && cttb.MaPhongTro == ct.MaPhongTro)
                     {
-                        status = false;
+                        status = true;
                     }
                 }
-                if (status)
+                if (!status)
                 {
                     DelCHiTietThietBiById(ct.MaChiTietThietBi);
                 }

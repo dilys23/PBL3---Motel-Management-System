@@ -35,7 +35,6 @@ namespace PBL3___Motel_Management_System.View
         {
             this.loader(null);
             this.Close();
-
         }
         public void LoadForm()
         {
@@ -112,7 +111,6 @@ namespace PBL3___Motel_Management_System.View
             else
             {
                 List<string> dsdv = new List<string>();
-              
                 foreach (DataGridViewRow dr in dgvXoaDichVu.Rows)
                 {
                     if (dr.Cells[0].Value != null)

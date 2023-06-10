@@ -79,6 +79,7 @@ namespace PBL3___Motel_Management_System.View
 
         private void SuKien(object sender, EventArgs e)
         {
+            btnThemPhong.Visible = true;
             Button btn = sender as Button;
             ClickBtn = btn;
             panelPhong.Controls.Clear();
@@ -106,7 +107,8 @@ namespace PBL3___Motel_Management_System.View
                 {
                     p.SetPanelKhach(QLBLLNguoi.Instance.GetLabelByNguoi(nguoi));
                 }
-                if (QLBLLChung.Instance.CanhBaoTraPhong(pt.MaPhongTro))// 251,243,112
+
+                if (QLBLLChung.Instance.CanhBaoTraPhong(pt.MaPhongTro))
                 {
                     p.SetColorPanel2(Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(244)))), ((int)(((byte)(153))))));
                    
@@ -156,6 +158,7 @@ namespace PBL3___Motel_Management_System.View
             else
             {
                 lblDiaChi.Text = "";
+                btnThemPhong.Visible = false;
             }
             foreach (PhongTro pt in QLBLLPhongTro.Instance.PhongTroTimKiem(idDay,idTinhTrang,txtTimKiem.Text))
             {
@@ -194,6 +197,10 @@ namespace PBL3___Motel_Management_System.View
                     DialogResult kq = MessageBox.Show("Bạn có thực sự muốn xóa", "Cảnh báo!!!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     if (kq == DialogResult.OK)
                     {
+                        foreach(PhongTro idPhong in QLBLLPhongTro.Instance.GetPhongTroByIdDay(ClickBtn.Name))
+                        {
+                            QLBLLPhongTro.Instance.DelPhongTroBLL(idPhong.MaPhongTro);
+                        }
                         QLBLLDayTro.Instance.DelDayTroBll(ClickBtn.Name);
                         LoadForm(null);
                     }              

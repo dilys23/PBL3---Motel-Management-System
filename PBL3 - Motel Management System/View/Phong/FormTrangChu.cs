@@ -32,7 +32,7 @@ namespace PBL3___Motel_Management_System.View
             QLBLLChung.Instance.customDGV(dgvTinhTrang);
             QLBLLChung.Instance.customDGV(dgvSoLuong);
             int i = 0;
-            foreach (string idp in QLBLLPhongTro.Instance.DgvPhongTro(null))
+            foreach (string idp in QLBLLPhongTro.Instance.DgvPhongTro(null) )
             {
                 PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByIdPhong(idp);
                 string TinhTrang;

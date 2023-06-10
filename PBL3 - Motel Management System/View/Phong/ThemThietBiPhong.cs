@@ -93,7 +93,7 @@ namespace PBL3___Motel_Management_System.View
                 }
                 if(!Status)
                 {
-                        dgvTBThem.Rows.Add(v.MaThietBi, 0, v.TenThietBi, v.GiaThietBi.ToString("C0") + "₫", 1);
+                        dgvTBThem.Rows.Add(v.MaThietBi, 0, v.TenThietBi, QLBLLChung.Instance.ChuyenDoiSangKieuTien(v.GiaThietBi), 1);
                 }
                 for (int i = 0; i < dgvTBThem.Rows.Count; i++)
                 {
@@ -115,7 +115,7 @@ namespace PBL3___Motel_Management_System.View
                 {
                     v.MaThietBi = row.Cells[0].Value.ToString();
                     v.TenThietBi = row.Cells[2].Value.ToString();
-                    v.GiaThietBi = (Convert.ToDouble(row.Cells[3].Value.ToString().Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
+                    v.GiaThietBi = QLBLLChung.Instance.ChuyenDoiTienSangDouble(dgvTBThem.CurrentRow.Cells[3].Value.ToString());
                     if(dgvTBThem.CurrentRow.Cells[4].Value != null)
                     {
 

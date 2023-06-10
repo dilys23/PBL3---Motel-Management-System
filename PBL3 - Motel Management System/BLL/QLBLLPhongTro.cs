@@ -66,11 +66,11 @@ namespace PBL3___Motel_Management_System.BLL
             List<string> list = new List<string>();
             foreach (PhongTro pt in QLDAL.Instance.GetAllPhongTro())
             {
-                if (txtTim == null)
+                if (txtTim == null && pt.TonTai == true)
                 {
                     list.Add(pt.MaPhongTro);
                 }
-                else
+                else 
                 {
                     if (pt.TenPhongTro.IndexOf(txtTim, 0, StringComparison.OrdinalIgnoreCase) != -1)
                     {
@@ -186,6 +186,29 @@ namespace PBL3___Motel_Management_System.BLL
             if (QLBLLHopDong.Instance.GetHopDongByIdPhong(IdPhong) == null) return false;
             else if (QLBLLHopDong.Instance.GetHopDongByIdPhong(IdPhong).TinhTrang == true) return false;
             return true;
+        }
+        public Dictionary<string,int> ThongKeTinhTrangPhongTro()
+        {
+            Dictionary<string,int> list= new Dictionary<string, int>(3);
+            int slphongtrong = 0, slchothue = 0, slphongcoc = 0;
+            foreach(string idp in DgvPhongTro(null))
+            {
+                if(PhongDaCocByIdPhong(idp))
+                {
+                    slphongcoc++;
+                }
+                else if(TinhTrangPhongById(idp))
+                {
+                    slchothue++;
+                }else
+                {
+                    slphongtrong++;
+                }
+            }
+            list.Add("Đã cọc", slphongcoc);
+            list.Add("Cho thuê", slchothue);
+            list.Add("Còn trống", slphongtrong);
+            return list;
         }
         public List<TinhTrangPhongTro> GetAllTinhTrangPhongTro()
         {

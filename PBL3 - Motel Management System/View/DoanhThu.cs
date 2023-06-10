@@ -34,31 +34,18 @@ namespace PBL3___Motel_Management_System
             int i = 0;
             if(thang==null)
             {
-                foreach (HoaDon hoadon in QLBLLHoadon.Instance.GetAllHoaDonBll())
+                foreach (PhongTro pt in QLBLLPhongTro.Instance.GetAllPhongTro())
                 {
-                    //HoaDon hoadon = QLBLL.Instance.GetHoaDonById(hd);
-                    if (hoadon.TinhTrang == true)
-                    {
-                        PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByMaHoaDonBLL(hoadon.MaHoaDon);
                         DayTro dt = QLBLLDayTro.Instance.GetDayTroByIdPhong(pt.MaPhongTro);
-                        if (hoadon.DaThanhToan != 0)
-                        { dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hoadon.DaThanhToan.ToString("C0", vietnamCulture)); }
-                    }
-
+                        dgvDoanhThu.Rows.Add(0, ++i, dt.TenDayTro, pt.TenPhongTro, QLBLLHoadon.Instance.GetDoanhThuChoPhong(pt.MaPhongTro).ToString("C0", vietnamCulture)); 
                 }
             }
             else
             {
-                foreach (string hd in QLBLLHoadon.Instance.GetHoaDonByThangChiTraBLL(thang))
+                foreach (PhongTro pt in QLBLLPhongTro.Instance.GetAllPhongTro())
                 {
-                    HoaDon hoadon = QLBLLHoadon.Instance.GetHoaDonById(hd);
-                    if (hoadon.TinhTrang == true)
-                    {
-                        PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByMaHoaDonBLL(hoadon.MaHoaDon);
-                        DayTro dt = QLBLLDayTro.Instance.GetDayTroByIdPhong(pt.MaPhongTro);
-                        if (hoadon.DaThanhToan != 0)
-                        { dgvDoanhThu.Rows.Add(hoadon.MaHoaDon, ++i, dt.TenDayTro, pt.TenPhongTro, hoadon.DaThanhToan.ToString("C0", vietnamCulture)); }
-                    }
+                    DayTro dt = QLBLLDayTro.Instance.GetDayTroByIdPhong(pt.MaPhongTro);
+                    dgvDoanhThu.Rows.Add(0, ++i, dt.TenDayTro, pt.TenPhongTro, QLBLLHoadon.Instance.GetDoanhThuChoPhongByThangCt(pt.MaPhongTro, thang).ToString("C0", vietnamCulture));
                 }
             }
         }
@@ -70,26 +57,19 @@ namespace PBL3___Motel_Management_System
             string thang = dtpThang.Value.ToString("MM-yyyy");
             DateTime date = DateTime.ParseExact(thang, "MM-yyyy", CultureInfo.InvariantCulture);
             int nam = date.Year;
-        
-            if (index ==0)
+
+            if (index == 0)
             {
                 SetPhong();
                 ThongKeTheoPhong();
             }
             else
             {
-                List<object> data = QLBLLChung.Instance.ThongKeThanhVien();
-                string labelValue = "    Dãy trọ hiện tại có: ";
-                int sum = 0;
-                foreach (var item in data)
-                {
-                    int value = (int)item.GetType().GetProperty("Value").GetValue(item);
-                    sum += value;
-                }
-                label2.Text = labelValue+sum+" thành viên";
+                int tong = QLBLLChung.Instance.TinhTongThanhVien();
+                label2.Text = "     Dãy trọ có " + tong + " thành viên  ";
                 ThongKeThanhVien();
             }
-            if(index1==0)
+            if (index1==0)
             {
                 LoadForm(thang);
                 label1.Text = "     Doanh thu của tháng "+thang.ToString()+ " là: ";
@@ -106,14 +86,6 @@ namespace PBL3___Motel_Management_System
             
             
         }
-        public void ResizeColumn()
-        {
-            dgvDoanhThu.Columns["STT"].Width = 50;
-            dgvDoanhThu.Columns["DayTro"].Width = 240;
-            dgvDoanhThu.Columns["PhongTro"].Width = 80;
-            dgvDoanhThu.Columns["DaThanhToan"].Width = 80;
-        }
-
         private void panel2_SizeChanged(object sender, EventArgs e)
         {
            
@@ -126,26 +98,21 @@ namespace PBL3___Motel_Management_System
             dgvDoanhThu.Location = new Point(5, dgvHeight + 10);
             ChartCot.Location = new Point(dgvWidth + 10, dgvHeight + 10);
         }
-       
+
         public void SetPhong()
         {
-            List<object> data = QLBLLChung.Instance.ThongKeTinhTrangPhongTro();
-            string labelValue = "    Dãy trọ hiện tại có:\n";
-            List<string> icons = new List<string>() { "✔", "✖", "▲", "●" }; // Danh sách các icon tương ứng với từng dòng
-            for (int i = 0; i < data.Count; i++)
-            {
-                string key = data[i].GetType().GetProperty("Key").GetValue(data[i]).ToString();
-                int value = (int)data[i].GetType().GetProperty("Value").GetValue(data[i]);
-                string icon = icons[i % icons.Count]; // Lấy icon tương ứng từ danh sách theo thứ tự
-                int iconWidth = icon.Length; // Độ rộng của icon (số ký tự)
-                int columnWidth = 20; // Độ rộng của cột (số ký tự)
-                int numSpaces = columnWidth - iconWidth; // Số ký tự khoảng trắng cần thêm
-                string spaces = new string(' ', numSpaces);
-                labelValue += "\n    " + spaces + icon + "  " + value + " phòng " + key.ToLower() + "  ";
-            }
+            Dictionary<string, int> thongKe = QLBLLPhongTro.Instance.ThongKeTinhTrangPhongTro();
+            int slPhongCoc = thongKe["Đã cọc"];
+            int slPhongChoThue = thongKe["Cho thuê"];
+            int slPhongTrong = thongKe["Còn trống"];
+            List<string> icons = new List<string>() { "✔", "✖", "▲" };
 
-            labelValue = labelValue.TrimEnd('\n'); // Xóa dòng trống cuối cùng
-            label2.Text = labelValue;
+            string noiDungLabel = $"     Dãy trọ có \n";
+            noiDungLabel += $" {icons[0]}{slPhongCoc} phòng đã cọc  \n";
+            noiDungLabel += $" {icons[1]}{slPhongChoThue} phòng cho thuê            \n";
+            noiDungLabel += $" {icons[2]}{slPhongTrong} phòng còn trống    ";
+            label2.TextAlign = ContentAlignment.MiddleLeft;
+            label2.Text = noiDungLabel;
         }
 
 
@@ -198,7 +165,7 @@ namespace PBL3___Motel_Management_System
         }
         public void ThongKeTheoPhong()
         {
-            var thongke = QLBLLChung.Instance.ThongKeTinhTrangPhongTro();
+            var thongke = QLBLLPhongTro.Instance.ThongKeTinhTrangPhongTro();
             ChartDuong.Series[0].XValueMember = "Key";
             ChartDuong.Series[0].YValueMembers = "Value";
             ChartDuong.DataSource = thongke;

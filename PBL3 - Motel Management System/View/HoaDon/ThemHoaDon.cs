@@ -21,21 +21,21 @@ namespace PBL3___Motel_Management_System.View
         private Loader loader;
         private string IdHd;
         CultureInfo vietnamCulture = new CultureInfo("vi-VN");
-        public ThemHoaDon(Loader loader,string idHd)
+        public ThemHoaDon(Loader loader, string idHd)
         {
             InitializeComponent();
             SetCBB();
             QLBLLChung.Instance.customDGV(dgvDichVu);
-            this.loader=loader;
-            this.IdHd=idHd;
-            if(this.IdHd != null )
+            this.loader = loader;
+            this.IdHd = idHd;
+            if (this.IdHd != null)
             {
                 lbl.Text = "Sửa hóa đơn";
                 cbbDayTro.Enabled = false;
                 cbbPhongTro.Enabled = false;
                 HoaDon hd = QLBLLHoadon.Instance.GetHoaDonById(idHd);
                 int index = -1;
-                for(int i=0;i<cbbPhongTro.Items.Count;i++)
+                for (int i = 0; i < cbbPhongTro.Items.Count; i++)
                 {
                     if (((ViewCbb)cbbPhongTro.Items[i]).key == hd.MaPhongTro) index = i;
                 }
@@ -46,7 +46,7 @@ namespace PBL3___Motel_Management_System.View
                 dtpNgayLap.Value = dt1;
             }
         }
-       
+
         private void SetCBB()
         {
             cbbDayTro.Items.Clear();
@@ -56,7 +56,7 @@ namespace PBL3___Motel_Management_System.View
         }
         private void LoadDgv(string idPhong, string thang)
         {
-            if(idPhong != null)
+            if (idPhong != null)
             {
                 dgvDichVu.Rows.Clear();
                 txtGiamGia.Text = "0";
@@ -71,22 +71,22 @@ namespace PBL3___Motel_Management_System.View
                 txtTienPhong.Text = QLBLLChung.Instance.ChuyenDoiSangKieuTien(pt.GiaTien);
                 int i = 0;
                 bool status = false;
-                foreach(ChiTietDichVu ctdv in QLBLLChiTietDichVu.Instance.GetChiTietDichVuByIdPhong(idPhong))
+                foreach (ChiTietDichVu ctdv in QLBLLChiTietDichVu.Instance.GetChiTietDichVuByIdPhong(idPhong))
                 {
-                    if(ctdv.MaDichVu != "001" && ctdv.MaDichVu != "000")
+                    if (ctdv.MaDichVu != "001" && ctdv.MaDichVu != "000")
                     {
                         DichVu dv = QLBLLDichvu.Instance.GetDichVuByIdDichVu(ctdv.MaDichVu);
                         dgvDichVu.Rows.Add(++i, dv.TenDichVu, QLBLLChung.Instance.ChuyenDoiSangKieuTien(dv.GiaDichVu), 0, 0, QLBLLChung.Instance.ChuyenDoiSangKieuTien(dv.GiaDichVu), "Chọn");
                     }
-                    else if(!status)
+                    else if (!status)
                     {
                         status = true;
                         List<ChiTietSuDungDichVu> list = QLBLLChiTietSuDungDichVu.Instance.GetChiTietSuDungDichVuTimKiem(thang, "-1", idPhong, "1");
-                        foreach(ChiTietSuDungDichVu dv in list)
+                        foreach (ChiTietSuDungDichVu dv in list)
                         {
                             ChiTietDichVu ct = QLBLLChiTietDichVu.Instance.GetChiTietDichVuById(dv.MaCHiTietDichVu);
                             DichVu dv1 = QLBLLDichvu.Instance.GetDichVuByIdDichVu(ct.MaDichVu);
-                            dgvDichVu.Rows.Add(++i, dv1.TenDichVu, QLBLLChung.Instance.ChuyenDoiSangKieuTien(dv1.GiaDichVu), dv.ChiSoCu, dv.ChiSoMoi, (dv.ChiSoMoi-dv.ChiSoCu)*dv1.GiaDichVu, "Chọn");
+                            dgvDichVu.Rows.Add(++i, dv1.TenDichVu, QLBLLChung.Instance.ChuyenDoiSangKieuTien(dv1.GiaDichVu), dv.ChiSoCu, dv.ChiSoMoi, (dv.ChiSoMoi - dv.ChiSoCu) * dv1.GiaDichVu, "Chọn");
                         }
                     }
                 }
@@ -120,9 +120,9 @@ namespace PBL3___Motel_Management_System.View
             try
             {
 
-            string idPhong = ((ViewCbb)cbbPhongTro.SelectedItem).key;
-            string thang = dtpThangThanhToan.Value.ToString("MM-yyyy");
-            LoadDgv(idPhong, thang);
+                string idPhong = ((ViewCbb)cbbPhongTro.SelectedItem).key;
+                string thang = dtpThangThanhToan.Value.ToString("MM-yyyy");
+                LoadDgv(idPhong, thang);
             }
             catch (Exception ex)
             {
@@ -148,7 +148,7 @@ namespace PBL3___Motel_Management_System.View
         }
         private void cbbPhongTro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cbbPhongTro.SelectedItem != null)
+            if (cbbPhongTro.SelectedItem != null)
             {
                 string idPhong = ((ViewCbb)cbbPhongTro.SelectedItem).key;
                 string thang = dtpThangThanhToan.Value.ToString("MM-yyyy");
@@ -158,7 +158,7 @@ namespace PBL3___Motel_Management_System.View
 
         private void btnChon_Click(object sender, EventArgs e)
         {
-            if(dgvDichVu.CurrentRow != null)
+            if (dgvDichVu.CurrentRow != null)
             {
                 dgvDichVu.CurrentRow.Cells[6].Value = "Chọn";
                 SetTxtTienDichVu();
@@ -172,18 +172,18 @@ namespace PBL3___Motel_Management_System.View
             {
                 if (dr.Cells[0].Value != null)
                 {
-                    if (dr.Cells[6].Value.ToString()=="Chọn")
+                    if (dr.Cells[6].Value.ToString() == "Chọn")
                     {
                         double tien = QLBLLChung.Instance.ChuyenDoiTienSangDouble(dr.Cells[5].Value.ToString());
                         TienDichVu += tien;
                     }
                 }
             }
-            txtTienDichVu.Text = QLBLLChung.Instance.ChuyenDoiSangKieuTien(TienDichVu);   
+            txtTienDichVu.Text = QLBLLChung.Instance.ChuyenDoiSangKieuTien(TienDichVu);
         }
         private void btnBoChon_Click(object sender, EventArgs e)
         {
-            if(dgvDichVu.CurrentRow != null)
+            if (dgvDichVu.CurrentRow != null)
             {
                 dgvDichVu.CurrentRow.Cells[6].Value = "Hủy";
                 SetTxtTienDichVu();
@@ -193,7 +193,7 @@ namespace PBL3___Motel_Management_System.View
         private bool CheckHopLe()
         {
             errorProvider1.SetError(txtGiamGia, "");
-            if(!double.TryParse(txtGiamGia.Text, out double tien) )
+            if (!double.TryParse(txtGiamGia.Text, out double tien))
             {
                 errorProvider1.SetError(txtGiamGia, "Vui lòng điền một số!");
                 return false;
@@ -202,41 +202,42 @@ namespace PBL3___Motel_Management_System.View
         }
         private void iconButton4_Click(object sender, EventArgs e)
         {
-            if(CheckHopLe())
+            if (CheckHopLe())
             {
-                if(cbbPhongTro.SelectedItem != null)
+                if (cbbPhongTro.SelectedItem != null)
                 {
                     CultureInfo vietnamCulture = new CultureInfo("vi-VN");
                     double tienPhong = QLBLLChung.Instance.ChuyenDoiTienSangDouble(txtTienPhong.Text);
                     double tienDv = QLBLLChung.Instance.ChuyenDoiTienSangDouble(txtTienDichVu.Text);
                     double giamGia = QLBLLChung.Instance.ChuyenDoiTienSangDouble(txtGiamGia.Text);
-                    double tienGiamGia = tienPhong*giamGia/100;
+                    double tienGiamGia = tienPhong * giamGia / 100;
                     double conLai = tienPhong - tienGiamGia;
                     double tongCong = conLai + tienDv;
                     string tt = "Tiền phòng: " + QLBLLChung.Instance.ChuyenDoiSangKieuTien(tienPhong) + "\nGiảm giá: " + QLBLLChung.Instance.ChuyenDoiSangKieuTien(tienGiamGia) + "\nCòn lại: " + QLBLLChung.Instance.ChuyenDoiSangKieuTien(conLai) + "\nTiền dịch vu: " + QLBLLChung.Instance.ChuyenDoiSangKieuTien(tienDv) + "\nTổng cộng: " + QLBLLChung.Instance.ChuyenDoiSangKieuTien(tongCong);
-                    DialogResult xacNhan  = MessageBox.Show(tt,"Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-                    if(xacNhan  == System.Windows.Forms.DialogResult.No)
+                    DialogResult xacNhan = MessageBox.Show(tt, "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (xacNhan == System.Windows.Forms.DialogResult.No)
                     {
-                    
+
                     }
                     else
                     {
                         if (this.IdHd == null)
                         {
-                        HoaDon hd = new HoaDon
-                        { MaHoaDon = QLBLLHoadon.Instance.TaoIdHoaDon(),
-                            MaPhongTro = ((ViewCbb)cbbPhongTro.SelectedItem).key,
-                            NgayTao = dtpNgayLap.Value.ToString("dd-MM-yyyy"),
-                            ThangChiTra = dtpThangThanhToan.Value.ToString("MM-yyyy"),
-                            TinhTrang = false,
-                            TongTien = tongCong,
-                            TonTai = true,
-                            DaThanhToan = 0
-                        };
-                        QLBLLHoadon.Instance.AddHoaDonBll(hd);
-                        MessageBox.Show("Thêm hóa đơn thành công", "Thông báo");
-                        this.Close();
-                        this.loader(null);
+                            HoaDon hd = new HoaDon
+                            {
+                                MaHoaDon = QLBLLHoadon.Instance.TaoIdHoaDon(),
+                                MaPhongTro = ((ViewCbb)cbbPhongTro.SelectedItem).key,
+                                NgayTao = dtpNgayLap.Value.ToString("dd-MM-yyyy"),
+                                ThangChiTra = dtpThangThanhToan.Value.ToString("MM-yyyy"),
+                                TinhTrang = false,
+                                TongTien = tongCong,
+                                TonTai = true,
+                                DaThanhToan = 0
+                            };
+                            QLBLLHoadon.Instance.AddHoaDonBll(hd);
+                            MessageBox.Show("Thêm hóa đơn thành công", "Thông báo");
+                            this.Close();
+                            this.loader(null);
                         }
                         else
                         {

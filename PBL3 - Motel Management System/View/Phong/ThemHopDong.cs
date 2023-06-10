@@ -62,22 +62,21 @@ namespace PBL3___Motel_Management_System
         }
         private bool CheckHopLe()
         {
-            if (tp.hopDong.MaHopDong!=null && tp.hopDong.MaPhongTro==null)
+            if (tp.hopDong.MaHopDong != null && tp.hopDong.MaPhongTro == null)
             {
-                
                 HopDong hopdong = QLBLLHopDong.Instance.GetHopDongByMaHD(tp.hopDong.MaHopDong);
                 if (hopdong != null)
                 {
-                   var NgayKetThucMoi = dtpKetThuc.Value;
-                   var NgayKetThucCu = Convert.ToDateTime(hopdong.NgayKetThuc);//System.NullReferenceException: 'Object reference not set to an instance of an object.'
-                   var KhoangCach = NgayKetThucMoi - NgayKetThucCu;
-                   if (KhoangCach.Days < 30)
-                     {
-                       MessageBox.Show("Thời gian gia hạn phải tối thiểu 30 ngày", "Thông báo");
-                      return false;
-                      }
-                }    
-              
+                    var NgayKetThucMoi = dtpKetThuc.Value;
+                    var NgayKetThucCu = Convert.ToDateTime(hopdong.NgayKetThuc);//System.NullReferenceException: 'Object reference not set to an instance of an object.'
+                    var KhoangCach = NgayKetThucMoi - NgayKetThucCu;
+                    if (KhoangCach.Days < 30)
+                    {
+                        MessageBox.Show("Thời gian gia hạn phải tối thiểu 30 ngày", "Thông báo");
+                        return false;
+                    }
+                }
+
                 return true;
             }
             else

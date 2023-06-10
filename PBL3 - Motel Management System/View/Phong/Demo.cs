@@ -164,6 +164,7 @@ namespace PBL3___Motel_Management_System.View
                 DialogResult kq1 = MessageBox.Show("Phòng có được trả đúng kì hạn không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if((kq1 == DialogResult.Yes))
                 {
+
                     MessageBox.Show("Vui lòng hoàn lại tiền cọc cho khách hàng: "+ QLBLLChung.Instance.ChuyenDoiSangKieuTien(hd.TienCoc),"Thông báo");
                 }
                 else

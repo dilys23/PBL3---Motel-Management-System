@@ -30,7 +30,7 @@ namespace PBL3___Motel_Management_System
             if(txt == null)
             {
                 int i= 0;
-                foreach(HoaDon hd in QLBLLHoadon.Instance.GetAllHoaDonBll())
+                foreach(HoaDon hd in QLBLLHoadon.Instance.GetAllHoaDon())
                 {
                     PhongTro pt = QLBLLPhongTro.Instance.GetPhongTroByIdPhong(hd.MaPhongTro);
                     DayTro dt = QLBLLDayTro.Instance.GetDayTroByIdPhong(hd.MaPhongTro);
@@ -111,47 +111,55 @@ namespace PBL3___Motel_Management_System
 
         private void btnXacThuc_Click(object sender, EventArgs e)
         {
-            if (dgvHoaDon.CurrentRow.Cells[7].Value.ToString() != "Xác thực")
+            if(dgvHoaDon.RowCount > 0)
             {
-                string id = dgvHoaDon.CurrentRow.Cells[0].Value.ToString();
-                if (QLBLLHoadon.Instance.ChoPhepXacThucHoaDon(id))
+                if (dgvHoaDon.CurrentRow.Cells[7].Value.ToString() != "Xác thực")
                 {
-                    HoaDon hd = QLBLLHoadon.Instance.GetHoaDonById(id);
-                    hd.TinhTrang = true;
-                    QLBLLHoadon.Instance.UpdateHoaDonBLL(hd);
-                    MessageBox.Show("Xác thực thành công", "Thông báo");
-                    LoadForm(null);
+                    string id = dgvHoaDon.CurrentRow.Cells[0].Value.ToString();
+                    if (QLBLLHoadon.Instance.ChoPhepXacThucHoaDon(id))
+                    {
+                        HoaDon hd = QLBLLHoadon.Instance.GetHoaDonById(id);
+                        hd.TinhTrang = true;
+                        QLBLLHoadon.Instance.UpdateHoaDonBLL(hd);
+                        MessageBox.Show("Xác thực thành công", "Thông báo");
+                        LoadForm(null);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Phòng này ở thời điểm bạn chọn đã có một chi tiết được xác thực", "Thông báo");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Phòng này ở thời điểm bạn chọn đã có một chi tiết được xác thực", "Thông báo");
-                }
-            }
-            else {
-                MessageBox.Show("Hóa đơn hiện tại đã được xác thực", "Thông báo");
+                else {
+                    MessageBox.Show("Hóa đơn hiện tại đã được xác thực", "Thông báo");
             
+                }
+
             }
         }
         private void btnBoXacThuc_Click(object sender, EventArgs e)
         {
-            if (dgvHoaDon.CurrentRow.Cells[7].Value.ToString() != "Chưa xác thực")
+            if(dgvHoaDon.RowCount > 0)
             {
-                if(Convert.ToDouble(dgvHoaDon.CurrentRow.Cells[8].Value.ToString())!= 0)
+
+                if (dgvHoaDon.CurrentRow.Cells[7].Value.ToString() != "Chưa xác thực")
                 {
-                    MessageBox.Show("Hóa đơn hiện tại đã được thanh toán!/nKhông thể bỏ xác thực!", "Thông báo");
-                }
+                    if (QLBLLChung.Instance.ChuyenDoiTienSangDouble(dgvHoaDon.CurrentRow.Cells[8].Value.ToString()) != 0)
+                    {
+                        MessageBox.Show("Hóa đơn hiện tại đã được thanh toán!/nKhông thể bỏ xác thực!", "Thông báo");
+                    }
+                    else
+                    {
+                        HoaDon hd = QLBLLHoadon.Instance.GetHoaDonById(dgvHoaDon.CurrentRow.Cells[0].Value.ToString());
+                        hd.TinhTrang = false;
+                        QLBLLHoadon.Instance.UpdateHoaDonBLL(hd);
+                        MessageBox.Show("Bỏ xác thực thành công");
+                        LoadForm(null);
+                    }
+                }    
                 else
                 {
-                    HoaDon hd = QLBLLHoadon.Instance.GetHoaDonById(dgvHoaDon.CurrentRow.Cells[0].Value.ToString());
-                    hd.TinhTrang = false;
-                    QLBLLHoadon.Instance.UpdateHoaDonBLL(hd);
-                    MessageBox.Show("Bỏ xác thực thành công");
-                    LoadForm(null);
+                    MessageBox.Show("Hóa đơn hiện tại đã ở tình trạng chưa xác thực", "Thông báo");
                 }
-            }    
-            else
-            {
-                MessageBox.Show("Hóa đơn hiện tại đã ở tình trạng chưa xác thực", "Thông báo");
             }
         }
 
@@ -171,6 +179,8 @@ namespace PBL3___Motel_Management_System
         }
         private void btnThanhToan_Click(object sender, EventArgs e)
         {           
+            if(dgvHoaDon.RowCount > 0)
+            {
               if (dgvHoaDon.CurrentRow.Cells[7].Value.ToString() == "Chưa xác thực")
                 {
                     MessageBox.Show("Hóa đơn hiện tại chưa được xác thực nên không thể thanh toán!!Vui lòng bỏ xác thực trước khi Thanh toán", "Thông báo");
@@ -189,6 +199,8 @@ namespace PBL3___Motel_Management_System
                     string id = dgvHoaDon.CurrentRow.Cells[0].Value.ToString();
                     QLBLLChung.Instance.openChildForm1(new ThanhToan(id, LoadForm), panelHD);
                 }
+
+            }
             }
         }
         private void dgvHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -75,25 +75,29 @@ namespace PBL3___Motel_Management_System.View
         }
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            if (dgvChiSoDien.CurrentRow.Cells[9].Value.ToString() != "Đã xác thực")
+            if(dgvChiSoDien.RowCount > 0)
             {
-                string id = dgvChiSoDien.CurrentRow.Cells[0].Value.ToString();
-                if (QLBLLChiTietSuDungDichVu.Instance.ChoPhepXacThucChiSo(id, "001"))
+
+                if (dgvChiSoDien.CurrentRow.Cells[9].Value.ToString() != "Đã xác thực")
                 {
-                    ChiTietSuDungDichVu dv = QLBLLChiTietSuDungDichVu.Instance.GetChiTietSuDungDichVuByIdBLL(id);
-                    dv.TinhTrang = true;
-                    QLBLLChiTietSuDungDichVu.Instance.UpdateChiTietSuDungDichVu(dv);
-                    MessageBox.Show("Xác thực thành công", "Thông báo");
-                    LoadForm(null);
-                }
+                    string id = dgvChiSoDien.CurrentRow.Cells[0].Value.ToString();
+                    if (QLBLLChiTietSuDungDichVu.Instance.ChoPhepXacThucChiSo(id, "001"))
+                    {
+                        ChiTietSuDungDichVu dv = QLBLLChiTietSuDungDichVu.Instance.GetChiTietSuDungDichVuByIdBLL(id);
+                        dv.TinhTrang = true;
+                        QLBLLChiTietSuDungDichVu.Instance.UpdateChiTietSuDungDichVu(dv);
+                        MessageBox.Show("Xác thực thành công", "Thông báo");
+                        LoadForm(null);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Phòng hiện tại của bạn đã có một chi tiết được xác nhận!!!", "Thông báo");
+                    }
+                } 
                 else
                 {
-                    MessageBox.Show("Phòng hiện tại của bạn đã có một chi tiết được xác nhận!!!", "Thông báo");
+                    MessageBox.Show("Dịch vụ hiện tại đã được xác thực", "Thông báo");
                 }
-            } 
-            else
-            {
-                MessageBox.Show("Dịch vụ hiện tại đã được xác thực", "Thông báo");
             }
         }
         private void cbbDayTro_SelectedIndexChanged(object sender, EventArgs e)
@@ -124,27 +128,31 @@ namespace PBL3___Motel_Management_System.View
         }
         private void btnHuyXacThuc_Click(object sender, EventArgs e)
         {
-            if(dgvChiSoDien.CurrentRow.Cells[9].Value.ToString() != "Đã xác thực")
+            if(dgvChiSoDien.RowCount > 0)
             {
-                MessageBox.Show("Chỉ số điện hiện tại đang chưa xác thực");
-            }
-            else
-            {
-                string id = dgvChiSoDien.CurrentRow.Cells[0].Value.ToString();
-                string thangct = dgvChiSoDien.CurrentRow.Cells[8].Value.ToString();
-                string idp = QLBLLPhongTro.Instance.GetIdPhongByIdChiTietSuDungDichVu(id);
-                if (QLBLLHoadon.Instance.TinhTrangThanhToan(idp, thangct))
+
+                if(dgvChiSoDien.CurrentRow.Cells[9].Value.ToString() != "Đã xác thực")
                 {
-                    
-                    ChiTietSuDungDichVu dv = QLBLLChiTietSuDungDichVu.Instance.GetChiTietSuDungDichVuByIdBLL(id);
-                    dv.TinhTrang = false;
-                    QLBLLChiTietSuDungDichVu.Instance.UpdateChiTietSuDungDichVu(dv);
-                    MessageBox.Show("Hủy bỏ xác thực thành công", "Thông báo");
-                    LoadForm(null);
+                    MessageBox.Show("Chỉ số điện hiện tại đang chưa xác thực");
                 }
                 else
                 {
-                    MessageBox.Show("Chi tiết này đang nằm trong 1 hóa đơn đang xác thực !! không thể hủy");
+                    string id = dgvChiSoDien.CurrentRow.Cells[0].Value.ToString();
+                    string thangct = dgvChiSoDien.CurrentRow.Cells[8].Value.ToString();
+                    string idp = QLBLLPhongTro.Instance.GetIdPhongByIdChiTietSuDungDichVu(id);
+                    if (QLBLLHoadon.Instance.TinhTrangThanhToan(idp, thangct))
+                    {
+                    
+                        ChiTietSuDungDichVu dv = QLBLLChiTietSuDungDichVu.Instance.GetChiTietSuDungDichVuByIdBLL(id);
+                        dv.TinhTrang = false;
+                        QLBLLChiTietSuDungDichVu.Instance.UpdateChiTietSuDungDichVu(dv);
+                        MessageBox.Show("Hủy bỏ xác thực thành công", "Thông báo");
+                        LoadForm(null);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Chi tiết này đang nằm trong 1 hóa đơn đang xác thực !! không thể hủy");
+                    }
                 }
             }
         }

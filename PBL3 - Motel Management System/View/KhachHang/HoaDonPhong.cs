@@ -37,7 +37,7 @@ namespace PBL3___Motel_Management_System.View.KhachHang
             if (txt == null)
             {
                 int i = 0;
-                foreach (HoaDon hd in QLBLLHoadon.Instance.GetAllHoaDonBll())
+                foreach (HoaDon hd in QLBLLHoadon.Instance.GetAllHoaDon())
                 {
                     if (hd.MaPhongTro == idPhong && hd.TinhTrang == true)
                     {

@@ -37,8 +37,6 @@ namespace PBL3___Motel_Management_System.View
                     dv = QLBLLDichvu.Instance.GetDVByIdDV(idDv);
                     dgvDichVu.Rows.Add(dv.MaDichVu, i++, dv.TenDichVu, dv.GiaDichVu.ToString("#,##0") + "₫");
                 }
-                var Xoa = System.Drawing.Image.FromFile(@"D:\PBL\PBL3_MAIN\PBL3 - Motel Management System\Icons\icons8-delete-25.png");
-                dgvDichVu.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler((sender, e) => QLBLLChung.Instance.dgvIcons_CellPainting3(dgvDichVu, e, Xoa));
             }
             catch (Exception ex)
             {
@@ -48,7 +46,8 @@ namespace PBL3___Motel_Management_System.View
                 Console.WriteLine(ex.InnerException?.StackTrace);
             }
         }    
-    
+      
+
         private void btnThemDichVu_Click(object sender, EventArgs e)
         {
             if(QLBLLPhongTro.Instance.TinhTrangPhongById(idPhong) && !QLBLLChung.Instance.PhongDaHetHan(idPhong))
@@ -65,9 +64,6 @@ namespace PBL3___Motel_Management_System.View
             {
                 MessageBox.Show("Phòng đã quá hạn hợp đồng. Không được thêm dịch vụ", "Thông báo", MessageBoxButtons.OK);
             }
-        }
-
-       
-        
+        }       
     }
 }

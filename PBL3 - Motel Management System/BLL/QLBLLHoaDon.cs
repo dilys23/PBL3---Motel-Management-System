@@ -35,7 +35,7 @@ namespace PBL3___Motel_Management_System.BLL
             {
                 id = random.Next(1, 1000).ToString();
                 status = false;
-                foreach (HoaDon hd in QLDAL.Instance.GetAllHoaDon())
+                foreach (HoaDon hd in QLDAL.Instance.GetAllHoaDonTaoID())
                 {
                     if (hd.MaHoaDon == id) status = true;
                 }
@@ -45,11 +45,7 @@ namespace PBL3___Motel_Management_System.BLL
         public void AddHoaDonBll(HoaDon hd)
         {
             QLDAL.Instance.AddHoaDonDal(hd);
-        }
-        public List<HoaDon> GetAllHoaDonBll()
-        {
-            return QLDAL.Instance.GetAllHoaDon();
-        }
+        }    
         public HoaDon GetHoaDonById(string id)
         {
             return QLDAL.Instance.GetHoaDonByIdDal(id);
@@ -76,13 +72,9 @@ namespace PBL3___Motel_Management_System.BLL
             return true;
 
         }
-        public List<string> GetHoaDonByThangChiTraBLL(string ThangCt)
-        {
-            return QLDAL.Instance.GetIdHoaDonByThangChiTraDAL(ThangCt);
-        }
         public List<HoaDon> GetAllHoaDon()
         {
-            return QLDAL.Instance.GetAllHoaDonDAL();
+            return QLDAL.Instance.GetAllHoaDon();
         }
         public List<string> GetHoaDonByThangChiTra(string ThangCt)
         {
@@ -131,7 +123,7 @@ namespace PBL3___Motel_Management_System.BLL
             List<string> Id = new List<string>();
             List<HoaDon> kq = new List<HoaDon>();
             Id = ThangChiTra.Intersect(Day).Intersect(Phong).Intersect(TinhTrang).ToList();
-            foreach (HoaDon hd in GetAllHoaDonBll())
+            foreach (HoaDon hd in GetAllHoaDon())
             {
                 foreach (string id in Id)
                 {
@@ -149,6 +141,35 @@ namespace PBL3___Motel_Management_System.BLL
                 return true;
             }
             return false;
+        }
+        public List<HoaDon> GetAllHoaDonForDoanhThu()
+        {
+            return QLDAL.Instance.GetAllHoaDonTaoID();
+        }
+        public List<string> GetHoaDonByThangChiTraForDoanhThu(string thangct)
+        {
+            return QLDAL.Instance.GetIdHoaDonByThangChiTraDAL(thangct);
+        }
+        public double GetDoanhThuChoPhong(string idp)
+        {
+            double dt = 0;
+            foreach (HoaDon hd in GetAllHoaDonForDoanhThu())
+            {
+                if (hd.MaPhongTro == idp) dt += hd.DaThanhToan;
+            }
+                return dt;
+        }
+        public double GetDoanhThuChoPhongByThangCt(string idp, string thangct)
+        {
+            double dt = 0;
+            foreach(HoaDon hd in GetAllHoaDon())
+            {
+                if(hd.MaPhongTro == idp && hd.ThangChiTra == thangct)
+                {
+                    dt += hd.DaThanhToan;
+                }
+            }
+            return dt;
         }
     }
 }
