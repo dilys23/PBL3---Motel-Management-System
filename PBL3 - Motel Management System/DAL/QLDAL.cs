@@ -58,11 +58,25 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.ChiTietTaiKhoanChuTro.Where(p => p.TonTai == true).ToList<ChiTietTaiKhoanChuTro>();
             }
         }
+        public List<ChiTietTaiKhoanChuTro> GetAllTaiKhoanChuTroTaoId()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietTaiKhoanChuTro.ToList<ChiTietTaiKhoanChuTro>();
+            }
+        }
         public List<ChiTietTaiKhoanPhongTro> GetAllTaiKhoanPhongTro()
         {
             using (DataPbl data = new DataPbl())
             {
                 return data.ChiTietTaiKhoanPhongTro.Where(p => p.TonTai == true).ToList<ChiTietTaiKhoanPhongTro>();
+            }
+        }
+        public List<ChiTietTaiKhoanPhongTro> GetAllTaiKhoanPhongTroTaoId()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietTaiKhoanPhongTro.ToList<ChiTietTaiKhoanPhongTro>();
             }
         }
         public bool KiemTraTonTaiIdPhongTro(string id)
@@ -162,6 +176,13 @@ namespace PBL3___Motel_Management_System.DAL
             {
                 return data.ChiTietThanhToanHoaDon.Where(p => p.TonTai == true).Select(p => p).ToList<ChiTietThanhToanHoaDon>();
             }    
+        }
+        public List<ChiTietThanhToanHoaDon> GetAllChiTietThanhToanHoaDonTaoId()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietThanhToanHoaDon.Select(p => p).ToList<ChiTietThanhToanHoaDon>();
+            }
         }
         public List<string> GetIdHoaDonByThangChiTraDAL(string ThangCt)
         {
@@ -330,6 +351,13 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.ChiTietSuDungDichVu.Where(p => p.TonTai == true).Select(p => p).ToList<ChiTietSuDungDichVu>();
             }
         }
+        public List<ChiTietSuDungDichVu> GetAllChiTietSuDungDichVuTaoId()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietSuDungDichVu.Select(p => p).ToList<ChiTietSuDungDichVu>();
+            }
+        }
         public void AddChiTietSuDungDichVuDal(ChiTietSuDungDichVu dv)
         {
             using(DataPbl data = new DataPbl())
@@ -345,6 +373,13 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.ChiTietDichVu.Where(p => p.TonTai == true).Select(p => p).ToList<ChiTietDichVu>();
             }
         }
+        public List<ChiTietDichVu> GetAllChiTietDichVuTaoId()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietDichVu.Select(p => p).ToList<ChiTietDichVu>();
+            }
+        }
         public List<string> GetAllMaChitietDichVu()
         { 
             using (DataPbl data = new DataPbl())
@@ -357,6 +392,13 @@ namespace PBL3___Motel_Management_System.DAL
             using (DataPbl data = new DataPbl())
             {
                 return data.ChiTietThietBi.Where(p => p.TonTai == true).Select(p => p).ToList<ChiTietThietBi>();
+            }
+        }
+        public List<ChiTietThietBi> GetAllChiTietThietBiTaoId()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietThietBi.Select(p => p).ToList<ChiTietThietBi>();
             }
         }
         public List<ThanhVienTrongPhong> GetAllThanhVienTrongPhong()
@@ -1234,6 +1276,13 @@ namespace PBL3___Motel_Management_System.DAL
             using (DataPbl data = new DataPbl())
             {
                 return data.ChiTietAnhPhong.Where (p => p.TonTai==true).ToList<ChiTietAnhPhong>();
+            }
+        }
+        public List<ChiTietAnhPhong> GetAllChiTietAnhPhongTaoId()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietAnhPhong.ToList<ChiTietAnhPhong>();
             }
         }
         public List<ChiTietAnhPhong> GetChiTietAnhPhongByIdPhong(string idPhong)

@@ -136,7 +136,7 @@ namespace PBL3___Motel_Management_System
         {
             if (dgvHoaDon.CurrentRow.Cells[7].Value.ToString() != "Chưa xác thực")
             {
-                if(Convert.ToDouble(dgvHoaDon.CurrentRow.Cells[8].Value.ToString())!= 0)
+                if (QLBLLChung.Instance.ChuyenDoiTienSangDouble(dgvHoaDon.CurrentRow.Cells[8].Value.ToString()) != 0)
                 {
                     MessageBox.Show("Hóa đơn hiện tại đã được thanh toán!/nKhông thể bỏ xác thực!", "Thông báo");
                 }

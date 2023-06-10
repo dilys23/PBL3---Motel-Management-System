@@ -109,15 +109,31 @@ namespace PBL3___Motel_Management_System
                     i++;
                     errorProvider1.SetError(txtToiDa, "Vui lòng nhập bằng số");
                 }
+                else
+                {
+                    if(Convert.ToInt32(txtToiDa.Text) == 0 )
+                    {
+                        i++;
+                        errorProvider1.SetError(txtToiDa, "Số người tối đa phải lớn hơn 0");
+                    }
+                    else
+                    {
+                        if (QLBLLThanhVienTrongPhong.Instance.GetIDThanhvienbyIDPhong(IdPhong).Count() > Convert.ToInt32(txtToiDa.Text) )
+                        {
+                            i++;
+                            errorProvider1.SetError(txtToiDa, "số người tối đa phải lớn hơn hoặc bằng số người hiện có");
+                        }
+                       
+                    } 
+                        
+                }    
             }
+            
+            
 
 
             if (i==0) return true;
             else return false;
-
-
-
-
         }
         private void iconButton4_Click(object sender, EventArgs e)
         {
@@ -133,7 +149,11 @@ namespace PBL3___Motel_Management_System
                     pt.DienTich = Convert.ToDouble(txtDienTich.Text);
                   //  pt.GiaTien = (Convert.ToDouble(txtGiaTien.Text.Replace(vietnamCulture.NumberFormat.CurrencySymbol, "").Replace(".", "")));
                     pt.GiaTien = QLBLLChung.Instance.ChuyenDoiTienSangDouble(txtGiaTien.Text);
-                    pt.ToiDa = Convert.ToInt32(txtToiDa.Text);
+                  
+                        pt.ToiDa = Convert.ToInt32(txtToiDa.Text);
+                   
+                        
+                   
                     pt.TonTai = true;
                     if (pictutePhong.Image != null)
                     { pt.HinhAnh = QLBLLChung.Instance.ImageToBase64(pictutePhong.Image, pictutePhong.Image.RawFormat); }

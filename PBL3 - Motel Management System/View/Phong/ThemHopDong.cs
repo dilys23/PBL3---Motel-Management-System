@@ -62,44 +62,42 @@ namespace PBL3___Motel_Management_System
         }
         private bool CheckHopLe()
         {
-            if (tp.hopDong.MaNguoi!=null)
+            if (tp.hopDong.MaHopDong != null && tp.hopDong.MaPhongTro == null)
+            {
+                HopDong hopdong = QLBLLHopDong.Instance.GetHopDongByMaHD(tp.hopDong.MaHopDong);
+                if (hopdong != null)
+                {
+                    var NgayKetThucMoi = dtpKetThuc.Value;
+                    var NgayKetThucCu = Convert.ToDateTime(hopdong.NgayKetThuc);//System.NullReferenceException: 'Object reference not set to an instance of an object.'
+                    var KhoangCach = NgayKetThucMoi - NgayKetThucCu;
+                    if (KhoangCach.Days < 30)
+                    {
+                        MessageBox.Show("Thời gian gia hạn phải tối thiểu 30 ngày", "Thông báo");
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+            else
             {
                 var dateStart = dtpBatDau.Value;
                 var dateEnd = dtpKetThuc.Value;
                 var distance = dateEnd - dateStart;
                 if (distance.Days < 30)
-            {
-                MessageBox.Show("Thời gian thuê phòng phải tối thiểu 30 ngày", "Thông báo");
-                return false;
-            }
-            else
-            {
-                if(!double.TryParse(txtTienCoc.Text,out double i))
                 {
-                    MessageBox.Show("Vui lòng nhập số tại tiền cọc", "Thông báo");
+                    MessageBox.Show("Thời gian thuê phòng phải tối thiểu 30 ngày", "Thông báo");
                     return false;
                 }
-            }
-
-            return true;
-
-            }
-            else
-            {
-                
-                HopDong hopdong = QLBLLHopDong.Instance.GetHopDongByMaHD(tp.hopDong.MaHopDong);
-                if (hopdong != null)
+                else
                 {
-                   var NgayKetThucMoi = dtpKetThuc.Value;
-                   var NgayKetThucCu = Convert.ToDateTime(hopdong.NgayKetThuc);//System.NullReferenceException: 'Object reference not set to an instance of an object.'
-                   var KhoangCach = NgayKetThucMoi - NgayKetThucCu;
-                   if (KhoangCach.Days < 30)
-                     {
-                       MessageBox.Show("Thời gian gia hạn phải tối thiểu 30 ngày", "Thông báo");
-                      return false;
-                      }
-                }    
-              
+                    if (!double.TryParse(txtTienCoc.Text, out double i))
+                    {
+                        MessageBox.Show("Vui lòng nhập số tại tiền cọc", "Thông báo");
+                        return false;
+                    }
+                }
+
                 return true;
             }
         }
