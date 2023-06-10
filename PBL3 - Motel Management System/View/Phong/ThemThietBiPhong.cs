@@ -26,6 +26,8 @@ namespace PBL3___Motel_Management_System.View
             this.idPhong = idPhong;
             LoadForm();
             this.loader  = loader;
+            QLBLLChung.Instance.customDGV(dgvThietBi);
+            QLBLLChung.Instance.customDGV(dgvTBThem);
 
         }
         public void LoadForm()

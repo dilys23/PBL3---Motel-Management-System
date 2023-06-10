@@ -28,17 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title7 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title8 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title9 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.btnTim = new FontAwesome.Sharp.IconButton();
             this.dtpThang = new System.Windows.Forms.DateTimePicker();
             this.ChartCot = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label4 = new System.Windows.Forms.Label();
@@ -66,7 +65,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDesktop.BackColor = System.Drawing.Color.LightCyan;
-            this.panelDesktop.Controls.Add(this.btnTim);
             this.panelDesktop.Controls.Add(this.dtpThang);
             this.panelDesktop.Controls.Add(this.ChartCot);
             this.panelDesktop.Controls.Add(this.label4);
@@ -80,45 +78,30 @@
             this.panelDesktop.TabIndex = 6;
             this.panelDesktop.SizeChanged += new System.EventHandler(this.panelDesktop_SizeChanged);
             // 
-            // btnTim
-            // 
-            this.btnTim.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.btnTim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnTim.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.btnTim.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnTim.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnTim.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnTim.IconSize = 25;
-            this.btnTim.Location = new System.Drawing.Point(28, 353);
-            this.btnTim.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(35, 34);
-            this.btnTim.TabIndex = 42;
-            this.btnTim.UseVisualStyleBackColor = false;
-            // 
             // dtpThang
             // 
             this.dtpThang.CustomFormat = "MM/yyyy";
             this.dtpThang.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpThang.Location = new System.Drawing.Point(69, 357);
+            this.dtpThang.Location = new System.Drawing.Point(43, 370);
             this.dtpThang.Name = "dtpThang";
             this.dtpThang.Size = new System.Drawing.Size(124, 22);
             this.dtpThang.TabIndex = 41;
-            this.dtpThang.ValueChanged += new System.EventHandler(this.dtpThang_ValueChanged);
+            this.dtpThang.Visible = false;
+            
             // 
             // ChartCot
             // 
-            chartArea1.Name = "ChartArea1";
-            this.ChartCot.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.ChartCot.Legends.Add(legend1);
+            chartArea5.Name = "ChartArea1";
+            this.ChartCot.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.ChartCot.Legends.Add(legend5);
             this.ChartCot.Location = new System.Drawing.Point(28, 413);
             this.ChartCot.Name = "ChartCot";
-            series1.ChartArea = "ChartArea1";
-            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            series1.Legend = "Legend1";
-            series1.Name = "Dãy trọ";
-            this.ChartCot.Series.Add(series1);
+            series5.ChartArea = "ChartArea1";
+            series5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            series5.Legend = "Legend1";
+            series5.Name = "Dãy trọ";
+            this.ChartCot.Series.Add(series5);
             this.ChartCot.Size = new System.Drawing.Size(402, 191);
             this.ChartCot.TabIndex = 40;
             this.ChartCot.Text = "chart1";
@@ -169,28 +152,28 @@
             // 
             // TinhTrang
             // 
-            chartArea2.Area3DStyle.Enable3D = true;
-            chartArea2.Name = "ChartArea1";
-            this.TinhTrang.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.TinhTrang.Legends.Add(legend2);
+            chartArea6.Area3DStyle.Enable3D = true;
+            chartArea6.Name = "ChartArea1";
+            this.TinhTrang.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.TinhTrang.Legends.Add(legend6);
             this.TinhTrang.Location = new System.Drawing.Point(25, 52);
             this.TinhTrang.Margin = new System.Windows.Forms.Padding(4);
             this.TinhTrang.Name = "TinhTrang";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "TinhTrang";
-            this.TinhTrang.Series.Add(series2);
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series6.Legend = "Legend1";
+            series6.Name = "TinhTrang";
+            this.TinhTrang.Series.Add(series6);
             this.TinhTrang.Size = new System.Drawing.Size(433, 311);
             this.TinhTrang.TabIndex = 1;
             this.TinhTrang.Text = "Tinhtrang";
-            title1.Name = "ConTrong";
-            title2.Name = "ChoThue";
-            title3.Name = "DangCoc";
-            this.TinhTrang.Titles.Add(title1);
-            this.TinhTrang.Titles.Add(title2);
-            this.TinhTrang.Titles.Add(title3);
+            title7.Name = "ConTrong";
+            title8.Name = "ChoThue";
+            title9.Name = "DangCoc";
+            this.TinhTrang.Titles.Add(title7);
+            this.TinhTrang.Titles.Add(title8);
+            this.TinhTrang.Titles.Add(title9);
             // 
             // dgvTinhTrang
             // 
@@ -256,7 +239,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormTrangChu";
             this.Text = "FormTrangChu";
-            this.Load += new System.EventHandler(this.FormTrangChu_Load);
+//            this.Load += new System.EventHandler(this.FormTrangChu_Load);
             this.panelDesktop.ResumeLayout(false);
             this.panelDesktop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ChartCot)).EndInit();
@@ -282,7 +265,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenPhongTro;
         private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrang2;
         private System.Windows.Forms.DataVisualization.Charting.Chart ChartCot;
-        private FontAwesome.Sharp.IconButton btnTim;
         private System.Windows.Forms.DateTimePicker dtpThang;
     }
 }

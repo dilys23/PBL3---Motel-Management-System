@@ -107,7 +107,7 @@
             this.panel2.Size = new System.Drawing.Size(949, 451);
             this.panel2.TabIndex = 42;
             this.panel2.SizeChanged += new System.EventHandler(this.panel2_SizeChanged);
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+          
             // 
             // textBox1
             // 
