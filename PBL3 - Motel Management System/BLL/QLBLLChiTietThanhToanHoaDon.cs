@@ -32,7 +32,7 @@ namespace PBL3___Motel_Management_System.BLL
             {
                 id = random.Next(1, 1000).ToString();
                 status = false;
-                foreach (ChiTietThanhToanHoaDon ct in QLDAL.Instance.GetAllChiTietThanhToanHoaDon())
+                foreach (ChiTietThanhToanHoaDon ct in QLDAL.Instance.GetAllChiTietThanhToanHoaDonTaoId())
                 {
                     if (ct.MaChiTietThanhToanHoaDon == id) status = true;
                 }

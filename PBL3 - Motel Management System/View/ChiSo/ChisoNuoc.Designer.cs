@@ -98,7 +98,7 @@
             this.btnHuyXacThuc.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnHuyXacThuc.IconSize = 25;
             this.btnHuyXacThuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHuyXacThuc.Location = new System.Drawing.Point(520, 397);
+            this.btnHuyXacThuc.Location = new System.Drawing.Point(821, 39);
             this.btnHuyXacThuc.Margin = new System.Windows.Forms.Padding(2);
             this.btnHuyXacThuc.Name = "btnHuyXacThuc";
             this.btnHuyXacThuc.Size = new System.Drawing.Size(86, 39);
@@ -240,7 +240,7 @@
             this.btnXacThuc.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXacThuc.IconSize = 25;
             this.btnXacThuc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXacThuc.Location = new System.Drawing.Point(393, 397);
+            this.btnXacThuc.Location = new System.Drawing.Point(718, 39);
             this.btnXacThuc.Name = "btnXacThuc";
             this.btnXacThuc.Size = new System.Drawing.Size(98, 39);
             this.btnXacThuc.TabIndex = 63;
@@ -258,7 +258,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(402, 19);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 17);
+            this.label5.Size = new System.Drawing.Size(89, 20);
             this.label5.TabIndex = 62;
             this.label5.Text = "Tình trạng:";
             // 
@@ -268,7 +268,7 @@
             this.cbbTinhTrang.FormattingEnabled = true;
             this.cbbTinhTrang.Location = new System.Drawing.Point(405, 48);
             this.cbbTinhTrang.Name = "cbbTinhTrang";
-            this.cbbTinhTrang.Size = new System.Drawing.Size(124, 25);
+            this.cbbTinhTrang.Size = new System.Drawing.Size(124, 28);
             this.cbbTinhTrang.TabIndex = 61;
             // 
             // btnTimKiem
@@ -293,7 +293,7 @@
             this.cbbPhongTro.FormattingEnabled = true;
             this.cbbPhongTro.Location = new System.Drawing.Point(305, 47);
             this.cbbPhongTro.Name = "cbbPhongTro";
-            this.cbbPhongTro.Size = new System.Drawing.Size(94, 25);
+            this.cbbPhongTro.Size = new System.Drawing.Size(94, 28);
             this.cbbPhongTro.TabIndex = 59;
             // 
             // label3
@@ -305,7 +305,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(302, 19);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 17);
+            this.label3.Size = new System.Drawing.Size(61, 20);
             this.label3.TabIndex = 58;
             this.label3.Text = "Phòng:";
             // 
@@ -321,7 +321,7 @@
             this.btnThemChiSo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThemChiSo.Location = new System.Drawing.Point(912, 40);
             this.btnThemChiSo.Name = "btnThemChiSo";
-            this.btnThemChiSo.Size = new System.Drawing.Size(73, 36);
+            this.btnThemChiSo.Size = new System.Drawing.Size(73, 38);
             this.btnThemChiSo.TabIndex = 52;
             this.btnThemChiSo.Text = "Thêm ";
             this.btnThemChiSo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -336,7 +336,7 @@
             this.dtpThang.Location = new System.Drawing.Point(57, 48);
             this.dtpThang.Name = "dtpThang";
             this.dtpThang.ShowUpDown = true;
-            this.dtpThang.Size = new System.Drawing.Size(117, 23);
+            this.dtpThang.Size = new System.Drawing.Size(117, 27);
             this.dtpThang.TabIndex = 29;
             this.dtpThang.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -349,7 +349,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(53, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 17);
+            this.label1.Size = new System.Drawing.Size(82, 20);
             this.label1.TabIndex = 28;
             this.label1.Text = "Thời gian:";
             // 
@@ -359,7 +359,7 @@
             this.cbbDayTro.FormattingEnabled = true;
             this.cbbDayTro.Location = new System.Drawing.Point(180, 47);
             this.cbbDayTro.Name = "cbbDayTro";
-            this.cbbDayTro.Size = new System.Drawing.Size(108, 25);
+            this.cbbDayTro.Size = new System.Drawing.Size(108, 28);
             this.cbbDayTro.TabIndex = 31;
             this.cbbDayTro.SelectedIndexChanged += new System.EventHandler(this.cbbDayTro_SelectedIndexChanged);
             // 
@@ -369,7 +369,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(177, 19);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 17);
+            this.label2.Size = new System.Drawing.Size(44, 20);
             this.label2.TabIndex = 30;
             this.label2.Text = "Dãy:";
             // 
@@ -391,7 +391,7 @@
             this.label4.ForeColor = System.Drawing.Color.Chocolate;
             this.label4.Location = new System.Drawing.Point(12, 12);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 19);
+            this.label4.Size = new System.Drawing.Size(128, 24);
             this.label4.TabIndex = 25;
             this.label4.Text = "CHỈ SỐ NƯỚC";
             // 

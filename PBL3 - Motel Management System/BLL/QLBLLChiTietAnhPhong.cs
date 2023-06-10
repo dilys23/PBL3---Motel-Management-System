@@ -49,7 +49,7 @@ namespace PBL3___Motel_Management_System.BLL
             {
                 id = random.Next(1, 1000).ToString();
                 status = false;
-                foreach (ChiTietAnhPhong ct in QLDAL.Instance.GetAllChiTietAnhPhong())
+                foreach (ChiTietAnhPhong ct in QLDAL.Instance.GetAllChiTietAnhPhongTaoId())
                 {
                     if (ct.MaChiTietAnhPhong == id) status = true;
                 }

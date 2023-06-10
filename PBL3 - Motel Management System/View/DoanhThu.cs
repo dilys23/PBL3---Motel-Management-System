@@ -198,7 +198,7 @@ namespace PBL3___Motel_Management_System
         }
         public void ThongKeTheoPhong()
         {
-            var thongke = QLBLLChung.Instance.ThongKeTinhTrangPhongTro();
+            var thongke = QLBLLPhongTro.Instance.ThongKeTinhTrangPhongTro();
             ChartDuong.Series[0].XValueMember = "Key";
             ChartDuong.Series[0].YValueMembers = "Value";
             ChartDuong.DataSource = thongke;

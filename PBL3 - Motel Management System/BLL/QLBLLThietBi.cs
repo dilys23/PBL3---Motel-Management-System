@@ -36,7 +36,7 @@ namespace PBL3___Motel_Management_System.BLL
             {
                 id = random.Next(1, 1000).ToString();
                 status = false;
-                foreach (ThietBi dv in QLDAL.Instance.GetAllThietBi())
+                foreach (ThietBi dv in QLDAL.Instance.GetAllThietBiTaoID())
                 {
                     if (dv.MaThietBi == id) status = true; break;
                 }

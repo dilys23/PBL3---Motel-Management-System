@@ -36,6 +36,13 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.TaiKhoan.Where(p => p.TonTai == true).ToList<TaiKhoan>();
             }
         }
+        public List<TaiKhoan> GetAllTaiKhoanTaoID()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.TaiKhoan.ToList<TaiKhoan>();
+            }
+        }
         public TaiKhoan GetIdTkDal(string taikhoan, string matkhau)
         {
             using(DataPbl data = new DataPbl())
@@ -51,6 +58,13 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.VaiTro.Where(p => p.TonTai == true).ToList<VaiTro>();
             }
         }
+        public List<VaiTro> GetAllVaiTroTaoID()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.VaiTro.ToList<VaiTro>();
+            }
+        }
         public List<ChiTietTaiKhoanChuTro> GetAllTaiKhoanChuTro()
         {
             using (DataPbl data = new DataPbl())
@@ -58,11 +72,25 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.ChiTietTaiKhoanChuTro.Where(p => p.TonTai == true).ToList<ChiTietTaiKhoanChuTro>();
             }
         }
+        public List<ChiTietTaiKhoanChuTro> GetAllTaiKhoanChuTroTaoId()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietTaiKhoanChuTro.ToList<ChiTietTaiKhoanChuTro>();
+            }
+        }
         public List<ChiTietTaiKhoanPhongTro> GetAllTaiKhoanPhongTro()
         {
             using (DataPbl data = new DataPbl())
             {
                 return data.ChiTietTaiKhoanPhongTro.Where(p => p.TonTai == true).ToList<ChiTietTaiKhoanPhongTro>();
+            }
+        }
+        public List<ChiTietTaiKhoanPhongTro> GetAllTaiKhoanPhongTroTaoId()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietTaiKhoanPhongTro.ToList<ChiTietTaiKhoanPhongTro>();
             }
         }
         public bool KiemTraTonTaiIdPhongTro(string id)
@@ -135,6 +163,13 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.HopDong.Where(p => p.TonTai == true).Select(p => p).ToList<HopDong>();
             }
         }
+        public List<HopDong> GetAllHopDongTaoID()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.HopDong.Select(p => p).ToList<HopDong>();
+            }
+        }
         public List<HopDong> GetAllHopDongDangThue()
         {
             using (DataPbl data = new DataPbl())
@@ -156,13 +191,27 @@ namespace PBL3___Motel_Management_System.DAL
                 return  data.HoaDon.Where(p => p.TonTai==true).Select(p => p).ToList<HoaDon>();
             }
         }
-        
+        public List<HoaDon> GetAllHoaDonTaoID()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.HoaDon.Select(p => p).ToList<HoaDon>();
+            }
+        }
+
         public List<ChiTietThanhToanHoaDon> GetAllChiTietThanhToanHoaDon()
         {
             using (DataPbl data = new DataPbl())
             {
                 return data.ChiTietThanhToanHoaDon.Where(p => p.TonTai == true).Select(p => p).ToList<ChiTietThanhToanHoaDon>();
             }    
+        }
+        public List<ChiTietThanhToanHoaDon> GetAllChiTietThanhToanHoaDonTaoId()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietThanhToanHoaDon.Select(p => p).ToList<ChiTietThanhToanHoaDon>();
+            }
         }
         public List<string> GetIdHoaDonByThangChiTraDAL(string ThangCt)
         {
@@ -211,6 +260,13 @@ namespace PBL3___Motel_Management_System.DAL
             using(DataPbl data = new DataPbl())
             {
                 return data.DayTro.Where(p => p.TonTai==true).Select(p => p).ToList<DayTro>();
+            }
+        }
+        public List<DayTro> GetAllDayTroTaoID()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.DayTro.Select(p => p).ToList<DayTro>();
             }
         }
         public List<PhongTro>GetAllPhongTro()
@@ -331,6 +387,13 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.ChiTietSuDungDichVu.Where(p => p.TonTai == true).Select(p => p).ToList<ChiTietSuDungDichVu>();
             }
         }
+        public List<ChiTietSuDungDichVu> GetAllChiTietSuDungDichVuTaoId()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietSuDungDichVu.Select(p => p).ToList<ChiTietSuDungDichVu>();
+            }
+        }
         public void AddChiTietSuDungDichVuDal(ChiTietSuDungDichVu dv)
         {
             using(DataPbl data = new DataPbl())
@@ -344,6 +407,13 @@ namespace PBL3___Motel_Management_System.DAL
             using (DataPbl data = new DataPbl())
             {
                 return data.ChiTietDichVu.Where(p => p.TonTai == true).Select(p => p).ToList<ChiTietDichVu>();
+            }
+        }
+        public List<ChiTietDichVu> GetAllChiTietDichVuTaoId()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietDichVu.Select(p => p).ToList<ChiTietDichVu>();
             }
         }
         public List<string> GetAllMaChitietDichVu()
@@ -360,13 +430,27 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.ChiTietThietBi.Where(p => p.TonTai == true).Select(p => p).ToList<ChiTietThietBi>();
             }
         }
+        public List<ChiTietThietBi> GetAllChiTietThietBiTaoId()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietThietBi.Select(p => p).ToList<ChiTietThietBi>();
+            }
+        }
         public List<ThanhVienTrongPhong> GetAllThanhVienTrongPhong()
         {
             using (DataPbl data = new DataPbl())
             {
                 return data.ThanhVienTrongPhong.Where(p => p.TonTai == true).Select(p => p).ToList<ThanhVienTrongPhong>();
             }
-        }  
+        }
+        public List<ThanhVienTrongPhong> GetAllThanhVienTrongPhongTaoID()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ThanhVienTrongPhong.Select(p => p).ToList<ThanhVienTrongPhong>();
+            }
+        }
         public List<PhongTro> GetPhongByIdDay(string idDay)
         {
             using(DataPbl data = new DataPbl())
@@ -381,11 +465,25 @@ namespace PBL3___Motel_Management_System.DAL
                 return data.DichVu.Where(p => p.TonTai == true).Select(p => p).ToList<DichVu>();
             }
         }
+        public List<DichVu> GetAllDichVuTaoID()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.DichVu.Select(p => p).ToList<DichVu>();
+            }
+        }
         public List<ThietBi> GetAllThietBi()
         {
             using (DataPbl data = new DataPbl())
             {
                 return data.ThietBi.Where(p => p.TonTai == true).Select(p => p).ToList<ThietBi>();
+            }
+        }
+        public List<ThietBi> GetAllThietBiTaoID()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ThietBi.Select(p => p).ToList<ThietBi>();
             }
         }
         public void ThemDVDal(DichVu dv)
@@ -480,6 +578,13 @@ namespace PBL3___Motel_Management_System.DAL
             using(DataPbl data = new DataPbl())
             {
                 return data.Nguoi.Where(p => p.TonTai == true).Select(p => p).ToList<Nguoi>();
+            }
+        }
+        public List<Nguoi> GetAllNguoiTaoID()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.Nguoi.Select(p => p).ToList<Nguoi>();
             }
         }
         public DayTro GetDayByIdDay(string Id)
@@ -1111,24 +1216,7 @@ namespace PBL3___Motel_Management_System.DAL
                 return result;
             }
         }
-      
-        public Dictionary<string, int> ThongKeTinhTrangPhongTro()
-        {
-            using (DataPbl data = new DataPbl())
-            {
-                var result = data.PhongTro
-                    .GroupJoin(data.HopDong, pt => pt.MaPhongTro, hd => hd.MaPhongTro,
-                    (pt, hds) => new { PhongTro = pt, HopDong = hds })
-                    .SelectMany(p=>p.HopDong.DefaultIfEmpty(),(p,hd)=>new {PhongTro =p.PhongTro,HopDong = hd})
-                    .GroupBy(p =>
-                (p.HopDong == null) ? "Còn trống" :
-                (p.HopDong.TinhTrang == true) ? "Đã cho thuê" :
-                "Đã cọc")
-                    .OrderBy(p => p.Key)
-                    .ToDictionary(p => p.Key, p => p.Count());
-                return result;
-            }
-        }
+
         public Dictionary<string,int> ThongKeThanhVien()
         {
             using (DataPbl data = new DataPbl())
@@ -1235,6 +1323,13 @@ namespace PBL3___Motel_Management_System.DAL
             using (DataPbl data = new DataPbl())
             {
                 return data.ChiTietAnhPhong.Where (p => p.TonTai==true).ToList<ChiTietAnhPhong>();
+            }
+        }
+        public List<ChiTietAnhPhong> GetAllChiTietAnhPhongTaoId()
+        {
+            using (DataPbl data = new DataPbl())
+            {
+                return data.ChiTietAnhPhong.ToList<ChiTietAnhPhong>();
             }
         }
         public List<ChiTietAnhPhong> GetChiTietAnhPhongByIdPhong(string idPhong)

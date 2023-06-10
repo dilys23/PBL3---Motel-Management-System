@@ -107,12 +107,11 @@
             this.panel2.Size = new System.Drawing.Size(949, 451);
             this.panel2.TabIndex = 42;
             this.panel2.SizeChanged += new System.EventHandler(this.panel2_SizeChanged);
-          
             // 
             // textBox1
             // 
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(308, 100);
+            this.textBox1.Location = new System.Drawing.Point(358, 100);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -177,7 +176,7 @@
             this.ChartCot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ChartCot.Name = "ChartCot";
             series1.ChartArea = "ChartArea1";
-            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(166)))), ((int)(((byte)(223)))));
             series1.Legend = "Legend1";
             series1.Name = "Dãy trọ";
             this.ChartCot.Series.Add(series1);
@@ -194,10 +193,11 @@
             this.ChartDuong.Location = new System.Drawing.Point(523, 17);
             this.ChartDuong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ChartDuong.Name = "ChartDuong";
+            this.ChartDuong.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
             series2.BorderWidth = 3;
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series2.Color = System.Drawing.Color.DarkGreen;
+            series2.Color = System.Drawing.Color.Salmon;
             series2.Legend = "Legend1";
             series2.Name = "Tổng tiền";
             this.ChartDuong.Series.Add(series2);

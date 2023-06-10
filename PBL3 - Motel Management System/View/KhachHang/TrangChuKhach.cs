@@ -338,7 +338,7 @@ namespace PBL3___Motel_Management_System.View
             idPhong = QLBLLPhongTro.Instance.GetPhongTroByMaTaiKhoan(matk).MaPhongTro;
             ChitietDV ct = new ChitietDV(idPhong);
             ct.btnThemDichVu.Visible = false;
-            ct.dgvDichVu.Columns[4].Visible = false;
+            //ct.dgvDichVu.Columns[4].Visible = false;
             QLBLLChung.Instance.openChildForm1(ct, panelDesktop);
         }
 

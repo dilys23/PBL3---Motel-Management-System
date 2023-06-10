@@ -79,6 +79,7 @@ namespace PBL3___Motel_Management_System.View
 
         private void SuKien(object sender, EventArgs e)
         {
+            btnThemPhong.Visible = true;
             Button btn = sender as Button;
             ClickBtn = btn;
             panelPhong.Controls.Clear();
@@ -157,6 +158,7 @@ namespace PBL3___Motel_Management_System.View
             else
             {
                 lblDiaChi.Text = "";
+                btnThemPhong.Visible = false;
             }
             foreach (PhongTro pt in QLBLLPhongTro.Instance.PhongTroTimKiem(idDay,idTinhTrang,txtTimKiem.Text))
             {
