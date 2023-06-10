@@ -108,7 +108,7 @@ namespace PBL3___Motel_Management_System.View
                 }
                 DateTime ngayHienTai = DateTime.Now;
                 HopDong hd = QLBLLHopDong.Instance.GetHopDongByIdPhong(pt.MaPhongTro);
-                if (hd != null)
+                if (hd != null && hd.TinhTrang  ==true)
                 {
                     DateTime ngayketthuc = DateTime.Parse(hd.NgayKetThuc);
                     TimeSpan khoangthoigian = ngayketthuc - ngayHienTai;
